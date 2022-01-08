@@ -23,6 +23,7 @@
 		6BED9A562789F86D005646C3 /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BED9A552789F86D005646C3 /* SummaryView.swift */; };
 		6BED9A582789FDE4005646C3 /* LeaderboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BED9A572789FDE4005646C3 /* LeaderboardView.swift */; };
 		6BED9A5A2789FE54005646C3 /* LeaderboardRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BED9A592789FE54005646C3 /* LeaderboardRecord.swift */; };
+		6BED9A5C278A1896005646C3 /* DefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BED9A5B278A1896005646C3 /* DefaultsKeys.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +103,7 @@
 		6BED9A552789F86D005646C3 /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
 		6BED9A572789FDE4005646C3 /* LeaderboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardView.swift; sourceTree = "<group>"; };
 		6BED9A592789FE54005646C3 /* LeaderboardRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardRecord.swift; sourceTree = "<group>"; };
+		6BED9A5B278A1896005646C3 /* DefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsKeys.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 				6B41741A2789EAED00782B8A /* Assets.xcassets */,
 				6B41741F2789EAED00782B8A /* Info.plist */,
 				6B41741C2789EAED00782B8A /* Preview Content */,
+				6BED9A5B278A1896005646C3 /* DefaultsKeys.swift */,
 			);
 			path = "wakawatch WatchKit Extension";
 			sourceTree = "<group>";
@@ -407,6 +410,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BED9A512789EDB9005646C3 /* ProfileView.swift in Sources */,
+				6BED9A5C278A1896005646C3 /* DefaultsKeys.swift in Sources */,
 				6B4174172789EAEC00782B8A /* wakawatchApp.swift in Sources */,
 				6B4174192789EAEC00782B8A /* ComplicationController.swift in Sources */,
 				6BED9A582789FDE4005646C3 /* LeaderboardView.swift in Sources */,
