@@ -7,7 +7,6 @@ struct User: Identifiable {
     let website: URL?
     let createdDate: Date
     let location: String
-    let publicLeaderboardRank: Int
 }
 
 extension User {
@@ -17,7 +16,6 @@ extension User {
              photoUrl: URL(string: "https://wakatime.com/photo/63682d84-94b1-435b-82bb-a31eccb45b31"),
              website: URL(string: "https://nybble.app"),
              createdDate: Date(),
-             location: "",
-             publicLeaderboardRank: 2)
+             location: "")
     ]
 }

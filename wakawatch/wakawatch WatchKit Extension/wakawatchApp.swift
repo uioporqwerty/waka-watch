@@ -6,7 +6,8 @@ struct wakawatchApp: App {
         WindowGroup {
             TabView {
                 SummaryView(totalDisplayTime: "4 mins")
-                ProfileView(user: User.mockUsers[0])
+                LeaderboardView(leaderboardRecords: LeaderboardRecord.mockLeaderboard)
+                ProfileView(user: User.mockUsers[0], rank: 1)
             }
         }
     }
