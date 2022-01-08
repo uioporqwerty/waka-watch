@@ -5,7 +5,7 @@ struct wakawatchApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                AuthorizationView()
+                ProfileView(user: User.mockUsers[0])
             }
         }
     }

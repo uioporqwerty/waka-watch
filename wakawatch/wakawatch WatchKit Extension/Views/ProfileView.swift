@@ -5,13 +5,22 @@ struct ProfileView: View {
     
     var body: some View {
         VStack {
-            if (user.photoUrl != nil) {
-                AsyncImage(url: user.photoUrl)
-            }
             Text(user.displayName)
-            Text(user.location)
-            Text("Joined: \(user.createdDate)")
+            
+            if (user.location != "") {
+                Text(user.location)
+            }
+            
             Text("Rank: \(user.publicLeaderboardRank)")
+                .padding(EdgeInsets(top: 4, leading: 0, bottom: 0, trailing: 0))
+            
+            Text("Joined: \(user.createdDate.formatted(date: .abbreviated, time: .omitted))")
+                .padding(EdgeInsets(top: 4, leading: 0, bottom: 0, trailing: 0))
+            
+            if (user.website != nil) {
+                Link("Website", destination: user.website!)
+                    .padding(EdgeInsets(top: 4, leading: 0, bottom: 0, trailing: 0))
+            }
         }
     }
 }
