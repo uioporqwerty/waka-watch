@@ -5,7 +5,7 @@ struct wakawatchApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                ProfileView(user: User.mockUsers[0])
+                SummaryView(totalDisplayTime: "4 mins")
             }
         }
     }
