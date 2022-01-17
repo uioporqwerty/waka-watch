@@ -2,15 +2,13 @@ import SwiftUI
 import WatchConnectivity
 
 struct ConnectView: View {
-    @State var authorized: Bool
+    @AppStorage(DefaultsKeys.authorized) private var authorized = false
     
     var body: some View {
         Group {
             if !authorized {
                 VStack {
-                    Button("Connect to WakaTime", action: {
-                        WKInterfaceController.open
-                    })
+                    Text("Open the Waka Watch app on your primary device to connect to WakaTime.")
                 }
             }
             else {
@@ -26,7 +24,6 @@ struct ConnectView: View {
 
 struct ConnectView_Previews: PreviewProvider {
     static var previews: some View {
-        let defaults = UserDefaults.standard
-        ConnectView(authorized: defaults.bool(forKey: DefaultsKeys.authorized))
+        ConnectView()
     }
 }
