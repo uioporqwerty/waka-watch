@@ -45,7 +45,7 @@ struct AuthenticationView: View {
                                         let defaults = UserDefaults.standard
                                         authorized = true
                                         startingWebAuthenticationSession = false
-                                        defaults.set(true, forKey: DefaultsKeys.authorized)
+                                        ConnectivityService.shared.send(authorized: true)
                                         defaults.set(accessTokenResponse.access_token, forKey: DefaultsKeys.accessToken) //TODO: Store securely
                                     }
                             }
@@ -57,7 +57,10 @@ struct AuthenticationView: View {
             }
             else {
                 VStack {
-                    Text("Authenticated with WakaTime.")
+                    Button("Authenticated with WakaTime.", action: {
+                        ConnectivityService.shared.send(authorized: true)
+                        
+                    })
                 }
             }
         }
