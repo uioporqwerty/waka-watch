@@ -1,14 +1,14 @@
 //
-//  wakawatchTests.swift
-//  wakawatchTests
+//  wakawatch_WatchKit_AppTests.swift
+//  wakawatch WatchKit AppTests
 //
 //  Created by Nitish Sachar on 1/16/22.
 //
 
 import XCTest
-@testable import wakawatch
+@testable import wakawatch_WatchKit_Extension
 
-class wakawatchTests: XCTestCase {
+class wakawatch_WatchKit_AppTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

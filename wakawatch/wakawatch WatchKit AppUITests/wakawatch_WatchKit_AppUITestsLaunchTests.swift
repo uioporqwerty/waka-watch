@@ -1,13 +1,13 @@
 //
-//  wakawatchUITestsLaunchTests.swift
-//  wakawatchUITests
+//  wakawatch_WatchKit_AppUITestsLaunchTests.swift
+//  wakawatch WatchKit AppUITests
 //
 //  Created by Nitish Sachar on 1/16/22.
 //
 
 import XCTest
 
-class wakawatchUITestsLaunchTests: XCTestCase {
+class wakawatch_WatchKit_AppUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

@@ -5,9 +5,9 @@
         "package": "BetterSafariView",
         "repositoryURL": "https://github.com/stleamist/BetterSafariView.git",
         "state": {
-          "branch": null,
-          "revision": "be7248720af18c57c7a1348b20f6212379b28c6b",
-          "version": "2.4.0"
+          "branch": "main",
+          "revision": "9c051d20dbb50fa61d014d87b4ab6c5504408a73",
+          "version": null
         }
       }
     ]
