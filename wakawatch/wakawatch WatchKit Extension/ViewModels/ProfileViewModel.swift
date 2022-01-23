@@ -3,7 +3,7 @@ import Foundation
 
 final class ProfileViewModel: NSObject, ObservableObject {
     @Published var id: UUID?
-    @Published var displayName: String?
+    @Published var displayName = "Anonymous User"
     @Published var photoUrl: URL?
     @Published var website: URL?
     @Published var createdDate: Date?

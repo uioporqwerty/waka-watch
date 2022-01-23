@@ -10,7 +10,7 @@ struct ProfileView: View {
     
     var body: some View {
         VStack {
-            Text(profileViewModel.displayName ?? "")
+            Text(profileViewModel.displayName)
             
             if (profileViewModel.location != nil) {
                 Text(profileViewModel.location ?? "")
@@ -23,11 +23,6 @@ struct ProfileView: View {
             
             if (profileViewModel.createdDate != nil) {
                 Text("Joined: \(profileViewModel.createdDate!.formatted(date: .abbreviated, time: .omitted))")
-                    .padding(EdgeInsets(top: 4, leading: 0, bottom: 0, trailing: 0))
-            }
-            
-            if (profileViewModel.website != nil) {
-                Link("Website", destination: profileViewModel.website!)
                     .padding(EdgeInsets(top: 4, leading: 0, bottom: 0, trailing: 0))
             }
         }

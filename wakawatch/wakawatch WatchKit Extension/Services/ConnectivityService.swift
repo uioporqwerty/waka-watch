@@ -122,11 +122,9 @@ extension ConnectivityService: WCSessionDelegate {
         
         self.authorized = authorized
         
-        #if os(watchOS)
-            let defaults = UserDefaults.standard
-            defaults.set(accessToken, forKey: DefaultsKeys.accessToken)
-            defaults.set(true, forKey: DefaultsKeys.authorized)
-        #endif
+        let defaults = UserDefaults.standard
+        defaults.set(accessToken, forKey: DefaultsKeys.accessToken)
+        defaults.set(true, forKey: DefaultsKeys.authorized)
     }
 
     #if os(iOS)

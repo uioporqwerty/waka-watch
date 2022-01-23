@@ -14,8 +14,15 @@ struct AuthenticationView: View {
         print(ConnectivityService.shared)
     }
     
+    func isAuthorized() -> Bool {
+        let defaults = UserDefaults.standard
+        let isStoredAuthorized = defaults.bool(forKey: DefaultsKeys.authorized)
+        print("isStoredAuthorized \(isStoredAuthorized)")
+        return self.authorized || isStoredAuthorized
+    }
+    
     var body: some View {
-        if !self.authorized {
+        if !isAuthorized() {
             VStack {
                 Button("Connect to WakaTime", action: { self.startingWebAuthenticationSession = true })
                     .webAuthenticationSession(isPresented: $startingWebAuthenticationSession) {
@@ -46,10 +53,14 @@ struct AuthenticationView: View {
                             if let data = data, let response = String(data: data, encoding: .utf8) {
                                     let accessTokenResponse: AccessTokenResponse = try! JSONDecoder().decode(AccessTokenResponse.self, from: response.data(using: .utf8)!)
                                 
-                                    startingWebAuthenticationSession = false
+                                    self.startingWebAuthenticationSession = false
                                     self.authorized = true
                                     self.accessTokenResponse = accessTokenResponse
                                     
+                                    let defaults = UserDefaults.standard
+                                    defaults.set(accessTokenResponse.access_token, forKey: DefaultsKeys.accessToken)
+                                    defaults.set(true, forKey: DefaultsKeys.authorized)
+                                
                                     ConnectivityService.shared.sendAuthorizationMessage(accessTokenResponse: accessTokenResponse, delivery: .highPriority)
                                     ConnectivityService.shared.sendAuthorizationMessage(accessTokenResponse: accessTokenResponse, delivery: .guaranteed)
                                     ConnectivityService.shared.sendAuthorizationMessage(accessTokenResponse: accessTokenResponse, delivery: .failable)
@@ -63,7 +74,7 @@ struct AuthenticationView: View {
         }
         else {
             VStack {
-                Text("Authenticated with WakaTime.")
+                Text("Connected with WakaTime.")
             }
         }
     }
