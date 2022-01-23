@@ -127,6 +127,7 @@
 		6B8A485F279D1F8F0071566F /* LeaderboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardViewModel.swift; sourceTree = "<group>"; };
 		6B9E1111279C945800F4DC93 /* SummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewModel.swift; sourceTree = "<group>"; };
 		6B9E1114279CA29100F4DC93 /* SummaryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryResponse.swift; sourceTree = "<group>"; };
+		6BBC1A39279DFACF00FFEBFF /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		6BED9A6A2795154A005646C3 /* Waka Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Waka Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BED9A6D2795154A005646C3 /* wakawatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wakawatchApp.swift; sourceTree = "<group>"; };
 		6BED9A712795154C005646C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -331,6 +332,7 @@
 				6BED9AA92795154F005646C3 /* Info.plist */,
 				6BED9AA62795154F005646C3 /* Preview Content */,
 				6BED9AEA27952197005646C3 /* DefaultKeys.swift */,
+				6BBC1A39279DFACF00FFEBFF /* Config.xcconfig */,
 			);
 			path = "wakawatch WatchKit Extension";
 			sourceTree = "<group>";
@@ -768,6 +770,7 @@
 /* Begin XCBuildConfiguration section */
 		6BED9AC02795154F005646C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6BBC1A39279DFACF00FFEBFF /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -827,6 +830,7 @@
 		};
 		6BED9AC12795154F005646C3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6BBC1A39279DFACF00FFEBFF /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -1004,6 +1008,7 @@
 				DEVELOPMENT_TEAM = 4V8V3L4FYS;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = wakawatch/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1035,6 +1040,7 @@
 				DEVELOPMENT_TEAM = 4V8V3L4FYS;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = wakawatch/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

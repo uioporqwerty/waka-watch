@@ -6,15 +6,5 @@
 	<string>$(CLIENT_ID)</string>
 	<key>CLIENT_SECRET</key>
 	<string>$(CLIENT_SECRET)</string>
-	<key>NSExtension</key>
-	<dict>
-		<key>NSExtensionAttributes</key>
-		<dict>
-			<key>WKAppBundleIdentifier</key>
-			<string>app.wakawatch.watchkitapp</string>
-		</dict>
-		<key>NSExtensionPointIdentifier</key>
-		<string>com.apple.watchkit</string>
-	</dict>
 </dict>
 </plist>

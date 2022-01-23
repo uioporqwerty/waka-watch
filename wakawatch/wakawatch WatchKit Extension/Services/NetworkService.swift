@@ -2,13 +2,15 @@ import Foundation
 
 final class NetworkService {
     private var accessToken: String?
+    private let clientId: String?
+    private let clientSecret: String?
     private var baseUrl = "https://wakatime.com/api/v1"
-    private let clientId = "59wzFIXtADCSV7Kff7Ck4aha"
-    private let clientSecret = "sec_c99U07N5CM91cWjDCu2OQqO8bpqUiwOlGWjnucUVq6oBuc6ED7AipV7uYP8bHuvgBnnVZ8mEhElUByF8" //TODO: Store securely.
     
     init() {
         let defaults = UserDefaults.standard
         self.accessToken = defaults.string(forKey: DefaultsKeys.accessToken)
+        self.clientId = Bundle.main.infoDictionary?["CLIENT_ID"] as? String
+        self.clientSecret = Bundle.main.infoDictionary?["CLIENT_SECRET"] as? String
     }
     
     func getSummaryData() async throws -> SummaryResponse  {
