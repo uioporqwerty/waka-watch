@@ -1,25 +1,31 @@
 import SwiftUI
 
 struct ProfileView: View {
-    var user: User
-    var rank: Int
+    @ObservedObject var profileViewModel: ProfileViewModel
+    
+    init() {
+        self.profileViewModel = ProfileViewModel()
+        self.profileViewModel.getProfile(userId: nil)
+    }
     
     var body: some View {
         VStack {
-            Text(user.displayName)
+            Text(profileViewModel.displayName ?? "")
             
-            if (user.location != "") {
-                Text(user.location)
+            if (profileViewModel.location != nil) {
+                Text(profileViewModel.location ?? "")
             }
             
-            Text("Rank: \(rank)")
-                .padding(EdgeInsets(top: 4, leading: 0, bottom: 0, trailing: 0))
+//            Text("Rank: \(rank)")
+//                .padding(EdgeInsets(top: 4, leading: 0, bottom: 0, trailing: 0))
             
-            Text("Joined: \(user.createdDate.formatted(date: .abbreviated, time: .omitted))")
-                .padding(EdgeInsets(top: 4, leading: 0, bottom: 0, trailing: 0))
+            if (profileViewModel.createdDate != nil) {
+                Text("Joined: \(profileViewModel.createdDate!.formatted(date: .abbreviated, time: .omitted))")
+                    .padding(EdgeInsets(top: 4, leading: 0, bottom: 0, trailing: 0))
+            }
             
-            if (user.website != nil) {
-                Link("Website", destination: user.website!)
+            if (profileViewModel.website != nil) {
+                Link("Website", destination: profileViewModel.website!)
                     .padding(EdgeInsets(top: 4, leading: 0, bottom: 0, trailing: 0))
             }
         }
@@ -28,6 +34,6 @@ struct ProfileView: View {
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView(user: User.mockUsers[0], rank: 1)
+        ProfileView()
     }
 }

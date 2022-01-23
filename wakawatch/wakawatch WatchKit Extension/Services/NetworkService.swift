@@ -26,4 +26,24 @@ final class NetworkService {
         let summaryResponse = try JSONDecoder().decode(SummaryResponse.self, from: data)
         return summaryResponse
     }
+    
+    func getProfileData(userId: String?) async throws -> ProfileResponse {
+        var url = "\(baseUrl)/users/current"
+        if (userId != nil) {
+            url = "\(baseUrl)/users/\(userId!)"
+        }
+        
+        var urlComponents = URLComponents(string: url)!
+        urlComponents.queryItems = [
+            URLQueryItem(name: "client_secret", value: self.clientSecret),
+            URLQueryItem(name: "access_token", value: self.accessToken)
+        ]
+        
+        let request = URLRequest(url: urlComponents.url!)
+        
+        let (data, _) = try await URLSession.shared.data(from: request.url!)
+        
+        let profileResponse = try JSONDecoder().decode(ProfileResponse.self, from: data)
+        return profileResponse
+    }
 }

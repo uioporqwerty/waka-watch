@@ -3,13 +3,18 @@ import Foundation
 
 final class SummaryViewModel: NSObject, ObservableObject {
     @Published var totalDisplayTime: String = ""
-    private var networkService = NetworkService()
+    
+    private var networkService: NetworkService
+    
+    override init() {
+        self.networkService = NetworkService()
+    }
     
     func getSummary() {
         Task {
             do {
                 let summaryData = try await networkService.getSummaryData()
-                print(summaryData)
+                
                 DispatchQueue.main.async {
                     self.totalDisplayTime = summaryData.cummulative_total.text
                 }

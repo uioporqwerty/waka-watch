@@ -19,8 +19,8 @@ struct ConnectView: View {
         else {
             TabView {
                 SummaryView()
-                LeaderboardView(leaderboardRecords: LeaderboardRecord.mockLeaderboard)
-                ProfileView(user: User.mockUsers[0], rank: 1)
+                LeaderboardView()
+                ProfileView()
             }
         }
     }
