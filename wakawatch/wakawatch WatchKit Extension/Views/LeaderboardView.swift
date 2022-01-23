@@ -1,6 +1,13 @@
 import SwiftUI
 
 struct LeaderboardView: View {
+    @ObservedObject var leaderboardViewModel: LeaderboardViewModel
+    
+    init() {
+        self.leaderboardViewModel = LeaderboardViewModel()
+        self.leaderboardViewModel.getPublicLeaderboard(page: nil)
+    }
+    
 //    var leaderboardRecords: [LeaderboardRecord]
 //    @State var selectedRecord: LeaderboardRecord? = nil
     

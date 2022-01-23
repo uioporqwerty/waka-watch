@@ -46,4 +46,25 @@ final class NetworkService {
         let profileResponse = try JSONDecoder().decode(ProfileResponse.self, from: data)
         return profileResponse
     }
+    
+    func getPublicLeaderboard(page: Int?) async throws -> LeaderboardResponse {
+        var urlComponents = URLComponents(string: "\(baseUrl)/leaders")!
+        var urlQueryItems = [
+            URLQueryItem(name: "client_secret", value: self.clientSecret),
+            URLQueryItem(name: "access_token", value: self.accessToken)
+        ]
+        
+        if (page != nil) {
+            urlQueryItems.append(URLQueryItem(name: "page", value: String(page!)))
+        }
+        
+        urlComponents.queryItems = urlQueryItems
+        
+        let request = URLRequest(url: urlComponents.url!)
+        
+        let (data, _) = try await URLSession.shared.data(from: request.url!)
+        
+        let leaderboardResponse = try JSONDecoder().decode(LeaderboardResponse.self, from: data)
+        return leaderboardResponse
+    }
 }

@@ -8,6 +8,7 @@ final class ProfileViewModel: NSObject, ObservableObject {
     @Published var website: URL?
     @Published var createdDate: Date?
     @Published var location: String?
+    @Published var rank: Int?
     
     private var networkService: NetworkService
     
@@ -19,7 +20,8 @@ final class ProfileViewModel: NSObject, ObservableObject {
         Task {
             do {
                 let userProfileData = try await networkService.getProfileData(userId: userId)
-                
+                let leaderboardData = try await networkService.getPublicLeaderboard(page: nil
+                )
                 DispatchQueue.main.async {
                     self.id = UUID(uuidString: userProfileData.data.id)
                     self.displayName = userProfileData.data.display_name
@@ -27,6 +29,7 @@ final class ProfileViewModel: NSObject, ObservableObject {
                     self.website = URL(string: userProfileData.data.website)
                     self.createdDate = DateUtility.getDate(date: userProfileData.created_at ?? "")
                     self.location = userProfileData.data.city?.title
+                    self.rank = leaderboardData.current_user.rank
                 }
             } catch {
                 print("Failed to get profile with error: \(error)")
