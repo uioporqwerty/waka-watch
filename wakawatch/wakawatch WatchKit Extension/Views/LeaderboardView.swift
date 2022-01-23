@@ -8,18 +8,22 @@ struct LeaderboardView: View {
         self.leaderboardViewModel.getPublicLeaderboard(page: nil)
     }
     
-//    var leaderboardRecords: [LeaderboardRecord]
-//    @State var selectedRecord: LeaderboardRecord? = nil
-    
     var body: some View {
         NavigationView {
             ScrollView(.vertical, showsIndicators: false) {
-                VStack {
-//                    ForEach (leaderboardRecords) { leaderboardRecord in
-//                        NavigationLink(destination: ProfileView(user: leaderboardRecord.user, rank: leaderboardRecord.rank)) {
-//                            Text("\(leaderboardRecord.rank).\(leaderboardRecord.user.displayName)")
-//                        }
-//                    }
+                ScrollViewReader { value in
+                    ForEach (self.leaderboardViewModel.records) { record in
+                        NavigationLink(destination: ProfileView(user: record.user)) {
+                            Text("\(String(record.rank)). \(record.displayName)")
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .multilineTextAlignment(.leading)
+                        }.id(record.id)
+                    }
+                    .onAppear {
+                        if (self.leaderboardViewModel.currentUserRecord != nil) {
+                            value.scrollTo(self.leaderboardViewModel.currentUserRecord!.id, anchor: .center)
+                        }
+                    }
                 }
             }
         }

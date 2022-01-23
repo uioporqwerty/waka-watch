@@ -20,7 +20,7 @@ struct ConnectView: View {
             TabView {
                 SummaryView()
                 LeaderboardView()
-                ProfileView()
+                ProfileView(user: nil)
             }
         }
     }

@@ -3,9 +3,9 @@ import SwiftUI
 struct ProfileView: View {
     @ObservedObject var profileViewModel: ProfileViewModel
     
-    init() {
+    init(user: UserData?) {
         self.profileViewModel = ProfileViewModel()
-        self.profileViewModel.getProfile(userId: nil)
+        self.profileViewModel.getProfile(user: user)
     }
     
     var body: some View {
@@ -36,6 +36,6 @@ struct ProfileView: View {
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView()
+        ProfileView(user: nil)
     }
 }
