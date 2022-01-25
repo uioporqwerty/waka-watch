@@ -6,6 +6,10 @@
 	<string>$(CLIENT_ID)</string>
 	<key>CLIENT_SECRET</key>
 	<string>$(CLIENT_SECRET)</string>
+	<key>ENVIRONMENT</key>
+	<string>$(ENVIRONMENT)</string>
+	<key>ROLLBAR_ACCESS_TOKEN</key>
+	<string>$(ROLLBAR_ACCESS_TOKEN)</string>
 	<key>NSExtension</key>
 	<dict>
 		<key>NSExtensionAttributes</key>
