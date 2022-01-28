@@ -26,7 +26,11 @@ struct AuthenticationView: View {
     var body: some View {
         if !isAuthorized() {
             VStack {
-                Button("Connect to WakaTime", action: { self.startingWebAuthenticationSession = true })
+                Button(action: { self.startingWebAuthenticationSession = true }) {
+                    Text("Connect to WakaTime")
+                        .frame(maxWidth: .infinity, minHeight: 44)
+                }
+                    .buttonStyle(.borderedProminent)
                     .webAuthenticationSession(isPresented: $startingWebAuthenticationSession) {
                     WebAuthenticationSession(
                         url: URL(string: "https://wakatime.com/oauth/authorize?scope=email%2Cread_stats%2Cread_logged_time&response_type=code&redirect_uri=wakawatch%3A%2F%2Foauth-callback&client_id=\(self.clientId!)")!,
@@ -76,7 +80,9 @@ struct AuthenticationView: View {
         }
         else {
             VStack {
-                Text("Connected with WakaTime.")
+                Text("Connected with WakaTime. Open Waka Watch on your Apple Watch.")
+                    .multilineTextAlignment(.center)
+                    .lineSpacing(8)
             }
         }
     }

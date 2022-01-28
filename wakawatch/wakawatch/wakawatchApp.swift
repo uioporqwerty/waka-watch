@@ -2,7 +2,6 @@ import SwiftUI
 
 @main
 struct wakawatchApp: App {
-    
     init() {
         #if !DEBUG
             let apmService = RollbarAPMService()
@@ -12,7 +11,7 @@ struct wakawatchApp: App {
     
     var body: some Scene {
         WindowGroup {
-            AuthenticationView()
+            SplashView()
         }
     }
 }
