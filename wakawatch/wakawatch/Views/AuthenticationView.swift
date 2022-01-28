@@ -28,7 +28,7 @@ struct AuthenticationView: View {
             VStack {
                 Button(action: { self.startingWebAuthenticationSession = true }) {
                     Text("Connect to WakaTime")
-                        .frame(maxWidth: .infinity, minHeight: 44)
+                        .frame(maxWidth: .infinity, minHeight: 34)
                 }
                     .buttonStyle(.borderedProminent)
                     .webAuthenticationSession(isPresented: $startingWebAuthenticationSession) {
@@ -83,6 +83,20 @@ struct AuthenticationView: View {
                 Text("Connected with WakaTime. Open Waka Watch on your Apple Watch.")
                     .multilineTextAlignment(.center)
                     .lineSpacing(8)
+                Button(action: {
+                    guard let accessTokenResponse = self.accessTokenResponse else {
+                        return
+                    }
+                    
+                    ConnectivityService.shared.sendAuthorizationMessage(accessTokenResponse: accessTokenResponse, delivery: .highPriority)
+                    ConnectivityService.shared.sendAuthorizationMessage(accessTokenResponse: accessTokenResponse, delivery: .guaranteed)
+                    ConnectivityService.shared.sendAuthorizationMessage(accessTokenResponse: accessTokenResponse, delivery: .failable)
+                })
+                {
+                    Text("Pair with Apple Watch again")
+                        .frame(minHeight: 34)
+                }
+                .buttonStyle(.borderedProminent)
             }
         }
     }
