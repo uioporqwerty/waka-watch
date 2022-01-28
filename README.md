@@ -1,6 +1,6 @@
 # Waka Watch
 
-Waka Watch is an iOS and Apple Watch application for (Wakatime)[https://wakatime.com]. Wakatime provides metrics about your coding activity.
+Waka Watch is an iOS and Apple Watch application for [Wakatime](https://wakatime.com). Wakatime provides metrics about your coding activity.
 
 # Screenshots
 
