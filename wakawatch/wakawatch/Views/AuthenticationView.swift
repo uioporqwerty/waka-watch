@@ -4,7 +4,8 @@ import BetterSafariView
 let callbackURLScheme = "wakawatch"
 
 struct AuthenticationView: View {
-    @State private var authorized = false
+    @AppStorage(DefaultsKeys.authorized) private var authorized = false
+    @ObservedObject private var connectivityService: ConnectivityService
     @State private var startingWebAuthenticationSession = false
     @State private var accessTokenResponse: AccessTokenResponse?
     
@@ -12,19 +13,13 @@ struct AuthenticationView: View {
     private var clientSecret: String?
     
     init() {
-        print(ConnectivityService.shared)
+        self.connectivityService = ConnectivityService.shared
         self.clientId = Bundle.main.infoDictionary?["CLIENT_ID"] as? String
         self.clientSecret = Bundle.main.infoDictionary?["CLIENT_SECRET"] as? String
     }
     
-    func isAuthorized() -> Bool {
-        let defaults = UserDefaults.standard
-        let isStoredAuthorized = defaults.bool(forKey: DefaultsKeys.authorized)
-        return self.authorized || isStoredAuthorized
-    }
-    
     var body: some View {
-        if !isAuthorized() {
+        if !(connectivityService.authorized || self.authorized) {
             VStack {
                 Button(action: { self.startingWebAuthenticationSession = true }) {
                     Text("Connect to WakaTime")
@@ -60,16 +55,19 @@ struct AuthenticationView: View {
                                     let accessTokenResponse: AccessTokenResponse = try! JSONDecoder().decode(AccessTokenResponse.self, from: response.data(using: .utf8)!)
                                 
                                     self.startingWebAuthenticationSession = false
-                                    self.authorized = true
                                     self.accessTokenResponse = accessTokenResponse
                                     
                                     let defaults = UserDefaults.standard
                                     defaults.set(accessTokenResponse.access_token, forKey: DefaultsKeys.accessToken)
                                     defaults.set(true, forKey: DefaultsKeys.authorized)
-                                
-                                    ConnectivityService.shared.sendAuthorizationMessage(accessTokenResponse: accessTokenResponse, delivery: .highPriority)
-                                    ConnectivityService.shared.sendAuthorizationMessage(accessTokenResponse: accessTokenResponse, delivery: .guaranteed)
-                                    ConnectivityService.shared.sendAuthorizationMessage(accessTokenResponse: accessTokenResponse, delivery: .failable)
+                                    
+                                    let message: [String: Any] = [
+                                        DefaultsKeys.authorized: true,
+                                        DefaultsKeys.accessToken: accessTokenResponse.access_token
+                                    ]
+                                    ConnectivityService.shared.sendMessage(message, delivery: .highPriority)
+                                    ConnectivityService.shared.sendMessage(message, delivery: .guaranteed)
+                                    ConnectivityService.shared.sendMessage(message, delivery: .failable)
                             }
                         }
                         task.resume()
@@ -88,9 +86,13 @@ struct AuthenticationView: View {
                         return
                     }
                     
-                    ConnectivityService.shared.sendAuthorizationMessage(accessTokenResponse: accessTokenResponse, delivery: .highPriority)
-                    ConnectivityService.shared.sendAuthorizationMessage(accessTokenResponse: accessTokenResponse, delivery: .guaranteed)
-                    ConnectivityService.shared.sendAuthorizationMessage(accessTokenResponse: accessTokenResponse, delivery: .failable)
+                    let message: [String: Any] = [
+                        ConnectivityMessageKeys.authorized: true,
+                        ConnectivityMessageKeys.accessToken: accessTokenResponse.access_token
+                    ]
+                    ConnectivityService.shared.sendMessage(message, delivery: .highPriority)
+                    ConnectivityService.shared.sendMessage(message, delivery: .guaranteed)
+                    ConnectivityService.shared.sendMessage(message, delivery: .failable)
                 })
                 {
                     Text("Pair with Apple Watch again")

@@ -29,7 +29,7 @@ final class NetworkService {
         return summaryResponse
     }
     
-    func getProfileData(userId: String?) async throws -> ProfileResponse {
+    func getProfileData(userId: String?) async throws -> ProfileResponse? {
         var url = "\(baseUrl)/users/current"
         if (userId != nil) {
             url = "\(baseUrl)/users/\(userId!)"
@@ -42,11 +42,17 @@ final class NetworkService {
         ]
         
         let request = URLRequest(url: urlComponents.url!)
+        do {
+            let (data, _) = try await URLSession.shared.data(from: request.url!)
+            
+            let profileResponse = try JSONDecoder().decode(ProfileResponse.self, from: data)
+            
+            return profileResponse
+        } catch {
+            print("error fetching profile data: \(error)")
+        }
         
-        let (data, _) = try await URLSession.shared.data(from: request.url!)
-        
-        let profileResponse = try JSONDecoder().decode(ProfileResponse.self, from: data)
-        return profileResponse
+        return nil
     }
     
     func getPublicLeaderboard(page: Int?) async throws -> LeaderboardResponse {
@@ -68,5 +74,18 @@ final class NetworkService {
         
         let leaderboardResponse = try JSONDecoder().decode(LeaderboardResponse.self, from: data)
         return leaderboardResponse
+    }
+    
+    func disconnect() async throws {
+        let url = "https://wakatime.com/oauth/revoke"
+        var urlComponents = URLComponents(string: url)!
+        urlComponents.queryItems = [
+            URLQueryItem(name: "client_secret", value: self.clientSecret),
+            URLQueryItem(name: "access_token", value: self.accessToken),
+            URLQueryItem(name: "token", value: self.accessToken)
+        ]
+        
+        let request = URLRequest(url: urlComponents.url!)
+        let (_, _) = try await URLSession.shared.data(from: request.url!)
     }
 }

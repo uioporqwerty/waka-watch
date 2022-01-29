@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B23142A27A59B8700477259 /* ConnectivityMessageKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B23142927A59B8700477259 /* ConnectivityMessageKeys.swift */; };
+		6B23142B27A59B8700477259 /* ConnectivityMessageKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B23142927A59B8700477259 /* ConnectivityMessageKeys.swift */; };
 		6B29476B279642EF00311E1E /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B29476A279642EF00311E1E /* NetworkService.swift */; };
 		6B3440DC279C5E1C006A5C27 /* Delivery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3440DB279C5E1C006A5C27 /* Delivery.swift */; };
 		6B3440DD279C5E1C006A5C27 /* Delivery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3440DB279C5E1C006A5C27 /* Delivery.swift */; };
@@ -19,6 +21,9 @@
 		6B9E1115279CA29100F4DC93 /* SummaryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9E1114279CA29100F4DC93 /* SummaryResponse.swift */; };
 		6BA78C8027A46CF0005149BC /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA78C7F27A46CF0005149BC /* SplashView.swift */; };
 		6BA78C8227A46F36005149BC /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA78C8127A46F36005149BC /* ActivityIndicator.swift */; };
+		6BA78C8527A4826C005149BC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA78C8427A4826C005149BC /* SettingsView.swift */; };
+		6BA78C8B27A487DC005149BC /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA78C8A27A487DC005149BC /* SettingsViewModel.swift */; };
+		6BA78C9027A492FB005149BC /* AsyncButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA78C8F27A492FB005149BC /* AsyncButton.swift */; };
 		6BD52EF6279FCB1300247BFB /* APMService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD52EF5279FCB1300247BFB /* APMService.swift */; };
 		6BD52EF7279FCB1300247BFB /* APMService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD52EF5279FCB1300247BFB /* APMService.swift */; };
 		6BD52EF9279FCB3400247BFB /* RollbarAPMService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD52EF8279FCB3300247BFB /* RollbarAPMService.swift */; };
@@ -130,6 +135,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6B23142927A59B8700477259 /* ConnectivityMessageKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivityMessageKeys.swift; sourceTree = "<group>"; };
 		6B29476A279642EF00311E1E /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		6B3440DB279C5E1C006A5C27 /* Delivery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delivery.swift; sourceTree = "<group>"; };
 		6B8A4856279D03780071566F /* ProfileResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileResponse.swift; sourceTree = "<group>"; };
@@ -141,6 +147,9 @@
 		6B9E1114279CA29100F4DC93 /* SummaryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryResponse.swift; sourceTree = "<group>"; };
 		6BA78C7F27A46CF0005149BC /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		6BA78C8127A46F36005149BC /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		6BA78C8427A4826C005149BC /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		6BA78C8A27A487DC005149BC /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		6BA78C8F27A492FB005149BC /* AsyncButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncButton.swift; sourceTree = "<group>"; };
 		6BBC1A39279DFACF00FFEBFF /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		6BD52EF5279FCB1300247BFB /* APMService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APMService.swift; sourceTree = "<group>"; };
 		6BD52EF8279FCB3300247BFB /* RollbarAPMService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollbarAPMService.swift; sourceTree = "<group>"; };
@@ -249,6 +258,7 @@
 				6B9E1111279C945800F4DC93 /* SummaryViewModel.swift */,
 				6B8A4858279D05060071566F /* ProfileViewModel.swift */,
 				6B8A485F279D1F8F0071566F /* LeaderboardViewModel.swift */,
+				6BA78C8A27A487DC005149BC /* SettingsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -262,6 +272,23 @@
 				6B8A485D279D1A2C0071566F /* LeaderboardResponse.swift */,
 			);
 			path = "API Responses";
+			sourceTree = "<group>";
+		};
+		6BA78C8627A4856F005149BC /* Logging */ = {
+			isa = PBXGroup;
+			children = (
+				6BD52F17279FD03900247BFB /* LoggingService.swift */,
+				6BD52F1A279FD07300247BFB /* RollbarLoggingService.swift */,
+			);
+			path = Logging;
+			sourceTree = "<group>";
+		};
+		6BA78C8E27A492ED005149BC /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				6BA78C8F27A492FB005149BC /* AsyncButton.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		6BED9A6127951549005646C3 = {
@@ -340,6 +367,7 @@
 		6BED9A9D2795154E005646C3 /* wakawatch WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				6BA78C8E27A492ED005149BC /* Components */,
 				6B8A485A279D080D0071566F /* Utilities */,
 				6B9E1110279C944B00F4DC93 /* ViewModels */,
 				6B3440DA279C5E0B006A5C27 /* Shared */,
@@ -352,6 +380,7 @@
 				6BED9AA92795154F005646C3 /* Info.plist */,
 				6BED9AA62795154F005646C3 /* Preview Content */,
 				6BED9AEA27952197005646C3 /* DefaultKeys.swift */,
+				6B23142927A59B8700477259 /* ConnectivityMessageKeys.swift */,
 				6BBC1A39279DFACF00FFEBFF /* Config.xcconfig */,
 			);
 			path = "wakawatch WatchKit Extension";
@@ -389,6 +418,7 @@
 				6BED9ADF27951F6D005646C3 /* ProfileView.swift */,
 				6BED9AE127951F80005646C3 /* SummaryView.swift */,
 				6BED9AE827952041005646C3 /* ConnectView.swift */,
+				6BA78C8427A4826C005149BC /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -421,12 +451,11 @@
 		6BED9AFE2795D1B3005646C3 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				6BA78C8627A4856F005149BC /* Logging */,
 				6BED9AFF2795D1C0005646C3 /* ConnectivityService.swift */,
 				6B29476A279642EF00311E1E /* NetworkService.swift */,
 				6BD52EF5279FCB1300247BFB /* APMService.swift */,
 				6BD52EF8279FCB3300247BFB /* RollbarAPMService.swift */,
-				6BD52F17279FD03900247BFB /* LoggingService.swift */,
-				6BD52F1A279FD07300247BFB /* RollbarLoggingService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -695,6 +724,7 @@
 			files = (
 				6BD52F1B279FD07300247BFB /* RollbarLoggingService.swift in Sources */,
 				6BA78C8027A46CF0005149BC /* SplashView.swift in Sources */,
+				6B23142A27A59B8700477259 /* ConnectivityMessageKeys.swift in Sources */,
 				6BED9AFC2795BBB5005646C3 /* AccessTokenResponse.swift in Sources */,
 				6BED9A6E2795154A005646C3 /* wakawatchApp.swift in Sources */,
 				6BA78C8227A46F36005149BC /* ActivityIndicator.swift in Sources */,
@@ -730,6 +760,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B8A4857279D03780071566F /* ProfileResponse.swift in Sources */,
+				6BA78C8527A4826C005149BC /* SettingsView.swift in Sources */,
+				6B23142B27A59B8700477259 /* ConnectivityMessageKeys.swift in Sources */,
 				6BED9ADE27951F21005646C3 /* LeaderboardView.swift in Sources */,
 				6BED9AE927952041005646C3 /* ConnectView.swift in Sources */,
 				6BD52EFA279FCB3400247BFB /* RollbarAPMService.swift in Sources */,
@@ -739,6 +771,7 @@
 				6BED9AE027951F6D005646C3 /* ProfileView.swift in Sources */,
 				6B3440DD279C5E1C006A5C27 /* Delivery.swift in Sources */,
 				6BED9AA12795154E005646C3 /* wakawatchApp.swift in Sources */,
+				6BA78C9027A492FB005149BC /* AsyncButton.swift in Sources */,
 				6B9E1115279CA29100F4DC93 /* SummaryResponse.swift in Sources */,
 				6BED9AEB27952197005646C3 /* DefaultKeys.swift in Sources */,
 				6BD52F1C279FD07300247BFB /* RollbarLoggingService.swift in Sources */,
@@ -751,6 +784,7 @@
 				6B8A485E279D1A2C0071566F /* LeaderboardResponse.swift in Sources */,
 				6B9E1112279C945800F4DC93 /* SummaryViewModel.swift in Sources */,
 				6B29476B279642EF00311E1E /* NetworkService.swift in Sources */,
+				6BA78C8B27A487DC005149BC /* SettingsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

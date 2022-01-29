@@ -9,10 +9,15 @@ struct SummaryView: View {
     }
     
     var body: some View {
-        VStack {
-            Text("Today")
-            Text(summaryViewModel.totalDisplayTime)
-                .padding(EdgeInsets(top: 16, leading: 0, bottom: 0, trailing: 0))
+        if !self.summaryViewModel.loaded {
+            ProgressView()
+        }
+        else {
+            VStack {
+                Text("Today")
+                Text(summaryViewModel.totalDisplayTime)
+                    .padding(EdgeInsets(top: 16, leading: 0, bottom: 0, trailing: 0))
+            }
         }
     }
 }

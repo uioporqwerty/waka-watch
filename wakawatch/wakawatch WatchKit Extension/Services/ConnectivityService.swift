@@ -19,40 +19,37 @@ final class ConnectivityService: NSObject, ObservableObject {
         print("WCSession activated")
     }
     
-    public func sendAuthorizationMessage(accessTokenResponse: AccessTokenResponse,
-                                         delivery: Delivery,
-                                         replyHandler: (([String: Any]) -> Void)? = nil,
-                                         errorHandler: ((Error) -> Void)? = nil) {
+    public func sendMessage(_ message: [String: Any],
+                            delivery: Delivery,
+                            replyHandler: (([String: Any]) -> Void)? = nil,
+                            errorHandler: ((Error) -> Void)? = nil) {
         guard canSendToPeer() else {
             print("cannot send to peer")
             return
         }
         
-        let authorizationInfo: [String: Any] = [
-            DefaultsKeys.authorized: true,
-            DefaultsKeys.accessToken: accessTokenResponse.access_token
-        ]
-        
         switch delivery {
             case .failable:
                 print("sending as failable")
                 WCSession.default.sendMessage(
-                  authorizationInfo,
+                  message,
                   replyHandler: optionalMainQueueDispatch(handler: replyHandler),
                   errorHandler: optionalMainQueueDispatch(handler: errorHandler)
                 )
             case .guaranteed:
                 print("sending as guaranteed")
-                WCSession.default.transferUserInfo(authorizationInfo)
+                WCSession.default.transferUserInfo(message)
             case .highPriority:
                 print("sending as high priority")
                 do {
-                    try WCSession.default.updateApplicationContext(authorizationInfo)
+                    try WCSession.default.updateApplicationContext(message)
                 } catch {
                     errorHandler?(error)
                 }
         }
     }
+    
+    
     
     typealias OptionalHandler<T> = ((T) -> Void)?
     
@@ -96,35 +93,37 @@ extension ConnectivityService: WCSessionDelegate {
     
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
         print("received immediate messager")
-        updateAuthorization(from: message)
+        setAuthenticationStatus(from: message)
     }
     
     func session(_ session: WCSession, didReceiveUserInfo userInfo: [String: Any] = [:]) {
         print("received user info message")
-        updateAuthorization(from: userInfo)
+        setAuthenticationStatus(from: userInfo)
     }
     
     func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String: Any]) {
         print("received application context message")
-        updateAuthorization(from: applicationContext)
+        setAuthenticationStatus(from: applicationContext)
     }
     
-    private func updateAuthorization(from dictionary: [String: Any]) {
-        guard let authorized = dictionary[DefaultsKeys.authorized] as? Bool else {
+    private func setAuthenticationStatus(from dictionary: [String: Any]) {
+        guard let authorized = dictionary[ConnectivityMessageKeys.authorized] as? Bool else {
             print("authorized key not found")
             return
         }
         
-        guard let accessToken = dictionary[DefaultsKeys.accessToken] as? String else {
+        guard let accessToken = dictionary[ConnectivityMessageKeys.accessToken] as? String else {
             print("access token key not found")
             return
         }
         
-        self.authorized = authorized
+        DispatchQueue.main.async {
+            self.authorized = authorized
+        }
         
         let defaults = UserDefaults.standard
         defaults.set(accessToken, forKey: DefaultsKeys.accessToken)
-        defaults.set(true, forKey: DefaultsKeys.authorized)
+        defaults.set(authorized, forKey: DefaultsKeys.authorized)
     }
 
     #if os(iOS)

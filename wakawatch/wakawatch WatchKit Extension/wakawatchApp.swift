@@ -11,7 +11,7 @@ struct wakawatchApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ConnectView(connectivityService: ConnectivityService.shared)
+            ConnectView(connectivityService: ConnectivityService.shared).navigationTitle(Text("WakaWatch"))
         }
     }
 }

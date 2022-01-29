@@ -2,7 +2,8 @@ import Combine
 import Foundation
 
 final class SummaryViewModel: NSObject, ObservableObject {
-    @Published var totalDisplayTime: String = ""
+    @Published var totalDisplayTime = ""
+    @Published var loaded = false
     
     private var networkService: NetworkService
     
@@ -17,6 +18,7 @@ final class SummaryViewModel: NSObject, ObservableObject {
                 
                 DispatchQueue.main.async {
                     self.totalDisplayTime = summaryData.cummulative_total.text
+                    self.loaded = true
                 }
             } catch {
                 print("Failed to get summary with error: \(error)")

@@ -9,22 +9,28 @@ struct LeaderboardView: View {
     }
     
     var body: some View {
-        NavigationView {
-            ScrollView(.vertical, showsIndicators: false) {
-                ScrollViewReader { value in
-                    ForEach (self.leaderboardViewModel.records) { record in
-                        NavigationLink(destination: ProfileView(user: record.user)) {
-                            Text("\(String(record.rank)). \(record.displayName)")
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                                .multilineTextAlignment(.leading)
-                        }.id(record.id)
-                    }
-                    .onAppear {
-                        if (self.leaderboardViewModel.currentUserRecord != nil) {
-                            value.scrollTo(self.leaderboardViewModel.currentUserRecord!.id, anchor: .center)
+        if !self.leaderboardViewModel.loaded {
+            ProgressView()
+        }
+        else {
+            //NavigationView { //TODO: Enable navigation view once Apple 8.3+ bug is fixed.
+                ScrollView(.vertical, showsIndicators: false) {
+                    ScrollViewReader { value in
+                        ForEach (self.leaderboardViewModel.records) { record in
+                            //NavigationLink(destination: ProfileView(user: record.user, loaded: true)) {
+                            Button(action: { }) {
+                                Text("\(String(record.rank)). \(record.displayName)")
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                    .multilineTextAlignment(.leading)
+                            }.id(record.id)
+                        }
+                        .onAppear {
+                            if (self.leaderboardViewModel.currentUserRecord != nil) {
+                                value.scrollTo(self.leaderboardViewModel.currentUserRecord!.id, anchor: .center)
+                            }
                         }
                     }
-                }
+               // }
             }
         }
     }

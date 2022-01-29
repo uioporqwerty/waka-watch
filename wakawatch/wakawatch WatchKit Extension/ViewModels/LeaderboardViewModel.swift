@@ -4,6 +4,7 @@ import Foundation
 final class LeaderboardViewModel: NSObject, ObservableObject {
     @Published var records: [LeaderboardRecord] = []
     @Published var currentUserRecord: LeaderboardRecord?
+    @Published var loaded = false
     
     private var networkService: NetworkService
     
@@ -24,6 +25,7 @@ final class LeaderboardViewModel: NSObject, ObservableObject {
                     }
                     self.records = leaderboardRecords
                     self.currentUserRecord = LeaderboardRecord(id: UUID(uuidString: leaderboardData.current_user.user.id)!, rank: leaderboardData.current_user.rank, displayName: leaderboardData.current_user.user.display_name, user: leaderboardData.current_user.user)
+                    self.loaded = true
                 }
             } catch {
                 print("Failed to get leaderboard with error: \(error)")

@@ -2,25 +2,32 @@ import SwiftUI
 
 struct ConnectView: View {
     @ObservedObject var connectivityService: ConnectivityService
-    @State var authorized = false
-    
-    func isAuthorized() -> Bool {
-        let defaults = UserDefaults.standard
-        let isStoredAuthorized = defaults.bool(forKey: DefaultsKeys.authorized)
-        return ConnectivityService.shared.authorized || isStoredAuthorized
-    }
+    @AppStorage(DefaultsKeys.authorized) var storageAuthorized = false
     
     var body: some View {
-        if !isAuthorized() {
-            VStack {
+        if !(connectivityService.authorized || storageAuthorized) {
+            NavigationView {
                 Text("Open the Waka Watch app on your primary device to connect to WakaTime.")
+                    .navigationTitle(Text("Waka Watch"))
+                    .navigationBarTitleDisplayMode(.inline)
             }
         }
         else {
-            TabView {
-                SummaryView()
-                LeaderboardView()
-                ProfileView(user: nil)
+            NavigationView {
+                TabView {
+                    SummaryView()
+                            .navigationTitle(Text("Summary"))
+                            .navigationBarTitleDisplayMode(.inline)
+                    LeaderboardView()
+                            .navigationTitle(Text("Leaderboard"))
+                            .navigationBarTitleDisplayMode(.inline)
+                    ProfileView(user: nil)
+                            .navigationTitle(Text("Profile"))
+                            .navigationBarTitleDisplayMode(.inline)
+                    SettingsView()
+                            .navigationTitle(Text("Settings"))
+                            .navigationBarTitleDisplayMode(.inline)
+                }
             }
         }
     }
