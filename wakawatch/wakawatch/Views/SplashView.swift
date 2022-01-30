@@ -9,7 +9,7 @@ struct SplashView: View {
             if self.isActive {
                 AuthenticationView()
             } else {
-                Text("Waka Watch")
+                Text(LocalizedStringKey("SplashView_Center_Text"))
                     .font(Font.largeTitle)
                 ActivityIndicator(shouldAnimate: self.$showActivityIndicator)
             }

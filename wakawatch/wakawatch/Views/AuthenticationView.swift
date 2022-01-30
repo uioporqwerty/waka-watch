@@ -22,7 +22,7 @@ struct AuthenticationView: View {
         if !(connectivityService.authorized || self.authorized) {
             VStack {
                 Button(action: { self.startingWebAuthenticationSession = true }) {
-                    Text("Connect to WakaTime")
+                    Text(LocalizedStringKey("AuthenticationView_Connect_Text"))
                         .frame(maxWidth: .infinity, minHeight: 34)
                 }
                     .buttonStyle(.borderedProminent)
@@ -78,7 +78,7 @@ struct AuthenticationView: View {
         }
         else {
             VStack {
-                Text("Connected with WakaTime. Open Waka Watch on your Apple Watch.")
+                Text(LocalizedStringKey("AuthenticationView_Connected_Text"))
                     .multilineTextAlignment(.center)
                     .lineSpacing(8)
                 Button(action: {
@@ -95,7 +95,7 @@ struct AuthenticationView: View {
                     ConnectivityService.shared.sendMessage(message, delivery: .failable)
                 })
                 {
-                    Text("Pair with Apple Watch again")
+                    Text(LocalizedStringKey("AuthenticationView_Pair_Button_Text"))
                         .frame(minHeight: 34)
                 }
                 .buttonStyle(.borderedProminent)

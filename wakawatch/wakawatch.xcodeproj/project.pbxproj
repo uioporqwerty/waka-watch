@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		6B23142A27A59B8700477259 /* ConnectivityMessageKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B23142927A59B8700477259 /* ConnectivityMessageKeys.swift */; };
 		6B23142B27A59B8700477259 /* ConnectivityMessageKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B23142927A59B8700477259 /* ConnectivityMessageKeys.swift */; };
+		6B23143027A6343300477259 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6B23142F27A6343300477259 /* Localizable.strings */; };
+		6B23143127A6343300477259 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6B23142F27A6343300477259 /* Localizable.strings */; };
 		6B29476B279642EF00311E1E /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B29476A279642EF00311E1E /* NetworkService.swift */; };
 		6B3440DC279C5E1C006A5C27 /* Delivery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3440DB279C5E1C006A5C27 /* Delivery.swift */; };
 		6B3440DD279C5E1C006A5C27 /* Delivery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3440DB279C5E1C006A5C27 /* Delivery.swift */; };
@@ -34,6 +36,8 @@
 		6BD52F1C279FD07300247BFB /* RollbarLoggingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD52F1A279FD07300247BFB /* RollbarLoggingService.swift */; };
 		6BD52F1E279FD1A300247BFB /* RollbarNotifier in Frameworks */ = {isa = PBXBuildFile; productRef = 6BD52F1D279FD1A300247BFB /* RollbarNotifier */; };
 		6BD52F20279FD1AA00247BFB /* RollbarNotifier in Frameworks */ = {isa = PBXBuildFile; productRef = 6BD52F1F279FD1AA00247BFB /* RollbarNotifier */; };
+		6BE5DE3C27A6402D0072FF0E /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE5DE3B27A6402D0072FF0E /* StringExtensions.swift */; };
+		6BE5DE3D27A6403D0072FF0E /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE5DE3B27A6402D0072FF0E /* StringExtensions.swift */; };
 		6BED9A6E2795154A005646C3 /* wakawatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BED9A6D2795154A005646C3 /* wakawatchApp.swift */; };
 		6BED9A722795154C005646C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BED9A712795154C005646C3 /* Assets.xcassets */; };
 		6BED9A752795154C005646C3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BED9A742795154C005646C3 /* Preview Assets.xcassets */; };
@@ -136,6 +140,7 @@
 
 /* Begin PBXFileReference section */
 		6B23142927A59B8700477259 /* ConnectivityMessageKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivityMessageKeys.swift; sourceTree = "<group>"; };
+		6B23142F27A6343300477259 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		6B29476A279642EF00311E1E /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		6B3440DB279C5E1C006A5C27 /* Delivery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delivery.swift; sourceTree = "<group>"; };
 		6B8A4856279D03780071566F /* ProfileResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileResponse.swift; sourceTree = "<group>"; };
@@ -155,6 +160,7 @@
 		6BD52EF8279FCB3300247BFB /* RollbarAPMService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollbarAPMService.swift; sourceTree = "<group>"; };
 		6BD52F17279FD03900247BFB /* LoggingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingService.swift; sourceTree = "<group>"; };
 		6BD52F1A279FD07300247BFB /* RollbarLoggingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollbarLoggingService.swift; sourceTree = "<group>"; };
+		6BE5DE3B27A6402D0072FF0E /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		6BED9A6A2795154A005646C3 /* Waka Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Waka Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BED9A6D2795154A005646C3 /* wakawatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wakawatchApp.swift; sourceTree = "<group>"; };
 		6BED9A712795154C005646C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -291,6 +297,14 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		6BE5DE3A27A6401F0072FF0E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6BE5DE3B27A6402D0072FF0E /* StringExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		6BED9A6127951549005646C3 = {
 			isa = PBXGroup;
 			children = (
@@ -367,6 +381,7 @@
 		6BED9A9D2795154E005646C3 /* wakawatch WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				6BE5DE3A27A6401F0072FF0E /* Extensions */,
 				6BA78C8E27A492ED005149BC /* Components */,
 				6B8A485A279D080D0071566F /* Utilities */,
 				6B9E1110279C944B00F4DC93 /* ViewModels */,
@@ -382,6 +397,7 @@
 				6BED9AEA27952197005646C3 /* DefaultKeys.swift */,
 				6B23142927A59B8700477259 /* ConnectivityMessageKeys.swift */,
 				6BBC1A39279DFACF00FFEBFF /* Config.xcconfig */,
+				6B23142F27A6343300477259 /* Localizable.strings */,
 			);
 			path = "wakawatch WatchKit Extension";
 			sourceTree = "<group>";
@@ -666,6 +682,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BED9A752795154C005646C3 /* Preview Assets.xcassets in Resources */,
+				6B23143027A6343300477259 /* Localizable.strings in Resources */,
 				6BED9A722795154C005646C3 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -697,6 +714,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BED9AA82795154F005646C3 /* Preview Assets.xcassets in Resources */,
+				6B23143127A6343300477259 /* Localizable.strings in Resources */,
 				6BED9AA52795154F005646C3 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -732,6 +750,7 @@
 				6BED9AF827954728005646C3 /* DefaultKeys.swift in Sources */,
 				6BED9AEE2795450F005646C3 /* AuthenticationView.swift in Sources */,
 				6B3440DC279C5E1C006A5C27 /* Delivery.swift in Sources */,
+				6BE5DE3D27A6403D0072FF0E /* StringExtensions.swift in Sources */,
 				6BD52EF6279FCB1300247BFB /* APMService.swift in Sources */,
 				6BD52F18279FD03900247BFB /* LoggingService.swift in Sources */,
 				6BD52EF9279FCB3400247BFB /* RollbarAPMService.swift in Sources */,
@@ -780,6 +799,7 @@
 				6BED9AE227951F80005646C3 /* SummaryView.swift in Sources */,
 				6BED9B012795D1C0005646C3 /* ConnectivityService.swift in Sources */,
 				6BD52F19279FD03900247BFB /* LoggingService.swift in Sources */,
+				6BE5DE3C27A6402D0072FF0E /* StringExtensions.swift in Sources */,
 				6B8A4859279D05060071566F /* ProfileViewModel.swift in Sources */,
 				6B8A485E279D1A2C0071566F /* LeaderboardResponse.swift in Sources */,
 				6B9E1112279C945800F4DC93 /* SummaryViewModel.swift in Sources */,

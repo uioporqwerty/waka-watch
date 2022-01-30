@@ -7,8 +7,8 @@ struct ConnectView: View {
     var body: some View {
         if !(connectivityService.authorized || storageAuthorized) {
             NavigationView {
-                Text("Open the Waka Watch app on your primary device to connect to WakaTime.")
-                    .navigationTitle(Text("Waka Watch"))
+                Text(LocalizedStringKey("ConnectView_Message"))
+                    .navigationTitle(Text(LocalizedStringKey("ConnectView_Title")))
                     .navigationBarTitleDisplayMode(.inline)
             }
         }
@@ -16,16 +16,16 @@ struct ConnectView: View {
             NavigationView {
                 TabView {
                     SummaryView()
-                            .navigationTitle(Text("Summary"))
+                            .navigationTitle(Text(LocalizedStringKey("SummaryView_Title")))
                             .navigationBarTitleDisplayMode(.inline)
                     LeaderboardView()
-                            .navigationTitle(Text("Leaderboard"))
+                            .navigationTitle(Text(LocalizedStringKey("LeaderboardView_Title")))
                             .navigationBarTitleDisplayMode(.inline)
                     ProfileView(user: nil)
-                            .navigationTitle(Text("Profile"))
+                            .navigationTitle(Text(LocalizedStringKey("ProfileView_Title")))
                             .navigationBarTitleDisplayMode(.inline)
                     SettingsView()
-                            .navigationTitle(Text("Settings"))
+                            .navigationTitle(Text(LocalizedStringKey("SettingsView_Title")))
                             .navigationBarTitleDisplayMode(.inline)
                 }
             }

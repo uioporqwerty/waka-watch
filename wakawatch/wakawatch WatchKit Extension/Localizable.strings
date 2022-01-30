@@ -1,0 +1,14 @@
+"SummaryView_Today" = "Today";
+"SummaryView_Title" = "Summary";
+"LeaderboardView_Title" = "Leaderboard";
+"ProfileView_Title" = "Profile";
+"ProfileView_Rank_Text" = "Rank:";
+"ProfileView_Joined_Text" = "Joined:";
+"SettingsView_Title" = "Settings";
+"SettingsView_Disconnect_Button" = "Disconnect from WakaTime";
+"ConnectView_Title" = "Waka Watch";
+"ConnectView_Message" = "Open the Waka Watch app on your primary device to connect to WakaTime.";
+"AuthenticationView_Connect_Text" = "Connect to WakaTime";
+"AuthenticationView_Connected_Text" = "Connected with WakaTime. Open Waka Watch on your Apple Watch.";
+"AuthenticationView_Pair_Button_Text" = "Pair with Apple Watch again";
+"SplashView_Center_Text" = "Waka Watch";

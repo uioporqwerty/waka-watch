@@ -14,7 +14,7 @@ struct SummaryView: View {
         }
         else {
             VStack {
-                Text("Today")
+                Text(LocalizedStringKey("SummaryView_Today"))
                 Text(summaryViewModel.totalDisplayTime)
                     .padding(EdgeInsets(top: 16, leading: 0, bottom: 0, trailing: 0))
             }

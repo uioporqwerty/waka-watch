@@ -13,7 +13,7 @@ struct SettingsView: View {
                         ConnectivityService.shared.authorized = false
                     } catch { }
                 }) {
-                    Text("Disconnect from WakaTime")
+                    Text(LocalizedStringKey("SettingsView_Disconnect_Button"))
                 }
             }
         }
