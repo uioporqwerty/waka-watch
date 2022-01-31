@@ -6,11 +6,11 @@ final class LogManager {
     
     private init() {
         //TODO: Inject the appropriate service from composition root.
-//        #if DEBUG
-//            self.loggingService = ConsoleLoggingService()
-//        #else
+        #if DEBUG
+            self.loggingService = ConsoleLoggingService()
+        #else
             self.loggingService = RollbarLoggingService()
-//        #endif
+        #endif
     }
     
     func infoMessage(_ message: String) {
