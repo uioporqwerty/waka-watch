@@ -1,7 +1,7 @@
 import SwiftUI
 
 @main
-struct wakawatchApp: App {
+struct WakaWatchApp: App {
     init() {
         //TODO: Move logic to composition root.
         #if !DEBUG

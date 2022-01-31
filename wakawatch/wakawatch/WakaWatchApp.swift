@@ -1,7 +1,7 @@
 import SwiftUI
 
 @main
-struct wakawatchApp: App {
+struct WakaWatchApp: App {
     init() {
         #if !DEBUG
             let apmService = RollbarAPMService()
