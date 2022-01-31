@@ -20,11 +20,11 @@ final class LeaderboardViewModel: NSObject, ObservableObject {
                 DispatchQueue.main.async {
                     
                     var leaderboardRecords: [LeaderboardRecord] = []
-                    leaderboardData.data.forEach { data in
+                    leaderboardData?.data.forEach { data in
                         leaderboardRecords.append(LeaderboardRecord(id: UUID(uuidString: data.user.id)!, rank: data.rank, displayName: data.user.display_name, user: data.user))
                     }
                     self.records = leaderboardRecords
-                    self.currentUserRecord = LeaderboardRecord(id: UUID(uuidString: leaderboardData.current_user.user.id)!, rank: leaderboardData.current_user.rank, displayName: leaderboardData.current_user.user.display_name, user: leaderboardData.current_user.user)
+                    self.currentUserRecord = LeaderboardRecord(id: UUID(uuidString: leaderboardData?.current_user.user.id ?? "")!, rank: leaderboardData?.current_user.rank, displayName: leaderboardData?.current_user.user.display_name, user: leaderboardData?.current_user.user)
                     self.loaded = true
                 }
             } catch {
@@ -39,10 +39,10 @@ struct LeaderboardRecord: Identifiable, Hashable {
         return lhs.id == rhs.id
     }
     
-    let id: UUID
-    let rank: Int
-    let displayName: String
-    let user: UserData
+    let id: UUID?
+    let rank: Int?
+    let displayName: String?
+    let user: UserData?
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)

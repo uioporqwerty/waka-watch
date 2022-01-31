@@ -22,12 +22,12 @@ struct ProfileView: View {
                 }
                 
                 if (profileViewModel.rank != nil) {
-                    Text("\("SummaryView_Rank_Text".toLocalized()) \(profileViewModel.rank!)")
+                    Text("\("ProfileView_Rank_Text".toLocalized()) \(profileViewModel.rank!)")
                         .padding(EdgeInsets(top: 4, leading: 0, bottom: 0, trailing: 0))
                 }
                 
                 if (profileViewModel.createdDate != nil) {
-                    Text("\("SummaryView_Joined_Text".toLocalized()) \(profileViewModel.createdDate!.formatted(date: .abbreviated, time: .omitted))")
+                    Text("\("ProfileView_Joined_Text".toLocalized()) \(profileViewModel.createdDate!.formatted(date: .abbreviated, time: .omitted))")
                         .padding(EdgeInsets(top: 4, leading: 0, bottom: 0, trailing: 0))
                 }
             }

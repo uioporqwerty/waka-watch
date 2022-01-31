@@ -3,10 +3,11 @@ import SwiftUI
 @main
 struct wakawatchApp: App {
     init() {
-        #if !DEBUG
+        //TODO: Move logic to composition root.
+        //#if !DEBUG
             let apmService = RollbarAPMService()
             apmService.configure()
-        #endif
+        //#endif
     }
     
     var body: some Scene {

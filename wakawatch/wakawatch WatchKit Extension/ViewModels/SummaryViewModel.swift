@@ -17,7 +17,7 @@ final class SummaryViewModel: NSObject, ObservableObject {
                 let summaryData = try await networkService.getSummaryData()
                 
                 DispatchQueue.main.async {
-                    self.totalDisplayTime = summaryData.cummulative_total.text
+                    self.totalDisplayTime = summaryData?.cummulative_total.text ?? ""
                     self.loaded = true
                 }
             } catch {

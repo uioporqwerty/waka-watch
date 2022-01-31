@@ -19,7 +19,7 @@ struct LeaderboardView: View {
                         ForEach (self.leaderboardViewModel.records) { record in
                             //NavigationLink(destination: ProfileView(user: record.user, loaded: true)) {
                             Button(action: { }) {
-                                Text("\(String(record.rank)). \(record.displayName)")
+                                Text("\(String(record.rank ?? 0)). \(record.displayName ?? "")")
                                     .frame(maxWidth: .infinity, alignment: .leading)
                                     .multilineTextAlignment(.leading)
                             }.id(record.id)

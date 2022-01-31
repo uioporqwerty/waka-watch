@@ -13,7 +13,7 @@ final class NetworkService {
         self.clientSecret = Bundle.main.infoDictionary?["CLIENT_SECRET"] as? String
     }
     
-    func getSummaryData() async throws -> SummaryResponse  {
+    func getSummaryData() async throws -> SummaryResponse?  {
         var urlComponents = URLComponents(string: "\(baseUrl)/users/current/summaries")!
         urlComponents.queryItems = [
             URLQueryItem(name: "client_secret", value: self.clientSecret),
@@ -23,10 +23,24 @@ final class NetworkService {
         
         let request = URLRequest(url: urlComponents.url!)
         
-        let (data, _) = try await URLSession.shared.data(from: request.url!)
+        do {
+            let (data, response) = try await URLSession.shared.data(from: request.url!)
+            let urlResponse = response as! HTTPURLResponse
+            
+            if urlResponse.statusCode >= 300 {
+                LogManager.shared.errorMessage(data)
+            }
+
+            LogManager.shared.recordNetworkEvent(level: .info, method: request.httpMethod, url: request.url?.absoluteString, statusCode: urlResponse.statusCode.description)
+            
+            let summaryResponse = try JSONDecoder().decode(SummaryResponse.self, from: data)
+            
+            return summaryResponse
+        } catch {
+            LogManager.shared.reportError(error)
+        }
         
-        let summaryResponse = try JSONDecoder().decode(SummaryResponse.self, from: data)
-        return summaryResponse
+        return nil
     }
     
     func getProfileData(userId: String?) async throws -> ProfileResponse? {
@@ -43,19 +57,26 @@ final class NetworkService {
         
         let request = URLRequest(url: urlComponents.url!)
         do {
-            let (data, _) = try await URLSession.shared.data(from: request.url!)
+            let (data, response) = try await URLSession.shared.data(from: request.url!)
+            let urlResponse = response as! HTTPURLResponse
+            
+            if urlResponse.statusCode >= 300 {
+                LogManager.shared.errorMessage(data)
+            }
+            
+            LogManager.shared.recordNetworkEvent(level: .info, method: request.httpMethod, url: request.url?.absoluteString, statusCode: urlResponse.statusCode.description)
             
             let profileResponse = try JSONDecoder().decode(ProfileResponse.self, from: data)
             
             return profileResponse
         } catch {
-            print("error fetching profile data: \(error)")
+            LogManager.shared.reportError(error)
         }
         
         return nil
     }
     
-    func getPublicLeaderboard(page: Int?) async throws -> LeaderboardResponse {
+    func getPublicLeaderboard(page: Int?) async throws -> LeaderboardResponse? {
         var urlComponents = URLComponents(string: "\(baseUrl)/leaders")!
         var urlQueryItems = [
             URLQueryItem(name: "client_secret", value: self.clientSecret),
@@ -70,10 +91,24 @@ final class NetworkService {
         
         let request = URLRequest(url: urlComponents.url!)
         
-        let (data, _) = try await URLSession.shared.data(from: request.url!)
+        do {
+            let (data, response) = try await URLSession.shared.data(from: request.url!)
+            let urlResponse = response as! HTTPURLResponse
+            
+            if urlResponse.statusCode >= 300 {
+                LogManager.shared.errorMessage(data)
+            }
+
+            LogManager.shared.recordNetworkEvent(level: .info, method: request.httpMethod, url: request.url?.absoluteString, statusCode: urlResponse.statusCode.description)
+            
+            let leaderboardResponse = try JSONDecoder().decode(LeaderboardResponse.self, from: data)
+            
+            return leaderboardResponse
+        } catch {
+            LogManager.shared.reportError(error)
+        }
         
-        let leaderboardResponse = try JSONDecoder().decode(LeaderboardResponse.self, from: data)
-        return leaderboardResponse
+       return nil
     }
     
     func disconnect() async throws {
