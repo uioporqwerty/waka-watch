@@ -41,9 +41,9 @@ final class ProfileViewModel: NSObject, ObservableObject {
         } else {
             DispatchQueue.main.async {
                 self.id = UUID(uuidString: user!.id)
-                self.displayName = user!.display_name
-                self.photoUrl = URL(string: user!.photo)
-                self.website = URL(string: user!.website)
+                self.displayName = user!.display_name ?? ""
+                self.photoUrl = URL(string: user!.photo ?? "")
+                self.website = URL(string: user!.website ?? "")
                 self.location = user!.city?.title
             }
         }

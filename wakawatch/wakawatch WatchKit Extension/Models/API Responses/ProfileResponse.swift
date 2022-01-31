@@ -7,12 +7,12 @@ struct ProfileResponse: Decodable {
 
 struct UserData: Decodable {
     let id: String
-    let display_name: String
-    let photo: String
-    let website: String
+    let display_name: String?
+    let photo: String?
+    let website: String?
     let city: LocationData?
 }
 
 struct LocationData: Decodable {
-    let title: String
+    let title: String?
 }
