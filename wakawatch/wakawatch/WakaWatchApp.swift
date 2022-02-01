@@ -14,7 +14,7 @@ struct WakaWatchApp: App {
     
     var body: some Scene {
         WindowGroup {
-            SplashView()
+            DependencyInjection.shared.container.resolve(SplashView.self)!
         }
     }
 }

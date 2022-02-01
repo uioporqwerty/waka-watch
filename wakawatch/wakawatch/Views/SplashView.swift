@@ -1,8 +1,15 @@
 import SwiftUI
 
 struct SplashView: View {
+    private var splashViewModel: SplashViewModel
+    
     @State var isActive = false
     @State var showActivityIndicator = true
+    
+    init(viewModel: SplashViewModel) {
+        self.splashViewModel = viewModel
+        self.splashViewModel.telemetry.recordViewEvent(elementName: String(describing: SplashView.self))
+    }
     
     var body: some View {
         VStack {
@@ -18,6 +25,7 @@ struct SplashView: View {
                 withAnimation {
                     self.isActive = true
                     self.showActivityIndicator = false
+                    self.splashViewModel.telemetry.recordNavigationEvent(from: String(describing: SplashView.self), to: String(describing: AuthenticationView.self))
                 }
             }
         }
@@ -26,6 +34,6 @@ struct SplashView: View {
 
 struct SplashView_Previews: PreviewProvider {
     static var previews: some View {
-        SplashView()
+        DependencyInjection.shared.container.resolve(SplashView.self)!
     }
 }
