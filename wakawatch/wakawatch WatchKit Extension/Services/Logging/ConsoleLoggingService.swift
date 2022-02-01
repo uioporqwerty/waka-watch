@@ -10,8 +10,4 @@ final class ConsoleLoggingService: LoggingService {
     func reportError(_ error: Error) {
         print("ERROR: \(error)")
     }
-    
-    func recordNetworkEvent(level: SeverityLevel, method: String?, url: String?, statusCode: String?) {
-        print("Severity: \(level) Method: \(method ?? "") URL: \(url ?? "") statusCode: \(statusCode ?? "")")
-    }
 }

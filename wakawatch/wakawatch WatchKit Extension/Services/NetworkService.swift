@@ -6,9 +6,11 @@ final class NetworkService {
     private let clientSecret: String?
     private var baseUrl = "https://wakatime.com/api/v1"
     private var logManager: LogManager
+    private var telemetry: TelemetryService
     
-    init(logManager: LogManager) {
+    init(logManager: LogManager, telemetry: TelemetryService) {
         self.logManager = logManager
+        self.telemetry = telemetry
         
         let defaults = UserDefaults.standard
         self.accessToken = defaults.string(forKey: DefaultsKeys.accessToken)
@@ -34,7 +36,7 @@ final class NetworkService {
                 self.logManager.errorMessage(data)
             }
 
-            self.logManager.recordNetworkEvent(level: .info, method: request.httpMethod, url: request.url?.absoluteString, statusCode: urlResponse.statusCode.description)
+            self.telemetry.recordNetworkEvent(level: .info, method: request.httpMethod, url: request.url?.absoluteString, statusCode: urlResponse.statusCode.description)
             
             let summaryResponse = try JSONDecoder().decode(SummaryResponse.self, from: data)
             
@@ -67,7 +69,7 @@ final class NetworkService {
                 self.logManager.errorMessage(data)
             }
             
-            self.logManager.recordNetworkEvent(level: .info, method: request.httpMethod, url: request.url?.absoluteString, statusCode: urlResponse.statusCode.description)
+            self.telemetry.recordNetworkEvent(level: .info, method: request.httpMethod, url: request.url?.absoluteString, statusCode: urlResponse.statusCode.description)
             
             let profileResponse = try JSONDecoder().decode(ProfileResponse.self, from: data)
             
@@ -102,7 +104,7 @@ final class NetworkService {
                 self.logManager.errorMessage(data)
             }
 
-            self.logManager.recordNetworkEvent(level: .info, method: request.httpMethod, url: request.url?.absoluteString, statusCode: urlResponse.statusCode.description)
+            self.telemetry.recordNetworkEvent(level: .info, method: request.httpMethod, url: request.url?.absoluteString, statusCode: urlResponse.statusCode.description)
             
             let leaderboardResponse = try JSONDecoder().decode(LeaderboardResponse.self, from: data)
             

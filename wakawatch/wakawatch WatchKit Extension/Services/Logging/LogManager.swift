@@ -22,8 +22,4 @@ final class LogManager {
     func reportError(_ error: Error) {
         self.loggingService.reportError(error)
     }
-    
-    func recordNetworkEvent(level: SeverityLevel, method: String?, url: String?, statusCode: String?) {
-        self.loggingService.recordNetworkEvent(level: level, method: method, url: url, statusCode: statusCode)
-    }
 }
