@@ -3,8 +3,9 @@ import SwiftUI
 @main
 struct WakaWatchApp: App {
     init() {
-        let _ = ConnectivityService.shared
         DependencyInjection.shared.register()
+        let _ = ConnectivityService.shared
+        
         guard let apmService = DependencyInjection.shared.container.resolve(APMService.self) else {
             return
         }

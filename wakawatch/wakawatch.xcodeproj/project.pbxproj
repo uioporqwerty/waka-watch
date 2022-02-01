@@ -317,9 +317,9 @@
 		6BA78C8627A4856F005149BC /* Logging */ = {
 			isa = PBXGroup;
 			children = (
+				6BE5DE4127A6531A0072FF0E /* LogManager.swift */,
 				6BD52F17279FD03900247BFB /* LoggingService.swift */,
 				6BD52F1A279FD07300247BFB /* RollbarLoggingService.swift */,
-				6BE5DE4127A6531A0072FF0E /* LogManager.swift */,
 				6BE5DE4427A653440072FF0E /* ConsoleLoggingService.swift */,
 			);
 			path = Logging;

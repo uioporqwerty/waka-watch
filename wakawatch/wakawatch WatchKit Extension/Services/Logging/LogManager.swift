@@ -11,6 +11,14 @@ final class LogManager {
         self.loggingService.infoMessage(message)
     }
     
+    func debugMessage(_ message: String) {
+        self.loggingService.debugMessage(message)
+    }
+    
+    func debugMessage(_ message: String, data: [String:Any]) {
+        self.loggingService.debugMessage(message, data: data)
+    }
+    
     func errorMessage(_ message: String) {
         self.loggingService.errorMessage(message)
     }
