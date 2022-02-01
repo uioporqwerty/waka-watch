@@ -23,6 +23,7 @@ final class DependencyInjection {
         self.container.register(ProfileViewModel.self) { r in ProfileViewModel(networkService: r.resolve(NetworkService.self)!, telemetryService: r.resolve(TelemetryService.self)! )}
         self.container.register(LeaderboardViewModel.self) { r in LeaderboardViewModel(networkService: r.resolve(NetworkService.self)!, telemetryService: r.resolve(TelemetryService.self)!)}
         self.container.register(SettingsViewModel.self) { r in SettingsViewModel(networkService: r.resolve(NetworkService.self)!,
+                                                                                 logManager: r.resolve(LogManager.self)!,
                                                                                  telemetryService: r.resolve(TelemetryService.self)!)}
         self.container.register(ConnectViewModel.self) { r in ConnectViewModel(telemetryService: r.resolve(TelemetryService.self)!)}
         

@@ -1,16 +1,21 @@
 import Foundation
 final class SettingsViewModel {
     private let networkService: NetworkService
+    private let logManager: LogManager
     
     public let telemetry: TelemetryService
     
     init(networkService: NetworkService,
+         logManager: LogManager,
          telemetryService: TelemetryService) {
         self.networkService = networkService
+        self.logManager = logManager
         self.telemetry = telemetryService
     }
     
     func disconnect() async throws {
+        self.telemetry.recordViewEvent(elementName: "TAPPED: Disconnect button")
+        
         do {
             try await networkService.disconnect()
             
@@ -25,9 +30,11 @@ final class SettingsViewModel {
             let defaults = UserDefaults.standard
             defaults.set("", forKey: DefaultsKeys.accessToken)
             defaults.set(false, forKey: DefaultsKeys.authorized)
+            
+            self.telemetry.recordNavigationEvent(from: String(describing: SettingsView.self), to: String(describing: ConnectView.self))
         }
         catch {
-            print("Failed to disconnect with error: \(error)")
+            self.logManager.reportError(error)
         }
     }
 }
