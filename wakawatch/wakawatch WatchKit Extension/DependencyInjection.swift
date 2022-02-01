@@ -24,10 +24,12 @@ final class DependencyInjection {
         self.container.register(LeaderboardViewModel.self) { r in LeaderboardViewModel(networkService: r.resolve(NetworkService.self)!, telemetryService: r.resolve(TelemetryService.self)!)}
         self.container.register(SettingsViewModel.self) { r in SettingsViewModel(networkService: r.resolve(NetworkService.self)!,
                                                                                  telemetryService: r.resolve(TelemetryService.self)!)}
+        self.container.register(ConnectViewModel.self) { r in ConnectViewModel(telemetryService: r.resolve(TelemetryService.self)!)}
         
         self.container.register(SummaryView.self) { r in SummaryView(viewModel: r.resolve(SummaryViewModel.self)!)}
         self.container.register(ProfileView.self) { r in ProfileView(viewModel: r.resolve(ProfileViewModel.self)!, user: nil)}
         self.container.register(LeaderboardView.self) { r in LeaderboardView(viewModel: r.resolve(LeaderboardViewModel.self)!)}
         self.container.register(SettingsView.self) { r in SettingsView(viewModel: r.resolve(SettingsViewModel.self)!)}
+        self.container.register(ConnectView.self) { r in ConnectView(viewModel: r.resolve(ConnectViewModel.self)!)}
     }
 }

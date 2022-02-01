@@ -1,7 +1,13 @@
 import SwiftUI
 
 struct ConnectView: View {
+    private var connectViewModel: ConnectViewModel
     @AppStorage(DefaultsKeys.authorized) var authorized = false
+    
+    init(viewModel: ConnectViewModel) {
+        self.connectViewModel = viewModel
+        self.connectViewModel.telemetry.recordViewEvent(elementName: String(describing: ConnectView.self))
+    }
     
     var body: some View {
         if !authorized {
@@ -34,6 +40,6 @@ struct ConnectView: View {
 
 struct ConnectView_Previews: PreviewProvider {
     static var previews: some View {
-        ConnectView()
+        DependencyInjection.shared.container.resolve(ConnectView.self)!
     }
 }

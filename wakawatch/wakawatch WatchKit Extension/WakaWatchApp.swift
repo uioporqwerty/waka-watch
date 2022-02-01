@@ -14,7 +14,8 @@ struct WakaWatchApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ConnectView().navigationTitle(Text("WakaWatch"))
+            DependencyInjection.shared.container.resolve(ConnectView.self)!
+                                                .navigationTitle(Text("WakaWatch"))
         }
     }
 }
