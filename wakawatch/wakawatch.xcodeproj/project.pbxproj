@@ -44,6 +44,10 @@
 		6BE5DE4327A6531A0072FF0E /* LogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE5DE4127A6531A0072FF0E /* LogManager.swift */; };
 		6BE5DE4527A653440072FF0E /* ConsoleLoggingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE5DE4427A653440072FF0E /* ConsoleLoggingService.swift */; };
 		6BE5DE4627A653440072FF0E /* ConsoleLoggingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE5DE4427A653440072FF0E /* ConsoleLoggingService.swift */; };
+		6BE5DE5427A78BBF0072FF0E /* DependencyInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE5DE5327A78BBF0072FF0E /* DependencyInjection.swift */; };
+		6BE5DE5627A78BD60072FF0E /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 6BE5DE5527A78BD60072FF0E /* Swinject */; };
+		6BE5DE5927A8BB3C0072FF0E /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 6BE5DE5827A8BB3C0072FF0E /* Swinject */; };
+		6BE5DE5B27A8BBB60072FF0E /* DependencyInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE5DE5A27A8BBB60072FF0E /* DependencyInjection.swift */; };
 		6BED9A6E2795154A005646C3 /* WakaWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BED9A6D2795154A005646C3 /* WakaWatchApp.swift */; };
 		6BED9A722795154C005646C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BED9A712795154C005646C3 /* Assets.xcassets */; };
 		6BED9A752795154C005646C3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BED9A742795154C005646C3 /* Preview Assets.xcassets */; };
@@ -170,6 +174,8 @@
 		6BE5DE3E27A64E630072FF0E /* SeverityLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeverityLevel.swift; sourceTree = "<group>"; };
 		6BE5DE4127A6531A0072FF0E /* LogManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogManager.swift; sourceTree = "<group>"; };
 		6BE5DE4427A653440072FF0E /* ConsoleLoggingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleLoggingService.swift; sourceTree = "<group>"; };
+		6BE5DE5327A78BBF0072FF0E /* DependencyInjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjection.swift; sourceTree = "<group>"; };
+		6BE5DE5A27A8BBB60072FF0E /* DependencyInjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjection.swift; sourceTree = "<group>"; };
 		6BED9A6A2795154A005646C3 /* Waka Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Waka Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BED9A6D2795154A005646C3 /* WakaWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WakaWatchApp.swift; sourceTree = "<group>"; };
 		6BED9A712795154C005646C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -209,6 +215,7 @@
 			files = (
 				6BED9ADB27951C82005646C3 /* BetterSafariView in Frameworks */,
 				6BD52F20279FD1AA00247BFB /* RollbarNotifier in Frameworks */,
+				6BE5DE5927A8BB3C0072FF0E /* Swinject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BD52F1E279FD1A300247BFB /* RollbarNotifier in Frameworks */,
+				6BE5DE5627A78BD60072FF0E /* Swinject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +362,7 @@
 				6BED9A732795154C005646C3 /* Preview Content */,
 				6BED9AEC279544FA005646C3 /* Views */,
 				6BED9A6D2795154A005646C3 /* WakaWatchApp.swift */,
+				6BE5DE5A27A8BBB60072FF0E /* DependencyInjection.swift */,
 				6BED9A712795154C005646C3 /* Assets.xcassets */,
 			);
 			path = wakawatch;
@@ -406,6 +415,7 @@
 				6BED9ADC27951F0C005646C3 /* Views */,
 				6BED9AA02795154E005646C3 /* WakaWatchApp.swift */,
 				6BED9AA22795154E005646C3 /* ComplicationController.swift */,
+				6BE5DE5327A78BBF0072FF0E /* DependencyInjection.swift */,
 				6B23142F27A6343300477259 /* Localizable.strings */,
 				6BED9AA92795154F005646C3 /* Info.plist */,
 				6BBC1A39279DFACF00FFEBFF /* Config.xcconfig */,
@@ -509,6 +519,7 @@
 			packageProductDependencies = (
 				6BED9ADA27951C82005646C3 /* BetterSafariView */,
 				6BD52F1F279FD1AA00247BFB /* RollbarNotifier */,
+				6BE5DE5827A8BB3C0072FF0E /* Swinject */,
 			);
 			productName = wakawatch;
 			productReference = 6BED9A6A2795154A005646C3 /* Waka Watch.app */;
@@ -582,6 +593,7 @@
 			name = "wakawatch WatchKit Extension";
 			packageProductDependencies = (
 				6BD52F1D279FD1A300247BFB /* RollbarNotifier */,
+				6BE5DE5527A78BD60072FF0E /* Swinject */,
 			);
 			productName = "wakawatch WatchKit Extension";
 			productReference = 6BED9A992795154E005646C3 /* wakawatch WatchKit Extension.appex */;
@@ -767,6 +779,7 @@
 				6B3440DC279C5E1C006A5C27 /* Delivery.swift in Sources */,
 				6BE5DE3D27A6403D0072FF0E /* StringExtensions.swift in Sources */,
 				6BD52EF6279FCB1300247BFB /* APMService.swift in Sources */,
+				6BE5DE5B27A8BBB60072FF0E /* DependencyInjection.swift in Sources */,
 				6BE5DE3F27A64E630072FF0E /* SeverityLevel.swift in Sources */,
 				6BD52F18279FD03900247BFB /* LoggingService.swift in Sources */,
 				6BD52EF9279FCB3400247BFB /* RollbarAPMService.swift in Sources */,
@@ -803,6 +816,7 @@
 				6BED9AFD2795BBB5005646C3 /* AccessTokenResponse.swift in Sources */,
 				6BD52EF7279FCB1300247BFB /* APMService.swift in Sources */,
 				6B8A4860279D1F8F0071566F /* LeaderboardViewModel.swift in Sources */,
+				6BE5DE5427A78BBF0072FF0E /* DependencyInjection.swift in Sources */,
 				6BED9AE027951F6D005646C3 /* ProfileView.swift in Sources */,
 				6B3440DD279C5E1C006A5C27 /* Delivery.swift in Sources */,
 				6BED9AA12795154E005646C3 /* WakaWatchApp.swift in Sources */,
@@ -1454,6 +1468,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 6BD52EF4279FC9C900247BFB /* XCRemoteSwiftPackageReference "rollbar-apple" */;
 			productName = RollbarNotifier;
+		};
+		6BE5DE5527A78BD60072FF0E /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6BE5DE5227A788BC0072FF0E /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
+		};
+		6BE5DE5827A8BB3C0072FF0E /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6BE5DE5227A788BC0072FF0E /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
 		};
 		6BED9ADA27951C82005646C3 /* BetterSafariView */ = {
 			isa = XCSwiftPackageProductDependency;

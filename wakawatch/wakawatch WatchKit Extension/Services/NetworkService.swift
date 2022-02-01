@@ -5,8 +5,11 @@ final class NetworkService {
     private let clientId: String?
     private let clientSecret: String?
     private var baseUrl = "https://wakatime.com/api/v1"
+    private var logManager: LogManager
     
-    init() {
+    init(logManager: LogManager) {
+        self.logManager = logManager
+        
         let defaults = UserDefaults.standard
         self.accessToken = defaults.string(forKey: DefaultsKeys.accessToken)
         self.clientId = Bundle.main.infoDictionary?["CLIENT_ID"] as? String
@@ -28,16 +31,16 @@ final class NetworkService {
             let urlResponse = response as! HTTPURLResponse
             
             if urlResponse.statusCode >= 300 {
-                LogManager.shared.errorMessage(data)
+                self.logManager.errorMessage(data)
             }
 
-            LogManager.shared.recordNetworkEvent(level: .info, method: request.httpMethod, url: request.url?.absoluteString, statusCode: urlResponse.statusCode.description)
+            self.logManager.recordNetworkEvent(level: .info, method: request.httpMethod, url: request.url?.absoluteString, statusCode: urlResponse.statusCode.description)
             
             let summaryResponse = try JSONDecoder().decode(SummaryResponse.self, from: data)
             
             return summaryResponse
         } catch {
-            LogManager.shared.reportError(error)
+            self.logManager.reportError(error)
         }
         
         return nil
@@ -61,16 +64,16 @@ final class NetworkService {
             let urlResponse = response as! HTTPURLResponse
             
             if urlResponse.statusCode >= 300 {
-                LogManager.shared.errorMessage(data)
+                self.logManager.errorMessage(data)
             }
             
-            LogManager.shared.recordNetworkEvent(level: .info, method: request.httpMethod, url: request.url?.absoluteString, statusCode: urlResponse.statusCode.description)
+            self.logManager.recordNetworkEvent(level: .info, method: request.httpMethod, url: request.url?.absoluteString, statusCode: urlResponse.statusCode.description)
             
             let profileResponse = try JSONDecoder().decode(ProfileResponse.self, from: data)
             
             return profileResponse
         } catch {
-            LogManager.shared.reportError(error)
+            self.logManager.reportError(error)
         }
         
         return nil
@@ -96,16 +99,16 @@ final class NetworkService {
             let urlResponse = response as! HTTPURLResponse
             
             if urlResponse.statusCode >= 300 {
-                LogManager.shared.errorMessage(data)
+                self.logManager.errorMessage(data)
             }
 
-            LogManager.shared.recordNetworkEvent(level: .info, method: request.httpMethod, url: request.url?.absoluteString, statusCode: urlResponse.statusCode.description)
+            self.logManager.recordNetworkEvent(level: .info, method: request.httpMethod, url: request.url?.absoluteString, statusCode: urlResponse.statusCode.description)
             
             let leaderboardResponse = try JSONDecoder().decode(LeaderboardResponse.self, from: data)
             
             return leaderboardResponse
         } catch {
-            LogManager.shared.reportError(error)
+            self.logManager.reportError(error)
         }
         
        return nil

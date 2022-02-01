@@ -13,8 +13,8 @@ final class ProfileViewModel: NSObject, ObservableObject {
     
     private var networkService: NetworkService
     
-    override init() {
-        self.networkService = NetworkService()
+    init(networkService: NetworkService) {
+        self.networkService = networkService
     }
     
     func getProfile(user: UserData?) {

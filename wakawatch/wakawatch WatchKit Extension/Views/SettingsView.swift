@@ -1,8 +1,12 @@
 import SwiftUI
 
 struct SettingsView: View {
-    private var settingsViewModel = SettingsViewModel()
+    private var settingsViewModel: SettingsViewModel
     @State var isActive = false
+    
+    init(viewModel: SettingsViewModel) {
+        self.settingsViewModel = viewModel
+    }
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
@@ -22,6 +26,6 @@ struct SettingsView: View {
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView()
+        DependencyInjection.shared.container.resolve(SettingsView.self)!
     }
 }

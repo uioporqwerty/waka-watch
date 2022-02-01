@@ -3,11 +3,10 @@ import SwiftUI
 @main
 struct WakaWatchApp: App {
     init() {
-        //TODO: Move logic to composition root.
-        #if !DEBUG
-            let apmService = RollbarAPMService()
-            apmService.configure()
-        #endif
+        guard let apmService = DependencyInjection.shared.container.resolve(APMService.self) else {
+            return
+        }
+        apmService.configure()
     }
     
     var body: some Scene {

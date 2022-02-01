@@ -3,8 +3,8 @@ import SwiftUI
 struct ProfileView: View {
     @ObservedObject var profileViewModel: ProfileViewModel
     
-    init(user: UserData?, loaded: Bool = false) {
-        self.profileViewModel = ProfileViewModel()
+    init(viewModel: ProfileViewModel, user: UserData?, loaded: Bool = false) {
+        self.profileViewModel = viewModel
         self.profileViewModel.getProfile(user: user)
         self.profileViewModel.loaded = loaded
     }
@@ -37,6 +37,6 @@ struct ProfileView: View {
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView(user: nil)
+        DependencyInjection.shared.container.resolve(ProfileView.self)!
     }
 }

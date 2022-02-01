@@ -2,8 +2,8 @@ import Foundation
 final class SettingsViewModel {
     private var networkService: NetworkService
     
-    init() {
-        self.networkService = NetworkService()
+    init(networkService: NetworkService) {
+        self.networkService = networkService
     }
     
     func disconnect() async throws {

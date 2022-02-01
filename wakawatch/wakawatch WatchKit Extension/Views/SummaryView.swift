@@ -3,8 +3,8 @@ import SwiftUI
 struct SummaryView: View {
     @ObservedObject var summaryViewModel: SummaryViewModel
     
-    init() {
-        self.summaryViewModel = SummaryViewModel()
+    init(viewModel: SummaryViewModel) {
+        self.summaryViewModel = viewModel
         self.summaryViewModel.getSummary()
     }
     
@@ -24,6 +24,6 @@ struct SummaryView: View {
 
 struct SummaryView_Previews: PreviewProvider {
     static var previews: some View {
-        SummaryView()
+        DependencyInjection.shared.container.resolve(SummaryView.self)!
     }
 }

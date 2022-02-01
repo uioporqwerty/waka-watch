@@ -3,8 +3,8 @@ import SwiftUI
 struct LeaderboardView: View {
     @ObservedObject var leaderboardViewModel: LeaderboardViewModel
     
-    init() {
-        self.leaderboardViewModel = LeaderboardViewModel()
+    init(viewModel: LeaderboardViewModel) {
+        self.leaderboardViewModel = viewModel
         self.leaderboardViewModel.getPublicLeaderboard(page: nil)
     }
     
@@ -38,6 +38,6 @@ struct LeaderboardView: View {
 
 struct LeaderboardView_Previews: PreviewProvider {
     static var previews: some View {
-        LeaderboardView()
+        DependencyInjection.shared.container.resolve(LeaderboardView.self)!
     }
 }

@@ -1,16 +1,10 @@
 import Foundation
 
 final class LogManager {
-    static let shared = LogManager()
     private var loggingService: LoggingService
     
-    private init() {
-        //TODO: Inject the appropriate service from composition root.
-        #if DEBUG
-            self.loggingService = ConsoleLoggingService()
-        #else
-            self.loggingService = RollbarLoggingService()
-        #endif
+    init(loggingService: LoggingService) {
+        self.loggingService = loggingService
     }
     
     func infoMessage(_ message: String) {

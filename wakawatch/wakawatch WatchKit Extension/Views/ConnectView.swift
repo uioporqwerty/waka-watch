@@ -15,16 +15,16 @@ struct ConnectView: View {
         else {
             NavigationView {
                 TabView {
-                    SummaryView()
+                    DependencyInjection.shared.container.resolve(SummaryView.self)!
                             .navigationTitle(Text(LocalizedStringKey("SummaryView_Title")))
                             .navigationBarTitleDisplayMode(.inline)
-                    LeaderboardView()
+                    DependencyInjection.shared.container.resolve(LeaderboardView.self)!
                             .navigationTitle(Text(LocalizedStringKey("LeaderboardView_Title")))
                             .navigationBarTitleDisplayMode(.inline)
-                    ProfileView(user: nil)
+                    DependencyInjection.shared.container.resolve(ProfileView.self)!
                             .navigationTitle(Text(LocalizedStringKey("ProfileView_Title")))
                             .navigationBarTitleDisplayMode(.inline)
-                    SettingsView()
+                    DependencyInjection.shared.container.resolve(SettingsView.self)!
                             .navigationTitle(Text(LocalizedStringKey("SettingsView_Title")))
                             .navigationBarTitleDisplayMode(.inline)
                 }

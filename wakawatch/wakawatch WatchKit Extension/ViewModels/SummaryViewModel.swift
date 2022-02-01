@@ -7,8 +7,8 @@ final class SummaryViewModel: NSObject, ObservableObject {
     
     private var networkService: NetworkService
     
-    override init() {
-        self.networkService = NetworkService()
+    init(networkService: NetworkService) {
+        self.networkService = networkService
     }
     
     func getSummary() {
