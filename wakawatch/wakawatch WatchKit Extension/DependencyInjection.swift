@@ -17,10 +17,10 @@ final class DependencyInjection {
         self.container.register(LogManager.self) { r in LogManager(loggingService: r.resolve(LoggingService.self)!)}
         self.container.register(NetworkService.self) { r in NetworkService(logManager: r.resolve(LogManager.self)!, telemetry: r.resolve(TelemetryService.self)!)}
         
-        self.container.register(SummaryViewModel.self) { r in SummaryViewModel(networkService: r.resolve(NetworkService.self)!)}
-        self.container.register(ProfileViewModel.self) { r in ProfileViewModel(networkService: r.resolve(NetworkService.self)!)}
-        self.container.register(LeaderboardViewModel.self) { r in LeaderboardViewModel(networkService: r.resolve(NetworkService.self)!)}
-        self.container.register(SettingsViewModel.self) { r in SettingsViewModel(networkService: r.resolve(NetworkService.self)!)}
+        self.container.register(SummaryViewModel.self) { r in SummaryViewModel(networkService: r.resolve(NetworkService.self)!, telemetryService: r.resolve(TelemetryService.self)!)}
+        self.container.register(ProfileViewModel.self) { r in ProfileViewModel(networkService: r.resolve(NetworkService.self)!, telemetryService: r.resolve(TelemetryService.self)! )}
+        self.container.register(LeaderboardViewModel.self) { r in LeaderboardViewModel(networkService: r.resolve(NetworkService.self)!, telemetryService: r.resolve(TelemetryService.self)!)}
+        self.container.register(SettingsViewModel.self) { r in SettingsViewModel(networkService: r.resolve(NetworkService.self)!, telemetryService: r.resolve(TelemetryService.self)!)}
         
         self.container.register(SummaryView.self) { r in SummaryView(viewModel: r.resolve(SummaryViewModel.self)!)}
         self.container.register(ProfileView.self) { r in ProfileView(viewModel: r.resolve(ProfileViewModel.self)!, user: nil)}

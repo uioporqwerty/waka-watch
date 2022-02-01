@@ -5,6 +5,7 @@ struct ProfileView: View {
     
     init(viewModel: ProfileViewModel, user: UserData?, loaded: Bool = false) {
         self.profileViewModel = viewModel
+        self.profileViewModel.telemetry.recordViewEvent(elementName: "\(String(describing: ProfileView.self))")
         self.profileViewModel.getProfile(user: user)
         self.profileViewModel.loaded = loaded
     }

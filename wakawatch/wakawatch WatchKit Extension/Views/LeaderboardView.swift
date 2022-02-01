@@ -5,6 +5,7 @@ struct LeaderboardView: View {
     
     init(viewModel: LeaderboardViewModel) {
         self.leaderboardViewModel = viewModel
+        self.leaderboardViewModel.telemetry.recordViewEvent(elementName: "\(String(describing: LeaderboardView.self))")
         self.leaderboardViewModel.getPublicLeaderboard(page: nil)
     }
     

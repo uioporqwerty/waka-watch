@@ -36,7 +36,7 @@ final class NetworkService {
                 self.logManager.errorMessage(data)
             }
 
-            self.telemetry.recordNetworkEvent(level: .info, method: request.httpMethod, url: request.url?.absoluteString, statusCode: urlResponse.statusCode.description)
+            self.telemetry.recordNetworkEvent(method: request.httpMethod, url: request.url?.absoluteString, statusCode: urlResponse.statusCode.description)
             
             let summaryResponse = try JSONDecoder().decode(SummaryResponse.self, from: data)
             
@@ -69,7 +69,7 @@ final class NetworkService {
                 self.logManager.errorMessage(data)
             }
             
-            self.telemetry.recordNetworkEvent(level: .info, method: request.httpMethod, url: request.url?.absoluteString, statusCode: urlResponse.statusCode.description)
+            self.telemetry.recordNetworkEvent(method: request.httpMethod, url: request.url?.absoluteString, statusCode: urlResponse.statusCode.description)
             
             let profileResponse = try JSONDecoder().decode(ProfileResponse.self, from: data)
             
@@ -104,7 +104,7 @@ final class NetworkService {
                 self.logManager.errorMessage(data)
             }
 
-            self.telemetry.recordNetworkEvent(level: .info, method: request.httpMethod, url: request.url?.absoluteString, statusCode: urlResponse.statusCode.description)
+            self.telemetry.recordNetworkEvent(method: request.httpMethod, url: request.url?.absoluteString, statusCode: urlResponse.statusCode.description)
             
             let leaderboardResponse = try JSONDecoder().decode(LeaderboardResponse.self, from: data)
             

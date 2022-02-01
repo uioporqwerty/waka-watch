@@ -471,11 +471,11 @@
 		6BED9ADC27951F0C005646C3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				6BED9ADD27951F21005646C3 /* LeaderboardView.swift */,
-				6BED9ADF27951F6D005646C3 /* ProfileView.swift */,
 				6BED9AE127951F80005646C3 /* SummaryView.swift */,
-				6BED9AE827952041005646C3 /* ConnectView.swift */,
+				6BED9ADF27951F6D005646C3 /* ProfileView.swift */,
+				6BED9ADD27951F21005646C3 /* LeaderboardView.swift */,
 				6BA78C8427A4826C005149BC /* SettingsView.swift */,
+				6BED9AE827952041005646C3 /* ConnectView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";

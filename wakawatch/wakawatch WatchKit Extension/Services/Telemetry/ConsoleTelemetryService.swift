@@ -1,5 +1,9 @@
 final class ConsoleTelemetryService: TelemetryService {
-    func recordNetworkEvent(level: SeverityLevel, method: String?, url: String?, statusCode: String?) {
-        print("Severity: \(level) Method: \(method ?? "") URL: \(url ?? "") statusCode: \(statusCode ?? "")")
+    func recordNetworkEvent(method: String?, url: String?, statusCode: String?) {
+        print("Method: \(method ?? "") URL: \(url ?? "") statusCode: \(statusCode ?? "")")
+    }
+    
+    func recordViewEvent(elementName: String) {
+        print("View: \(elementName)")
     }
 }

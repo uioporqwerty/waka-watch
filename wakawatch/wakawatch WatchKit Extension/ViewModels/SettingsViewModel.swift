@@ -1,9 +1,11 @@
 import Foundation
 final class SettingsViewModel {
     private var networkService: NetworkService
+    public let telemetry: TelemetryService
     
-    init(networkService: NetworkService) {
+    init(networkService: NetworkService, telemetryService: TelemetryService) {
         self.networkService = networkService
+        self.telemetry = telemetryService
     }
     
     func disconnect() async throws {

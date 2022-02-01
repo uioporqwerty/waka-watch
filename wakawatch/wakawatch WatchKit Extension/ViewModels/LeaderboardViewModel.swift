@@ -7,9 +7,11 @@ final class LeaderboardViewModel: NSObject, ObservableObject {
     @Published var loaded = false
     
     private var networkService: NetworkService
+    public let telemetry: TelemetryService
     
-    init(networkService: NetworkService) {
+    init(networkService: NetworkService, telemetryService: TelemetryService) {
         self.networkService = networkService
+        self.telemetry = telemetryService
     }
     
     func getPublicLeaderboard(page: Int?) {

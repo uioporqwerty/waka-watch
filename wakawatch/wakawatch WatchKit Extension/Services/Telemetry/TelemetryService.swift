@@ -1,3 +1,4 @@
 protocol TelemetryService {
-    func recordNetworkEvent(level: SeverityLevel, method: String?, url: String?, statusCode: String?)
+    func recordNetworkEvent(method: String?, url: String?, statusCode: String?)
+    func recordViewEvent(elementName: String)
 }

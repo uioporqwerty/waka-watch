@@ -5,6 +5,7 @@ struct SummaryView: View {
     
     init(viewModel: SummaryViewModel) {
         self.summaryViewModel = viewModel
+        self.summaryViewModel.telemetry.recordViewEvent(elementName: "\(String(describing: SummaryView.self))")
         self.summaryViewModel.getSummary()
     }
     

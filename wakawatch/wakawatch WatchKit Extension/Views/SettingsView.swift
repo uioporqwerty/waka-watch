@@ -6,6 +6,7 @@ struct SettingsView: View {
     
     init(viewModel: SettingsViewModel) {
         self.settingsViewModel = viewModel
+        self.settingsViewModel.telemetry.recordViewEvent(elementName: "\(String(describing: SettingsView.self))")
     }
     
     var body: some View {
