@@ -2,11 +2,10 @@ import Foundation
 import Combine
 import WatchConnectivity
 
-final class ConnectivityService: NSObject, ObservableObject {
+final class ConnectivityService: NSObject {
     static let shared = ConnectivityService()
-    @Published var authorized = false
-      
-    override private init() {
+    
+    private override init() {
         super.init()
         #if !os(watchOS)
             guard WCSession.isSupported() else {
@@ -115,10 +114,6 @@ extension ConnectivityService: WCSessionDelegate {
         guard let accessToken = dictionary[ConnectivityMessageKeys.accessToken] as? String else {
             print("access token key not found")
             return
-        }
-        
-        DispatchQueue.main.async {
-            self.authorized = authorized
         }
         
         let defaults = UserDefaults.standard

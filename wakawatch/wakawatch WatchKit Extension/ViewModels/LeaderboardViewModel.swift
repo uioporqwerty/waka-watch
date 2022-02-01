@@ -1,7 +1,7 @@
 import Combine
 import Foundation
 
-final class LeaderboardViewModel: NSObject, ObservableObject {
+final class LeaderboardViewModel: ObservableObject {
     @Published var records: [LeaderboardRecord] = []
     @Published var currentUserRecord: LeaderboardRecord?
     @Published var loaded = false

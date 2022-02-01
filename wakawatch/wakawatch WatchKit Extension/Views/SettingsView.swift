@@ -15,7 +15,6 @@ struct SettingsView: View {
                 AsyncButton(action: {
                     do {
                         try await self.settingsViewModel.disconnect()
-                        ConnectivityService.shared.authorized = false
                     } catch { }
                 }) {
                     Text(LocalizedStringKey("SettingsView_Disconnect_Button"))

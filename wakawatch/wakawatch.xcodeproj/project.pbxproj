@@ -54,6 +54,9 @@
 		6BE5DE6227A8BDBB0072FF0E /* RollbarTelemetryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE5DE6027A8BDBB0072FF0E /* RollbarTelemetryService.swift */; };
 		6BE5DE6427A8C0EA0072FF0E /* ConsoleTelemetryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE5DE6327A8C0EA0072FF0E /* ConsoleTelemetryService.swift */; };
 		6BE5DE6527A8C0EA0072FF0E /* ConsoleTelemetryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE5DE6327A8C0EA0072FF0E /* ConsoleTelemetryService.swift */; };
+		6BE5DE6827A8CAE60072FF0E /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE5DE6727A8CAE60072FF0E /* AuthenticationViewModel.swift */; };
+		6BE5DE6B27A8CB380072FF0E /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE5DE6A27A8CB380072FF0E /* AuthenticationService.swift */; };
+		6BE5DE6C27A8CB380072FF0E /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE5DE6A27A8CB380072FF0E /* AuthenticationService.swift */; };
 		6BED9A6E2795154A005646C3 /* WakaWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BED9A6D2795154A005646C3 /* WakaWatchApp.swift */; };
 		6BED9A722795154C005646C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BED9A712795154C005646C3 /* Assets.xcassets */; };
 		6BED9A752795154C005646C3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BED9A742795154C005646C3 /* Preview Assets.xcassets */; };
@@ -185,6 +188,8 @@
 		6BE5DE5D27A8BDAC0072FF0E /* TelemetryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelemetryService.swift; sourceTree = "<group>"; };
 		6BE5DE6027A8BDBB0072FF0E /* RollbarTelemetryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollbarTelemetryService.swift; sourceTree = "<group>"; };
 		6BE5DE6327A8C0EA0072FF0E /* ConsoleTelemetryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleTelemetryService.swift; sourceTree = "<group>"; };
+		6BE5DE6727A8CAE60072FF0E /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
+		6BE5DE6A27A8CB380072FF0E /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 		6BED9A6A2795154A005646C3 /* Waka Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Waka Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BED9A6D2795154A005646C3 /* WakaWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WakaWatchApp.swift; sourceTree = "<group>"; };
 		6BED9A712795154C005646C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -346,6 +351,22 @@
 			path = Telemetry;
 			sourceTree = "<group>";
 		};
+		6BE5DE6627A8CABE0072FF0E /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				6BE5DE6727A8CAE60072FF0E /* AuthenticationViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		6BE5DE6927A8CB2B0072FF0E /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				6BE5DE6A27A8CB380072FF0E /* AuthenticationService.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
 		6BED9A6127951549005646C3 = {
 			isa = PBXGroup;
 			children = (
@@ -379,6 +400,7 @@
 			isa = PBXGroup;
 			children = (
 				6BED9A732795154C005646C3 /* Preview Content */,
+				6BE5DE6627A8CABE0072FF0E /* ViewModels */,
 				6BED9AEC279544FA005646C3 /* Views */,
 				6BED9A6D2795154A005646C3 /* WakaWatchApp.swift */,
 				6BE5DE5A27A8BBB60072FF0E /* DependencyInjection.swift */,
@@ -508,6 +530,7 @@
 		6BED9AFE2795D1B3005646C3 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				6BE5DE6927A8CB2B0072FF0E /* Authentication */,
 				6BE5DE5C27A8BD9B0072FF0E /* Telemetry */,
 				6BA78C8627A4856F005149BC /* Logging */,
 				6BED9AFF2795D1C0005646C3 /* ConnectivityService.swift */,
@@ -789,6 +812,7 @@
 				6BA78C8027A46CF0005149BC /* SplashView.swift in Sources */,
 				6B23142A27A59B8700477259 /* ConnectivityMessageKeys.swift in Sources */,
 				6BED9AFC2795BBB5005646C3 /* AccessTokenResponse.swift in Sources */,
+				6BE5DE6827A8CAE60072FF0E /* AuthenticationViewModel.swift in Sources */,
 				6BED9A6E2795154A005646C3 /* WakaWatchApp.swift in Sources */,
 				6BA78C8227A46F36005149BC /* ActivityIndicator.swift in Sources */,
 				6BE5DE4527A653440072FF0E /* ConsoleLoggingService.swift in Sources */,
@@ -806,6 +830,7 @@
 				6BD52F18279FD03900247BFB /* LoggingService.swift in Sources */,
 				6BE5DE6127A8BDBB0072FF0E /* RollbarTelemetryService.swift in Sources */,
 				6BD52EF9279FCB3400247BFB /* RollbarAPMService.swift in Sources */,
+				6BE5DE6B27A8CB380072FF0E /* AuthenticationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -864,6 +889,7 @@
 				6BE5DE5F27A8BDAC0072FF0E /* TelemetryService.swift in Sources */,
 				6B29476B279642EF00311E1E /* NetworkService.swift in Sources */,
 				6BA78C8B27A487DC005149BC /* SettingsViewModel.swift in Sources */,
+				6BE5DE6C27A8CB380072FF0E /* AuthenticationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

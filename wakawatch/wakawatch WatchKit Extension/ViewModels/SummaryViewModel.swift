@@ -1,7 +1,7 @@
 import Combine
 import Foundation
 
-final class SummaryViewModel: NSObject, ObservableObject {
+final class SummaryViewModel: ObservableObject {
     @Published var totalDisplayTime = ""
     @Published var loaded = false
     

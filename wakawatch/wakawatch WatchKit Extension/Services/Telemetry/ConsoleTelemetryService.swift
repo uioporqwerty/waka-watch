@@ -6,4 +6,8 @@ final class ConsoleTelemetryService: TelemetryService {
     func recordViewEvent(elementName: String) {
         print("View: \(elementName)")
     }
+    
+    func recordNavigationEvent(from: String, to: String) {
+        print("Navigated from: \(from) to: \(to)")
+    }
 }

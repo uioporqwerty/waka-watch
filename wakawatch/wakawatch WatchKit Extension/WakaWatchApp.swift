@@ -3,6 +3,8 @@ import SwiftUI
 @main
 struct WakaWatchApp: App {
     init() {
+        let _ = ConnectivityService.shared
+        DependencyInjection.shared.register()
         guard let apmService = DependencyInjection.shared.container.resolve(APMService.self) else {
             return
         }
@@ -11,7 +13,7 @@ struct WakaWatchApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ConnectView(connectivityService: ConnectivityService.shared).navigationTitle(Text("WakaWatch"))
+            ConnectView().navigationTitle(Text("WakaWatch"))
         }
     }
 }

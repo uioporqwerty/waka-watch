@@ -1,7 +1,7 @@
 import Combine
 import Foundation
 
-final class ProfileViewModel: NSObject, ObservableObject {
+final class ProfileViewModel: ObservableObject {
     @Published var id: UUID?
     @Published var displayName = "Anonymous User"
     @Published var photoUrl: URL?

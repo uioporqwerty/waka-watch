@@ -1,11 +1,10 @@
 import SwiftUI
 
 struct ConnectView: View {
-    @ObservedObject var connectivityService: ConnectivityService
-    @AppStorage(DefaultsKeys.authorized) var storageAuthorized = false
+    @AppStorage(DefaultsKeys.authorized) var authorized = false
     
     var body: some View {
-        if !(connectivityService.authorized || storageAuthorized) {
+        if !authorized {
             NavigationView {
                 Text(LocalizedStringKey("ConnectView_Message"))
                     .navigationTitle(Text(LocalizedStringKey("ConnectView_Title")))
@@ -35,6 +34,6 @@ struct ConnectView: View {
 
 struct ConnectView_Previews: PreviewProvider {
     static var previews: some View {
-        ConnectView(connectivityService: ConnectivityService.shared)
+        ConnectView()
     }
 }
