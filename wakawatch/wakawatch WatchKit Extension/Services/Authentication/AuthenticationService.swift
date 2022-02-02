@@ -46,4 +46,25 @@ final class AuthenticationService {
         
         return nil
     }
+    
+    func disconnect() async throws {
+        let defaults = UserDefaults.standard
+        let accessToken = defaults.string(forKey: DefaultsKeys.accessToken)
+        
+        let url = "https://wakatime.com/oauth/revoke"
+        var urlComponents = URLComponents(string: url)!
+        
+        urlComponents.queryItems = [
+            URLQueryItem(name: "client_secret", value: self.clientSecret),
+            URLQueryItem(name: "access_token", value: accessToken),
+            URLQueryItem(name: "token", value: accessToken)
+        ]
+        
+        let request = URLRequest(url: urlComponents.url!)
+        do {
+            let (_, _) = try await URLSession.shared.data(from: request.url!)
+        } catch {
+            self.logManager.reportError(error)
+        }
+    }
 }

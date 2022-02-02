@@ -123,17 +123,4 @@ final class NetworkService {
         
        return nil
     }
-    
-    func disconnect() async throws {
-        let url = "https://wakatime.com/oauth/revoke"
-        var urlComponents = URLComponents(string: url)!
-        urlComponents.queryItems = [
-            URLQueryItem(name: "client_secret", value: self.clientSecret),
-            URLQueryItem(name: "access_token", value: self.getAccessToken()),
-            URLQueryItem(name: "token", value: self.getAccessToken())
-        ]
-        
-        let request = URLRequest(url: urlComponents.url!)
-        let (_, _) = try await URLSession.shared.data(from: request.url!)
-    }
 }

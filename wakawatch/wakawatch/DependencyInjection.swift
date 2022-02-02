@@ -25,7 +25,8 @@ final class DependencyInjection {
         
         self.container.register(AuthenticationViewModel.self) { r in AuthenticationViewModel(authenticationService: r.resolve(AuthenticationService.self)!,
                                                                                              telemetryService: r.resolve(TelemetryService.self)!,
-                                                                                             apmService: r.resolve(APMService.self)!)}
+                                                                                             apmService: r.resolve(APMService.self)!,
+                                                                                             logManager: r.resolve(LogManager.self)!)}
         self.container.register(SplashViewModel.self) { r in SplashViewModel(telemetryService: r.resolve(TelemetryService.self)!)}
         
         self.container.register(AuthenticationView.self) { r in AuthenticationView(viewModel: r.resolve(AuthenticationViewModel.self)!)}

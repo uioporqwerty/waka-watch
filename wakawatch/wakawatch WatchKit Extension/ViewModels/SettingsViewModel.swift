@@ -1,14 +1,17 @@
 import Foundation
 final class SettingsViewModel {
     private let networkService: NetworkService
+    private let authenticationService: AuthenticationService
     private let logManager: LogManager
     
     public let telemetry: TelemetryService
     
     init(networkService: NetworkService,
+         authenticationService: AuthenticationService,
          logManager: LogManager,
          telemetryService: TelemetryService) {
         self.networkService = networkService
+        self.authenticationService = authenticationService
         self.logManager = logManager
         self.telemetry = telemetryService
     }
@@ -17,7 +20,7 @@ final class SettingsViewModel {
         self.telemetry.recordViewEvent(elementName: "TAPPED: Disconnect button")
         
         do {
-            try await networkService.disconnect()
+            try await self.authenticationService.disconnect()
             
             let message: [String: Any] = [
                 DefaultsKeys.authorized: false,

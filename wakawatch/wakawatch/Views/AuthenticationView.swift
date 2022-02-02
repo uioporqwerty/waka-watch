@@ -49,6 +49,14 @@ struct AuthenticationView: View {
                 Text(LocalizedStringKey("AuthenticationView_Connected_Text"))
                     .multilineTextAlignment(.center)
                     .lineSpacing(8)
+                AsyncButton(action: {
+                    await self.authenticationViewModel.disconnect()
+                })
+                {
+                    Text(LocalizedStringKey("AuthenticationView_Disconnect_Button_Text"))
+                        .frame(minHeight: 34)
+                }
+                .buttonStyle(.borderedProminent)
             }
         }
     }
