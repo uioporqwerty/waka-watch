@@ -10,6 +10,7 @@ struct UserData: Decodable {
     let display_name: String?
     let photo: String?
     let website: String?
+    let email: String?
     let city: LocationData?
 }
 

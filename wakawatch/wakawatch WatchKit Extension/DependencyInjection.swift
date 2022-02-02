@@ -7,17 +7,19 @@ final class DependencyInjection {
     private init() { }
     
     func register() {
+        self.container.register(LogManager.self) { r in LogManager(loggingService: r.resolve(LoggingService.self)!)}
+        self.container.register(NetworkService.self) { r in NetworkService(logManager: r.resolve(LogManager.self)!, telemetry: r.resolve(TelemetryService.self)!)}
+        
         #if DEBUG
+        self.container.register(APMService.self) { r in NullAPMService() }
         self.container.register(TelemetryService.self) { _ in ConsoleTelemetryService() }
         self.container.register(LoggingService.self) { _ in ConsoleLoggingService() }
         #else
-        self.container.register(APMService.self) { r in RollbarAPMService() }
+        self.container.register(APMService.self) { r in RollbarAPMService(networkService: r.resolve(NetworkService.self)!,
+                                                                          logManager: r.resolve(LogManager.self)!) }
         self.container.register(TelemetryService.self) { _ in RollbarTelemetryService() }
         self.container.register(LoggingService.self) { _ in RollbarLoggingService() }
         #endif
-        
-        self.container.register(LogManager.self) { r in LogManager(loggingService: r.resolve(LoggingService.self)!)}
-        self.container.register(NetworkService.self) { r in NetworkService(logManager: r.resolve(LogManager.self)!, telemetry: r.resolve(TelemetryService.self)!)}
         
         self.container.register(SummaryViewModel.self) { r in SummaryViewModel(networkService: r.resolve(NetworkService.self)!, telemetryService: r.resolve(TelemetryService.self)!)}
         self.container.register(ProfileViewModel.self) { r in ProfileViewModel(networkService: r.resolve(NetworkService.self)!, telemetryService: r.resolve(TelemetryService.self)! )}

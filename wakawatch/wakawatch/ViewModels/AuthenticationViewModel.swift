@@ -2,15 +2,18 @@ import Foundation
 
 final class AuthenticationViewModel {
     private let authenticationService: AuthenticationService
+    private let apmService: APMService
     
     public let telemetry: TelemetryService
     public let authorizationUrl: URL
     public let callbackURLScheme: String
     
     init(authenticationService: AuthenticationService,
-         telemetryService: TelemetryService) {
+         telemetryService: TelemetryService,
+         apmService: APMService) {
         self.authenticationService = authenticationService
         self.telemetry = telemetryService
+        self.apmService = apmService
         
         self.authorizationUrl = self.authenticationService.authorizationUrl
         self.callbackURLScheme = self.authenticationService.callbackURLScheme
@@ -36,6 +39,8 @@ final class AuthenticationViewModel {
                 ConnectivityService.shared.sendMessage(message, delivery: .highPriority)
                 ConnectivityService.shared.sendMessage(message, delivery: .guaranteed)
                 ConnectivityService.shared.sendMessage(message, delivery: .failable)
+                
+                await self.apmService.setUser()
             } catch {
                 print("Failed to get summary with error: \(error)")
             }

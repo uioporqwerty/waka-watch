@@ -1,3 +1,0 @@
-protocol APMService {
-    func configure()
-}

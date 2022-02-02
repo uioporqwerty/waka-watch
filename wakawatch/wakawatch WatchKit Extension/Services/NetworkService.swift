@@ -12,17 +12,24 @@ final class NetworkService {
         self.logManager = logManager
         self.telemetry = telemetry
         
-        let defaults = UserDefaults.standard
-        self.accessToken = defaults.string(forKey: DefaultsKeys.accessToken)
         self.clientId = Bundle.main.infoDictionary?["CLIENT_ID"] as? String
         self.clientSecret = Bundle.main.infoDictionary?["CLIENT_SECRET"] as? String
+    }
+    
+    private func getAccessToken() -> String? {
+        if self.accessToken == nil || self.accessToken == "" {
+            let defaults = UserDefaults.standard
+            self.accessToken = defaults.string(forKey: DefaultsKeys.accessToken)
+        }
+        
+        return self.accessToken
     }
     
     func getSummaryData() async throws -> SummaryResponse?  {
         var urlComponents = URLComponents(string: "\(baseUrl)/users/current/summaries")!
         urlComponents.queryItems = [
             URLQueryItem(name: "client_secret", value: self.clientSecret),
-            URLQueryItem(name: "access_token", value: self.accessToken),
+            URLQueryItem(name: "access_token", value: self.getAccessToken()),
             URLQueryItem(name: "range", value: "Today")
         ]
         
@@ -57,10 +64,11 @@ final class NetworkService {
         var urlComponents = URLComponents(string: url)!
         urlComponents.queryItems = [
             URLQueryItem(name: "client_secret", value: self.clientSecret),
-            URLQueryItem(name: "access_token", value: self.accessToken)
+            URLQueryItem(name: "access_token", value: self.getAccessToken())
         ]
         
         let request = URLRequest(url: urlComponents.url!)
+        
         do {
             let (data, response) = try await URLSession.shared.data(from: request.url!)
             let urlResponse = response as! HTTPURLResponse
@@ -85,7 +93,7 @@ final class NetworkService {
         var urlComponents = URLComponents(string: "\(baseUrl)/leaders")!
         var urlQueryItems = [
             URLQueryItem(name: "client_secret", value: self.clientSecret),
-            URLQueryItem(name: "access_token", value: self.accessToken)
+            URLQueryItem(name: "access_token", value: self.getAccessToken())
         ]
         
         if (page != nil) {
@@ -121,8 +129,8 @@ final class NetworkService {
         var urlComponents = URLComponents(string: url)!
         urlComponents.queryItems = [
             URLQueryItem(name: "client_secret", value: self.clientSecret),
-            URLQueryItem(name: "access_token", value: self.accessToken),
-            URLQueryItem(name: "token", value: self.accessToken)
+            URLQueryItem(name: "access_token", value: self.getAccessToken()),
+            URLQueryItem(name: "token", value: self.getAccessToken())
         ]
         
         let request = URLRequest(url: urlComponents.url!)
