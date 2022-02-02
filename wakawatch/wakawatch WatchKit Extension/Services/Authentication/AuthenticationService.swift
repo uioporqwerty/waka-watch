@@ -49,20 +49,25 @@ final class AuthenticationService {
     
     func disconnect() async throws {
         let defaults = UserDefaults.standard
-        let accessToken = defaults.string(forKey: DefaultsKeys.accessToken)
+        let accessToken = defaults.string(forKey: DefaultsKeys.accessToken)!
         
-        let url = "https://wakatime.com/oauth/revoke"
-        var urlComponents = URLComponents(string: url)!
+        let url = URL(string: "https://wakatime.com/oauth/revoke")
+        let data: Data = "client_id=\(self.clientId!)&client_secret=\(self.clientSecret!)&token=\(accessToken)".data(using: .utf8)!
         
-        urlComponents.queryItems = [
-            URLQueryItem(name: "client_secret", value: self.clientSecret),
-            URLQueryItem(name: "access_token", value: accessToken),
-            URLQueryItem(name: "token", value: accessToken)
-        ]
+        var request = URLRequest(url: url!)
+        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        request.httpBody = data
+        request.httpMethod = "POST"
         
-        let request = URLRequest(url: urlComponents.url!)
         do {
-            let (_, _) = try await URLSession.shared.data(from: request.url!)
+            let (data, response) = try await URLSession.shared.data(for: request)
+            let urlResponse = response as! HTTPURLResponse
+            
+            if urlResponse.statusCode >= 300 {
+                self.logManager.errorMessage(data)
+            }
+            
+            self.telemetry.recordNetworkEvent(method: request.httpMethod, url: request.url?.absoluteString, statusCode: urlResponse.statusCode.description)
         } catch {
             self.logManager.reportError(error)
         }
