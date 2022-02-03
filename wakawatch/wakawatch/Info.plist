@@ -8,6 +8,8 @@
 	<string>$(CLIENT_SECRET)</string>
 	<key>ENVIRONMENT</key>
 	<string>$(ENVIRONMENT)</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 	<key>ROLLBAR_ACCESS_TOKEN</key>
 	<string>$(ROLLBAR_ACCESS_TOKEN)</string>
 </dict>
