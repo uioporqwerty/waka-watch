@@ -33,7 +33,7 @@ final class ProfileViewModel: ObservableObject {
                         self.website = URL(string: userProfileData?.data.website ?? "")
                         self.createdDate = DateUtility.getDate(date: userProfileData?.created_at ?? "")
                         self.location = userProfileData?.data.city?.title
-                        self.rank = leaderboardData?.current_user.rank
+                        self.rank = leaderboardData?.current_user?.rank
                         self.loaded = true
                     }
                 } catch {

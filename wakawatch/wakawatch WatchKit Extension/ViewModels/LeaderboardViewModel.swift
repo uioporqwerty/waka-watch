@@ -23,10 +23,17 @@ final class LeaderboardViewModel: ObservableObject {
                     
                     var leaderboardRecords: [LeaderboardRecord] = []
                     leaderboardData?.data.forEach { data in
-                        leaderboardRecords.append(LeaderboardRecord(id: UUID(uuidString: data.user.id)!, rank: data.rank, displayName: data.user.display_name, user: data.user))
+                        guard let user = data.user else {
+                            return
+                        }
+                        
+                        leaderboardRecords.append(LeaderboardRecord(id: UUID(uuidString: user.id)!, rank: data.rank, displayName: user.display_name, user: user))
                     }
                     self.records = leaderboardRecords
-                    self.currentUserRecord = LeaderboardRecord(id: UUID(uuidString: leaderboardData?.current_user.user.id ?? "")!, rank: leaderboardData?.current_user.rank, displayName: leaderboardData?.current_user.user.display_name, user: leaderboardData?.current_user.user)
+                    guard let currentUser = leaderboardData?.current_user?.user else {
+                        return
+                    }
+                    self.currentUserRecord = LeaderboardRecord(id: UUID(uuidString: currentUser.id)!, rank: leaderboardData?.current_user?.rank, displayName: currentUser.display_name, user: currentUser)
                     self.loaded = true
                 }
             } catch {

@@ -40,7 +40,7 @@ struct AuthenticationView: View {
                             self.startingWebAuthenticationSession = false
                         }
                     }
-                    .prefersEphemeralWebBrowserSession(false)
+                    .prefersEphemeralWebBrowserSession(true)
                 }
             }
         }
