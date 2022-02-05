@@ -10,22 +10,22 @@ final class ProfileViewModel: ObservableObject {
     @Published var location: String?
     @Published var rank: Int?
     @Published var loaded = false
-    
+
     private var networkService: NetworkService
     public let telemetry: TelemetryService
-    
+
     init(networkService: NetworkService, telemetryService: TelemetryService) {
         self.networkService = networkService
         self.telemetry = telemetryService
     }
-    
+
     func getProfile(user: UserData?) {
-        if (user == nil) {
+        if user == nil {
             Task {
                 do {
                     let userProfileData = try await networkService.getProfileData(userId: nil)
                     let leaderboardData = try await networkService.getPublicLeaderboard(page: nil)
-                    
+
                     DispatchQueue.main.async {
                         self.id = UUID(uuidString: userProfileData?.data.id ?? "")
                         self.displayName = userProfileData?.data.display_name ?? ""

@@ -5,12 +5,12 @@ struct AsyncButton<Label: View>: View {
     @ViewBuilder var label: () -> Label
 
     @State private var isPerformingTask = false
-    
+
     var body: some View {
         Button(
             action: {
                 isPerformingTask = true
-            
+
                 Task {
                     await action()
                     isPerformingTask = false

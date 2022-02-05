@@ -1,0 +1,26 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '15.1'
+
+target 'wakawatch' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  #use_frameworks!
+
+  # Pods for wakawatch
+  pod 'SwiftLint'
+
+end
+
+target 'wakawatch WatchKit App' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  #use_frameworks!
+
+  # Pods for wakawatch WatchKit App
+end
+
+target 'wakawatch WatchKit Extension' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  #use_frameworks!
+
+  # Pods for wakawatch WatchKit Extension
+
+end

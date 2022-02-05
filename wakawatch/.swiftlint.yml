@@ -1,0 +1,6 @@
+disabled_rules:
+  - identifier_name
+  - todo
+  - multiple_closures_with_trailing_closure
+line_length:
+  error: 250

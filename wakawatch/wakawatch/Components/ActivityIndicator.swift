@@ -2,7 +2,7 @@ import SwiftUI
 
 struct ActivityIndicator: UIViewRepresentable {
     @Binding var shouldAnimate: Bool
-    
+
     func makeUIView(context: Context) -> UIActivityIndicatorView {
         return UIActivityIndicatorView()
     }

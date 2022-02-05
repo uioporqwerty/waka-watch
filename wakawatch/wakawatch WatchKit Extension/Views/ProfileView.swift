@@ -2,32 +2,32 @@ import SwiftUI
 
 struct ProfileView: View {
     @ObservedObject var profileViewModel: ProfileViewModel
-    
+
     init(viewModel: ProfileViewModel, user: UserData?, loaded: Bool = false) {
         self.profileViewModel = viewModel
         self.profileViewModel.telemetry.recordViewEvent(elementName: "\(String(describing: ProfileView.self))")
         self.profileViewModel.getProfile(user: user)
         self.profileViewModel.loaded = loaded
     }
-    
+
     var body: some View {
         if !self.profileViewModel.loaded {
             ProgressView()
-        }
-        else {
+        } else {
             VStack {
                 Text(profileViewModel.displayName)
-                
-                if (profileViewModel.location != nil) {
+
+                if profileViewModel.location != nil {
                     Text(profileViewModel.location ?? "")
                 }
-                
-                if (profileViewModel.rank != nil) {
+
+                if profileViewModel.rank != nil {
                     Text("\("ProfileView_Rank_Text".toLocalized()) \(profileViewModel.rank!)")
                         .padding(EdgeInsets(top: 4, leading: 0, bottom: 0, trailing: 0))
                 }
-                
-                if (profileViewModel.createdDate != nil) {
+
+                if profileViewModel.createdDate != nil {
+                    // swiftlint:disable:next line_length
                     Text("\("ProfileView_Joined_Text".toLocalized()) \(profileViewModel.createdDate!.formatted(date: .abbreviated, time: .omitted))")
                         .padding(EdgeInsets(top: 4, leading: 0, bottom: 0, trailing: 0))
                 }

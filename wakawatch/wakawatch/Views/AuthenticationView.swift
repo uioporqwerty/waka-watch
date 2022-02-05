@@ -4,14 +4,16 @@ import BetterSafariView
 struct AuthenticationView: View {
     private var authenticationViewModel: AuthenticationViewModel
     @AppStorage(DefaultsKeys.authorized) private var authorized = false
-    
+
     @State private var startingWebAuthenticationSession = false
-    
+
     init(viewModel: AuthenticationViewModel) {
         self.authenticationViewModel = viewModel
-        self.authenticationViewModel.telemetry.recordViewEvent(elementName: "\(String(describing: AuthenticationView.self))")
+        self.authenticationViewModel
+            .telemetry
+            .recordViewEvent(elementName: "\(String(describing: AuthenticationView.self))")
     }
-    
+
     var body: some View {
         if !self.authorized {
             VStack {
@@ -28,13 +30,13 @@ struct AuthenticationView: View {
                         guard error == nil, let successURL = callbackURL else {
                            return
                         }
-                        
+                        // swiftlint:disable line_length
                         let oAuthCode = NSURLComponents(string: (successURL.absoluteString))?.queryItems?.filter({$0.name == "code"}).first
                         guard let authorizationCode = oAuthCode?.value else {
-                            //TODO: Display error is authorization code is missing.
+                            // TODO: Display error is authorization code is missing.
                             return
                         }
-                        
+
                         Task {
                             await self.authenticationViewModel.authenticate(authorizationCode: authorizationCode)
                             self.startingWebAuthenticationSession = false
@@ -43,16 +45,14 @@ struct AuthenticationView: View {
                     .prefersEphemeralWebBrowserSession(true)
                 }
             }
-        }
-        else {
+        } else {
             VStack {
                 Text(LocalizedStringKey("AuthenticationView_Connected_Text"))
                     .multilineTextAlignment(.center)
                     .lineSpacing(8)
                 AsyncButton(action: {
                     await self.authenticationViewModel.disconnect()
-                })
-                {
+                }) {
                     Text(LocalizedStringKey("AuthenticationView_Disconnect_Button_Text"))
                         .frame(minHeight: 34)
                 }

@@ -2,18 +2,17 @@ import SwiftUI
 
 struct SummaryView: View {
     @ObservedObject var summaryViewModel: SummaryViewModel
-    
+
     init(viewModel: SummaryViewModel) {
         self.summaryViewModel = viewModel
         self.summaryViewModel.telemetry.recordViewEvent(elementName: "\(String(describing: SummaryView.self))")
         self.summaryViewModel.getSummary()
     }
-    
+
     var body: some View {
         if !self.summaryViewModel.loaded {
             ProgressView()
-        }
-        else {
+        } else {
             VStack {
                 Text(LocalizedStringKey("SummaryView_Today"))
                 Text(summaryViewModel.totalDisplayTime)

@@ -3,12 +3,12 @@ import SwiftUI
 struct ConnectView: View {
     private var connectViewModel: ConnectViewModel
     @AppStorage(DefaultsKeys.authorized) var authorized = false
-    
+
     init(viewModel: ConnectViewModel) {
         self.connectViewModel = viewModel
         self.connectViewModel.telemetry.recordViewEvent(elementName: String(describing: ConnectView.self))
     }
-    
+
     var body: some View {
         if !authorized {
             NavigationView {
@@ -16,8 +16,7 @@ struct ConnectView: View {
                     .navigationTitle(Text(LocalizedStringKey("ConnectView_Title")))
                     .navigationBarTitleDisplayMode(.inline)
             }
-        }
-        else {
+        } else {
             NavigationView {
                 TabView {
                     DependencyInjection.shared.container.resolve(SummaryView.self)!

@@ -4,4 +4,10 @@
    <FileRef
       location = "container:wakawatch.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:wakawatch.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
 </Workspace>

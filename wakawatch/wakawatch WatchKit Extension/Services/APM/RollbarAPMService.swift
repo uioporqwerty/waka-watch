@@ -1,22 +1,24 @@
 import RollbarNotifier
 import Foundation
 
-class RollbarAPMService : APMService {
+class RollbarAPMService: APMService {
     private var configuration: RollbarConfig
     private var networkService: NetworkService
     private var logManager: LogManager
-    
+
     init(networkService: NetworkService,
          logManager: LogManager) {
         self.configuration = RollbarConfig()
         self.networkService = networkService
         self.logManager = logManager
-        self.configuration.destination.accessToken = Bundle.main.infoDictionary?["ROLLBAR_ACCESS_TOKEN"] as! String
-        self.configuration.destination.environment = Bundle.main.infoDictionary?["ENVIRONMENT"] as! String
-        
+        self.configuration.destination.accessToken = Bundle.main.infoDictionary?["ROLLBAR_ACCESS_TOKEN"] as? String
+                                                                                                         ?? ""
+        self.configuration.destination.environment = Bundle.main.infoDictionary?["ENVIRONMENT"] as? String
+                                                                                                ?? "Development"
+
         Rollbar.initWithConfiguration(self.configuration)
     }
-    
+
     func setUser() async {
         do {
             let profileData = try await self.networkService.getProfileData(userId: nil)

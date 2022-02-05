@@ -2,13 +2,14 @@ import Foundation
 import Combine
 import WatchConnectivity
 
-//TODO: Revisit connectivity implementation so it isn't a singleton.
-//Already tried registering a singleton instance in Swinject but results in connectivity issues since each container will have different instances.
+// TODO: Revisit connectivity implementation so it isn't a singleton.
+// Already tried registering a singleton instance in Swinject
+// but results in connectivity issues since each container will have different instances.
 final class ConnectivityService: NSObject {
     static let shared = ConnectivityService()
-    
+
     private let logManager: LogManager
-    
+
     private override init() {
         self.logManager = DependencyInjection.shared.container.resolve(LogManager.self)!
         super.init()
@@ -20,10 +21,10 @@ final class ConnectivityService: NSObject {
         #endif
         WCSession.default.delegate = self
         WCSession.default.activate()
-        
+
         self.logManager.debugMessage("WCSession activated")
     }
-    
+
     public func sendMessage(_ message: [String: Any],
                             delivery: Delivery,
                             replyHandler: (([String: Any]) -> Void)? = nil,
@@ -32,30 +33,30 @@ final class ConnectivityService: NSObject {
             self.logManager.errorMessage("Cannot send to peer")
             return
         }
-        
+
         switch delivery {
-            case .failable:
-                self.logManager.debugMessage("Sending as failable")
-                WCSession.default.sendMessage(
-                  message,
-                  replyHandler: optionalMainQueueDispatch(handler: replyHandler),
-                  errorHandler: optionalMainQueueDispatch(handler: errorHandler)
-                )
-            case .guaranteed:
-                self.logManager.debugMessage("Sending as guaranteed")
-                WCSession.default.transferUserInfo(message)
-            case .highPriority:
-                self.logManager.debugMessage("Sending as high priority")
-                do {
-                    try WCSession.default.updateApplicationContext(message)
-                } catch {
-                    errorHandler?(error)
-                }
+        case .failable:
+            self.logManager.debugMessage("Sending as failable")
+            WCSession.default.sendMessage(
+              message,
+              replyHandler: optionalMainQueueDispatch(handler: replyHandler),
+              errorHandler: optionalMainQueueDispatch(handler: errorHandler)
+            )
+        case .guaranteed:
+            self.logManager.debugMessage("Sending as guaranteed")
+            WCSession.default.transferUserInfo(message)
+        case .highPriority:
+            self.logManager.debugMessage("Sending as high priority")
+            do {
+                try WCSession.default.updateApplicationContext(message)
+            } catch {
+                errorHandler?(error)
+            }
         }
     }
-    
+
     typealias OptionalHandler<T> = ((T) -> Void)?
-    
+
     private func optionalMainQueueDispatch<T>(handler: OptionalHandler<T>) -> OptionalHandler<T> {
       guard let handler = handler else {
         return nil
@@ -67,9 +68,10 @@ final class ConnectivityService: NSObject {
         }
       }
     }
-    
+
     private func canSendToPeer() -> Bool {
       guard WCSession.default.activationState == .activated else {
+          // swiftlint:disable:next line_length
           self.logManager.errorMessage("Session state is not activated. Current state is \(WCSession.default.activationState)")
           return false
       }
@@ -85,41 +87,45 @@ final class ConnectivityService: NSObject {
               return false
           }
       #endif
-      
+
       return true
     }
 }
 
-
 extension ConnectivityService: WCSessionDelegate {
-    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) { }
-    
-    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
+    func session(_ session: WCSession,
+                 activationDidCompleteWith activationState: WCSessionActivationState,
+                 error: Error?) { }
+
+    func session(_ session: WCSession,
+                 didReceiveMessage message: [String: Any]) {
         self.logManager.debugMessage("Received immediate message.", data: message)
         setAuthenticationStatus(from: message)
     }
-    
-    func session(_ session: WCSession, didReceiveUserInfo userInfo: [String: Any] = [:]) {
+
+    func session(_ session: WCSession,
+                 didReceiveUserInfo userInfo: [String: Any] = [:]) {
         self.logManager.debugMessage("Received user info message", data: userInfo)
         setAuthenticationStatus(from: userInfo)
     }
-    
-    func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String: Any]) {
+
+    func session(_ session: WCSession,
+                 didReceiveApplicationContext applicationContext: [String: Any]) {
         self.logManager.debugMessage("Received application context message", data: applicationContext)
         setAuthenticationStatus(from: applicationContext)
     }
-    
+
     private func setAuthenticationStatus(from dictionary: [String: Any]) {
         guard let authorized = dictionary[ConnectivityMessageKeys.authorized] as? Bool else {
             self.logManager.errorMessage("Authorized key not found")
             return
         }
-        
+
         guard let accessToken = dictionary[ConnectivityMessageKeys.accessToken] as? String else {
             self.logManager.errorMessage("Access token key not found")
             return
         }
-        
+
         let defaults = UserDefaults.standard
         defaults.set(accessToken, forKey: DefaultsKeys.accessToken)
         defaults.set(authorized, forKey: DefaultsKeys.authorized)
@@ -136,7 +142,7 @@ extension ConnectivityService: WCSessionDelegate {
             WCSession.default.activate()
         }
     #endif
-    
+
     #if os(watchOS)
         func sessionCompanionAppInstalledDidChange(_ session: WCSession) {
             self.logManager.debugMessage("Companion app install status changed")
