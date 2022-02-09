@@ -1,0 +1,9 @@
+**Waka Watch will display information after it has authenticated with the above sign in information from the iPhone app*- Launching the phone app should display "Connect with WakaTime" button. Some test areas below.
+
+- Launching the watch app should display "Open the Waka Watch app to authenticate" message. 
+- Tapping the "Connect with WakaTime" button and successfully authenticating should show the connected view with a pairing button. If you cancel authentication at any time then you should still be on the view with the "Connect with WakaTime" button.
+- Once authenticated and on your watch app, you should see the following tabs in order: Summary, Leaderboard, Profile, and Settings.
+- On the Summary tab, you should see "Today" followed by the time you've spent coding today.
+- On the Leaderboard tab, you should see your position in the leaderboard in the middle and using the crown you should be able to go up and down the list. If no position is available, then it will default to the top of the list.
+- On the Profile tab, you should see your profile information.
+- On the Settings tab, you should see a "Disconnect from WakaTime" button. Tapping the button will return the watch app and phone app to their initial views.

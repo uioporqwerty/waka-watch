@@ -1,0 +1,23 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - "ci-cd"
+
+jobs:
+  build:
+    runs-on: macOS-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Run Bundle install
+        run: |
+          cd wakawatch
+          bundle install
+
+      - name:
+        run: fastlane build
+        env:
+          CI: true
+          APP_VERSION: "1.1"
