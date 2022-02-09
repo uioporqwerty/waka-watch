@@ -7,7 +7,7 @@ platform :ios do
     app_store_connect_api_key(
       key_id: "AQ5VCA4237",
       issuer_id: "1fbf6cf6-dd26-41f2-a459-b33d23051593",
-      key_filepath: "./AuthKey_AQ5VCA4237.p8",
+      key_filepath: "wakawatch/fastlane/AuthKey_AQ5VCA4237.p8",
       duration: 1200,
       in_house: false
     )
