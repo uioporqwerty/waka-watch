@@ -6,7 +6,7 @@ on:
       - "ci-cd"
 
 jobs:
-  build:
+  Build:
     runs-on: macOS-latest
     steps:
       - uses: actions/checkout@v2
@@ -17,7 +17,9 @@ jobs:
           bundle install
 
       - name:
-        run: fastlane build
+        run: |
+          cd wakawatch
+          fastlane build
         env:
           CI: true
           APP_VERSION: "1.1"
