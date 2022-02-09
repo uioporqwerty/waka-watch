@@ -16,7 +16,12 @@ jobs:
           cd wakawatch
           bundle install
 
-      - name:
+      - name: Write P8 Key to file
+        run: |
+          cd wakawatch/fastlane
+          ${{ secrets.AUTHKEY_AQ5VCA4237}} > AuthKey_AQ5VCA4237.p8
+
+      - name: Build
         run: |
           cd wakawatch
           bundle exec fastlane build
