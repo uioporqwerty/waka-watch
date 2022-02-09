@@ -16,6 +16,11 @@ jobs:
           cd wakawatch
           bundle install
 
+      - name: Configure git
+        run: git config --global url "https://${TOKEN}:x-oauth-basic@github.com/"
+        env:
+          TOKEN: ${{ secrets.ACCESS_TOKEN }}
+
       - name: Write P8 Key to file
         run: |
           cd wakawatch
