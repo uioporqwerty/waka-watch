@@ -33,3 +33,4 @@ jobs:
         env:
           CI: true
           APP_VERSION: "1.1"
+          MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
