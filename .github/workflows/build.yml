@@ -17,7 +17,7 @@ jobs:
           bundle install
 
       - name: Configure git
-        run: git config --global url "https://${TOKEN}:x-oauth-basic@github.com/"
+        run: git config --global url."https://${TOKEN}:x-oauth-basic@github.com/".insteadOf "https://github.com/"
         env:
           TOKEN: ${{ secrets.ACCESS_TOKEN }}
 
