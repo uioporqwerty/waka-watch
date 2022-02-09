@@ -19,7 +19,7 @@ jobs:
       - name:
         run: |
           cd wakawatch
-          fastlane build
+          bundle exec fastlane build
         env:
           CI: true
           APP_VERSION: "1.1"
