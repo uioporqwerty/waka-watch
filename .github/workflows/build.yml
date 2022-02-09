@@ -19,7 +19,7 @@ jobs:
       - name: Write P8 Key to file
         run: |
           cd wakawatch/fastlane
-          echo ${{ secrets.AUTHKEY_AQ5VCA4237}} > AuthKey_AQ5VCA4237.p8
+          echo "${{ secrets.AUTHKEY_AQ5VCA4237 }}" > AuthKey_AQ5VCA4237.p8
 
       - name: Build
         run: |
