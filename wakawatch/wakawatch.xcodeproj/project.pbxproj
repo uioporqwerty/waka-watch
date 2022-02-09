@@ -222,6 +222,8 @@
 		6BED9AED2795450F005646C3 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
 		6BED9AFB2795BBB5005646C3 /* AccessTokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenResponse.swift; sourceTree = "<group>"; };
 		6BED9AFF2795D1C0005646C3 /* ConnectivityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivityService.swift; sourceTree = "<group>"; };
+		6BFAFE4C27AF81ED00139D2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6BFAFE4E27B086D200139D2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92FCD88E8D12B31C024D03BB /* Pods-wakawatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wakawatch.debug.xcconfig"; path = "Target Support Files/Pods-wakawatch/Pods-wakawatch.debug.xcconfig"; sourceTree = "<group>"; };
 		94135A6795FDBFF3AFEB9369 /* Pods-wakawatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wakawatch.release.xcconfig"; path = "Target Support Files/Pods-wakawatch/Pods-wakawatch.release.xcconfig"; sourceTree = "<group>"; };
 		B07877DA89ACF200D934A31D /* libPods-wakawatch WatchKit Extension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-wakawatch WatchKit Extension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -407,12 +409,8 @@
 			isa = PBXGroup;
 			children = (
 				6BED9A6C2795154A005646C3 /* wakawatch */,
-				6BED9A7D2795154C005646C3 /* wakawatchTests */,
-				6BED9A872795154C005646C3 /* wakawatchUITests */,
 				6BED9A922795154C005646C3 /* wakawatch WatchKit App */,
 				6BED9A9D2795154E005646C3 /* wakawatch WatchKit Extension */,
-				6BED9AB12795154F005646C3 /* wakawatch WatchKit AppTests */,
-				6BED9ABB2795154F005646C3 /* wakawatch WatchKit AppUITests */,
 				6BED9A6B2795154A005646C3 /* Products */,
 				6BED9AF027954672005646C3 /* Frameworks */,
 				6F8E7004F2DA50B9AAA26700 /* Pods */,
@@ -443,6 +441,7 @@
 				6BED9A6D2795154A005646C3 /* WakaWatchApp.swift */,
 				6BE5DE5A27A8BBB60072FF0E /* DependencyInjection.swift */,
 				6BED9A712795154C005646C3 /* Assets.xcassets */,
+				6BFAFE4C27AF81ED00139D2C /* Info.plist */,
 			);
 			path = wakawatch;
 			sourceTree = "<group>";
@@ -455,24 +454,11 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		6BED9A7D2795154C005646C3 /* wakawatchTests */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = wakawatchTests;
-			sourceTree = "<group>";
-		};
-		6BED9A872795154C005646C3 /* wakawatchUITests */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = wakawatchUITests;
-			sourceTree = "<group>";
-		};
 		6BED9A922795154C005646C3 /* wakawatch WatchKit App */ = {
 			isa = PBXGroup;
 			children = (
 				6BED9A932795154E005646C3 /* Assets.xcassets */,
+				6BFAFE4E27B086D200139D2C /* Info.plist */,
 			);
 			path = "wakawatch WatchKit App";
 			sourceTree = "<group>";
@@ -505,20 +491,6 @@
 				6BED9AA72795154F005646C3 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		6BED9AB12795154F005646C3 /* wakawatch WatchKit AppTests */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "wakawatch WatchKit AppTests";
-			sourceTree = "<group>";
-		};
-		6BED9ABB2795154F005646C3 /* wakawatch WatchKit AppUITests */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "wakawatch WatchKit AppUITests";
 			sourceTree = "<group>";
 		};
 		6BED9ADC27951F0C005646C3 /* Views */ = {
@@ -1208,7 +1180,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"wakawatch WatchKit Extension/Preview Content\"";
 				DEVELOPMENT_TEAM = 4V8V3L4FYS;
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "wakawatch WatchKit Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Waka Watch";
 				INFOPLIST_KEY_CLKComplicationPrincipalClass = wakawatch_WatchKit_Extension.ComplicationController;
@@ -1227,7 +1199,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 8.3;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Debug;
 		};
@@ -1241,7 +1213,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"wakawatch WatchKit Extension/Preview Content\"";
 				DEVELOPMENT_TEAM = 4V8V3L4FYS;
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "wakawatch WatchKit Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Waka Watch";
 				INFOPLIST_KEY_CLKComplicationPrincipalClass = wakawatch_WatchKit_Extension.ComplicationController;
@@ -1261,7 +1233,7 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				VALIDATE_PRODUCT = YES;
-				WATCHOS_DEPLOYMENT_TARGET = 8.3;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Release;
 		};
@@ -1275,8 +1247,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4V8V3L4FYS;
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
 				IBSC_MODULE = wakawatch_WatchKit_Extension;
+				INFOPLIST_FILE = "wakawatch WatchKit App/Info.plist";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = app.wakawatch;
 				MARKETING_VERSION = 1.0;
@@ -1287,7 +1260,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 8.3;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Debug;
 		};
@@ -1301,8 +1274,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4V8V3L4FYS;
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
 				IBSC_MODULE = wakawatch_WatchKit_Extension;
+				INFOPLIST_FILE = "wakawatch WatchKit App/Info.plist";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = app.wakawatch;
 				MARKETING_VERSION = 1.0;
@@ -1314,7 +1288,7 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				VALIDATE_PRODUCT = YES;
-				WATCHOS_DEPLOYMENT_TARGET = 8.3;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Release;
 		};
@@ -1329,14 +1303,14 @@
 				DEVELOPMENT_ASSET_PATHS = "\"wakawatch/Preview Content\"";
 				DEVELOPMENT_TEAM = 4V8V3L4FYS;
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = wakawatch/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1355,6 +1329,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 94135A6795FDBFF3AFEB9369 /* Pods-wakawatch.release.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -1362,14 +1337,14 @@
 				DEVELOPMENT_ASSET_PATHS = "\"wakawatch/Preview Content\"";
 				DEVELOPMENT_TEAM = 4V8V3L4FYS;
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = wakawatch/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
