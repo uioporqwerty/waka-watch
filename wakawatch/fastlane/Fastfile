@@ -33,6 +33,11 @@ platform :ios do
     build_app(workspace: "wakawatch.xcworkspace", 
               scheme: "wakawatch", 
               xcargs: "-allowProvisioningUpdates",
+              export_options: {
+                provisioningProfiles: { 
+                  "app.wakawatch": "match AppStore app.wakawatch"
+                }
+              },
               output_directory: "./",
               output_name: "Waka-Watch")
   end
