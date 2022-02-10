@@ -27,7 +27,8 @@ platform :ios do
       path: "./wakawatch.xcodeproj",
       code_sign_identity: "iPhone Distribution",
       profile_name: "match AppStore app.wakawatch",
-      bundle_identifier: "app.wakawatch"
+      bundle_identifier: "app.wakawatch",
+      targets: "wakawatch"
     )
     build_app(workspace: "wakawatch.xcworkspace", 
               scheme: "wakawatch", 
