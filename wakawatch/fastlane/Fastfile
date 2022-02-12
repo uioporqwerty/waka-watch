@@ -14,11 +14,16 @@ platform :ios do
 
     setup_ci if ENV['CI']
     cocoapods()
-    set_info_plist_value(path: "wakawatch/Info.plist", key: "CFBundleVersion", value: ENV["APP_VERSION"])
+    app_version = ENV["APP_VERSION"]
+    if !app_version
+      app_version = "1.0"
+    end
+
+    set_info_plist_value(path: "wakawatch/Info.plist", key: "CFBundleVersion", value: app_version)
     
-    set_info_plist_value(path: "wakawatch\ WatchKit\ App/Info.plist", key: "CFBundleVersion", value: ENV["APP_VERSION"])
+    set_info_plist_value(path: "wakawatch\ WatchKit\ App/Info.plist", key: "CFBundleVersion", value: app_version)
     
-    set_info_plist_value(path: "wakawatch\ WatchKit\ Extension/Info.plist", key: "CFBundleVersion", value: ENV["APP_VERSION"])
+    set_info_plist_value(path: "wakawatch\ WatchKit\ Extension/Info.plist", key: "CFBundleVersion", value: app_version)
 
     increment_build_number(xcodeproj: "wakawatch.xcodeproj")
     match(
