@@ -50,7 +50,7 @@ jobs:
   Deploy:
     runs-on: macOS-latest
     needs: Build
-    # if: startsWith(github.ref, 'refs/tags/')
+    if: startsWith(github.ref, 'refs/tags/')
     steps:
       - uses: actions/checkout@v2
 
