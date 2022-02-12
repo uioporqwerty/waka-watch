@@ -21,7 +21,13 @@ platform :ios do
     set_info_plist_value(path: "wakawatch\ WatchKit\ Extension/Info.plist", key: "CFBundleVersion", value: ENV["APP_VERSION"])
 
     increment_build_number(xcodeproj: "wakawatch.xcodeproj")
-    match(type: "appstore")
+    match(
+      type: "appstore",
+      readonly: true,
+      app_identifier: [
+        "app.wakawatch"
+      ]
+    )
     update_code_signing_settings(
       use_automatic_signing: false,
       path: "./wakawatch.xcodeproj",
