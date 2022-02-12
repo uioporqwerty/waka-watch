@@ -64,6 +64,10 @@ jobs:
           cd wakawatch
           bundle install
 
+      - name: Set app version
+        if: startsWith(github.ref, 'refs/tags/')
+        run: echo "APP_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+
       - name: Decrypt sensitive files
         run: |
           cd wakawatch
@@ -73,3 +77,5 @@ jobs:
         run: |
           cd wakawatch
           bundle exec fastlane deploy
+        env:
+          APP_VERSION: "$APP_VERSION"
