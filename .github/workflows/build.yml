@@ -24,8 +24,9 @@ jobs:
       - name: Decrypt sensitive files
         run: |
           cd wakawatch
-          gpg -d --passphrase "${{ secrets.GPG_PASSPHRASE }}" --batch Config.xcconfig.asc > ./wakawatch\ WatchKit\ Extension\Config.xcconfig
+          gpg -d --passphrase "${{ secrets.GPG_PASSPHRASE }}" --batch Config.xcconfig.asc > ./wakawatch\ WatchKit\ Extension/Config.xcconfig
           gpg -d --passphrase "${{ secrets.GPG_PASSPHRASE }}" --batch AuthKey_AQ5VCA4237.p8.asc > ./AuthKey_AQ5VCA4237.p8
+          cat ./wakawatch\ WatchKit\ Extension/Config.xcconfig
 
       - name: Build
         run: |
