@@ -39,7 +39,7 @@ jobs:
           bundle exec fastlane build
         env:
           CI: true
-          APP_VERSION: "$APP_VERSION"
+          APP_VERSION: $APP_VERSION
           MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
 
       - uses: actions/upload-artifact@v2
@@ -78,4 +78,4 @@ jobs:
           cd wakawatch
           bundle exec fastlane deploy
         env:
-          APP_VERSION: "$APP_VERSION"
+          APP_VERSION: $APP_VERSION
