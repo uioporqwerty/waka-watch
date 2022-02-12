@@ -28,22 +28,9 @@ platform :ios do
         "app.wakawatch"
       ]
     )
-    update_code_signing_settings(
-      use_automatic_signing: false,
-      path: "./wakawatch.xcodeproj",
-      code_sign_identity: "iPhone Distribution",
-      profile_name: "match AppStore app.wakawatch",
-      bundle_identifier: "app.wakawatch",
-      targets: "wakawatch"
-    )
     build_app(workspace: "wakawatch.xcworkspace", 
               scheme: "wakawatch", 
               xcargs: "-allowProvisioningUpdates",
-              export_options: {
-                provisioningProfiles: { 
-                  "app.wakawatch": "match AppStore app.wakawatch"
-                }
-              },
               output_directory: "./",
               output_name: "Waka-Watch")
   end
