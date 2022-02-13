@@ -15,10 +15,10 @@ jobs:
         with:
           fetch-depth: 0
 
-      # - name: Run Bundle install
-      #   run: |
-      #     cd wakawatch
-      #     bundle install
+      - name: Run Bundle install
+        run: |
+          cd wakawatch
+          bundle install
 
       - name: Extract version from tag
         uses: damienaicheh/extract-version-from-tag-action@v1.0.0
