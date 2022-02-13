@@ -23,10 +23,16 @@ jobs:
       - name: Extract version from tag
         uses: damienaicheh/extract-version-from-tag-action@v1.0.0
 
+      - name: Setup environment
+        uses: trevorlloydelliott/set-environment-variables@latest
+        with:
+          APP_VERSION: "$MAJOR.$MINOR"
+
       - name: View App version
         run: |
-          echo "APP_VERSION='$MAJOR.$MINOR'" >> $GITHUB_ENV
           echo $APP_VERSION
+        env:
+          APP_VERSION: $APP_VERSION
   #     - name: Configure git
   #       run: git config --global url."https://${TOKEN}:x-oauth-basic@github.com/".insteadOf "https://github.com/"
   #       env:
