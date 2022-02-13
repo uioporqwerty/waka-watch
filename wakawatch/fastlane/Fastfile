@@ -4,46 +4,44 @@ default_platform(:ios)
 platform :ios do
   desc "Build iOS app"
   lane :build do
-    # app_store_connect_api_key(
-    #   key_id: "AQ5VCA4237",
-    #   issuer_id: "1fbf6cf6-dd26-41f2-a459-b33d23051593",
-    #   key_filepath: "./AuthKey_AQ5VCA4237.p8",
-    #   duration: 1200,
-    #   in_house: false
-    # )
+    app_store_connect_api_key(
+      key_id: "AQ5VCA4237",
+      issuer_id: "1fbf6cf6-dd26-41f2-a459-b33d23051593",
+      key_filepath: "./AuthKey_AQ5VCA4237.p8",
+      duration: 1200,
+      in_house: false
+    )
 
-    # setup_ci if ENV['CI']
-    # cocoapods()
+    setup_ci if ENV['CI']
+    cocoapods()
     app_version = "#{ENV["MAJOR"]}.#{ENV["MINOR"]}"
-    puts "app_version"
-    puts app_version
     
-    # set_info_plist_value(path: "wakawatch/Info.plist", key: "CFBundleVersion", value: app_version)
+    set_info_plist_value(path: "wakawatch/Info.plist", key: "CFBundleVersion", value: app_version)
     
-    # set_info_plist_value(path: "wakawatch\ WatchKit\ App/Info.plist", key: "CFBundleVersion", value: app_version)
+    set_info_plist_value(path: "wakawatch\ WatchKit\ App/Info.plist", key: "CFBundleVersion", value: app_version)
     
-    # set_info_plist_value(path: "wakawatch\ WatchKit\ Extension/Info.plist", key: "CFBundleVersion", value: app_version)
+    set_info_plist_value(path: "wakawatch\ WatchKit\ Extension/Info.plist", key: "CFBundleVersion", value: app_version)
 
-    # increment_build_number(xcodeproj: "wakawatch.xcodeproj")
-    # match(
-    #   type: "appstore",
-    #   app_identifier: ["app.wakawatch", 
-    #                    "app.wakawatch.watchkitapp",
-    #                    "app.wakawatch.watchkitapp.watchkitextension"
-    #                   ]
-    # )
-    # build_app(workspace: "wakawatch.xcworkspace", 
-    #           scheme: "wakawatch", 
-    #           export_method: "app-store",
-    #           export_options: {
-    #             provisioningProfiles: { 
-    #               "app.wakawatch" => "match AppStore app.wakawatch",
-    #               "app.wakawatch.watchkitapp" => "match AppStore app.wakawatch.watchkitapp",
-    #               "app.wakawatch.watchkitapp.watchkitextension" => "match AppStore app.wakawatch.watchkitapp.watchkitextension",
-    #             }
-    #           },
-    #           output_directory: "./",
-    #           output_name: "Waka-Watch")
+    increment_build_number(xcodeproj: "wakawatch.xcodeproj")
+    match(
+      type: "appstore",
+      app_identifier: ["app.wakawatch", 
+                       "app.wakawatch.watchkitapp",
+                       "app.wakawatch.watchkitapp.watchkitextension"
+                      ]
+    )
+    build_app(workspace: "wakawatch.xcworkspace", 
+              scheme: "wakawatch", 
+              export_method: "app-store",
+              export_options: {
+                provisioningProfiles: { 
+                  "app.wakawatch" => "match AppStore app.wakawatch",
+                  "app.wakawatch.watchkitapp" => "match AppStore app.wakawatch.watchkitapp",
+                  "app.wakawatch.watchkitapp.watchkitextension" => "match AppStore app.wakawatch.watchkitapp.watchkitextension",
+                }
+              },
+              output_directory: "./",
+              output_name: "Waka-Watch")
   end
 
   lane :deploy do
@@ -55,10 +53,7 @@ platform :ios do
       in_house: false
     )
     
-    app_version = ENV["APP_VERSION"]
-    if !app_version
-      app_version = "1.1"
-    end
+    app_version = "#{ENV["MAJOR"]}.#{ENV["MINOR"]}"
 
     upload_to_app_store(
       force: true,
