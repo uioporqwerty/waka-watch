@@ -1,5 +1,7 @@
 # Waka Watch
 
+[![Build and Deploy](https://github.com/uioporqwerty/waka-watch/actions/workflows/build.yml/badge.svg)](https://github.com/uioporqwerty/waka-watch/actions/workflows/build.yml)
+
 Waka Watch is an iOS and Apple Watch application for [Wakatime](https://wakatime.com). Wakatime provides metrics about your coding activity.
 
 # Screenshots
