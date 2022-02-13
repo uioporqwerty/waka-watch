@@ -14,17 +14,10 @@ platform :ios do
 
     # setup_ci if ENV['CI']
     # cocoapods()
-    app_version = ENV["APP_VERSION"]
+    app_version = "#{ENV["MAJOR"]}.#{ENV["MINOR"]}"
     puts "app_version"
     puts app_version
-    puts "major"
-    puts ENV["MAJOR"]
-    puts "minor"
-    puts ENV["MINOR"]
-    if !app_version
-      app_version = "1.1"
-    end
-
+    
     # set_info_plist_value(path: "wakawatch/Info.plist", key: "CFBundleVersion", value: app_version)
     
     # set_info_plist_value(path: "wakawatch\ WatchKit\ App/Info.plist", key: "CFBundleVersion", value: app_version)
