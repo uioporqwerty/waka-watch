@@ -26,7 +26,7 @@ jobs:
       - name: View App version
         run: |
           echo "APP_VERSION='$MAJOR.$MINOR'" >> $GITHUB_ENV
-          echo "${{ env.APP_VERSION }}"
+          echo $APP_VERSION
   #     - name: Configure git
   #       run: git config --global url."https://${TOKEN}:x-oauth-basic@github.com/".insteadOf "https://github.com/"
   #       env:
