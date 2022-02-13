@@ -24,7 +24,7 @@ jobs:
         uses: damienaicheh/extract-version-from-tag-action@v1.0.0
 
       - name: Setup environment
-        uses: trevorlloydelliott/set-environment-variables@latest
+        uses: trevorlloydelliott/set-environment-variables@v1.0.0
         with:
           APP_VERSION: "$MAJOR.$MINOR"
 
