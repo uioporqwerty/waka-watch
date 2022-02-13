@@ -38,7 +38,8 @@ platform :ios do
                 }
               },
               output_directory: "./",
-              output_name: "Waka-Watch")
+              output_name: "Waka-Watch",
+            )
   end
 
   lane :deploy do
@@ -58,7 +59,8 @@ platform :ios do
       ipa: "./Waka-Watch.ipa",
       app_version: app_version,
       skip_screenshots: true,
-      skip_metadata: true
+      skip_metadata: true,
+      run_precheck_before_submit: false
     )
   end
 end
