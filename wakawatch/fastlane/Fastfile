@@ -16,7 +16,7 @@ platform :ios do
     cocoapods()
     app_version = "#{ENV["MAJOR"]}.#{ENV["MINOR"]}.#{ENV["PATCH"]}"
 
-    increment_build_number(
+    increment_version_number(
       version_number: app_version,
       xcodeproj: "wakawatch.xcodeproj"
     )
