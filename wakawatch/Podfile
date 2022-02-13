@@ -9,18 +9,3 @@ target 'wakawatch' do
   pod 'SwiftLint'
 
 end
-
-target 'wakawatch WatchKit App' do
-  # Comment the next line if you don't want to use dynamic frameworks
-  #use_frameworks!
-
-  # Pods for wakawatch WatchKit App
-end
-
-target 'wakawatch WatchKit Extension' do
-  # Comment the next line if you don't want to use dynamic frameworks
-  #use_frameworks!
-
-  # Pods for wakawatch WatchKit Extension
-
-end

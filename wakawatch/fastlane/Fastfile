@@ -1,0 +1,70 @@
+opt_out_usage
+default_platform(:ios)
+
+platform :ios do
+  desc "Build iOS app"
+  lane :build do
+    app_store_connect_api_key(
+      key_id: "AQ5VCA4237",
+      issuer_id: "1fbf6cf6-dd26-41f2-a459-b33d23051593",
+      key_filepath: "./AuthKey_AQ5VCA4237.p8",
+      duration: 1200,
+      in_house: false
+    )
+
+    setup_ci if ENV['CI']
+    cocoapods()
+    app_version = "#{ENV["MAJOR"]}.#{ENV["MINOR"]}.#{ENV["PATCH"]}"
+
+    increment_version_number(
+      version_number: app_version,
+      xcodeproj: "wakawatch.xcodeproj"
+    )
+    increment_build_number(
+      build_number: ENV["BUILD_NUMBER"],
+      xcodeproj: "wakawatch.xcodeproj"
+    )
+    match(
+      type: "appstore",
+      app_identifier: ["app.wakawatch", 
+                       "app.wakawatch.watchkitapp",
+                       "app.wakawatch.watchkitapp.watchkitextension"
+                      ]
+    )
+    build_app(workspace: "wakawatch.xcworkspace", 
+              scheme: "wakawatch", 
+              export_method: "app-store",
+              export_options: {
+                provisioningProfiles: { 
+                  "app.wakawatch" => "match AppStore app.wakawatch",
+                  "app.wakawatch.watchkitapp" => "match AppStore app.wakawatch.watchkitapp",
+                  "app.wakawatch.watchkitapp.watchkitextension" => "match AppStore app.wakawatch.watchkitapp.watchkitextension",
+                }
+              },
+              output_directory: "./",
+              output_name: "Waka-Watch",
+            )
+  end
+
+  lane :deploy do
+    app_store_connect_api_key(
+      key_id: "AQ5VCA4237",
+      issuer_id: "1fbf6cf6-dd26-41f2-a459-b33d23051593",
+      key_filepath: "./AuthKey_AQ5VCA4237.p8",
+      duration: 1200,
+      in_house: false
+    )
+    
+    app_version = "#{ENV["MAJOR"]}.#{ENV["MINOR"]}.#{ENV["PATCH"]}"
+
+    upload_to_app_store(
+      force: true,
+      app_identifier: "app.wakawatch",
+      ipa: "./Waka-Watch.ipa",
+      app_version: app_version,
+      skip_screenshots: true,
+      skip_metadata: true,
+      precheck_include_in_app_purchases: false
+    )
+  end
+end

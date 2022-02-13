@@ -1,0 +1,4 @@
+Current features for Apple Watch:
+- Show today's coding activity
+- View your, and others, rank in WakaTime's public leaderboard
+- View your coding profile
