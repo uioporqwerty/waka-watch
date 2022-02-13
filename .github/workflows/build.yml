@@ -30,28 +30,30 @@ jobs:
 
       - name: View App version
         run: |
+          echo "appversion ="
+          echo "${MAJOR}.${MINOR}"
           echo $APP_VERSION
         env:
           APP_VERSION: $APP_VERSION
-  #     - name: Configure git
-  #       run: git config --global url."https://${TOKEN}:x-oauth-basic@github.com/".insteadOf "https://github.com/"
-  #       env:
-  #         TOKEN: ${{ secrets.ACCESS_TOKEN }}
+      #     - name: Configure git
+      #       run: git config --global url."https://${TOKEN}:x-oauth-basic@github.com/".insteadOf "https://github.com/"
+      #       env:
+      #         TOKEN: ${{ secrets.ACCESS_TOKEN }}
 
-  #     - name: Decrypt sensitive files
-  #       run: |
-  #         cd wakawatch
-  #         gpg -d --passphrase "${{ secrets.GPG_PASSPHRASE }}" --batch Config.xcconfig.asc > ./wakawatch\ WatchKit\ Extension/Config.xcconfig
-  #         gpg -d --passphrase "${{ secrets.GPG_PASSPHRASE }}" --batch AuthKey_AQ5VCA4237.p8.asc > ./AuthKey_AQ5VCA4237.p8
+      #     - name: Decrypt sensitive files
+      #       run: |
+      #         cd wakawatch
+      #         gpg -d --passphrase "${{ secrets.GPG_PASSPHRASE }}" --batch Config.xcconfig.asc > ./wakawatch\ WatchKit\ Extension/Config.xcconfig
+      #         gpg -d --passphrase "${{ secrets.GPG_PASSPHRASE }}" --batch AuthKey_AQ5VCA4237.p8.asc > ./AuthKey_AQ5VCA4237.p8
 
-  #     - name: Build
-  #       run: |
-  #         cd wakawatch
-  #         bundle exec fastlane build
-  #       env:
-  #         CI: true
-  #         APP_VERSION: $APP_VERSION
-  #         MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+      - name: Build
+        run: |
+          cd wakawatch
+          bundle exec fastlane build
+        env:
+          CI: true
+          APP_VERSION: $APP_VERSION
+          MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
 
   #     - uses: actions/upload-artifact@v2
   #       with:
