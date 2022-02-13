@@ -62,7 +62,6 @@ platform :ios do
       app_identifier: "app.wakawatch",
       ipa: "./Waka-Watch.ipa",
       app_version: app_version,
-      build_number: ENV["BUILD_NUMBER"],
       skip_screenshots: true,
       skip_metadata: true,
       precheck_include_in_app_purchases: false
