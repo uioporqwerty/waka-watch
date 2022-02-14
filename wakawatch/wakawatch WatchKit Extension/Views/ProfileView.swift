@@ -14,22 +14,34 @@ struct ProfileView: View {
         if !self.profileViewModel.loaded {
             ProgressView()
         } else {
-            VStack {
-                Text(profileViewModel.displayName)
+            ScrollView {
+                VStack {
+                    if profileViewModel.photoUrl != nil {
+                        AsyncImage(url: URL(string: "\(profileViewModel.photoUrl!)?s=420")) { image in
+                            image.resizable()
+                                 .aspectRatio(contentMode: .fit)
+                                 .clipShape(Circle())
+                        } placeholder: {
+                            ProgressView().progressViewStyle(.circular)
+                        }.frame(width: 100, height: 100)
+                    }
 
-                if profileViewModel.location != nil {
-                    Text(profileViewModel.location ?? "")
-                }
+                    Text(profileViewModel.displayName)
 
-                if profileViewModel.rank != nil {
-                    Text("\("ProfileView_Rank_Text".toLocalized()) \(profileViewModel.rank!)")
-                        .padding(EdgeInsets(top: 4, leading: 0, bottom: 0, trailing: 0))
-                }
+                    if profileViewModel.location != nil {
+                        Text(profileViewModel.location ?? "")
+                    }
 
-                if profileViewModel.createdDate != nil {
-                    // swiftlint:disable:next line_length
-                    Text("\("ProfileView_Joined_Text".toLocalized()) \(profileViewModel.createdDate!.formatted(date: .abbreviated, time: .omitted))")
-                        .padding(EdgeInsets(top: 4, leading: 0, bottom: 0, trailing: 0))
+                    if profileViewModel.rank != nil {
+                        Text("\("ProfileView_Rank_Text".toLocalized()) \(profileViewModel.rank!)")
+                            .padding(EdgeInsets(top: 4, leading: 0, bottom: 0, trailing: 0))
+                    }
+
+                    if profileViewModel.createdDate != nil {
+                        // swiftlint:disable:next line_length
+                        Text("\("ProfileView_Joined_Text".toLocalized()) \(profileViewModel.createdDate!.formatted(date: .abbreviated, time: .omitted))")
+                            .padding(EdgeInsets(top: 4, leading: 0, bottom: 0, trailing: 0))
+                    }
                 }
             }
         }
