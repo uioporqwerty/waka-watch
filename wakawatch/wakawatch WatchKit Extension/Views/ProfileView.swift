@@ -1,4 +1,5 @@
 import SwiftUI
+import Kingfisher
 
 struct ProfileView: View {
     @ObservedObject var profileViewModel: ProfileViewModel
@@ -17,13 +18,14 @@ struct ProfileView: View {
             ScrollView {
                 VStack {
                     if profileViewModel.photoUrl != nil {
-                        AsyncImage(url: URL(string: "\(profileViewModel.photoUrl!)?s=420")) { image in
-                            image.resizable()
-                                 .aspectRatio(contentMode: .fit)
-                                 .clipShape(Circle())
-                        } placeholder: {
-                            ProgressView().progressViewStyle(.circular)
-                        }.frame(width: 100, height: 100)
+                        KFImage(URL(string: "\(profileViewModel.photoUrl!)?s=420")!)
+                            .placeholder {
+                                ProgressView().progressViewStyle(.circular)
+                            }
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .clipShape(Circle())
+                            .frame(width: 100, height: 100)
                     }
 
                     Text(profileViewModel.displayName)

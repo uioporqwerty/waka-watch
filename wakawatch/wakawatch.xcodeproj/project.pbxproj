@@ -18,6 +18,7 @@
 		6B7E479B27AA0485000D5DE7 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA78C8127A46F36005149BC /* ActivityIndicator.swift */; };
 		6B7E479D27AA04A7000D5DE7 /* AsyncButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA78C8F27A492FB005149BC /* AsyncButton.swift */; };
 		6B890F0527BC554000CCC13A /* DateUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8A485B279D081B0071566F /* DateUtility.swift */; };
+		6B890F0827BC70DF00CCC13A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 6B890F0727BC70DF00CCC13A /* Kingfisher */; };
 		6B8A4857279D03780071566F /* ProfileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8A4856279D03780071566F /* ProfileResponse.swift */; };
 		6B8A4859279D05060071566F /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8A4858279D05060071566F /* ProfileViewModel.swift */; };
 		6B8A485C279D081B0071566F /* DateUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8A485B279D081B0071566F /* DateUtility.swift */; };
@@ -257,6 +258,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B890F0827BC70DF00CCC13A /* Kingfisher in Frameworks */,
 				6BD52F1E279FD1A300247BFB /* RollbarNotifier in Frameworks */,
 				6BE5DE5627A78BD60072FF0E /* Swinject in Frameworks */,
 			);
@@ -646,6 +648,7 @@
 			packageProductDependencies = (
 				6BD52F1D279FD1A300247BFB /* RollbarNotifier */,
 				6BE5DE5527A78BD60072FF0E /* Swinject */,
+				6B890F0727BC70DF00CCC13A /* Kingfisher */,
 			);
 			productName = "wakawatch WatchKit Extension";
 			productReference = 6BED9A992795154E005646C3 /* wakawatch WatchKit Extension.appex */;
@@ -737,6 +740,7 @@
 				6BED9AD927951C82005646C3 /* XCRemoteSwiftPackageReference "BetterSafariView" */,
 				6BD52EF4279FC9C900247BFB /* XCRemoteSwiftPackageReference "rollbar-apple" */,
 				6BE5DE5227A788BC0072FF0E /* XCRemoteSwiftPackageReference "Swinject" */,
+				6B890F0627BC70DF00CCC13A /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 6BED9A6B2795154A005646C3 /* Products */;
 			projectDirPath = "";
@@ -1556,6 +1560,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		6B890F0627BC70DF00CCC13A /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		6BD52EF4279FC9C900247BFB /* XCRemoteSwiftPackageReference "rollbar-apple" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/rollbar/rollbar-apple.git";
@@ -1583,6 +1595,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		6B890F0727BC70DF00CCC13A /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6B890F0627BC70DF00CCC13A /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		6BD52F1D279FD1A300247BFB /* RollbarNotifier */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 6BD52EF4279FC9C900247BFB /* XCRemoteSwiftPackageReference "rollbar-apple" */;

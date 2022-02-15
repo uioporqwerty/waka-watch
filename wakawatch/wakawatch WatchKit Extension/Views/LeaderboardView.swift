@@ -1,4 +1,5 @@
 import SwiftUI
+import Kingfisher
 
 struct LeaderboardRecordView: View {
     private let record: LeaderboardRecord
@@ -11,13 +12,15 @@ struct LeaderboardRecordView: View {
         LazyVStack {
             Button(action: { }) {
                 HStack {
-                    AsyncImage(url: URL(string: "\(record.user!.photo!)?s=420")) { image in
-                        image.resizable()
-                             .aspectRatio(contentMode: .fit)
-                             .clipShape(Circle())
-                    } placeholder: {
-                        ProgressView().progressViewStyle(.circular)
-                    }.frame(width: 16, height: 16)
+                    KFImage(URL(string: "\(record.user!.photo!)?s=420")!)
+                        .placeholder {
+                            ProgressView().progressViewStyle(.circular)
+                        }
+                        .cancelOnDisappear(true)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .clipShape(Circle())
+                        .frame(width: 16, height: 16)
                     Text("\(String(record.rank ?? 0)). \(record.displayName ?? "")")
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .multilineTextAlignment(.leading)
