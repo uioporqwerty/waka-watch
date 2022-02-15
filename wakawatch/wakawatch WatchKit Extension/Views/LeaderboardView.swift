@@ -10,9 +10,18 @@ struct LeaderboardRecordView: View {
     var body: some View {
         LazyVStack {
             Button(action: { }) {
-                Text("\(String(record.rank ?? 0)). \(record.displayName ?? "")")
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .multilineTextAlignment(.leading)
+                HStack {
+                    AsyncImage(url: URL(string: "\(record.user!.photo ?? "")")) { image in
+                        image.resizable()
+                             .aspectRatio(contentMode: .fit)
+                             .clipShape(Circle())
+                    } placeholder: {
+                        ProgressView().progressViewStyle(.circular)
+                    }.frame(width: 16, height: 16)
+                    Text("\(String(record.rank ?? 0)). \(record.displayName ?? "")")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .multilineTextAlignment(.leading)
+                }
             }
         }
     }
