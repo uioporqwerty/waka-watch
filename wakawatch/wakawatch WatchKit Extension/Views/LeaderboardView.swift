@@ -1,5 +1,23 @@
 import SwiftUI
 
+struct LeaderboardRecordView: View {
+    private let record: LeaderboardRecord
+
+    init(_ record: LeaderboardRecord) {
+        self.record = record
+    }
+
+    var body: some View {
+        LazyVStack {
+            Button(action: { }) {
+                Text("\(String(record.rank ?? 0)). \(record.displayName ?? "")")
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .multilineTextAlignment(.leading)
+            }
+        }
+    }
+}
+
 struct LeaderboardView: View {
     @ObservedObject var leaderboardViewModel: LeaderboardViewModel
 
@@ -13,25 +31,31 @@ struct LeaderboardView: View {
         if !self.leaderboardViewModel.loaded {
             ProgressView()
         } else {
-            // NavigationView { // TODO: Enable navigation view once Apple 8.3+ bug is fixed.
+            ScrollViewReader { proxy in
                 ScrollView(.vertical, showsIndicators: false) {
-                    ScrollViewReader { value in
+                    LazyVStack {
                         ForEach(self.leaderboardViewModel.records) { record in
-                            // NavigationLink(destination: ProfileView(user: record.user, loaded: true)) {
-                            Button(action: { }) {
-                                Text("\(String(record.rank ?? 0)). \(record.displayName ?? "")")
-                                    .frame(maxWidth: .infinity, alignment: .leading)
-                                    .multilineTextAlignment(.leading)
-                            }.id(record.id)
-                        }
-                        .onAppear {
-                            if self.leaderboardViewModel.currentUserRecord != nil {
-                                value.scrollTo(self.leaderboardViewModel.currentUserRecord!.id, anchor: .center)
-                            }
+                            LeaderboardRecordView(record)
+                                .id(record.id)
+                                .onAppear {
+                                    self.onLeaderboardRecordAppear(record)
+                                }
                         }
                     }
-               // }
+                }.onAppear {
+                    if self.leaderboardViewModel.currentUserRecord != nil {
+                        proxy.scrollTo(self.leaderboardViewModel.currentUserRecord!.id, anchor: .center)
+                    }
+                }
             }
+        }
+    }
+
+    private func onLeaderboardRecordAppear(_ record: LeaderboardRecord) {
+        if self.leaderboardViewModel.isFirstLeaderboardRecord(record) {
+            self.leaderboardViewModel.loadPreviousPage()
+        } else if self.leaderboardViewModel.isLastLeaderboardRecord(record) {
+            self.leaderboardViewModel.loadNextPage()
         }
     }
 }
