@@ -11,7 +11,7 @@ struct LeaderboardRecordView: View {
         LazyVStack {
             Button(action: { }) {
                 HStack {
-                    AsyncImage(url: URL(string: "\(record.user!.photo ?? "")")) { image in
+                    AsyncImage(url: URL(string: "\(record.user!.photo!)?s=420")) { image in
                         image.resizable()
                              .aspectRatio(contentMode: .fit)
                              .clipShape(Circle())
