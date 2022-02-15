@@ -35,11 +35,15 @@ final class AuthenticationViewModel {
 
                 let defaults = UserDefaults.standard
                 defaults.set(accessTokenResponse.access_token, forKey: DefaultsKeys.accessToken)
+                defaults.set(accessTokenResponse.refresh_token, forKey: DefaultsKeys.refreshToken)
+                defaults.set(accessTokenResponse.expires_at, forKey: DefaultsKeys.tokenExpiration)
                 defaults.set(true, forKey: DefaultsKeys.authorized)
 
                 let message: [String: Any] = [
-                    DefaultsKeys.authorized: true,
-                    DefaultsKeys.accessToken: accessTokenResponse.access_token
+                    ConnectivityMessageKeys.authorized: true,
+                    ConnectivityMessageKeys.accessToken: accessTokenResponse.access_token,
+                    ConnectivityMessageKeys.refreshToken: accessTokenResponse.refresh_token,
+                    ConnectivityMessageKeys.tokenExpiration: accessTokenResponse.expires_at
                 ]
                 ConnectivityService.shared.sendMessage(message, delivery: .highPriority)
                 ConnectivityService.shared.sendMessage(message, delivery: .guaranteed)
@@ -61,8 +65,10 @@ final class AuthenticationViewModel {
 
                 // TODO: Repeated logic in SettingsViewModel, refactor.
                 let message: [String: Any] = [
-                    DefaultsKeys.authorized: false,
-                    DefaultsKeys.accessToken: ""
+                    ConnectivityMessageKeys.authorized: false,
+                    ConnectivityMessageKeys.accessToken: "",
+                    ConnectivityMessageKeys.refreshToken: "",
+                    ConnectivityMessageKeys.tokenExpiration: ""
                 ]
                 ConnectivityService.shared.sendMessage(message, delivery: .highPriority)
                 ConnectivityService.shared.sendMessage(message, delivery: .guaranteed)
@@ -70,6 +76,7 @@ final class AuthenticationViewModel {
 
                 let defaults = UserDefaults.standard
                 defaults.set("", forKey: DefaultsKeys.accessToken)
+                defaults.set("", forKey: DefaultsKeys.refreshToken)
                 defaults.set(false, forKey: DefaultsKeys.authorized)
 
                 self.logManager.debugMessage("Disconnected from WakaTime")

@@ -26,7 +26,8 @@ final class DependencyInjection {
         }
         self.container.register(NetworkService.self) { resolver in
             NetworkService(logManager: resolver.resolve(LogManager.self)!,
-                           telemetry: resolver.resolve(TelemetryService.self)!)
+                           telemetry: resolver.resolve(TelemetryService.self)!,
+                           authenticationService: resolver.resolve(AuthenticationService.self)!)
         }
 
         #if !DEBUG

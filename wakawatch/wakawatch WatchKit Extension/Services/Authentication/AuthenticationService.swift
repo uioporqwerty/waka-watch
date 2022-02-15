@@ -82,4 +82,61 @@ final class AuthenticationService {
             self.logManager.reportError(error)
         }
     }
+
+    func refreshAccessToken() async {
+        if !accessIsTokenExpiringOrExpired() {
+            self.logManager.debugMessage("Access token is not expiring or has not expired")
+            return
+        }
+
+        let defaults = UserDefaults.standard
+        let refreshToken = defaults.string(forKey: DefaultsKeys.refreshToken)!
+
+        let url = URL(string: "\(self.baseUrl)/token")
+
+        // swiftlint:disable:next line_length
+        let data = "client_id=\(self.clientId!)&client_secret=\(self.clientSecret!)&redirect_uri=\(self.callbackURLScheme)://oauth-callback&grant_type=refresh_token&refresh_token=\(refreshToken)".data(using: .utf8)!
+
+        var request = URLRequest(url: url!)
+        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        request.httpBody = data
+        request.httpMethod = "POST"
+
+        do {
+            let (data, response) = try await URLSession.shared.data(for: request)
+            let urlResponse = response as? HTTPURLResponse
+
+            if urlResponse?.statusCode ?? 0 >= 300 {
+                self.logManager.errorMessage(data)
+            }
+
+            self.telemetry.recordNetworkEvent(method: request.httpMethod,
+                                              url: request.url?.absoluteString,
+                                              statusCode: urlResponse?.statusCode.description)
+            let refreshTokenResponse = try JSONDecoder().decode(AccessTokenResponse.self, from: data)
+            let message: [String: Any] = [
+                ConnectivityMessageKeys.authorized: true,
+                ConnectivityMessageKeys.accessToken: refreshTokenResponse.access_token,
+                ConnectivityMessageKeys.refreshToken: refreshTokenResponse.refresh_token,
+                ConnectivityMessageKeys.tokenExpiration: refreshTokenResponse.expires_at
+            ]
+            ConnectivityService.shared.sendMessage(message, delivery: .highPriority)
+            ConnectivityService.shared.sendMessage(message, delivery: .guaranteed)
+            ConnectivityService.shared.sendMessage(message, delivery: .failable)
+
+        } catch {
+            self.logManager.reportError(error)
+        }
+    }
+
+    private func accessIsTokenExpiringOrExpired() -> Bool {
+        let defaults = UserDefaults.standard
+        let expirationDate = DateUtility.getDate(
+                                                date: defaults.string(forKey: DefaultsKeys.tokenExpiration)!,
+                                                includeTime: true)!
+        let now = Date.now
+        let expiringDate = Calendar.current.date(byAdding: .hour, value: -1, to: expirationDate)!
+
+        return now > expiringDate || now > expirationDate
+    }
 }

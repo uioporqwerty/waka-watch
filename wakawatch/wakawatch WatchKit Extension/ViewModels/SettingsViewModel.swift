@@ -23,8 +23,10 @@ final class SettingsViewModel {
             try await self.authenticationService.disconnect()
 
             let message: [String: Any] = [
-                DefaultsKeys.authorized: false,
-                DefaultsKeys.accessToken: ""
+                ConnectivityMessageKeys.authorized: false,
+                ConnectivityMessageKeys.accessToken: "",
+                ConnectivityMessageKeys.refreshToken: "",
+                ConnectivityMessageKeys.tokenExpiration: ""
             ]
             ConnectivityService.shared.sendMessage(message, delivery: .highPriority)
             ConnectivityService.shared.sendMessage(message, delivery: .guaranteed)

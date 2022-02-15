@@ -1,9 +1,11 @@
 import Foundation
 
 final class DateUtility {
-    static func getDate(date: String) -> Date? {
+    static func getDate(date: String, includeTime: Bool = false) -> Date? {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "YYYY-MM-DD"
+        let format = includeTime ? "YYYY-MM-DD'T'HH:mm:ssZ" : "YYYY-MM-DD"
+        dateFormatter.dateFormat = format
+
         return dateFormatter.date(from: date)
     }
 }

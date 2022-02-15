@@ -126,9 +126,22 @@ extension ConnectivityService: WCSessionDelegate {
             return
         }
 
+        guard let refreshToken = dictionary[ConnectivityMessageKeys.refreshToken] as? String else {
+            self.logManager.errorMessage("Refresh token key not found")
+            return
+        }
+
+        guard let tokenExpiration = dictionary[ConnectivityMessageKeys.tokenExpiration] as? String else {
+            self.logManager.errorMessage("Token expiration key not found")
+            return
+        }
+
         let defaults = UserDefaults.standard
         defaults.set(accessToken, forKey: DefaultsKeys.accessToken)
+        defaults.set(refreshToken, forKey: DefaultsKeys.refreshToken)
+        defaults.set(tokenExpiration, forKey: DefaultsKeys.tokenExpiration)
         defaults.set(authorized, forKey: DefaultsKeys.authorized)
+
         self.logManager.debugMessage("Set user defaults for accessToken and authorized")
     }
 

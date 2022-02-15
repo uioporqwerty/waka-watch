@@ -7,10 +7,14 @@ final class NetworkService {
     private var baseUrl = "https://wakatime.com/api/v1"
     private var logManager: LogManager
     private var telemetry: TelemetryService
+    private var authenticationService: AuthenticationService
 
-    init(logManager: LogManager, telemetry: TelemetryService) {
+    init(logManager: LogManager,
+         telemetry: TelemetryService,
+         authenticationService: AuthenticationService) {
         self.logManager = logManager
         self.telemetry = telemetry
+        self.authenticationService = authenticationService
 
         self.clientId = Bundle.main.infoDictionary?["CLIENT_ID"] as? String
         self.clientSecret = Bundle.main.infoDictionary?["CLIENT_SECRET"] as? String
@@ -26,6 +30,8 @@ final class NetworkService {
     }
 
     func getSummaryData() async throws -> SummaryResponse? {
+        await self.authenticationService.refreshAccessToken()
+
         var urlComponents = URLComponents(string: "\(baseUrl)/users/current/summaries")!
         urlComponents.queryItems = [
             URLQueryItem(name: "client_secret", value: self.clientSecret),
@@ -58,6 +64,8 @@ final class NetworkService {
     }
 
     func getProfileData(userId: String?) async throws -> ProfileResponse? {
+        await self.authenticationService.refreshAccessToken()
+
         var url = "\(baseUrl)/users/current"
         if userId != nil {
             url = "\(baseUrl)/users/\(userId!)"
@@ -94,6 +102,8 @@ final class NetworkService {
     }
 
     func getPublicLeaderboard(page: Int?) async throws -> LeaderboardResponse? {
+        await self.authenticationService.refreshAccessToken()
+
         var urlComponents = URLComponents(string: "\(baseUrl)/leaders")!
         var urlQueryItems = [
             URLQueryItem(name: "client_secret", value: self.clientSecret),

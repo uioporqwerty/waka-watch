@@ -17,6 +17,7 @@
 		6B3440DD279C5E1C006A5C27 /* Delivery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3440DB279C5E1C006A5C27 /* Delivery.swift */; };
 		6B7E479B27AA0485000D5DE7 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA78C8127A46F36005149BC /* ActivityIndicator.swift */; };
 		6B7E479D27AA04A7000D5DE7 /* AsyncButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA78C8F27A492FB005149BC /* AsyncButton.swift */; };
+		6B890F0527BC554000CCC13A /* DateUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8A485B279D081B0071566F /* DateUtility.swift */; };
 		6B8A4857279D03780071566F /* ProfileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8A4856279D03780071566F /* ProfileResponse.swift */; };
 		6B8A4859279D05060071566F /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8A4858279D05060071566F /* ProfileViewModel.swift */; };
 		6B8A485C279D081B0071566F /* DateUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8A485B279D081B0071566F /* DateUtility.swift */; };
@@ -733,9 +734,9 @@
 			);
 			mainGroup = 6BED9A6127951549005646C3;
 			packageReferences = (
-				6BED9AD927951C82005646C3 /* XCRemoteSwiftPackageReference "BetterSafariView.git" */,
-				6BD52EF4279FC9C900247BFB /* XCRemoteSwiftPackageReference "rollbar-apple.git" */,
-				6BE5DE5227A788BC0072FF0E /* XCRemoteSwiftPackageReference "Swinject.git" */,
+				6BED9AD927951C82005646C3 /* XCRemoteSwiftPackageReference "BetterSafariView" */,
+				6BD52EF4279FC9C900247BFB /* XCRemoteSwiftPackageReference "rollbar-apple" */,
+				6BE5DE5227A788BC0072FF0E /* XCRemoteSwiftPackageReference "Swinject" */,
 			);
 			productRefGroup = 6BED9A6B2795154A005646C3 /* Products */;
 			projectDirPath = "";
@@ -881,6 +882,7 @@
 				6BE5DE7D27A9746F0072FF0E /* LeaderboardResponse.swift in Sources */,
 				6BE5DE7C27A9746C0072FF0E /* ProfileResponse.swift in Sources */,
 				6BE5DE3F27A64E630072FF0E /* SeverityLevel.swift in Sources */,
+				6B890F0527BC554000CCC13A /* DateUtility.swift in Sources */,
 				6BD52F18279FD03900247BFB /* LoggingService.swift in Sources */,
 				6BE5DE6127A8BDBB0072FF0E /* RollbarTelemetryService.swift in Sources */,
 				6BE5DE8027A97CF90072FF0E /* NullAPMService.swift in Sources */,
@@ -1554,7 +1556,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		6BD52EF4279FC9C900247BFB /* XCRemoteSwiftPackageReference "rollbar-apple.git" */ = {
+		6BD52EF4279FC9C900247BFB /* XCRemoteSwiftPackageReference "rollbar-apple" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/rollbar/rollbar-apple.git";
 			requirement = {
@@ -1562,7 +1564,7 @@
 				version = "2.0.0-beta.23";
 			};
 		};
-		6BE5DE5227A788BC0072FF0E /* XCRemoteSwiftPackageReference "Swinject.git" */ = {
+		6BE5DE5227A788BC0072FF0E /* XCRemoteSwiftPackageReference "Swinject" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Swinject/Swinject.git";
 			requirement = {
@@ -1570,7 +1572,7 @@
 				kind = branch;
 			};
 		};
-		6BED9AD927951C82005646C3 /* XCRemoteSwiftPackageReference "BetterSafariView.git" */ = {
+		6BED9AD927951C82005646C3 /* XCRemoteSwiftPackageReference "BetterSafariView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/stleamist/BetterSafariView.git";
 			requirement = {
@@ -1583,27 +1585,27 @@
 /* Begin XCSwiftPackageProductDependency section */
 		6BD52F1D279FD1A300247BFB /* RollbarNotifier */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 6BD52EF4279FC9C900247BFB /* XCRemoteSwiftPackageReference "rollbar-apple.git" */;
+			package = 6BD52EF4279FC9C900247BFB /* XCRemoteSwiftPackageReference "rollbar-apple" */;
 			productName = RollbarNotifier;
 		};
 		6BD52F1F279FD1AA00247BFB /* RollbarNotifier */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 6BD52EF4279FC9C900247BFB /* XCRemoteSwiftPackageReference "rollbar-apple.git" */;
+			package = 6BD52EF4279FC9C900247BFB /* XCRemoteSwiftPackageReference "rollbar-apple" */;
 			productName = RollbarNotifier;
 		};
 		6BE5DE5527A78BD60072FF0E /* Swinject */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 6BE5DE5227A788BC0072FF0E /* XCRemoteSwiftPackageReference "Swinject.git" */;
+			package = 6BE5DE5227A788BC0072FF0E /* XCRemoteSwiftPackageReference "Swinject" */;
 			productName = Swinject;
 		};
 		6BE5DE5827A8BB3C0072FF0E /* Swinject */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 6BE5DE5227A788BC0072FF0E /* XCRemoteSwiftPackageReference "Swinject.git" */;
+			package = 6BE5DE5227A788BC0072FF0E /* XCRemoteSwiftPackageReference "Swinject" */;
 			productName = Swinject;
 		};
 		6BED9ADA27951C82005646C3 /* BetterSafariView */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 6BED9AD927951C82005646C3 /* XCRemoteSwiftPackageReference "BetterSafariView.git" */;
+			package = 6BED9AD927951C82005646C3 /* XCRemoteSwiftPackageReference "BetterSafariView" */;
 			productName = BetterSafariView;
 		};
 /* End XCSwiftPackageProductDependency section */
