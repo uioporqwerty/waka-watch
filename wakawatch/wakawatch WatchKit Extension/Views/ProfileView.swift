@@ -26,23 +26,33 @@ struct ProfileView: View {
                             .aspectRatio(contentMode: .fit)
                             .clipShape(Circle())
                             .frame(width: 100, height: 100)
+                            .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
                     }
 
                     Text(profileViewModel.displayName)
+                        .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
 
                     if profileViewModel.location != nil {
                         Text(profileViewModel.location ?? "")
+                            .multilineTextAlignment(.center)
+                            .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
                     }
 
                     if profileViewModel.rank != nil {
                         Text("\("ProfileView_Rank_Text".toLocalized()) \(profileViewModel.rank!)")
-                            .padding(EdgeInsets(top: 4, leading: 0, bottom: 0, trailing: 0))
+                            .padding(EdgeInsets(top: 4, leading: 10, bottom: 0, trailing: 10))
                     }
 
                     if profileViewModel.createdDate != nil {
                         // swiftlint:disable:next line_length
                         Text("\("ProfileView_Joined_Text".toLocalized()) \(profileViewModel.createdDate!.formatted(date: .abbreviated, time: .omitted))")
-                            .padding(EdgeInsets(top: 4, leading: 0, bottom: 0, trailing: 0))
+                            .padding(EdgeInsets(top: 4, leading: 10, bottom: 0, trailing: 10))
+                    }
+
+                    if profileViewModel.bio != nil {
+                        Text(profileViewModel.bio!)
+                            .multilineTextAlignment(.leading)
+                            .padding(EdgeInsets(top: 4, leading: 10, bottom: 0, trailing: 10))
                     }
                 }
             }

@@ -11,6 +11,7 @@ struct UserData: Decodable {
     let photo: String?
     let website: String?
     let email: String?
+    let bio: String?
     let city: LocationData?
 }
 

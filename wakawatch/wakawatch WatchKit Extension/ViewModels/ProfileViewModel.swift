@@ -9,6 +9,7 @@ final class ProfileViewModel: ObservableObject {
     @Published var createdDate: Date?
     @Published var location: String?
     @Published var rank: Int?
+    @Published var bio: String?
     @Published var loaded = false
 
     private var networkService: NetworkService
@@ -34,6 +35,7 @@ final class ProfileViewModel: ObservableObject {
                         self.createdDate = DateUtility.getDate(date: userProfileData?.created_at ?? "")
                         self.location = userProfileData?.data.city?.title
                         self.rank = leaderboardData?.current_user?.rank
+                        self.bio = userProfileData?.data.bio
                         self.loaded = true
                     }
                 } catch {
@@ -47,6 +49,7 @@ final class ProfileViewModel: ObservableObject {
                 self.photoUrl = URL(string: user!.photo ?? "")
                 self.website = URL(string: user!.website ?? "")
                 self.location = user!.city?.title
+                self.bio = user?.bio
             }
         }
     }
