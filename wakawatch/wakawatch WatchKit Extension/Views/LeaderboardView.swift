@@ -3,9 +3,11 @@ import Kingfisher
 
 struct LeaderboardRecordView: View {
     private let record: LeaderboardRecord
+    private let isCurrentUser: Bool
 
-    init(_ record: LeaderboardRecord) {
+    init(_ record: LeaderboardRecord, isCurrentUser: Bool) {
         self.record = record
+        self.isCurrentUser = isCurrentUser
     }
 
     var body: some View {
@@ -25,6 +27,8 @@ struct LeaderboardRecordView: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .multilineTextAlignment(.leading)
                 }
+            }.if(self.isCurrentUser) {
+                $0.background(Color.accentColor)
             }
         }
     }
@@ -47,7 +51,10 @@ struct LeaderboardView: View {
                 ScrollView(.vertical, showsIndicators: false) {
                     LazyVStack {
                         ForEach(self.leaderboardViewModel.records) { record in
-                            LeaderboardRecordView(record)
+                            LeaderboardRecordView(record,
+                                                  isCurrentUser:
+                                                    record.id ==
+                                                    self.leaderboardViewModel.currentUserRecord?.id)
                                 .id(record.id)
                                 .onAppear {
                                     self.onLeaderboardRecordAppear(record)
