@@ -114,6 +114,12 @@ final class AuthenticationService {
                                               url: request.url?.absoluteString,
                                               statusCode: urlResponse?.statusCode.description)
             let refreshTokenResponse = try JSONDecoder().decode(AccessTokenResponse.self, from: data)
+
+            let defaults = UserDefaults.standard
+            defaults.set(refreshTokenResponse.access_token, forKey: DefaultsKeys.accessToken)
+            defaults.set(refreshTokenResponse.refresh_token, forKey: DefaultsKeys.refreshToken)
+            defaults.set(refreshTokenResponse.expires_at, forKey: DefaultsKeys.tokenExpiration)
+
             let message: [String: Any] = [
                 ConnectivityMessageKeys.authorized: true,
                 ConnectivityMessageKeys.accessToken: refreshTokenResponse.access_token,
@@ -131,9 +137,8 @@ final class AuthenticationService {
 
     private func accessIsTokenExpiringOrExpired() -> Bool {
         let defaults = UserDefaults.standard
-        let expirationDate = DateUtility.getDate(
-                                                date: defaults.string(forKey: DefaultsKeys.tokenExpiration)!,
-                                                includeTime: true)!
+        let expirationDate = DateUtility.getDate(date: defaults.string(forKey: DefaultsKeys.tokenExpiration)!,
+                                                 includeTime: true)!
         let now = Date.now
         let expiringDate = Calendar.current.date(byAdding: .hour, value: -1, to: expirationDate)!
 
