@@ -2,25 +2,45 @@ import SwiftUI
 
 struct SummaryView: View {
     @ObservedObject var summaryViewModel: SummaryViewModel
+    @State var refreshing = false
 
     init(viewModel: SummaryViewModel) {
         self.summaryViewModel = viewModel
     }
 
     var body: some View {
-        VStack {
-            if !self.summaryViewModel.loaded {
+        ZStack {
+            if self.refreshing || !self.summaryViewModel.loaded {
                 ProgressView()
-                    .task {
-                        await self.summaryViewModel.getSummary()
-                    }
             } else {
-                Text(LocalizedStringKey("SummaryView_Today"))
-                Text(summaryViewModel.totalDisplayTime)
-                    .padding(EdgeInsets(top: 16, leading: 0, bottom: 0, trailing: 0))
+                HStack {
+                    AsyncButton(action: {
+                        self.refreshing = true
+                        await self.summaryViewModel.getSummary()
+                        self.refreshing = false
+                    }) {
+                        Image(systemName: "arrow.clockwise")
+                            .frame(width: 16, height: 16)
+                    }
+                    .clipShape(Circle())
+                    .frame(width: 16, height: 16)
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
+                .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
+
+                VStack {
+                    Text(LocalizedStringKey("SummaryView_Today"))
+
+                    Text(summaryViewModel.totalDisplayTime)
+                        .multilineTextAlignment(.center)
+                        .padding(EdgeInsets(top: 16, leading: 10, bottom: 0, trailing: 10))
+                }.frame(maxWidth: .infinity, maxHeight: .infinity)
             }
         }.onAppear {
             self.summaryViewModel.telemetry.recordViewEvent(elementName: "\(String(describing: SummaryView.self))")
+        }
+        .task {
+            await self.summaryViewModel.getSummary()
         }
     }
 }
