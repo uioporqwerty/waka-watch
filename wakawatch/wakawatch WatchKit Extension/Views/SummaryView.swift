@@ -20,10 +20,9 @@ struct SummaryView: View {
                         self.refreshing = false
                     }) {
                         Image(systemName: "arrow.clockwise")
-                            .frame(width: 16, height: 16)
                     }
                     .clipShape(Circle())
-                    .frame(width: 16, height: 16)
+                    .frame(width: 32, height: 32)
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
                 .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
