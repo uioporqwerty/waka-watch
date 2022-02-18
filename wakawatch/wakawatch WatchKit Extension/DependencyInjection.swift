@@ -44,7 +44,7 @@ final class DependencyInjection {
         self.container.register(ProfileViewModel.self) { resolver in
             ProfileViewModel(networkService: resolver.resolve(NetworkService.self)!,
                              telemetryService: resolver.resolve(TelemetryService.self)!)
-        }
+        }.inObjectScope(ObjectScope.transient)
         self.container.register(LeaderboardViewModel.self) { resolver in
             LeaderboardViewModel(networkService: resolver.resolve(NetworkService.self)!,
                                  telemetryService: resolver.resolve(TelemetryService.self)!)
@@ -66,7 +66,8 @@ final class DependencyInjection {
             ProfileView(viewModel: resolver.resolve(ProfileViewModel.self)!, user: nil)
         }
         self.container.register(LeaderboardView.self) { resolver in
-            LeaderboardView(viewModel: resolver.resolve(LeaderboardViewModel.self)!)
+            LeaderboardView(viewModel: resolver.resolve(LeaderboardViewModel.self)!,
+                            profileViewModel: resolver.resolve(ProfileViewModel.self)!)
         }
         self.container.register(SettingsView.self) { resolver in
             SettingsView(viewModel: resolver.resolve(SettingsViewModel.self)!)

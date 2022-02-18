@@ -3,78 +3,90 @@ import Kingfisher
 
 struct LeaderboardRecordView: View {
     private let record: LeaderboardRecord
-    private let isCurrentUser: Bool
 
-    init(_ record: LeaderboardRecord, isCurrentUser: Bool) {
+    init(_ record: LeaderboardRecord) {
         self.record = record
-        self.isCurrentUser = isCurrentUser
     }
 
     var body: some View {
-        LazyVStack {
-            Button(action: { }) {
-                HStack {
-                    KFImage(URL(string: "\(record.user!.photo!)?s=420")!)
-                        .placeholder {
-                            ProgressView().progressViewStyle(.circular)
-                        }
-                        .cancelOnDisappear(true)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .clipShape(Circle())
+        HStack {
+            KFImage(URL(string: "\(record.user!.photo!)?s=420")!)
+                .placeholder {
+                    ProgressView()
+                        .progressViewStyle(.circular)
                         .frame(width: 16, height: 16)
-                    Text("\(String(record.rank ?? 0)). \(record.displayName ?? "")")
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .multilineTextAlignment(.leading)
                 }
-            }.if(self.isCurrentUser) {
-                $0.background(Color.accentColor)
-            }
+                .cancelOnDisappear(true)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .clipShape(Circle())
+                .frame(width: 16, height: 16)
+            Text("\(String(record.rank ?? 0)). \(record.displayName ?? "")")
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .multilineTextAlignment(.leading)
         }
     }
 }
 
 struct LeaderboardView: View {
     @ObservedObject var leaderboardViewModel: LeaderboardViewModel
+    @State var loadingData = false
+    private let profileViewModel: ProfileViewModel
 
-    init(viewModel: LeaderboardViewModel) {
+    init(viewModel: LeaderboardViewModel, profileViewModel: ProfileViewModel) {
         self.leaderboardViewModel = viewModel
+        self.profileViewModel = profileViewModel
         self.leaderboardViewModel.telemetry.recordViewEvent(elementName: "\(String(describing: LeaderboardView.self))")
-        self.leaderboardViewModel.getPublicLeaderboard(page: nil)
     }
 
     var body: some View {
         if !self.leaderboardViewModel.loaded {
-            ProgressView()
+            ProgressView().task {
+                await self.leaderboardViewModel.getPublicLeaderboard(page: nil)
+            }
         } else {
             ScrollViewReader { proxy in
-                ScrollView(.vertical, showsIndicators: false) {
-                    LazyVStack {
-                        ForEach(self.leaderboardViewModel.records) { record in
-                            LeaderboardRecordView(record,
-                                                  isCurrentUser:
-                                                    record.id ==
-                                                    self.leaderboardViewModel.currentUserRecord?.id)
-                                .id(record.id)
-                                .onAppear {
-                                    self.onLeaderboardRecordAppear(record)
+                    ScrollView(.vertical) {
+                        LazyVStack {
+                            if self.leaderboardViewModel.previousPage ?? 0 > 0 {
+                                AsyncButton(action: {
+                                    self.loadingData = true
+                                    await self.leaderboardViewModel.loadPreviousPage()
+                                }) {
+                                    Text(LocalizedStringKey("LeaderboardView_Load_Previous_Button"))
                                 }
+                            }
+                            ForEach(self.leaderboardViewModel.records) { record in
+                                NavigationLink(destination: ProfileView(viewModel:
+                                                                        DependencyInjection
+                                                                            .shared
+                                                                            .container
+                                                                            .resolve(ProfileViewModel.self)!,
+                                                                        user: record.user,
+                                                                        forceLoad: true)) {
+                                        LeaderboardRecordView(record)
+                                        .id(record.id)
+                                }.if(record.id == self.leaderboardViewModel.currentUserRecord?.id) {
+                                    $0.background(Color.accentColor)
+                                }
+                            }
+                            if self.leaderboardViewModel.nextPage ?? self.leaderboardViewModel.totalPages
+                                < self.leaderboardViewModel.totalPages {
+                                AsyncButton(action: {
+                                    self.loadingData = true
+                                    await self.leaderboardViewModel.loadNextPage()
+                                }) {
+                                    Text(LocalizedStringKey("LeaderboardView_Load_Next_Button"))
+                                }
+                            }
                         }
                     }
-                }.onAppear {
-                    if self.leaderboardViewModel.currentUserRecord != nil {
-                        proxy.scrollTo(self.leaderboardViewModel.currentUserRecord!.id, anchor: .center)
+                    .onReceive(self.leaderboardViewModel.$records) { _ in
+                        if self.leaderboardViewModel.currentUserRecord != nil && !self.loadingData {
+                            proxy.scrollTo(self.leaderboardViewModel.currentUserRecord!.id, anchor: .center)
+                        }
                     }
-                }
             }
-        }
-    }
-
-    private func onLeaderboardRecordAppear(_ record: LeaderboardRecord) {
-        if self.leaderboardViewModel.isFirstLeaderboardRecord(record) {
-            self.leaderboardViewModel.loadPreviousPage()
-        } else if self.leaderboardViewModel.isLastLeaderboardRecord(record) {
-            self.leaderboardViewModel.loadNextPage()
         }
     }
 }

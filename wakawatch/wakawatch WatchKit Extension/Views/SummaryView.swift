@@ -5,19 +5,22 @@ struct SummaryView: View {
 
     init(viewModel: SummaryViewModel) {
         self.summaryViewModel = viewModel
-        self.summaryViewModel.telemetry.recordViewEvent(elementName: "\(String(describing: SummaryView.self))")
-        self.summaryViewModel.getSummary()
     }
 
     var body: some View {
-        if !self.summaryViewModel.loaded {
-            ProgressView()
-        } else {
-            VStack {
+        VStack {
+            if !self.summaryViewModel.loaded {
+                ProgressView()
+                    .task {
+                        await self.summaryViewModel.getSummary()
+                    }
+            } else {
                 Text(LocalizedStringKey("SummaryView_Today"))
                 Text(summaryViewModel.totalDisplayTime)
                     .padding(EdgeInsets(top: 16, leading: 0, bottom: 0, trailing: 0))
             }
+        }.onAppear {
+            self.summaryViewModel.telemetry.recordViewEvent(elementName: "\(String(describing: SummaryView.self))")
         }
     }
 }

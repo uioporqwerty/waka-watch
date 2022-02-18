@@ -20,27 +20,21 @@ final class ProfileViewModel: ObservableObject {
         self.telemetry = telemetryService
     }
 
-    func getProfile(user: UserData?) {
+    func getProfile(user: UserData?) async {
         if user == nil {
-            Task {
-                do {
-                    let userProfileData = try await networkService.getProfileData(userId: nil)
-                    let leaderboardData = try await networkService.getPublicLeaderboard(page: nil)
+            let userProfileData = await networkService.getProfileData(userId: nil)
+            let leaderboardData = await networkService.getPublicLeaderboard(page: nil)
 
-                    DispatchQueue.main.async {
-                        self.id = UUID(uuidString: userProfileData?.data.id ?? "")
-                        self.displayName = userProfileData?.data.display_name ?? ""
-                        self.photoUrl = URL(string: userProfileData?.data.photo ?? "")
-                        self.website = URL(string: userProfileData?.data.website ?? "")
-                        self.createdDate = DateUtility.getDate(date: userProfileData?.created_at ?? "")
-                        self.location = userProfileData?.data.city?.title
-                        self.rank = leaderboardData?.current_user?.rank
-                        self.bio = userProfileData?.data.bio
-                        self.loaded = true
-                    }
-                } catch {
-                    print("Failed to get profile with error: \(error)")
-                }
+            DispatchQueue.main.async {
+                self.id = UUID(uuidString: userProfileData?.data.id ?? "")
+                self.displayName = userProfileData?.data.display_name ?? ""
+                self.photoUrl = URL(string: userProfileData?.data.photo ?? "")
+                self.website = URL(string: userProfileData?.data.website ?? "")
+                self.createdDate = DateUtility.getDate(date: userProfileData?.created_at ?? "")
+                self.location = userProfileData?.data.city?.title
+                self.rank = leaderboardData?.current_user?.rank
+                self.bio = userProfileData?.data.bio
+                self.loaded = true
             }
         } else {
             DispatchQueue.main.async {
@@ -50,6 +44,7 @@ final class ProfileViewModel: ObservableObject {
                 self.website = URL(string: user!.website ?? "")
                 self.location = user!.city?.title
                 self.bio = user?.bio
+                self.loaded = true
             }
         }
     }

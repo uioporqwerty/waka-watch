@@ -14,18 +14,12 @@ final class SummaryViewModel: ObservableObject {
         self.telemetry = telemetryService
     }
 
-    func getSummary() {
-        Task {
-            do {
-                let summaryData = try await networkService.getSummaryData()
+    func getSummary() async {
+        let summaryData = await networkService.getSummaryData()
 
-                DispatchQueue.main.async {
-                    self.totalDisplayTime = summaryData?.cummulative_total?.text ?? ""
-                    self.loaded = true
-                }
-            } catch {
-                print("Failed to get summary with error: \(error)")
-            }
+        DispatchQueue.main.async {
+            self.totalDisplayTime = summaryData?.cummulative_total?.text ?? ""
+            self.loaded = true
         }
     }
 }

@@ -6,33 +6,44 @@ struct ConnectView: View {
 
     init(viewModel: ConnectViewModel) {
         self.connectViewModel = viewModel
-        self.connectViewModel.telemetry.recordViewEvent(elementName: String(describing: ConnectView.self))
     }
 
     var body: some View {
-        if !authorized {
-            NavigationView {
-                Text(LocalizedStringKey("ConnectView_Message"))
-                    .navigationTitle(Text(LocalizedStringKey("ConnectView_Title")))
-                    .navigationBarTitleDisplayMode(.inline)
-            }
-        } else {
-            NavigationView {
+        VStack {
+            if !authorized {
+                NavigationView {
+                    Text(LocalizedStringKey("ConnectView_Message"))
+                        .navigationTitle(Text(LocalizedStringKey("ConnectView_Title")))
+                        .navigationBarTitleDisplayMode(.inline)
+                }
+            } else {
                 TabView {
-                    DependencyInjection.shared.container.resolve(SummaryView.self)!
-                            .navigationTitle(Text(LocalizedStringKey("SummaryView_Title")))
-                            .navigationBarTitleDisplayMode(.inline)
-                    DependencyInjection.shared.container.resolve(LeaderboardView.self)!
-                            .navigationTitle(Text(LocalizedStringKey("LeaderboardView_Title")))
-                            .navigationBarTitleDisplayMode(.inline)
-                    DependencyInjection.shared.container.resolve(ProfileView.self)!
-                            .navigationTitle(Text(LocalizedStringKey("ProfileView_Title")))
-                            .navigationBarTitleDisplayMode(.inline)
-                    DependencyInjection.shared.container.resolve(SettingsView.self)!
-                            .navigationTitle(Text(LocalizedStringKey("SettingsView_Title")))
-                            .navigationBarTitleDisplayMode(.inline)
+                    // TODO: Remove once apple fixes NavigationLink bug on 8.4+
+                    NavigationView {
+                        DependencyInjection.shared.container.resolve(SummaryView.self)!
+                                .navigationTitle(Text(LocalizedStringKey("SummaryView_Title")))
+                                .navigationBarTitleDisplayMode(.inline)
+                    }
+                    NavigationView {
+                        DependencyInjection.shared.container.resolve(LeaderboardView.self)!
+                                .navigationTitle(Text(LocalizedStringKey("LeaderboardView_Title")))
+                                .navigationBarTitleDisplayMode(.inline)
+                    }
+                    NavigationView {
+                        DependencyInjection.shared.container.resolve(ProfileView.self)!
+                                .navigationTitle(Text(LocalizedStringKey("ProfileView_Title")))
+                                .navigationBarTitleDisplayMode(.inline)
+                    }
+                    NavigationView {
+                        DependencyInjection.shared.container.resolve(SettingsView.self)!
+                                .navigationTitle(Text(LocalizedStringKey("SettingsView_Title")))
+                                .navigationBarTitleDisplayMode(.inline)
+                    }
                 }
             }
+        }
+        .onAppear {
+            self.connectViewModel.telemetry.recordViewEvent(elementName: String(describing: ConnectView.self))
         }
     }
 }

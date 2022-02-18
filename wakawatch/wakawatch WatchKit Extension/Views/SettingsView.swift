@@ -6,20 +6,24 @@ struct SettingsView: View {
 
     init(viewModel: SettingsViewModel) {
         self.settingsViewModel = viewModel
-        self.settingsViewModel.telemetry.recordViewEvent(elementName: "\(String(describing: SettingsView.self))")
     }
 
     var body: some View {
-        ScrollView(.vertical, showsIndicators: false) {
-            ScrollViewReader { _ in
-                AsyncButton(action: {
-                    do {
-                        try await self.settingsViewModel.disconnect()
-                    } catch { }
-                }) {
-                    Text(LocalizedStringKey("SettingsView_Disconnect_Button"))
+        VStack {
+            ScrollView(.vertical, showsIndicators: false) {
+                ScrollViewReader { _ in
+                    AsyncButton(action: {
+                        do {
+                            try await self.settingsViewModel.disconnect()
+                        } catch { }
+                    }) {
+                        Text(LocalizedStringKey("SettingsView_Disconnect_Button"))
+                    }
                 }
             }
+        }
+        .onAppear {
+            self.settingsViewModel.telemetry.recordViewEvent(elementName: "\(String(describing: SettingsView.self))")
         }
     }
 }

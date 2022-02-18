@@ -29,7 +29,7 @@ final class NetworkService {
         return self.accessToken
     }
 
-    func getSummaryData() async throws -> SummaryResponse? {
+    func getSummaryData() async -> SummaryResponse? {
         await self.authenticationService.refreshAccessToken()
 
         var urlComponents = URLComponents(string: "\(baseUrl)/users/current/summaries")!
@@ -63,7 +63,7 @@ final class NetworkService {
         return nil
     }
 
-    func getProfileData(userId: String?) async throws -> ProfileResponse? {
+    func getProfileData(userId: String?) async -> ProfileResponse? {
         await self.authenticationService.refreshAccessToken()
 
         var url = "\(baseUrl)/users/current"
@@ -101,7 +101,7 @@ final class NetworkService {
         return nil
     }
 
-    func getPublicLeaderboard(page: Int?) async throws -> LeaderboardResponse? {
+    func getPublicLeaderboard(page: Int?) async -> LeaderboardResponse? {
         await self.authenticationService.refreshAccessToken()
 
         var urlComponents = URLComponents(string: "\(baseUrl)/leaders")!
