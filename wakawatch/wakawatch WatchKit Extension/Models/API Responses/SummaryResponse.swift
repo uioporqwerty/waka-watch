@@ -6,4 +6,5 @@ struct SummaryResponse: Decodable {
 
 struct CummulativeTotal: Decodable {
     let text: String?
+    let seconds: Double?
 }

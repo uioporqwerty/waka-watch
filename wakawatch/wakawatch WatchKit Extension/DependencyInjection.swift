@@ -37,8 +37,11 @@ final class DependencyInjection {
         }
         #endif
 
+        self.container.register(ComplicationService.self) { _ in ComplicationService() }
+
         self.container.register(SummaryViewModel.self) { resolver in
             SummaryViewModel(networkService: resolver.resolve(NetworkService.self)!,
+                             complicationService: resolver.resolve(ComplicationService.self)!,
                              telemetryService: resolver.resolve(TelemetryService.self)!)
         }
         self.container.register(ProfileViewModel.self) { resolver in
@@ -58,6 +61,8 @@ final class DependencyInjection {
         self.container.register(ConnectViewModel.self) { resolver in
             ConnectViewModel(telemetryService: resolver.resolve(TelemetryService.self)!)
         }
+
+        self.container.register(ComplicationViewModel.self) { _ in ComplicationViewModel() }
 
         self.container.register(SummaryView.self) { resolver in
             SummaryView(viewModel: resolver.resolve(SummaryViewModel.self)!)
