@@ -92,13 +92,14 @@ final class AuthenticationViewModel {
             return false
         #else
             let appInformation = await self.networkService.getAppInformation()
-            let currentAppVersion = Double(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0")
+            let currentAppVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0.0"
 
             guard let appInformation = appInformation else {
                 return false
             }
 
-            return appInformation.minimum_version >= currentAppVersion!
+            return VersionCheckerUtility.meetsMinimumVersion(currentVersion: currentAppVersion,
+                                                             minimumVersion: appInformation.minimum_version)
         #endif
     }
 }
