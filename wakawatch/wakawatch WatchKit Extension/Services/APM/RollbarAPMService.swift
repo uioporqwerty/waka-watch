@@ -25,7 +25,9 @@ class RollbarAPMService: APMService {
             self.logManager.errorMessage("Failed to find profile for current user. Cannot set user.")
             return
         }
-        self.logManager.debugMessage("Setting Rollbar user with id \(profile.id)")
+
+        // swiftlint:disable line_length
+        self.logManager.debugMessage("Setting Rollbar user with email \(profile.email ?? ""), id \(profile.id), and display_name \(profile.display_name ?? "")")
         self.configuration.setPersonId(profile.id, username: profile.display_name ?? "", email: profile.email ?? "")
         Rollbar.updateConfiguration(self.configuration)
         Rollbar.reapplyConfiguration()

@@ -30,10 +30,10 @@ struct SummaryView: View {
                         Image(systemName: "arrow.clockwise")
                             .padding()
                             .background(Color.accentColor)
+                            .frame(width: 28, height: 28)
                             .clipShape(Circle())
                     }
                     .buttonStyle(PlainButtonStyle())
-                    .frame(width: 32, height: 32)
                 }
                 .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)

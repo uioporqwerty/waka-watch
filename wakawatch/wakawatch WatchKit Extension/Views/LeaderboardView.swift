@@ -46,6 +46,7 @@ struct LeaderboardView: View {
             }
         } else {
             ScrollViewReader { proxy in
+                ZStack {
                     ScrollView(.vertical) {
                         LazyVStack {
                             if self.leaderboardViewModel.previousPage ?? 0 > 0 {
@@ -86,6 +87,15 @@ struct LeaderboardView: View {
                             proxy.scrollTo(self.leaderboardViewModel.currentUserRecord!.id, anchor: .center)
                         }
                     }
+
+                    VStack {
+                        FloatingMenu(menuItem1Action: {
+                            proxy.scrollTo(self.leaderboardViewModel.currentUserRecord!.id, anchor: .center)
+                        })
+                    }
+                    .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
+                }
             }
         }
     }
