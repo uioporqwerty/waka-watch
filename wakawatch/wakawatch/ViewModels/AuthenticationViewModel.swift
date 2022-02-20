@@ -2,6 +2,7 @@ import Foundation
 
 final class AuthenticationViewModel {
     private let authenticationService: AuthenticationService
+    private let networkService: NetworkService
     private let apmService: APMService
     private let logManager: LogManager
 
@@ -10,10 +11,12 @@ final class AuthenticationViewModel {
     public let callbackURLScheme: String
 
     init(authenticationService: AuthenticationService,
+         networkService: NetworkService,
          telemetryService: TelemetryService,
          apmService: APMService,
          logManager: LogManager) {
         self.authenticationService = authenticationService
+        self.networkService = networkService
         self.telemetry = telemetryService
         self.apmService = apmService
         self.logManager = logManager
@@ -58,31 +61,44 @@ final class AuthenticationViewModel {
     }
 
     func disconnect() async {
-        Task {
-            do {
-                self.telemetry.recordViewEvent(elementName: "TAPPED: Disconnect button on companion app")
-                try await self.authenticationService.disconnect()
+        do {
+            self.telemetry.recordViewEvent(elementName: "TAPPED: Disconnect button on companion app")
+            try await self.authenticationService.disconnect()
 
-                // TODO: Repeated logic in SettingsViewModel, refactor.
-                let message: [String: Any] = [
-                    ConnectivityMessageKeys.authorized: false,
-                    ConnectivityMessageKeys.accessToken: "",
-                    ConnectivityMessageKeys.refreshToken: "",
-                    ConnectivityMessageKeys.tokenExpiration: ""
-                ]
-                ConnectivityService.shared.sendMessage(message, delivery: .highPriority)
-                ConnectivityService.shared.sendMessage(message, delivery: .guaranteed)
-                ConnectivityService.shared.sendMessage(message, delivery: .failable)
+            // TODO: Repeated logic in SettingsViewModel, refactor.
+            let message: [String: Any] = [
+                ConnectivityMessageKeys.authorized: false,
+                ConnectivityMessageKeys.accessToken: "",
+                ConnectivityMessageKeys.refreshToken: "",
+                ConnectivityMessageKeys.tokenExpiration: ""
+            ]
+            ConnectivityService.shared.sendMessage(message, delivery: .highPriority)
+            ConnectivityService.shared.sendMessage(message, delivery: .guaranteed)
+            ConnectivityService.shared.sendMessage(message, delivery: .failable)
 
-                let defaults = UserDefaults.standard
-                defaults.set("", forKey: DefaultsKeys.accessToken)
-                defaults.set("", forKey: DefaultsKeys.refreshToken)
-                defaults.set(false, forKey: DefaultsKeys.authorized)
+            let defaults = UserDefaults.standard
+            defaults.set("", forKey: DefaultsKeys.accessToken)
+            defaults.set("", forKey: DefaultsKeys.refreshToken)
+            defaults.set(false, forKey: DefaultsKeys.authorized)
 
-                self.logManager.debugMessage("Disconnected from WakaTime")
-            } catch {
-                self.logManager.reportError(error)
-            }
+            self.logManager.debugMessage("Disconnected from WakaTime")
+        } catch {
+            self.logManager.reportError(error)
         }
+    }
+
+    func requiresUpdate() async -> Bool {
+        #if DEBUG
+            return false
+        #else
+            let appInformation = await self.networkService.getAppInformation()
+            let currentAppVersion = Double(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0")
+
+            guard let appInformation = appInformation else {
+                return false
+            }
+
+            return appInformation.minimum_version >= currentAppVersion!
+        #endif
     }
 }

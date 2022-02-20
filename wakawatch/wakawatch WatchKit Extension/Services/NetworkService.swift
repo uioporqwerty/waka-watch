@@ -139,4 +139,29 @@ final class NetworkService {
 
        return nil
     }
+
+    func getAppInformation() async -> AppInformation? {
+        let request = URLRequest(url: URL(string: Bundle
+                                                  .main
+                                                  .infoDictionary?["APP_INFORMATION_URL"] as? String ?? "1.0")!)
+
+        do {
+            let (data, response) = try await URLSession.shared.data(from: request.url!)
+            let urlResponse = response as? HTTPURLResponse
+
+            if urlResponse?.statusCode ?? 0 >= 300 {
+                self.logManager.errorMessage(data)
+            }
+            self.telemetry.recordNetworkEvent(method: request.httpMethod,
+                                              url: request.url?.absoluteString,
+                                              statusCode: urlResponse?.statusCode.description)
+            let appInformation = try JSONDecoder().decode(AppInformation.self, from: data)
+
+            return appInformation
+        } catch {
+            self.logManager.reportError(error)
+        }
+
+        return nil
+    }
 }

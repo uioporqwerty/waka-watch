@@ -8,6 +8,7 @@
 "SettingsView_Disconnect_Button" = "Disconnect from WakaTime";
 "ConnectView_Title" = "Waka Watch";
 "ConnectView_Message" = "Open the Waka Watch app on your primary device to connect to WakaTime.";
+"ConnectView_UpdateRequired_Message" = "This version of Waka Watch is out of date. Update Waka Watch through the App Store.";
 "LeaderboardView_Load_Previous_Button" = "Load Previous";
 "LeaderboardView_Load_Next_Button" = "Load Next";
 "AuthenticationView_Connect_Text" = "Connect to WakaTime";

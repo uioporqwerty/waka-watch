@@ -35,6 +35,7 @@ final class DependencyInjection {
 
         self.container.register(AuthenticationViewModel.self) { resolver in
             AuthenticationViewModel(authenticationService: resolver.resolve(AuthenticationService.self)!,
+                                    networkService: resolver.resolve(NetworkService.self)!,
                                     telemetryService: resolver.resolve(TelemetryService.self)!,
                                     apmService: resolver.resolve(APMService.self)!,
                                     logManager: resolver.resolve(LogManager.self)!)

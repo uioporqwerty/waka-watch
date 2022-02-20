@@ -58,5 +58,7 @@
 	<string>$(ENVIRONMENT)</string>
 	<key>ROLLBAR_ACCESS_TOKEN</key>
 	<string>$(ROLLBAR_ACCESS_TOKEN)</string>
+	<key>APP_INFORMATION_URL</key>
+	<string>https://gist.githubusercontent.com/uioporqwerty/852a55fc909ed8e4b5017d06ffeab113/raw/1cd524cab0b2fb78fb3a5eccb23a6e63b523c659/app_information.json</string>
 </dict>
 </plist>

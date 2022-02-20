@@ -59,7 +59,8 @@ final class DependencyInjection {
                               telemetryService: resolver.resolve(TelemetryService.self)!)
         }
         self.container.register(ConnectViewModel.self) { resolver in
-            ConnectViewModel(telemetryService: resolver.resolve(TelemetryService.self)!)
+            ConnectViewModel(telemetryService: resolver.resolve(TelemetryService.self)!,
+                             networkService: resolver.resolve(NetworkService.self)!)
         }
 
         self.container.register(ComplicationViewModel.self) { _ in ComplicationViewModel() }

@@ -3,6 +3,7 @@ import SwiftUI
 struct ConnectView: View {
     private var connectViewModel: ConnectViewModel
     @AppStorage(DefaultsKeys.authorized) var authorized = false
+    @State var requiresUpdate = false
 
     init(viewModel: ConnectViewModel) {
         self.connectViewModel = viewModel
@@ -10,7 +11,9 @@ struct ConnectView: View {
 
     var body: some View {
         VStack {
-            if !authorized {
+            if self.requiresUpdate {
+                Text(LocalizedStringKey("ConnectView_UpdateRequired_Message"))
+            } else if !authorized {
                 NavigationView {
                     Text(LocalizedStringKey("ConnectView_Message"))
                         .navigationTitle(Text(LocalizedStringKey("ConnectView_Title")))
@@ -44,6 +47,9 @@ struct ConnectView: View {
         }
         .onAppear {
             self.connectViewModel.telemetry.recordViewEvent(elementName: String(describing: ConnectView.self))
+        }
+        .task {
+            self.requiresUpdate = await self.connectViewModel.requiresUpdate()
         }
     }
 }
