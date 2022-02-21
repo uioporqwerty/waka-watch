@@ -1,13 +1,8 @@
 import Foundation
 
 final class ComplicationViewModel: ObservableObject {
-    @Published var totalDisplayTime = ""
-
-    func getLocalCurrentTime() {
+    func getLocalCurrentTime() -> String {
         let defaults = UserDefaults.standard
-
-        DispatchQueue.main.async {
-            self.totalDisplayTime = defaults.string(forKey: DefaultsKeys.complicationCurrentTimeCoded) ?? "00:00"
-        }
+        return defaults.string(forKey: DefaultsKeys.complicationCurrentTimeCoded) ?? "00:00"
     }
 }

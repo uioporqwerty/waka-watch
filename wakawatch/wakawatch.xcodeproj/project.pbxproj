@@ -25,6 +25,9 @@
 		6B410A4027C2E6580044BB08 /* SwiftVersionCompare in Frameworks */ = {isa = PBXBuildFile; productRef = 6B410A3F27C2E6580044BB08 /* SwiftVersionCompare */; };
 		6B410A4227C2E6860044BB08 /* VersionCheckerUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B410A4127C2E6860044BB08 /* VersionCheckerUtility.swift */; };
 		6B410A4327C2E6860044BB08 /* VersionCheckerUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B410A4127C2E6860044BB08 /* VersionCheckerUtility.swift */; };
+		6B410A4C27C32E760044BB08 /* RequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B410A4B27C32E760044BB08 /* RequestFactory.swift */; };
+		6B410A4D27C32E760044BB08 /* RequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B410A4B27C32E760044BB08 /* RequestFactory.swift */; };
+		6B410A4F27C331B80044BB08 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B410A4E27C331B80044BB08 /* ExtensionDelegate.swift */; };
 		6B7E479B27AA0485000D5DE7 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA78C8127A46F36005149BC /* ActivityIndicator.swift */; };
 		6B7E479D27AA04A7000D5DE7 /* AsyncButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA78C8F27A492FB005149BC /* AsyncButton.swift */; };
 		6B890F0527BC554000CCC13A /* DateUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8A485B279D081B0071566F /* DateUtility.swift */; };
@@ -190,6 +193,8 @@
 		6B38A90427C053770020B7DE /* ComplicationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationViewModel.swift; sourceTree = "<group>"; };
 		6B410A3927C2D77C0044BB08 /* AppInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInformation.swift; sourceTree = "<group>"; };
 		6B410A4127C2E6860044BB08 /* VersionCheckerUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionCheckerUtility.swift; sourceTree = "<group>"; };
+		6B410A4B27C32E760044BB08 /* RequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestFactory.swift; sourceTree = "<group>"; };
+		6B410A4E27C331B80044BB08 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		6B8A4856279D03780071566F /* ProfileResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileResponse.swift; sourceTree = "<group>"; };
 		6B8A4858279D05060071566F /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		6B8A485B279D081B0071566F /* DateUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtility.swift; sourceTree = "<group>"; };
@@ -324,6 +329,15 @@
 				6B23142927A59B8700477259 /* ConnectivityMessageKeys.swift */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		6B410A4A27C32E640044BB08 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				6B410A4B27C32E760044BB08 /* RequestFactory.swift */,
+				6B29476A279642EF00311E1E /* NetworkService.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		6B7E479C27AA048E000D5DE7 /* Components */ = {
@@ -505,6 +519,7 @@
 				6B9E1110279C944B00F4DC93 /* ViewModels */,
 				6BED9ADC27951F0C005646C3 /* Views */,
 				6BED9AA02795154E005646C3 /* WakaWatchApp.swift */,
+				6B410A4E27C331B80044BB08 /* ExtensionDelegate.swift */,
 				6B38A90127C04B130020B7DE /* ComplicationController.swift */,
 				6BE5DE5327A78BBF0072FF0E /* DependencyInjection.swift */,
 				6B23142F27A6343300477259 /* Localizable.strings */,
@@ -564,12 +579,12 @@
 		6BED9AFE2795D1B3005646C3 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				6B410A4A27C32E640044BB08 /* Network */,
 				6BE5DE7E27A97CE30072FF0E /* APM */,
 				6BE5DE6927A8CB2B0072FF0E /* Authentication */,
 				6BE5DE5C27A8BD9B0072FF0E /* Telemetry */,
 				6BA78C8627A4856F005149BC /* Logging */,
 				6BED9AFF2795D1C0005646C3 /* ConnectivityService.swift */,
-				6B29476A279642EF00311E1E /* NetworkService.swift */,
 				6B1D9B2727C1366200322DBA /* ComplicationService.swift */,
 			);
 			path = Services;
@@ -920,6 +935,7 @@
 				6BED9A6E2795154A005646C3 /* WakaWatchApp.swift in Sources */,
 				6BE5DE4527A653440072FF0E /* ConsoleLoggingService.swift in Sources */,
 				6BED9B002795D1C0005646C3 /* ConnectivityService.swift in Sources */,
+				6B410A4C27C32E760044BB08 /* RequestFactory.swift in Sources */,
 				6BE5DE6427A8C0EA0072FF0E /* ConsoleTelemetryService.swift in Sources */,
 				6BF5870427C2B35900865D95 /* FloatingMenu.swift in Sources */,
 				6BED9AF827954728005646C3 /* DefaultKeys.swift in Sources */,
@@ -987,11 +1003,13 @@
 				6BE5DE5427A78BBF0072FF0E /* DependencyInjection.swift in Sources */,
 				6B38A90527C053770020B7DE /* ComplicationViewModel.swift in Sources */,
 				6BED9AE027951F6D005646C3 /* ProfileView.swift in Sources */,
+				6B410A4D27C32E760044BB08 /* RequestFactory.swift in Sources */,
 				6BE5DE8127A97CF90072FF0E /* NullAPMService.swift in Sources */,
 				6B3440DD279C5E1C006A5C27 /* Delivery.swift in Sources */,
 				6BE5DE6227A8BDBB0072FF0E /* RollbarTelemetryService.swift in Sources */,
 				6BED9AA12795154E005646C3 /* WakaWatchApp.swift in Sources */,
 				6BA78C9027A492FB005149BC /* AsyncButton.swift in Sources */,
+				6B410A4F27C331B80044BB08 /* ExtensionDelegate.swift in Sources */,
 				6B9E1115279CA29100F4DC93 /* SummaryResponse.swift in Sources */,
 				6BED9AEB27952197005646C3 /* DefaultKeys.swift in Sources */,
 				6BD52F1C279FD07300247BFB /* RollbarLoggingService.swift in Sources */,

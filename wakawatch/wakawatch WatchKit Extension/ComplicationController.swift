@@ -23,11 +23,9 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
                                  withHandler handler: @escaping (CLKComplicationTimelineEntry?) -> Void) {
         switch complication.family {
         case .graphicCircular:
-            self.complicationsViewModel?.getLocalCurrentTime()
-
             let template = CLKComplicationTemplateGraphicCircularStackViewText(
                 content: Image("Complication/Graphic Circular"),
-                textProvider: CLKTextProvider(format: self.complicationsViewModel?.totalDisplayTime ?? "")
+                textProvider: CLKTextProvider(format: self.complicationsViewModel?.getLocalCurrentTime() ?? "00:00")
               )
 
             let entry = CLKComplicationTimelineEntry(

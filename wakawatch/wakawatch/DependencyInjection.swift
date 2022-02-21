@@ -7,6 +7,14 @@ final class DependencyInjection {
     private init() { }
 
     func register() {
+        registerServices()
+        registerViewModels()
+        registerViews()
+    }
+
+    private func registerServices() {
+        self.container.register(RequestFactory.self) { _ in RequestFactory() }
+
         self.container.register(LogManager.self) { resolver in
             LogManager(loggingService: resolver.resolve(LoggingService.self)!)
         }
@@ -17,7 +25,8 @@ final class DependencyInjection {
         self.container.register(NetworkService.self) { resolver in
             NetworkService(logManager: resolver.resolve(LogManager.self)!,
                            telemetry: resolver.resolve(TelemetryService.self)!,
-                           authenticationService: resolver.resolve(AuthenticationService.self)!)
+                           authenticationService: resolver.resolve(AuthenticationService.self)!,
+                           requestFactory: resolver.resolve(RequestFactory.self)!)
         }
 
         #if DEBUG
@@ -32,7 +41,9 @@ final class DependencyInjection {
                               logManager: resolver.resolve(LogManager.self)!)
         }
         #endif
+    }
 
+    private func registerViewModels() {
         self.container.register(AuthenticationViewModel.self) { resolver in
             AuthenticationViewModel(authenticationService: resolver.resolve(AuthenticationService.self)!,
                                     networkService: resolver.resolve(NetworkService.self)!,
@@ -43,6 +54,9 @@ final class DependencyInjection {
         self.container.register(SplashViewModel.self) { resolver in
             SplashViewModel(telemetryService: resolver.resolve(TelemetryService.self)!)
         }
+    }
+
+    private func registerViews() {
         self.container.register(AuthenticationView.self) { resolver in
             AuthenticationView(viewModel: resolver.resolve(AuthenticationViewModel.self)!)
         }

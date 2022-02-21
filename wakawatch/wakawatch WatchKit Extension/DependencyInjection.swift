@@ -6,15 +6,23 @@ final class DependencyInjection {
 
     private init() { }
 
-    // swiftlint:disable function_body_length
     func register() {
+        registerServices()
+        registerViewModels()
+        registerViews()
+    }
+
+    private func registerServices() {
+        self.container.register(ComplicationService.self) { _ in ComplicationService() }
+        self.container.register(RequestFactory.self) { _ in RequestFactory() }
+
         #if DEBUG
-        self.container.register(TelemetryService.self) { _ in ConsoleTelemetryService() }
-        self.container.register(LoggingService.self) { _ in ConsoleLoggingService() }
-        self.container.register(APMService.self) { _ in NullAPMService() }
+            self.container.register(TelemetryService.self) { _ in ConsoleTelemetryService() }
+            self.container.register(LoggingService.self) { _ in ConsoleLoggingService() }
+            self.container.register(APMService.self) { _ in NullAPMService() }
         #else
-        self.container.register(TelemetryService.self) { _ in RollbarTelemetryService() }
-        self.container.register(LoggingService.self) { _ in RollbarLoggingService() }
+            self.container.register(TelemetryService.self) { _ in RollbarTelemetryService() }
+            self.container.register(LoggingService.self) { _ in RollbarLoggingService() }
         #endif
 
         self.container.register(LogManager.self) { resolver in
@@ -27,7 +35,8 @@ final class DependencyInjection {
         self.container.register(NetworkService.self) { resolver in
             NetworkService(logManager: resolver.resolve(LogManager.self)!,
                            telemetry: resolver.resolve(TelemetryService.self)!,
-                           authenticationService: resolver.resolve(AuthenticationService.self)!)
+                           authenticationService: resolver.resolve(AuthenticationService.self)!,
+                           requestFactory: resolver.resolve(RequestFactory.self)!)
         }
 
         #if !DEBUG
@@ -36,9 +45,9 @@ final class DependencyInjection {
                               logManager: resolver.resolve(LogManager.self)!)
         }
         #endif
+    }
 
-        self.container.register(ComplicationService.self) { _ in ComplicationService() }
-
+    private func registerViewModels() {
         self.container.register(SummaryViewModel.self) { resolver in
             SummaryViewModel(networkService: resolver.resolve(NetworkService.self)!,
                              complicationService: resolver.resolve(ComplicationService.self)!,
@@ -62,9 +71,10 @@ final class DependencyInjection {
             ConnectViewModel(telemetryService: resolver.resolve(TelemetryService.self)!,
                              networkService: resolver.resolve(NetworkService.self)!)
         }
-
         self.container.register(ComplicationViewModel.self) { _ in ComplicationViewModel() }
+    }
 
+    private func registerViews() {
         self.container.register(SummaryView.self) { resolver in
             SummaryView(viewModel: resolver.resolve(SummaryViewModel.self)!)
         }
