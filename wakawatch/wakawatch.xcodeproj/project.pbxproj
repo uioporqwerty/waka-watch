@@ -54,6 +54,10 @@
 		6BD52F1C279FD07300247BFB /* RollbarLoggingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD52F1A279FD07300247BFB /* RollbarLoggingService.swift */; };
 		6BD52F1E279FD1A300247BFB /* RollbarNotifier in Frameworks */ = {isa = PBXBuildFile; productRef = 6BD52F1D279FD1A300247BFB /* RollbarNotifier */; };
 		6BD52F20279FD1AA00247BFB /* RollbarNotifier in Frameworks */ = {isa = PBXBuildFile; productRef = 6BD52F1F279FD1AA00247BFB /* RollbarNotifier */; };
+		6BDD8B3E27C4634700BB1493 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 6BDD8B3D27C4634700BB1493 /* SwiftUICharts */; };
+		6BDD8B4027C4636A00BB1493 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 6BDD8B3F27C4636A00BB1493 /* SwiftUICharts */; };
+		6BDD8B4227C467EB00BB1493 /* SummaryRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDD8B4127C467EB00BB1493 /* SummaryRange.swift */; };
+		6BDD8B4327C467EB00BB1493 /* SummaryRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDD8B4127C467EB00BB1493 /* SummaryRange.swift */; };
 		6BE5DE3C27A6402D0072FF0E /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE5DE3B27A6402D0072FF0E /* StringExtensions.swift */; };
 		6BE5DE3D27A6403D0072FF0E /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE5DE3B27A6402D0072FF0E /* StringExtensions.swift */; };
 		6BE5DE3F27A64E630072FF0E /* SeverityLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE5DE3E27A64E630072FF0E /* SeverityLevel.swift */; };
@@ -213,6 +217,7 @@
 		6BD52EF8279FCB3300247BFB /* RollbarAPMService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollbarAPMService.swift; sourceTree = "<group>"; };
 		6BD52F17279FD03900247BFB /* LoggingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingService.swift; sourceTree = "<group>"; };
 		6BD52F1A279FD07300247BFB /* RollbarLoggingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollbarLoggingService.swift; sourceTree = "<group>"; };
+		6BDD8B4127C467EB00BB1493 /* SummaryRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryRange.swift; sourceTree = "<group>"; };
 		6BE5DE3B27A6402D0072FF0E /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		6BE5DE3E27A64E630072FF0E /* SeverityLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeverityLevel.swift; sourceTree = "<group>"; };
 		6BE5DE4127A6531A0072FF0E /* LogManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogManager.swift; sourceTree = "<group>"; };
@@ -266,6 +271,7 @@
 				6BED9ADB27951C82005646C3 /* BetterSafariView in Frameworks */,
 				6BD52F20279FD1AA00247BFB /* RollbarNotifier in Frameworks */,
 				6BE5DE5927A8BB3C0072FF0E /* Swinject in Frameworks */,
+				6BDD8B3E27C4634700BB1493 /* SwiftUICharts in Frameworks */,
 				26FB2F00E2A438DF45D6D79F /* libPods-wakawatch.a in Frameworks */,
 				6B410A3E27C2E6000044BB08 /* SwiftVersionCompare in Frameworks */,
 			);
@@ -293,6 +299,7 @@
 				6B410A4027C2E6580044BB08 /* SwiftVersionCompare in Frameworks */,
 				6BD52F1E279FD1A300247BFB /* RollbarNotifier in Frameworks */,
 				6BE5DE5627A78BD60072FF0E /* Swinject in Frameworks */,
+				6BDD8B4027C4636A00BB1493 /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,6 +334,7 @@
 				6B3440DB279C5E1C006A5C27 /* Delivery.swift */,
 				6BE5DE3E27A64E630072FF0E /* SeverityLevel.swift */,
 				6B23142927A59B8700477259 /* ConnectivityMessageKeys.swift */,
+				6BDD8B4127C467EB00BB1493 /* SummaryRange.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -633,6 +641,7 @@
 				6BD52F1F279FD1AA00247BFB /* RollbarNotifier */,
 				6BE5DE5827A8BB3C0072FF0E /* Swinject */,
 				6B410A3D27C2E6000044BB08 /* SwiftVersionCompare */,
+				6BDD8B3D27C4634700BB1493 /* SwiftUICharts */,
 			);
 			productName = wakawatch;
 			productReference = 6BED9A6A2795154A005646C3 /* Waka Watch.app */;
@@ -710,6 +719,7 @@
 				6BE5DE5527A78BD60072FF0E /* Swinject */,
 				6B890F0727BC70DF00CCC13A /* Kingfisher */,
 				6B410A3F27C2E6580044BB08 /* SwiftVersionCompare */,
+				6BDD8B3F27C4636A00BB1493 /* SwiftUICharts */,
 			);
 			productName = "wakawatch WatchKit Extension";
 			productReference = 6BED9A992795154E005646C3 /* wakawatch WatchKit Extension.appex */;
@@ -803,6 +813,7 @@
 				6BE5DE5227A788BC0072FF0E /* XCRemoteSwiftPackageReference "Swinject" */,
 				6B890F0627BC70DF00CCC13A /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				6B410A3C27C2E6000044BB08 /* XCRemoteSwiftPackageReference "SwiftVersionCompare" */,
+				6BDD8B3C27C4634700BB1493 /* XCRemoteSwiftPackageReference "SwiftUICharts" */,
 			);
 			productRefGroup = 6BED9A6B2795154A005646C3 /* Products */;
 			projectDirPath = "";
@@ -926,6 +937,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BDD8B4227C467EB00BB1493 /* SummaryRange.swift in Sources */,
 				6BD52F1B279FD07300247BFB /* RollbarLoggingService.swift in Sources */,
 				6BA78C8027A46CF0005149BC /* SplashView.swift in Sources */,
 				6B23142A27A59B8700477259 /* ConnectivityMessageKeys.swift in Sources */,
@@ -1024,6 +1036,7 @@
 				6B8A4859279D05060071566F /* ProfileViewModel.swift in Sources */,
 				6BE5DE6527A8C0EA0072FF0E /* ConsoleTelemetryService.swift in Sources */,
 				6B8A485E279D1A2C0071566F /* LeaderboardResponse.swift in Sources */,
+				6BDD8B4327C467EB00BB1493 /* SummaryRange.swift in Sources */,
 				6B9E1112279C945800F4DC93 /* SummaryViewModel.swift in Sources */,
 				6BE5DE4027A64E630072FF0E /* SeverityLevel.swift in Sources */,
 				6BE5DE7827A90CB00072FF0E /* ConnectViewModel.swift in Sources */,
@@ -1663,6 +1676,14 @@
 				version = "2.0.0-beta.23";
 			};
 		};
+		6BDD8B3C27C4634700BB1493 /* XCRemoteSwiftPackageReference "SwiftUICharts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/willdale/SwiftUICharts.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		6BE5DE5227A788BC0072FF0E /* XCRemoteSwiftPackageReference "Swinject" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Swinject/Swinject.git";
@@ -1706,6 +1727,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 6BD52EF4279FC9C900247BFB /* XCRemoteSwiftPackageReference "rollbar-apple" */;
 			productName = RollbarNotifier;
+		};
+		6BDD8B3D27C4634700BB1493 /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6BDD8B3C27C4634700BB1493 /* XCRemoteSwiftPackageReference "SwiftUICharts" */;
+			productName = SwiftUICharts;
+		};
+		6BDD8B3F27C4636A00BB1493 /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6BDD8B3C27C4634700BB1493 /* XCRemoteSwiftPackageReference "SwiftUICharts" */;
+			productName = SwiftUICharts;
 		};
 		6BE5DE5527A78BD60072FF0E /* Swinject */ = {
 			isa = XCSwiftPackageProductDependency;

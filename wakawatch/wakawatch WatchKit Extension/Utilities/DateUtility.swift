@@ -8,4 +8,15 @@ final class DateUtility {
 
         return dateFormatter.date(from: date)
     }
+
+    static func getChartDate(date: String) -> String {
+        let dateFormatter = DateFormatter()
+        let inputFormat = "yyyy-MM-dd"
+        dateFormatter.dateFormat = inputFormat
+        let inputDate = dateFormatter.date(from: date)
+
+        let outputFormat = "MMM. d"
+        dateFormatter.dateFormat = outputFormat
+        return dateFormatter.string(from: inputDate!)
+    }
 }

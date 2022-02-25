@@ -11,12 +11,12 @@ final class RequestFactory {
         self.clientSecret = Bundle.main.infoDictionary?["CLIENT_SECRET"] as? String
     }
 
-    func makeSummaryRequest() -> URLRequest {
+    func makeSummaryRequest(_ range: SummaryRange = .Today) -> URLRequest {
         var urlComponents = URLComponents(string: "\(baseUrl)/users/current/summaries")!
         urlComponents.queryItems = [
             URLQueryItem(name: "client_secret", value: self.clientSecret),
             URLQueryItem(name: "access_token", value: self.getAccessToken()),
-            URLQueryItem(name: "range", value: "Today")
+            URLQueryItem(name: "range", value: range.rawValue)
         ]
 
         return URLRequest(url: urlComponents.url!)

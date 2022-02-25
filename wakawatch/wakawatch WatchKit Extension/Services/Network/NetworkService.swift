@@ -16,9 +16,9 @@ final class NetworkService {
         self.requestFactory = requestFactory
     }
 
-    func getSummaryData() async -> SummaryResponse? {
+    func getSummaryData(_ range: SummaryRange = .Today) async -> SummaryResponse? {
         await self.authenticationService.refreshAccessToken()
-        let request = self.requestFactory.makeSummaryRequest()
+        let request = self.requestFactory.makeSummaryRequest(range)
 
         do {
             let (data, response) = try await URLSession.shared.data(from: request.url!)
