@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		26FB2F00E2A438DF45D6D79F /* libPods-wakawatch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 507BF9BF425DB06E070D594C /* libPods-wakawatch.a */; };
+		6B16F97727C97ED5009E98E3 /* ChartFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B16F97627C97ED5009E98E3 /* ChartFactory.swift */; };
 		6B1D9B2827C1366200322DBA /* ComplicationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1D9B2727C1366200322DBA /* ComplicationService.swift */; };
 		6B1D9B2A27C13B7A00322DBA /* TimeIntervalExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1D9B2927C13B7A00322DBA /* TimeIntervalExtensions.swift */; };
 		6B23142A27A59B8700477259 /* ConnectivityMessageKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B23142927A59B8700477259 /* ConnectivityMessageKeys.swift */; };
@@ -187,6 +188,7 @@
 
 /* Begin PBXFileReference section */
 		507BF9BF425DB06E070D594C /* libPods-wakawatch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-wakawatch.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B16F97627C97ED5009E98E3 /* ChartFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartFactory.swift; sourceTree = "<group>"; };
 		6B1D9B2727C1366200322DBA /* ComplicationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationService.swift; sourceTree = "<group>"; };
 		6B1D9B2927C13B7A00322DBA /* TimeIntervalExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeIntervalExtensions.swift; sourceTree = "<group>"; };
 		6B23142927A59B8700477259 /* ConnectivityMessageKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivityMessageKeys.swift; sourceTree = "<group>"; };
@@ -327,6 +329,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6B16F97527C97EC0009E98E3 /* Charts */ = {
+			isa = PBXGroup;
+			children = (
+				6B16F97627C97ED5009E98E3 /* ChartFactory.swift */,
+			);
+			path = Charts;
+			sourceTree = "<group>";
+		};
 		6B3440DA279C5E0B006A5C27 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
@@ -587,6 +597,7 @@
 		6BED9AFE2795D1B3005646C3 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				6B16F97527C97EC0009E98E3 /* Charts */,
 				6B410A4A27C32E640044BB08 /* Network */,
 				6BE5DE7E27A97CE30072FF0E /* APM */,
 				6BE5DE6927A8CB2B0072FF0E /* Authentication */,
@@ -1041,6 +1052,7 @@
 				6BE5DE4027A64E630072FF0E /* SeverityLevel.swift in Sources */,
 				6BE5DE7827A90CB00072FF0E /* ConnectViewModel.swift in Sources */,
 				6BE5DE5F27A8BDAC0072FF0E /* TelemetryService.swift in Sources */,
+				6B16F97727C97ED5009E98E3 /* ChartFactory.swift in Sources */,
 				6B29476B279642EF00311E1E /* NetworkService.swift in Sources */,
 				6BA78C8B27A487DC005149BC /* SettingsViewModel.swift in Sources */,
 				6BE5DE6C27A8CB380072FF0E /* AuthenticationService.swift in Sources */,

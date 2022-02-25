@@ -32,10 +32,22 @@ struct SummaryView: View {
                                 } else {
                                     GroupedBarChart(chartData: self.summaryViewModel.groupedBarChartData!,
                                                     groupSpacing: 0)
-                                        .headerBox(chartData: self.summaryViewModel.groupedBarChartData!)
                                         .touchOverlay(chartData: self.summaryViewModel.groupedBarChartData!)
                                         .xAxisLabels(chartData: self.summaryViewModel.groupedBarChartData!)
+                                        .headerBox(chartData: self.summaryViewModel.groupedBarChartData!)
                                         .frame(height: proxy.size.height)
+                                }
+
+                                Divider()
+                                    .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
+
+                                if self.summaryViewModel.editorsPieChartData == nil {
+                                  ProgressView()
+                                } else {
+                                    PieChart(chartData: self.summaryViewModel.editorsPieChartData!)
+                                            .touchOverlay(chartData: self.summaryViewModel.editorsPieChartData!)
+                                            .headerBox(chartData: self.summaryViewModel.editorsPieChartData!)
+                                            .frame(height: proxy.size.height)
                                 }
                             }
 
@@ -43,7 +55,7 @@ struct SummaryView: View {
                                 AsyncButton(action: {
                                     self.refreshing = true
                                     await self.summaryViewModel.getSummary()
-                                    await self.summaryViewModel.getWeeklySummaryChart()
+                                    await self.summaryViewModel.getCharts()
                                     self.refreshing = false
                                 }) {
                                     Image(systemName: "arrow.clockwise")
@@ -66,7 +78,7 @@ struct SummaryView: View {
         }
         .task {
             await self.summaryViewModel.getSummary()
-            await self.summaryViewModel.getWeeklySummaryChart()
+            await self.summaryViewModel.getCharts()
         }
     }
 }

@@ -15,6 +15,7 @@ final class DependencyInjection {
     private func registerServices() {
         self.container.register(ComplicationService.self) { _ in ComplicationService() }
         self.container.register(RequestFactory.self) { _ in RequestFactory() }
+        self.container.register(ChartFactory.self) { _ in ChartFactory() }
 
         #if DEBUG
             self.container.register(TelemetryService.self) { _ in ConsoleTelemetryService() }
@@ -51,7 +52,9 @@ final class DependencyInjection {
         self.container.register(SummaryViewModel.self) { resolver in
             SummaryViewModel(networkService: resolver.resolve(NetworkService.self)!,
                              complicationService: resolver.resolve(ComplicationService.self)!,
-                             telemetryService: resolver.resolve(TelemetryService.self)!)
+                             telemetryService: resolver.resolve(TelemetryService.self)!,
+                             chartFactory: resolver.resolve(ChartFactory.self)!
+                            )
         }
         self.container.register(ProfileViewModel.self) { resolver in
             ProfileViewModel(networkService: resolver.resolve(NetworkService.self)!,
