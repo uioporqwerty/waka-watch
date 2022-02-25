@@ -42,7 +42,8 @@ final class SummaryViewModel: ObservableObject {
         guard let summaryData = weeklySummaryData?.data?.suffix(5) else {
             return
         }
-
+        self.groupedBarChartData = nil
+        
         var dataSets: [GroupedBarDataSet] = []
         var dataGroups: [GroupingData] = []
 
