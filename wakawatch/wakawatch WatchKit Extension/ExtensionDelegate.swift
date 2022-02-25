@@ -24,12 +24,24 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDownloadDelega
         self.requestFactory = DependencyInjection.shared.container.resolve(RequestFactory.self)!
     }
 
+    func isAuthorized() -> Bool {
+        let defaults = UserDefaults.standard
+        return defaults.bool(forKey: DefaultsKeys.authorized)
+    }
+
     func applicationDidFinishLaunching() {
-        self.schedule(true)
+        self.logManager?.debugMessage("In applicationDidFinishLaunching")
+        if isAuthorized() {
+            self.schedule(true)
+        }
     }
 
     func handle(_ backgroundTasks: Set<WKRefreshBackgroundTask>) {
-        self.logManager?.debugMessage("Handling background tasks")
+        self.logManager?.debugMessage("In handle backgroundTasks")
+        if !isAuthorized() {
+            return
+        }
+
         for task in backgroundTasks {
             self.logManager?.debugMessage("Processing task: \(task.debugDescription)")
             switch task {
@@ -41,7 +53,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDownloadDelega
                         self.logManager?.debugMessage("Updating active complications")
                         self.complicationService?.updateTimelines()
                     }
-                    urlSessionTask.setTaskCompletedWithSnapshot(false)
+                    urlSessionTask.setTaskCompletedWithSnapshot(true)
                 }
             default:
                 task.setTaskCompletedWithSnapshot(false)
@@ -57,7 +69,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDownloadDelega
             do {
                 let data = try Data(contentsOf: location)
                 let summaryResponse = try JSONDecoder().decode(SummaryResponse.self, from: data)
-                self.logManager?.debugMessage("summaryResponse for background update \(summaryResponse)")
+
                 let defaults = UserDefaults.standard
                 defaults.set(summaryResponse.cummulative_total?.seconds?.toHourMinuteFormat,
                              forKey: DefaultsKeys.complicationCurrentTimeCoded)
@@ -76,6 +88,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDownloadDelega
         }
 
         DispatchQueue.main.async {
+            self.logManager?.debugMessage("Setting backgroundTask and completionHandler.")
             self.completionHandler?(error == nil)
             self.completionHandler = nil
             self.backgroundTask = nil
@@ -84,6 +97,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDownloadDelega
 
     func schedule(_ first: Bool) {
         guard let summaryRequest = self.requestFactory?.makeSummaryRequest() else {
+            self.logManager?.errorMessage("Could not make summary request. Check if RequestFactory is defined.")
             return
         }
 
@@ -96,6 +110,8 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDownloadDelega
             self.logManager?.debugMessage("Scheduled for \(String(describing: task.earliestBeginDate))")
             task.resume()
             self.backgroundTask = task
+        } else {
+            self.logManager?.errorMessage("BackgroundTask is not nil.")
         }
     }
 
