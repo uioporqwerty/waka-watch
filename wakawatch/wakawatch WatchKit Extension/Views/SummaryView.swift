@@ -15,71 +15,53 @@ struct SummaryView: View {
                 ProgressView()
             } else {
                 GeometryReader { proxy in
-                    ScrollView(.vertical) {
-                        ZStack {
-                            VStack {
-                                Text(LocalizedStringKey("SummaryView_Today"))
+                    RefreshableScrollView(action: {
+                        await self.load()
+                    }) {
+                        VStack {
+                            Text(LocalizedStringKey("SummaryView_Today"))
 
-                                Text(summaryViewModel.totalDisplayTime)
-                                    .multilineTextAlignment(.center)
-                                    .padding(EdgeInsets(top: 8, leading: 10, bottom: 0, trailing: 10))
+                            Text(summaryViewModel.totalDisplayTime)
+                                .multilineTextAlignment(.center)
+                                .padding(EdgeInsets(top: 8, leading: 10, bottom: 0, trailing: 10))
 
-                                Divider()
-                                    .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
+                            Divider()
+                                .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
 
-                                if self.summaryViewModel.groupedBarChartData == nil {
-                                  ProgressView()
-                                } else {
-                                    GroupedBarChart(chartData: self.summaryViewModel.groupedBarChartData!,
-                                                    groupSpacing: 0)
-                                        .touchOverlay(chartData: self.summaryViewModel.groupedBarChartData!)
-                                        .xAxisLabels(chartData: self.summaryViewModel.groupedBarChartData!)
-                                        .headerBox(chartData: self.summaryViewModel.groupedBarChartData!)
+                            if self.summaryViewModel.groupedBarChartData == nil {
+                              ProgressView()
+                            } else {
+                                GroupedBarChart(chartData: self.summaryViewModel.groupedBarChartData!,
+                                                groupSpacing: 0)
+                                    .touchOverlay(chartData: self.summaryViewModel.groupedBarChartData!)
+                                    .xAxisLabels(chartData: self.summaryViewModel.groupedBarChartData!)
+                                    .headerBox(chartData: self.summaryViewModel.groupedBarChartData!)
+                                    .frame(height: proxy.size.height)
+                            }
+
+                            Divider()
+                                .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
+
+                            if self.summaryViewModel.editorsPieChartData == nil {
+                              ProgressView()
+                            } else {
+                                PieChart(chartData: self.summaryViewModel.editorsPieChartData!)
+                                        .touchOverlay(chartData: self.summaryViewModel.editorsPieChartData!)
+                                        .headerBox(chartData: self.summaryViewModel.editorsPieChartData!)
                                         .frame(height: proxy.size.height)
-                                }
-
-                                Divider()
-                                    .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
-
-                                if self.summaryViewModel.editorsPieChartData == nil {
-                                  ProgressView()
-                                } else {
-                                    PieChart(chartData: self.summaryViewModel.editorsPieChartData!)
-                                            .touchOverlay(chartData: self.summaryViewModel.editorsPieChartData!)
-                                            .headerBox(chartData: self.summaryViewModel.editorsPieChartData!)
-                                            .frame(height: proxy.size.height)
-                                }
-
-                                Divider()
-                                    .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
-
-                                if self.summaryViewModel.languagesPieChartData == nil {
-                                  ProgressView()
-                                } else {
-                                    PieChart(chartData: self.summaryViewModel.languagesPieChartData!)
-                                            .touchOverlay(chartData: self.summaryViewModel.languagesPieChartData!)
-                                            .headerBox(chartData: self.summaryViewModel.languagesPieChartData!)
-                                            .frame(height: proxy.size.height)
-                                }
                             }
 
-                            VStack {
-                                AsyncButton(action: {
-                                    self.refreshing = true
-                                    await self.summaryViewModel.getSummary()
-                                    await self.summaryViewModel.getCharts()
-                                    self.refreshing = false
-                                }) {
-                                    Image(systemName: "arrow.clockwise")
-                                        .padding()
-                                        .background(Color.accentColor)
-                                        .frame(width: 28, height: 28)
-                                        .clipShape(Circle())
-                                }
-                                .buttonStyle(PlainButtonStyle())
+                            Divider()
+                                .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
+
+                            if self.summaryViewModel.languagesPieChartData == nil {
+                              ProgressView()
+                            } else {
+                                PieChart(chartData: self.summaryViewModel.languagesPieChartData!)
+                                        .touchOverlay(chartData: self.summaryViewModel.languagesPieChartData!)
+                                        .headerBox(chartData: self.summaryViewModel.languagesPieChartData!)
+                                        .frame(height: proxy.size.height)
                             }
-                            .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
-                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
                         }
                     }
                 }
@@ -89,9 +71,13 @@ struct SummaryView: View {
             self.summaryViewModel.telemetry.recordViewEvent(elementName: "\(String(describing: SummaryView.self))")
         }
         .task {
-            await self.summaryViewModel.getSummary()
-            await self.summaryViewModel.getCharts()
+            await self.load()
         }
+    }
+    
+    private func load() async {
+        await self.summaryViewModel.getSummary()
+        await self.summaryViewModel.getCharts()
     }
 }
 
