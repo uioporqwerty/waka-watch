@@ -3,6 +3,43 @@ import Foundation
 import SwiftUI
 
 final class ChartFactory {
+    func makeLanguagesChart(summaryData: ArraySlice<SummaryData>) -> PieChartData {
+        var dataPoints: [PieChartDataPoint] = []
+        var validColors = Set<Color>([.red, .blue, .green, .orange, .cyan, .indigo])
+
+        var languageUsage: [String: Double] = [:]
+
+        for data in summaryData {
+            for language in data.languages ?? [] {
+                if !languageUsage.contains(where: { $0.key == language.name! }) {
+                    languageUsage[language.name!] = language.total_seconds ?? 0
+                } else {
+                    languageUsage[language.name!]! += language.total_seconds ?? 0
+                }
+            }
+        }
+
+        for usage in languageUsage {
+            // swiftlint:disable line_length
+            dataPoints.append(PieChartDataPoint(value: usage.value,
+                                                description: "\(usage.key): \(usage.value.toSpelledOutHourMinuteFormat)",
+                                                colour: validColors.popFirst() ?? .accentColor,
+                                                label: .none))
+        }
+
+        return PieChartData(dataSets: PieDataSet(dataPoints: dataPoints,
+                                                 legendTitle: "Languages"),
+                            metadata: ChartMetadata(title: "5 Day Language Usage",
+                                                    titleFont: .footnote
+                                                   ),
+                            chartStyle: PieChartStyle(infoBoxPlacement: .header,
+                                                      infoBoxContentAlignment: .horizontal,
+                                                      infoBoxValueFont: Font.footnote,
+                                                      infoBoxDescriptionFont: Font.footnote
+                                                     )
+                            )
+    }
+
     func makeEditorsChart(summaryData: ArraySlice<SummaryData>) -> PieChartData {
         var dataPoints: [PieChartDataPoint] = []
         var validColors = Set<Color>([.red, .blue, .green, .orange, .cyan, .indigo])

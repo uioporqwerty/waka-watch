@@ -13,7 +13,14 @@ struct CummulativeTotal: Decodable {
 struct SummaryData: Decodable {
     let projects: [SummaryProjectData]?
     let editors: [SummaryEditorData]?
+    let languages: [SummaryLanguageData]?
     let range: SummaryRangeData
+}
+
+struct SummaryLanguageData: Decodable {
+    let name: String?
+    let total_seconds: Double?
+    let text: String?
 }
 
 struct SummaryEditorData: Decodable {

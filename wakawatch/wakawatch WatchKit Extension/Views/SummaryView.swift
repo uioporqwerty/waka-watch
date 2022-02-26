@@ -49,6 +49,18 @@ struct SummaryView: View {
                                             .headerBox(chartData: self.summaryViewModel.editorsPieChartData!)
                                             .frame(height: proxy.size.height)
                                 }
+
+                                Divider()
+                                    .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
+
+                                if self.summaryViewModel.languagesPieChartData == nil {
+                                  ProgressView()
+                                } else {
+                                    PieChart(chartData: self.summaryViewModel.languagesPieChartData!)
+                                            .touchOverlay(chartData: self.summaryViewModel.languagesPieChartData!)
+                                            .headerBox(chartData: self.summaryViewModel.languagesPieChartData!)
+                                            .frame(height: proxy.size.height)
+                                }
                             }
 
                             VStack {

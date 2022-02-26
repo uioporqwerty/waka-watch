@@ -8,6 +8,7 @@ final class SummaryViewModel: ObservableObject {
     @Published var loaded = false
     @Published var groupedBarChartData: GroupedBarChartData?
     @Published var editorsPieChartData: PieChartData?
+    @Published var languagesPieChartData: PieChartData?
 
     private var networkService: NetworkService
     private var complicationService: ComplicationService
@@ -51,6 +52,7 @@ final class SummaryViewModel: ObservableObject {
         DispatchQueue.main.async {
             self.groupedBarChartData = self.chartFactory.makeCodingTimeChart(summaryData: summaryData)
             self.editorsPieChartData = self.chartFactory.makeEditorsChart(summaryData: summaryData)
+            self.languagesPieChartData = self.chartFactory.makeLanguagesChart(summaryData: summaryData)
         }
     }
 }
