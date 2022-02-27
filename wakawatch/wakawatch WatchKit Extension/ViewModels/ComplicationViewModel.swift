@@ -1,8 +1,8 @@
 import Foundation
 
 final class ComplicationViewModel: ObservableObject {
-    func getLocalCurrentTime() -> String {
+    func getLocalCurrentTime() -> Double {
         let defaults = UserDefaults.standard
-        return defaults.string(forKey: DefaultsKeys.complicationCurrentTimeCoded) ?? "00:00"
+        return defaults.double(forKey: DefaultsKeys.complicationCurrentTimeCoded)
     }
 }

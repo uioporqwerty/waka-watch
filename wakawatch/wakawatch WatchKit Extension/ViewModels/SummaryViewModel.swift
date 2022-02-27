@@ -31,7 +31,7 @@ final class SummaryViewModel: ObservableObject {
         let summaryData = await networkService.getSummaryData(.Today)
 
         let defaults = UserDefaults.standard
-        defaults.set(summaryData?.cummulative_total?.seconds?.toHourMinuteFormat,
+        defaults.set(summaryData?.cummulative_total?.seconds,
                      forKey: DefaultsKeys.complicationCurrentTimeCoded)
 
         self.complicationService.updateTimelines()

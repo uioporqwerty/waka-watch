@@ -439,6 +439,13 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		6BAF14B027CBFD1B00370EED /* Complications */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Complications;
+			sourceTree = "<group>";
+		};
 		6BE5DE3A27A6401F0072FF0E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -579,6 +586,7 @@
 		6BED9ADC27951F0C005646C3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6BAF14B027CBFD1B00370EED /* Complications */,
 				6BED9AE127951F80005646C3 /* SummaryView.swift */,
 				6BED9ADF27951F6D005646C3 /* ProfileView.swift */,
 				6BED9ADD27951F21005646C3 /* LeaderboardView.swift */,

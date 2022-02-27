@@ -4,6 +4,8 @@ import SwiftUI
 
 class ComplicationController: NSObject, CLKComplicationDataSource {
     private let currentCodingTimeIdentifier = "CurrentCodingTime"
+    private let goalsIdentifier = "Goals"
+
     private var complicationsViewModel: ComplicationViewModel?
 
     override init() {
@@ -15,7 +17,8 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     func getComplicationDescriptors(handler: @escaping ([CLKComplicationDescriptor]) -> Void) {
         let currentCodingTimeDescriptor = CLKComplicationDescriptor(identifier: self.currentCodingTimeIdentifier,
                                                                     displayName: "Today's Coding Time (hh:mm)",
-                                                                    supportedFamilies: [.graphicCircular])
+                                                                    supportedFamilies: [.graphicCircular,
+                                                                                        .utilitarianSmallFlat])
         handler([currentCodingTimeDescriptor])
     }
 
@@ -25,12 +28,30 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         case .graphicCircular:
             let template = CLKComplicationTemplateGraphicCircularStackViewText(
                 content: Image("Complication/Graphic Circular"),
-                textProvider: CLKTextProvider(format: self.complicationsViewModel?.getLocalCurrentTime() ?? "00:00")
+                textProvider: CLKTextProvider(format: self.complicationsViewModel?
+                                                          .getLocalCurrentTime()
+                                                          .toHourMinuteFormat ?? "00:00")
               )
 
             let entry = CLKComplicationTimelineEntry(
                 date: Date(),
                 complicationTemplate: template)
+
+            handler(entry)
+        case .utilitarianSmallFlat:
+            // swiftlint:disable line_length
+            let template = CLKComplicationTemplateUtilitarianSmallFlat(textProvider: CLKTextProvider(format:
+                                                                                                        self.complicationsViewModel?
+                                                                                                        .getLocalCurrentTime()
+                                                                                                        .toHourMinuteFormat ?? "00:00"),
+                                                                       imageProvider: CLKImageProvider(onePieceImage:
+                                                                                                        UIImage(imageLiteralResourceName:
+                                                                                                                "Complication/Utilitarian")))
+
+            let entry = CLKComplicationTimelineEntry(
+                date: Date(),
+                complicationTemplate: template
+            )
 
             handler(entry)
         default:

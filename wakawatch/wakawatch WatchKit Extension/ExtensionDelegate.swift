@@ -8,6 +8,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDownloadDelega
 
     private var completionHandler: ((_ update: Bool) -> Void)?
     private var backgroundTask: URLSessionDownloadTask?
+    private var sessionTask: WKURLSessionRefreshBackgroundTask?
 
     private lazy var backgroundURLSession: URLSession = {
         let config = URLSessionConfiguration.background(withIdentifier: "BackgroundSummary")
@@ -46,6 +47,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDownloadDelega
             self.logManager?.debugMessage("Processing task: \(task.debugDescription)")
             switch task {
             case let urlSessionTask as WKURLSessionRefreshBackgroundTask:
+                self.sessionTask = urlSessionTask
                 self.refresh { update in
                     self.logManager?.debugMessage("Refresh completed with update status \(update)")
                     self.schedule(false)
@@ -71,10 +73,11 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDownloadDelega
                 let summaryResponse = try JSONDecoder().decode(SummaryResponse.self, from: data)
 
                 let defaults = UserDefaults.standard
-                defaults.set(summaryResponse.cummulative_total?.seconds?.toHourMinuteFormat,
+                defaults.set(summaryResponse.cummulative_total?.seconds,
                              forKey: DefaultsKeys.complicationCurrentTimeCoded)
             } catch {
                 self.logManager?.errorMessage("\(error)")
+                self.sessionTask?.setTaskCompletedWithSnapshot(true)
             }
         }
     }
@@ -85,6 +88,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDownloadDelega
         self.logManager?.debugMessage("In urlSession didCompleteWithError")
         if error != nil {
             self.logManager?.errorMessage(error.debugDescription)
+            self.sessionTask?.setTaskCompletedWithSnapshot(true)
         }
 
         DispatchQueue.main.async {
