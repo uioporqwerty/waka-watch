@@ -6,6 +6,7 @@
 "ProfileView_Joined_Text" = "Joined:";
 "SettingsView_Title" = "Settings";
 "SettingsView_Disconnect_Button" = "Disconnect from WakaTime";
+"SettingsView_ComplicationsSettings_Text" = "Goal Complication Settings";
 "ConnectView_Title" = "Waka Watch";
 "ConnectView_Message" = "Open the Waka Watch app on your primary device to connect to WakaTime.";
 "ConnectView_UpdateRequired_Message" = "This version of Waka Watch is out of date. Update Waka Watch through the App Store.";
@@ -15,3 +16,4 @@
 "AuthenticationView_Connected_Text" = "Connected with WakaTime. Open Waka Watch on your Apple Watch.";
 "AuthenticationView_Disconnect_Button_Text" = "Disconnect from WakaTime";
 "SplashView_Center_Text" = "Waka Watch";
+"ComplicationSettingsView_Instructions_Text" = "Select up to 3 goals.";

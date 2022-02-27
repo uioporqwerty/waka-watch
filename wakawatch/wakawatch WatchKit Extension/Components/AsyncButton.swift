@@ -29,3 +29,14 @@ struct AsyncButton<Label: View>: View {
         .disabled(isPerformingTask)
     }
 }
+
+struct AsyncButton_Previews: PreviewProvider {
+    static var previews: some View {
+        AsyncButton {
+            print("Do Nothing")
+        } label: {
+            Text("Hello World")
+        }
+
+    }
+}

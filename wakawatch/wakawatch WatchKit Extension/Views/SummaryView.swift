@@ -74,7 +74,7 @@ struct SummaryView: View {
             await self.load()
         }
     }
-    
+
     private func load() async {
         await self.summaryViewModel.getSummary()
         await self.summaryViewModel.getCharts()

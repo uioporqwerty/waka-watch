@@ -23,7 +23,7 @@ final class DependencyInjection {
                                   telemetryService: resolver.resolve(TelemetryService.self)!)
         }
         self.container.register(NetworkService.self) { resolver in
-            NetworkService(logManager: resolver.resolve(LogManager.self)!,
+            WakaTimeNetworkService(logManager: resolver.resolve(LogManager.self)!,
                            telemetry: resolver.resolve(TelemetryService.self)!,
                            authenticationService: resolver.resolve(AuthenticationService.self)!,
                            requestFactory: resolver.resolve(RequestFactory.self)!)

@@ -5,4 +5,5 @@ struct DefaultsKeys {
     static let tokenExpiration = "tokenExpiration"
 
     static let complicationCurrentTimeCoded = "complicationCurrentTimeCoded"
+    static let complicationGoals = "complicationGoals"
 }

@@ -33,12 +33,29 @@ final class DependencyInjection {
             AuthenticationService(logManager: resolver.resolve(LogManager.self)!,
                                   telemetryService: resolver.resolve(TelemetryService.self)!)
         }
+
+        #if DEBUG
         self.container.register(NetworkService.self) { resolver in
-            NetworkService(logManager: resolver.resolve(LogManager.self)!,
+            WakaTimeNetworkService(logManager: resolver.resolve(LogManager.self)!,
                            telemetry: resolver.resolve(TelemetryService.self)!,
                            authenticationService: resolver.resolve(AuthenticationService.self)!,
                            requestFactory: resolver.resolve(RequestFactory.self)!)
         }
+        // TODO: Switch from local network service to wakatime network service on actual device run.
+//            self.container.register(NetworkService.self) { resolver in
+//                LocalNetworkService(logManager: resolver.resolve(LogManager.self)!,
+//                               telemetry: resolver.resolve(TelemetryService.self)!,
+//                               authenticationService: resolver.resolve(AuthenticationService.self)!,
+//                               requestFactory: resolver.resolve(RequestFactory.self)!)
+//            }
+        #else
+            self.container.register(NetworkService.self) { resolver in
+                WakaTimeNetworkService(logManager: resolver.resolve(LogManager.self)!,
+                               telemetry: resolver.resolve(TelemetryService.self)!,
+                               authenticationService: resolver.resolve(AuthenticationService.self)!,
+                               requestFactory: resolver.resolve(RequestFactory.self)!)
+            }
+        #endif
 
         #if !DEBUG
         self.container.register(APMService.self) { resolver in
@@ -75,6 +92,11 @@ final class DependencyInjection {
                              networkService: resolver.resolve(NetworkService.self)!)
         }
         self.container.register(ComplicationViewModel.self) { _ in ComplicationViewModel() }
+        self.container.register(ComplicationSettingsViewModel.self) { resolver in
+            ComplicationSettingsViewModel(networkService: resolver.resolve(NetworkService.self)!,
+                                          telemetryService: resolver.resolve(TelemetryService.self)!,
+                                          logManager: resolver.resolve(LogManager.self)!)
+        }
     }
 
     private func registerViews() {
@@ -93,6 +115,10 @@ final class DependencyInjection {
         }
         self.container.register(ConnectView.self) { resolver in
             ConnectView(viewModel: resolver.resolve(ConnectViewModel.self)!)
+        }
+        self.container.register(ComplicationSettingsView.self) { resolver in
+            ComplicationSettingsView(complicationSettingsViewModel:
+                                        resolver.resolve(ComplicationSettingsViewModel.self)!)
         }
     }
 }

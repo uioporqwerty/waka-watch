@@ -37,6 +37,18 @@ final class RequestFactory {
         return URLRequest(url: urlComponents.url!)
     }
 
+    func makeGoalsRequest() -> URLRequest {
+        let url = "\(baseUrl)/users/current/goals"
+
+        var urlComponents = URLComponents(string: url)!
+        urlComponents.queryItems = [
+            URLQueryItem(name: "client_secret", value: self.clientSecret),
+            URLQueryItem(name: "access_token", value: self.getAccessToken())
+        ]
+
+        return URLRequest(url: urlComponents.url!)
+    }
+
     func makePublicLeaderboardRequest(_ page: Int?) -> URLRequest {
         var urlComponents = URLComponents(string: "\(baseUrl)/leaders")!
         var urlQueryItems = [

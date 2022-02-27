@@ -28,7 +28,7 @@ final class SummaryViewModel: ObservableObject {
     }
 
     func getSummary() async {
-        let summaryData = await networkService.getSummaryData()
+        let summaryData = await networkService.getSummaryData(.Today)
 
         let defaults = UserDefaults.standard
         defaults.set(summaryData?.cummulative_total?.seconds?.toHourMinuteFormat,
