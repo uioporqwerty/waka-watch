@@ -18,7 +18,9 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         let currentCodingTimeDescriptor = CLKComplicationDescriptor(identifier: self.currentCodingTimeIdentifier,
                                                                     displayName: "Today's Coding Time (hh:mm)",
                                                                     supportedFamilies: [.graphicCircular,
-                                                                                        .utilitarianSmallFlat])
+                                                                                        .utilitarianSmallFlat,
+                                                                                        .utilitarianLarge
+                                                                                       ])
         handler([currentCodingTimeDescriptor])
     }
 
@@ -54,6 +56,23 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
             )
 
             handler(entry)
+        case .utilitarianLarge:
+            // swiftlint:disable line_length
+            let template = CLKComplicationTemplateUtilitarianLargeFlat(textProvider: CLKTextProvider(format:
+                                                                                                        self.complicationsViewModel?
+                                                                                                        .getLocalCurrentTime()
+                                                                                                        .toSpelledOutHourMinuteFormat ?? "0 hrs 0 mins"),
+                                                                       imageProvider: CLKImageProvider(onePieceImage:
+                                                                                                        UIImage(imageLiteralResourceName:
+                                                                                                                "Complication/Utilitarian")))
+
+            let entry = CLKComplicationTimelineEntry(
+                date: Date(),
+                complicationTemplate: template
+            )
+
+            handler(entry)
+
         default:
             handler(nil)
         }
