@@ -12,12 +12,15 @@ struct SettingsView: View {
         VStack {
             ScrollView(.vertical, showsIndicators: false) {
                 ScrollViewReader { _ in
-                    NavigationLink(destination: DependencyInjection
-                                                .shared
-                                                .container
-                                                .resolve(ComplicationSettingsView.self)!) {
-                        Text(LocalizedStringKey("SettingsView_ComplicationsSettings_Text"))
-                    }
+                    /* TODO: Figure out if this feature is necessary.
+                       Showing configureable goals complication.
+                    */
+//                    NavigationLink(destination: DependencyInjection
+//                                                .shared
+//                                                .container
+//                                                .resolve(ComplicationSettingsView.self)!) {
+//                        Text(LocalizedStringKey("SettingsView_ComplicationsSettings_Text"))
+//                    }
 
                     AsyncButton(action: {
                         do {
