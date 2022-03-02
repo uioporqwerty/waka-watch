@@ -16,4 +16,5 @@
 "AuthenticationView_Connected_Text" = "Connected with WakaTime. Open Waka Watch on your Apple Watch.";
 "AuthenticationView_Disconnect_Button_Text" = "Disconnect from WakaTime";
 "SplashView_Center_Text" = "Waka Watch";
+"WatchInstallationCheckView_Instructions_Text"="Waka Watch requires that the Apple Watch counterpart app be installed. Waiting for install before continuing.";
 "ComplicationSettingsView_Instructions_Text" = "Select up to 3 goals.";

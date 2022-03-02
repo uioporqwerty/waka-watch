@@ -154,6 +154,13 @@ extension ConnectivityService: WCSessionDelegate {
             self.logManager.debugMessage("Connectivity session deactivated")
             WCSession.default.activate()
         }
+
+        func sessionWatchStateDidChange(_ session: WCSession) {
+            if WCSession.default.isWatchAppInstalled {
+                NotificationCenter.default.post(name: Notification.Name("WatchAppInstallation"),
+                                                object: nil)
+            }
+        }
     #endif
 
     #if os(watchOS)

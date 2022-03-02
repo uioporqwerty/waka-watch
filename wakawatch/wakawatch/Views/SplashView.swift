@@ -14,7 +14,7 @@ struct SplashView: View {
     var body: some View {
         VStack {
             if self.isActive {
-                DependencyInjection.shared.container.resolve(AuthenticationView.self)!
+                DependencyInjection.shared.container.resolve(WatchInstallationCheckView.self)!
             } else {
                 Text(LocalizedStringKey("SplashView_Center_Text"))
                     .font(Font.largeTitle)

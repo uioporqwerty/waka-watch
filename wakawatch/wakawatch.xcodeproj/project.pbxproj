@@ -53,6 +53,8 @@
 		6BA78C8527A4826C005149BC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA78C8427A4826C005149BC /* SettingsView.swift */; };
 		6BA78C8B27A487DC005149BC /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA78C8A27A487DC005149BC /* SettingsViewModel.swift */; };
 		6BA78C9027A492FB005149BC /* AsyncButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA78C8F27A492FB005149BC /* AsyncButton.swift */; };
+		6BAF14B927CEF9A900370EED /* WatchInstallationCheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAF14B827CEF9A900370EED /* WatchInstallationCheckView.swift */; };
+		6BAF14BB27CEFF2100370EED /* WatchInstallationCheckViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAF14BA27CEFF2100370EED /* WatchInstallationCheckViewModel.swift */; };
 		6BD4C17527BD3BCB00A72DBD /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD4C17427BD3BCB00A72DBD /* ViewExtensions.swift */; };
 		6BD4C17627BD3BCB00A72DBD /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD4C17427BD3BCB00A72DBD /* ViewExtensions.swift */; };
 		6BD52EF6279FCB1300247BFB /* APMService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD52EF5279FCB1300247BFB /* APMService.swift */; };
@@ -229,6 +231,8 @@
 		6BA78C8427A4826C005149BC /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		6BA78C8A27A487DC005149BC /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		6BA78C8F27A492FB005149BC /* AsyncButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncButton.swift; sourceTree = "<group>"; };
+		6BAF14B827CEF9A900370EED /* WatchInstallationCheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchInstallationCheckView.swift; sourceTree = "<group>"; };
+		6BAF14BA27CEFF2100370EED /* WatchInstallationCheckViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchInstallationCheckViewModel.swift; sourceTree = "<group>"; };
 		6BBC1A39279DFACF00FFEBFF /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		6BD4C17427BD3BCB00A72DBD /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		6BD52EF5279FCB1300247BFB /* APMService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APMService.swift; sourceTree = "<group>"; };
@@ -471,6 +475,7 @@
 			children = (
 				6BE5DE6727A8CAE60072FF0E /* AuthenticationViewModel.swift */,
 				6BE5DE7427A90A8F0072FF0E /* SplashViewModel.swift */,
+				6BAF14BA27CEFF2100370EED /* WatchInstallationCheckViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -604,6 +609,7 @@
 			children = (
 				6BED9AED2795450F005646C3 /* AuthenticationView.swift */,
 				6BA78C7F27A46CF0005149BC /* SplashView.swift */,
+				6BAF14B827CEF9A900370EED /* WatchInstallationCheckView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -982,6 +988,7 @@
 				6BDD8B4227C467EB00BB1493 /* SummaryRange.swift in Sources */,
 				6BD52F1B279FD07300247BFB /* RollbarLoggingService.swift in Sources */,
 				6BA78C8027A46CF0005149BC /* SplashView.swift in Sources */,
+				6BAF14B927CEF9A900370EED /* WatchInstallationCheckView.swift in Sources */,
 				6B23142A27A59B8700477259 /* ConnectivityMessageKeys.swift in Sources */,
 				6BED9AFC2795BBB5005646C3 /* AccessTokenResponse.swift in Sources */,
 				6BE5DE6827A8CAE60072FF0E /* AuthenticationViewModel.swift in Sources */,
@@ -1017,6 +1024,7 @@
 				6B7E479D27AA04A7000D5DE7 /* AsyncButton.swift in Sources */,
 				6B7E479B27AA0485000D5DE7 /* ActivityIndicator.swift in Sources */,
 				6B410A4227C2E6860044BB08 /* VersionCheckerUtility.swift in Sources */,
+				6BAF14BB27CEFF2100370EED /* WatchInstallationCheckViewModel.swift in Sources */,
 				6BD52EF9279FCB3400247BFB /* RollbarAPMService.swift in Sources */,
 				6BE5DE6B27A8CB380072FF0E /* AuthenticationService.swift in Sources */,
 			);

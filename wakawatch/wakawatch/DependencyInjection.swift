@@ -54,6 +54,11 @@ final class DependencyInjection {
         self.container.register(SplashViewModel.self) { resolver in
             SplashViewModel(telemetryService: resolver.resolve(TelemetryService.self)!)
         }
+        self.container.register(WatchInstallationCheckViewModel.self) { resolver in
+            WatchInstallationCheckViewModel(telemetryService: resolver.resolve(TelemetryService.self)!,
+                                            logManager: resolver.resolve(LogManager.self)!
+                                           )
+        }
     }
 
     private func registerViews() {
@@ -62,6 +67,9 @@ final class DependencyInjection {
         }
         self.container.register(SplashView.self) { resolver in
             SplashView(viewModel: resolver.resolve(SplashViewModel.self)!)
+        }
+        self.container.register(WatchInstallationCheckView.self) { resolver in
+            WatchInstallationCheckView(viewModel: resolver.resolve(WatchInstallationCheckViewModel.self)!)
         }
     }
 }
