@@ -1,24 +1,26 @@
+import Foundation
+
 final class ConsoleLoggingService: LoggingService {
     func infoMessage(_ message: String) {
-        print("INFO: \(message)")
+        print("INFO \(Date.now): \(message)")
     }
 
     func debugMessage(_ message: String) {
-        print("DEBUG: \(message)")
+        print("DEBUG \(Date.now): \(message)")
     }
 
     func debugMessage(_ message: String, data: [String: Any]) {
-        print("DEBUG: \(message)")
+        print("DEBUG \(Date.now): \(message)")
         for (key, value) in data {
             print("\(key): \(value)")
         }
     }
 
     func errorMessage(_ message: String) {
-        print("ERROR: \(message)")
+        print("ERROR \(Date.now): \(message)")
     }
 
     func reportError(_ error: Error) {
-        print("ERROR: \(error)")
+        print("ERROR \(Date.now): \(error)")
     }
 }

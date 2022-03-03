@@ -55,6 +55,7 @@
 		6BA78C9027A492FB005149BC /* AsyncButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA78C8F27A492FB005149BC /* AsyncButton.swift */; };
 		6BAF14B927CEF9A900370EED /* WatchInstallationCheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAF14B827CEF9A900370EED /* WatchInstallationCheckView.swift */; };
 		6BAF14BB27CEFF2100370EED /* WatchInstallationCheckViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAF14BA27CEFF2100370EED /* WatchInstallationCheckViewModel.swift */; };
+		6BAF14BD27CF12D400370EED /* BackgroundService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAF14BC27CF12D400370EED /* BackgroundService.swift */; };
 		6BD4C17527BD3BCB00A72DBD /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD4C17427BD3BCB00A72DBD /* ViewExtensions.swift */; };
 		6BD4C17627BD3BCB00A72DBD /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD4C17427BD3BCB00A72DBD /* ViewExtensions.swift */; };
 		6BD52EF6279FCB1300247BFB /* APMService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD52EF5279FCB1300247BFB /* APMService.swift */; };
@@ -233,6 +234,7 @@
 		6BA78C8F27A492FB005149BC /* AsyncButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncButton.swift; sourceTree = "<group>"; };
 		6BAF14B827CEF9A900370EED /* WatchInstallationCheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchInstallationCheckView.swift; sourceTree = "<group>"; };
 		6BAF14BA27CEFF2100370EED /* WatchInstallationCheckViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchInstallationCheckViewModel.swift; sourceTree = "<group>"; };
+		6BAF14BC27CF12D400370EED /* BackgroundService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundService.swift; sourceTree = "<group>"; };
 		6BBC1A39279DFACF00FFEBFF /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		6BD4C17427BD3BCB00A72DBD /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		6BD52EF5279FCB1300247BFB /* APMService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APMService.swift; sourceTree = "<group>"; };
@@ -642,6 +644,7 @@
 				6BA78C8627A4856F005149BC /* Logging */,
 				6BED9AFF2795D1C0005646C3 /* ConnectivityService.swift */,
 				6B1D9B2727C1366200322DBA /* ComplicationService.swift */,
+				6BAF14BC27CF12D400370EED /* BackgroundService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1060,6 +1063,7 @@
 				6BD52EF7279FCB1300247BFB /* APMService.swift in Sources */,
 				6B1D9B2A27C13B7A00322DBA /* TimeIntervalExtensions.swift in Sources */,
 				6B410A3B27C2D77C0044BB08 /* AppInformation.swift in Sources */,
+				6BAF14BD27CF12D400370EED /* BackgroundService.swift in Sources */,
 				6BD4C17627BD3BCB00A72DBD /* ViewExtensions.swift in Sources */,
 				6BF5870527C2B35900865D95 /* FloatingMenu.swift in Sources */,
 				6B1D9B2827C1366200322DBA /* ComplicationService.swift in Sources */,

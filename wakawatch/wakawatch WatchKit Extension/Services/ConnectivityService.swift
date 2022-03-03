@@ -142,6 +142,10 @@ extension ConnectivityService: WCSessionDelegate {
         defaults.set(tokenExpiration, forKey: DefaultsKeys.tokenExpiration)
         defaults.set(authorized, forKey: DefaultsKeys.authorized)
 
+        if authorized {
+            NotificationCenter.default.post(name: Notification.Name("ScheduleBackgroundTasks"),
+                                            object: nil)
+        }
         self.logManager.debugMessage("Set user defaults for accessToken and authorized")
     }
 

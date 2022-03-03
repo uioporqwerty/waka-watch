@@ -63,6 +63,13 @@ final class DependencyInjection {
                               logManager: resolver.resolve(LogManager.self)!)
         }
         #endif
+
+        self.container.register(BackgroundService.self) { resolver in
+            BackgroundService(requestFactory: resolver.resolve(RequestFactory.self)!,
+                              logManager: resolver.resolve(LogManager.self)!,
+                              complicationService: resolver.resolve(ComplicationService.self)!
+                             )
+        }.inObjectScope(.container)
     }
 
     private func registerViewModels() {
