@@ -129,4 +129,48 @@ final class ChartFactory {
                                                             xAxisLabelFont: Font.footnote,
                                                             xAxisLabelsFrom: .dataPoint(rotation: .degrees(-90))))
     }
+
+    func makeGoalsChart(goalData: GoalData) -> BarChartData {
+        var dataPoints: [BarChartDataPoint] = []
+
+        for data in goalData.chart_data.suffix(5) {
+            dataPoints.append(BarChartDataPoint(value: data.actual_seconds,
+                                                xAxisLabel: DateUtility.getChartDate(date: data.range.date),
+                                                description: "Actual", // TODO: Convert for i18n
+                                                date: DateUtility.getDate(date: data.range.date),
+                                                colour: data.range_status == "success" ? ColourStyle(colour: .green) : ColourStyle(colour: .red)) // TODO: Replace with better colors
+                             )
+        }
+
+        let data = BarChartData(dataSets: BarDataSet(dataPoints: dataPoints),
+                            metadata: ChartMetadata(title: goalData.title,
+                                                    titleFont: Font.footnote
+                                                    ),
+                            barStyle: BarStyle(colourFrom: .dataPoints),
+                            chartStyle: BarChartStyle(infoBoxPlacement: .header,
+                                                      infoBoxContentAlignment: .horizontal,
+                                                      infoBoxValueFont: Font.footnote,
+                                                      infoBoxDescriptionFont: Font.footnote,
+                                                      xAxisLabelFont: Font.footnote,
+                                                      xAxisLabelsFrom: .dataPoint(rotation: .degrees(-90)))
+                            )
+        data.extraLineData = ExtraLineData(legendTitle: "Goal", dataPoints: {
+            var points: [ExtraLineDataPoint] = []
+            for data in goalData.chart_data {
+                points.append(ExtraLineDataPoint(value: data.goal_seconds,
+                                    pointColour: PointColour(),
+                                    pointDescription: "Goal"))
+            }
+            return points
+        }, style: {
+            ExtraLineStyle(lineColour: ColourStyle(colour: .gray),
+                           lineType: .line,
+                           lineSpacing: .line,
+                           animationType: .raise,
+                           baseline: .zero
+                          )
+        })
+
+        return data
+    }
 }

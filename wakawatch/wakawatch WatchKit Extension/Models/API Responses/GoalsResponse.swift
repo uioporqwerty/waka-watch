@@ -16,4 +16,10 @@ struct GoalData: Decodable {
 struct GoalChartData: Decodable {
     let actual_seconds: Double
     let goal_seconds: Double
+    let range: GoalChartRange
+    let range_status: String
+}
+
+struct GoalChartRange: Decodable {
+    let date: String
 }

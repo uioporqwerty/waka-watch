@@ -28,7 +28,9 @@ final class LocalNetworkService: NetworkService {
     func getGoalsData() async -> GoalsResponse? {
         return GoalsResponse(data: [GoalData(id: UUID().uuidString,
                                              chart_data: [GoalChartData(actual_seconds: 500,
-                                                                        goal_seconds: 1000)],
+                                                                        goal_seconds: 1000,
+                                                                        range: GoalChartRange(date: "2022-03-01"),
+                                                                        range_status: "success")],
                                              is_enabled: true,
                                              is_snoozed: false,
                                              title: "Code for 1 hour per day",

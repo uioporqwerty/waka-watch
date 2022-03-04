@@ -16,7 +16,7 @@ class RollbarAPMService: APMService {
         config.telemetry.captureLog = true
         config.telemetry.enabled = true
         config.developerOptions.transmit = true
-        
+
         Rollbar.initWithConfiguration(config)
     }
 

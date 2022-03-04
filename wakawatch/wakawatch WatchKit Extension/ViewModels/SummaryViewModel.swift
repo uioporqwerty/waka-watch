@@ -9,6 +9,7 @@ final class SummaryViewModel: ObservableObject {
     @Published var groupedBarChartData: GroupedBarChartData?
     @Published var editorsPieChartData: PieChartData?
     @Published var languagesPieChartData: PieChartData?
+    @Published var goalsChartData: [BarChartData] = []
 
     private var networkService: NetworkService
     private var complicationService: ComplicationService
@@ -44,15 +45,28 @@ final class SummaryViewModel: ObservableObject {
 
     func getCharts() async {
         let weeklySummaryData = await networkService.getSummaryData(.Last7Days)
+        let goalsData = await networkService.getGoalsData()
         guard let summaryData = weeklySummaryData?.data?.suffix(5) else {
             return
         }
+
+        guard let goalsData = goalsData?.data else {
+            return
+        }
+
+        // TODO: Likely don't need this block below
         self.groupedBarChartData = nil
+        self.goalsChartData = []
+        self.editorsPieChartData = nil
+        self.languagesPieChartData = nil
 
         DispatchQueue.main.async {
             self.groupedBarChartData = self.chartFactory.makeCodingTimeChart(summaryData: summaryData)
             self.editorsPieChartData = self.chartFactory.makeEditorsChart(summaryData: summaryData)
             self.languagesPieChartData = self.chartFactory.makeLanguagesChart(summaryData: summaryData)
+            for goal in goalsData {
+                self.goalsChartData.append(self.chartFactory.makeGoalsChart(goalData: goal))
+            }
         }
     }
 }

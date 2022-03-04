@@ -6,7 +6,7 @@ struct RefreshableScrollView<Content: View>: View {
 
     private var content: () -> Content
     private var refreshAction: () async -> Void
-    private let threshold: CGFloat = 50.0
+    private let threshold: CGFloat = 100.0
 
     init(action: @escaping () async -> Void,
          @ViewBuilder content: @escaping () -> Content) {

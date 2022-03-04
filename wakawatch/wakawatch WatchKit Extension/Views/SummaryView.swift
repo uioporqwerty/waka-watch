@@ -62,6 +62,21 @@ struct SummaryView: View {
                                         .headerBox(chartData: self.summaryViewModel.languagesPieChartData!)
                                         .frame(height: proxy.size.height)
                             }
+
+                            ForEach(self.summaryViewModel.goalsChartData) { chartData in
+                                Divider()
+                                    .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
+
+                                BarChart(chartData: chartData)
+                                    .touchOverlay(chartData: chartData)
+                                    .xAxisLabels(chartData: chartData)
+                                    .extraLine(chartData: chartData,
+                                               legendTitle: chartData.extraLineData.legendTitle,
+                                               datapoints: chartData.extraLineData.dataPoints,
+                                               style: chartData.extraLineData.style)
+                                    .headerBox(chartData: chartData)
+                                        .frame(height: proxy.size.height)
+                            }
                         }
                     }
                 }
