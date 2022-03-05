@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct SettingsView: View {
-    private var settingsViewModel: SettingsViewModel
+    @ObservedObject var settingsViewModel: SettingsViewModel
     @State var isActive = false
 
     init(viewModel: SettingsViewModel) {
@@ -29,10 +29,16 @@ struct SettingsView: View {
                     }) {
                         Text(LocalizedStringKey("SettingsView_Disconnect_Button"))
                     }
+
+                    Text(self.settingsViewModel.appVersion)
+                        .font(Font.footnote)
+                        .foregroundColor(.gray)
+                        .padding()
                 }
             }
         }
         .onAppear {
+            self.settingsViewModel.load()
             self.settingsViewModel.telemetry.recordViewEvent(elementName: "\(String(describing: SettingsView.self))")
         }
     }

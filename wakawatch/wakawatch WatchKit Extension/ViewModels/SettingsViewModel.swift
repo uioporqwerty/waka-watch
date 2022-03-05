@@ -1,5 +1,7 @@
 import Foundation
-final class SettingsViewModel {
+final class SettingsViewModel: ObservableObject {
+    @Published var appVersion: String = ""
+
     private let networkService: NetworkService
     private let authenticationService: AuthenticationService
     private let logManager: LogManager
@@ -14,6 +16,16 @@ final class SettingsViewModel {
         self.authenticationService = authenticationService
         self.logManager = logManager
         self.telemetry = telemetryService
+    }
+
+    func load() {
+        DispatchQueue.main.async {
+            guard let version =  Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String,
+                  let buildNumber =  Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String else {
+                      return
+                  }
+            self.appVersion = "v\(version) (\(buildNumber))"
+        }
     }
 
     func disconnect() async throws {
