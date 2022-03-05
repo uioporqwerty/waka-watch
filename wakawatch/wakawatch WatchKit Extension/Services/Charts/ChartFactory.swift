@@ -28,8 +28,8 @@ final class ChartFactory {
         }
 
         return PieChartData(dataSets: PieDataSet(dataPoints: dataPoints,
-                                                 legendTitle: "Languages"),
-                            metadata: ChartMetadata(title: "5 Day Language Usage",
+                                                 legendTitle: LocalizedStringKey("SummaryView_LanguageUsageChart_LegendTitle_Text").toString()),
+                            metadata: ChartMetadata(title: LocalizedStringKey("SummaryView_LanguageUsageChart_Title").toString(),
                                                     titleFont: .footnote
                                                    ),
                             chartStyle: PieChartStyle(infoBoxPlacement: .header,
@@ -65,8 +65,8 @@ final class ChartFactory {
         }
 
         return PieChartData(dataSets: PieDataSet(dataPoints: dataPoints,
-                                                 legendTitle: "Editors"),
-                            metadata: ChartMetadata(title: "5 Day Editor Usage",
+                                                 legendTitle: LocalizedStringKey("SummaryView_EditorUsageChart_LegendTitle_Text").toString()),
+                            metadata: ChartMetadata(title: LocalizedStringKey("SummaryView_EditorUsageChart_Title").toString(),
                                                     titleFont: .footnote
                                                    ),
                             chartStyle: PieChartStyle(infoBoxPlacement: .header,
@@ -120,7 +120,7 @@ final class ChartFactory {
 
         return GroupedBarChartData(dataSets: GroupedBarDataSets(dataSets: dataSets),
                                    groups: dataGroups,
-                                   metadata: ChartMetadata(title: "Coding Time Per Day",
+                                   metadata: ChartMetadata(title: LocalizedStringKey("SummaryView_CodingTimeChart_Title").toString(),
                                                            titleFont: .footnote),
                                    chartStyle: BarChartStyle(infoBoxPlacement: .header,
                                                             infoBoxContentAlignment: .horizontal,
@@ -136,7 +136,7 @@ final class ChartFactory {
         for data in goalData.chart_data.suffix(5) {
             dataPoints.append(BarChartDataPoint(value: data.actual_seconds,
                                                 xAxisLabel: DateUtility.getChartDate(date: data.range.date),
-                                                description: "Actual", // TODO: Convert for i18n
+                                                description: LocalizedStringKey("SummaryView_GoalsChart_Actual_Text").toString(),
                                                 date: DateUtility.getDate(date: data.range.date),
                                                 colour: data.range_status == "success" ? ColourStyle(colour: .green) : ColourStyle(colour: .red)) // TODO: Replace with better colors
                              )
@@ -154,12 +154,12 @@ final class ChartFactory {
                                                       xAxisLabelFont: Font.footnote,
                                                       xAxisLabelsFrom: .dataPoint(rotation: .degrees(-90)))
                             )
-        data.extraLineData = ExtraLineData(legendTitle: "Goal", dataPoints: {
+        data.extraLineData = ExtraLineData(legendTitle: LocalizedStringKey("SummaryView_GoalsChart_Goal_Text").toString(), dataPoints: {
             var points: [ExtraLineDataPoint] = []
             for data in goalData.chart_data {
                 points.append(ExtraLineDataPoint(value: data.goal_seconds,
                                     pointColour: PointColour(),
-                                    pointDescription: "Goal"))
+                                                 pointDescription: LocalizedStringKey("SummaryView_GoalsChart_Goal_Text").toString()))
             }
             return points
         }, style: {

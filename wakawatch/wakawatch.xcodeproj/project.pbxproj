@@ -13,8 +13,6 @@
 		6B1D9B2A27C13B7A00322DBA /* TimeIntervalExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1D9B2927C13B7A00322DBA /* TimeIntervalExtensions.swift */; };
 		6B23142A27A59B8700477259 /* ConnectivityMessageKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B23142927A59B8700477259 /* ConnectivityMessageKeys.swift */; };
 		6B23142B27A59B8700477259 /* ConnectivityMessageKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B23142927A59B8700477259 /* ConnectivityMessageKeys.swift */; };
-		6B23143027A6343300477259 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6B23142F27A6343300477259 /* Localizable.strings */; };
-		6B23143127A6343300477259 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6B23142F27A6343300477259 /* Localizable.strings */; };
 		6B29476B279642EF00311E1E /* WakaTimeNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B29476A279642EF00311E1E /* WakaTimeNetworkService.swift */; };
 		6B3440DC279C5E1C006A5C27 /* Delivery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3440DB279C5E1C006A5C27 /* Delivery.swift */; };
 		6B3440DD279C5E1C006A5C27 /* Delivery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3440DB279C5E1C006A5C27 /* Delivery.swift */; };
@@ -29,6 +27,9 @@
 		6B410A4C27C32E760044BB08 /* RequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B410A4B27C32E760044BB08 /* RequestFactory.swift */; };
 		6B410A4D27C32E760044BB08 /* RequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B410A4B27C32E760044BB08 /* RequestFactory.swift */; };
 		6B410A4F27C331B80044BB08 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B410A4E27C331B80044BB08 /* ExtensionDelegate.swift */; };
+		6B4F6D9427D3B6D900F1E2C4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6B4F6D9727D3B6D900F1E2C4 /* Localizable.strings */; };
+		6B4F6D9527D3B6D900F1E2C4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6B4F6D9727D3B6D900F1E2C4 /* Localizable.strings */; };
+		6B4F6D9D27D3C57B00F1E2C4 /* LocalizedStringKeyExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4F6D9C27D3C57B00F1E2C4 /* LocalizedStringKeyExtensions.swift */; };
 		6B5CFC3027CB08C00014271D /* GoalsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5CFC2F27CB08C00014271D /* GoalsResponse.swift */; };
 		6B5CFC3127CB0B520014271D /* GoalsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5CFC2F27CB08C00014271D /* GoalsResponse.swift */; };
 		6B5CFC3327CB0E2E0014271D /* ComplicationSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5CFC3227CB0E2E0014271D /* ComplicationSettingsView.swift */; };
@@ -204,7 +205,6 @@
 		6B1D9B2727C1366200322DBA /* ComplicationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationService.swift; sourceTree = "<group>"; };
 		6B1D9B2927C13B7A00322DBA /* TimeIntervalExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeIntervalExtensions.swift; sourceTree = "<group>"; };
 		6B23142927A59B8700477259 /* ConnectivityMessageKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivityMessageKeys.swift; sourceTree = "<group>"; };
-		6B23142F27A6343300477259 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		6B29476A279642EF00311E1E /* WakaTimeNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WakaTimeNetworkService.swift; sourceTree = "<group>"; };
 		6B3440DB279C5E1C006A5C27 /* Delivery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delivery.swift; sourceTree = "<group>"; };
 		6B38A90127C04B130020B7DE /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
@@ -213,6 +213,14 @@
 		6B410A4127C2E6860044BB08 /* VersionCheckerUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionCheckerUtility.swift; sourceTree = "<group>"; };
 		6B410A4B27C32E760044BB08 /* RequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestFactory.swift; sourceTree = "<group>"; };
 		6B410A4E27C331B80044BB08 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		6B4F6D9627D3B6D900F1E2C4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6B4F6D9827D3B6F300F1E2C4 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6B4F6D9927D3B9D500F1E2C4 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6B4F6D9A27D3BEE500F1E2C4 /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6B4F6D9B27D3C3EE00F1E2C4 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6B4F6D9C27D3C57B00F1E2C4 /* LocalizedStringKeyExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedStringKeyExtensions.swift; sourceTree = "<group>"; };
+		6B4F6D9E27D3CCCD00F1E2C4 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		6B4F6D9F27D3CDB300F1E2C4 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		6B5CFC2F27CB08C00014271D /* GoalsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsResponse.swift; sourceTree = "<group>"; };
 		6B5CFC3227CB0E2E0014271D /* ComplicationSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationSettingsView.swift; sourceTree = "<group>"; };
 		6B5CFC3427CB0E450014271D /* ComplicationSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationSettingsViewModel.swift; sourceTree = "<group>"; };
@@ -458,6 +466,7 @@
 				6BE5DE3B27A6402D0072FF0E /* StringExtensions.swift */,
 				6BD4C17427BD3BCB00A72DBD /* ViewExtensions.swift */,
 				6B1D9B2927C13B7A00322DBA /* TimeIntervalExtensions.swift */,
+				6B4F6D9C27D3C57B00F1E2C4 /* LocalizedStringKeyExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -574,7 +583,7 @@
 				6B410A4E27C331B80044BB08 /* ExtensionDelegate.swift */,
 				6B38A90127C04B130020B7DE /* ComplicationController.swift */,
 				6BE5DE5327A78BBF0072FF0E /* DependencyInjection.swift */,
-				6B23142F27A6343300477259 /* Localizable.strings */,
+				6B4F6D9727D3B6D900F1E2C4 /* Localizable.strings */,
 				6BED9AA92795154F005646C3 /* Info.plist */,
 				6BBC1A39279DFACF00FFEBFF /* Config.xcconfig */,
 				6BED9AA42795154F005646C3 /* Assets.xcassets */,
@@ -857,6 +866,12 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
+				ja,
+				hi,
+				fr,
+				"zh-Hans",
+				"zh-Hant",
 			);
 			mainGroup = 6BED9A6127951549005646C3;
 			packageReferences = (
@@ -888,7 +903,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BED9A752795154C005646C3 /* Preview Assets.xcassets in Resources */,
-				6B23143027A6343300477259 /* Localizable.strings in Resources */,
+				6B4F6D9427D3B6D900F1E2C4 /* Localizable.strings in Resources */,
 				6BED9A722795154C005646C3 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -920,7 +935,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BED9AA82795154F005646C3 /* Preview Assets.xcassets in Resources */,
-				6B23143127A6343300477259 /* Localizable.strings in Resources */,
+				6B4F6D9527D3B6D900F1E2C4 /* Localizable.strings in Resources */,
 				6BED9AA52795154F005646C3 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1088,6 +1103,7 @@
 				6B1D9B2827C1366200322DBA /* ComplicationService.swift in Sources */,
 				6BE5DE7927A972C50072FF0E /* RollbarAPMService.swift in Sources */,
 				6B8A4860279D1F8F0071566F /* LeaderboardViewModel.swift in Sources */,
+				6B4F6D9D27D3C57B00F1E2C4 /* LocalizedStringKeyExtensions.swift in Sources */,
 				6BE5DE5427A78BBF0072FF0E /* DependencyInjection.swift in Sources */,
 				6B38A90527C053770020B7DE /* ComplicationViewModel.swift in Sources */,
 				6B5CFC3027CB08C00014271D /* GoalsResponse.swift in Sources */,
@@ -1179,12 +1195,30 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		6B4F6D9727D3B6D900F1E2C4 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6B4F6D9627D3B6D900F1E2C4 /* en */,
+				6B4F6D9827D3B6F300F1E2C4 /* es */,
+				6B4F6D9927D3B9D500F1E2C4 /* ja */,
+				6B4F6D9A27D3BEE500F1E2C4 /* hi */,
+				6B4F6D9B27D3C3EE00F1E2C4 /* fr */,
+				6B4F6D9E27D3CCCD00F1E2C4 /* zh-Hans */,
+				6B4F6D9F27D3CDB300F1E2C4 /* zh-Hant */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		6BED9AC02795154F005646C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6BBC1A39279DFACF00FFEBFF /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -1245,6 +1279,7 @@
 			baseConfigurationReference = 6BBC1A39279DFACF00FFEBFF /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";

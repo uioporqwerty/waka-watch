@@ -16,7 +16,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
 
     func getComplicationDescriptors(handler: @escaping ([CLKComplicationDescriptor]) -> Void) {
         let currentCodingTimeDescriptor = CLKComplicationDescriptor(identifier: self.currentCodingTimeIdentifier,
-                                                                    displayName: "Today's Coding Time (hh:mm)",
+                                                                    displayName: "\(LocalizedStringKey("Complication_CurrentCodingTimeDescriptor_Text").toString()) (hh:mm)",
                                                                     supportedFamilies: [.graphicCircular,
                                                                                         .utilitarianSmallFlat,
                                                                                         .utilitarianLarge

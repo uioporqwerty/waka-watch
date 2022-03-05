@@ -1,5 +1,12 @@
 "SummaryView_Today" = "Today";
 "SummaryView_Title" = "Summary";
+"SummaryView_CodingTimeChart_Title" = "Coding Time Per Day";
+"SummaryView_EditorUsageChart_Title" = "5 Day Editor Usage";
+"SummaryView_EditorUsageChart_LegendTitle_Text" = "Editors";
+"SummaryView_LanguageUsageChart_Title" = "5 Day Language Usage";
+"SummaryView_LanguageUsageChart_LegendTitle_Text" = "Languages";
+"SummaryView_GoalsChart_Actual_Text" = "Actual";
+"SummaryView_GoalsChart_Goal_Text" = "Goal";
 "LeaderboardView_Title" = "Leaderboard";
 "ProfileView_Title" = "Profile";
 "ProfileView_Rank_Text" = "Rank:";
@@ -18,3 +25,4 @@
 "SplashView_Center_Text" = "Waka Watch";
 "WatchInstallationCheckView_Instructions_Text"="Waka Watch requires that the Apple Watch counterpart app be installed. Waiting for install before continuing.";
 "ComplicationSettingsView_Instructions_Text" = "Select up to 3 goals.";
+"Complication_CurrentCodingTimeDescriptor_Text" = "Today's Coding Time";
