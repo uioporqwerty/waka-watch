@@ -54,6 +54,9 @@ namespace WakaWatch.Function
 
         [JsonPropertyName("range_status_reason_short")]
         public string ShortRangeStatusReason { get; set; }
+
+        [JsonPropertyName("range_status")]
+        public string RangeStatus { get; set; }
     }
 
     public class BackgroundUpdateResponse {
@@ -73,6 +76,9 @@ namespace WakaWatch.Function
 
         [JsonPropertyName("status_percent_calculated")]
         public double PercentCompleted { get; set; }
+
+        [JsonPropertyName("range_status")]
+        public string RangeStatus { get; set; }
 
         [JsonPropertyName("range_status_reason")]
         public string RangeStatusReason { get; set; }
@@ -114,7 +120,8 @@ namespace WakaWatch.Function
                         Title = goal.Title,
                         PercentCompleted = goal.PercentCompleted,
                         RangeStatusReason = lastDay.RangeStatusReason,
-                        ShortRangeStatusReason = lastDay.ShortRangeStatusReason
+                        ShortRangeStatusReason = lastDay.ShortRangeStatusReason,
+                        RangeStatus = lastDay.RangeStatus
                     });
                 }
             }
