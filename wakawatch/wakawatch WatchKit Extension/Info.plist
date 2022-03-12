@@ -43,7 +43,7 @@
 	<key>APP_INFORMATION_URL</key>
 	<string>https://raw.githubusercontent.com/uioporqwerty/waka-watch/main/app_information.json</string>
 	<key>AZURE_FUNCTION_COMPLICATIONS_URL</key>
-	<string>https://wakawatch.azurewebsites.net/api/complications?code=uvn3hagfuX1j09lz30n3kncnVgPD1NQWOMMxOvZodduRkr68XqnvFQ==</string>
+	<string>https://wakawatch.azurewebsites.net/api/backgroundUpdate?code=uvn3hagfuX1j09lz30n3kncnVgPD1NQWOMMxOvZodduRkr68XqnvFQ==</string>
 	<key>WKRunsIndependentlyOfCompanionApp</key>
 	<false/>
 </dict>

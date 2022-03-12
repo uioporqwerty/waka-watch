@@ -43,7 +43,7 @@ namespace WakaWatch.Function
         public bool IsEnabled { get; set; }
     }
 
-    public class ComplicationsResponse {
+    public class BackgroundUpdateResponse {
         [JsonPropertyName("total_time_coded_in_seconds")]
         public double TotalTimeCodedInSeconds { get; set; }
 
@@ -64,12 +64,12 @@ namespace WakaWatch.Function
             _clientSecret = Environment.GetEnvironmentVariable("CLIENT_SECRET");
         }
 
-        [FunctionName("complications")]
+        [FunctionName("backgroundUpdate")]
         public async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Function, "get", Route = null)] HttpRequest req,
             ILogger log)
         {
-            log.LogInformation("Retrieving complications data");
+            log.LogInformation("Retrieving background update data");
 
             var accessToken = req.Query["access_token"];
             var summaryData = await GetSummaryData(accessToken);
@@ -82,7 +82,7 @@ namespace WakaWatch.Function
                 }
             }
             
-            var response = new ComplicationsResponse {
+            var response = new BackgroundUpdateResponse {
                 TotalTimeCodedInSeconds = summaryData.CummulativeTotal.Seconds,
                 Goals = goals
             };
