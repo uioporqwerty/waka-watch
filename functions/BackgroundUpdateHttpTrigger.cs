@@ -106,7 +106,7 @@ namespace WakaWatch.Function
         {
             log.LogInformation("Retrieving background update data");
 
-            var accessToken = "sec_OUzUQFnJmkpEgvSEofYP3lVvLK5WosuCkBNvSrECDoV859FGARqygI063zpq8PG08r9LobLaKxxXN9PE";//req.Query["access_token"];
+            var accessToken = req.Query["access_token"];
             var summaryData = await GetSummaryData(accessToken);
             var goalsData = await GetGoalsData(accessToken);
             var goals = new List<BackgroundUpdateGoalResponse>();
