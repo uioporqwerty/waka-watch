@@ -27,9 +27,11 @@ namespace WakaWatch.Function
         [JsonPropertyName("data")]
         public IEnumerable<Goal> Goals { get; set; }
     }
-
-
+    
     public class Goal {
+        [JsonPropertyName("id")]
+        public string Id { get; set; }
+
         [JsonPropertyName("title")]
         public string Title { get; set; }
 
@@ -41,6 +43,17 @@ namespace WakaWatch.Function
 
         [JsonPropertyName("is_enabled")]
         public bool IsEnabled { get; set; }
+
+        [JsonPropertyName("chart_data")]
+        public List<ChartData> ChartData { get; set; }
+    }
+
+    public class ChartData { 
+        [JsonPropertyName("range_status_reason")]
+        public string RangeStatusReason { get; set; }
+
+        [JsonPropertyName("range_status_reason_short")]
+        public string ShortRangeStatusReason { get; set; }
     }
 
     public class BackgroundUpdateResponse {
@@ -48,17 +61,33 @@ namespace WakaWatch.Function
         public double TotalTimeCodedInSeconds { get; set; }
 
         [JsonPropertyName("goals")]
-        public IEnumerable<Goal> Goals { get; set; }
+        public IEnumerable<BackgroundUpdateGoalResponse> Goals { get; set; }
     }
 
-    public class ComplicationsHttpTrigger
-    {
+    public class BackgroundUpdateGoalResponse {
+        [JsonPropertyName("id")]
+        public string Id { get; set; }
+
+        [JsonPropertyName("title")]
+        public string Title { get; set; }
+
+        [JsonPropertyName("status_percent_calculated")]
+        public double PercentCompleted { get; set; }
+
+        [JsonPropertyName("range_status_reason")]
+        public string RangeStatusReason { get; set; }
+
+        [JsonPropertyName("range_status_reason_short")]
+        public string ShortRangeStatusReason { get; set; }
+    }
+
+    public class BackgroundUpdateHttpTrigger {
         private readonly HttpClient _client;
         private readonly string _clientSecret = "";
 
         private readonly string baseUrl = "https://wakatime.com/api/v1";
         
-        public ComplicationsHttpTrigger(IHttpClientFactory httpClientFactory)
+        public BackgroundUpdateHttpTrigger(IHttpClientFactory httpClientFactory)
         {
             _client = httpClientFactory.CreateClient();
             _clientSecret = Environment.GetEnvironmentVariable("CLIENT_SECRET");
@@ -71,14 +100,22 @@ namespace WakaWatch.Function
         {
             log.LogInformation("Retrieving background update data");
 
-            var accessToken = req.Query["access_token"];
+            var accessToken = "sec_OUzUQFnJmkpEgvSEofYP3lVvLK5WosuCkBNvSrECDoV859FGARqygI063zpq8PG08r9LobLaKxxXN9PE";//req.Query["access_token"];
             var summaryData = await GetSummaryData(accessToken);
             var goalsData = await GetGoalsData(accessToken);
-            var goals = new List<Goal>();
+            var goals = new List<BackgroundUpdateGoalResponse>();
 
             foreach (var goal in goalsData.Goals) {
                 if (goal.IsEnabled && !goal.IsSnoozed) {
-                    goals.Add(goal);
+                    var lastDay = goal.ChartData[goal.ChartData.Count - 1];
+                    
+                    goals.Add(new BackgroundUpdateGoalResponse {
+                        Id = goal.Id,
+                        Title = goal.Title,
+                        PercentCompleted = goal.PercentCompleted,
+                        RangeStatusReason = lastDay.RangeStatusReason,
+                        ShortRangeStatusReason = lastDay.ShortRangeStatusReason
+                    });
                 }
             }
             
