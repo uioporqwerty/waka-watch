@@ -50,6 +50,7 @@
 		6B9521B527CAE4E9000FEF14 /* RefreshableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9521B427CAE4E9000FEF14 /* RefreshableScrollView.swift */; };
 		6B9E1112279C945800F4DC93 /* SummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9E1111279C945800F4DC93 /* SummaryViewModel.swift */; };
 		6B9E1115279CA29100F4DC93 /* SummaryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9E1114279CA29100F4DC93 /* SummaryResponse.swift */; };
+		6B9EE41C27DAF1770086B465 /* ComplicationsUpdateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9EE41B27DAF1770086B465 /* ComplicationsUpdateResponse.swift */; };
 		6BA78C8027A46CF0005149BC /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA78C7F27A46CF0005149BC /* SplashView.swift */; };
 		6BA78C8527A4826C005149BC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA78C8427A4826C005149BC /* SettingsView.swift */; };
 		6BA78C8B27A487DC005149BC /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA78C8A27A487DC005149BC /* SettingsViewModel.swift */; };
@@ -235,6 +236,7 @@
 		6B9521B427CAE4E9000FEF14 /* RefreshableScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshableScrollView.swift; sourceTree = "<group>"; };
 		6B9E1111279C945800F4DC93 /* SummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewModel.swift; sourceTree = "<group>"; };
 		6B9E1114279CA29100F4DC93 /* SummaryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryResponse.swift; sourceTree = "<group>"; };
+		6B9EE41B27DAF1770086B465 /* ComplicationsUpdateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationsUpdateResponse.swift; sourceTree = "<group>"; };
 		6BA78C7F27A46CF0005149BC /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		6BA78C8127A46F36005149BC /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		6BA78C8427A4826C005149BC /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -421,7 +423,7 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		6B9E1113279CA27800F4DC93 /* API Responses */ = {
+		6B9E1113279CA27800F4DC93 /* WakaTime API Responses */ = {
 			isa = PBXGroup;
 			children = (
 				6BED9AFB2795BBB5005646C3 /* AccessTokenResponse.swift */,
@@ -430,7 +432,15 @@
 				6B8A485D279D1A2C0071566F /* LeaderboardResponse.swift */,
 				6B5CFC2F27CB08C00014271D /* GoalsResponse.swift */,
 			);
-			path = "API Responses";
+			path = "WakaTime API Responses";
+			sourceTree = "<group>";
+		};
+		6B9EE41A27DAF1600086B465 /* Functions API Responses */ = {
+			isa = PBXGroup;
+			children = (
+				6B9EE41B27DAF1770086B465 /* ComplicationsUpdateResponse.swift */,
+			);
+			path = "Functions API Responses";
 			sourceTree = "<group>";
 		};
 		6BA78C8627A4856F005149BC /* Logging */ = {
@@ -636,7 +646,8 @@
 		6BED9AF3279546E5005646C3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				6B9E1113279CA27800F4DC93 /* API Responses */,
+				6B9EE41A27DAF1600086B465 /* Functions API Responses */,
+				6B9E1113279CA27800F4DC93 /* WakaTime API Responses */,
 				6B410A3927C2D77C0044BB08 /* AppInformation.swift */,
 			);
 			path = Models;
@@ -1117,6 +1128,7 @@
 				6BA78C9027A492FB005149BC /* AsyncButton.swift in Sources */,
 				6B410A4F27C331B80044BB08 /* ExtensionDelegate.swift in Sources */,
 				6B9E1115279CA29100F4DC93 /* SummaryResponse.swift in Sources */,
+				6B9EE41C27DAF1770086B465 /* ComplicationsUpdateResponse.swift in Sources */,
 				6BED9AEB27952197005646C3 /* DefaultKeys.swift in Sources */,
 				6BD52F1C279FD07300247BFB /* RollbarLoggingService.swift in Sources */,
 				6B8A485C279D081B0071566F /* DateUtility.swift in Sources */,

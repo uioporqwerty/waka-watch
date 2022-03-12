@@ -6,7 +6,8 @@ final class BackgroundService: NSObject, URLSessionDownloadDelegate {
     private let requestFactory: RequestFactory
     private let logManager: LogManager
     private let complicationService: ComplicationService
-    private var pendingBackgroundTasks = [WKURLSessionRefreshBackgroundTask]()
+    private var pendingBackgroundTask: WKURLSessionRefreshBackgroundTask?
+    private var backgroundSession: URLSession?
 
     init(requestFactory: RequestFactory,
          logManager: LogManager,
@@ -26,31 +27,25 @@ final class BackgroundService: NSObject, URLSessionDownloadDelegate {
 
     func updateContent() {
         self.logManager.debugMessage("In BackgroundService updateContent")
-        let summaryRequest = self.requestFactory.makeSummaryRequest()
+        let complicationsUpdateRequest = self.requestFactory.makeComplicationsUpdateRequest()
 
-        let config = URLSessionConfiguration.background(withIdentifier: UUID().uuidString)
+        let config = URLSessionConfiguration.background(withIdentifier: "app.wakawatch.background-refresh")
         config.isDiscretionary = false
         config.sessionSendsLaunchEvents = true
 
-        let session = URLSession(configuration: config,
+        self.backgroundSession = URLSession(configuration: config,
                                  delegate: self,
                                  delegateQueue: nil)
 
-        let backgroundTask = session.downloadTask(with: summaryRequest)
-        backgroundTask.resume()
+        let backgroundTask = self.backgroundSession?.downloadTask(with: complicationsUpdateRequest)
+        backgroundTask?.resume()
         self.isStarted = true
         self.logManager.debugMessage("backgroundTask scheduled")
     }
 
     func handleDownload(_ backgroundTask: WKURLSessionRefreshBackgroundTask) {
         self.logManager.debugMessage("Handling finished download")
-        let configuration = URLSessionConfiguration.background(withIdentifier: backgroundTask.sessionIdentifier)
-
-        _ = URLSession(configuration: configuration,
-                       delegate: self,
-                       delegateQueue: nil)
-
-        pendingBackgroundTasks.append(backgroundTask)
+        self.pendingBackgroundTask = backgroundTask
     }
 
     func urlSession(_ session: URLSession,
@@ -59,34 +54,48 @@ final class BackgroundService: NSObject, URLSessionDownloadDelegate {
         processFile(file: location)
         self.logManager.debugMessage("Marking pending background tasks as completed.")
 
-        self.pendingBackgroundTasks.forEach {
-            $0.setTaskCompletedWithSnapshot(false)
+        if self.pendingBackgroundTask != nil {
+            self.pendingBackgroundTask?.setTaskCompletedWithSnapshot(false)
+            self.backgroundSession?.finishTasksAndInvalidate()
+            self.pendingBackgroundTask = nil
+            self.backgroundSession = nil
+            self.logManager.debugMessage("Pending background task cleared")
         }
+
         self.schedule()
     }
 
     func processFile(file: URL) {
-        if let data = try? Data(contentsOf: file),
-           let summaryResponse = try? JSONDecoder().decode(SummaryResponse.self, from: data) {
-            let defaults = UserDefaults.standard
-            defaults.set(summaryResponse.cummulative_total?.seconds,
-                        forKey: DefaultsKeys.complicationCurrentTimeCoded)
-            self.complicationService.updateTimelines()
-            self.logManager.debugMessage("Complication updated")
+        guard let data = try? Data(contentsOf: file) else {
+            self.logManager.errorMessage("file could not be read as data")
+            return
         }
+
+        guard let complicationsResponse = try? JSONDecoder().decode(ComplicationsUpdateResponse.self, from: data) else {
+            print(String(decoding: data, as: UTF8.self))
+            self.logManager.errorMessage("Unable to decode response to Swift object")
+            return
+        }
+
+        let defaults = UserDefaults.standard
+        defaults.set(complicationsResponse.totalTimeCodedInSeconds,
+                    forKey: DefaultsKeys.complicationCurrentTimeCoded)
+        self.complicationService.updateTimelines()
+        self.logManager.debugMessage("Complication updated")
     }
 
     func schedule() {
-        let nextInterval = TimeInterval(self.isStarted ? 60 : 15 * 60)
+        let nextInterval = TimeInterval(60)
         let preferredDate = Date.now.addingTimeInterval(nextInterval)
-
-        self.logManager.debugMessage("Scheduled for \(preferredDate)")
 
         WKExtension.shared().scheduleBackgroundRefresh(withPreferredDate: preferredDate,
                                                        userInfo: nil) { error in
             if error != nil {
                 self.logManager.reportError(error!)
+                return
             }
+
+            self.logManager.debugMessage("Scheduled for \(preferredDate)")
         }
     }
 

@@ -4,11 +4,13 @@ final class RequestFactory {
     private let clientId: String?
     private let clientSecret: String?
     private var accessToken: String?
+    private var complicationsFunctionUrl: String?
     private let baseUrl = "https://wakatime.com/api/v1"
 
     init() {
         self.clientId = Bundle.main.infoDictionary?["CLIENT_ID"] as? String
         self.clientSecret = Bundle.main.infoDictionary?["CLIENT_SECRET"] as? String
+        self.complicationsFunctionUrl = Bundle.main.infoDictionary?["AZURE_FUNCTION_COMPLICATIONS_URL"] as? String
     }
 
     func makeSummaryRequest(_ range: SummaryRange = .Today) -> URLRequest {
@@ -62,6 +64,12 @@ final class RequestFactory {
 
         urlComponents.queryItems = urlQueryItems
 
+        return URLRequest(url: urlComponents.url!)
+    }
+
+    func makeComplicationsUpdateRequest() -> URLRequest {
+        let url = "\(self.complicationsFunctionUrl!)&access_token=\(self.getAccessToken()!)"
+        let urlComponents = URLComponents(string: url)!
         return URLRequest(url: urlComponents.url!)
     }
 

@@ -11,15 +11,12 @@ extension LocalizedStringKey {
         let attributeLabelAndValue = mirror.children.first { (arg0) -> Bool in
             let (label, _) = arg0
 
-            if label == "key" {
-                return true;
-            }
-
-            return false;
+            return label == "key"
         }
 
         if attributeLabelAndValue != nil {
-            return String.localizedStringWithFormat(NSLocalizedString(attributeLabelAndValue!.value as? String ?? "", comment: ""));
+            return String.localizedStringWithFormat(NSLocalizedString(attributeLabelAndValue!.value as? String ?? "",
+                                                                      comment: ""))
         } else {
             return "Swift LocalizedStringKey signature must have changed. @see Apple documentation."
         }
