@@ -44,6 +44,9 @@ namespace WakaWatch.Function
         [JsonPropertyName("is_enabled")]
         public bool IsEnabled { get; set; }
 
+        [JsonPropertyName("modified_at")]
+        public DateTime? ModifiedAt { get; set; }
+
         [JsonPropertyName("chart_data")]
         public List<ChartData> ChartData { get; set; }
     }
@@ -85,6 +88,9 @@ namespace WakaWatch.Function
 
         [JsonPropertyName("range_status_reason_short")]
         public string ShortRangeStatusReason { get; set; }
+
+        [JsonPropertyName("modified_at")]
+        public DateTime? ModifiedAt { get; set; }
     }
 
     public class BackgroundUpdateHttpTrigger {
@@ -121,7 +127,8 @@ namespace WakaWatch.Function
                         PercentCompleted = goal.PercentCompleted,
                         RangeStatusReason = lastDay.RangeStatusReason,
                         ShortRangeStatusReason = lastDay.ShortRangeStatusReason,
-                        RangeStatus = lastDay.RangeStatus
+                        RangeStatus = lastDay.RangeStatus,
+                        ModifiedAt = goal.ModifiedAt
                     });
                 }
             }
