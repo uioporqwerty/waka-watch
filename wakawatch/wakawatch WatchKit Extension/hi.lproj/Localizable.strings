@@ -26,3 +26,4 @@
 "WatchInstallationCheckView_Instructions_Text" = "वाका वॉच की आवश्यकता है कि एप्पल वॉच समकक्ष ऐप इंस्टॉल किया जाए। जारी रहने से पहले स्थापित करने की प्रतीक्षा करें।";
 "ComplicationSettingsView_Instructions_Text" = "Select up to 3 goals.";
 "Complication_CurrentCodingTimeDescriptor_Text" = "आज का कोडिंग समय";
+"Notifications_GoalAchieved_Title" = "लक्ष्य प्राप्ति!";

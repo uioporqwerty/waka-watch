@@ -69,6 +69,7 @@ final class RequestFactory {
 
     func makeComplicationsUpdateRequest() -> URLRequest {
         let url = "\(self.complicationsFunctionUrl!)&access_token=\(self.getAccessToken()!)"
+        print(url)
         let urlComponents = URLComponents(string: url)!
         return URLRequest(url: urlComponents.url!)
     }

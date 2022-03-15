@@ -26,3 +26,4 @@
 "WatchInstallationCheckView_Instructions_Text"="Waka WatchはApple Watchのカウンターパートアプリをインストールする必要があります。 続行する前にインストールを待ちます。";
 "ComplicationSettingsView_Instructions_Text" = "Select up to 3 goals.";
 "Complication_CurrentCodingTimeDescriptor_Text" = "今日のコーディング時間";
+"Notifications_GoalAchieved_Title" = "目標を達成しました！";

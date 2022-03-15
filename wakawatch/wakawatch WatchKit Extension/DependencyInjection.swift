@@ -12,6 +12,7 @@ final class DependencyInjection {
         registerViews()
     }
 
+    // swiftlint:disable function_body_length
     private func registerServices() {
         self.container.register(ComplicationService.self) { _ in ComplicationService() }
         self.container.register(RequestFactory.self) { _ in RequestFactory() }
@@ -64,10 +65,15 @@ final class DependencyInjection {
         }
         #endif
 
+        self.container.register(NotificationService.self) { resolver in
+            NotificationService(logManager: resolver.resolve(LogManager.self)!)
+        }
+
         self.container.register(BackgroundService.self) { resolver in
             BackgroundService(requestFactory: resolver.resolve(RequestFactory.self)!,
                               logManager: resolver.resolve(LogManager.self)!,
-                              complicationService: resolver.resolve(ComplicationService.self)!
+                              complicationService: resolver.resolve(ComplicationService.self)!,
+                              notificationService: resolver.resolve(NotificationService.self)!
                              )
         }.inObjectScope(.container)
     }
@@ -77,12 +83,14 @@ final class DependencyInjection {
             SummaryViewModel(networkService: resolver.resolve(NetworkService.self)!,
                              complicationService: resolver.resolve(ComplicationService.self)!,
                              telemetryService: resolver.resolve(TelemetryService.self)!,
+                             notificationService: resolver.resolve(NotificationService.self)!,
                              chartFactory: resolver.resolve(ChartFactory.self)!
                             )
         }
         self.container.register(ProfileViewModel.self) { resolver in
             ProfileViewModel(networkService: resolver.resolve(NetworkService.self)!,
-                             telemetryService: resolver.resolve(TelemetryService.self)!)
+                             telemetryService: resolver.resolve(TelemetryService.self)!
+                            )
         }.inObjectScope(ObjectScope.transient)
         self.container.register(LeaderboardViewModel.self) { resolver in
             LeaderboardViewModel(networkService: resolver.resolve(NetworkService.self)!,

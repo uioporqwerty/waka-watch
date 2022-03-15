@@ -6,16 +6,19 @@ final class BackgroundService: NSObject, URLSessionDownloadDelegate {
     private let requestFactory: RequestFactory
     private let logManager: LogManager
     private let complicationService: ComplicationService
+    private let notificationService: NotificationService
     private var pendingBackgroundTask: WKURLSessionRefreshBackgroundTask?
     private var backgroundSession: URLSession?
 
     init(requestFactory: RequestFactory,
          logManager: LogManager,
-         complicationService: ComplicationService
+         complicationService: ComplicationService,
+         notificationService: NotificationService
         ) {
         self.requestFactory = requestFactory
         self.logManager = logManager
         self.complicationService = complicationService
+        self.notificationService = notificationService
         super.init()
 
         NotificationCenter.default.addObserver(self,
@@ -40,7 +43,7 @@ final class BackgroundService: NSObject, URLSessionDownloadDelegate {
         let backgroundTask = self.backgroundSession?.downloadTask(with: complicationsUpdateRequest)
         backgroundTask?.resume()
         self.isStarted = true
-        self.logManager.debugMessage("backgroundTask scheduled")
+        self.logManager.debugMessage("backgroundTask started")
     }
 
     func handleDownload(_ backgroundTask: WKURLSessionRefreshBackgroundTask) {
@@ -56,7 +59,7 @@ final class BackgroundService: NSObject, URLSessionDownloadDelegate {
 
         if self.pendingBackgroundTask != nil {
             self.pendingBackgroundTask?.setTaskCompletedWithSnapshot(false)
-            self.backgroundSession?.finishTasksAndInvalidate()
+            self.backgroundSession?.invalidateAndCancel()
             self.pendingBackgroundTask = nil
             self.backgroundSession = nil
             self.logManager.debugMessage("Pending background task cleared")
@@ -71,21 +74,24 @@ final class BackgroundService: NSObject, URLSessionDownloadDelegate {
             return
         }
 
-        guard let complicationsResponse = try? JSONDecoder().decode(ComplicationsUpdateResponse.self, from: data) else {
-            print(String(decoding: data, as: UTF8.self))
+        guard let backgroundUpdateResponse = try? JSONDecoder().decode(BackgroundUpdateResponse.self, from: data) else {
             self.logManager.errorMessage("Unable to decode response to Swift object")
             return
         }
 
         let defaults = UserDefaults.standard
-        defaults.set(complicationsResponse.totalTimeCodedInSeconds,
+        defaults.set(backgroundUpdateResponse.totalTimeCodedInSeconds,
                     forKey: DefaultsKeys.complicationCurrentTimeCoded)
         self.complicationService.updateTimelines()
+        self.notificationService.isPermissionGranted(onGrantedHandler: {
+            self.notificationService.notifyGoalsAchieved(newGoals: backgroundUpdateResponse.goals)
+        })
         self.logManager.debugMessage("Complication updated")
     }
 
     func schedule() {
-        let nextInterval = TimeInterval(60)
+        let time = self.isStarted ? 15 * 60 : 60
+        let nextInterval = TimeInterval(time)
         let preferredDate = Date.now.addingTimeInterval(nextInterval)
 
         WKExtension.shared().scheduleBackgroundRefresh(withPreferredDate: preferredDate,

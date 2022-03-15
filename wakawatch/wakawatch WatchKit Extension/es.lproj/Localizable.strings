@@ -26,3 +26,4 @@
 "WatchInstallationCheckView_Instructions_Text"="Waka Watch requiere que se instale la aplicación de contraparte de Apple Watch. Esperando a instalar antes de continuar.";
 "ComplicationSettingsView_Instructions_Text" = "Select up to 3 goals.";
 "Complication_CurrentCodingTimeDescriptor_Text" = "El tiempo de codificación de hoy";
+"Notifications_GoalAchieved_Title" = "¡Objetivo alcanzado!";

@@ -86,6 +86,7 @@ struct SummaryView: View {
             self.summaryViewModel.telemetry.recordViewEvent(elementName: "\(String(describing: SummaryView.self))")
         }
         .task {
+            self.summaryViewModel.promptPermissions()
             await self.load()
         }
     }

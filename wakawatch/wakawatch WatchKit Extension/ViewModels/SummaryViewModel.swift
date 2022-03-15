@@ -13,6 +13,7 @@ final class SummaryViewModel: ObservableObject {
 
     private var networkService: NetworkService
     private var complicationService: ComplicationService
+    private let notificationService: NotificationService
     private var chartFactory: ChartFactory
 
     public let telemetry: TelemetryService
@@ -20,11 +21,13 @@ final class SummaryViewModel: ObservableObject {
     init(networkService: NetworkService,
          complicationService: ComplicationService,
          telemetryService: TelemetryService,
+         notificationService: NotificationService,
          chartFactory: ChartFactory
         ) {
         self.networkService = networkService
         self.telemetry = telemetryService
         self.complicationService = complicationService
+        self.notificationService = notificationService
         self.chartFactory = chartFactory
     }
 
@@ -68,5 +71,9 @@ final class SummaryViewModel: ObservableObject {
                 self.goalsChartData.append(self.chartFactory.makeGoalsChart(goalData: goal))
             }
         }
+    }
+
+    func promptPermissions() {
+        self.notificationService.requestAuthorization()
     }
 }

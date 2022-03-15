@@ -15,7 +15,9 @@ final class ProfileViewModel: ObservableObject {
     private var networkService: NetworkService
     public let telemetry: TelemetryService
 
-    init(networkService: NetworkService, telemetryService: TelemetryService) {
+    init(networkService: NetworkService,
+         telemetryService: TelemetryService
+        ) {
         self.networkService = networkService
         self.telemetry = telemetryService
     }
