@@ -14,6 +14,10 @@ struct WatchInstallationCheckView: View {
                 Text(LocalizedStringKey("WatchInstallationCheckView_Instructions_Text"))
 
                 ProgressView()
+
+                Button(action: { self.viewModel.isWatchAppInstalled = true }) {
+                       Text(LocalizedStringKey("WatchInstallationView_AlreadyInstalled_ButtonLabel"))
+                }.padding(EdgeInsets(top: 8, leading: 0, bottom: 0, trailing: 0))
             } else {
                 DependencyInjection.shared.container.resolve(AuthenticationView.self)!
             }

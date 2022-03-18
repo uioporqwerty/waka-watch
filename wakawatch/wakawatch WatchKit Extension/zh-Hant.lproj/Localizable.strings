@@ -27,6 +27,7 @@
 "AuthenticationView_Disconnect_Button_Text" = "斷開與WakaTime的連接";
 "SplashView_Center_Text" = "Waka Watch";
 "WatchInstallationCheckView_Instructions_Text"="Waka Watch 要求安裝 Apple Watch 對應的應用程式。等待安裝後再繼續。";
+"WatchInstallationView_AlreadyInstalled_ButtonLabel" = "已安裝>";
 "ComplicationSettingsView_Instructions_Text" = "Select up to 3 goals.";
 "Complication_CurrentCodingTimeDescriptor_Text" = "今天的編碼時間";
 "Notifications_GoalAchieved_Title" = "目標達成！";

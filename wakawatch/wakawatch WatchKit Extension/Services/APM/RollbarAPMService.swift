@@ -27,8 +27,12 @@ class RollbarAPMService: APMService {
             return
         }
 
-        // swiftlint:disable line_length
-        self.logManager.debugMessage("Setting Rollbar user with email \(profile.email ?? ""), id \(profile.id), and display_name \(profile.display_name ?? "")")
-        Rollbar.currentConfiguration()?.setPersonId(profile.id, username: profile.display_name ?? "", email: profile.email ?? "")
+        guard let configuration = Rollbar.currentConfiguration() else {
+            self.logManager.errorMessage("Rollbar configuration not set.")
+            return
+        }
+
+        configuration.person = RollbarPerson(id: profile.id)
+        self.logManager.debugMessage("Tracking person with id \(profile.id)")
     }
 }

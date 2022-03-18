@@ -26,7 +26,8 @@
 "AuthenticationView_Connected_Text" = "Connected with WakaTime. Open Waka Watch on your Apple Watch.";
 "AuthenticationView_Disconnect_Button_Text" = "Disconnect from WakaTime";
 "SplashView_Center_Text" = "Waka Watch";
-"WatchInstallationCheckView_Instructions_Text"="Waka Watch requires that the Apple Watch counterpart app be installed. Waiting for install before continuing.";
+"WatchInstallationCheckView_Instructions_Text" = "Waka Watch requires that the Apple Watch counterpart app be installed. Waiting for install before continuing.";
+"WatchInstallationView_AlreadyInstalled_ButtonLabel" = "Already Installed >";
 "ComplicationSettingsView_Instructions_Text" = "Select up to 3 goals.";
 "Complication_CurrentCodingTimeDescriptor_Text" = "Today's Coding Time";
 "Notifications_GoalAchieved_Title" = "Goal Achieved!";

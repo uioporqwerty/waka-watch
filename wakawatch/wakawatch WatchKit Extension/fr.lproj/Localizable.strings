@@ -27,6 +27,7 @@
 "AuthenticationView_Disconnect_Button_Text" = "Déconnecter de WakaTime";
 "SplashView_Center_Text" = "Waka Watch";
 "WatchInstallationCheckView_Instructions_Text"="Waka Watch exige que l'application de contrepartie Apple Watch soit installée. En attente d'installation avant de continuer.";
+"WatchInstallationView_AlreadyInstalled_ButtonLabel" = "> déjà installé";
 "ComplicationSettingsView_Instructions_Text" = "Select up to 3 goals.";
 "Complication_CurrentCodingTimeDescriptor_Text" = "L'heure du codage d'aujourd'hui";
 "Notifications_GoalAchieved_Title" = "Objectif atteint!";
