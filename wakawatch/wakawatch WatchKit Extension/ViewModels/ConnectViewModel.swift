@@ -14,7 +14,7 @@ final class ConnectViewModel {
         #if DEBUG
             return false
         #else
-            let appInformation = await self.networkService.getAppInformation()
+            let appInformation = try? await self.networkService.getAppInformation()
             let currentAppVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0.0"
 
             guard let appInformation = appInformation else {
