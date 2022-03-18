@@ -21,7 +21,7 @@ class RollbarAPMService: APMService {
     }
 
     func setUser() async {
-        let profileData = await self.networkService.getProfileData(userId: nil)
+        let profileData = try? await self.networkService.getProfileData(userId: nil)
         guard let profile = profileData?.data else {
             self.logManager.errorMessage("Failed to find profile for current user. Cannot set user.")
             return

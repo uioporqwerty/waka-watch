@@ -23,9 +23,7 @@ struct SettingsView: View {
 //                    }
 
                     AsyncButton(action: {
-                        do {
-                            try await self.settingsViewModel.disconnect()
-                        } catch { }
+                        try? await self.settingsViewModel.disconnect()
                     }) {
                         Text(LocalizedStringKey("SettingsView_Disconnect_Button"))
                     }

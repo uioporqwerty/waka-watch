@@ -30,7 +30,7 @@ struct ComplicationSettingsView: View {
                 }
             }
         }.task {
-            await self.viewModel.getGoals()
+            try? await self.viewModel.getGoals()
             self.selected = Set<UUID>(self.viewModel.goals.filter({ $0.selected })
                                                           .compactMap({ $0.id }))
         }

@@ -13,18 +13,23 @@ final class LeaderboardViewModel: ObservableObject {
 
     private var networkService: NetworkService
     public let telemetry: TelemetryService
+    public let logManager: LogManager
 
-    init(networkService: NetworkService, telemetryService: TelemetryService) {
+    init(networkService: NetworkService,
+         telemetryService: TelemetryService,
+         logManager: LogManager
+        ) {
         self.networkService = networkService
         self.telemetry = telemetryService
+        self.logManager = logManager
     }
 
-    func loadPreviousPage() async {
+    func loadPreviousPage() async throws {
         if self.previousPage! <= 0 {
             return
         }
 
-        let leaderboardData = await networkService.getPublicLeaderboard(page: self.previousPage)
+        let leaderboardData = try await networkService.getPublicLeaderboard(page: self.previousPage)
         let leaderboardRecords = self.mapLeaderboardDataToRecord(leaderboardData?.data ?? [])
 
         DispatchQueue.main.async {
@@ -34,12 +39,12 @@ final class LeaderboardViewModel: ObservableObject {
         self.previousPage = self.previousPage! - 1 >= 0 ? self.previousPage! - 1 : 0
     }
 
-    func loadNextPage() async {
+    func loadNextPage() async throws {
         if self.nextPage! >= self.totalPages {
             return
         }
 
-        let leaderboardData = await networkService.getPublicLeaderboard(page: self.nextPage)
+        let leaderboardData = try await networkService.getPublicLeaderboard(page: self.nextPage)
         let leaderboardRecords = self.mapLeaderboardDataToRecord(leaderboardData?.data ?? [])
 
         DispatchQueue.main.async {
@@ -64,8 +69,8 @@ final class LeaderboardViewModel: ObservableObject {
         return leaderboardRecords
     }
 
-    func getPublicLeaderboard(page: Int?) async {
-        let leaderboardData = await networkService.getPublicLeaderboard(page: page)
+    func getPublicLeaderboard(page: Int?) async throws {
+        let leaderboardData = try await networkService.getPublicLeaderboard(page: page)
 
         DispatchQueue.main.async {
             var leaderboardRecords: [LeaderboardRecord] = []

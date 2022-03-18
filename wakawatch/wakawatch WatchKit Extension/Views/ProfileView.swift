@@ -3,6 +3,7 @@ import Kingfisher
 
 struct ProfileView: View {
     @ObservedObject var profileViewModel: ProfileViewModel
+    @State var hasError = false
     private let user: UserData?
 
     init(viewModel: ProfileViewModel, user: UserData?, forceLoad: Bool = false) {
@@ -15,10 +16,23 @@ struct ProfileView: View {
 
     var body: some View {
         VStack {
-            if !self.profileViewModel.loaded {
+            if self.hasError {
+                ErrorView(logManager: self.profileViewModel.logManager,
+                          description: LocalizedStringKey("ProfileView_Error_Description").toString(),
+                          retryButtonAction: {
+                            try await self.profileViewModel.getProfile(user: self.user)
+                            self.hasError = false
+                          })
+            } else if !self.profileViewModel.loaded {
                 ProgressView()
                     .task {
-                        await self.profileViewModel.getProfile(user: self.user)
+                        do {
+                            try await self.profileViewModel.getProfile(user: self.user)
+                            self.hasError = false
+                        } catch {
+                            self.profileViewModel.logManager.reportError(error)
+                            self.hasError = true
+                        }
                     }
             } else {
                 ScrollView {

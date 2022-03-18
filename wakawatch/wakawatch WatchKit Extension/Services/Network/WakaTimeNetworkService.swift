@@ -16,132 +16,102 @@ final class WakaTimeNetworkService: NetworkService {
         self.requestFactory = requestFactory
     }
 
-    func getSummaryData(_ range: SummaryRange = .Today) async -> SummaryResponse? {
+    func getSummaryData(_ range: SummaryRange = .Today) async throws -> SummaryResponse? {
         await self.authenticationService.refreshAccessToken()
         let request = self.requestFactory.makeSummaryRequest(range)
 
-        do {
-            let (data, response) = try await URLSession.shared.data(from: request.url!)
-            let urlResponse = response as? HTTPURLResponse
+        let (data, response) = try await URLSession.shared.data(from: request.url!)
+        let urlResponse = response as? HTTPURLResponse
 
-            if urlResponse?.statusCode ?? 0 >= 300 {
-                self.logManager.errorMessage(data)
-            }
-
-            self.telemetry.recordNetworkEvent(method: request.httpMethod,
-                                              url: request.url?.absoluteString,
-                                              statusCode: urlResponse?.statusCode.description)
-
-            let summaryResponse = try JSONDecoder().decode(SummaryResponse.self, from: data)
-
-            return summaryResponse
-        } catch {
-            self.logManager.reportError(error)
+        if urlResponse?.statusCode ?? 0 >= 300 {
+            self.logManager.errorMessage(data)
         }
 
-        return nil
+        self.telemetry.recordNetworkEvent(method: request.httpMethod,
+                                          url: request.url?.absoluteString,
+                                          statusCode: urlResponse?.statusCode.description)
+
+        let summaryResponse = try JSONDecoder().decode(SummaryResponse.self, from: data)
+
+        return summaryResponse
     }
 
-    func getProfileData(userId: String?) async -> ProfileResponse? {
+    func getProfileData(userId: String?) async throws -> ProfileResponse? {
         await self.authenticationService.refreshAccessToken()
         let request = self.requestFactory.makeProfileRequest(userId)
 
-        do {
-            let (data, response) = try await URLSession.shared.data(from: request.url!)
-            let urlResponse = response as? HTTPURLResponse
+        let (data, response) = try await URLSession.shared.data(from: request.url!)
+        let urlResponse = response as? HTTPURLResponse
 
-            if urlResponse?.statusCode ?? 0 >= 300 {
-                self.logManager.errorMessage(data)
-            }
-
-            self.telemetry.recordNetworkEvent(method: request.httpMethod,
-                                              url: request.url?.absoluteString,
-                                              statusCode: urlResponse?.statusCode.description)
-
-            let profileResponse = try JSONDecoder().decode(ProfileResponse.self, from: data)
-
-            return profileResponse
-        } catch {
-            self.logManager.reportError(error)
+        if urlResponse?.statusCode ?? 0 >= 300 {
+            self.logManager.errorMessage(data)
         }
 
-        return nil
+        self.telemetry.recordNetworkEvent(method: request.httpMethod,
+                                          url: request.url?.absoluteString,
+                                          statusCode: urlResponse?.statusCode.description)
+
+        let profileResponse = try JSONDecoder().decode(ProfileResponse.self, from: data)
+
+        return profileResponse
     }
 
-    func getGoalsData() async -> GoalsResponse? {
+    func getGoalsData() async throws -> GoalsResponse? {
         await self.authenticationService.refreshAccessToken()
         let request = self.requestFactory.makeGoalsRequest()
 
-        do {
-            let (data, response) = try await URLSession.shared.data(from: request.url!)
-            let urlResponse = response as? HTTPURLResponse
+        let (data, response) = try await URLSession.shared.data(from: request.url!)
+        let urlResponse = response as? HTTPURLResponse
 
-            if urlResponse?.statusCode ?? 0 >= 300 {
-                self.logManager.errorMessage(data)
-            }
-
-            self.telemetry.recordNetworkEvent(method: request.httpMethod,
-                                              url: request.url?.absoluteString,
-                                              statusCode: urlResponse?.statusCode.description)
-
-            let goalsResponse = try JSONDecoder().decode(GoalsResponse.self, from: data)
-
-            return goalsResponse
-        } catch {
-            self.logManager.reportError(error)
+        if urlResponse?.statusCode ?? 0 >= 300 {
+            self.logManager.errorMessage(data)
         }
 
-        return nil
+        self.telemetry.recordNetworkEvent(method: request.httpMethod,
+                                          url: request.url?.absoluteString,
+                                          statusCode: urlResponse?.statusCode.description)
+
+        let goalsResponse = try JSONDecoder().decode(GoalsResponse.self, from: data)
+
+        return goalsResponse
     }
 
-    func getPublicLeaderboard(page: Int?) async -> LeaderboardResponse? {
+    func getPublicLeaderboard(page: Int?) async throws -> LeaderboardResponse? {
         await self.authenticationService.refreshAccessToken()
         let request = self.requestFactory.makePublicLeaderboardRequest(page)
 
-        do {
-            let (data, response) = try await URLSession.shared.data(from: request.url!)
-            let urlResponse = response as? HTTPURLResponse
+        let (data, response) = try await URLSession.shared.data(from: request.url!)
+        let urlResponse = response as? HTTPURLResponse
 
-            if urlResponse?.statusCode ?? 0 >= 300 {
-                self.logManager.errorMessage(data)
-            }
-
-            self.telemetry.recordNetworkEvent(method: request.httpMethod,
-                                              url: request.url?.absoluteString,
-                                              statusCode: urlResponse?.statusCode.description)
-
-            let leaderboardResponse = try JSONDecoder().decode(LeaderboardResponse.self, from: data)
-
-            return leaderboardResponse
-        } catch {
-            self.logManager.reportError(error)
+        if urlResponse?.statusCode ?? 0 >= 300 {
+            self.logManager.errorMessage(data)
         }
 
-       return nil
+        self.telemetry.recordNetworkEvent(method: request.httpMethod,
+                                          url: request.url?.absoluteString,
+                                          statusCode: urlResponse?.statusCode.description)
+
+        let leaderboardResponse = try JSONDecoder().decode(LeaderboardResponse.self, from: data)
+
+        return leaderboardResponse
     }
 
-    func getAppInformation() async -> AppInformation? {
+    func getAppInformation() async throws -> AppInformation? {
         let request = URLRequest(url: URL(string: Bundle
-                                                  .main
-                                                  .infoDictionary?["APP_INFORMATION_URL"] as? String ?? "1.0")!)
+                                              .main
+                                              .infoDictionary?["APP_INFORMATION_URL"] as? String ?? "1.0")!)
 
-        do {
-            let (data, response) = try await URLSession.shared.data(from: request.url!)
-            let urlResponse = response as? HTTPURLResponse
+        let (data, response) = try await URLSession.shared.data(from: request.url!)
+        let urlResponse = response as? HTTPURLResponse
 
-            if urlResponse?.statusCode ?? 0 >= 300 {
-                self.logManager.errorMessage(data)
-            }
-            self.telemetry.recordNetworkEvent(method: request.httpMethod,
-                                              url: request.url?.absoluteString,
-                                              statusCode: urlResponse?.statusCode.description)
-            let appInformation = try JSONDecoder().decode(AppInformation.self, from: data)
-
-            return appInformation
-        } catch {
-            self.logManager.reportError(error)
+        if urlResponse?.statusCode ?? 0 >= 300 {
+            self.logManager.errorMessage(data)
         }
+        self.telemetry.recordNetworkEvent(method: request.httpMethod,
+                                          url: request.url?.absoluteString,
+                                          statusCode: urlResponse?.statusCode.description)
+        let appInformation = try JSONDecoder().decode(AppInformation.self, from: data)
 
-        return nil
+        return appInformation
     }
 }

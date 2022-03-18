@@ -22,6 +22,7 @@ struct AsyncButton<Label: View>: View {
 
                     if isPerformingTask {
                         ProgressView()
+                            .frame(maxWidth: 24, maxHeight: 24)
                     }
                 }
             }

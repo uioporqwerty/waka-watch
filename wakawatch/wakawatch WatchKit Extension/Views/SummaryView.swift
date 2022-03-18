@@ -4,6 +4,7 @@ import SwiftUICharts
 struct SummaryView: View {
     @ObservedObject var summaryViewModel: SummaryViewModel
     @State var refreshing = false
+    @State var hasError = false
 
     init(viewModel: SummaryViewModel) {
         self.summaryViewModel = viewModel
@@ -11,12 +12,23 @@ struct SummaryView: View {
 
     var body: some View {
         VStack {
-            if self.refreshing || !self.summaryViewModel.loaded {
+            if self.hasError {
+                ErrorView(logManager: self.summaryViewModel.logManager,
+                          description: LocalizedStringKey("SummaryView_Error_Description").toString()
+                          ) {
+                    try await self.load()
+                    self.hasError = false
+                }
+            } else if self.refreshing || !self.summaryViewModel.loaded {
                 ProgressView()
             } else {
                 GeometryReader { proxy in
                     RefreshableScrollView(action: {
-                        await self.load()
+                        do {
+                            try await self.load()
+                        } catch {
+                            self.hasError = true
+                        }
                     }) {
                         VStack {
                             Text(LocalizedStringKey("SummaryView_Today"))
@@ -87,13 +99,18 @@ struct SummaryView: View {
         }
         .task {
             self.summaryViewModel.promptPermissions()
-            await self.load()
+            do {
+                try await self.load()
+            } catch {
+                self.summaryViewModel.logManager.reportError(error)
+                self.hasError = true
+            }
         }
     }
 
-    private func load() async {
-        await self.summaryViewModel.getSummary()
-        await self.summaryViewModel.getCharts()
+    private func load() async throws {
+        try await self.summaryViewModel.getSummary()
+        try await self.summaryViewModel.getCharts()
     }
 }
 

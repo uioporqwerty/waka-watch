@@ -4,9 +4,9 @@ protocol NetworkService {
     var authenticationService: AuthenticationService { get }
     var requestFactory: RequestFactory { get }
 
-    func getSummaryData(_ range: SummaryRange) async -> SummaryResponse?
-    func getProfileData(userId: String?) async -> ProfileResponse?
-    func getGoalsData() async -> GoalsResponse?
-    func getPublicLeaderboard(page: Int?) async -> LeaderboardResponse?
-    func getAppInformation() async -> AppInformation?
+    func getSummaryData(_ range: SummaryRange) async throws -> SummaryResponse?
+    func getProfileData(userId: String?) async throws -> ProfileResponse?
+    func getGoalsData() async throws -> GoalsResponse?
+    func getPublicLeaderboard(page: Int?) async throws -> LeaderboardResponse?
+    func getAppInformation() async throws -> AppInformation?
 }

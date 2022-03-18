@@ -7,10 +7,12 @@
 "SummaryView_LanguageUsageChart_LegendTitle_Text" = "言語";
 "SummaryView_GoalsChart_Actual_Text" = "現在の";
 "SummaryView_GoalsChart_Goal_Text" = "ゴール";
+"SummaryView_Error_Description" = "概要の読み込み中にエラーが発生しました。";
 "LeaderboardView_Title" = "リーダーボード";
 "ProfileView_Title" = "プロフィール";
 "ProfileView_Rank_Text" = "ランキング:";
 "ProfileView_Joined_Text" = "参加する:";
+"ProfileView_Error_Description" = "プロファイルの読み込み中にエラーが発生しました。";
 "SettingsView_Title" = "コンテンツ";
 "SettingsView_Disconnect_Button" = "WakaTimeから接続解除";
 "SettingsView_ComplicationsSettings_Text" = "Goal Complication Settings";
@@ -19,6 +21,7 @@
 "ConnectView_UpdateRequired_Message" = "Waka Watchの最新バージョンは日付外です。 「Waka Watch」をApp Storeで更新。";
 "LeaderboardView_Load_Previous_Button" = "過去の投稿";
 "LeaderboardView_Load_Next_Button" = "次へ進む";
+"LeaderboardView_Error_Description" = "スコア ボードの読み込み中にエラーが発生しました。";
 "AuthenticationView_Connect_Text" = "WakaTimeに接続する";
 "AuthenticationView_Connected_Text" = "Connected with WakaTime. Open Waka Watch on your Apple Watch.";
 "AuthenticationView_Disconnect_Button_Text" = "WakaTimeとつながる お使いのApple WatchでWaka Watchを開きます。";
@@ -27,3 +30,6 @@
 "ComplicationSettingsView_Instructions_Text" = "Select up to 3 goals.";
 "Complication_CurrentCodingTimeDescriptor_Text" = "今日のコーディング時間";
 "Notifications_GoalAchieved_Title" = "目標を達成しました！";
+"ErrorView_RetryButton_Label" = "リトライ";
+"ErrorView_Description_Text" = "不明なエラーが発生しました。";
+"ErrorView_DescriptionExceededRetryCount_Label" = "再試行回数を超えました。開発者に通知されました。";

@@ -84,17 +84,20 @@ final class DependencyInjection {
                              complicationService: resolver.resolve(ComplicationService.self)!,
                              telemetryService: resolver.resolve(TelemetryService.self)!,
                              notificationService: resolver.resolve(NotificationService.self)!,
-                             chartFactory: resolver.resolve(ChartFactory.self)!
+                             chartFactory: resolver.resolve(ChartFactory.self)!,
+                             logManager: resolver.resolve(LogManager.self)!
                             )
         }
         self.container.register(ProfileViewModel.self) { resolver in
             ProfileViewModel(networkService: resolver.resolve(NetworkService.self)!,
-                             telemetryService: resolver.resolve(TelemetryService.self)!
+                             telemetryService: resolver.resolve(TelemetryService.self)!,
+                             logManager: resolver.resolve(LogManager.self)!
                             )
         }.inObjectScope(ObjectScope.transient)
         self.container.register(LeaderboardViewModel.self) { resolver in
             LeaderboardViewModel(networkService: resolver.resolve(NetworkService.self)!,
-                                 telemetryService: resolver.resolve(TelemetryService.self)!)
+                                 telemetryService: resolver.resolve(TelemetryService.self)!,
+                                 logManager: resolver.resolve(LogManager.self)!)
         }
         self.container.register(SettingsViewModel.self) { resolver in
             SettingsViewModel(networkService: resolver.resolve(NetworkService.self)!,

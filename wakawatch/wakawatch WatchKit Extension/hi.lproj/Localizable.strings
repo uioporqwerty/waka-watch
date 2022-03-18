@@ -7,10 +7,12 @@
 "SummaryView_LanguageUsageChart_LegendTitle_Text" = "भाषाओं";
 "SummaryView_GoalsChart_Actual_Text" = "प्रवाह";
 "SummaryView_GoalsChart_Goal_Text" = "लक्ष्य";
+"SummaryView_Error_Description" = "सारांश लोड करने में त्रुटि.";
 "LeaderboardView_Title" = "लीडरबोर्ड";
 "ProfileView_Title" = "प्रोफ़ाइल";
 "ProfileView_Rank_Text" = "रैंक:";
 "ProfileView_Joined_Text" = "शामिल:";
+"ProfileView_Error_Description" = "प्रोफ़ाइल लोड करते समय कोई त्रुटि उत्पन्न हुई.";
 "SettingsView_Title" = "सेटिंग्स";
 "SettingsView_Disconnect_Button" = "WakaTime से डिस्कनेक्ट";
 "SettingsView_ComplicationsSettings_Text" = "Goal Complication Settings";
@@ -19,6 +21,7 @@
 "ConnectView_UpdateRequired_Message" = "वाका वॉच का यह संस्करण तारीख से बाहर है। ऐप स्टोर के माध्यम से वाका वॉच अपडेट करें।";
 "LeaderboardView_Load_Previous_Button" = "पिछला लोड";
 "LeaderboardView_Load_Next_Button" = "अगला";
+"LeaderboardView_Error_Description" = "लीडरबोर्ड लोड करने में त्रुटि.";
 "AuthenticationView_Connect_Text" = "WakaTime कनेक्ट";
 "AuthenticationView_Connected_Text" = "WakaTime के साथ जुड़ा हुआ है। अपने एप्पल वॉच पर वाका वॉच खोलें।";
 "AuthenticationView_Disconnect_Button_Text" = "WakaTime से डिस्कनेक्ट";
@@ -27,3 +30,6 @@
 "ComplicationSettingsView_Instructions_Text" = "Select up to 3 goals.";
 "Complication_CurrentCodingTimeDescriptor_Text" = "आज का कोडिंग समय";
 "Notifications_GoalAchieved_Title" = "लक्ष्य प्राप्ति!";
+"ErrorView_RetryButton_Label" = "पुनर्प्रयास";
+"ErrorView_Description_Text" = "कोई अज्ञात त्रुटि उत्पन्न हुई.";
+"ErrorView_DescriptionExceededRetryCount_Label" = "पुन: प्रयास करें गणना पार कर गई. डेवलपर को सूचित कर दिया गया है।";

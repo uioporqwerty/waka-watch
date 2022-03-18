@@ -7,10 +7,12 @@
 "SummaryView_LanguageUsageChart_LegendTitle_Text" = "Idiomas";
 "SummaryView_GoalsChart_Actual_Text" = "Actual";
 "SummaryView_GoalsChart_Goal_Text" = "Gol";
+"SummaryView_Error_Description" = "Resumen de carga de errores.";
 "LeaderboardView_Title" = "Tabla de clasificación";
 "ProfileView_Title" = "Perfil";
 "ProfileView_Rank_Text" = "Rango:";
 "ProfileView_Joined_Text" = "Unido:";
+"ProfileView_Error_Description" = "Error al cargar el perfil.";
 "SettingsView_Title" = "Configuración";
 "SettingsView_Disconnect_Button" = "Desconectarse de WakaTime";
 "SettingsView_ComplicationsSettings_Text" = "Goal Complication Settings";
@@ -19,6 +21,7 @@
 "ConnectView_UpdateRequired_Message" = "Esta versión de Waka Watch no está fechada. Actualizar Waka Watch a través de App Store.";
 "LeaderboardView_Load_Previous_Button" = "Carga anterior";
 "LeaderboardView_Load_Next_Button" = "Carga Siguiente";
+"LeaderboardView_Error_Description" = "Error al cargar la tabla de clasificación.";
 "AuthenticationView_Connect_Text" = "Conectarse a WakaTime";
 "AuthenticationView_Connected_Text" = "Conectado con WakaTime. Abra Waka Watch en su Apple Watch.";
 "AuthenticationView_Disconnect_Button_Text" = "Desconectarse de WakaTime";
@@ -27,3 +30,6 @@
 "ComplicationSettingsView_Instructions_Text" = "Select up to 3 goals.";
 "Complication_CurrentCodingTimeDescriptor_Text" = "El tiempo de codificación de hoy";
 "Notifications_GoalAchieved_Title" = "¡Objetivo alcanzado!";
+"ErrorView_RetryButton_Label" = "Reintentar";
+"ErrorView_Description_Text" = "Se ha producido un error desconocido.";
+"ErrorView_DescriptionExceededRetryCount_Label" = "Recuento de reintentos excedido. El desarrollador ha sido notificado.";

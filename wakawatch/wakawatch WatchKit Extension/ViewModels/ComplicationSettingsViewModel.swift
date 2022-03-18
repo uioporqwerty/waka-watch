@@ -17,8 +17,8 @@ final class ComplicationSettingsViewModel: ObservableObject {
         self.logManager = logManager
     }
 
-    func getGoals() async {
-        let goals = await self.networkService.getGoalsData()
+    func getGoals() async throws {
+        let goals = try await self.networkService.getGoalsData()
         let activeGoals = goals?.data.filter { goal in
             return goal.is_enabled && !goal.is_snoozed
         }.sorted(by: {

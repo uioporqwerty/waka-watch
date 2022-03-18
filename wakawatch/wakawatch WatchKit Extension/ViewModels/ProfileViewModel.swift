@@ -14,18 +14,21 @@ final class ProfileViewModel: ObservableObject {
 
     private var networkService: NetworkService
     public let telemetry: TelemetryService
+    public let logManager: LogManager
 
     init(networkService: NetworkService,
-         telemetryService: TelemetryService
+         telemetryService: TelemetryService,
+         logManager: LogManager
         ) {
         self.networkService = networkService
         self.telemetry = telemetryService
+        self.logManager = logManager
     }
 
-    func getProfile(user: UserData?) async {
+    func getProfile(user: UserData?) async throws {
         if user == nil {
-            let userProfileData = await networkService.getProfileData(userId: nil)
-            let leaderboardData = await networkService.getPublicLeaderboard(page: nil)
+            let userProfileData = try await networkService.getProfileData(userId: nil)
+            let leaderboardData = try await networkService.getPublicLeaderboard(page: nil)
 
             DispatchQueue.main.async {
                 self.id = UUID(uuidString: userProfileData?.data.id ?? "")

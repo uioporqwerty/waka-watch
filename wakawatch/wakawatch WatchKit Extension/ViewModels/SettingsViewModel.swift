@@ -4,8 +4,8 @@ final class SettingsViewModel: ObservableObject {
 
     private let networkService: NetworkService
     private let authenticationService: AuthenticationService
-    private let logManager: LogManager
 
+    public let logManager: LogManager
     public let telemetry: TelemetryService
 
     init(networkService: NetworkService,

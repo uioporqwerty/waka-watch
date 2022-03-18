@@ -11,6 +11,7 @@ final class SummaryViewModel: ObservableObject {
     @Published var languagesPieChartData: PieChartData?
     @Published var goalsChartData: [BarChartData] = []
 
+    public var logManager: LogManager
     private var networkService: NetworkService
     private var complicationService: ComplicationService
     private let notificationService: NotificationService
@@ -22,17 +23,19 @@ final class SummaryViewModel: ObservableObject {
          complicationService: ComplicationService,
          telemetryService: TelemetryService,
          notificationService: NotificationService,
-         chartFactory: ChartFactory
+         chartFactory: ChartFactory,
+         logManager: LogManager
         ) {
         self.networkService = networkService
         self.telemetry = telemetryService
         self.complicationService = complicationService
         self.notificationService = notificationService
         self.chartFactory = chartFactory
+        self.logManager = logManager
     }
 
-    func getSummary() async {
-        let summaryData = await networkService.getSummaryData(.Today)
+    func getSummary() async throws {
+        let summaryData = try await networkService.getSummaryData(.Today)
 
         let defaults = UserDefaults.standard
         defaults.set(summaryData?.cummulative_total?.seconds,
@@ -46,9 +49,9 @@ final class SummaryViewModel: ObservableObject {
         }
     }
 
-    func getCharts() async {
-        let weeklySummaryData = await networkService.getSummaryData(.Last7Days)
-        let goalsData = await networkService.getGoalsData()
+    func getCharts() async throws {
+        let weeklySummaryData = try await networkService.getSummaryData(.Last7Days)
+        let goalsData = try await networkService.getGoalsData()
         guard let summaryData = weeklySummaryData?.data?.suffix(5) else {
             return
         }

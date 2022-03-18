@@ -7,10 +7,12 @@
 "SummaryView_LanguageUsageChart_LegendTitle_Text" = "语言";
 "SummaryView_GoalsChart_Actual_Text" = "实际";
 "SummaryView_GoalsChart_Goal_Text" = "目标";
+"SummaryView_Error_Description" = "加载摘要时出错。";
 "LeaderboardView_Title" = "排行榜";
 "ProfileView_Title" = "轮廓";
 "ProfileView_Rank_Text" = "排:";
 "ProfileView_Joined_Text" = "加入:";
+"ProfileView_Error_Description" = "加载配置文件时出错。";
 "SettingsView_Title" = "设置";
 "SettingsView_Disconnect_Button" = "断开与WakaTime的连接";
 "SettingsView_ComplicationsSettings_Text" = "Goal Complication Settings";
@@ -19,6 +21,7 @@
 "ConnectView_UpdateRequired_Message" = "这个版本的Waka Watch已经过时了。通过App Store更新Waka Watch。";
 "LeaderboardView_Load_Previous_Button" = "加载上一个";
 "LeaderboardView_Load_Next_Button" = "下次加载";
+"LeaderboardView_Error_Description" = "加载排行榜时出错。";
 "AuthenticationView_Connect_Text" = "连接到和歌时光";
 "AuthenticationView_Connected_Text" = "与WakaTime连接。在 Apple Watch 上打开 Waka Watch。";
 "AuthenticationView_Disconnect_Button_Text" = "断开与WakaTime的连接";
@@ -27,3 +30,6 @@
 "ComplicationSettingsView_Instructions_Text" = "Select up to 3 goals.";
 "Complication_CurrentCodingTimeDescriptor_Text" = "今天的编码时间";
 "Notifications_GoalAchieved_Title" = "目标达成！";
+"ErrorView_RetryButton_Label" = "重试";
+"ErrorView_Description_Text" = "发生未知错误。";
+"ErrorView_DescriptionExceededRetryCount_Label" = "超出重试计数。开发人员已收到通知。";

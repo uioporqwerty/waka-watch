@@ -31,6 +31,10 @@ struct LeaderboardRecordView: View {
 struct LeaderboardView: View {
     @ObservedObject var leaderboardViewModel: LeaderboardViewModel
     @State var loadingData = false
+    @State var hasError = false
+    @State var previousLoadHasError = false
+    @State var nextLoadHasError = false
+
     private let profileViewModel: ProfileViewModel
 
     init(viewModel: LeaderboardViewModel, profileViewModel: ProfileViewModel) {
@@ -40,9 +44,21 @@ struct LeaderboardView: View {
     }
 
     var body: some View {
-        if !self.leaderboardViewModel.loaded {
+        if self.hasError {
+            ErrorView(logManager: self.leaderboardViewModel.logManager,
+                      description: LocalizedStringKey("LeaderboardView_Error_Description").toString(),
+                      retryButtonAction: {
+                        try await self.leaderboardViewModel.getPublicLeaderboard(page: nil)
+                        self.hasError = false
+                      })
+        } else if !self.leaderboardViewModel.loaded {
             ProgressView().task {
-                await self.leaderboardViewModel.getPublicLeaderboard(page: nil)
+                do {
+                    try await self.leaderboardViewModel.getPublicLeaderboard(page: nil)
+                } catch {
+                    self.leaderboardViewModel.logManager.reportError(error)
+                    self.hasError = true
+                }
             }
         } else {
             ScrollViewReader { proxy in
@@ -50,11 +66,28 @@ struct LeaderboardView: View {
                     ScrollView(.vertical) {
                         LazyVStack {
                             if self.leaderboardViewModel.previousPage ?? 0 > 0 {
-                                AsyncButton(action: {
-                                    self.loadingData = true
-                                    await self.leaderboardViewModel.loadPreviousPage()
-                                }) {
-                                    Text(LocalizedStringKey("LeaderboardView_Load_Previous_Button"))
+                                if self.previousLoadHasError {
+                                    ErrorView(logManager: self.leaderboardViewModel.logManager,
+                                              description: nil,
+                                              retryButtonAction: {
+                                                    try await self.leaderboardViewModel.loadPreviousPage()
+                                                    self.previousLoadHasError = false
+                                              },
+                                              showDescription: false
+                                            )
+                                } else {
+                                    AsyncButton(action: {
+                                        do {
+                                            self.loadingData = true
+                                            try await self.leaderboardViewModel.loadPreviousPage()
+                                        } catch {
+                                            self.leaderboardViewModel.logManager.reportError(error)
+                                            self.loadingData = false
+                                            self.previousLoadHasError = true
+                                        }
+                                    }) {
+                                        Text(LocalizedStringKey("LeaderboardView_Load_Previous_Button"))
+                                    }
                                 }
                             }
                             ForEach(self.leaderboardViewModel.records) { record in
@@ -73,11 +106,28 @@ struct LeaderboardView: View {
                             }
                             if self.leaderboardViewModel.nextPage ?? self.leaderboardViewModel.totalPages
                                 < self.leaderboardViewModel.totalPages {
-                                AsyncButton(action: {
-                                    self.loadingData = true
-                                    await self.leaderboardViewModel.loadNextPage()
-                                }) {
-                                    Text(LocalizedStringKey("LeaderboardView_Load_Next_Button"))
+                                if self.nextLoadHasError {
+                                    ErrorView(logManager: self.leaderboardViewModel.logManager,
+                                              description: nil,
+                                              retryButtonAction: {
+                                                try await self.leaderboardViewModel.loadNextPage()
+                                                self.nextLoadHasError = false
+                                              },
+                                              showDescription: false
+                                              )
+                                } else {
+                                    AsyncButton(action: {
+                                        do {
+                                            self.loadingData = true
+                                            try await self.leaderboardViewModel.loadNextPage()
+                                        } catch {
+                                            self.leaderboardViewModel.logManager.reportError(error)
+                                            self.loadingData = false
+                                            self.nextLoadHasError = true
+                                        }
+                                    }) {
+                                        Text(LocalizedStringKey("LeaderboardView_Load_Next_Button"))
+                                    }
                                 }
                             }
                         }
