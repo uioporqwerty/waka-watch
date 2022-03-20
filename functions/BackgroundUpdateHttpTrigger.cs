@@ -38,6 +38,9 @@ namespace WakaWatch.Function
         [JsonPropertyName("status_percent_calculated")]
         public double PercentCompleted { get; set; }
 
+        [JsonPropertyName("is_inverse")]
+        public bool IsInverse { get; set; }
+
         [JsonPropertyName("is_snoozed")]
         public bool IsSnoozed { get; set; }
 
@@ -91,6 +94,9 @@ namespace WakaWatch.Function
 
         [JsonPropertyName("modified_at")]
         public DateTime? ModifiedAt { get; set; }
+
+        [JsonPropertyName("is_inverse")]
+        public bool IsInverse { get; set; }
     }
 
     public class BackgroundUpdateHttpTrigger {
@@ -128,7 +134,8 @@ namespace WakaWatch.Function
                         RangeStatusReason = lastDay.RangeStatusReason,
                         ShortRangeStatusReason = lastDay.ShortRangeStatusReason,
                         RangeStatus = lastDay.RangeStatus,
-                        ModifiedAt = goal.ModifiedAt
+                        ModifiedAt = goal.ModifiedAt,
+                        IsInverse = goal.IsInverse
                     });
                 }
             }
