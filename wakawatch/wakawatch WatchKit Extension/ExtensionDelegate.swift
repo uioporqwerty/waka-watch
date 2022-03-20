@@ -26,6 +26,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
     func handle(_ backgroundTasks: Set<WKRefreshBackgroundTask>) {
         self.logManager?.debugMessage("In handle backgroundTasks")
         if !isAuthorized() {
+            self.logManager?.debugMessage("User is not authorized for handling background tasks.")
             return
         }
 

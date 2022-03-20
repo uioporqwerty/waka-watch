@@ -12,24 +12,25 @@ final class DependencyInjection {
         registerViews()
     }
 
-    // swiftlint:disable function_body_length
     private func registerServices() {
         self.container.register(ComplicationService.self) { _ in ComplicationService() }
         self.container.register(RequestFactory.self) { _ in RequestFactory() }
         self.container.register(ChartFactory.self) { _ in ChartFactory() }
+        self.container.register(ConsoleLoggingService.self) { _ in ConsoleLoggingService() }
+        self.container.register(RollbarAPMService.self) { _ in RollbarAPMService() }
+        self.container.register(RollbarLoggingService.self) { _ in RollbarLoggingService() }
 
         #if DEBUG
             self.container.register(TelemetryService.self) { _ in ConsoleTelemetryService() }
-            self.container.register(LoggingService.self) { _ in ConsoleLoggingService() }
-            self.container.register(APMService.self) { _ in NullAPMService() }
         #else
             self.container.register(TelemetryService.self) { _ in RollbarTelemetryService() }
-            self.container.register(LoggingService.self) { _ in RollbarLoggingService() }
         #endif
 
         self.container.register(LogManager.self) { resolver in
-            LogManager(loggingService: resolver.resolve(LoggingService.self)!)
+            LogManager(loggingServices: [resolver.resolve(ConsoleLoggingService.self)!,
+                                        resolver.resolve(RollbarLoggingService.self)!])
         }
+
         self.container.register(AuthenticationService.self) { resolver in
             AuthenticationService(logManager: resolver.resolve(LogManager.self)!,
                                   telemetryService: resolver.resolve(TelemetryService.self)!)
@@ -56,13 +57,6 @@ final class DependencyInjection {
                                authenticationService: resolver.resolve(AuthenticationService.self)!,
                                requestFactory: resolver.resolve(RequestFactory.self)!)
             }
-        #endif
-
-        #if !DEBUG
-        self.container.register(APMService.self) { resolver in
-            RollbarAPMService(networkService: resolver.resolve(NetworkService.self)!,
-                              logManager: resolver.resolve(LogManager.self)!)
-        }
         #endif
 
         self.container.register(NotificationService.self) { resolver in

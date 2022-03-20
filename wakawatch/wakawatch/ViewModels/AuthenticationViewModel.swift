@@ -1,9 +1,9 @@
 import Foundation
+import RollbarNotifier
 
 final class AuthenticationViewModel {
     private let authenticationService: AuthenticationService
     private let networkService: NetworkService
-    private let apmService: APMService
     private let logManager: LogManager
 
     public let telemetry: TelemetryService
@@ -13,12 +13,10 @@ final class AuthenticationViewModel {
     init(authenticationService: AuthenticationService,
          networkService: NetworkService,
          telemetryService: TelemetryService,
-         apmService: APMService,
          logManager: LogManager) {
         self.authenticationService = authenticationService
         self.networkService = networkService
         self.telemetry = telemetryService
-        self.apmService = apmService
         self.logManager = logManager
 
         self.authorizationUrl = self.authenticationService.authorizationUrl
@@ -52,7 +50,18 @@ final class AuthenticationViewModel {
                 ConnectivityService.shared.sendMessage(message, delivery: .guaranteed)
                 ConnectivityService.shared.sendMessage(message, delivery: .failable)
 
-                await self.apmService.setUser()
+                let profileData = try? await self.networkService.getProfileData(userId: nil)
+                guard let profile = profileData?.data else {
+                    self.logManager.errorMessage("Failed to find profile for current user. Cannot set user.")
+                    return
+                }
+
+                guard let configuration = Rollbar.currentConfiguration() else {
+                    self.logManager.errorMessage("Rollbar configuration not set.")
+                    return
+                }
+
+                configuration.person = RollbarPerson(id: profile.id)
                 self.logManager.debugMessage("Authenticated with WakaTime")
             } catch {
                 self.logManager.reportError(error)
