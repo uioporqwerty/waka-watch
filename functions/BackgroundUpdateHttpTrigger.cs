@@ -63,6 +63,12 @@ namespace WakaWatch.Function
 
         [JsonPropertyName("range_status")]
         public string RangeStatus { get; set; }
+
+        [JsonPropertyName("goal_seconds")]
+        public double GoalSeconds { get; set; }
+
+        [JsonPropertyName("actual_seconds")]
+        public double ActualSeconds { get; set; }
     }
 
     public class BackgroundUpdateResponse {
@@ -97,6 +103,12 @@ namespace WakaWatch.Function
 
         [JsonPropertyName("is_inverse")]
         public bool IsInverse { get; set; }
+
+        [JsonPropertyName("goal_seconds")]
+        public double GoalSeconds { get; set; }
+
+        [JsonPropertyName("actual_seconds")]
+        public double ActualSeconds { get; set; }
     }
 
     public class BackgroundUpdateHttpTrigger {
@@ -135,7 +147,9 @@ namespace WakaWatch.Function
                         ShortRangeStatusReason = lastDay.ShortRangeStatusReason,
                         RangeStatus = lastDay.RangeStatus,
                         ModifiedAt = goal.ModifiedAt,
-                        IsInverse = goal.IsInverse
+                        IsInverse = goal.IsInverse,
+                        GoalSeconds = lastDay.GoalSeconds,
+                        ActualSeconds = lastDay.ActualSeconds
                     });
                 }
             }
