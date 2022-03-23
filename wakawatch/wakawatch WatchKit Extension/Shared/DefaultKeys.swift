@@ -7,5 +7,5 @@ struct DefaultsKeys {
     static let complicationCurrentTimeCoded = "complicationCurrentTimeCoded"
     static let complicationGoals = "complicationGoals"
 
-    static let userGoals = "userGoalsv5"
+    static let userGoals = "userGoals"
 }

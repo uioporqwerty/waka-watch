@@ -31,6 +31,9 @@
 "ComplicationSettingsView_Instructions_Text" = "Select up to 3 goals.";
 "Complication_CurrentCodingTimeDescriptor_Text" = "आज का कोडिंग समय";
 "Notifications_GoalAchieved_Title" = "लक्ष्य प्राप्ति!";
+"Notifications_GoalAchieved_Message" = "बधाइयाँ! आपने {0} घंटे और {1} मिनट के लिए कोड किया है। यह आपके लक्ष्य से {2} घंटे और {3} मिनट अधिक है।";
+"Notifications_InverseGoalFailed_Title" = "कोडिंग चेतावनी!";
+"Notifications_InverseGoalFailed_Message" = "आप बहुत कोडिंग कर रहे हैं। आपने {0} घंटे और {1} मिनट के लिए कोड किया है। यह {2} घंटे और {3} मिनट अधिक है जो आप चाहते थे।";
 "ErrorView_RetryButton_Label" = "पुनर्प्रयास";
 "ErrorView_Description_Text" = "कोई अज्ञात त्रुटि उत्पन्न हुई.";
 "ErrorView_DescriptionExceededRetryCount_Label" = "पुन: प्रयास करें गणना पार कर गई. डेवलपर को सूचित कर दिया गया है।";

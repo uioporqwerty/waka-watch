@@ -31,6 +31,9 @@
 "ComplicationSettingsView_Instructions_Text" = "Select up to 3 goals.";
 "Complication_CurrentCodingTimeDescriptor_Text" = "El tiempo de codificación de hoy";
 "Notifications_GoalAchieved_Title" = "¡Objetivo alcanzado!";
+"Notifications_GoalAchieved_Message" = "¡Felicidades! Has codificado durante {0} horas y {1} minutos. Esto es {2} horas y {3} minutos más que su objetivo.";
+"Notifications_InverseGoalFailed_Title" = "¡Advertencia de codificación!";
+"Notifications_InverseGoalFailed_Message" = "Has estado codificando mucho. Has codificado durante {0} horas y {1} minutos. Esto es {2} horas y {3} minutos más de lo que quería.";
 "ErrorView_RetryButton_Label" = "Reintentar";
 "ErrorView_Description_Text" = "Se ha producido un error desconocido.";
 "ErrorView_DescriptionExceededRetryCount_Label" = "Recuento de reintentos excedido. El desarrollador ha sido notificado.";

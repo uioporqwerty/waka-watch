@@ -31,6 +31,9 @@
 "ComplicationSettingsView_Instructions_Text" = "Select up to 3 goals.";
 "Complication_CurrentCodingTimeDescriptor_Text" = "Today's Coding Time";
 "Notifications_GoalAchieved_Title" = "Goal Achieved!";
+"Notifications_GoalAchieved_Message" = "Congratulations! You've coded for {0} hours and {1} minutes. This is {2} hours and {3} minutes more than your goal.";
+"Notifications_InverseGoalFailed_Title" = "Take a Break!";
+"Notifications_InverseGoalFailed_Message" = "You've been coding a lot. You've coded for {0} hours and {1} minutes. This is {2} hours and {3} minutes more than what you wanted.";
 "ErrorView_RetryButton_Label" = "Retry";
 "ErrorView_Description_Text" = "An unknown error occurred.";
 "ErrorView_DescriptionExceededRetryCount_Label" = "Exceeded retry count. The developer has been notified.";

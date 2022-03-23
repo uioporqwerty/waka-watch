@@ -140,6 +140,9 @@ struct LeaderboardView: View {
 
                     VStack {
                         FloatingMenu(menuItem1Action: {
+                            self.leaderboardViewModel
+                                .telemetry
+                                .recordViewEvent(elementName: "TAPPED: Go to profile button")
                             proxy.scrollTo(self.leaderboardViewModel.currentUserRecord!.id, anchor: .center)
                         })
                     }

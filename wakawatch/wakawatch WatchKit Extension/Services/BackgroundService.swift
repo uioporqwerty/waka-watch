@@ -55,17 +55,6 @@ final class BackgroundService: NSObject, URLSessionDownloadDelegate {
                     downloadTask: URLSessionDownloadTask,
                     didFinishDownloadingTo location: URL) {
         processFile(file: location)
-        self.logManager.debugMessage("Marking pending background tasks as completed.")
-
-        if self.pendingBackgroundTask != nil {
-            self.pendingBackgroundTask?.setTaskCompletedWithSnapshot(false)
-            self.backgroundSession?.invalidateAndCancel()
-            self.pendingBackgroundTask = nil
-            self.backgroundSession = nil
-            self.logManager.debugMessage("Pending background task cleared")
-        }
-
-        self.schedule()
     }
 
     func processFile(file: URL) {
@@ -83,10 +72,24 @@ final class BackgroundService: NSObject, URLSessionDownloadDelegate {
         defaults.set(backgroundUpdateResponse.totalTimeCodedInSeconds,
                     forKey: DefaultsKeys.complicationCurrentTimeCoded)
         self.complicationService.updateTimelines()
-        self.notificationService.isPermissionGranted(onGrantedHandler: {
-            self.notificationService.notifyGoalsAchieved(newGoals: backgroundUpdateResponse.goals)
-        })
         self.logManager.debugMessage("Complication updated")
+
+        self.notificationService.isPermissionGranted(onGrantedHandler: {
+            self.logManager.debugMessage("Checking and notifying for goals achieved.")
+            self.notificationService.notifyGoalsAchieved(newGoals: backgroundUpdateResponse.goals)
+        }, alwaysHandler: {
+            self.logManager.debugMessage("Marking pending background tasks as completed.")
+
+            if self.pendingBackgroundTask != nil {
+                self.pendingBackgroundTask?.setTaskCompletedWithSnapshot(false)
+                self.backgroundSession?.invalidateAndCancel()
+                self.pendingBackgroundTask = nil
+                self.backgroundSession = nil
+                self.logManager.debugMessage("Pending background task cleared")
+            }
+
+            self.schedule()
+        })
     }
 
     func schedule() {

@@ -31,6 +31,9 @@
 "ComplicationSettingsView_Instructions_Text" = "Select up to 3 goals.";
 "Complication_CurrentCodingTimeDescriptor_Text" = "今天的编码时间";
 "Notifications_GoalAchieved_Title" = "目标达成！";
+"Notifications_GoalAchieved_Message" = "祝贺！您已经编码了{0}小时{1}分钟。这比您的目标多{2}小时{3}分钟。";
+"Notifications_InverseGoalFailed_Title" = "编码警告！";
+"Notifications_InverseGoalFailed_Message" = "你一直在编码很多。您已经编码了{0}小时{1}分钟。这比您想要的多{2}小时{3}分钟。";
 "ErrorView_RetryButton_Label" = "重试";
 "ErrorView_Description_Text" = "发生未知错误。";
 "ErrorView_DescriptionExceededRetryCount_Label" = "超出重试计数。开发人员已收到通知。";

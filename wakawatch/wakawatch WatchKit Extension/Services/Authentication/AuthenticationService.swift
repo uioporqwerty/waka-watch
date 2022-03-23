@@ -85,7 +85,6 @@ final class AuthenticationService {
 
     func refreshAccessToken() async {
         if !accessIsTokenExpiringOrExpired() {
-            self.logManager.debugMessage("Access token is not expiring or has not expired")
             return
         }
 

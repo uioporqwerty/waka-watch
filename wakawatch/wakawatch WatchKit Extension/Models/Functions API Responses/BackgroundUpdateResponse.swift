@@ -13,4 +13,7 @@ struct ComplicationsUpdateGoalsResponse: Codable {
     let shortRangeStatusReason: String
     let rangeStatus: String
     let modifedAt: String?
+    let isInverse: Bool
+    let goalSeconds: Double
+    let actualSeconds: Double
 }

@@ -27,14 +27,15 @@ final class NotificationService {
         }
     }
 
-    func isPermissionGranted(onGrantedHandler: (() -> Void)? = nil) {
+    func isPermissionGranted(onGrantedHandler: (() -> Void)? = nil, alwaysHandler: (() -> Void)? = nil) {
         self.center.getNotificationSettings { settings in
-            guard settings.authorizationStatus == .authorized else {
+            if settings.authorizationStatus == .authorized {
+                self.logManager.debugMessage("Notification permission granted.")
+                onGrantedHandler?()
+            } else {
                 self.logManager.debugMessage("Notification permission not granted.")
-                return
             }
-            self.logManager.debugMessage("Notification permission granted.")
-            onGrantedHandler?()
+            alwaysHandler?()
         }
     }
 
@@ -62,6 +63,7 @@ final class NotificationService {
         }
 
         guard var currentGoals = currentGoals else {
+            self.logManager.errorMessage("currentGoals is nil. Exiting notification.")
             return
         }
 
@@ -69,15 +71,22 @@ final class NotificationService {
         let currentGoalsMap = currentGoals.reduce(into: [String: ComplicationsUpdateGoalsResponse]()) { $0[$1.id] = $1 }
 
         for (idx, goal) in currentGoals.enumerated() { // Check if any existing goals require a notification
-            if newGoalsMap.contains(where: { $0.key == goal.id }) {
+            if newGoalsMap.contains(where: { $0.key == goal.id }) { // Goal found
                 let newGoal = newGoalsMap[goal.id]
-                guard let newGoal = newGoal else { return }
+                guard let newGoal = newGoal else {
+                    self.logManager.errorMessage("newGoal is nil. Moving to next goal.")
+                    continue
+                }
+                self.logManager.debugMessage("For goal with title \(goal.title)")
+                self.logManager.debugMessage("currentGoal status is '\(goal.rangeStatus)' and newGoal status is '\(newGoal.rangeStatus)'")
 
-                if goal.rangeStatus != "success" && newGoal.rangeStatus == "success" {
+                if (!goal.isInverse && goal.rangeStatus == "pending" && newGoal.rangeStatus == "success") ||
+                   (goal.isInverse && goal.rangeStatus == "pending" && newGoal.rangeStatus == "fail") {
                     self.logManager.debugMessage("Setting up notification.")
                     let content = UNMutableNotificationContent()
-                    content.title = LocalizedStringKey("Notifications_GoalAchieved_Title").toString()
-                    content.body = "Congratulations! You've \(goal.rangeStatusReason)" // TODO: i18n
+
+                    content.title = GoalUtility.getNotificationContentTitle(goal: newGoal)
+                    content.body = GoalUtility.getNotificationContentMessage(goal: newGoal)
 
                     let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1,
                                                                     repeats: false)
@@ -96,6 +105,8 @@ final class NotificationService {
 
                 currentGoals[idx] = newGoal
                 self.logManager.debugMessage("Updating user goals.")
+            } else { // Goal is no longer valid. User removed it from WakaTime.
+                currentGoals.remove(at: idx)
             }
         }
 
@@ -106,5 +117,6 @@ final class NotificationService {
         }
 
         self.storeGoals(currentGoals)
+        self.logManager.debugMessage("Notification check completed.")
     }
 }
