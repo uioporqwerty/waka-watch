@@ -294,6 +294,7 @@
 		6BED9AED2795450F005646C3 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
 		6BED9AFB2795BBB5005646C3 /* AccessTokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenResponse.swift; sourceTree = "<group>"; };
 		6BED9AFF2795D1C0005646C3 /* ConnectivityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivityService.swift; sourceTree = "<group>"; };
+		6BF3284D27EC3AE40038B49D /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6BF5870327C2B35900865D95 /* FloatingMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingMenu.swift; sourceTree = "<group>"; };
 		6BF5870627C2B3E500865D95 /* FloatingMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingMenuItem.swift; sourceTree = "<group>"; };
 		6BFAFE4C27AF81ED00139D2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -899,6 +900,7 @@
 				fr,
 				"zh-Hans",
 				"zh-Hant",
+				de,
 			);
 			mainGroup = 6BED9A6127951549005646C3;
 			packageReferences = (
@@ -1236,6 +1238,7 @@
 				6B4F6D9B27D3C3EE00F1E2C4 /* fr */,
 				6B4F6D9E27D3CCCD00F1E2C4 /* zh-Hans */,
 				6B4F6D9F27D3CDB300F1E2C4 /* zh-Hant */,
+				6BF3284D27EC3AE40038B49D /* de */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
