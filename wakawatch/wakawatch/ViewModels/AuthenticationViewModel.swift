@@ -62,7 +62,6 @@ final class AuthenticationViewModel {
                 }
 
                 configuration.person = RollbarPerson(id: profile.id)
-                self.logManager.debugMessage("Authenticated with WakaTime")
             } catch {
                 self.logManager.reportError(error)
             }
@@ -89,8 +88,6 @@ final class AuthenticationViewModel {
             defaults.set("", forKey: DefaultsKeys.accessToken)
             defaults.set("", forKey: DefaultsKeys.refreshToken)
             defaults.set(false, forKey: DefaultsKeys.authorized)
-
-            self.logManager.debugMessage("Disconnected from WakaTime")
         } catch {
             self.logManager.reportError(error)
         }

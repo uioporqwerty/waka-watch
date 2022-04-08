@@ -11,18 +11,16 @@ final class NotificationService {
     }
 
     func requestAuthorization(authorizedHandler: (() -> Void)? = nil) {
-        self.center.requestAuthorization(options: [.alert, .sound]) { granted, error in
+        self.center.requestAuthorization(options: [.alert, .sound, .provisional]) { granted, error in
             if let error = error {
                 self.logManager.reportError(error)
                 return
             }
 
             if !granted {
-                self.logManager.infoMessage("Notification permission not granted.")
                 return
             }
 
-            self.logManager.infoMessage("Notification permission granted.")
             authorizedHandler?()
         }
     }
@@ -30,11 +28,9 @@ final class NotificationService {
     func isPermissionGranted(onGrantedHandler: (() -> Void)? = nil, alwaysHandler: (() -> Void)? = nil) {
         self.center.getNotificationSettings { settings in
             if settings.authorizationStatus == .authorized {
-                self.logManager.debugMessage("Notification permission granted.")
                 onGrantedHandler?()
-            } else {
-                self.logManager.debugMessage("Notification permission not granted.")
             }
+            
             alwaysHandler?()
         }
     }
@@ -77,12 +73,9 @@ final class NotificationService {
                     self.logManager.errorMessage("newGoal is nil. Moving to next goal.")
                     continue
                 }
-                self.logManager.debugMessage("For goal with title \(goal.title)")
-                self.logManager.debugMessage("currentGoal status is '\(goal.rangeStatus)' and newGoal status is '\(newGoal.rangeStatus)'")
-
-                if (!goal.isInverse && goal.rangeStatus == "pending" && newGoal.rangeStatus == "success") ||
-                   (goal.isInverse && goal.rangeStatus == "pending" && newGoal.rangeStatus == "fail") {
-                    self.logManager.debugMessage("Setting up notification.")
+                
+                if (!goal.isInverse && goal.rangeStatus != "success" && newGoal.rangeStatus == "success") ||
+                   (goal.isInverse && goal.rangeStatus != "success" && newGoal.rangeStatus == "fail") {
                     let content = UNMutableNotificationContent()
 
                     content.title = GoalUtility.getNotificationContentTitle(goal: newGoal)
@@ -104,7 +97,6 @@ final class NotificationService {
                 }
 
                 currentGoals[idx] = newGoal
-                self.logManager.debugMessage("Updating user goals.")
             } else { // Goal is no longer valid. User removed it from WakaTime.
                 currentGoals.remove(at: idx)
             }
@@ -117,6 +109,5 @@ final class NotificationService {
         }
 
         self.storeGoals(currentGoals)
-        self.logManager.debugMessage("Notification check completed.")
     }
 }

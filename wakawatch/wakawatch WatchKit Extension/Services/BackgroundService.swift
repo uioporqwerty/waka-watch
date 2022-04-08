@@ -29,7 +29,6 @@ final class BackgroundService: NSObject, URLSessionDownloadDelegate {
     }
 
     func updateContent() {
-        self.logManager.debugMessage("In BackgroundService updateContent")
         let complicationsUpdateRequest = self.requestFactory.makeComplicationsUpdateRequest()
 
         let config = URLSessionConfiguration.background(withIdentifier: "app.wakawatch.background-refresh")
@@ -43,11 +42,9 @@ final class BackgroundService: NSObject, URLSessionDownloadDelegate {
         let backgroundTask = self.backgroundSession?.downloadTask(with: complicationsUpdateRequest)
         backgroundTask?.resume()
         self.isStarted = true
-        self.logManager.debugMessage("backgroundTask started")
     }
 
     func handleDownload(_ backgroundTask: WKURLSessionRefreshBackgroundTask) {
-        self.logManager.debugMessage("Handling finished download")
         self.pendingBackgroundTask = backgroundTask
     }
 
@@ -72,20 +69,16 @@ final class BackgroundService: NSObject, URLSessionDownloadDelegate {
         defaults.set(backgroundUpdateResponse.totalTimeCodedInSeconds,
                     forKey: DefaultsKeys.complicationCurrentTimeCoded)
         self.complicationService.updateTimelines()
-        self.logManager.debugMessage("Complication updated")
-
+        
         self.notificationService.isPermissionGranted(onGrantedHandler: {
-            self.logManager.debugMessage("Checking and notifying for goals achieved.")
             self.notificationService.notifyGoalsAchieved(newGoals: backgroundUpdateResponse.goals)
         }, alwaysHandler: {
-            self.logManager.debugMessage("Marking pending background tasks as completed.")
-
+            
             if self.pendingBackgroundTask != nil {
                 self.pendingBackgroundTask?.setTaskCompletedWithSnapshot(false)
                 self.backgroundSession?.invalidateAndCancel()
                 self.pendingBackgroundTask = nil
                 self.backgroundSession = nil
-                self.logManager.debugMessage("Pending background task cleared")
             }
 
             self.schedule()
@@ -103,8 +96,6 @@ final class BackgroundService: NSObject, URLSessionDownloadDelegate {
                 self.logManager.reportError(error!)
                 return
             }
-
-            self.logManager.debugMessage("Scheduled for \(preferredDate)")
         }
     }
 

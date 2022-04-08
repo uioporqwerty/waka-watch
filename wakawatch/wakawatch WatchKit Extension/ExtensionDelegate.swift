@@ -17,21 +17,18 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
     }
 
     func applicationDidFinishLaunching() {
-        self.logManager?.debugMessage("In applicationDidFinishLaunching")
         if isAuthorized() && !(self.backgroundService?.isStarted ?? false) {
             self.backgroundService?.schedule()
         }
     }
 
     func handle(_ backgroundTasks: Set<WKRefreshBackgroundTask>) {
-        self.logManager?.debugMessage("In handle backgroundTasks")
         if !isAuthorized() {
             self.logManager?.debugMessage("User is not authorized for handling background tasks.")
             return
         }
 
         for task in backgroundTasks {
-            self.logManager?.debugMessage("Processing task: \(task.debugDescription)")
             switch task {
             case let backgroundTask as WKApplicationRefreshBackgroundTask:
                 self.backgroundService?.updateContent()

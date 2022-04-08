@@ -21,8 +21,6 @@ final class ConnectivityService: NSObject {
         #endif
         WCSession.default.delegate = self
         WCSession.default.activate()
-
-        self.logManager.debugMessage("WCSession activated")
     }
 
     public func sendMessage(_ message: [String: Any],
@@ -36,17 +34,14 @@ final class ConnectivityService: NSObject {
 
         switch delivery {
         case .failable:
-            self.logManager.debugMessage("Sending as failable")
             WCSession.default.sendMessage(
               message,
               replyHandler: optionalMainQueueDispatch(handler: replyHandler),
               errorHandler: optionalMainQueueDispatch(handler: errorHandler)
             )
         case .guaranteed:
-            self.logManager.debugMessage("Sending as guaranteed")
             WCSession.default.transferUserInfo(message)
         case .highPriority:
-            self.logManager.debugMessage("Sending as high priority")
             do {
                 try WCSession.default.updateApplicationContext(message)
             } catch {
@@ -99,19 +94,16 @@ extension ConnectivityService: WCSessionDelegate {
 
     func session(_ session: WCSession,
                  didReceiveMessage message: [String: Any]) {
-        self.logManager.debugMessage("Received immediate message.", data: message)
         setAuthenticationStatus(from: message)
     }
 
     func session(_ session: WCSession,
                  didReceiveUserInfo userInfo: [String: Any] = [:]) {
-        self.logManager.debugMessage("Received user info message", data: userInfo)
         setAuthenticationStatus(from: userInfo)
     }
 
     func session(_ session: WCSession,
                  didReceiveApplicationContext applicationContext: [String: Any]) {
-        self.logManager.debugMessage("Received application context message", data: applicationContext)
         setAuthenticationStatus(from: applicationContext)
     }
 
@@ -146,16 +138,10 @@ extension ConnectivityService: WCSessionDelegate {
             NotificationCenter.default.post(name: Notification.Name("ScheduleBackgroundTasks"),
                                             object: nil)
         }
-        self.logManager.debugMessage("Set user defaults for accessToken and authorized")
     }
 
     #if os(iOS)
-        func sessionDidBecomeInactive(_ session: WCSession) {
-            self.logManager.debugMessage("Connectivity session became inactive")
-        }
-
         func sessionDidDeactivate(_ session: WCSession) {
-            self.logManager.debugMessage("Connectivity session deactivated")
             WCSession.default.activate()
         }
 
@@ -169,7 +155,6 @@ extension ConnectivityService: WCSessionDelegate {
 
     #if os(watchOS)
         func sessionCompanionAppInstalledDidChange(_ session: WCSession) {
-            self.logManager.debugMessage("Companion app install status changed")
             WCSession.default.activate()
         }
     #endif
