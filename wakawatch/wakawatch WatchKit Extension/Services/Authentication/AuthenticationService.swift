@@ -3,6 +3,7 @@ import Foundation
 final class AuthenticationService {
     private var logManager: LogManager
     private var telemetry: TelemetryService
+    private var tokenManager: TokenManager
 
     private var clientId: String?
     private var clientSecret: String?
@@ -10,9 +11,13 @@ final class AuthenticationService {
     public let authorizationUrl: URL
     public let callbackURLScheme = "wakawatch"
 
-    init(logManager: LogManager, telemetryService: TelemetryService) {
+    init(logManager: LogManager,
+         telemetryService: TelemetryService,
+         tokenManager: TokenManager
+        ) {
         self.logManager = logManager
         self.telemetry = telemetryService
+        self.tokenManager = tokenManager
 
         self.clientId = Bundle.main.infoDictionary?["CLIENT_ID"] as? String
         self.clientSecret = Bundle.main.infoDictionary?["CLIENT_SECRET"] as? String
@@ -54,13 +59,10 @@ final class AuthenticationService {
     }
 
     func disconnect() async throws {
-        let defaults = UserDefaults.standard
-        let accessToken = defaults.string(forKey: DefaultsKeys.accessToken)!
-
         let url = URL(string: "\(self.baseUrl)/revoke")
 
         // swiftlint:disable:next line_length
-        let data = "client_id=\(self.clientId!)&client_secret=\(self.clientSecret!)&token=\(accessToken)".data(using: .utf8)!
+        let data = "client_id=\(self.clientId!)&client_secret=\(self.clientSecret!)&token=\(self.tokenManager.getAccessToken())".data(using: .utf8)!
 
         var request = URLRequest(url: url!)
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
@@ -88,13 +90,10 @@ final class AuthenticationService {
             return
         }
 
-        let defaults = UserDefaults.standard
-        let refreshToken = defaults.string(forKey: DefaultsKeys.refreshToken)!
-
         let url = URL(string: "\(self.baseUrl)/token")
 
         // swiftlint:disable:next line_length
-        let data = "client_id=\(self.clientId!)&client_secret=\(self.clientSecret!)&redirect_uri=\(self.callbackURLScheme)://oauth-callback&grant_type=refresh_token&refresh_token=\(refreshToken)".data(using: .utf8)!
+        let data = "client_id=\(self.clientId!)&client_secret=\(self.clientSecret!)&redirect_uri=\(self.callbackURLScheme)://oauth-callback&grant_type=refresh_token&refresh_token=\(self.tokenManager.getRefreshToken())".data(using: .utf8)!
 
         var request = URLRequest(url: url!)
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
@@ -115,8 +114,8 @@ final class AuthenticationService {
             let refreshTokenResponse = try JSONDecoder().decode(AccessTokenResponse.self, from: data)
 
             let defaults = UserDefaults.standard
-            defaults.set(refreshTokenResponse.access_token, forKey: DefaultsKeys.accessToken)
-            defaults.set(refreshTokenResponse.refresh_token, forKey: DefaultsKeys.refreshToken)
+            self.tokenManager.setAccessToken(refreshTokenResponse.access_token)
+            self.tokenManager.setRefreshToken(refreshTokenResponse.refresh_token)
             defaults.set(refreshTokenResponse.expires_at, forKey: DefaultsKeys.tokenExpiration)
 
             let message: [String: Any] = [

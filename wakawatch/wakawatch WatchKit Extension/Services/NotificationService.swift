@@ -30,7 +30,7 @@ final class NotificationService {
             if settings.authorizationStatus == .authorized {
                 onGrantedHandler?()
             }
-            
+
             alwaysHandler?()
         }
     }
@@ -45,6 +45,7 @@ final class NotificationService {
         }
     }
 
+    // swiftlint:disable:next function_body_length
     func notifyGoalsAchieved(newGoals: [ComplicationsUpdateGoalsResponse],
                              completionHandler: (() -> Void)? = nil) {
         let defaults = UserDefaults.standard
@@ -73,7 +74,7 @@ final class NotificationService {
                     self.logManager.errorMessage("newGoal is nil. Moving to next goal.")
                     continue
                 }
-                
+
                 if (!goal.isInverse && goal.rangeStatus != "success" && newGoal.rangeStatus == "success") ||
                    (goal.isInverse && goal.rangeStatus != "success" && newGoal.rangeStatus == "fail") {
                     let content = UNMutableNotificationContent()

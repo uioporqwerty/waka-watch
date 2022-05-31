@@ -9,9 +9,12 @@ final class ConnectivityService: NSObject {
     static let shared = ConnectivityService()
 
     private let logManager: LogManager
+    private let tokenManager: TokenManager
 
     private override init() {
         self.logManager = DependencyInjection.shared.container.resolve(LogManager.self)!
+        self.tokenManager = DependencyInjection.shared.container.resolve(TokenManager.self)!
+
         super.init()
         #if !os(watchOS)
             guard WCSession.isSupported() else {
@@ -129,8 +132,8 @@ extension ConnectivityService: WCSessionDelegate {
         }
 
         let defaults = UserDefaults.standard
-        defaults.set(accessToken, forKey: DefaultsKeys.accessToken)
-        defaults.set(refreshToken, forKey: DefaultsKeys.refreshToken)
+        self.tokenManager.setAccessToken(accessToken)
+        self.tokenManager.setRefreshToken(refreshToken)
         defaults.set(tokenExpiration, forKey: DefaultsKeys.tokenExpiration)
         defaults.set(authorized, forKey: DefaultsKeys.authorized)
 

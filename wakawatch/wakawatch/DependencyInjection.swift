@@ -13,7 +13,13 @@ final class DependencyInjection {
     }
 
     private func registerServices() {
-        self.container.register(RequestFactory.self) { _ in RequestFactory() }
+        self.container.register(KeychainServicesService.self) { _ in KeychainServicesService() }
+        self.container.register(TokenManager.self) { resolver in
+            TokenManager(keychainService: resolver.resolve(KeychainServicesService.self)!)
+        }
+        self.container.register(RequestFactory.self) { resolver in
+            RequestFactory(tokenManager: resolver.resolve(TokenManager.self)!)
+        }
         self.container.register(ConsoleLoggingService.self) { _ in ConsoleLoggingService() }
         self.container.register(RollbarAPMService.self) { _ in RollbarAPMService() }
         self.container.register(RollbarLoggingService.self) { _ in RollbarLoggingService() }
@@ -30,7 +36,9 @@ final class DependencyInjection {
         }
         self.container.register(AuthenticationService.self) { resolver in
             AuthenticationService(logManager: resolver.resolve(LogManager.self)!,
-                                  telemetryService: resolver.resolve(TelemetryService.self)!)
+                                  telemetryService: resolver.resolve(TelemetryService.self)!,
+                                  tokenManager: resolver.resolve(TokenManager.self)!
+                                 )
         }
         self.container.register(NetworkService.self) { resolver in
             WakaTimeNetworkService(logManager: resolver.resolve(LogManager.self)!,
@@ -45,7 +53,9 @@ final class DependencyInjection {
             AuthenticationViewModel(authenticationService: resolver.resolve(AuthenticationService.self)!,
                                     networkService: resolver.resolve(NetworkService.self)!,
                                     telemetryService: resolver.resolve(TelemetryService.self)!,
-                                    logManager: resolver.resolve(LogManager.self)!)
+                                    logManager: resolver.resolve(LogManager.self)!,
+                                    tokenManager: resolver.resolve(TokenManager.self)!
+                                   )
         }
         self.container.register(SplashViewModel.self) { resolver in
             SplashViewModel(telemetryService: resolver.resolve(TelemetryService.self)!)

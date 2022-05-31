@@ -62,6 +62,14 @@
 		6BAF14B927CEF9A900370EED /* WatchInstallationCheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAF14B827CEF9A900370EED /* WatchInstallationCheckView.swift */; };
 		6BAF14BB27CEFF2100370EED /* WatchInstallationCheckViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAF14BA27CEFF2100370EED /* WatchInstallationCheckViewModel.swift */; };
 		6BAF14BD27CF12D400370EED /* BackgroundService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAF14BC27CF12D400370EED /* BackgroundService.swift */; };
+		6BBF65822845CAD3004C3081 /* KeychainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBF65812845CAD3004C3081 /* KeychainError.swift */; };
+		6BBF65832845CAD3004C3081 /* KeychainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBF65812845CAD3004C3081 /* KeychainError.swift */; };
+		6BBF65892845CBA6004C3081 /* KeychainServicesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBF65882845CBA6004C3081 /* KeychainServicesService.swift */; };
+		6BBF658A2845CBA6004C3081 /* KeychainServicesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBF65882845CBA6004C3081 /* KeychainServicesService.swift */; };
+		6BBF658C2845D383004C3081 /* TokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBF658B2845D383004C3081 /* TokenManager.swift */; };
+		6BBF658D2845D383004C3081 /* TokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBF658B2845D383004C3081 /* TokenManager.swift */; };
+		6BBF658F2845D47D004C3081 /* KeychainKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBF658E2845D47D004C3081 /* KeychainKeys.swift */; };
+		6BBF65902845D47D004C3081 /* KeychainKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBF658E2845D47D004C3081 /* KeychainKeys.swift */; };
 		6BD4C17527BD3BCB00A72DBD /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD4C17427BD3BCB00A72DBD /* ViewExtensions.swift */; };
 		6BD4C17627BD3BCB00A72DBD /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD4C17427BD3BCB00A72DBD /* ViewExtensions.swift */; };
 		6BD52EF9279FCB3400247BFB /* RollbarAPMService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD52EF8279FCB3300247BFB /* RollbarAPMService.swift */; };
@@ -251,6 +259,10 @@
 		6BAF14BA27CEFF2100370EED /* WatchInstallationCheckViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchInstallationCheckViewModel.swift; sourceTree = "<group>"; };
 		6BAF14BC27CF12D400370EED /* BackgroundService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundService.swift; sourceTree = "<group>"; };
 		6BBC1A39279DFACF00FFEBFF /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		6BBF65812845CAD3004C3081 /* KeychainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainError.swift; sourceTree = "<group>"; };
+		6BBF65882845CBA6004C3081 /* KeychainServicesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainServicesService.swift; sourceTree = "<group>"; };
+		6BBF658B2845D383004C3081 /* TokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenManager.swift; sourceTree = "<group>"; };
+		6BBF658E2845D47D004C3081 /* KeychainKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainKeys.swift; sourceTree = "<group>"; };
 		6BD4C17427BD3BCB00A72DBD /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		6BD52EF8279FCB3300247BFB /* RollbarAPMService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollbarAPMService.swift; sourceTree = "<group>"; };
 		6BD52F17279FD03900247BFB /* LoggingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingService.swift; sourceTree = "<group>"; };
@@ -379,6 +391,7 @@
 			isa = PBXGroup;
 			children = (
 				6B30B95627E1711D003BEED0 /* RuntimeError.swift */,
+				6BBF65812845CAD3004C3081 /* KeychainError.swift */,
 			);
 			path = Errors;
 			sourceTree = "<group>";
@@ -391,6 +404,7 @@
 				6BE5DE3E27A64E630072FF0E /* SeverityLevel.swift */,
 				6B23142927A59B8700477259 /* ConnectivityMessageKeys.swift */,
 				6BDD8B4127C467EB00BB1493 /* SummaryRange.swift */,
+				6BBF658E2845D47D004C3081 /* KeychainKeys.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -483,6 +497,15 @@
 			children = (
 			);
 			path = Complications;
+			sourceTree = "<group>";
+		};
+		6BBF65842845CB12004C3081 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				6BBF65882845CBA6004C3081 /* KeychainServicesService.swift */,
+				6BBF658B2845D383004C3081 /* TokenManager.swift */,
+			);
+			path = Storage;
 			sourceTree = "<group>";
 		};
 		6BE5DE3A27A6401F0072FF0E /* Extensions */ = {
@@ -672,6 +695,7 @@
 		6BED9AFE2795D1B3005646C3 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				6BBF65842845CB12004C3081 /* Storage */,
 				6B16F97527C97EC0009E98E3 /* Charts */,
 				6B410A4A27C32E640044BB08 /* Network */,
 				6BE5DE7E27A97CE30072FF0E /* APM */,
@@ -1023,7 +1047,7 @@
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /usr/bin/python;
+			shellPath = /usr/bin/python3;
 			shellScript = "\"\"\"\nPython script that zips and uploads a dSYM file package to Rollbar\nduring an iOS app's build process.\n\nFor instructions on setting up this script for your app in Xcode, see\nthe README at https://github.com/rollbar/rollbar-ios/blob/master/README.md.\n\"\"\"\n\nimport os\nimport subprocess\nimport zipfile\n\nif (os.environ['DEBUG_INFORMATION_FORMAT'] != 'dwarf-with-dsym' or\n        os.environ['EFFECTIVE_PLATFORM_NAME'] == '-iphonesimulator'):\n    exit(0)\n\nACCESS_TOKEN = 'POST_SERVER_ITEM_ACCESS_TOKEN'\n\ndsym_file_path = os.path.join(os.environ['DWARF_DSYM_FOLDER_PATH'],\n                              os.environ['DWARF_DSYM_FILE_NAME'])\nzip_location = '%s.zip' % (dsym_file_path)\n\nos.chdir(os.environ['DWARF_DSYM_FOLDER_PATH'])\nwith zipfile.ZipFile(zip_location, 'w', zipfile.ZIP_DEFLATED) as zipf:\n    for root, dirs, files in os.walk(os.environ['DWARF_DSYM_FILE_NAME']):\n        zipf.write(root)\n\n        for f in files:\n            zipf.write(os.path.join(root, f))\n\n# You may need to change the following path to match your application\n# settings and Xcode version\nplist_command = '/usr/libexec/PlistBuddy -c \"Print :CFBundleVersion\" \"%s\"'\np = subprocess.Popen(plist_command % os.environ['PRODUCT_SETTINGS_PATH'],\n                     stdout=subprocess.PIPE, shell=True)\nstdout, stderr = p.communicate()\nversion = stdout.strip()\n\ncurl_command = ('curl -X POST \"https://api.rollbar.com/api/1/dsym\" '\n                '-F access_token=%s -F version=%s -F bundle_identifier=\"%s\" '\n                '-F dsym=@\"%s\"')\np = subprocess.Popen(curl_command % (ACCESS_TOKEN, version,\n                     os.environ['PRODUCT_BUNDLE_IDENTIFIER'], zip_location),\n                     shell=True)\np.communicate()\n\n";
 		};
 		6BF9663D27AE282900F95D1F /* SwiftLint */ = {
@@ -1054,6 +1078,7 @@
 				6BDD8B4227C467EB00BB1493 /* SummaryRange.swift in Sources */,
 				6B30B95727E1711D003BEED0 /* RuntimeError.swift in Sources */,
 				6BD52F1B279FD07300247BFB /* RollbarLoggingService.swift in Sources */,
+				6BBF65822845CAD3004C3081 /* KeychainError.swift in Sources */,
 				6BA78C8027A46CF0005149BC /* SplashView.swift in Sources */,
 				6BAF14B927CEF9A900370EED /* WatchInstallationCheckView.swift in Sources */,
 				6B23142A27A59B8700477259 /* ConnectivityMessageKeys.swift in Sources */,
@@ -1063,7 +1088,9 @@
 				6BED9A6E2795154A005646C3 /* WakaWatchApp.swift in Sources */,
 				6BE5DE4527A653440072FF0E /* ConsoleLoggingService.swift in Sources */,
 				6BED9B002795D1C0005646C3 /* ConnectivityService.swift in Sources */,
+				6BBF65892845CBA6004C3081 /* KeychainServicesService.swift in Sources */,
 				6B5CFC3C27CBBBB10014271D /* NetworkService.swift in Sources */,
+				6BBF658F2845D47D004C3081 /* KeychainKeys.swift in Sources */,
 				6B410A4C27C32E760044BB08 /* RequestFactory.swift in Sources */,
 				6BE5DE6427A8C0EA0072FF0E /* ConsoleTelemetryService.swift in Sources */,
 				6BF5870427C2B35900865D95 /* FloatingMenu.swift in Sources */,
@@ -1082,6 +1109,7 @@
 				6B890F0527BC554000CCC13A /* DateUtility.swift in Sources */,
 				6BD52F18279FD03900247BFB /* LoggingService.swift in Sources */,
 				6BE5DE6127A8BDBB0072FF0E /* RollbarTelemetryService.swift in Sources */,
+				6BBF658C2845D383004C3081 /* TokenManager.swift in Sources */,
 				6B5CFC3127CB0B520014271D /* GoalsResponse.swift in Sources */,
 				6BD4C17527BD3BCB00A72DBD /* ViewExtensions.swift in Sources */,
 				6BE5DE7B27A974690072FF0E /* SummaryResponse.swift in Sources */,
@@ -1158,10 +1186,13 @@
 				6BED9AE227951F80005646C3 /* SummaryView.swift in Sources */,
 				6BED9B012795D1C0005646C3 /* ConnectivityService.swift in Sources */,
 				6BD52F19279FD03900247BFB /* LoggingService.swift in Sources */,
+				6BBF65832845CAD3004C3081 /* KeychainError.swift in Sources */,
 				6BE5DE3C27A6402D0072FF0E /* StringExtensions.swift in Sources */,
+				6BBF658D2845D383004C3081 /* TokenManager.swift in Sources */,
 				6BE5DE4627A653440072FF0E /* ConsoleLoggingService.swift in Sources */,
 				6B8A4859279D05060071566F /* ProfileViewModel.swift in Sources */,
 				6BE4A98127DCFB130048463B /* UserDefaultsExtensions.swift in Sources */,
+				6BBF65902845D47D004C3081 /* KeychainKeys.swift in Sources */,
 				6BE5DE6527A8C0EA0072FF0E /* ConsoleTelemetryService.swift in Sources */,
 				6B8A485E279D1A2C0071566F /* LeaderboardResponse.swift in Sources */,
 				6B5CFC3527CB0E450014271D /* ComplicationSettingsViewModel.swift in Sources */,
@@ -1169,6 +1200,7 @@
 				6B9E1112279C945800F4DC93 /* SummaryViewModel.swift in Sources */,
 				6BE5DE4027A64E630072FF0E /* SeverityLevel.swift in Sources */,
 				6BE5DE7827A90CB00072FF0E /* ConnectViewModel.swift in Sources */,
+				6BBF658A2845CBA6004C3081 /* KeychainServicesService.swift in Sources */,
 				6BE5DE5F27A8BDAC0072FF0E /* TelemetryService.swift in Sources */,
 				6B16F97727C97ED5009E98E3 /* ChartFactory.swift in Sources */,
 				6B29476B279642EF00311E1E /* WakaTimeNetworkService.swift in Sources */,

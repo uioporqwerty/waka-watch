@@ -4,6 +4,7 @@ final class SettingsViewModel: ObservableObject {
 
     private let networkService: NetworkService
     private let authenticationService: AuthenticationService
+    private let tokenManager: TokenManager
 
     public let logManager: LogManager
     public let telemetry: TelemetryService
@@ -11,11 +12,14 @@ final class SettingsViewModel: ObservableObject {
     init(networkService: NetworkService,
          authenticationService: AuthenticationService,
          logManager: LogManager,
-         telemetryService: TelemetryService) {
+         telemetryService: TelemetryService,
+         tokenManager: TokenManager
+        ) {
         self.networkService = networkService
         self.authenticationService = authenticationService
         self.logManager = logManager
         self.telemetry = telemetryService
+        self.tokenManager = tokenManager
     }
 
     func load() {
@@ -45,7 +49,7 @@ final class SettingsViewModel: ObservableObject {
             ConnectivityService.shared.sendMessage(message, delivery: .failable)
 
             let defaults = UserDefaults.standard
-            defaults.set("", forKey: DefaultsKeys.accessToken)
+            self.tokenManager.removeAll()
             defaults.set(false, forKey: DefaultsKeys.authorized)
 
             self.telemetry

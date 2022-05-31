@@ -12,9 +12,16 @@ final class DependencyInjection {
         registerViews()
     }
 
+    // swiftlint:disable:next function_body_length
     private func registerServices() {
+        self.container.register(KeychainServicesService.self) { _ in KeychainServicesService() }
+        self.container.register(TokenManager.self) { resolver in
+            TokenManager(keychainService: resolver.resolve(KeychainServicesService.self)!)
+        }
         self.container.register(ComplicationService.self) { _ in ComplicationService() }
-        self.container.register(RequestFactory.self) { _ in RequestFactory() }
+        self.container.register(RequestFactory.self) { resolver in
+            RequestFactory(tokenManager: resolver.resolve(TokenManager.self)!)
+        }
         self.container.register(ChartFactory.self) { _ in ChartFactory() }
         self.container.register(ConsoleLoggingService.self) { _ in ConsoleLoggingService() }
         self.container.register(RollbarAPMService.self) { _ in RollbarAPMService() }
@@ -33,7 +40,9 @@ final class DependencyInjection {
 
         self.container.register(AuthenticationService.self) { resolver in
             AuthenticationService(logManager: resolver.resolve(LogManager.self)!,
-                                  telemetryService: resolver.resolve(TelemetryService.self)!)
+                                  telemetryService: resolver.resolve(TelemetryService.self)!,
+                                  tokenManager: resolver.resolve(TokenManager.self)!
+                                 )
         }
 
         #if DEBUG
@@ -97,7 +106,9 @@ final class DependencyInjection {
             SettingsViewModel(networkService: resolver.resolve(NetworkService.self)!,
                               authenticationService: resolver.resolve(AuthenticationService.self)!,
                               logManager: resolver.resolve(LogManager.self)!,
-                              telemetryService: resolver.resolve(TelemetryService.self)!)
+                              telemetryService: resolver.resolve(TelemetryService.self)!,
+                              tokenManager: resolver.resolve(TokenManager.self)!
+                             )
         }
         self.container.register(ConnectViewModel.self) { resolver in
             ConnectViewModel(telemetryService: resolver.resolve(TelemetryService.self)!,

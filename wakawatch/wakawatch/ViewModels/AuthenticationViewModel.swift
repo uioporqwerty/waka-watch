@@ -5,6 +5,7 @@ final class AuthenticationViewModel {
     private let authenticationService: AuthenticationService
     private let networkService: NetworkService
     private let logManager: LogManager
+    private let tokenManager: TokenManager
 
     public let telemetry: TelemetryService
     public let authorizationUrl: URL
@@ -13,11 +14,14 @@ final class AuthenticationViewModel {
     init(authenticationService: AuthenticationService,
          networkService: NetworkService,
          telemetryService: TelemetryService,
-         logManager: LogManager) {
+         logManager: LogManager,
+         tokenManager: TokenManager
+        ) {
         self.authenticationService = authenticationService
         self.networkService = networkService
         self.telemetry = telemetryService
         self.logManager = logManager
+        self.tokenManager = tokenManager
 
         self.authorizationUrl = self.authenticationService.authorizationUrl
         self.callbackURLScheme = self.authenticationService.callbackURLScheme
@@ -35,8 +39,8 @@ final class AuthenticationViewModel {
                 }
 
                 let defaults = UserDefaults.standard
-                defaults.set(accessTokenResponse.access_token, forKey: DefaultsKeys.accessToken)
-                defaults.set(accessTokenResponse.refresh_token, forKey: DefaultsKeys.refreshToken)
+                self.tokenManager.setAccessToken(accessTokenResponse.access_token)
+                self.tokenManager.setRefreshToken(accessTokenResponse.refresh_token)
                 defaults.set(accessTokenResponse.expires_at, forKey: DefaultsKeys.tokenExpiration)
                 defaults.set(true, forKey: DefaultsKeys.authorized)
 
@@ -85,8 +89,7 @@ final class AuthenticationViewModel {
             ConnectivityService.shared.sendMessage(message, delivery: .failable)
 
             let defaults = UserDefaults.standard
-            defaults.set("", forKey: DefaultsKeys.accessToken)
-            defaults.set("", forKey: DefaultsKeys.refreshToken)
+            self.tokenManager.removeAll()
             defaults.set(false, forKey: DefaultsKeys.authorized)
         } catch {
             self.logManager.reportError(error)

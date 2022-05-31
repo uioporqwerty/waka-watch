@@ -69,11 +69,11 @@ final class BackgroundService: NSObject, URLSessionDownloadDelegate {
         defaults.set(backgroundUpdateResponse.totalTimeCodedInSeconds,
                     forKey: DefaultsKeys.complicationCurrentTimeCoded)
         self.complicationService.updateTimelines()
-        
+
         self.notificationService.isPermissionGranted(onGrantedHandler: {
             self.notificationService.notifyGoalsAchieved(newGoals: backgroundUpdateResponse.goals)
         }, alwaysHandler: {
-            
+
             if self.pendingBackgroundTask != nil {
                 self.pendingBackgroundTask?.setTaskCompletedWithSnapshot(false)
                 self.backgroundSession?.invalidateAndCancel()

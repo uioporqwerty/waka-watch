@@ -5,19 +5,21 @@ final class RequestFactory {
     private let clientSecret: String?
     private var accessToken: String?
     private var complicationsFunctionUrl: String?
+    private let tokenManager: TokenManager
     private let baseUrl = "https://wakatime.com/api/v1"
 
-    init() {
+    init(tokenManager: TokenManager) {
         self.clientId = Bundle.main.infoDictionary?["CLIENT_ID"] as? String
         self.clientSecret = Bundle.main.infoDictionary?["CLIENT_SECRET"] as? String
         self.complicationsFunctionUrl = Bundle.main.infoDictionary?["AZURE_FUNCTION_COMPLICATIONS_URL"] as? String
+        self.tokenManager = tokenManager
     }
 
     func makeSummaryRequest(_ range: SummaryRange = .Today) -> URLRequest {
         var urlComponents = URLComponents(string: "\(baseUrl)/users/current/summaries")!
         urlComponents.queryItems = [
             URLQueryItem(name: "client_secret", value: self.clientSecret),
-            URLQueryItem(name: "access_token", value: self.getAccessToken()),
+            URLQueryItem(name: "access_token", value: self.tokenManager.getAccessToken()),
             URLQueryItem(name: "range", value: range.rawValue)
         ]
 
@@ -33,7 +35,7 @@ final class RequestFactory {
         var urlComponents = URLComponents(string: url)!
         urlComponents.queryItems = [
             URLQueryItem(name: "client_secret", value: self.clientSecret),
-            URLQueryItem(name: "access_token", value: self.getAccessToken())
+            URLQueryItem(name: "access_token", value: self.tokenManager.getAccessToken())
         ]
 
         return URLRequest(url: urlComponents.url!)
@@ -45,7 +47,7 @@ final class RequestFactory {
         var urlComponents = URLComponents(string: url)!
         urlComponents.queryItems = [
             URLQueryItem(name: "client_secret", value: self.clientSecret),
-            URLQueryItem(name: "access_token", value: self.getAccessToken())
+            URLQueryItem(name: "access_token", value: self.tokenManager.getAccessToken())
         ]
 
         return URLRequest(url: urlComponents.url!)
@@ -55,7 +57,7 @@ final class RequestFactory {
         var urlComponents = URLComponents(string: "\(baseUrl)/leaders")!
         var urlQueryItems = [
             URLQueryItem(name: "client_secret", value: self.clientSecret),
-            URLQueryItem(name: "access_token", value: self.getAccessToken())
+            URLQueryItem(name: "access_token", value: self.tokenManager.getAccessToken())
         ]
 
         if page != nil {
@@ -68,18 +70,9 @@ final class RequestFactory {
     }
 
     func makeComplicationsUpdateRequest() -> URLRequest {
-        let url = "\(self.complicationsFunctionUrl!)&access_token=\(self.getAccessToken()!)"
+        let url = "\(self.complicationsFunctionUrl!)&access_token=\(self.tokenManager.getAccessToken())"
         print(url)
         let urlComponents = URLComponents(string: url)!
         return URLRequest(url: urlComponents.url!)
-    }
-
-    private func getAccessToken() -> String? {
-        if self.accessToken == nil || self.accessToken == "" {
-            let defaults = UserDefaults.standard
-            self.accessToken = defaults.string(forKey: DefaultsKeys.accessToken)
-        }
-
-        return self.accessToken
     }
 }
