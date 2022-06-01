@@ -263,6 +263,7 @@
 		6BBF65882845CBA6004C3081 /* KeychainServicesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainServicesService.swift; sourceTree = "<group>"; };
 		6BBF658B2845D383004C3081 /* TokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenManager.swift; sourceTree = "<group>"; };
 		6BBF658E2845D47D004C3081 /* KeychainKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainKeys.swift; sourceTree = "<group>"; };
+		6BC1D08F2846F8E60091BFC9 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6BD4C17427BD3BCB00A72DBD /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		6BD52EF8279FCB3300247BFB /* RollbarAPMService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollbarAPMService.swift; sourceTree = "<group>"; };
 		6BD52F17279FD03900247BFB /* LoggingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingService.swift; sourceTree = "<group>"; };
@@ -925,6 +926,7 @@
 				"zh-Hans",
 				"zh-Hant",
 				de,
+				ru,
 			);
 			mainGroup = 6BED9A6127951549005646C3;
 			packageReferences = (
@@ -1271,6 +1273,7 @@
 				6B4F6D9E27D3CCCD00F1E2C4 /* zh-Hans */,
 				6B4F6D9F27D3CDB300F1E2C4 /* zh-Hant */,
 				6BF3284D27EC3AE40038B49D /* de */,
+				6BC1D08F2846F8E60091BFC9 /* ru */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
