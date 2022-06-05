@@ -27,10 +27,9 @@ final class NotificationService {
 
     func isPermissionGranted(onGrantedHandler: (() -> Void)? = nil, alwaysHandler: (() -> Void)? = nil) {
         self.center.getNotificationSettings { settings in
-            if settings.authorizationStatus == .authorized {
+            if settings.authorizationStatus == .authorized || settings.authorizationStatus == .provisional {
                 onGrantedHandler?()
             }
-
             alwaysHandler?()
         }
     }
