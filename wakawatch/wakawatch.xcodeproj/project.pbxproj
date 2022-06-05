@@ -241,6 +241,8 @@
 		6B5CFC3627CB23E80014271D /* SelectableRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableRowView.swift; sourceTree = "<group>"; };
 		6B5CFC3827CBBAFD0014271D /* LocalNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNetworkService.swift; sourceTree = "<group>"; };
 		6B5CFC3A27CBBB1B0014271D /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		6B6F5118284D519000B16889 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		6B6F5119284D536C00B16889 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		6B8A4856279D03780071566F /* ProfileResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileResponse.swift; sourceTree = "<group>"; };
 		6B8A4858279D05060071566F /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		6B8A485B279D081B0071566F /* DateUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtility.swift; sourceTree = "<group>"; };
@@ -927,6 +929,8 @@
 				"zh-Hant",
 				de,
 				ru,
+				"pt-BR",
+				"pt-PT",
 			);
 			mainGroup = 6BED9A6127951549005646C3;
 			packageReferences = (
@@ -1274,6 +1278,8 @@
 				6B4F6D9F27D3CDB300F1E2C4 /* zh-Hant */,
 				6BF3284D27EC3AE40038B49D /* de */,
 				6BC1D08F2846F8E60091BFC9 /* ru */,
+				6B6F5118284D519000B16889 /* pt-BR */,
+				6B6F5119284D536C00B16889 /* pt-PT */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
