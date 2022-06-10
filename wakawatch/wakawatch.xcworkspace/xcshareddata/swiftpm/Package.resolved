@@ -1,79 +1,86 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "BetterSafariView",
-        "repositoryURL": "https://github.com/stleamist/BetterSafariView.git",
-        "state": {
-          "branch": "main",
-          "revision": "9c051d20dbb50fa61d014d87b4ab6c5504408a73",
-          "version": null
-        }
-      },
-      {
-        "package": "Kingfisher",
-        "repositoryURL": "https://github.com/onevcat/Kingfisher.git",
-        "state": {
-          "branch": "master",
-          "revision": "c21f9abbfa29dd3e1456387503d722ca5d11a71e",
-          "version": null
-        }
-      },
-      {
-        "package": "KSCrash",
-        "repositoryURL": "https://github.com/kstenerud/KSCrash.git",
-        "state": {
-          "branch": null,
-          "revision": "f45a917d93928b32626f3268239c58a6cdd852bb",
-          "version": "1.15.25"
-        }
-      },
-      {
-        "package": "PLCrashReporter",
-        "repositoryURL": "https://github.com/microsoft/plcrashreporter.git",
-        "state": {
-          "branch": null,
-          "revision": "6b27393cad517c067dceea85fadf050e70c4ceaa",
-          "version": "1.10.1"
-        }
-      },
-      {
-        "package": "RollbarSDK",
-        "repositoryURL": "https://github.com/rollbar/rollbar-apple.git",
-        "state": {
-          "branch": null,
-          "revision": "c3553f1433669bf4d047979729978b7d73d65181",
-          "version": "2.0.0-beta.23"
-        }
-      },
-      {
-        "package": "SwiftUICharts",
-        "repositoryURL": "https://github.com/willdale/SwiftUICharts.git",
-        "state": {
-          "branch": "main",
-          "revision": "f395a76ca6a4240ac3925c13222e55bf33a01be6",
-          "version": null
-        }
-      },
-      {
-        "package": "SwiftVersionCompare",
-        "repositoryURL": "https://github.com/mflknr/SwiftVersionCompare.git",
-        "state": {
-          "branch": "main",
-          "revision": "98169afd739783da8af2fe1805726bf6c450c346",
-          "version": null
-        }
-      },
-      {
-        "package": "Swinject",
-        "repositoryURL": "https://github.com/Swinject/Swinject.git",
-        "state": {
-          "branch": "master",
-          "revision": "f10b6e9ebff440f985c43008f7c2d097639fcb81",
-          "version": null
-        }
+  "pins" : [
+    {
+      "identity" : "bettersafariview",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/stleamist/BetterSafariView.git",
+      "state" : {
+        "revision" : "be7248720af18c57c7a1348b20f6212379b28c6b",
+        "version" : "2.4.0"
       }
-    ]
-  },
-  "version": 1
+    },
+    {
+      "identity" : "kingfisher",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/onevcat/Kingfisher.git",
+      "state" : {
+        "revision" : "2de32a15bdd640a30ee9972a40b031fc604fc880",
+        "version" : "7.2.3"
+      }
+    },
+    {
+      "identity" : "kscrash",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/kstenerud/KSCrash.git",
+      "state" : {
+        "revision" : "f45a917d93928b32626f3268239c58a6cdd852bb",
+        "version" : "1.15.25"
+      }
+    },
+    {
+      "identity" : "plcrashreporter",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/microsoft/plcrashreporter.git",
+      "state" : {
+        "revision" : "6b27393cad517c067dceea85fadf050e70c4ceaa",
+        "version" : "1.10.1"
+      }
+    },
+    {
+      "identity" : "rollbar-apple",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/rollbar/rollbar-apple.git",
+      "state" : {
+        "revision" : "c3553f1433669bf4d047979729978b7d73d65181",
+        "version" : "2.0.0-beta.23"
+      }
+    },
+    {
+      "identity" : "swift-docc-plugin",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-docc-plugin",
+      "state" : {
+        "revision" : "3303b164430d9a7055ba484c8ead67a52f7b74f6",
+        "version" : "1.0.0"
+      }
+    },
+    {
+      "identity" : "swiftuicharts",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/willdale/SwiftUICharts.git",
+      "state" : {
+        "revision" : "7bca99ef04dd6e46ec9621e8700f2392697f0f8d",
+        "version" : "2.10.0"
+      }
+    },
+    {
+      "identity" : "swiftversioncompare",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/mflknr/SwiftVersionCompare.git",
+      "state" : {
+        "revision" : "98169afd739783da8af2fe1805726bf6c450c346",
+        "version" : "1.1.0"
+      }
+    },
+    {
+      "identity" : "swinject",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Swinject/Swinject.git",
+      "state" : {
+        "revision" : "f10b6e9ebff440f985c43008f7c2d097639fcb81",
+        "version" : "2.8.1"
+      }
+    }
+  ],
+  "version" : 2
 }

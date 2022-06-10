@@ -24,8 +24,6 @@
 		6B38A90527C053770020B7DE /* ComplicationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B38A90427C053770020B7DE /* ComplicationViewModel.swift */; };
 		6B410A3A27C2D77C0044BB08 /* AppInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B410A3927C2D77C0044BB08 /* AppInformation.swift */; };
 		6B410A3B27C2D77C0044BB08 /* AppInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B410A3927C2D77C0044BB08 /* AppInformation.swift */; };
-		6B410A3E27C2E6000044BB08 /* SwiftVersionCompare in Frameworks */ = {isa = PBXBuildFile; productRef = 6B410A3D27C2E6000044BB08 /* SwiftVersionCompare */; };
-		6B410A4027C2E6580044BB08 /* SwiftVersionCompare in Frameworks */ = {isa = PBXBuildFile; productRef = 6B410A3F27C2E6580044BB08 /* SwiftVersionCompare */; };
 		6B410A4227C2E6860044BB08 /* VersionCheckerUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B410A4127C2E6860044BB08 /* VersionCheckerUtility.swift */; };
 		6B410A4327C2E6860044BB08 /* VersionCheckerUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B410A4127C2E6860044BB08 /* VersionCheckerUtility.swift */; };
 		6B410A4C27C32E760044BB08 /* RequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B410A4B27C32E760044BB08 /* RequestFactory.swift */; };
@@ -42,10 +40,16 @@
 		6B5CFC3927CBBAFD0014271D /* LocalNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5CFC3827CBBAFD0014271D /* LocalNetworkService.swift */; };
 		6B5CFC3B27CBBB1B0014271D /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5CFC3A27CBBB1B0014271D /* NetworkService.swift */; };
 		6B5CFC3C27CBBBB10014271D /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5CFC3A27CBBB1B0014271D /* NetworkService.swift */; };
+		6B6F512628540DF900B16889 /* BetterSafariView in Frameworks */ = {isa = PBXBuildFile; productRef = 6B6F512528540DF900B16889 /* BetterSafariView */; };
+		6B6F512928540EC900B16889 /* SwiftVersionCompare in Frameworks */ = {isa = PBXBuildFile; productRef = 6B6F512828540EC900B16889 /* SwiftVersionCompare */; };
+		6B6F512C28540FB500B16889 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 6B6F512B28540FB500B16889 /* SwiftUICharts */; };
+		6B6F512F2854107000B16889 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 6B6F512E2854107000B16889 /* Kingfisher */; };
+		6B6F5132285410D700B16889 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 6B6F5131285410D700B16889 /* Swinject */; };
+		6B6F51362854112F00B16889 /* SwiftVersionCompare in Frameworks */ = {isa = PBXBuildFile; productRef = 6B6F51352854112F00B16889 /* SwiftVersionCompare */; };
+		6B6F51382854114A00B16889 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 6B6F51372854114A00B16889 /* Swinject */; };
 		6B7E479B27AA0485000D5DE7 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA78C8127A46F36005149BC /* ActivityIndicator.swift */; };
 		6B7E479D27AA04A7000D5DE7 /* AsyncButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA78C8F27A492FB005149BC /* AsyncButton.swift */; };
 		6B890F0527BC554000CCC13A /* DateUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8A485B279D081B0071566F /* DateUtility.swift */; };
-		6B890F0827BC70DF00CCC13A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 6B890F0727BC70DF00CCC13A /* Kingfisher */; };
 		6B8A4857279D03780071566F /* ProfileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8A4856279D03780071566F /* ProfileResponse.swift */; };
 		6B8A4859279D05060071566F /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8A4858279D05060071566F /* ProfileViewModel.swift */; };
 		6B8A485C279D081B0071566F /* DateUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8A485B279D081B0071566F /* DateUtility.swift */; };
@@ -80,8 +84,6 @@
 		6BD52F1E279FD1A300247BFB /* RollbarNotifier in Frameworks */ = {isa = PBXBuildFile; productRef = 6BD52F1D279FD1A300247BFB /* RollbarNotifier */; };
 		6BD52F20279FD1AA00247BFB /* RollbarNotifier in Frameworks */ = {isa = PBXBuildFile; productRef = 6BD52F1F279FD1AA00247BFB /* RollbarNotifier */; };
 		6BD8628927E7D45100004BB6 /* GoalUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD8628827E7D45100004BB6 /* GoalUtility.swift */; };
-		6BDD8B3E27C4634700BB1493 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 6BDD8B3D27C4634700BB1493 /* SwiftUICharts */; };
-		6BDD8B4027C4636A00BB1493 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 6BDD8B3F27C4636A00BB1493 /* SwiftUICharts */; };
 		6BDD8B4227C467EB00BB1493 /* SummaryRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDD8B4127C467EB00BB1493 /* SummaryRange.swift */; };
 		6BDD8B4327C467EB00BB1493 /* SummaryRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDD8B4127C467EB00BB1493 /* SummaryRange.swift */; };
 		6BE4A98127DCFB130048463B /* UserDefaultsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE4A98027DCFB130048463B /* UserDefaultsExtensions.swift */; };
@@ -94,8 +96,6 @@
 		6BE5DE4527A653440072FF0E /* ConsoleLoggingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE5DE4427A653440072FF0E /* ConsoleLoggingService.swift */; };
 		6BE5DE4627A653440072FF0E /* ConsoleLoggingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE5DE4427A653440072FF0E /* ConsoleLoggingService.swift */; };
 		6BE5DE5427A78BBF0072FF0E /* DependencyInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE5DE5327A78BBF0072FF0E /* DependencyInjection.swift */; };
-		6BE5DE5627A78BD60072FF0E /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 6BE5DE5527A78BD60072FF0E /* Swinject */; };
-		6BE5DE5927A8BB3C0072FF0E /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 6BE5DE5827A8BB3C0072FF0E /* Swinject */; };
 		6BE5DE5B27A8BBB60072FF0E /* DependencyInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE5DE5A27A8BBB60072FF0E /* DependencyInjection.swift */; };
 		6BE5DE5E27A8BDAC0072FF0E /* TelemetryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE5DE5D27A8BDAC0072FF0E /* TelemetryService.swift */; };
 		6BE5DE5F27A8BDAC0072FF0E /* TelemetryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE5DE5D27A8BDAC0072FF0E /* TelemetryService.swift */; };
@@ -122,7 +122,6 @@
 		6BED9AA12795154E005646C3 /* WakaWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BED9AA02795154E005646C3 /* WakaWatchApp.swift */; };
 		6BED9AA52795154F005646C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BED9AA42795154F005646C3 /* Assets.xcassets */; };
 		6BED9AA82795154F005646C3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BED9AA72795154F005646C3 /* Preview Assets.xcassets */; };
-		6BED9ADB27951C82005646C3 /* BetterSafariView in Frameworks */ = {isa = PBXBuildFile; productRef = 6BED9ADA27951C82005646C3 /* BetterSafariView */; };
 		6BED9ADE27951F21005646C3 /* LeaderboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BED9ADD27951F21005646C3 /* LeaderboardView.swift */; };
 		6BED9AE027951F6D005646C3 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BED9ADF27951F6D005646C3 /* ProfileView.swift */; };
 		6BED9AE227951F80005646C3 /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BED9AE127951F80005646C3 /* SummaryView.swift */; };
@@ -323,12 +322,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6BED9ADB27951C82005646C3 /* BetterSafariView in Frameworks */,
 				6BD52F20279FD1AA00247BFB /* RollbarNotifier in Frameworks */,
-				6BE5DE5927A8BB3C0072FF0E /* Swinject in Frameworks */,
-				6BDD8B3E27C4634700BB1493 /* SwiftUICharts in Frameworks */,
+				6B6F51382854114A00B16889 /* Swinject in Frameworks */,
+				6B6F512928540EC900B16889 /* SwiftVersionCompare in Frameworks */,
 				26FB2F00E2A438DF45D6D79F /* libPods-wakawatch.a in Frameworks */,
-				6B410A3E27C2E6000044BB08 /* SwiftVersionCompare in Frameworks */,
+				6B6F512628540DF900B16889 /* BetterSafariView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,11 +348,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6B890F0827BC70DF00CCC13A /* Kingfisher in Frameworks */,
-				6B410A4027C2E6580044BB08 /* SwiftVersionCompare in Frameworks */,
+				6B6F512F2854107000B16889 /* Kingfisher in Frameworks */,
 				6BD52F1E279FD1A300247BFB /* RollbarNotifier in Frameworks */,
-				6BE5DE5627A78BD60072FF0E /* Swinject in Frameworks */,
-				6BDD8B4027C4636A00BB1493 /* SwiftUICharts in Frameworks */,
+				6B6F512C28540FB500B16889 /* SwiftUICharts in Frameworks */,
+				6B6F5132285410D700B16889 /* Swinject in Frameworks */,
+				6B6F51362854112F00B16889 /* SwiftVersionCompare in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -753,11 +751,10 @@
 			);
 			name = wakawatch;
 			packageProductDependencies = (
-				6BED9ADA27951C82005646C3 /* BetterSafariView */,
 				6BD52F1F279FD1AA00247BFB /* RollbarNotifier */,
-				6BE5DE5827A8BB3C0072FF0E /* Swinject */,
-				6B410A3D27C2E6000044BB08 /* SwiftVersionCompare */,
-				6BDD8B3D27C4634700BB1493 /* SwiftUICharts */,
+				6B6F512528540DF900B16889 /* BetterSafariView */,
+				6B6F512828540EC900B16889 /* SwiftVersionCompare */,
+				6B6F51372854114A00B16889 /* Swinject */,
 			);
 			productName = wakawatch;
 			productReference = 6BED9A6A2795154A005646C3 /* Waka Watch.app */;
@@ -832,10 +829,10 @@
 			name = "wakawatch WatchKit Extension";
 			packageProductDependencies = (
 				6BD52F1D279FD1A300247BFB /* RollbarNotifier */,
-				6BE5DE5527A78BD60072FF0E /* Swinject */,
-				6B890F0727BC70DF00CCC13A /* Kingfisher */,
-				6B410A3F27C2E6580044BB08 /* SwiftVersionCompare */,
-				6BDD8B3F27C4636A00BB1493 /* SwiftUICharts */,
+				6B6F512B28540FB500B16889 /* SwiftUICharts */,
+				6B6F512E2854107000B16889 /* Kingfisher */,
+				6B6F5131285410D700B16889 /* Swinject */,
+				6B6F51352854112F00B16889 /* SwiftVersionCompare */,
 			);
 			productName = "wakawatch WatchKit Extension";
 			productReference = 6BED9A992795154E005646C3 /* wakawatch WatchKit Extension.appex */;
@@ -934,12 +931,12 @@
 			);
 			mainGroup = 6BED9A6127951549005646C3;
 			packageReferences = (
-				6BED9AD927951C82005646C3 /* XCRemoteSwiftPackageReference "BetterSafariView" */,
 				6BD52EF4279FC9C900247BFB /* XCRemoteSwiftPackageReference "rollbar-apple" */,
-				6BE5DE5227A788BC0072FF0E /* XCRemoteSwiftPackageReference "Swinject" */,
-				6B890F0627BC70DF00CCC13A /* XCRemoteSwiftPackageReference "Kingfisher" */,
-				6B410A3C27C2E6000044BB08 /* XCRemoteSwiftPackageReference "SwiftVersionCompare" */,
-				6BDD8B3C27C4634700BB1493 /* XCRemoteSwiftPackageReference "SwiftUICharts" */,
+				6B6F512428540DF900B16889 /* XCRemoteSwiftPackageReference "BetterSafariView" */,
+				6B6F512728540EC900B16889 /* XCRemoteSwiftPackageReference "SwiftVersionCompare" */,
+				6B6F512A28540FB500B16889 /* XCRemoteSwiftPackageReference "SwiftUICharts" */,
+				6B6F512D2854107000B16889 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				6B6F5130285410D700B16889 /* XCRemoteSwiftPackageReference "Swinject" */,
 			);
 			productRefGroup = 6BED9A6B2795154A005646C3 /* Products */;
 			projectDirPath = "";
@@ -1844,20 +1841,44 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		6B410A3C27C2E6000044BB08 /* XCRemoteSwiftPackageReference "SwiftVersionCompare" */ = {
+		6B6F512428540DF900B16889 /* XCRemoteSwiftPackageReference "BetterSafariView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stleamist/BetterSafariView.git";
+			requirement = {
+				kind = exactVersion;
+				version = 2.4.0;
+			};
+		};
+		6B6F512728540EC900B16889 /* XCRemoteSwiftPackageReference "SwiftVersionCompare" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/mflknr/SwiftVersionCompare.git";
 			requirement = {
-				branch = main;
-				kind = branch;
+				kind = exactVersion;
+				version = 1.1.0;
 			};
 		};
-		6B890F0627BC70DF00CCC13A /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+		6B6F512A28540FB500B16889 /* XCRemoteSwiftPackageReference "SwiftUICharts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/willdale/SwiftUICharts.git";
+			requirement = {
+				kind = exactVersion;
+				version = 2.10.0;
+			};
+		};
+		6B6F512D2854107000B16889 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
 			requirement = {
-				branch = master;
-				kind = branch;
+				kind = exactVersion;
+				version = 7.2.3;
+			};
+		};
+		6B6F5130285410D700B16889 /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject.git";
+			requirement = {
+				kind = exactVersion;
+				version = 2.8.1;
 			};
 		};
 		6BD52EF4279FC9C900247BFB /* XCRemoteSwiftPackageReference "rollbar-apple" */ = {
@@ -1868,47 +1889,43 @@
 				version = "2.0.0-beta.23";
 			};
 		};
-		6BDD8B3C27C4634700BB1493 /* XCRemoteSwiftPackageReference "SwiftUICharts" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/willdale/SwiftUICharts.git";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
-		6BE5DE5227A788BC0072FF0E /* XCRemoteSwiftPackageReference "Swinject" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Swinject/Swinject.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-		6BED9AD927951C82005646C3 /* XCRemoteSwiftPackageReference "BetterSafariView" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/stleamist/BetterSafariView.git";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		6B410A3D27C2E6000044BB08 /* SwiftVersionCompare */ = {
+		6B6F512528540DF900B16889 /* BetterSafariView */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 6B410A3C27C2E6000044BB08 /* XCRemoteSwiftPackageReference "SwiftVersionCompare" */;
+			package = 6B6F512428540DF900B16889 /* XCRemoteSwiftPackageReference "BetterSafariView" */;
+			productName = BetterSafariView;
+		};
+		6B6F512828540EC900B16889 /* SwiftVersionCompare */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6B6F512728540EC900B16889 /* XCRemoteSwiftPackageReference "SwiftVersionCompare" */;
 			productName = SwiftVersionCompare;
 		};
-		6B410A3F27C2E6580044BB08 /* SwiftVersionCompare */ = {
+		6B6F512B28540FB500B16889 /* SwiftUICharts */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 6B410A3C27C2E6000044BB08 /* XCRemoteSwiftPackageReference "SwiftVersionCompare" */;
-			productName = SwiftVersionCompare;
+			package = 6B6F512A28540FB500B16889 /* XCRemoteSwiftPackageReference "SwiftUICharts" */;
+			productName = SwiftUICharts;
 		};
-		6B890F0727BC70DF00CCC13A /* Kingfisher */ = {
+		6B6F512E2854107000B16889 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 6B890F0627BC70DF00CCC13A /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			package = 6B6F512D2854107000B16889 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		6B6F5131285410D700B16889 /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6B6F5130285410D700B16889 /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
+		};
+		6B6F51352854112F00B16889 /* SwiftVersionCompare */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6B6F512728540EC900B16889 /* XCRemoteSwiftPackageReference "SwiftVersionCompare" */;
+			productName = SwiftVersionCompare;
+		};
+		6B6F51372854114A00B16889 /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6B6F5130285410D700B16889 /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
 		};
 		6BD52F1D279FD1A300247BFB /* RollbarNotifier */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -1919,31 +1936,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 6BD52EF4279FC9C900247BFB /* XCRemoteSwiftPackageReference "rollbar-apple" */;
 			productName = RollbarNotifier;
-		};
-		6BDD8B3D27C4634700BB1493 /* SwiftUICharts */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6BDD8B3C27C4634700BB1493 /* XCRemoteSwiftPackageReference "SwiftUICharts" */;
-			productName = SwiftUICharts;
-		};
-		6BDD8B3F27C4636A00BB1493 /* SwiftUICharts */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6BDD8B3C27C4634700BB1493 /* XCRemoteSwiftPackageReference "SwiftUICharts" */;
-			productName = SwiftUICharts;
-		};
-		6BE5DE5527A78BD60072FF0E /* Swinject */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6BE5DE5227A788BC0072FF0E /* XCRemoteSwiftPackageReference "Swinject" */;
-			productName = Swinject;
-		};
-		6BE5DE5827A8BB3C0072FF0E /* Swinject */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6BE5DE5227A788BC0072FF0E /* XCRemoteSwiftPackageReference "Swinject" */;
-			productName = Swinject;
-		};
-		6BED9ADA27951C82005646C3 /* BetterSafariView */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6BED9AD927951C82005646C3 /* XCRemoteSwiftPackageReference "BetterSafariView" */;
-			productName = BetterSafariView;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
