@@ -8,6 +8,7 @@
 "SummaryView_GoalsChart_Actual_Text" = "Actual";
 "SummaryView_GoalsChart_Goal_Text" = "Gol";
 "SummaryView_Error_Description" = "Resumen de carga de errores.";
+"SettingsView_Licenses_Link" = "Licencias de código abierto";
 "LeaderboardView_Title" = "Tabla de clasificación";
 "ProfileView_Title" = "Perfil";
 "ProfileView_Rank_Text" = "Rango:";
@@ -37,3 +38,4 @@
 "ErrorView_RetryButton_Label" = "Reintentar";
 "ErrorView_Description_Text" = "Se ha producido un error desconocido.";
 "ErrorView_DescriptionExceededRetryCount_Label" = "Recuento de reintentos excedido. El desarrollador ha sido notificado.";
+"LicenseView_Error_Description" = "Se ha producido un error al cargar la vista de atribución de licencias de código abierto.";

@@ -16,6 +16,7 @@
 "SettingsView_Title" = "設置";
 "SettingsView_Disconnect_Button" = "斷開與WakaTime的連接";
 "SettingsView_ComplicationsSettings_Text" = "Goal Complication Settings";
+"SettingsView_Licenses_Link" = "開源許可證";
 "ConnectView_Title" = "Waka Watch";
 "ConnectView_Message" = "在主設備上打開 Waka Watch 應用以連接到 WakaTime。";
 "ConnectView_UpdateRequired_Message" = "這個版本的Waka Watch已經過時了。通過App Store更新Waka Watch。";
@@ -37,3 +38,4 @@
 "ErrorView_RetryButton_Label" = "重試";
 "ErrorView_Description_Text" = "發生未知錯誤。";
 "ErrorView_DescriptionExceededRetryCount_Label" = "超出重試計數。開發人員已收到通知。";
+"LicenseView_Error_Description" = "載入開源許可證歸屬檢視時出錯。";

@@ -29,6 +29,9 @@
 		6B410A4C27C32E760044BB08 /* RequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B410A4B27C32E760044BB08 /* RequestFactory.swift */; };
 		6B410A4D27C32E760044BB08 /* RequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B410A4B27C32E760044BB08 /* RequestFactory.swift */; };
 		6B410A4F27C331B80044BB08 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B410A4E27C331B80044BB08 /* ExtensionDelegate.swift */; };
+		6B4304052854D3E400B8A2BB /* LicensesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4304042854D3E400B8A2BB /* LicensesView.swift */; };
+		6B4304072854D43E00B8A2BB /* LicensesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4304062854D43E00B8A2BB /* LicensesViewModel.swift */; };
+		6B4304092854D49C00B8A2BB /* Licenses.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 6B4304082854D49C00B8A2BB /* Licenses.rtf */; };
 		6B4F6D9427D3B6D900F1E2C4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6B4F6D9727D3B6D900F1E2C4 /* Localizable.strings */; };
 		6B4F6D9527D3B6D900F1E2C4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6B4F6D9727D3B6D900F1E2C4 /* Localizable.strings */; };
 		6B4F6D9D27D3C57B00F1E2C4 /* LocalizedStringKeyExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4F6D9C27D3C57B00F1E2C4 /* LocalizedStringKeyExtensions.swift */; };
@@ -226,6 +229,9 @@
 		6B410A4127C2E6860044BB08 /* VersionCheckerUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionCheckerUtility.swift; sourceTree = "<group>"; };
 		6B410A4B27C32E760044BB08 /* RequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestFactory.swift; sourceTree = "<group>"; };
 		6B410A4E27C331B80044BB08 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		6B4304042854D3E400B8A2BB /* LicensesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicensesView.swift; sourceTree = "<group>"; };
+		6B4304062854D43E00B8A2BB /* LicensesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicensesViewModel.swift; sourceTree = "<group>"; };
+		6B4304082854D49C00B8A2BB /* Licenses.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Licenses.rtf; sourceTree = "<group>"; };
 		6B4F6D9627D3B6D900F1E2C4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6B4F6D9827D3B6F300F1E2C4 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6B4F6D9927D3B9D500F1E2C4 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -449,6 +455,7 @@
 				6BA78C8A27A487DC005149BC /* SettingsViewModel.swift */,
 				6BE5DE7727A90CB00072FF0E /* ConnectViewModel.swift */,
 				6B5CFC3427CB0E450014271D /* ComplicationSettingsViewModel.swift */,
+				6B4304062854D43E00B8A2BB /* LicensesViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -636,6 +643,7 @@
 				6BED9AA92795154F005646C3 /* Info.plist */,
 				6BBC1A39279DFACF00FFEBFF /* Config.xcconfig */,
 				6BED9AA42795154F005646C3 /* Assets.xcassets */,
+				6B4304082854D49C00B8A2BB /* Licenses.rtf */,
 			);
 			path = "wakawatch WatchKit Extension";
 			sourceTree = "<group>";
@@ -661,6 +669,7 @@
 				6B9521B427CAE4E9000FEF14 /* RefreshableScrollView.swift */,
 				6B5CFC3627CB23E80014271D /* SelectableRowView.swift */,
 				6B30B95927E17432003BEED0 /* ErrorView.swift */,
+				6B4304042854D3E400B8A2BB /* LicensesView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -990,6 +999,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B4304092854D49C00B8A2BB /* Licenses.rtf in Resources */,
 				6BED9AA82795154F005646C3 /* Preview Assets.xcassets in Resources */,
 				6B4F6D9527D3B6D900F1E2C4 /* Localizable.strings in Resources */,
 				6BED9AA52795154F005646C3 /* Assets.xcassets in Resources */,
@@ -1180,6 +1190,7 @@
 				6B9E1115279CA29100F4DC93 /* SummaryResponse.swift in Sources */,
 				6B9EE41C27DAF1770086B465 /* BackgroundUpdateResponse.swift in Sources */,
 				6BED9AEB27952197005646C3 /* DefaultKeys.swift in Sources */,
+				6B4304072854D43E00B8A2BB /* LicensesViewModel.swift in Sources */,
 				6BD52F1C279FD07300247BFB /* RollbarLoggingService.swift in Sources */,
 				6B8A485C279D081B0071566F /* DateUtility.swift in Sources */,
 				6BF5870827C2B3E500865D95 /* FloatingMenuItem.swift in Sources */,
@@ -1191,6 +1202,7 @@
 				6BD52F19279FD03900247BFB /* LoggingService.swift in Sources */,
 				6BBF65832845CAD3004C3081 /* KeychainError.swift in Sources */,
 				6BE5DE3C27A6402D0072FF0E /* StringExtensions.swift in Sources */,
+				6B4304052854D3E400B8A2BB /* LicensesView.swift in Sources */,
 				6BBF658D2845D383004C3081 /* TokenManager.swift in Sources */,
 				6BE5DE4627A653440072FF0E /* ConsoleLoggingService.swift in Sources */,
 				6B8A4859279D05060071566F /* ProfileViewModel.swift in Sources */,

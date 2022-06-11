@@ -16,6 +16,7 @@
 "SettingsView_Title" = "Configurações";
 "SettingsView_Disconnect_Button" = "Desconectar-se do WakaTime";
 "SettingsView_ComplicationsSettings_Text" = "Configurações de complicação de metas";
+"SettingsView_Licenses_Link" = "Licenças de Código Aberto";
 "ConnectView_Title" = "Waka Watch";
 "ConnectView_Message" = "Abra o aplicativo Waka Watch em seu dispositivo principal para se conectar ao WakaTime.";
 "ConnectView_UpdateRequired_Message" = "Esta versão do Relógio Waka está desatualizada. Atualize o Waka Watch através da App Store.";
@@ -37,3 +38,4 @@
 "ErrorView_RetryButton_Label" = "Repetir";
 "ErrorView_Description_Text" = "Ocorreu um erro desconhecido.";
 "ErrorView_DescriptionExceededRetryCount_Label" = "Ultrapassou a contagem de repetições. O desenvolvedor foi notificado.";
+"LicenseView_Error_Description" = "Ocorreu um erro carregando a visualização de atribuição de licença de código aberto.";

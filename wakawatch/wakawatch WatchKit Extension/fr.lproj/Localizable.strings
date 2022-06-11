@@ -16,6 +16,7 @@
 "SettingsView_Title" = "Réglages";
 "SettingsView_Disconnect_Button" = "Déconnecter de WakaTime";
 "SettingsView_ComplicationsSettings_Text" = "Goal Complication Settings";
+"SettingsView_Licenses_Link" = "Licences Open Source";
 "ConnectView_Title" = "Waka Watch";
 "ConnectView_Message" = "Ouvrez l'application Waka Watch sur votre appareil primaire pour vous connecter à WakaTime.";
 "ConnectView_UpdateRequired_Message" = "Cette version de Waka Watch est obsolète. Mettre à jour Waka Regarder dans l'App Store.";
@@ -37,3 +38,4 @@
 "ErrorView_RetryButton_Label" = "Réessayer";
 "ErrorView_Description_Text" = "Une erreur inconnue s'est produite.";
 "ErrorView_DescriptionExceededRetryCount_Label" = "Dépassement du nombre de nouvelles tentatives. Le développeur a été averti.";
+"LicenseView_Error_Description" = "Une erreur s'est produite lors du chargement de la vue d'attribution de licence open source.";

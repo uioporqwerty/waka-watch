@@ -120,6 +120,10 @@ final class DependencyInjection {
                                           telemetryService: resolver.resolve(TelemetryService.self)!,
                                           logManager: resolver.resolve(LogManager.self)!)
         }
+        self.container.register(LicensesViewModel.self) { resolver in
+            LicensesViewModel(logManager: resolver.resolve(LogManager.self)!,
+                              telemetryService: resolver.resolve(TelemetryService.self)!)
+        }
     }
 
     private func registerViews() {
@@ -142,6 +146,9 @@ final class DependencyInjection {
         self.container.register(ComplicationSettingsView.self) { resolver in
             ComplicationSettingsView(complicationSettingsViewModel:
                                         resolver.resolve(ComplicationSettingsViewModel.self)!)
+        }
+        self.container.register(LicensesView.self) { resolver in
+            LicensesView(viewModel: resolver.resolve(LicensesViewModel.self)!)
         }
     }
 }

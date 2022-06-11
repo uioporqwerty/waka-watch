@@ -16,6 +16,7 @@
 "SettingsView_Title" = "सेटिंग्स";
 "SettingsView_Disconnect_Button" = "WakaTime से डिस्कनेक्ट";
 "SettingsView_ComplicationsSettings_Text" = "Goal Complication Settings";
+"SettingsView_Licenses_Link" = "ओपन सोर्स लाइसेंस";
 "ConnectView_Title" = "Waka Watch";
 "ConnectView_Message" = "WakaTime से कनेक्ट करने के लिए अपने प्राथमिक उपकरण पर Waka वॉच ऐप खोलें।";
 "ConnectView_UpdateRequired_Message" = "वाका वॉच का यह संस्करण तारीख से बाहर है। ऐप स्टोर के माध्यम से वाका वॉच अपडेट करें।";
@@ -37,3 +38,4 @@
 "ErrorView_RetryButton_Label" = "पुनर्प्रयास";
 "ErrorView_Description_Text" = "कोई अज्ञात त्रुटि उत्पन्न हुई.";
 "ErrorView_DescriptionExceededRetryCount_Label" = "पुन: प्रयास करें गणना पार कर गई. डेवलपर को सूचित कर दिया गया है।";
+"LicenseView_Error_Description" = "खुला स्रोत लायसेंस एट्रिब्यूशन दृश्य लोड कर रहा है एक त्रुटि उत्पन्न हुई।";

@@ -16,6 +16,7 @@
 "SettingsView_Title" = "Параметры";
 "SettingsView_Disconnect_Button" = "Отключение от WakaTime";
 "SettingsView_ComplicationsSettings_Text" = "Настройки усложнения цели";
+"SettingsView_Licenses_Link" = "Лицензии с открытым исходным кодом";
 "ConnectView_Title" = "Вака Часы";
 "ConnectView_Message" = "Откройте приложение Waka Watch на основном устройстве, чтобы подключиться к WakaTime.";
 "ConnectView_UpdateRequired_Message" = "Эта версия Waka Watch устарела. Обновите Waka Watch через App Store.";
@@ -37,3 +38,4 @@
 "ErrorView_RetryButton_Label" = "Снова пробовать";
 "ErrorView_Description_Text" = "Произошла неизвестная ошибка.";
 "ErrorView_DescriptionExceededRetryCount_Label" = "Превышено количество повторных попыток. Разработчик был уведомлен.";
+"LicenseView_Error_Description" = "Произошла ошибка при загрузке представления атрибуции лицензии с открытым исходным кодом.";

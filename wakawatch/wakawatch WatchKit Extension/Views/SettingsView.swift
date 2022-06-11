@@ -11,10 +11,9 @@ struct SettingsView: View {
     var body: some View {
         VStack {
             ScrollView(.vertical, showsIndicators: false) {
-                ScrollViewReader { _ in
-                    /* TODO: Figure out if this feature is necessary.
-                       Showing configureable goals complication.
-                    */
+                /* TODO: Figure out if this feature is necessary.
+                   Showing configureable goals complication.
+                */
 //                    NavigationLink(destination: DependencyInjection
 //                                                .shared
 //                                                .container
@@ -22,17 +21,23 @@ struct SettingsView: View {
 //                        Text(LocalizedStringKey("SettingsView_ComplicationsSettings_Text"))
 //                    }
 
-                    AsyncButton(action: {
-                        try? await self.settingsViewModel.disconnect()
-                    }) {
-                        Text(LocalizedStringKey("SettingsView_Disconnect_Button"))
-                    }
-
-                    Text(self.settingsViewModel.appVersion)
-                        .font(Font.footnote)
-                        .foregroundColor(.gray)
-                        .padding()
+                AsyncButton(action: {
+                    try? await self.settingsViewModel.disconnect()
+                }) {
+                    Text(LocalizedStringKey("SettingsView_Disconnect_Button"))
                 }
+
+                NavigationLink(LocalizedStringKey("SettingsView_Licenses_Link"),
+                               destination: LicensesView(viewModel:
+                                                         DependencyInjection.shared
+                                                                            .container
+                                                                            .resolve(LicensesViewModel.self)!))
+                .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
+
+                Text(self.settingsViewModel.appVersion)
+                    .font(Font.footnote)
+                    .foregroundColor(.gray)
+                    .padding()
             }
         }
         .onAppear {
