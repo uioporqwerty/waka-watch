@@ -26,6 +26,8 @@
 "AuthenticationView_Connect_Text" = "WakaTime कनेक्ट";
 "AuthenticationView_Connected_Text" = "WakaTime के साथ जुड़ा हुआ है। अपने एप्पल वॉच पर वाका वॉच खोलें।";
 "AuthenticationView_Disconnect_Button_Text" = "WakaTime से डिस्कनेक्ट";
+"AuthenticationView_Donation_Text" = "वाका वॉच के निर्माता प्रभावी परोपकारिता का समर्थन करते हैं। यदि आपने वाका वॉच का आनंद लिया है, तो कृपया उनके फंड को दान करने पर विचार करें ।";
+"AuthenticationView_Donation_Button_Label" = "दान करना";
 "SplashView_Center_Text" = "Waka Watch";
 "WatchInstallationCheckView_Instructions_Text" = "वाका वॉच की आवश्यकता है कि एप्पल वॉच समकक्ष ऐप इंस्टॉल किया जाए। जारी रहने से पहले स्थापित करने की प्रतीक्षा करें।";
 "WatchInstallationView_AlreadyInstalled_ButtonLabel" = "पहले से ही स्थापित >";

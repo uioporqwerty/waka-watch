@@ -26,6 +26,8 @@
 "AuthenticationView_Connect_Text" = "连接到和歌时光";
 "AuthenticationView_Connected_Text" = "与WakaTime连接。在 Apple Watch 上打开 Waka Watch。";
 "AuthenticationView_Disconnect_Button_Text" = "断开与WakaTime的连接";
+"AuthenticationView_Donation_Text" = "Waka Watch 的创建者支持有效的利他主义。如果您喜欢 Waka Watch，请考虑向他们的资金捐款。";
+"AuthenticationView_Donation_Button_Label" = "捐";
 "SplashView_Center_Text" = "Waka Watch";
 "WatchInstallationCheckView_Instructions_Text"="Waka Watch 要求安装 Apple Watch 对应的应用程序。等待安装后再继续。";
 "WatchInstallationView_AlreadyInstalled_ButtonLabel" = "已安装>";

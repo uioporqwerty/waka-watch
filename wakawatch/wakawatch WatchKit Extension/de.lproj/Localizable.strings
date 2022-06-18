@@ -26,6 +26,8 @@
 "AuthenticationView_Connect_Text" = "Mit WakaTime verbinden";
 "AuthenticationView_Connected_Text" = "Verbunden mit WakaTime. Öffne Waka Watch auf deiner Apple Watch.";
 "AuthenticationView_Disconnect_Button_Text" = "Trennen Sie die Verbindung zu WakaTime";
+"AuthenticationView_Donation_Text" = "Der Schöpfer von Waka Watch unterstützt effektiven Altruismus. Wenn Ihnen Waka Watch gefallen hat, erwägen Sie bitte eine Spende für ihre Fonds.";
+"AuthenticationView_Donation_Button_Label" = "Spenden";
 "SplashView_Center_Text" = "Waka Watch";
 "WatchInstallationCheckView_Instructions_Text" = "Waka Watch erfordert, dass die Apple Watch-Gegenstück-App installiert ist. Warten auf die Installation, bevor Sie fortfahren.";
 "WatchInstallationView_AlreadyInstalled_ButtonLabel" = "Bereits installierte >";

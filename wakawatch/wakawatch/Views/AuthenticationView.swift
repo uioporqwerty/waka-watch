@@ -4,6 +4,7 @@ import BetterSafariView
 struct AuthenticationView: View {
     private var authenticationViewModel: AuthenticationViewModel
     @AppStorage(DefaultsKeys.authorized) private var authorized = false
+    @Environment(\.openURL) var openURL
 
     @State private var startingWebAuthenticationSession = false
     @State private var requiresUpdate = false
@@ -46,16 +47,43 @@ struct AuthenticationView: View {
                 .prefersEphemeralWebBrowserSession(true)
             }
         } else {
-            Text(LocalizedStringKey("AuthenticationView_Connected_Text"))
+                Text(LocalizedStringKey("AuthenticationView_Connected_Text"))
+                    .multilineTextAlignment(.center)
+                    .lineSpacing(4)
+
+                AsyncButton(action: {
+                    await self.authenticationViewModel.disconnect()
+                }) {
+                    Text(LocalizedStringKey("AuthenticationView_Disconnect_Button_Text"))
+                        .frame(maxWidth: .infinity, minHeight: 34)
+                }
+                .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
+                .buttonStyle(.borderedProminent)
+
+                Divider()
+                .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
+
+                Text(LocalizedStringKey("AuthenticationView_Donation_Text"))
+                .frame(maxWidth: .infinity)
                 .multilineTextAlignment(.center)
-                .lineSpacing(8)
-            AsyncButton(action: {
-                await self.authenticationViewModel.disconnect()
-            }) {
-                Text(LocalizedStringKey("AuthenticationView_Disconnect_Button_Text"))
-                    .frame(minHeight: 34)
-            }
-            .buttonStyle(.borderedProminent)
+                .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
+                .lineSpacing(4)
+
+                Button {
+                    self.authenticationViewModel
+                        .telemetry
+                        .recordViewEvent(elementName: "\(String(describing: AuthenticationView.self))_Donation_Button")
+                    openURL(URL(string: "https://funds.effectivealtruism.org/donate/organizations")!)
+                }
+                label: {
+                    Label(LocalizedStringKey("AuthenticationView_Donation_Button_Label"), systemImage: "heart.fill")
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(Color(.displayP3, red: 171/255, green: 43/255, blue: 36/255, opacity: 1))
+                        .foregroundColor(Color.white)
+                        .cornerRadius(10)
+                }
+                .padding(EdgeInsets(top: 8, leading: 8, bottom: 0, trailing: 8))
             }
         }
         .onAppear {
