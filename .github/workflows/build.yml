@@ -104,3 +104,4 @@ jobs:
           version: "${{ env.MAJOR }}.${{ env.MINOR }}.${{ env.PATCH }}"
         env:
           ROLLBAR_ACCESS_TOKEN: ${{ secrets.ROLLBAR_ACCESS_TOKEN }}
+          ROLLBAR_USERNAME: "nitish.sachar"
