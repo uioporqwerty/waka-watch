@@ -69,6 +69,8 @@ jobs:
       - name: Run Bundle install
         run: |
           cd wakawatch
+          sudo apt-get -y install rubygems
+          gem install bundler
           bundle install
 
       - name: Extract version from tag
