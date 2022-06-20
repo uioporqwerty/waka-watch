@@ -83,3 +83,11 @@ jobs:
         run: |
           cd wakawatch
           bundle exec fastlane deploy
+      
+      - name: Notify deploy to Rollbar
+        uses: rollbar/github-deploy-action@2.1.1
+        with:
+          environment: 'production'
+          version: "${{ env.MAJOR }}.${{ env.MINOR }}.${{ env.PATCH }}"
+        env:
+          ROLLBAR_ACCESS_TOKEN: ${{ secrets.ROLLBAR_ACCESS_TOKEN }}
