@@ -36,7 +36,7 @@ namespace WakaWatch.Function
             var summaryData = await GetSummaryData(accessToken);
             var goalsData = await GetGoalsData(accessToken);
             var goals = new List<BackgroundUpdateGoalResponse>();
-
+            
             foreach (var goal in goalsData.Goals)
             {
                 if (goal.IsEnabled && !goal.IsSnoozed)
