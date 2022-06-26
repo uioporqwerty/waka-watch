@@ -1,9 +1,12 @@
+#nullable enable
+
 using System.Text.Json.Serialization;
 
 namespace WakaWatch.Models.WakaTime
 {
-    public class SummaryResponse {
+    public class SummaryResponse
+    {
         [JsonPropertyName("cummulative_total")]
-        public CummulativeTotal CummulativeTotal { get; set; }
+        public CummulativeTotal? CummulativeTotal { get; set; }
     }
 }

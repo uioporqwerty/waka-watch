@@ -13,12 +13,12 @@ using WakaWatch.Models.WakaTime;
 
 namespace WakaWatch.Function
 {
-    public class BackgroundUpdateHttpTrigger {
+    public class BackgroundUpdateHttpTrigger
+    {
         private readonly HttpClient _client;
         private readonly string _clientSecret = "";
-
         private readonly string baseUrl = "https://wakatime.com/api/v1";
-        
+
         public BackgroundUpdateHttpTrigger(IHttpClientFactory httpClientFactory)
         {
             _client = httpClientFactory.CreateClient();
@@ -37,11 +37,14 @@ namespace WakaWatch.Function
             var goalsData = await GetGoalsData(accessToken);
             var goals = new List<BackgroundUpdateGoalResponse>();
 
-            foreach (var goal in goalsData.Goals) {
-                if (goal.IsEnabled && !goal.IsSnoozed) {
-                    var lastDay = goal.ChartData[goal.ChartData.Count - 1];
-                    
-                    goals.Add(new BackgroundUpdateGoalResponse {
+            foreach (var goal in goalsData.Goals)
+            {
+                if (goal.IsEnabled && !goal.IsSnoozed)
+                {
+                    var lastDay = goal.ChartData[^1];
+
+                    goals.Add(new BackgroundUpdateGoalResponse
+                    {
                         Id = goal.Id,
                         Title = goal.Title,
                         PercentCompleted = goal.PercentCompleted,
@@ -55,22 +58,25 @@ namespace WakaWatch.Function
                     });
                 }
             }
-            
-            var response = new BackgroundUpdateResponse {
-                TotalTimeCodedInSeconds = summaryData.CummulativeTotal.Seconds,
+
+            var response = new BackgroundUpdateResponse
+            {
+                TotalTimeCodedInSeconds = summaryData.CummulativeTotal?.Seconds ?? 0,
                 Goals = goals
             };
 
             return new OkObjectResult(response);
         }
 
-        private async Task<SummaryResponse> GetSummaryData(string accessToken) {
+        private async Task<SummaryResponse> GetSummaryData(string accessToken)
+        {
             var summaryResponse = await _client.GetAsync($"{baseUrl}/users/current/summaries?client_secret={_clientSecret}&access_token={accessToken}&range=Today");
             var stream = await summaryResponse.Content.ReadAsStreamAsync();
             return await JsonSerializer.DeserializeAsync<SummaryResponse>(stream);
         }
 
-        private async Task<GoalsResponse> GetGoalsData(string accessToken) {
+        private async Task<GoalsResponse> GetGoalsData(string accessToken)
+        {
             var goalsResponse = await _client.GetAsync($"{baseUrl}/users/current/goals?client_secret={_clientSecret}&access_token={accessToken}");
             var stream = await goalsResponse.Content.ReadAsStreamAsync();
             return await JsonSerializer.DeserializeAsync<GoalsResponse>(stream);
