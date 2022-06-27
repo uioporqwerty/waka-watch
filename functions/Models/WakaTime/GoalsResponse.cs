@@ -5,6 +5,6 @@ namespace WakaWatch.Models.WakaTime
 {
     public class GoalsResponse {
         [JsonPropertyName("data")]
-        public IEnumerable<Goal> Goals { get; set; }
+        public IEnumerable<Goal> Goals { get; set; } = new List<Goal>();
     }
 }
