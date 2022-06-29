@@ -36,7 +36,7 @@ namespace WakaWatch.Function
             var summaryData = await GetSummaryData(accessToken);
             var goalsData = await GetGoalsData(accessToken);
             var goals = new List<BackgroundUpdateGoalResponse>();
-            
+
             foreach (var goal in goalsData.Goals)
             {
                 if (goal.IsEnabled && !goal.IsSnoozed)
@@ -64,6 +64,8 @@ namespace WakaWatch.Function
                 TotalTimeCodedInSeconds = summaryData.CummulativeTotal?.Seconds ?? 0,
                 Goals = goals
             };
+
+            log.LogInformation(JsonSerializer.Serialize(response));
 
             return new OkObjectResult(response);
         }
