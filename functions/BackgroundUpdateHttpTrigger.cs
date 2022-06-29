@@ -29,7 +29,8 @@ namespace WakaWatch.Function
 
         [FunctionName("backgroundUpdate")]
         public async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Function, "get", Route = null)] HttpRequest req)
+            [HttpTrigger(AuthorizationLevel.Function, "get", Route = null)] HttpRequest req,
+            ILogger log)
         {
             _log.LogInformation("Retrieving background update data");
 
