@@ -18,19 +18,20 @@ namespace WakaWatch.Function
         private readonly HttpClient _client;
         private readonly string _clientSecret = "";
         private readonly string baseUrl = "https://wakatime.com/api/v1";
+        private readonly ILogger _log;
 
-        public BackgroundUpdateHttpTrigger(IHttpClientFactory httpClientFactory)
+        public BackgroundUpdateHttpTrigger(IHttpClientFactory httpClientFactory, ILogger log)
         {
             _client = httpClientFactory.CreateClient();
             _clientSecret = Environment.GetEnvironmentVariable("CLIENT_SECRET");
+            _log = log;
         }
 
         [FunctionName("backgroundUpdate")]
         public async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Function, "get", Route = null)] HttpRequest req,
-            ILogger log)
+            [HttpTrigger(AuthorizationLevel.Function, "get", Route = null)] HttpRequest req)
         {
-            log.LogInformation("Retrieving background update data");
+            _log.LogInformation("Retrieving background update data");
 
             var accessToken = req.Query["access_token"];
             var summaryData = await GetSummaryData(accessToken);
@@ -65,21 +66,29 @@ namespace WakaWatch.Function
                 Goals = goals
             };
 
-            log.LogInformation(JsonSerializer.Serialize(response));
+            _log.LogInformation(JsonSerializer.Serialize(response));
 
             return new OkObjectResult(response);
         }
 
         private async Task<SummaryResponse> GetSummaryData(string accessToken)
         {
-            var summaryResponse = await _client.GetAsync($"{baseUrl}/users/current/summaries?client_secret={_clientSecret}&access_token={accessToken}&range=Today");
+            var requestUrl = $"{baseUrl}/users/current/summaries?client_secret={_clientSecret}&access_token={accessToken}&range=Today";
+            var summaryResponse = await _client.GetAsync(requestUrl);
+
+            _log.LogDebug(requestUrl);
+
             var stream = await summaryResponse.Content.ReadAsStreamAsync();
             return await JsonSerializer.DeserializeAsync<SummaryResponse>(stream);
         }
 
         private async Task<GoalsResponse> GetGoalsData(string accessToken)
         {
-            var goalsResponse = await _client.GetAsync($"{baseUrl}/users/current/goals?client_secret={_clientSecret}&access_token={accessToken}");
+            var requestUrl = $"{baseUrl}/users/current/goals?client_secret={_clientSecret}&access_token={accessToken}";
+            var goalsResponse = await _client.GetAsync(requestUrl);
+
+            _log.LogDebug(requestUrl);
+
             var stream = await goalsResponse.Content.ReadAsStreamAsync();
             return await JsonSerializer.DeserializeAsync<GoalsResponse>(stream);
         }

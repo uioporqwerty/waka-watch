@@ -3,12 +3,14 @@ using Microsoft.Extensions.DependencyInjection;
 
 [assembly: FunctionsStartup(typeof(WakaWatch.Startup))]
 
-namespace WakaWatch {
+namespace WakaWatch
+{
     public class Startup : FunctionsStartup
     {
         public override void Configure(IFunctionsHostBuilder builder)
         {
             builder.Services.AddHttpClient();
+            builder.Services.AddLogging();
         }
     }
 }
