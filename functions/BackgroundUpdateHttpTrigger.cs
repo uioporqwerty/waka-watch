@@ -20,7 +20,7 @@ namespace WakaWatch.Function
         private readonly string baseUrl = "https://wakatime.com/api/v1";
         private readonly ILogger _log;
 
-        public BackgroundUpdateHttpTrigger(IHttpClientFactory httpClientFactory, ILogger log)
+        public BackgroundUpdateHttpTrigger(IHttpClientFactory httpClientFactory, ILogger<BackgroundUpdateHttpTrigger> log)
         {
             _client = httpClientFactory.CreateClient();
             _clientSecret = Environment.GetEnvironmentVariable("CLIENT_SECRET");
