@@ -18,13 +18,12 @@ namespace WakaWatch.Function
         private readonly HttpClient _client;
         private readonly string _clientSecret = "";
         private readonly string baseUrl = "https://wakatime.com/api/v1";
-        private readonly ILogger _log;
+        private ILogger _log;
 
-        public BackgroundUpdateHttpTrigger(IHttpClientFactory httpClientFactory, ILogger<BackgroundUpdateHttpTrigger> log)
+        public BackgroundUpdateHttpTrigger(IHttpClientFactory httpClientFactory)
         {
             _client = httpClientFactory.CreateClient();
             _clientSecret = Environment.GetEnvironmentVariable("CLIENT_SECRET");
-            _log = log;
         }
 
         [FunctionName("backgroundUpdate")]
@@ -32,6 +31,7 @@ namespace WakaWatch.Function
             [HttpTrigger(AuthorizationLevel.Function, "get", Route = null)] HttpRequest req,
             ILogger log)
         {
+            _log = log;
             _log.LogInformation("Retrieving background update data");
 
             var accessToken = req.Query["access_token"];
