@@ -32,9 +32,15 @@ namespace WakaWatch.Function
             ILogger log)
         {
             _log = log;
-            _log.LogInformation("Retrieving background update data");
 
             var accessToken = req.Query["access_token"];
+
+            if (string.IsNullOrEmpty(accessToken))
+            {
+                _log.LogError("access_token is missing.");
+                return new BadRequestResult();
+            }
+
             var summaryData = await GetSummaryData(accessToken);
             var goalsData = await GetGoalsData(accessToken);
             var goals = new List<BackgroundUpdateGoalResponse>();
@@ -77,8 +83,6 @@ namespace WakaWatch.Function
             var requestUrl = $"{baseUrl}/users/current/summaries?client_secret={_clientSecret}&access_token={accessToken}&range=Today";
             var summaryResponse = await _client.GetAsync(requestUrl);
 
-            _log.LogDebug(requestUrl);
-
             var stream = await summaryResponse.Content.ReadAsStreamAsync();
             return await JsonSerializer.DeserializeAsync<SummaryResponse>(stream);
         }
@@ -87,8 +91,6 @@ namespace WakaWatch.Function
         {
             var requestUrl = $"{baseUrl}/users/current/goals?client_secret={_clientSecret}&access_token={accessToken}";
             var goalsResponse = await _client.GetAsync(requestUrl);
-
-            _log.LogDebug(requestUrl);
 
             var stream = await goalsResponse.Content.ReadAsStreamAsync();
             return await JsonSerializer.DeserializeAsync<GoalsResponse>(stream);
