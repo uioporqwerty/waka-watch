@@ -23,17 +23,23 @@ final class WakaTimeNetworkService: NetworkService {
         let (data, response) = try await URLSession.shared.data(from: request.url!)
         let urlResponse = response as? HTTPURLResponse
 
-        if urlResponse?.statusCode ?? 0 >= 300 {
-            self.logManager.errorMessage(data)
-        }
-
         self.telemetry.recordNetworkEvent(method: request.httpMethod,
                                           url: request.url?.absoluteString,
                                           statusCode: urlResponse?.statusCode.description)
 
-        let summaryResponse = try JSONDecoder().decode(SummaryResponse.self, from: data)
+        if !(urlResponse?.statusCode.isSuccessfulHttpResponseCode() ?? false) {
+            self.logManager.errorMessage(data)
+            return nil
+        }
 
-        return summaryResponse
+        do {
+            return try JSONDecoder().decode(SummaryResponse.self, from: data)
+        } catch {
+            self.logManager.errorMessage(String(data: data, encoding: .utf8) ??
+                                         "Failed to decode summary response and generate raw json response.")
+        }
+
+        return nil
     }
 
     func getProfileData(userId: String?) async throws -> ProfileResponse? {
@@ -43,17 +49,22 @@ final class WakaTimeNetworkService: NetworkService {
         let (data, response) = try await URLSession.shared.data(from: request.url!)
         let urlResponse = response as? HTTPURLResponse
 
-        if urlResponse?.statusCode ?? 0 >= 300 {
-            self.logManager.errorMessage(data)
-        }
-
         self.telemetry.recordNetworkEvent(method: request.httpMethod,
                                           url: request.url?.absoluteString,
                                           statusCode: urlResponse?.statusCode.description)
 
-        let profileResponse = try JSONDecoder().decode(ProfileResponse.self, from: data)
+        if !(urlResponse?.statusCode.isSuccessfulHttpResponseCode() ?? false) {
+            self.logManager.errorMessage(data)
+            return nil
+        }
 
-        return profileResponse
+        do {
+            return try JSONDecoder().decode(ProfileResponse.self, from: data)
+        } catch {
+            self.logManager.errorMessage(String(data: data, encoding: .utf8) ??
+                                         "Failed to decode profile response and generate raw json response.")
+        }
+        return nil
     }
 
     func getGoalsData() async throws -> GoalsResponse? {
@@ -63,17 +74,23 @@ final class WakaTimeNetworkService: NetworkService {
         let (data, response) = try await URLSession.shared.data(from: request.url!)
         let urlResponse = response as? HTTPURLResponse
 
-        if urlResponse?.statusCode ?? 0 >= 300 {
-            self.logManager.errorMessage(data)
-        }
-
         self.telemetry.recordNetworkEvent(method: request.httpMethod,
                                           url: request.url?.absoluteString,
                                           statusCode: urlResponse?.statusCode.description)
 
-        let goalsResponse = try JSONDecoder().decode(GoalsResponse.self, from: data)
+        if !(urlResponse?.statusCode.isSuccessfulHttpResponseCode() ?? false) {
+            self.logManager.errorMessage(data)
+            return nil
+        }
 
-        return goalsResponse
+        do {
+            return try JSONDecoder().decode(GoalsResponse.self, from: data)
+        } catch {
+            self.logManager.errorMessage(String(data: data, encoding: .utf8) ??
+                                         "Failed to decode goals response and generate raw json response.")
+        }
+
+        return nil
     }
 
     func getPublicLeaderboard(page: Int?) async throws -> LeaderboardResponse? {
@@ -83,17 +100,23 @@ final class WakaTimeNetworkService: NetworkService {
         let (data, response) = try await URLSession.shared.data(from: request.url!)
         let urlResponse = response as? HTTPURLResponse
 
-        if urlResponse?.statusCode ?? 0 >= 300 {
-            self.logManager.errorMessage(data)
-        }
-
         self.telemetry.recordNetworkEvent(method: request.httpMethod,
                                           url: request.url?.absoluteString,
                                           statusCode: urlResponse?.statusCode.description)
 
-        let leaderboardResponse = try JSONDecoder().decode(LeaderboardResponse.self, from: data)
+        if !(urlResponse?.statusCode.isSuccessfulHttpResponseCode() ?? false) {
+            self.logManager.errorMessage(data)
+            return nil
+        }
 
-        return leaderboardResponse
+        do {
+            return try JSONDecoder().decode(LeaderboardResponse.self, from: data)
+        } catch {
+            self.logManager.errorMessage(String(data: data, encoding: .utf8) ??
+                                         "Failed to decode public leaderboard response and generate raw json response.")
+        }
+
+        return nil
     }
 
     func getAppInformation() async throws -> AppInformation? {
@@ -104,14 +127,22 @@ final class WakaTimeNetworkService: NetworkService {
         let (data, response) = try await URLSession.shared.data(from: request.url!)
         let urlResponse = response as? HTTPURLResponse
 
-        if urlResponse?.statusCode ?? 0 >= 300 {
-            self.logManager.errorMessage(data)
-        }
         self.telemetry.recordNetworkEvent(method: request.httpMethod,
                                           url: request.url?.absoluteString,
                                           statusCode: urlResponse?.statusCode.description)
-        let appInformation = try JSONDecoder().decode(AppInformation.self, from: data)
 
-        return appInformation
+        if !(urlResponse?.statusCode.isSuccessfulHttpResponseCode() ?? false) {
+            self.logManager.errorMessage(data)
+            return nil
+        }
+
+        do {
+            return try JSONDecoder().decode(AppInformation.self, from: data)
+        } catch {
+            self.logManager.errorMessage(String(data: data, encoding: .utf8) ??
+                                         "Failed to decode app information response and generate raw json response.")
+        }
+
+        return nil
     }
 }
