@@ -1,5 +1,6 @@
 import Foundation
 import WatchConnectivity
+import UIKit
 
 final class WatchInstallationCheckViewModel: ObservableObject {
     @Published var isWatchAppInstalled = WCSession.default.isWatchAppInstalled
@@ -17,6 +18,17 @@ final class WatchInstallationCheckViewModel: ObservableObject {
                                                name: Notification.Name("WatchAppInstallation"),
                                                object: nil
                                               )
+    }
+
+    func openAppleWatchApp() {
+        guard let appleWatchScheme = URL(string: "itms-watchs://bridge:root=GENERAL_LINK") else {
+            self.logManager.errorMessage("Could not open Apple Watch app. Failed to construct URL.")
+            return
+        }
+
+        if UIApplication.shared.canOpenURL(appleWatchScheme) {
+            UIApplication.shared.open(appleWatchScheme)
+        }
     }
 
     @objc func handleWatchAppInstallationStatus(_ notification: NSNotification) {

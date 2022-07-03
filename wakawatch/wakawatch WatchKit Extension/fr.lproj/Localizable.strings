@@ -29,8 +29,9 @@
 "AuthenticationView_Donation_Text" = "Le créateur de Waka Watch soutient l'altruisme efficace. Si vous avez apprécié Waka Watch, veuillez envisager de faire un don à leurs fonds.";
 "AuthenticationView_Donation_Button_Label" = "Donner";
 "SplashView_Center_Text" = "Waka Watch";
-"WatchInstallationCheckView_Instructions_Text"="Waka Watch exige que l'application de contrepartie Apple Watch soit installée. En attente d'installation avant de continuer.";
+"WatchInstallationCheckView_Instructions_Text"="Waka Watch nécessite l'installation de l'application homologue Apple Watch. Si vous avez configuré l'installation automatique de l'application, cet écran se poursuivra automatiquement une fois l'application Waka Watch installée sur votre Apple Watch. Si l'installation automatique des applications n'est pas configurée, cliquez ci-dessous pour effectuer l'installation manuellement dans la section Applications disponibles.";
 "WatchInstallationView_AlreadyInstalled_ButtonLabel" = "> déjà installé";
+"WatchInstallationView_OpenAppleWatch_ButtonLabel" = "Installez l'application Waka Watch";
 "ComplicationSettingsView_Instructions_Text" = "Select up to 3 goals.";
 "Complication_CurrentCodingTimeDescriptor_Text" = "L'heure du codage d'aujourd'hui";
 "Notifications_GoalAchieved_Title" = "Objectif atteint!";

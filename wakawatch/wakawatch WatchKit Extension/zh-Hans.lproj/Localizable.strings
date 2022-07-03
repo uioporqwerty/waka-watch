@@ -29,8 +29,9 @@
 "AuthenticationView_Donation_Text" = "Waka Watch 的创建者支持有效的利他主义。如果您喜欢 Waka Watch，请考虑向他们的资金捐款。";
 "AuthenticationView_Donation_Button_Label" = "捐";
 "SplashView_Center_Text" = "Waka Watch";
-"WatchInstallationCheckView_Instructions_Text"="Waka Watch 要求安装 Apple Watch 对应的应用程序。等待安装后再继续。";
+"WatchInstallationCheckView_Instructions_Text"="Waka Watch 要求安装 Apple Watch 对应应用程序。如果您配置了\"自动应用程序安装\"，则在 Apple Watch 上安装 Waka Watch 应用程序后，此屏幕将自动继续。如果您没有配置自动应用安装，请单击下面以从可用应用部分手动安装。";
 "WatchInstallationView_AlreadyInstalled_ButtonLabel" = "已安装>";
+"WatchInstallationView_OpenAppleWatch_ButtonLabel" = "安装Waka手表应用程序";
 "ComplicationSettingsView_Instructions_Text" = "Select up to 3 goals.";
 "Complication_CurrentCodingTimeDescriptor_Text" = "今天的编码时间";
 "Notifications_GoalAchieved_Title" = "目标达成！";
