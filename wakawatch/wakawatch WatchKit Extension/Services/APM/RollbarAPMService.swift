@@ -12,7 +12,9 @@ class RollbarAPMService {
         config.dataScrubber.enabled = true
         config.destination.accessToken = Bundle.main.infoDictionary?["ROLLBAR_ACCESS_TOKEN"] as? String ?? ""
         config.destination.environment = Bundle.main.infoDictionary?["ENVIRONMENT"] as? String ?? "Development"
+        config.loggingOptions.captureIp = .anonymize
         config.telemetry.captureLog = true
+        config.telemetry.captureConnectivity = true
         config.telemetry.enabled = true
         Rollbar.initWithConfiguration(config)
     }
