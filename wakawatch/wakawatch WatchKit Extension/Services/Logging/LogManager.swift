@@ -13,9 +13,12 @@ final class LogManager {
         }
     }
 
-    func debugMessage(_ message: String) {
+    func debugMessage(_ message: String, _ consoleOnly: Bool = false) {
         for service in self.services {
-            service.debugMessage(message)
+            if (service is ConsoleLoggingService && consoleOnly) ||
+               ((service is RollbarLoggingService || service is ConsoleLoggingService) && !consoleOnly) {
+                service.debugMessage(message)
+            }
         }
     }
 

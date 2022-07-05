@@ -28,6 +28,7 @@ final class NotificationService {
     func isPermissionGranted(onGrantedHandler: (() -> Void)? = nil, alwaysHandler: (() -> Void)? = nil) {
         self.center.getNotificationSettings { settings in
             if settings.authorizationStatus == .authorized || settings.authorizationStatus == .provisional {
+                self.logManager.debugMessage("Notification status is \(settings.authorizationStatus)", true)
                 onGrantedHandler?()
             }
             alwaysHandler?()
@@ -39,6 +40,7 @@ final class NotificationService {
 
         do {
             try defaults.setObject(goals, forKey: DefaultsKeys.userGoals)
+            self.logManager.debugMessage("Goal stored in defaults", true)
         } catch {
             self.logManager.errorMessage(error.localizedDescription)
         }
@@ -52,6 +54,7 @@ final class NotificationService {
         do {
             currentGoals = try defaults.getObject(forKey: DefaultsKeys.userGoals,
                                                   castTo: Array<ComplicationsUpdateGoalsResponse>.self)
+            self.logManager.debugMessage("currentGoals = \(currentGoals ?? [])", true)
         } catch { // User does not have any stored goals for the first time.
             self.logManager.errorMessage(error.localizedDescription)
             self.storeGoals(newGoals)
@@ -65,6 +68,7 @@ final class NotificationService {
 
         let newGoalsMap = newGoals.reduce(into: [String: ComplicationsUpdateGoalsResponse]()) { $0[$1.id] = $1 }
         let currentGoalsMap = currentGoals.reduce(into: [String: ComplicationsUpdateGoalsResponse]()) { $0[$1.id] = $1 }
+        self.logManager.debugMessage("Received the following new goals = \(newGoalsMap)", true)
 
         for (idx, goal) in currentGoals.enumerated() { // Check if any existing goals require a notification
             if newGoalsMap.contains(where: { $0.key == goal.id }) { // Goal found
@@ -73,6 +77,8 @@ final class NotificationService {
                     self.logManager.errorMessage("newGoal is nil. Moving to next goal.")
                     continue
                 }
+                self.logManager.debugMessage("oldGoal = \(goal)", true)
+                self.logManager.debugMessage("newGoal = \(newGoal)", true)
 
                 if (!goal.isInverse && goal.rangeStatus != "success" && newGoal.rangeStatus == "success") ||
                    (goal.isInverse && goal.rangeStatus != "success" && newGoal.rangeStatus == "fail") {
@@ -86,6 +92,8 @@ final class NotificationService {
                     let request = UNNotificationRequest(identifier: UUID().uuidString,
                                                         content: content,
                                                         trigger: trigger)
+                    self.logManager.debugMessage("Triggering notification", true)
+
                     self.center.add(request) { error in
                         if let error = error {
                             self.logManager.reportError(error)
@@ -99,11 +107,13 @@ final class NotificationService {
                 currentGoals[idx] = newGoal
             } else { // Goal is no longer valid. User removed it from WakaTime.
                 currentGoals.remove(at: idx)
+                self.logManager.debugMessage("goal is no longer valid and has been removed", true)
             }
         }
 
         for newGoal in newGoals { // Store any new goals added.
             if !currentGoalsMap.contains(where: { $0.key == newGoal.id }) {
+                self.logManager.debugMessage("Adding new goal to storage", true)
                 currentGoals.append(newGoal)
             }
         }
