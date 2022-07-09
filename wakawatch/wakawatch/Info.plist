@@ -62,5 +62,7 @@
 	<string>https://raw.githubusercontent.com/uioporqwerty/waka-watch/main/app_information.json</string>
 	<key>POST_SERVER_ITEM_ACCESS_TOKEN</key>
 	<string>$(POST_SERVER_ITEM_ACCESS_TOKEN)</string>
+	<key>GITHUB_ACCESS_TOKEN</key>
+	<string>$(GITHUB_ACCESS_TOKEN)</string>
 </dict>
 </plist>

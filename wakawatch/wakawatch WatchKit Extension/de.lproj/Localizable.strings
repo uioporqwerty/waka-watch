@@ -28,6 +28,17 @@
 "AuthenticationView_Disconnect_Button_Text" = "Trennen Sie die Verbindung zu WakaTime";
 "AuthenticationView_Donation_Text" = "Der Schöpfer von Waka Watch unterstützt effektiven Altruismus. Wenn Ihnen Waka Watch gefallen hat, erwägen Sie bitte eine Spende für ihre Fonds.";
 "AuthenticationView_Donation_Button_Label" = "Spenden";
+"AuthenticationView_RequestFeature_Text" = "Erzählen Sie uns, wie das Waka Watch-Erlebnis besser sein kann.";
+"AuthenticationView_RequestFeature_Button_Label" = "Anfrage-Funktion";
+"FeatureRequestView_NavigationTitle" = "Feature anfordern";
+"FeatureRequestView_Submit_Button_Label" = "Senden";
+"FeatureRequestView_Bug_Text" = "Wenn Sie ein Problem mit Waka Watch haben, reichen Sie bitte einen [Fehlerbericht] ein.(https://github.com/uioporqwerty/waka-watch/issues/new?assignees=uioporqwerty&labels=bug&template=bug_report.md&title=)";
+"FeatureRequestView_SuccessAlert_Button" = "OKAY";
+"FeatureRequestView_SuccessAlert_Title" = "Vielen Dank!";
+"FeatureRequestView_SuccessAlert_Message" = "Ihr Feedback wird dazu beitragen, Waka Watch für alle besser zu machen.";
+"FeatureRequestView_ErrorAlert_Button" = "OKAY";
+"FeatureRequestView_ErrorAlert_Title" = "Tut mir Leid!";
+"FeatureRequestView_ErrorAlert_Message" = "Das Senden Ihrer Feature-Anfrage ist fehlgeschlagen. Der Entwickler wurde über das Problem informiert.";
 "SplashView_Center_Text" = "Waka Watch";
 "WatchInstallationCheckView_Instructions_Text" = "Waka Watch erfordert, dass die Apple Watch Pendant App installiert ist. Wenn Sie die automatische App-Installation konfiguriert haben, wird dieser Bildschirm automatisch fortgesetzt, sobald die Waka Watch-App auf Ihrer Apple Watch installiert ist. Wenn Sie die automatische App-Installation nicht konfiguriert haben, klicken Sie unten im Abschnitt Verfügbare Apps auf die manuelle Installation.";
 "WatchInstallationView_AlreadyInstalled_ButtonLabel" = "Bereits installierte >";

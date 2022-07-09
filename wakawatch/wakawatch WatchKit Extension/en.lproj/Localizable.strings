@@ -28,6 +28,17 @@
 "AuthenticationView_Disconnect_Button_Text" = "Disconnect from WakaTime";
 "AuthenticationView_Donation_Text" = "The creator of Waka Watch supports effective altruism. If you've enjoyed Waka Watch, please consider a donation to their funds.";
 "AuthenticationView_Donation_Button_Label" = "Donate";
+"AuthenticationView_RequestFeature_Text" = "Tell us how the Waka Watch experience can be better.";
+"AuthenticationView_RequestFeature_Button_Label" = "Request Feature";
+"FeatureRequestView_NavigationTitle" = "Request a Feature";
+"FeatureRequestView_Submit_Button_Label" = "Submit";
+"FeatureRequestView_Bug_Text" = "If you are having an issue with Waka Watch, please submit a [bug report.](https://github.com/uioporqwerty/waka-watch/issues/new?assignees=uioporqwerty&labels=bug&template=bug_report.md&title=)";
+"FeatureRequestView_SuccessAlert_Button" = "OK";
+"FeatureRequestView_SuccessAlert_Title" = "Thank You!";
+"FeatureRequestView_SuccessAlert_Message" = "Your feedback will help make Waka Watch better for everyone.";
+"FeatureRequestView_ErrorAlert_Button" = "OK";
+"FeatureRequestView_ErrorAlert_Title" = "Sorry!";
+"FeatureRequestView_ErrorAlert_Message" = "Sending your feature request failed. The developer has been notified of the issue.";
 "SplashView_Center_Text" = "Waka Watch";
 "WatchInstallationCheckView_Instructions_Text" = "Waka Watch requires that the Apple Watch counterpart app be installed. If you have Automatic App Install configured, this screen will automatically continue once the Waka Watch app is installed on your Apple Watch. If you don't have Automatic App Install configured, click below to install manually from the Available Apps section.";
 "WatchInstallationView_AlreadyInstalled_ButtonLabel" = "Already Installed >";

@@ -28,6 +28,17 @@
 "AuthenticationView_Disconnect_Button_Text" = "断开与WakaTime的连接";
 "AuthenticationView_Donation_Text" = "Waka Watch 的创建者支持有效的利他主义。如果您喜欢 Waka Watch，请考虑向他们的资金捐款。";
 "AuthenticationView_Donation_Button_Label" = "捐";
+"AuthenticationView_RequestFeature_Text" = "告诉我们 Waka Watch 的体验如何才能更好。";
+"AuthenticationView_RequestFeature_Button_Label" = "请求功能";
+"FeatureRequestView_NavigationTitle" = "请求功能";
+"FeatureRequestView_Submit_Button_Label" = "提交";
+"FeatureRequestView_Bug_Text" = "如果您在使用Waka Watch时遇到问题，请提交[错误报告]。(https://github.com/uioporqwerty/waka-watch/issues/new?assignees=uioporqwerty&labels=bug&template=bug_report.md&title=)";
+"FeatureRequestView_SuccessAlert_Button" = "还行";
+"FeatureRequestView_SuccessAlert_Title" = "谢谢！";
+"FeatureRequestView_SuccessAlert_Message" = "您的反馈将有助于使Waka Watch更好地为每个人服务。";
+"FeatureRequestView_ErrorAlert_Button" = "还行";
+"FeatureRequestView_ErrorAlert_Title" = "不好意思！";
+"FeatureRequestView_ErrorAlert_Message" = "发送功能请求失败。已通知开发人员该问题。";
 "SplashView_Center_Text" = "Waka Watch";
 "WatchInstallationCheckView_Instructions_Text"="Waka Watch 要求安装 Apple Watch 对应应用程序。如果您配置了\"自动应用程序安装\"，则在 Apple Watch 上安装 Waka Watch 应用程序后，此屏幕将自动继续。如果您没有配置自动应用安装，请单击下面以从可用应用部分手动安装。";
 "WatchInstallationView_AlreadyInstalled_ButtonLabel" = "已安装>";

@@ -8,6 +8,7 @@ struct AuthenticationView: View {
 
     @State private var startingWebAuthenticationSession = false
     @State private var requiresUpdate = false
+    @State private var showFeatureRequestModal = false
 
     init(viewModel: AuthenticationViewModel) {
         self.authenticationViewModel = viewModel
@@ -62,6 +63,33 @@ struct AuthenticationView: View {
                             }
                             .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
                             .buttonStyle(.borderedProminent)
+
+                            Divider()
+                            .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
+
+                            Text(LocalizedStringKey("AuthenticationView_RequestFeature_Text"))
+                                .frame(maxWidth: .infinity)
+                                .multilineTextAlignment(.center)
+                                .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
+                                .lineSpacing(4)
+
+                            Button {
+                                self.authenticationViewModel
+                                    .telemetry
+                                    .recordViewEvent(elementName: "\(String(describing: AuthenticationView.self))_RequestFeature_Button")
+                                self.showFeatureRequestModal = true
+                            }
+                            label: {
+                                Text(LocalizedStringKey("AuthenticationView_RequestFeature_Button_Label"))
+                                    .frame(maxWidth: .infinity)
+                                    .padding()
+                                    .background(Color.accentColor)
+                                    .foregroundColor(Color.white)
+                                    .cornerRadius(10)
+                            }
+                            .fullScreenCover(isPresented: self.$showFeatureRequestModal) {
+                                FeatureRequestView(viewModel: DependencyInjection.shared.container.resolve(FeatureRequestViewModel.self)!)
+                            }
 
                             Divider()
                             .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))

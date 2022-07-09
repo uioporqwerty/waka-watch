@@ -28,6 +28,17 @@
 "AuthenticationView_Disconnect_Button_Text" = "WakaTime से डिस्कनेक्ट";
 "AuthenticationView_Donation_Text" = "वाका वॉच के निर्माता प्रभावी परोपकारिता का समर्थन करते हैं। यदि आपने वाका वॉच का आनंद लिया है, तो कृपया उनके फंड को दान करने पर विचार करें ।";
 "AuthenticationView_Donation_Button_Label" = "दान करना";
+"AuthenticationView_RequestFeature_Text" = "हमें बताएं कि वाका वॉच का अनुभव कैसे बेहतर हो सकता है।";
+"AuthenticationView_RequestFeature_Button_Label" = "अनुरोध सुविधा";
+"FeatureRequestView_NavigationTitle" = "किसी सुविधा का अनुरोध करें";
+"FeatureRequestView_Submit_Button_Label" = "जमा करें";
+"FeatureRequestView_Bug_Text" = "यदि आपको वाका वॉच के साथ कोई समस्या हो रही है, तो कृपया एक [बग रिपोर्ट सबमिट करें।](https://github.com/uioporqwerty/waka-watch/issues/new?assignees=uioporqwerty&labels=bug&template=bug_report.md&title=)";
+"FeatureRequestView_SuccessAlert_Button" = "ठीक है";
+"FeatureRequestView_SuccessAlert_Title" = "धन्यवाद!";
+"FeatureRequestView_SuccessAlert_Message" = "आपकी प्रतिक्रिया वाका वॉच को हर किसी के लिए बेहतर बनाने में मदद करेगी।";
+"FeatureRequestView_ErrorAlert_Button" = "ठीक है";
+"FeatureRequestView_ErrorAlert_Title" = "क्षमा करें!";
+"FeatureRequestView_ErrorAlert_Message" = "आपकी सुविधा अनुरोध भेजना विफल रहा. डेवलपर को इस मुद्दे के बारे में सूचित कर दिया गया है।";
 "SplashView_Center_Text" = "Waka Watch";
 "WatchInstallationCheckView_Instructions_Text" = "वाका वॉच के लिए ऐप्पल वॉच समकक्ष ऐप इंस्टॉल करने की आवश्यकता है। यदि आपके पास स्वचालित ऐप इंस्टॉल कॉन्फ़िगर किया गया है, तो वाका वॉच ऐप को आपके ऐप्पल वॉच पर इंस्टॉल करने के बाद यह स्क्रीन स्वचालित रूप से जारी रहेगी। यदि आपके पास स्वचालित ऐप्लिकेशन इंस्टॉल कॉन्फ़िगर नहीं किया गया है, तो उपलब्ध ऐप्लिकेशन अनुभाग से मैन्युअल रूप से स्थापित करने के लिए नीचे क्लिक करें.";
 "WatchInstallationView_AlreadyInstalled_ButtonLabel" = "पहले से ही स्थापित >";

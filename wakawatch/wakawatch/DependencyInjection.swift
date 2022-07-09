@@ -46,6 +46,10 @@ final class DependencyInjection {
                            authenticationService: resolver.resolve(AuthenticationService.self)!,
                            requestFactory: resolver.resolve(RequestFactory.self)!)
         }
+        self.container.register(GithubAPIService.self) { resolver in
+            // swiftlint:disable force_try
+            try! GithubAPIService(logManager: resolver.resolve(LogManager.self)!)
+        }
     }
 
     private func registerViewModels() {
@@ -64,6 +68,13 @@ final class DependencyInjection {
             WatchInstallationCheckViewModel(telemetryService: resolver.resolve(TelemetryService.self)!,
                                             logManager: resolver.resolve(LogManager.self)!
                                            )
+        }
+        self.container.register(FeatureRequestViewModel.self) { resolver in
+            FeatureRequestViewModel(networkService: resolver.resolve(NetworkService.self)!,
+                                    telemetryService: resolver.resolve(TelemetryService.self)!,
+                                    logManager: resolver.resolve(LogManager.self)!,
+                                    githubAPIService: resolver.resolve(GithubAPIService.self)!
+                                   )
         }
     }
 

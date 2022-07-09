@@ -28,6 +28,17 @@
 "AuthenticationView_Disconnect_Button_Text" = "Отключение от WakaTime";
 "AuthenticationView_Donation_Text" = "Создатель Waka Watch поддерживает эффективный альтруизм. Если вам понравились Waka Watch, подумайте о том, чтобы сделать пожертвование в их фонды.";
 "AuthenticationView_Donation_Button_Label" = "Дарить";
+"AuthenticationView_RequestFeature_Text" = "Расскажите нам, как опыт работы с Waka Watch может быть лучше.";
+"AuthenticationView_RequestFeature_Button_Label" = "Запросить функцию";
+"FeatureRequestView_NavigationTitle" = "Запросить функцию";
+"FeatureRequestView_Submit_Button_Label" = "Отправить";
+"FeatureRequestView_Bug_Text" = "Если у вас возникли проблемы с Waka Watch, отправьте [отчет об ошибке.](https://github.com/uioporqwerty/waka-watch/issues/new?assignees=uioporqwerty&labels=bug&template=bug_report.md&title=)";
+"FeatureRequestView_SuccessAlert_Button" = "ХОРОШО";
+"FeatureRequestView_SuccessAlert_Title" = "Спасибо!";
+"FeatureRequestView_SuccessAlert_Message" = "Ваши отзывы помогут сделать Waka Watch лучше для всех.";
+"FeatureRequestView_ErrorAlert_Button" = "ХОРОШО";
+"FeatureRequestView_ErrorAlert_Title" = "Извините!";
+"FeatureRequestView_ErrorAlert_Message" = "Не удалось отправить запрос функции. Разработчик был уведомлен о проблеме.";
 "SplashView_Center_Text" = "Waka Watch";
 "WatchInstallationCheckView_Instructions_Text" = "Waka Watch требует установки приложения Apple Watch. Если у вас настроена автоматическая установка приложений, этот экран автоматически продолжится после установки приложения Waka Watch на Apple Watch. Если у вас не настроена автоматическая установка приложений, щелкните ниже, чтобы выполнить установку вручную в разделе Доступные приложения.";
 "WatchInstallationView_AlreadyInstalled_ButtonLabel" = "Уже установлено >";

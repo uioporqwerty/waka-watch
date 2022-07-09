@@ -16,4 +16,8 @@ extension String {
 
         return result
     }
+
+    func trim() -> String {
+        return self.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
 }
