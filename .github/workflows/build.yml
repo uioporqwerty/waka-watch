@@ -42,6 +42,7 @@ jobs:
         run: |
           cd wakawatch
           bundle exec fastlane build
+          grep -r "UIWebView" .
         env:
           CI: true
           MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
