@@ -21,10 +21,9 @@
     {
       "identity" : "githubapi",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/serhii-londar/GithubAPI",
+      "location" : "https://github.com/uioporqwerty/GithubAPI",
       "state" : {
-        "revision" : "558729eccf215f046338ba6a358e8bcf98d1dfc6",
-        "version" : "0.0.11"
+        "revision" : "82c99bb6a7048cfa71c7024b00b73d07b8b532f3"
       }
     },
     {

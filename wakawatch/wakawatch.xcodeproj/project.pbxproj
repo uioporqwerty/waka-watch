@@ -36,8 +36,8 @@
 		6B44338828724E30002294F7 /* IntExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B44338628724E30002294F7 /* IntExtensions.swift */; };
 		6B44338A287880C4002294F7 /* FeatureRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B443389287880C4002294F7 /* FeatureRequestView.swift */; };
 		6B44338C2878815C002294F7 /* FeatureRequestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B44338B2878815C002294F7 /* FeatureRequestViewModel.swift */; };
-		6B44338F2878ED32002294F7 /* GithubAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 6B44338E2878ED32002294F7 /* GithubAPI */; };
 		6B4433912878F402002294F7 /* GithubAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4433902878F402002294F7 /* GithubAPIService.swift */; };
+		6B4A4CEF287A06960058D9BC /* GithubAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 6B4A4CEE287A06960058D9BC /* GithubAPI */; };
 		6B4F6D9427D3B6D900F1E2C4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6B4F6D9727D3B6D900F1E2C4 /* Localizable.strings */; };
 		6B4F6D9527D3B6D900F1E2C4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6B4F6D9727D3B6D900F1E2C4 /* Localizable.strings */; };
 		6B4F6D9D27D3C57B00F1E2C4 /* LocalizedStringKeyExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4F6D9C27D3C57B00F1E2C4 /* LocalizedStringKeyExtensions.swift */; };
@@ -340,7 +340,7 @@
 			files = (
 				6BD52F20279FD1AA00247BFB /* RollbarNotifier in Frameworks */,
 				6B6F51382854114A00B16889 /* Swinject in Frameworks */,
-				6B44338F2878ED32002294F7 /* GithubAPI in Frameworks */,
+				6B4A4CEF287A06960058D9BC /* GithubAPI in Frameworks */,
 				6B6F512928540EC900B16889 /* SwiftVersionCompare in Frameworks */,
 				26FB2F00E2A438DF45D6D79F /* libPods-wakawatch.a in Frameworks */,
 				6B6F512628540DF900B16889 /* BetterSafariView in Frameworks */,
@@ -779,7 +779,7 @@
 				6B6F512528540DF900B16889 /* BetterSafariView */,
 				6B6F512828540EC900B16889 /* SwiftVersionCompare */,
 				6B6F51372854114A00B16889 /* Swinject */,
-				6B44338E2878ED32002294F7 /* GithubAPI */,
+				6B4A4CEE287A06960058D9BC /* GithubAPI */,
 			);
 			productName = wakawatch;
 			productReference = 6BED9A6A2795154A005646C3 /* Waka Watch.app */;
@@ -963,7 +963,7 @@
 				6B6F512A28540FB500B16889 /* XCRemoteSwiftPackageReference "SwiftUICharts" */,
 				6B6F512D2854107000B16889 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				6B6F5130285410D700B16889 /* XCRemoteSwiftPackageReference "Swinject" */,
-				6B44338D2878ED32002294F7 /* XCRemoteSwiftPackageReference "GithubAPI" */,
+				6B4A4CED287A06960058D9BC /* XCRemoteSwiftPackageReference "GithubAPI" */,
 			);
 			productRefGroup = 6BED9A6B2795154A005646C3 /* Products */;
 			projectDirPath = "";
@@ -1894,12 +1894,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		6B44338D2878ED32002294F7 /* XCRemoteSwiftPackageReference "GithubAPI" */ = {
+		6B4A4CED287A06960058D9BC /* XCRemoteSwiftPackageReference "GithubAPI" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/serhii-londar/GithubAPI";
+			repositoryURL = "https://github.com/uioporqwerty/GithubAPI";
 			requirement = {
-				kind = exactVersion;
-				version = 0.0.11;
+				kind = revision;
+				revision = 82c99bb6a7048cfa71c7024b00b73d07b8b532f3;
 			};
 		};
 		6B6F512428540DF900B16889 /* XCRemoteSwiftPackageReference "BetterSafariView" */ = {
@@ -1953,9 +1953,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		6B44338E2878ED32002294F7 /* GithubAPI */ = {
+		6B4A4CEE287A06960058D9BC /* GithubAPI */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 6B44338D2878ED32002294F7 /* XCRemoteSwiftPackageReference "GithubAPI" */;
+			package = 6B4A4CED287A06960058D9BC /* XCRemoteSwiftPackageReference "GithubAPI" */;
 			productName = GithubAPI;
 		};
 		6B6F512528540DF900B16889 /* BetterSafariView */ = {
