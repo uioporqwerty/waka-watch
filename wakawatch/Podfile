@@ -6,6 +6,6 @@ target 'wakawatch' do
   #use_frameworks!
 
   # Pods for wakawatch
-  pod 'SwiftLint'
+  pod 'SwiftLint', :configurations => ['Debug']
 
 end
