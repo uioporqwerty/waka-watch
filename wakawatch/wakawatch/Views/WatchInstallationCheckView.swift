@@ -24,15 +24,14 @@ struct WatchInstallationCheckView: View {
                                 Text(LocalizedStringKey("WatchInstallationView_OpenAppleWatch_ButtonLabel"))
                                     .frame(maxWidth: .infinity, minHeight: 34)
                             }
-
                             .buttonStyle(.borderedProminent)
-                            .padding(EdgeInsets(top: 24, leading: 0, bottom: 0, trailing: 0))
+                            .padding(EdgeInsets(top: 24, leading: 8, bottom: 0, trailing: 8))
 
                             Button(action: { self.viewModel.isWatchAppInstalled = true }) {
                                    Text(LocalizedStringKey("WatchInstallationView_AlreadyInstalled_ButtonLabel"))
                             }
                             .buttonStyle(.plain)
-                            .padding(EdgeInsets(top: 24, leading: 0, bottom: 0, trailing: 0))
+                            .padding(EdgeInsets(top: 24, leading: 8, bottom: 0, trailing: 8))
                         }
                         .frame(minHeight: geometry.size.height)
                     }

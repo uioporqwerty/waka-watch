@@ -24,6 +24,7 @@ struct AuthenticationView: View {
                     Text(LocalizedStringKey("AuthenticationView_Connect_Text"))
                         .frame(maxWidth: .infinity, minHeight: 34)
                 }
+                .padding(EdgeInsets(top: 8, leading: 8, bottom: 0, trailing: 8))
                 .buttonStyle(.borderedProminent)
                 .webAuthenticationSession(isPresented: $startingWebAuthenticationSession) {
                 WebAuthenticationSession(
@@ -61,7 +62,7 @@ struct AuthenticationView: View {
                                 Text(LocalizedStringKey("AuthenticationView_Disconnect_Button_Text"))
                                     .frame(maxWidth: .infinity, minHeight: 34)
                             }
-                            .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
+                            .padding(EdgeInsets(top: 8, leading: 8, bottom: 0, trailing: 8))
                             .buttonStyle(.borderedProminent)
 
                             Divider()
@@ -87,6 +88,7 @@ struct AuthenticationView: View {
                                     .foregroundColor(Color.white)
                                     .cornerRadius(10)
                             }
+                            .padding(EdgeInsets(top: 8, leading: 8, bottom: 0, trailing: 8))
                             .fullScreenCover(isPresented: self.$showFeatureRequestModal) {
                                 FeatureRequestView(viewModel: DependencyInjection.shared.container.resolve(FeatureRequestViewModel.self)!)
                             }
