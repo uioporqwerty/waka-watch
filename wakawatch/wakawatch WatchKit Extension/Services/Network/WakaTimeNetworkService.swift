@@ -20,7 +20,7 @@ final class WakaTimeNetworkService: NetworkService {
         await self.authenticationService.refreshAccessToken()
         let request = self.requestFactory.makeSummaryRequest(range)
 
-        let (data, response) = try await URLSession.shared.data(from: request.url!)
+        let (data, response) = try await URLSession.shared.data(for: request)
         let urlResponse = response as? HTTPURLResponse
 
         self.telemetry.recordNetworkEvent(method: request.httpMethod,
@@ -46,7 +46,7 @@ final class WakaTimeNetworkService: NetworkService {
         await self.authenticationService.refreshAccessToken()
         let request = self.requestFactory.makeProfileRequest(userId)
 
-        let (data, response) = try await URLSession.shared.data(from: request.url!)
+        let (data, response) = try await URLSession.shared.data(for: request)
         let urlResponse = response as? HTTPURLResponse
 
         self.telemetry.recordNetworkEvent(method: request.httpMethod,
@@ -71,7 +71,7 @@ final class WakaTimeNetworkService: NetworkService {
         await self.authenticationService.refreshAccessToken()
         let request = self.requestFactory.makeGoalsRequest()
 
-        let (data, response) = try await URLSession.shared.data(from: request.url!)
+        let (data, response) = try await URLSession.shared.data(for: request)
         let urlResponse = response as? HTTPURLResponse
 
         self.telemetry.recordNetworkEvent(method: request.httpMethod,
@@ -97,7 +97,7 @@ final class WakaTimeNetworkService: NetworkService {
         await self.authenticationService.refreshAccessToken()
         let request = self.requestFactory.makePublicLeaderboardRequest(page)
 
-        let (data, response) = try await URLSession.shared.data(from: request.url!)
+        let (data, response) = try await URLSession.shared.data(for: request)
         let urlResponse = response as? HTTPURLResponse
 
         self.telemetry.recordNetworkEvent(method: request.httpMethod,
