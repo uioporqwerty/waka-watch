@@ -4,6 +4,7 @@ import RollbarNotifier
 final class AuthenticationViewModel {
     private let authenticationService: AuthenticationService
     private let networkService: NetworkService
+    private let apmService: RollbarAPMService
     private let logManager: LogManager
     private let tokenManager: TokenManager
 
@@ -13,6 +14,7 @@ final class AuthenticationViewModel {
 
     init(authenticationService: AuthenticationService,
          networkService: NetworkService,
+         apmService: RollbarAPMService,
          telemetryService: TelemetryService,
          logManager: LogManager,
          tokenManager: TokenManager
@@ -22,6 +24,7 @@ final class AuthenticationViewModel {
         self.telemetry = telemetryService
         self.logManager = logManager
         self.tokenManager = tokenManager
+        self.apmService = apmService
 
         self.authorizationUrl = self.authenticationService.authorizationUrl
         self.callbackURLScheme = self.authenticationService.callbackURLScheme
@@ -59,13 +62,8 @@ final class AuthenticationViewModel {
                     self.logManager.errorMessage("Failed to find profile for current user. Cannot set user.")
                     return
                 }
-
-                guard let configuration = Rollbar.currentConfiguration() else {
-                    self.logManager.errorMessage("Rollbar configuration not set.")
-                    return
-                }
-
-                configuration.person = RollbarPerson(id: profile.id)
+                defaults.set(profile.id, forKey: DefaultsKeys.userId)
+                self.apmService.setPersonTracking(id: profile.id)
             } catch {
                 self.logManager.reportError(error)
             }

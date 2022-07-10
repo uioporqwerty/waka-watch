@@ -4,11 +4,13 @@ import WatchKit
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
     private var backgroundService: BackgroundService?
     private var logManager: LogManager?
+    private var apmService: RollbarAPMService?
 
     override init() {
         super.init()
         self.backgroundService = DependencyInjection.shared.container.resolve(BackgroundService.self)!
         self.logManager = DependencyInjection.shared.container.resolve(LogManager.self)!
+        self.apmService = DependencyInjection.shared.container.resolve(RollbarAPMService.self)!
     }
 
     func isAuthorized() -> Bool {
@@ -17,8 +19,20 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
     }
 
     func applicationDidFinishLaunching() {
-        if isAuthorized() && !(self.backgroundService?.isStarted ?? false) {
+        if !isAuthorized() {
+            return
+        }
+
+        if !(self.backgroundService?.isStarted ?? false) {
             self.backgroundService?.schedule()
+        }
+
+        if !(self.apmService?.isPersonTrackingSet() ?? false) {
+            let defaults = UserDefaults.standard
+            guard let personId = defaults.string(forKey: DefaultsKeys.userId) else {
+                return
+            }
+            self.apmService?.setPersonTracking(id: personId)
         }
     }
 

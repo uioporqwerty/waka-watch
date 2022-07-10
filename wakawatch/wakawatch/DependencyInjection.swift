@@ -21,7 +21,6 @@ final class DependencyInjection {
             RequestFactory(tokenManager: resolver.resolve(TokenManager.self)!)
         }
         self.container.register(ConsoleLoggingService.self) { _ in ConsoleLoggingService() }
-        self.container.register(RollbarAPMService.self) { _ in RollbarAPMService() }
         self.container.register(RollbarLoggingService.self) { _ in RollbarLoggingService() }
 
         #if DEBUG
@@ -33,6 +32,9 @@ final class DependencyInjection {
         self.container.register(LogManager.self) { resolver in
             LogManager(loggingServices: [resolver.resolve(RollbarLoggingService.self)!,
                                          resolver.resolve(ConsoleLoggingService.self)!])
+        }
+        self.container.register(RollbarAPMService.self) { resolver in
+            RollbarAPMService(logManager: resolver.resolve(LogManager.self)!)
         }
         self.container.register(AuthenticationService.self) { resolver in
             AuthenticationService(logManager: resolver.resolve(LogManager.self)!,
@@ -56,6 +58,7 @@ final class DependencyInjection {
         self.container.register(AuthenticationViewModel.self) { resolver in
             AuthenticationViewModel(authenticationService: resolver.resolve(AuthenticationService.self)!,
                                     networkService: resolver.resolve(NetworkService.self)!,
+                                    apmService: resolver.resolve(RollbarAPMService.self)!,
                                     telemetryService: resolver.resolve(TelemetryService.self)!,
                                     logManager: resolver.resolve(LogManager.self)!,
                                     tokenManager: resolver.resolve(TokenManager.self)!

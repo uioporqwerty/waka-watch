@@ -24,7 +24,6 @@ final class DependencyInjection {
         }
         self.container.register(ChartFactory.self) { _ in ChartFactory() }
         self.container.register(ConsoleLoggingService.self) { _ in ConsoleLoggingService() }
-        self.container.register(RollbarAPMService.self) { _ in RollbarAPMService() }
         self.container.register(RollbarLoggingService.self) { _ in RollbarLoggingService() }
 
         #if DEBUG
@@ -36,6 +35,10 @@ final class DependencyInjection {
         self.container.register(LogManager.self) { resolver in
             LogManager(loggingServices: [resolver.resolve(ConsoleLoggingService.self)!,
                                         resolver.resolve(RollbarLoggingService.self)!])
+        }
+
+        self.container.register(RollbarAPMService.self) { resolver in
+            RollbarAPMService(logManager: resolver.resolve(LogManager.self)!)
         }
 
         self.container.register(AuthenticationService.self) { resolver in
