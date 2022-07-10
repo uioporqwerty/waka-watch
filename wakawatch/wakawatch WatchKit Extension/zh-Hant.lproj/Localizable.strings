@@ -53,3 +53,4 @@
 "ErrorView_Description_Text" = "發生未知錯誤。";
 "ErrorView_DescriptionExceededRetryCount_Label" = "超出重試計數。開發人員已收到通知。";
 "LicenseView_Error_Description" = "載入開源許可證歸屬檢視時出錯。";
+"AppName" = "Waka Watch";

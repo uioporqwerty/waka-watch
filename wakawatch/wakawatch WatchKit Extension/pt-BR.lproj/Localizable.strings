@@ -53,3 +53,4 @@
 "ErrorView_Description_Text" = "Ocorreu um erro desconhecido.";
 "ErrorView_DescriptionExceededRetryCount_Label" = "Ultrapassou a contagem de repetições. O desenvolvedor foi notificado.";
 "LicenseView_Error_Description" = "Ocorreu um erro carregando a visualização de atribuição de licença de código aberto.";
+"AppName" = "Waka Watch";

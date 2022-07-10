@@ -12,9 +12,12 @@ struct AuthenticationView: View {
 
     init(viewModel: AuthenticationViewModel) {
         self.authenticationViewModel = viewModel
+
+        UINavigationBar.appearance().titleTextAttributes = [.font: UIFont.preferredFont(from: .largeTitle)]
     }
 
     var body: some View {
+        NavigationView {
         VStack {
             if self.requiresUpdate {
                 Text(LocalizedStringKey("ConnectView_UpdateRequired_Message"))
@@ -118,18 +121,21 @@ struct AuthenticationView: View {
                             }
                             .padding(EdgeInsets(top: 8, leading: 8, bottom: 0, trailing: 8))
                         }
-                        .frame(minHeight: geometry.size.height)
+                            .frame(minHeight: geometry.size.height)
+                        }
                     }
                 }
             }
-        }
-        .onAppear {
-            self.authenticationViewModel
-                .telemetry
-                .recordViewEvent(elementName: "\(String(describing: AuthenticationView.self))")
-        }
-        .task {
-            self.requiresUpdate = await self.authenticationViewModel.requiresUpdate()
+            .onAppear {
+                self.authenticationViewModel
+                    .telemetry
+                    .recordViewEvent(elementName: "\(String(describing: AuthenticationView.self))")
+            }
+            .task {
+                self.requiresUpdate = await self.authenticationViewModel.requiresUpdate()
+            }
+            .navigationTitle(LocalizedStringKey("AppName"))
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }
