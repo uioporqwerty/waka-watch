@@ -2,6 +2,11 @@ import SwiftUI
 
 class KeychainServicesService {
     private let service = "app.wakawatch"
+    private let logManager: LogManager
+
+    init(logManager: LogManager) {
+        self.logManager = logManager
+    }
 
     func set(data: Data,
              key: String
@@ -16,10 +21,12 @@ class KeychainServicesService {
         let status = SecItemAdd(query as CFDictionary, nil)
 
         if status == errSecDuplicateItem {
+            self.logManager.reportError(KeychainError.duplicateItem)
             throw KeychainError.duplicateItem
         }
 
         guard status == errSecSuccess else {
+            self.logManager.reportError(KeychainError.unexpectedStatus(status))
             throw KeychainError.unexpectedStatus(status)
         }
     }
@@ -41,14 +48,17 @@ class KeychainServicesService {
         )
 
         guard status != errSecItemNotFound else {
+            self.logManager.reportError(KeychainError.itemNotFound)
             throw KeychainError.itemNotFound
         }
 
         guard status == errSecSuccess else {
+            self.logManager.reportError(KeychainError.unexpectedStatus(status))
             throw KeychainError.unexpectedStatus(status)
         }
 
         guard let item = itemCopy as? Data else {
+            self.logManager.reportError(KeychainError.invalidItemFormat)
             throw KeychainError.invalidItemFormat
         }
 
@@ -65,6 +75,7 @@ class KeychainServicesService {
         let status = SecItemDelete(query as CFDictionary)
 
         guard status == errSecSuccess else {
+            self.logManager.reportError(KeychainError.unexpectedStatus(status))
             throw KeychainError.unexpectedStatus(status)
         }
     }

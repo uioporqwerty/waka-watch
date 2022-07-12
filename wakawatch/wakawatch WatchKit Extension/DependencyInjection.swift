@@ -14,14 +14,7 @@ final class DependencyInjection {
 
     // swiftlint:disable:next function_body_length
     private func registerServices() {
-        self.container.register(KeychainServicesService.self) { _ in KeychainServicesService() }
-        self.container.register(TokenManager.self) { resolver in
-            TokenManager(keychainService: resolver.resolve(KeychainServicesService.self)!)
-        }
         self.container.register(ComplicationService.self) { _ in ComplicationService() }
-        self.container.register(RequestFactory.self) { resolver in
-            RequestFactory(tokenManager: resolver.resolve(TokenManager.self)!)
-        }
         self.container.register(ChartFactory.self) { _ in ChartFactory() }
         self.container.register(ConsoleLoggingService.self) { _ in ConsoleLoggingService() }
         self.container.register(RollbarLoggingService.self) { _ in RollbarLoggingService() }
@@ -35,6 +28,18 @@ final class DependencyInjection {
         self.container.register(LogManager.self) { resolver in
             LogManager(loggingServices: [resolver.resolve(ConsoleLoggingService.self)!,
                                         resolver.resolve(RollbarLoggingService.self)!])
+        }
+
+        self.container.register(KeychainServicesService.self) { resolver in
+            KeychainServicesService(logManager: resolver.resolve(LogManager.self)!)
+        }
+
+        self.container.register(TokenManager.self) { resolver in
+            TokenManager(keychainService: resolver.resolve(KeychainServicesService.self)!)
+        }
+
+        self.container.register(RequestFactory.self) { resolver in
+            RequestFactory(tokenManager: resolver.resolve(TokenManager.self)!)
         }
 
         self.container.register(RollbarAPMService.self) { resolver in
