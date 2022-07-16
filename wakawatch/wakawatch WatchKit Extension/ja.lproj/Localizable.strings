@@ -30,6 +30,9 @@
 "AuthenticationView_Donation_Button_Label" = "寄付する";
 "AuthenticationView_RequestFeature_Text" = "ワカウォッチの体験をより良くする方法を教えてください。";
 "AuthenticationView_RequestFeature_Button_Label" = "要求機能";
+"AuthenticationView_ErrorAlert_Button" = "わかりました";
+"AuthenticationView_ErrorAlert_Title" = "接続中にエラーが発生しました";
+"AuthenticationView_ErrorAlert_Message" = "WakaTime は oauth トークンを返さなかった。もう一度接続してみてください。";
 "FeatureRequestView_NavigationTitle" = "機能の要求";
 "FeatureRequestView_Submit_Button_Label" = "送信";
 "FeatureRequestView_Bug_Text" = "Waka Watchで問題が発生した場合は、[バグレポート]を提出してください。(https://github.com/uioporqwerty/waka-watch/issues/new?assignees=uioporqwerty&labels=bug&template=bug_report.md&title=)";

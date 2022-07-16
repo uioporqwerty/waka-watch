@@ -9,7 +9,8 @@ struct AuthenticationView: View {
     @State private var startingWebAuthenticationSession = false
     @State private var requiresUpdate = false
     @State private var showFeatureRequestModal = false
-
+    @State private var showAuthenticationErrorAlert = false
+    
     init(viewModel: AuthenticationViewModel) {
         self.authenticationViewModel = viewModel
 
@@ -39,8 +40,10 @@ struct AuthenticationView: View {
                     }
                     // swiftlint:disable line_length
                     let oAuthCode = NSURLComponents(string: (successURL.absoluteString))?.queryItems?.filter({$0.name == "code"}).first
+
                     guard let authorizationCode = oAuthCode?.value else {
-                        // TODO: Display error is authorization code is missing.
+                        self.showAuthenticationErrorAlert = true
+                        self.startingWebAuthenticationSession = false
                         return
                     }
 
@@ -50,7 +53,7 @@ struct AuthenticationView: View {
                     }
                 }
                 .prefersEphemeralWebBrowserSession(true)
-            }
+                }
         } else {
             GeometryReader { geometry in
                 ScrollView(.vertical, showsIndicators: false) {
@@ -126,6 +129,19 @@ struct AuthenticationView: View {
                     }
                 }
             }
+            .alert(isPresented: self.$showAuthenticationErrorAlert) { () -> Alert in
+                    let buttonText = Text("AuthenticationView_ErrorAlert_Button")
+                    let button = Alert.Button.default(buttonText) {
+                        self.showAuthenticationErrorAlert = false
+                    }
+
+                    let title = Text("AuthenticationView_ErrorAlert_Title")
+                    let message = Text("AuthenticationView_ErrorAlert_Message")
+
+                    return Alert(title: title,
+                                 message: message,
+                                 dismissButton: button)
+             }
             .onAppear {
                 self.authenticationViewModel
                     .telemetry

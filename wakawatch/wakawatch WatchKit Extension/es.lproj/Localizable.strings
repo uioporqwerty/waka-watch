@@ -30,6 +30,9 @@
 "AuthenticationView_Donation_Button_Label" = "Donar";
 "AuthenticationView_RequestFeature_Text" = "Cuéntanos cómo la experiencia de Waka Watch puede ser mejor.";
 "AuthenticationView_RequestFeature_Button_Label" = "Función de solicitud";
+"AuthenticationView_ErrorAlert_Button" = "DE ACUERDO";
+"AuthenticationView_ErrorAlert_Title" = "Error al conectar";
+"AuthenticationView_ErrorAlert_Message" = "WakaTime no devolvió un token oauth. Intente conectarse de nuevo.";
 "FeatureRequestView_NavigationTitle" = "Solicitar una función";
 "FeatureRequestView_Submit_Button_Label" = "Enviar";
 "FeatureRequestView_Bug_Text" = "Si tienes un problema con Waka Watch, envía un [informe de error.](https://github.com/uioporqwerty/waka-watch/issues/new?assignees=uioporqwerty&labels=bug&template=bug_report.md&title=)";

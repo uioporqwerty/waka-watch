@@ -30,6 +30,9 @@
 "AuthenticationView_Donation_Button_Label" = "दान करना";
 "AuthenticationView_RequestFeature_Text" = "हमें बताएं कि वाका वॉच का अनुभव कैसे बेहतर हो सकता है।";
 "AuthenticationView_RequestFeature_Button_Label" = "अनुरोध सुविधा";
+"AuthenticationView_ErrorAlert_Button" = "ठीक है";
+"AuthenticationView_ErrorAlert_Title" = "कनेक्ट करने में त्रुटि";
+"AuthenticationView_ErrorAlert_Message" = "WakaTime एक oauth टोकन वापस नहीं किया. पुन: कनेक्ट करने का प्रयास करें.";
 "FeatureRequestView_NavigationTitle" = "किसी सुविधा का अनुरोध करें";
 "FeatureRequestView_Submit_Button_Label" = "जमा करें";
 "FeatureRequestView_Bug_Text" = "यदि आपको वाका वॉच के साथ कोई समस्या हो रही है, तो कृपया एक [बग रिपोर्ट सबमिट करें।](https://github.com/uioporqwerty/waka-watch/issues/new?assignees=uioporqwerty&labels=bug&template=bug_report.md&title=)";

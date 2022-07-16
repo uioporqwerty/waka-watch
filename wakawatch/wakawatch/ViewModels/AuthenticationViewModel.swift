@@ -41,9 +41,9 @@ final class AuthenticationViewModel {
                     return
                 }
 
-                let defaults = UserDefaults.standard
                 self.tokenManager.setAccessToken(accessTokenResponse.access_token)
                 self.tokenManager.setRefreshToken(accessTokenResponse.refresh_token)
+                let defaults = UserDefaults.standard
                 defaults.set(accessTokenResponse.expires_at, forKey: DefaultsKeys.tokenExpiration)
                 defaults.set(true, forKey: DefaultsKeys.authorized)
 

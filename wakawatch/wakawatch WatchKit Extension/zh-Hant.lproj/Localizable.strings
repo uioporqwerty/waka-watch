@@ -30,6 +30,9 @@
 "AuthenticationView_Donation_Button_Label" = "捐";
 "AuthenticationView_RequestFeature_Text" = "告訴我們 Waka Watch 的體驗如何才能更好。";
 "AuthenticationView_RequestFeature_Button_Label" = "請求功能";
+"AuthenticationView_ErrorAlert_Button" = "還行";
+"AuthenticationView_ErrorAlert_Title" = "連接時出錯";
+"AuthenticationView_ErrorAlert_Message" = "WakaTime 沒有返回 oauth 令牌。請嘗試再次連接。";
 "FeatureRequestView_NavigationTitle" = "請求功能";
 "FeatureRequestView_Submit_Button_Label" = "提交";
 "FeatureRequestView_Bug_Text" = "如果您在使用Waka Watch時遇到問題，請提交[錯誤報告]。(https://github.com/uioporqwerty/waka-watch/issues/new?assignees=uioporqwerty&labels=bug&template=bug_report.md&title=)";
