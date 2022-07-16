@@ -10,7 +10,7 @@ struct AuthenticationView: View {
     @State private var requiresUpdate = false
     @State private var showFeatureRequestModal = false
     @State private var showAuthenticationErrorAlert = false
-    
+
     init(viewModel: AuthenticationViewModel) {
         self.authenticationViewModel = viewModel
 
@@ -96,7 +96,7 @@ struct AuthenticationView: View {
                             }
                             .padding(EdgeInsets(top: 8, leading: 8, bottom: 0, trailing: 8))
                             .fullScreenCover(isPresented: self.$showFeatureRequestModal) {
-                                FeatureRequestView(viewModel: DependencyInjection.shared.container.resolve(FeatureRequestViewModel.self)!)
+                                FeedbackView(viewModel: DependencyInjection.shared.container.resolve(FeedbackViewModel.self)!)
                             }
 
                             Divider()
