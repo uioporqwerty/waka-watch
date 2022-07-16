@@ -78,8 +78,8 @@ final class DependencyInjection {
                                             logManager: resolver.resolve(LogManager.self)!
                                            )
         }
-        self.container.register(FeatureRequestViewModel.self) { resolver in
-            FeatureRequestViewModel(networkService: resolver.resolve(NetworkService.self)!,
+        self.container.register(FeedbackViewModel.self) { resolver in
+            FeedbackViewModel(networkService: resolver.resolve(NetworkService.self)!,
                                     telemetryService: resolver.resolve(TelemetryService.self)!,
                                     logManager: resolver.resolve(LogManager.self)!,
                                     githubAPIService: resolver.resolve(GithubAPIService.self)!

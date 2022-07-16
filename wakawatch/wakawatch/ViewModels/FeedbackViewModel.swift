@@ -1,8 +1,8 @@
 import Foundation
 import RollbarNotifier
 
-final class FeatureRequestViewModel: ObservableObject {
-    @Published var featureRequest = ""
+final class FeedbackViewModel: ObservableObject {
+    @Published var feedback = ""
     @Published var isSubmissionSuccessful: Bool?
     @Published var isSubmitting = false
 
@@ -28,7 +28,7 @@ final class FeatureRequestViewModel: ObservableObject {
             self.isSubmitting = true
         }
 
-        self.githubAPIService.createFeature(body: self.featureRequest.trim(),
+        self.githubAPIService.createFeature(body: self.feedback.trim(),
                                             completionHandler: {
                                                 DispatchQueue.main.async {
                                                     self.isSubmissionSuccessful = true
