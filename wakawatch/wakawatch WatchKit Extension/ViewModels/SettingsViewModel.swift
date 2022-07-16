@@ -48,10 +48,6 @@ final class SettingsViewModel: ObservableObject {
             ConnectivityService.shared.sendMessage(message, delivery: .guaranteed)
             ConnectivityService.shared.sendMessage(message, delivery: .failable)
 
-            let defaults = UserDefaults.standard
-            self.tokenManager.removeAll()
-            defaults.set(false, forKey: DefaultsKeys.authorized)
-
             self.telemetry
                 .recordNavigationEvent(from: String(describing: SettingsView.self),
                                        to: String(describing: ConnectView.self))

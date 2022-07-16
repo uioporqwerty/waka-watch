@@ -12,21 +12,37 @@ class KeychainServicesService {
              key: String
              ) throws {
         let query: [String: AnyObject] = [
-            kSecAttrService as String: self.service as AnyObject,
-            kSecAttrAccount as String: key as AnyObject,
-            kSecClass as String: kSecClassGenericPassword,
-            kSecValueData as String: data as AnyObject
-        ]
+                kSecAttrService as String: self.service as AnyObject,
+                kSecAttrAccount as String: key as AnyObject,
+                kSecClass as String: kSecClassGenericPassword
+            ]
+        let attributes: [String: AnyObject] = [
+                kSecValueData as String: data as AnyObject
+            ]
+        let status = SecItemUpdate(query as CFDictionary, attributes as CFDictionary)
 
-        let status = SecItemAdd(query as CFDictionary, nil)
+        guard status != errSecItemNotFound else {
+            let query: [String: AnyObject] = [
+                kSecAttrService as String: self.service as AnyObject,
+                kSecAttrAccount as String: key as AnyObject,
+                kSecClass as String: kSecClassGenericPassword,
+                kSecValueData as String: data as AnyObject]
+            let status = SecItemAdd(query as CFDictionary, nil)
 
-        if status == errSecDuplicateItem {
-            self.logManager.reportError(KeychainError.duplicateItem)
-            throw KeychainError.duplicateItem
+            if status == errSecDuplicateItem {
+                self.logManager.reportError(KeychainError.duplicateItem)
+                throw KeychainError.duplicateItem
+            }
+
+            guard status == errSecSuccess else {
+                self.logManager.reportError(KeychainError.unexpectedStatus(status))
+                throw KeychainError.unexpectedStatus(status)
+            }
+
+            return
         }
 
         guard status == errSecSuccess else {
-            self.logManager.reportError(KeychainError.unexpectedStatus(status))
             throw KeychainError.unexpectedStatus(status)
         }
     }

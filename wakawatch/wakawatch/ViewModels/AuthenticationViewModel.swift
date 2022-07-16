@@ -85,10 +85,6 @@ final class AuthenticationViewModel {
             ConnectivityService.shared.sendMessage(message, delivery: .highPriority)
             ConnectivityService.shared.sendMessage(message, delivery: .guaranteed)
             ConnectivityService.shared.sendMessage(message, delivery: .failable)
-
-            let defaults = UserDefaults.standard
-            self.tokenManager.removeAll()
-            defaults.set(false, forKey: DefaultsKeys.authorized)
         } catch {
             self.logManager.reportError(error)
         }

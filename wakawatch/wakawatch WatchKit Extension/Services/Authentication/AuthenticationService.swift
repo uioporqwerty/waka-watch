@@ -41,16 +41,16 @@ final class AuthenticationService {
             let (data, response) = try await URLSession.shared.data(for: request)
             let urlResponse = response as? HTTPURLResponse
 
-            if urlResponse?.statusCode ?? 0 >= 300 {
-                self.logManager.errorMessage(data)
-            }
-
             self.telemetry.recordNetworkEvent(method: request.httpMethod,
                                               url: request.url?.absoluteString,
                                               statusCode: urlResponse?.statusCode.description)
-            let accessTokenResponse = try JSONDecoder().decode(AccessTokenResponse.self, from: data)
 
-            return accessTokenResponse
+            if !(urlResponse?.statusCode.isSuccessfulHttpResponseCode() ?? false) {
+                self.logManager.errorMessage(data)
+                return nil
+            }
+
+            return try JSONDecoder().decode(AccessTokenResponse.self, from: data)
         } catch {
             self.logManager.reportError(error)
         }
@@ -73,22 +73,27 @@ final class AuthenticationService {
             let (data, response) = try await URLSession.shared.data(for: request)
             let urlResponse = response as? HTTPURLResponse
 
-            if urlResponse?.statusCode ?? 0 >= 300 {
-                self.logManager.errorMessage(data)
-            }
-
             self.telemetry.recordNetworkEvent(method: request.httpMethod,
                                               url: request.url?.absoluteString,
                                               statusCode: urlResponse?.statusCode.description)
+
+            if !(urlResponse?.statusCode.isSuccessfulHttpResponseCode() ?? false) {
+                self.logManager.errorMessage(data)
+                return
+            }
+
+            UserDefaults.standard.set(false, forKey: DefaultsKeys.authorized)
+            self.tokenManager.removeAll()
         } catch {
             self.logManager.reportError(error)
         }
     }
 
     func refreshAccessToken() async {
-        if !accessIsTokenExpiringOrExpired() {
-            return
-        }
+       if !accessIsTokenExpiringOrExpired() {
+           self.logManager.debugMessage("Token is not expiring or has not expired.", true)
+           return
+       }
 
         let url = URL(string: "\(self.baseUrl)/token")
 
@@ -104,13 +109,15 @@ final class AuthenticationService {
             let (data, response) = try await URLSession.shared.data(for: request)
             let urlResponse = response as? HTTPURLResponse
 
-            if urlResponse?.statusCode ?? 0 >= 300 {
-                self.logManager.errorMessage(data)
-            }
-
             self.telemetry.recordNetworkEvent(method: request.httpMethod,
                                               url: request.url?.absoluteString,
                                               statusCode: urlResponse?.statusCode.description)
+
+            if !(urlResponse?.statusCode.isSuccessfulHttpResponseCode() ?? false) {
+                self.logManager.errorMessage(data)
+                return
+            }
+
             let refreshTokenResponse = try JSONDecoder().decode(AccessTokenResponse.self, from: data)
 
             let defaults = UserDefaults.standard
