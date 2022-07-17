@@ -29,7 +29,7 @@
 "AuthenticationView_Donation_Text" = "Waka Watch 的创建者支持有效的利他主义。如果您喜欢 Waka Watch，请考虑向他们的资金捐款。";
 "AuthenticationView_Donation_Button_Label" = "捐";
 "AuthenticationView_RequestFeature_Text" = "告诉我们 Waka Watch 的体验如何才能更好。";
-"AuthenticationView_RequestFeature_Button_Label" = "请求功能";
+"AuthenticationView_RequestFeature_Button_Label" = "提交反馈";
 "AuthenticationView_ErrorAlert_Button" = "还行";
 "AuthenticationView_ErrorAlert_Title" = "连接时出错";
 "AuthenticationView_ErrorAlert_Message" = "WakaTime 没有返回 oauth 令牌。请尝试再次连接。";

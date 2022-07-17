@@ -29,7 +29,7 @@
 "AuthenticationView_Donation_Text" = "Waka Watchの作成者は、効果的利他主義をサポートしています。 Waka Watchを楽しんだことがあるなら、彼らの資金への寄付を検討してください。";
 "AuthenticationView_Donation_Button_Label" = "寄付する";
 "AuthenticationView_RequestFeature_Text" = "ワカウォッチの体験をより良くする方法を教えてください。";
-"AuthenticationView_RequestFeature_Button_Label" = "要求機能";
+"AuthenticationView_RequestFeature_Button_Label" = "フィードバックの送信";
 "AuthenticationView_ErrorAlert_Button" = "わかりました";
 "AuthenticationView_ErrorAlert_Title" = "接続中にエラーが発生しました";
 "AuthenticationView_ErrorAlert_Message" = "WakaTime は oauth トークンを返さなかった。もう一度接続してみてください。";

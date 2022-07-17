@@ -29,7 +29,7 @@
 "AuthenticationView_Donation_Text" = "Le créateur de Waka Watch soutient l'altruisme efficace. Si vous avez apprécié Waka Watch, veuillez envisager de faire un don à leurs fonds.";
 "AuthenticationView_Donation_Button_Label" = "Donner";
 "AuthenticationView_RequestFeature_Text" = "Dites-nous comment l'expérience Waka Watch peut être meilleure.";
-"AuthenticationView_RequestFeature_Button_Label" = "Fonctionnalité de demande";
+"AuthenticationView_RequestFeature_Button_Label" = "Soumettre des commentaires";
 "AuthenticationView_ErrorAlert_Button" = "D'ACCORD";
 "AuthenticationView_ErrorAlert_Title" = "Erreur de connexion";
 "AuthenticationView_ErrorAlert_Message" = "WakaTime n'a pas retourné de jeton oauth. Essayez de vous reconnecter.";

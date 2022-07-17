@@ -29,7 +29,7 @@
 "AuthenticationView_Donation_Text" = "वाका वॉच के निर्माता प्रभावी परोपकारिता का समर्थन करते हैं। यदि आपने वाका वॉच का आनंद लिया है, तो कृपया उनके फंड को दान करने पर विचार करें ।";
 "AuthenticationView_Donation_Button_Label" = "दान करना";
 "AuthenticationView_RequestFeature_Text" = "हमें बताएं कि वाका वॉच का अनुभव कैसे बेहतर हो सकता है।";
-"AuthenticationView_RequestFeature_Button_Label" = "अनुरोध सुविधा";
+"AuthenticationView_RequestFeature_Button_Label" = "प्रतिक्रिया सबमिट करें";
 "AuthenticationView_ErrorAlert_Button" = "ठीक है";
 "AuthenticationView_ErrorAlert_Title" = "कनेक्ट करने में त्रुटि";
 "AuthenticationView_ErrorAlert_Message" = "WakaTime एक oauth टोकन वापस नहीं किया. पुन: कनेक्ट करने का प्रयास करें.";
