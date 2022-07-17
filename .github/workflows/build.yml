@@ -97,14 +97,11 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Extract version from tag
-        uses: damienaicheh/extract-version-from-tag-action@v1.0.0
-
       - name: Notify deploy to Rollbar
         uses: rollbar/github-deploy-action@2.1.1
         with:
           environment: "production"
-          version: "${{ env.MAJOR }}.${{ env.MINOR }}.${{ env.PATCH }}"
+          version: ${{ github.sha }}
+          local_username: ${{ github.actor }}
         env:
           ROLLBAR_ACCESS_TOKEN: ${{ secrets.ROLLBAR_ACCESS_TOKEN }}
-          ROLLBAR_USERNAME: "nitish.sachar"
