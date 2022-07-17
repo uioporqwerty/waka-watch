@@ -21,10 +21,10 @@ struct FeedbackView: View {
                     get: { self.viewModel.selectedCategory },
                     set: { self.viewModel.selectedCategory = $0 }
                 ), label: Text("FeedbackView_FeedbackCategory_Picker")) {
-                    ForEach(self.viewModel.categories, id: \.self) {
-                        if $0 == "Feature" {
+                    ForEach(0..<self.viewModel.categories.count) {
+                        if self.viewModel.categories[$0] == "Feature" {
                             Text(LocalizedStringKey("FeedbackView_FeatureCategory_Text"))
-                        } else if $0 == "Bug" {
+                        } else if self.viewModel.categories[$0] == "Bug" {
                             Text(LocalizedStringKey("FeedbackView_BugCategory_Text"))
                         } else {
                             Text(LocalizedStringKey("FeedbackView_NoneCategory_Text"))
