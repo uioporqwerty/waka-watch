@@ -57,74 +57,98 @@ struct AuthenticationView: View {
         } else {
             GeometryReader { geometry in
                 ScrollView(.vertical, showsIndicators: false) {
-                        VStack {
-                            Text(LocalizedStringKey("AuthenticationView_Connected_Text"))
-                                .multilineTextAlignment(.center)
-                                .lineSpacing(4)
+                            VStack {
+                                Text(LocalizedStringKey("AuthenticationView_Connected_Text"))
+                                    .multilineTextAlignment(.center)
+                                    .lineSpacing(4)
 
-                            AsyncButton(action: {
-                                await self.authenticationViewModel.disconnect()
-                            }) {
-                                Text(LocalizedStringKey("AuthenticationView_Disconnect_Button_Text"))
-                                    .frame(maxWidth: .infinity, minHeight: 34)
-                            }
-                            .padding(EdgeInsets(top: 8, leading: 8, bottom: 0, trailing: 8))
-                            .buttonStyle(.borderedProminent)
+                                AsyncButton(action: {
+                                    await self.authenticationViewModel.disconnect()
+                                }) {
+                                    Text(LocalizedStringKey("AuthenticationView_Disconnect_Button_Text"))
+                                        .frame(maxWidth: .infinity, minHeight: 34)
+                                }
+                                .padding(EdgeInsets(top: 8, leading: 8, bottom: 0, trailing: 8))
+                                .buttonStyle(.borderedProminent)
 
-                            Divider()
-                            .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
+                                Divider()
+                                .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
 
-                            Text(LocalizedStringKey("AuthenticationView_RequestFeature_Text"))
+                                Text(LocalizedStringKey("AuthenticationView_RequestFeature_Text"))
+                                    .frame(maxWidth: .infinity)
+                                    .multilineTextAlignment(.center)
+                                    .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
+                                    .lineSpacing(4)
+
+                                Button {
+                                    self.authenticationViewModel
+                                        .telemetry
+                                        .recordViewEvent(elementName: "\(String(describing: AuthenticationView.self))_RequestFeature_Button")
+                                    self.showFeatureRequestModal = true
+                                }
+                                label: {
+                                    Text(LocalizedStringKey("AuthenticationView_RequestFeature_Button_Label"))
+                                        .frame(maxWidth: .infinity)
+                                        .padding()
+                                        .background(Color.accentColor)
+                                        .foregroundColor(Color.white)
+                                        .cornerRadius(10)
+                                }
+                                .padding(EdgeInsets(top: 8, leading: 8, bottom: 0, trailing: 8))
+                                .fullScreenCover(isPresented: self.$showFeatureRequestModal) {
+                                    FeedbackView(viewModel: DependencyInjection.shared.container.resolve(FeedbackViewModel.self)!)
+                                }
+
+                                Divider()
+                                .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
+
+                                Text(LocalizedStringKey("AuthenticationView_Donation_Text"))
                                 .frame(maxWidth: .infinity)
                                 .multilineTextAlignment(.center)
                                 .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
                                 .lineSpacing(4)
 
-                            Button {
-                                self.authenticationViewModel
-                                    .telemetry
-                                    .recordViewEvent(elementName: "\(String(describing: AuthenticationView.self))_RequestFeature_Button")
-                                self.showFeatureRequestModal = true
-                            }
-                            label: {
-                                Text(LocalizedStringKey("AuthenticationView_RequestFeature_Button_Label"))
-                                    .frame(maxWidth: .infinity)
-                                    .padding()
-                                    .background(Color.accentColor)
-                                    .foregroundColor(Color.white)
-                                    .cornerRadius(10)
-                            }
-                            .padding(EdgeInsets(top: 8, leading: 8, bottom: 0, trailing: 8))
-                            .fullScreenCover(isPresented: self.$showFeatureRequestModal) {
-                                FeedbackView(viewModel: DependencyInjection.shared.container.resolve(FeedbackViewModel.self)!)
-                            }
-
-                            Divider()
-                            .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
-
-                            Text(LocalizedStringKey("AuthenticationView_Donation_Text"))
-                            .frame(maxWidth: .infinity)
-                            .multilineTextAlignment(.center)
-                            .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
-                            .lineSpacing(4)
-
-                            Button {
-                                self.authenticationViewModel
-                                    .telemetry
-                                    .recordViewEvent(elementName: "\(String(describing: AuthenticationView.self))_Donation_Button")
-                                openURL(URL(string: "https://funds.effectivealtruism.org/donate/organizations")!)
-                            }
-                            label: {
-                                Label(LocalizedStringKey("AuthenticationView_Donation_Button_Label"), systemImage: "heart.fill")
-                                    .frame(maxWidth: .infinity)
-                                    .padding()
-                                    .background(Color(.displayP3, red: 171/255, green: 43/255, blue: 36/255, opacity: 1))
-                                    .foregroundColor(Color.white)
-                                    .cornerRadius(10)
-                            }
-                            .padding(EdgeInsets(top: 8, leading: 8, bottom: 0, trailing: 8))
-                        }
-                            .frame(minHeight: geometry.size.height)
+                                Button {
+                                    self.authenticationViewModel
+                                        .telemetry
+                                        .recordViewEvent(elementName: "\(String(describing: AuthenticationView.self))_Donation_Button")
+                                    openURL(URL(string: "https://funds.effectivealtruism.org/donate/organizations")!)
+                                }
+                                label: {
+                                    Label(LocalizedStringKey("AuthenticationView_Donation_Button_Label"), systemImage: "heart.fill")
+                                        .frame(maxWidth: .infinity)
+                                        .padding()
+                                        .background(Color(.displayP3, red: 171/255, green: 43/255, blue: 36/255, opacity: 1))
+                                        .foregroundColor(Color.white)
+                                        .cornerRadius(10)
+                                }
+                                .padding(EdgeInsets(top: 8, leading: 8, bottom: 0, trailing: 8))
+                                
+                                Group {
+                                    Divider()
+                                        .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
+                                    
+                                    Text(LocalizedStringKey("AuthenticationView_RequestReview_Text"))
+                                        .frame(maxWidth: .infinity)
+                                        .multilineTextAlignment(.center)
+                                        .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
+                                        .lineSpacing(4)
+                                    
+                                    Button {
+                                        self.authenticationViewModel
+                                            .telemetry
+                                            .recordViewEvent(elementName: "\(String(describing: AuthenticationView.self))_RequestReview_Button")
+                                        self.authenticationViewModel.requestReview()
+                                    } label: {
+                                        Label(LocalizedStringKey("AuthenticationView_RequestReview_Button_Label"), systemImage: "square.and.pencil")
+                                            .frame(maxWidth: .infinity)
+                                            .padding()
+                                            .background(Color.accentColor)
+                                            .foregroundColor(Color.white)
+                                            .cornerRadius(10)
+                                    }
+                                }
+                            }.frame(minHeight: geometry.size.height)
                         }
                     }
                 }

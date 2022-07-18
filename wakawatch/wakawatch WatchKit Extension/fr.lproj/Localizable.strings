@@ -33,6 +33,8 @@
 "AuthenticationView_ErrorAlert_Button" = "D'ACCORD";
 "AuthenticationView_ErrorAlert_Title" = "Erreur de connexion";
 "AuthenticationView_ErrorAlert_Message" = "WakaTime n'a pas retourné de jeton oauth. Essayez de vous reconnecter.";
+"AuthenticationView_RequestReview_Button_Label" = "Écrire un avis";
+"AuthenticationView_RequestReview_Text" = "S'il vous plaît envisager d'écrire un avis sur l'App Store.";
 "FeedbackView_NavigationTitle" = "Rétroaction";
 "FeedbackView_Submit_Button_Label" = "Envoyer";
 "FeedbackView_Bug_Text" = "Désolé, vous rencontrez un problème avec Waka Watch. Veuillez soumettre toute information qui serait utile, telle qu'une description du bogue, les étapes à suivre pour le reproduire et tout autre contexte supplémentaire.";

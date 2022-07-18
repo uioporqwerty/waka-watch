@@ -1,5 +1,6 @@
 import Foundation
 import RollbarNotifier
+import SwiftUI
 
 final class AuthenticationViewModel {
     private let authenticationService: AuthenticationService
@@ -28,6 +29,15 @@ final class AuthenticationViewModel {
 
         self.authorizationUrl = self.authenticationService.authorizationUrl
         self.callbackURLScheme = self.authenticationService.callbackURLScheme
+    }
+
+    func requestReview() {
+        guard let writeReviewURL = URL(string: "https://apps.apple.com/app/id1607453366?action=write-review") else {
+            self.logManager.errorMessage("Could not construct write review URL.")
+            return
+        }
+
+        UIApplication.shared.open(writeReviewURL, options: [:], completionHandler: nil)
     }
 
     func authenticate(authorizationCode: String) async {

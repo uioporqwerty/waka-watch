@@ -33,6 +33,8 @@
 "AuthenticationView_ErrorAlert_Button" = "ठीक है";
 "AuthenticationView_ErrorAlert_Title" = "कनेक्ट करने में त्रुटि";
 "AuthenticationView_ErrorAlert_Message" = "WakaTime एक oauth टोकन वापस नहीं किया. पुन: कनेक्ट करने का प्रयास करें.";
+"AuthenticationView_RequestReview_Button_Label" = "एक समीक्षा लिखें";
+"AuthenticationView_RequestReview_Text" = "कृपया ऐप स्टोर पर एक समीक्षा लिखने पर विचार करें।";
 "FeedbackView_NavigationTitle" = "प्रतिपुष्टि";
 "FeedbackView_Submit_Button_Label" = "जमा करें";
 "FeedbackView_Bug_Text" = "क्षमा करें, आप वाका वॉच के साथ एक समस्या हो रही है. कृपया किसी भी जानकारी को सबमिट करें जो सहायक होगी जैसे: बग का विवरण, इसे पुन: उत्पन्न करने के लिए कदम, और कोई अन्य अतिरिक्त संदर्भ।";

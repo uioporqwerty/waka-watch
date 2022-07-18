@@ -33,6 +33,8 @@
 "AuthenticationView_ErrorAlert_Button" = "DE ACUERDO";
 "AuthenticationView_ErrorAlert_Title" = "Error al conectar";
 "AuthenticationView_ErrorAlert_Message" = "WakaTime no devolvió un token oauth. Intente conectarse de nuevo.";
+"AuthenticationView_RequestReview_Button_Label" = "Escribe una reseña";
+"AuthenticationView_RequestReview_Text" = "Por favor, considere escribir una reseña en la App Store.";
 "FeedbackView_NavigationTitle" = "Retroalimentación";
 "FeedbackView_Submit_Button_Label" = "Enviar";
 "FeedbackView_Bug_Text" = "Lo sentimos, tienes un problema con Waka Watch. Envíe cualquier información que sea útil, como: una descripción del error, los pasos para reproducirlo y cualquier otro contexto adicional.";

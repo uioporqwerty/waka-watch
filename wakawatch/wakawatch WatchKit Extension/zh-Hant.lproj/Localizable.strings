@@ -33,6 +33,8 @@
 "AuthenticationView_ErrorAlert_Button" = "還行";
 "AuthenticationView_ErrorAlert_Title" = "連接時出錯";
 "AuthenticationView_ErrorAlert_Message" = "WakaTime 沒有返回 oauth 令牌。請嘗試再次連接。";
+"AuthenticationView_RequestReview_Button_Label" = "寫評論";
+"AuthenticationView_RequestReview_Text" = "請考慮在 App Store 上撰寫評論。";
 "FeedbackView_NavigationTitle" = "反饋";
 "FeedbackView_Submit_Button_Label" = "提交";
 "FeedbackView_Bug_Text" = "很抱歉，您在使用Waka Watch時遇到問題。請提交任何有用的資訊，例如：錯誤的描述，重現錯誤的步驟以及任何其他附加上下文。";

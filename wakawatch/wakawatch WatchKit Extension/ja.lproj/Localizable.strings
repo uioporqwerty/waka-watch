@@ -33,6 +33,8 @@
 "AuthenticationView_ErrorAlert_Button" = "わかりました";
 "AuthenticationView_ErrorAlert_Title" = "接続中にエラーが発生しました";
 "AuthenticationView_ErrorAlert_Message" = "WakaTime は oauth トークンを返さなかった。もう一度接続してみてください。";
+"AuthenticationView_RequestReview_Button_Label" = "レビューを書く";
+"AuthenticationView_RequestReview_Text" = "App Storeにレビューを書くことを検討してください。";
 "FeedbackView_NavigationTitle" = "フィードバック";
 "FeedbackView_Submit_Button_Label" = "送信";
 "FeedbackView_Bug_Text" = "申し訳ありませんが、あなたはワカウォッチに問題を抱えています。バグの説明、バグを再現する手順、その他の追加のコンテキストなど、役立つ情報があれば送信してください。";
