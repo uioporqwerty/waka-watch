@@ -146,7 +146,7 @@ struct AuthenticationView: View {
                                             .background(Color.accentColor)
                                             .foregroundColor(Color.white)
                                             .cornerRadius(10)
-                                    }
+                                    }.padding(EdgeInsets(top: 8, leading: 8, bottom: 0, trailing: 8))
                                 }
                             }.frame(minHeight: geometry.size.height)
                         }
