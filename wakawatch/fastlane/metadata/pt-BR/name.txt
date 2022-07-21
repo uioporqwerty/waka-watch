@@ -1,1 +1,1 @@
-Waka Watch for WakaTime
+Waka Watch - A WakaTime Client
