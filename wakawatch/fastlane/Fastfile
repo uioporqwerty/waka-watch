@@ -63,7 +63,7 @@ platform :ios do
       ipa: "./Waka-Watch.ipa",
       app_version: app_version,
       skip_screenshots: true,
-      skip_metadata: true,
+      automatic_release: true,
       precheck_include_in_app_purchases: false
     )
   end
