@@ -1,0 +1,7 @@
+O Waka Watch permite que você saiba sobre seus hábitos de codificação apenas a partir do apple watch. Com o Waka Watch, você poderá fazer o seguinte: 
+
+- Seja notificado quando atingir um objetivo. 
+- Veja sua atividade de codificação atual para o dia na sua face do relógio. 
+- Encontre sua posição na tabela de classificação pública e veja a posição dos outros. 
+- Veja gráficos sobre sua atividade de codificação nos últimos 5 dias. 
+- Veja seu perfil no WakaTime e o perfil dos outros.

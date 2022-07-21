@@ -1,0 +1,7 @@
+Waka Watch vous permet de connaître vos habitudes de codage directement depuis votre Apple Watch. Avec Waka Watch, vous pourrez faire ce qui suit :
+
+- Soyez averti lorsque vous avez atteint un objectif.
+- Affichez votre activité de codage actuelle pour la journée sur le cadran de votre montre.
+- Trouvez votre position sur le classement public et consultez la position des autres.
+- Voir des graphiques sur votre activité de codage au cours des 5 derniers jours.
+- Voir votre profil WakaTime et le profil des autres.

@@ -1,0 +1,1 @@
+WakaTime est une plate-forme qui fournit des plugins open source pour recueillir des informations sur la façon dont vous codez. Waka Watch est une application cliente tierce pour afficher vos métriques de codage sur votre Apple Watch.

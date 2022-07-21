@@ -1,0 +1,1 @@
+WakaTime é uma plataforma que fornece plugins de código aberto para recolher insights sobre como codificar. Waka Watch é uma aplicação de cliente de 3ª parte para ver as suas métricas de codificação no apple watch.

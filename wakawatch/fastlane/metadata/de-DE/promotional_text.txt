@@ -1,0 +1,7 @@
+Waka Watch ermöglicht es Ihnen, Ihre Programmiergewohnheiten direkt von Ihrer Apple Watch aus zu erfahren. Mit Waka Watch können Sie Folgendes tun:
+
+- Lassen Sie sich benachrichtigen, wenn Sie ein Ziel erreicht haben.
+- Zeigen Sie Ihre aktuelle Programmieraktivität für den Tag auf Ihrem Zifferblatt an.
+- Finden Sie Ihren Rang auf der öffentlichen Rangliste heraus und sehen Sie sich den Rang anderer an.
+- Sehen Sie sich Diagramme zu Ihrer Programmieraktivität in den letzten 5 Tagen an.
+- Zeigen Sie Ihr WakaTime-Profil und das Profil anderer an.
