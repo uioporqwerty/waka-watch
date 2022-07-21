@@ -1,7 +1,1 @@
-Waka Watch allows you to know about your coding habits right from your Apple Watch. With Waka Watch, you'll be able to do the following:
-
-- Get notified when you've achieved a goal.
-- View your current coding activity for the day on your watch face.
-- Find your standing on the public leaderboard and view the standing of others.
-- See graphs about your coding activity over the last 5 days.
-- View your WakaTime profile and the profile of others.
+Know your coding habits right from your Apple Watch. You'll get notified when a goal is achieved, view coding activity on your watch face, and more.
