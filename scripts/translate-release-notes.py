@@ -62,4 +62,5 @@ with open(f"{working_directory}/wakawatch/fastlane/metadata/en-US/release_notes.
                 print(f"translated text is {translated_text}")
                 translation_release_notes.write(translated_text)
                 print("translated notes are")
+                translation_release_notes.flush()
                 print(translation_release_notes.read())
