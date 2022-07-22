@@ -23,8 +23,6 @@ headers = {
 with open(f"{working_directory}/wakawatch/fastlane/metadata/en-US/release_notes.txt", 'r') as file:
     release_notes = file.read()
 
-    print(release_notes)
-
     body = [{
         'text': release_notes
     }]
@@ -32,4 +30,10 @@ with open(f"{working_directory}/wakawatch/fastlane/metadata/en-US/release_notes.
     request = requests.post(constructed_url, params=params, headers=headers, json=body)
     response = request.json()
 
-    print(json.dumps(response, sort_keys=True, ensure_ascii=False, indent=4, separators=(',', ': ')))
+    translation_responses = response[0]
+
+    for translation in translation_responses.translations:
+        print(translation.text)
+        print(translation.to)
+
+    
