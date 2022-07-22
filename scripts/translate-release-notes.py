@@ -1,7 +1,8 @@
 import requests, uuid, json, os
 
 key = os.getenv("TRANSLATOR_API_KEY")
-working_directory = os.getenv("WORKING_DIRECTORY")
+working_directory = os.getenv("GITHUB_WORKSPACE")
+print("working directory is")
 print(working_directory)
 endpoint = "https://api.cognitive.microsofttranslator.com"
 location = "westus2"
