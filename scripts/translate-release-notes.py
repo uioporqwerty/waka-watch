@@ -59,6 +59,7 @@ with open(f"{working_directory}/wakawatch/fastlane/metadata/en-US/release_notes.
         for language in languages_to_read:
             with open(f"{working_directory}/wakawatch/fastlane/metadata/{language}/release_notes.txt", "r+") as translation_release_notes:
                 print(f"adding notes for {language}")
+                print(f"translated text is {translated_text}")
                 translation_release_notes.write(translated_text)
                 print("translated notes are")
                 print(translation_release_notes.read())
