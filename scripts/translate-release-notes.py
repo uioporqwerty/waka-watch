@@ -32,7 +32,7 @@ with open(f"{working_directory}/wakawatch/fastlane/metadata/en-US/release_notes.
 
     translation_responses = response[0]
 
-    for translation in translation_responses.translations:
+    for translation in translation_responses["translations"]:
         print(translation.text)
         print(translation.to)
 
