@@ -2,10 +2,6 @@ import requests, uuid, json, os
 
 key = os.getenv("TRANSLATOR_API_KEY")
 working_directory = os.getenv("GITHUB_WORKSPACE")
-print("working directory is")
-print(working_directory)
-print("translator_api_key is")
-print(len(key) != 0)
 endpoint = "https://api.cognitive.microsofttranslator.com/"
 location = "westus2"
 path = 'translate'
@@ -19,6 +15,7 @@ params = {
 
 headers = {
     'Ocp-Apim-Subscription-Key': key,
+    'Ocp-Apim-Subscription-Region': location,
     'Content-Type': 'application/json',
     'X-ClientTraceId': str(uuid.uuid4())
 }
