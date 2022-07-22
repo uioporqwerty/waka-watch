@@ -4,6 +4,8 @@ key = os.getenv("TRANSLATOR_API_KEY")
 working_directory = os.getenv("GITHUB_WORKSPACE")
 print("working directory is")
 print(working_directory)
+print("translator_api_key is filled")
+print(len(key) != 0)
 endpoint = "https://api.cognitive.microsofttranslator.com"
 location = "westus2"
 path = '/translate'
