@@ -19,50 +19,39 @@ jobs:
         with:
           xcode-version: "13.4"
 
-      # - name: Run Bundle install
-      #   run: |
-      #     cd wakawatch
-      #     bundle install
-
-      # - name: Extract version from tag
-      #   uses: damienaicheh/extract-version-from-tag-action@v1.0.0
-
-      # - name: Configure git
-      #   run: git config --global url."https://${TOKEN}:x-oauth-basic@github.com/".insteadOf "https://github.com/"
-      #   env:
-      #     TOKEN: ${{ secrets.ACCESS_TOKEN }}
-
-      # - name: Decrypt sensitive files
-      #   run: |
-      #     cd wakawatch
-      #     gpg -d --passphrase "${{ secrets.GPG_PASSPHRASE }}" --batch Config.xcconfig.asc > ./wakawatch\ WatchKit\ Extension/Config.xcconfig
-      #     gpg -d --passphrase "${{ secrets.GPG_PASSPHRASE }}" --batch AuthKey_AQ5VCA4237.p8.asc > ./AuthKey_AQ5VCA4237.p8
-
-      - uses: actions/setup-python@v4
-        with:
-          python-version: "3.x"
-
-      - name: Translate Release Notes
+      - name: Run Bundle install
         run: |
-          pip install requests uuid
-          python $GITHUB_WORKSPACE/scripts/translate-release-notes.py
+          cd wakawatch
+          bundle install
+
+      - name: Extract version from tag
+        uses: damienaicheh/extract-version-from-tag-action@v1.0.0
+
+      - name: Configure git
+        run: git config --global url."https://${TOKEN}:x-oauth-basic@github.com/".insteadOf "https://github.com/"
         env:
-          TRANSLATOR_API_KEY: ${{ secrets.TRANSLATOR_API_KEY }}
+          TOKEN: ${{ secrets.ACCESS_TOKEN }}
 
-      # - name: Build
-      #   run: |
-      #     cd wakawatch
-      #     bundle exec fastlane build
-      #   env:
-      #     CI: true
-      #     MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
-      #     BUILD_NUMBER: ${{ github.run_number }}
+      - name: Decrypt sensitive files
+        run: |
+          cd wakawatch
+          gpg -d --passphrase "${{ secrets.GPG_PASSPHRASE }}" --batch Config.xcconfig.asc > ./wakawatch\ WatchKit\ Extension/Config.xcconfig
+          gpg -d --passphrase "${{ secrets.GPG_PASSPHRASE }}" --batch AuthKey_AQ5VCA4237.p8.asc > ./AuthKey_AQ5VCA4237.p8
 
-      # - name: Upload artifact
-      #   uses: actions/upload-artifact@v2
-      #   with:
-      #     name: Waka-Watch
-      #     path: wakawatch/Waka-Watch.ipa
+      - name: Build
+        run: |
+          cd wakawatch
+          bundle exec fastlane build
+        env:
+          CI: true
+          MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+          BUILD_NUMBER: ${{ github.run_number }}
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: Waka-Watch
+          path: wakawatch/Waka-Watch.ipa
 
   Deploy:
     runs-on: macOS-latest
@@ -92,6 +81,18 @@ jobs:
         run: |
           cd wakawatch
           gpg -d --passphrase "${{ secrets.GPG_PASSPHRASE }}" --batch AuthKey_AQ5VCA4237.p8.asc > ./AuthKey_AQ5VCA4237.p8
+
+      - name: Setup Python 3.x
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
+
+      - name: Translate Release Notes
+        run: |
+          pip install requests uuid
+          python $GITHUB_WORKSPACE/scripts/translate-release-notes.py
+        env:
+          TRANSLATOR_API_KEY: ${{ secrets.TRANSLATOR_API_KEY }}
 
       - name: Deploy to App Store
         run: |
