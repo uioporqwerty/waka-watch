@@ -20,7 +20,7 @@ headers = {
     'X-ClientTraceId': str(uuid.uuid4())
 }
 
-with open(f'{working_directory}/wakawatch/fastlane/metadata/en-US/release_notes.txt', 'r') as file:
+with open(f"{working_directory}/wakawatch/fastlane/metadata/en-US/release_notes.txt", 'r') as file:
     release_notes = file.read()
 
     print(release_notes)
