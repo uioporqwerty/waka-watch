@@ -1,6 +1,8 @@
 import requests, uuid, json, os
 
 key = os.getenv("TRANSLATOR_API_KEY")
+working_directory = os.getenv("WORKING_DIRECTORY")
+print(working_directory)
 endpoint = "https://api.cognitive.microsofttranslator.com"
 location = "westus2"
 path = '/translate'
@@ -18,11 +20,11 @@ headers = {
     'X-ClientTraceId': str(uuid.uuid4())
 }
 
-with open('../wakawatch/fastlane/metadata/en-US/release_notes.txt', 'r') as file:
+with open(f'{working_directory}/wakawatch/fastlane/metadata/en-US/release_notes.txt', 'r') as file:
     release_notes = file.read()
 
     print(release_notes)
-    
+
     body = [{
         'text': release_notes
     }]

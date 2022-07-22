@@ -19,30 +19,31 @@ jobs:
         with:
           xcode-version: "13.4"
 
-      - name: Run Bundle install
-        run: |
-          cd wakawatch
-          bundle install
+      # - name: Run Bundle install
+      #   run: |
+      #     cd wakawatch
+      #     bundle install
 
-      - name: Extract version from tag
-        uses: damienaicheh/extract-version-from-tag-action@v1.0.0
+      # - name: Extract version from tag
+      #   uses: damienaicheh/extract-version-from-tag-action@v1.0.0
 
-      - name: Configure git
-        run: git config --global url."https://${TOKEN}:x-oauth-basic@github.com/".insteadOf "https://github.com/"
-        env:
-          TOKEN: ${{ secrets.ACCESS_TOKEN }}
+      # - name: Configure git
+      #   run: git config --global url."https://${TOKEN}:x-oauth-basic@github.com/".insteadOf "https://github.com/"
+      #   env:
+      #     TOKEN: ${{ secrets.ACCESS_TOKEN }}
 
-      - name: Decrypt sensitive files
-        run: |
-          cd wakawatch
-          gpg -d --passphrase "${{ secrets.GPG_PASSPHRASE }}" --batch Config.xcconfig.asc > ./wakawatch\ WatchKit\ Extension/Config.xcconfig
-          gpg -d --passphrase "${{ secrets.GPG_PASSPHRASE }}" --batch AuthKey_AQ5VCA4237.p8.asc > ./AuthKey_AQ5VCA4237.p8
+      # - name: Decrypt sensitive files
+      #   run: |
+      #     cd wakawatch
+      #     gpg -d --passphrase "${{ secrets.GPG_PASSPHRASE }}" --batch Config.xcconfig.asc > ./wakawatch\ WatchKit\ Extension/Config.xcconfig
+      #     gpg -d --passphrase "${{ secrets.GPG_PASSPHRASE }}" --batch AuthKey_AQ5VCA4237.p8.asc > ./AuthKey_AQ5VCA4237.p8
 
       - name: Translate Release Notes
         run: |
           pip install requests uuid
           python ../../scripts/translate-release-notes.py
         env:
+          WORKING_DIRECTORY: $GITHUB_WORKSPACE
           TRANSLATOR_API_KEY: ${{ secrets.TRANSLATOR_API_KEY }}
 
       # - name: Build
