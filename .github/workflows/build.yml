@@ -39,12 +39,12 @@ jobs:
           gpg -d --passphrase "${{ secrets.GPG_PASSPHRASE }}" --batch AuthKey_AQ5VCA4237.p8.asc > ./AuthKey_AQ5VCA4237.p8
 
       - name: Translate Release Notes
+        env:
+          TRANSLATOR_API_KEY: { { secrets.TRANSLATOR_API_KEY } }
         run: |
           pip install requests uuid
           python ../../scripts/translate-release-notes.py
         shell: sh
-        env:
-          TRANSLATOR_API_KEY: { { secrets.TRANSLATOR_API_KEY } }
 
       # - name: Build
       #   run: |
