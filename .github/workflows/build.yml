@@ -41,7 +41,7 @@ jobs:
       - name: Translate Release Notes
         run: |
           pip install requests uuid
-          python ../../scripts/translate-release-notes.py
+          python $GITHUB_WORKSPACE/scripts/translate-release-notes.py
         env:
           WORKING_DIRECTORY: $GITHUB_WORKSPACE
           TRANSLATOR_API_KEY: ${{ secrets.TRANSLATOR_API_KEY }}
