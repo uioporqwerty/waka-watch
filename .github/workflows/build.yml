@@ -40,7 +40,7 @@ jobs:
 
       - name: Translate Release Notes
         env:
-          TRANSLATOR_API_KEY: { { secrets.TRANSLATOR_API_KEY } }
+          TRANSLATOR-API-KEY: { { secrets.TRANSLATOR_API_KEY } }
         run: |
           pip install requests uuid
           python ../../scripts/translate-release-notes.py
