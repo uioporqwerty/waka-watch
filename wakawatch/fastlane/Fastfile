@@ -64,6 +64,7 @@ platform :ios do
       app_version: app_version,
       skip_screenshots: true,
       automatic_release: true,
+      submit_for_review: true,
       precheck_include_in_app_purchases: false
     )
   end
