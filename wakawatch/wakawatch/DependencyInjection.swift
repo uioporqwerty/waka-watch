@@ -41,7 +41,8 @@ final class DependencyInjection {
 
         self.container.register(RollbarAPMService.self) { resolver in
             RollbarAPMService(logManager: resolver.resolve(LogManager.self)!)
-        }
+        }.inObjectScope(.container)
+        
         self.container.register(AuthenticationService.self) { resolver in
             AuthenticationService(logManager: resolver.resolve(LogManager.self)!,
                                   telemetryService: resolver.resolve(TelemetryService.self)!,

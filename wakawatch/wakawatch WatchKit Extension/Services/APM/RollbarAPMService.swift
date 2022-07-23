@@ -6,7 +6,9 @@ class RollbarAPMService {
 
     init(logManager: LogManager) {
         self.logManager = logManager
-
+        
+        let environment = Bundle.main.infoDictionary?["ENVIRONMENT"] as? String ?? "development"
+        let isDevelopment = environment == "development"
         let config = RollbarConfig()
         config.dataScrubber.scrubFields = ["CLIENT_ID",
                                            "CLIENT_SECRET",
@@ -15,7 +17,9 @@ class RollbarAPMService {
                                            "refresh_token"]
         config.dataScrubber.enabled = true
         config.destination.accessToken = Bundle.main.infoDictionary?["ROLLBAR_ACCESS_TOKEN"] as? String ?? ""
-        config.destination.environment = Bundle.main.infoDictionary?["ENVIRONMENT"] as? String ?? "Development"
+        config.destination.environment =  environment
+        config.developerOptions.enabled = isDevelopment
+        config.developerOptions.logPayload = isDevelopment
         config.loggingOptions.captureIp = .anonymize
         config.telemetry.captureLog = true
         config.telemetry.captureConnectivity = true
