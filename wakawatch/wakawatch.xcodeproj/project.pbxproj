@@ -129,7 +129,6 @@
 		6BED9A752795154C005646C3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BED9A742795154C005646C3 /* Preview Assets.xcassets */; };
 		6BED9A8F2795154C005646C3 /* Waka Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 6BED9A8E2795154C005646C3 /* Waka Watch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		6BED9A942795154E005646C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BED9A932795154E005646C3 /* Assets.xcassets */; };
-		6BED9A9A2795154E005646C3 /* wakawatch WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 6BED9A992795154E005646C3 /* wakawatch WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		6BED9AA12795154E005646C3 /* WakaWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BED9AA02795154E005646C3 /* WakaWatchApp.swift */; };
 		6BED9AA52795154F005646C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BED9AA42795154F005646C3 /* Assets.xcassets */; };
 		6BED9AA82795154F005646C3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BED9AA72795154F005646C3 /* Preview Assets.xcassets */; };
@@ -151,6 +150,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		6B0C0D7A288C39E100B9BE13 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6BED9A6227951549005646C3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6BED9A8D2795154C005646C3;
+			remoteInfo = "wakawatch WatchKit App";
+		};
 		6BED9A7B2795154C005646C3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6BED9A6227951549005646C3 /* Project object */;
@@ -172,20 +178,6 @@
 			remoteGlobalIDString = 6BED9A8D2795154C005646C3;
 			remoteInfo = "wakawatch WatchKit App";
 		};
-		6BED9A9B2795154E005646C3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6BED9A6227951549005646C3 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6BED9A982795154E005646C3;
-			remoteInfo = "wakawatch WatchKit Extension";
-		};
-		6BED9AAF2795154F005646C3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6BED9A6227951549005646C3 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6BED9A982795154E005646C3;
-			remoteInfo = "wakawatch WatchKit Extension";
-		};
 		6BED9AB92795154F005646C3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6BED9A6227951549005646C3 /* Project object */;
@@ -196,17 +188,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		6BED9AC52795154F005646C3 /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				6BED9A9A2795154E005646C3 /* wakawatch WatchKit Extension.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		6BED9AC92795154F005646C3 /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -312,7 +293,6 @@
 		6BED9A842795154C005646C3 /* wakawatchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wakawatchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BED9A8E2795154C005646C3 /* Waka Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Waka Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BED9A932795154E005646C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		6BED9A992795154E005646C3 /* wakawatch WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "wakawatch WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BED9AA02795154E005646C3 /* WakaWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WakaWatchApp.swift; sourceTree = "<group>"; };
 		6BED9AA42795154F005646C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6BED9AA72795154F005646C3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -364,18 +344,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6BED9A962795154E005646C3 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6B6F512F2854107000B16889 /* Kingfisher in Frameworks */,
-				6BD52F1E279FD1A300247BFB /* RollbarNotifier in Frameworks */,
-				6B6F512C28540FB500B16889 /* SwiftUICharts in Frameworks */,
-				6B6F5132285410D700B16889 /* Swinject in Frameworks */,
-				6B6F51362854112F00B16889 /* SwiftVersionCompare in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		6BED9AAB2795154F005646C3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -394,6 +362,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B6F512C28540FB500B16889 /* SwiftUICharts in Frameworks */,
+				6B6F512F2854107000B16889 /* Kingfisher in Frameworks */,
+				6BD52F1E279FD1A300247BFB /* RollbarNotifier in Frameworks */,
+				6B6F5132285410D700B16889 /* Swinject in Frameworks */,
+				6B6F51362854112F00B16889 /* SwiftVersionCompare in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -601,7 +574,6 @@
 				6BED9A7A2795154C005646C3 /* wakawatchTests.xctest */,
 				6BED9A842795154C005646C3 /* wakawatchUITests.xctest */,
 				6BED9A8E2795154C005646C3 /* Waka Watch.app */,
-				6BED9A992795154E005646C3 /* wakawatch WatchKit Extension.appex */,
 				6BED9AAE2795154F005646C3 /* wakawatch WatchKit AppTests.xctest */,
 				6BED9AB82795154F005646C3 /* wakawatch WatchKit AppUITests.xctest */,
 			);
@@ -830,43 +802,18 @@
 			buildConfigurationList = 6BED9AC62795154F005646C3 /* Build configuration list for PBXNativeTarget "wakawatch WatchKit App" */;
 			buildPhases = (
 				6BED9A8C2795154C005646C3 /* Resources */,
-				6BED9AC52795154F005646C3 /* Embed App Extensions */,
 				7CFCC1095AE104083887C648 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				6BED9A9C2795154E005646C3 /* PBXTargetDependency */,
-			);
-			name = "wakawatch WatchKit App";
-			productName = "wakawatch WatchKit App";
-			productReference = 6BED9A8E2795154C005646C3 /* Waka Watch.app */;
-			productType = "com.apple.product-type.application.watchapp2";
-		};
-		6BED9A982795154E005646C3 /* wakawatch WatchKit Extension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 6BED9AC22795154F005646C3 /* Build configuration list for PBXNativeTarget "wakawatch WatchKit Extension" */;
-			buildPhases = (
 				6BED9A952795154E005646C3 /* Sources */,
-				6BED9A962795154E005646C3 /* Frameworks */,
-				6BED9A972795154E005646C3 /* Resources */,
 				717161F828600B1E002871A9 /* Upload dSYM for Rollbar */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "wakawatch WatchKit Extension";
-			packageProductDependencies = (
-				6BD52F1D279FD1A300247BFB /* RollbarNotifier */,
-				6B6F512B28540FB500B16889 /* SwiftUICharts */,
-				6B6F512E2854107000B16889 /* Kingfisher */,
-				6B6F5131285410D700B16889 /* Swinject */,
-				6B6F51352854112F00B16889 /* SwiftVersionCompare */,
-			);
-			productName = "wakawatch WatchKit Extension";
-			productReference = 6BED9A992795154E005646C3 /* wakawatch WatchKit Extension.appex */;
-			productType = "com.apple.product-type.watchkit2-extension";
+			name = "wakawatch WatchKit App";
+			productName = "wakawatch WatchKit App";
+			productReference = 6BED9A8E2795154C005646C3 /* Waka Watch.app */;
+			productType = "com.apple.product-type.application";
 		};
 		6BED9AAD2795154F005646C3 /* wakawatch WatchKit AppTests */ = {
 			isa = PBXNativeTarget;
@@ -879,7 +826,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				6BED9AB02795154F005646C3 /* PBXTargetDependency */,
+				6B0C0D7B288C39E100B9BE13 /* PBXTargetDependency */,
 			);
 			name = "wakawatch WatchKit AppTests";
 			productName = "wakawatch WatchKit AppTests";
@@ -912,7 +859,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1320;
-				LastUpgradeCheck = 1320;
+				LastUpgradeCheck = 1400;
 				TargetAttributes = {
 					6BED9A692795154A005646C3 = {
 						CreatedOnToolsVersion = 13.2.1;
@@ -928,12 +875,9 @@
 					6BED9A8D2795154C005646C3 = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
-					6BED9A982795154E005646C3 = {
-						CreatedOnToolsVersion = 13.2.1;
-					};
 					6BED9AAD2795154F005646C3 = {
 						CreatedOnToolsVersion = 13.2.1;
-						TestTargetID = 6BED9A982795154E005646C3;
+						TestTargetID = 6BED9A8D2795154C005646C3;
 					};
 					6BED9AB72795154F005646C3 = {
 						CreatedOnToolsVersion = 13.2.1;
@@ -977,7 +921,6 @@
 				6BED9A792795154C005646C3 /* wakawatchTests */,
 				6BED9A832795154C005646C3 /* wakawatchUITests */,
 				6BED9A8D2795154C005646C3 /* wakawatch WatchKit App */,
-				6BED9A982795154E005646C3 /* wakawatch WatchKit Extension */,
 				6BED9AAD2795154F005646C3 /* wakawatch WatchKit AppTests */,
 				6BED9AB72795154F005646C3 /* wakawatch WatchKit AppUITests */,
 			);
@@ -1013,17 +956,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6BED9A942795154E005646C3 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6BED9A972795154E005646C3 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 				6B4304092854D49C00B8A2BB /* Licenses.rtf in Resources */,
-				6BED9AA82795154F005646C3 /* Preview Assets.xcassets in Resources */,
 				6B4F6D9527D3B6D900F1E2C4 /* Localizable.strings in Resources */,
+				6BED9AA82795154F005646C3 /* Preview Assets.xcassets in Resources */,
+				6BED9A942795154E005646C3 /* Assets.xcassets in Resources */,
 				6BED9AA52795154F005646C3 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1289,6 +1225,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		6B0C0D7B288C39E100B9BE13 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6BED9A8D2795154C005646C3 /* wakawatch WatchKit App */;
+			targetProxy = 6B0C0D7A288C39E100B9BE13 /* PBXContainerItemProxy */;
+		};
 		6BED9A7C2795154C005646C3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 6BED9A692795154A005646C3 /* wakawatch */;
@@ -1303,16 +1244,6 @@
 			isa = PBXTargetDependency;
 			target = 6BED9A8D2795154C005646C3 /* wakawatch WatchKit App */;
 			targetProxy = 6BED9A902795154C005646C3 /* PBXContainerItemProxy */;
-		};
-		6BED9A9C2795154E005646C3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 6BED9A982795154E005646C3 /* wakawatch WatchKit Extension */;
-			targetProxy = 6BED9A9B2795154E005646C3 /* PBXContainerItemProxy */;
-		};
-		6BED9AB02795154F005646C3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 6BED9A982795154E005646C3 /* wakawatch WatchKit Extension */;
-			targetProxy = 6BED9AAF2795154F005646C3 /* PBXContainerItemProxy */;
 		};
 		6BED9ABA2795154F005646C3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1379,6 +1310,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -1440,6 +1372,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1458,90 +1391,27 @@
 			};
 			name = Release;
 		};
-		6BED9AC32795154F005646C3 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"wakawatch WatchKit Extension/Preview Content\"";
-				DEVELOPMENT_TEAM = 4V8V3L4FYS;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = "wakawatch WatchKit Extension/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Waka Watch";
-				INFOPLIST_KEY_CLKComplicationPrincipalClass = wakawatch_WatchKit_Extension.ComplicationController;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = NO;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = app.wakawatch.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE_SPECIFIER = "match Development app.wakawatch.watchkitapp.watchkitextension";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 8.0;
-			};
-			name = Debug;
-		};
-		6BED9AC42795154F005646C3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"wakawatch WatchKit Extension/Preview Content\"";
-				DEVELOPMENT_TEAM = 4V8V3L4FYS;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = "wakawatch WatchKit Extension/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Waka Watch";
-				INFOPLIST_KEY_CLKComplicationPrincipalClass = wakawatch_WatchKit_Extension.ComplicationController;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = NO;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = app.wakawatch.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE_SPECIFIER = "match AppStore app.wakawatch.watchkitapp.watchkitextension";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				VALIDATE_PRODUCT = YES;
-				WATCHOS_DEPLOYMENT_TARGET = 8.0;
-			};
-			name = Release;
-		};
 		6BED9AC72795154F005646C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4V8V3L4FYS;
 				GENERATE_INFOPLIST_FILE = NO;
-				IBSC_MODULE = wakawatch_WatchKit_Extension;
 				INFOPLIST_FILE = "wakawatch WatchKit App/Info.plist";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = app.wakawatch;
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = NO;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = app.wakawatch.watchkitapp;
 				PRODUCT_NAME = "Waka Watch";
@@ -1560,16 +1430,22 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4V8V3L4FYS;
 				GENERATE_INFOPLIST_FILE = NO;
-				IBSC_MODULE = wakawatch_WatchKit_Extension;
 				INFOPLIST_FILE = "wakawatch WatchKit App/Info.plist";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = app.wakawatch;
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = NO;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = app.wakawatch.watchkitapp;
 				PRODUCT_NAME = "Waka Watch";
@@ -1756,7 +1632,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/wakawatch WatchKit Extension.appex/wakawatch WatchKit Extension";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Waka Watch.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Waka Watch";
 				WATCHOS_DEPLOYMENT_TARGET = 8.3;
 			};
 			name = Debug;
@@ -1777,7 +1653,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/wakawatch WatchKit Extension.appex/wakawatch WatchKit Extension";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Waka Watch.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Waka Watch";
 				VALIDATE_PRODUCT = YES;
 				WATCHOS_DEPLOYMENT_TARGET = 8.3;
 			};
@@ -1830,15 +1706,6 @@
 			buildConfigurations = (
 				6BED9AC02795154F005646C3 /* Debug */,
 				6BED9AC12795154F005646C3 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		6BED9AC22795154F005646C3 /* Build configuration list for PBXNativeTarget "wakawatch WatchKit Extension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6BED9AC32795154F005646C3 /* Debug */,
-				6BED9AC42795154F005646C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
