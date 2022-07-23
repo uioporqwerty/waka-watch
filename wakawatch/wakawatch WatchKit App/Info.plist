@@ -2,46 +2,30 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>APP_INFORMATION_URL</key>
-	<string>https://raw.githubusercontent.com/uioporqwerty/waka-watch/main/app_information.json</string>
-	<key>AZURE_FUNCTION_COMPLICATIONS_URL</key>
-	<string>https://wakawatch.azurewebsites.net/api/backgroundUpdate?code=OojaIgRDhuWXpk1J5FEkqnayfh4aZcrNiLyDhh85Gyvazno5iZtLng==</string>
-	<key>CFBundleDevelopmentRegion</key>
-	<string>$(DEVELOPMENT_LANGUAGE)</string>
-	<key>CFBundleExecutable</key>
-	<string>$(EXECUTABLE_NAME)</string>
-	<key>CFBundleIdentifier</key>
-	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
-	<key>CFBundleInfoDictionaryVersion</key>
-	<string>6.0</string>
-	<key>CFBundleName</key>
-	<string>$(PRODUCT_NAME)</string>
 	<key>CFBundlePackageType</key>
 	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
-	<key>CFBundleShortVersionString</key>
-	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
-	<key>CLIENT_ID</key>
-	<string>$(CLIENT_ID)</string>
-	<key>CLIENT_SECRET</key>
-	<string>$(CLIENT_SECRET)</string>
-	<key>CLKComplicationPrincipalClass</key>
-	<string>$(PRODUCT_MODULE_NAME).ComplicationController</string>
-	<key>ENVIRONMENT</key>
-	<string>$(ENVIRONMENT)</string>
-	<key>ROLLBAR_ACCESS_TOKEN</key>
-	<string>$(ROLLBAR_ACCESS_TOKEN)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
-	<key>WKApplication</key>
-	<true/>
+	<key>CFBundleName</key>
+	<string>$(PRODUCT_NAME)</string>
 	<key>WKCompanionAppBundleIdentifier</key>
 	<string>app.wakawatch</string>
-	<key>WKRunsIndependentlyOfCompanionApp</key>
-	<false/>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>WKWatchKitApp</key>
+	<true/>
+	<key>CFBundleShortVersionString</key>
+	<string>$(MARKETING_VERSION)</string>
 </dict>
 </plist>

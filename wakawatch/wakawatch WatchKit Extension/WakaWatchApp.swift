@@ -2,7 +2,7 @@ import SwiftUI
 
 @main
 struct WakaWatchApp: App {
-    @WKApplicationDelegateAdaptor(ExtensionDelegate.self) var delegate
+    @WKExtensionDelegateAdaptor(ExtensionDelegate.self) var delegate
 
     init() {
         DependencyInjection.shared.register()

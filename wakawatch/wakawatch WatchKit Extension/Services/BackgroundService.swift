@@ -92,7 +92,7 @@ final class BackgroundService: NSObject, URLSessionDownloadDelegate {
         let preferredDate = Date.now.addingTimeInterval(nextInterval)
         self.logManager.debugMessage("Scheduling background update for \(preferredDate)", true)
 
-        WKApplication.shared().scheduleBackgroundRefresh(withPreferredDate: preferredDate,
+        WKExtension.shared().scheduleBackgroundRefresh(withPreferredDate: preferredDate,
                                                        userInfo: nil) { error in
             if error != nil {
                 self.logManager.reportError(error!)

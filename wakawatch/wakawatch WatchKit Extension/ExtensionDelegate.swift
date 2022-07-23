@@ -1,7 +1,7 @@
 import Foundation
 import WatchKit
 
-class ExtensionDelegate: NSObject, WKApplicationDelegate {
+class ExtensionDelegate: NSObject, WKExtensionDelegate {
     private var backgroundService: BackgroundService?
     private var logManager: LogManager?
     private var apmService: RollbarAPMService?
