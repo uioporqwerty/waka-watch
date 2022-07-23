@@ -63,8 +63,13 @@ final class RequestFactory {
         return request
     }
 
-    func makeComplicationsUpdateRequest() -> URLRequest {
-        let url = "\(self.complicationsFunctionUrl!)&access_token=\(self.tokenManager.getAccessToken())"
+    func makeComplicationsUpdateRequest() -> URLRequest? {
+        let accessToken = self.tokenManager.getAccessToken()
+        if accessToken.trim().isEmpty { // TODO: Determine why access token is sometimes empty.
+            return nil
+        }
+
+        let url = "\(self.complicationsFunctionUrl!)&access_token=\(accessToken)"
 
         let urlComponents = URLComponents(string: url)!
         return URLRequest(url: urlComponents.url!)

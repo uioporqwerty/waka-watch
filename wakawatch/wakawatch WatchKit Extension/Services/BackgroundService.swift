@@ -30,6 +30,9 @@ final class BackgroundService: NSObject, URLSessionDownloadDelegate {
 
     func updateContent() {
         let complicationsUpdateRequest = self.requestFactory.makeComplicationsUpdateRequest()
+        guard let complicationsUpdateRequest = complicationsUpdateRequest else {
+            return
+        }
         self.logManager.debugMessage("Complications url \(complicationsUpdateRequest.url?.absoluteString ?? "")",
                                      true)
         let config = URLSessionConfiguration.background(withIdentifier: "app.wakawatch.background-refresh")

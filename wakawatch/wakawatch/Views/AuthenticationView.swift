@@ -123,17 +123,17 @@ struct AuthenticationView: View {
                                         .cornerRadius(10)
                                 }
                                 .padding(EdgeInsets(top: 8, leading: 8, bottom: 0, trailing: 8))
-                                
+
                                 Group {
                                     Divider()
                                         .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
-                                    
+
                                     Text(LocalizedStringKey("AuthenticationView_RequestReview_Text"))
                                         .frame(maxWidth: .infinity)
                                         .multilineTextAlignment(.center)
                                         .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
                                         .lineSpacing(4)
-                                    
+
                                     Button {
                                         self.authenticationViewModel
                                             .telemetry
