@@ -135,9 +135,9 @@ final class ChartFactory {
 
         for data in goalData.chart_data.suffix(5) {
             dataPoints.append(BarChartDataPoint(value: data.actual_seconds,
-                                                xAxisLabel: DateUtility.getChartDate(date: data.range.date),
+                                                xAxisLabel: DateUtility.getChartDate(date: data.range.date ?? data.range.start),
                                                 description: LocalizedStringKey("SummaryView_GoalsChart_Actual_Text").toString(),
-                                                date: DateUtility.getDate(date: data.range.date),
+                                                date: DateUtility.getDate(date: data.range.date ?? data.range.start),
                                                 colour: data.range_status == "success" ? ColourStyle(colour: .green) : ColourStyle(colour: .red)) // TODO: Replace with better colors
                              )
         }

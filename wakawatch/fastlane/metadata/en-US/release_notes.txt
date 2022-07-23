@@ -1,0 +1,2 @@
+Fix:
+- Goals chart fails to load when date property is missing from WakaTime response.

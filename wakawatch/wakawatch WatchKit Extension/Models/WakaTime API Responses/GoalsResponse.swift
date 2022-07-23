@@ -21,5 +21,6 @@ struct GoalChartData: Decodable {
 }
 
 struct GoalChartRange: Decodable {
-    let date: String
+    let date: String?
+    let start: String
 }
