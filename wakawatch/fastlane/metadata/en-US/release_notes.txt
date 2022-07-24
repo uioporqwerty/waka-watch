@@ -1,3 +1,3 @@
 Localizations:
-- Add Turkish, Italian, Ukranian, Thai, Swedish, Polish, Finnish, Slovak localizations.
+- Add Korean, localizations.
 - Note: Localizations are provided by translation APIs. If you notice an issue, please submit feedback through the iOS app.
