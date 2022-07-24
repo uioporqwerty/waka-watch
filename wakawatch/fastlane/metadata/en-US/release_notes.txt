@@ -2,5 +2,5 @@ Fix:
 - Goals chart fails to load when date property is missing from WakaTime response.
 
 Localizations:
-- Add Turkish, Italian, Ukranian, Thai, Swedish, localizations.
+- Add Turkish, Italian, Ukranian, Thai, Swedish, Polish, localizations.
 - Note: Localizations are provided by translation APIs. If you notice an issue, please submit feedback through the iOS app.

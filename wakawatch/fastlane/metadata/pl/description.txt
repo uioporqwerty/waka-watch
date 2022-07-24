@@ -1,0 +1,1 @@
+WakaTime to platforma, która zapewnia wtyczki open source do zbierania informacji o tym, jak kodujesz. Waka Watch to aplikacja kliencka 3rd party do wyświetlania danych kodowania na zegarku Apple Watch.
