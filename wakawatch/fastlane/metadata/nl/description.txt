@@ -1,0 +1,1 @@
+WakaTime is een platform dat open source plug-ins biedt om inzichten te verzamelen over hoe u codeert. Waka Watch is een 3rd party client-app om uw coderingsstatistieken op uw Apple Watch te bekijken.
