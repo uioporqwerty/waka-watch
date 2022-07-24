@@ -224,6 +224,7 @@
 		507BF9BF425DB06E070D594C /* libPods-wakawatch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-wakawatch.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B0C0D99288CCF1600B9BE13 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6B0C0D9A288CDF6C00B9BE13 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6B0C0D9B288CE35F00B9BE13 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6B16F97627C97ED5009E98E3 /* ChartFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartFactory.swift; sourceTree = "<group>"; };
 		6B191E7227DC352200940FB5 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		6B1D9B2727C1366200322DBA /* ComplicationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationService.swift; sourceTree = "<group>"; };
@@ -962,6 +963,7 @@
 				"pt-PT",
 				tr,
 				it,
+				uk,
 			);
 			mainGroup = 6BED9A6127951549005646C3;
 			packageReferences = (
@@ -1342,6 +1344,7 @@
 				6B6F5119284D536C00B16889 /* pt-PT */,
 				6B0C0D99288CCF1600B9BE13 /* tr */,
 				6B0C0D9A288CDF6C00B9BE13 /* it */,
+				6B0C0D9B288CE35F00B9BE13 /* uk */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
