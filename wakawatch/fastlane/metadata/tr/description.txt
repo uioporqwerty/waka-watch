@@ -1,0 +1,1 @@
+WakaTime, nasıl kodladığınız hakkında bilgi toplamak için açık kaynaklı eklentiler sağlayan bir platformdur. Waka Watch, kodlama metriklerinizi Apple Watch'unuzda görüntülemek için kullanılan bir 3. taraf istemci uygulamasıdır.
