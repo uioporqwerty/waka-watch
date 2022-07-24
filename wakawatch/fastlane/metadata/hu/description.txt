@@ -1,0 +1,1 @@
+A WakaTime egy olyan platform, amely nyílt forráskódú beépülő modulokat biztosít, hogy betekintést nyerjen a kódolás módjába. A Waka Watch egy 3rd party kliensalkalmazás, amellyel megtekintheti a kódolási mutatókat az Apple Watchon.
