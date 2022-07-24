@@ -17,7 +17,7 @@
 "SettingsView_Disconnect_Button" = "와카타임에서 연결 끊기";
 "SettingsView_ComplicationsSettings_Text" = "목표 합병증 설정";
 "SettingsView_Licenses_Link" = "오픈 수스 라이센스";
-"ConnectView_Title" = "와카 시계";
+"ConnectView_Title" = "Waka Watch";
 "ConnectView_Message" = "기본 장치에서 Waka Watch 앱을 열어 WakaTime에 연결합니다.";
 "ConnectView_UpdateRequired_Message" = "이 버전의 와카 워치는 구식입니다. 앱 스토어를 통해 와카 워치를 업데이트하십시오.";
 "LeaderboardView_Load_Previous_Button" = "이전로드";

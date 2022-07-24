@@ -17,7 +17,7 @@
 "SettingsView_Disconnect_Button" = "ยกเลิกการเชื่อมต่อจากเวลาของวากะ";
 "SettingsView_ComplicationsSettings_Text" = "การตั้งค่ากลไกแทรกซ้อนของเป้าหมาย";
 "SettingsView_Licenses_Link" = "เปิดใบอนุญาต Souce";
-"ConnectView_Title" = "วากะวอทช์";
+"ConnectView_Title" = "Waka Watch";
 "ConnectView_Message" = "เปิดแอป Waka Watch บนอุปกรณ์หลักของคุณเพื่อเชื่อมต่อกับ WakaTime";
 "ConnectView_UpdateRequired_Message" = "Waka Watch เวอร์ชันนี้ล้าสมัยแล้ว อัปเดต Waka Watch ผ่าน App Store";
 "LeaderboardView_Load_Previous_Button" = "โหลดก่อนหน้า";

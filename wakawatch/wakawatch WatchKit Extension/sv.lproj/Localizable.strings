@@ -17,7 +17,7 @@
 "SettingsView_Disconnect_Button" = "Koppla från WakaTime";
 "SettingsView_ComplicationsSettings_Text" = "Inställningar för målkomplikation";
 "SettingsView_Licenses_Link" = "Öppna Souce-licenser";
-"ConnectView_Title" = "Waka Klocka";
+"ConnectView_Title" = "Waka Watch";
 "ConnectView_Message" = "Öppna Waka Watch-appen på din primära enhet för att ansluta till WakaTime.";
 "ConnectView_UpdateRequired_Message" = "Den här versionen av Waka Watch är inaktuell. Uppdatera Waka Watch via App Store.";
 "LeaderboardView_Load_Previous_Button" = "Ladda föregående";

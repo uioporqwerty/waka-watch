@@ -231,6 +231,7 @@
 		6B0C0D9F288D02CF00B9BE13 /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6B0C0DA0288D06C900B9BE13 /* sk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sk; path = sk.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6B0C0DA1288D874300B9BE13 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6B0C0DA2288D8ABF00B9BE13 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6B16F97627C97ED5009E98E3 /* ChartFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartFactory.swift; sourceTree = "<group>"; };
 		6B191E7227DC352200940FB5 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		6B1D9B2727C1366200322DBA /* ComplicationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationService.swift; sourceTree = "<group>"; };
@@ -976,6 +977,7 @@
 				fi,
 				sk,
 				ko,
+				vi,
 			);
 			mainGroup = 6BED9A6127951549005646C3;
 			packageReferences = (
@@ -1363,6 +1365,7 @@
 				6B0C0D9F288D02CF00B9BE13 /* fi */,
 				6B0C0DA0288D06C900B9BE13 /* sk */,
 				6B0C0DA1288D874300B9BE13 /* ko */,
+				6B0C0DA2288D8ABF00B9BE13 /* vi */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

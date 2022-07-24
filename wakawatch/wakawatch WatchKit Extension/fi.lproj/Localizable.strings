@@ -17,7 +17,7 @@
 "SettingsView_Disconnect_Button" = "Katkaise yhteys WakaTimeen";
 "SettingsView_ComplicationsSettings_Text" = "Tavoitteen komplikaation asetukset";
 "SettingsView_Licenses_Link" = "Avaa Souce-lisenssit";
-"ConnectView_Title" = "Waka-kello";
+"ConnectView_Title" = "Waka Watch";
 "ConnectView_Message" = "Avaa Waka Watch -appi ensisijaisella laitteellasi muodostaaksesi yhteyden WakaTimeen.";
 "ConnectView_UpdateRequired_Message" = "Tämä Waka Watchin versio on vanhentunut. Päivitä Waka Watch App Storen kautta.";
 "LeaderboardView_Load_Previous_Button" = "Lataa edellinen";

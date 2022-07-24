@@ -17,7 +17,7 @@
 "SettingsView_Disconnect_Button" = "Відключення від WakaTime";
 "SettingsView_ComplicationsSettings_Text" = "Налаштування складності цілі";
 "SettingsView_Licenses_Link" = "Відкриті ліцензії Souce";
-"ConnectView_Title" = "Годинник Вака";
+"ConnectView_Title" = "Waka Watch";
 "ConnectView_Message" = "Відкрийте програму Waka Watch на своєму основному пристрої, щоб підключитися до WakaTime.";
 "ConnectView_UpdateRequired_Message" = "Ця версія Waka Watch застаріла. Оновлення Waka Watch через App Store.";
 "LeaderboardView_Load_Previous_Button" = "Завантажити попереднє";

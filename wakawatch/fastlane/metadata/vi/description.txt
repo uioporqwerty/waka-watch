@@ -1,0 +1,1 @@
+WakaTime là một nền tảng cung cấp các plugin mã nguồn mở để thu thập thông tin chi tiết về cách bạn viết mã. Waka Watch là ứng dụng khách của bên thứ 3 để xem các chỉ số mã hóa trên Apple Watch của bạn.

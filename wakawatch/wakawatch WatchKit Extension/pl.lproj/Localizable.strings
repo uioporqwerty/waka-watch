@@ -17,7 +17,7 @@
 "SettingsView_Disconnect_Button" = "Rozłącz się z WakaTime";
 "SettingsView_ComplicationsSettings_Text" = "Ustawienia komplikacji celu";
 "SettingsView_Licenses_Link" = "Otwórz licencje Souce";
-"ConnectView_Title" = "Zegarek Waka";
+"ConnectView_Title" = "Waka Watch";
 "ConnectView_Message" = "Otwórz aplikację Waka Watch na urządzeniu podstawowym, aby połączyć się z WakaTime.";
 "ConnectView_UpdateRequired_Message" = "Ta wersja Waka Watch jest nieaktualna. Zaktualizuj Waka Watch za pośrednictwem App Store.";
 "LeaderboardView_Load_Previous_Button" = "Załaduj poprzedni";
@@ -48,7 +48,7 @@
 "FeedbackView_BugCategory_Text" = "Pluskwa";
 "FeedbackView_NoneCategory_Text" = "Wybierz kategorię";
 "FeedbackView_ViewIssueAlert_Button" = "Wyświetl problem";
-"SplashView_Center_Text" = "Zegarek Waka";
+"SplashView_Center_Text" = "Waka Watch";
 "WatchInstallationCheckView_Instructions_Text" = "Zegarek Waka Watch wymaga zainstalowania aplikacji odpowiadającej zegarkowi Apple Watch. Jeśli masz skonfigurowaną automatyczną instalację aplikacji, ten ekran będzie automatycznie kontynuowany po zainstalowaniu aplikacji Waka Watch na zegarku Apple Watch. Jeśli nie masz skonfigurowanej automatycznej instalacji aplikacji, kliknij poniżej, aby zainstalować ją ręcznie w sekcji Dostępne aplikacje.";
 "WatchInstallationView_AlreadyInstalled_ButtonLabel" = "Już zainstalowany >";
 "WatchInstallationView_OpenAppleWatch_ButtonLabel" = "Zainstaluj aplikację Waka Watch";
@@ -62,4 +62,4 @@
 "ErrorView_Description_Text" = "Wystąpił nieznany błąd.";
 "ErrorView_DescriptionExceededRetryCount_Label" = "Przekroczono liczbę ponownych prób. Deweloper został powiadomiony.";
 "LicenseView_Error_Description" = "Wystąpił błąd podczas ładowania widoku atrybucji licencji open source.";
-"AppName" = "Zegarek Waka";
+"AppName" = "Waka Watch";
