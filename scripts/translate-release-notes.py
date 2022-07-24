@@ -53,6 +53,8 @@ with open(f"{working_directory}/wakawatch/fastlane/metadata/en-US/release_notes.
             languages_to_read.extend(["de-DE"])
         elif to_language == "pt-pt":
             languages_to_read.extend(["pt-PT"])
+        elif to_language == "nl":
+            languages_to_read.extend(["nl-NL"])
         else:
             languages_to_read.extend([to_language])
 
