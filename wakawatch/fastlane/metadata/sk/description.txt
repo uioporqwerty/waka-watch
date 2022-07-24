@@ -1,0 +1,1 @@
+WakaTime je platforma, ktorá poskytuje doplnky s otvoreným zdrojovým kódom na zhromažďovanie poznatkov o tom, ako kódujete. Waka Watch je klientska aplikácia tretej strany na zobrazenie metrík kódovania na hodinkách Apple Watch.
