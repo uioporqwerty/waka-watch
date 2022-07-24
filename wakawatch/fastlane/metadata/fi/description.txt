@@ -1,0 +1,1 @@
+WakaTime on alusta, joka tarjoaa avoimen lähdekoodin laajennuksia kerätäkseen oivalluksia siitä, miten koodaat. Waka Watch on 3rd party client -appi, jolla voit tarkastella koodaustietoja Apple Watchissasi.
