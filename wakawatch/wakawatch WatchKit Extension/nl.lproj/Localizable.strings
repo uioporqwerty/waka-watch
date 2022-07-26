@@ -63,3 +63,4 @@
 "ErrorView_DescriptionExceededRetryCount_Label" = "Overschreden aantal pogingen. De ontwikkelaar is op de hoogte gebracht.";
 "LicenseView_Error_Description" = "Er is een fout opgetreden bij het laden van de weergave voor het toewijzen van open source-licenties.";
 "AppName" = "Waka Watch";
+"WhatsNewView_OKButton_Text" = "OK";

@@ -63,3 +63,4 @@
 "ErrorView_DescriptionExceededRetryCount_Label" = "Υπέρβαση του αριθμού επανάληψης. Ο προγραμματιστής έχει ειδοποιηθεί.";
 "LicenseView_Error_Description" = "Παρουσιάστηκε σφάλμα κατά τη φόρτωση προβολής απόδοσης άδειας χρήσης ανοιχτού κώδικα.";
 "AppName" = "Waka Watch";
+"WhatsNewView_OKButton_Text" = "OK";

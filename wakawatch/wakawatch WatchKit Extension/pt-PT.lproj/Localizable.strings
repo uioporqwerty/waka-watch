@@ -63,3 +63,4 @@
 "ErrorView_DescriptionExceededRetryCount_Label" = "Contagem de repetições excedidas. O construtor foi notificado.";
 "LicenseView_Error_Description" = "Ocorreu um erro ao carregar a visão de atribuição de licença de código aberto.";
 "AppName" = "Waka Watch";
+"WhatsNewView_OKButton_Text" = "OK";

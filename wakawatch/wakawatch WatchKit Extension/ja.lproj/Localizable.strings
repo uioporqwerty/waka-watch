@@ -63,3 +63,4 @@
 "ErrorView_DescriptionExceededRetryCount_Label" = "再試行回数を超えました。開発者に通知されました。";
 "LicenseView_Error_Description" = "オープンソースライセンスの帰属表示ビューの読み込み中にエラーが発生しました。";
 "AppName" = "Waka Watch";
+"WhatsNewView_OKButton_Text" = "わかりました";

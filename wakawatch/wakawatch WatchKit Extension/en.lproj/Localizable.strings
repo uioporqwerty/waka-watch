@@ -63,3 +63,4 @@
 "ErrorView_DescriptionExceededRetryCount_Label" = "Exceeded retry count. The developer has been notified.";
 "LicenseView_Error_Description" = "An error occurred loading open source license attribution view.";
 "AppName" = "Waka Watch";
+"WhatsNewView_OKButton_Text" = "OK";

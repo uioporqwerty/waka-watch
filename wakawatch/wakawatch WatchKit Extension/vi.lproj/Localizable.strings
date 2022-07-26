@@ -63,3 +63,4 @@
 "ErrorView_DescriptionExceededRetryCount_Label" = "Vượt quá số lần thử lại. Nhà phát triển đã được thông báo.";
 "LicenseView_Error_Description" = "Đã xảy ra lỗi khi tải chế độ xem phân bổ giấy phép nguồn mở.";
 "AppName" = "Waka Watch";
+"WhatsNewView_OKButton_Text" = "OK";

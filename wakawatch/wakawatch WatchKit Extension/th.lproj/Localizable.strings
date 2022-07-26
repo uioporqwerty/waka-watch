@@ -63,3 +63,4 @@
 "ErrorView_DescriptionExceededRetryCount_Label" = "เกินจํานวนการลองใหม่ นักพัฒนาซอฟต์แวร์ได้รับแจ้งแล้ว";
 "LicenseView_Error_Description" = "เกิดข้อผิดพลาดในการโหลดมุมมองการระบุแหล่งที่มาของสิทธิ์การใช้งานโอเพนซอร์ส";
 "AppName" = "Waka Watch";
+"WhatsNewView_OKButton_Text" = "ตกลง, ได้";

@@ -63,3 +63,4 @@
 "ErrorView_DescriptionExceededRetryCount_Label" = "Prekročený počet opakovaní. Developer bol upovedomený.";
 "LicenseView_Error_Description" = "Vyskytla sa chyba načítania zobrazenia atribučnej licencie s otvoreným zdrojovým kódom.";
 "AppName" = "Waka Watch";
+"WhatsNewView_OKButton_Text" = "OK";

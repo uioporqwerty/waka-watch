@@ -63,3 +63,4 @@
 "ErrorView_DescriptionExceededRetryCount_Label" = "超出重试计数。开发人员已收到通知。";
 "LicenseView_Error_Description" = "加载开源许可证归属视图时出错。";
 "AppName" = "Waka Watch";
+"WhatsNewView_OKButton_Text" = "还行";

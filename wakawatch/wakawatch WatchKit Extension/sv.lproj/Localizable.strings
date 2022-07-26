@@ -63,3 +63,4 @@
 "ErrorView_DescriptionExceededRetryCount_Label" = "Överskred antalet återförsök. Utvecklaren har meddelats.";
 "LicenseView_Error_Description" = "Ett fel inträffade vid inläsning av attributionsvy för öppen källkodslicens.";
 "AppName" = "Waka Watch";
+"WhatsNewView_OKButton_Text" = "OKEJ";

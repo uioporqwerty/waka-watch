@@ -12,4 +12,16 @@ final class VersionCheckerUtility {
 
         return currentVersion < minimumVersion
     }
+
+    static func meetsWhatsNewCriteria(currentVersion: String, previousVersion: String) -> Bool {
+        guard let currentVersion = Version(currentVersion) else {
+            return false
+        }
+
+        guard let previousVersion = Version(previousVersion) else {
+            return false
+        }
+
+        return previousVersion < currentVersion
+    }
 }

@@ -63,3 +63,4 @@
 "ErrorView_DescriptionExceededRetryCount_Label" = "Melebihi jumlah percobaan ulang. Pengembang telah diberitahu.";
 "LicenseView_Error_Description" = "Terjadi kesalahan saat memuat tampilan atribusi lisensi sumber terbuka.";
 "AppName" = "Waka Watch";
+"WhatsNewView_OKButton_Text" = "OKE";

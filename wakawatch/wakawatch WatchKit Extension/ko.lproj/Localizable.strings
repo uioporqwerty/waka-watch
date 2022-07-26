@@ -63,3 +63,4 @@
 "ErrorView_DescriptionExceededRetryCount_Label" = "재시도 횟수를 초과했습니다. 개발자에게 통보되었습니다.";
 "LicenseView_Error_Description" = "오픈 소스 라이선스 어트리뷰션 뷰를 로드하는 중에 오류가 발생했습니다.";
 "AppName" = "Waka Watch";
+"WhatsNewView_OKButton_Text" = "그래";

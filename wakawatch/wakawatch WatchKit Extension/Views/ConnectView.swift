@@ -2,11 +2,14 @@ import SwiftUI
 
 struct ConnectView: View {
     private var connectViewModel: ConnectViewModel
+    @ObservedObject private var whatsNewViewModel: WhatsNewViewModel
     @AppStorage(DefaultsKeys.authorized) var authorized = false
     @State var requiresUpdate = false
 
-    init(viewModel: ConnectViewModel) {
+    init(viewModel: ConnectViewModel,
+         whatsNewViewModel: WhatsNewViewModel) {
         self.connectViewModel = viewModel
+        self.whatsNewViewModel = whatsNewViewModel
     }
 
     var body: some View {
@@ -20,27 +23,31 @@ struct ConnectView: View {
                         .navigationBarTitleDisplayMode(.inline)
                 }
             } else {
-                TabView {
-                    // TODO: Remove once apple fixes NavigationLink bug on 8.4+
-                    NavigationView {
-                        DependencyInjection.shared.container.resolve(SummaryView.self)!
+                if self.whatsNewViewModel.show {
+                    WhatsNewView(viewModel: self.whatsNewViewModel)
+                } else {
+                    TabView {
+                        // TODO: Remove once apple fixes NavigationLink bug on 8.4+
+                        NavigationView {
+                            DependencyInjection.shared.container.resolve(SummaryView.self)!
                                 .navigationTitle(Text(LocalizedStringKey("SummaryView_Title")))
                                 .navigationBarTitleDisplayMode(.inline)
-                    }
-                    NavigationView {
-                        DependencyInjection.shared.container.resolve(LeaderboardView.self)!
+                        }
+                        NavigationView {
+                            DependencyInjection.shared.container.resolve(LeaderboardView.self)!
                                 .navigationTitle(Text(LocalizedStringKey("LeaderboardView_Title")))
                                 .navigationBarTitleDisplayMode(.inline)
-                    }
-                    NavigationView {
-                        DependencyInjection.shared.container.resolve(ProfileView.self)!
+                        }
+                        NavigationView {
+                            DependencyInjection.shared.container.resolve(ProfileView.self)!
                                 .navigationTitle(Text(LocalizedStringKey("ProfileView_Title")))
                                 .navigationBarTitleDisplayMode(.inline)
-                    }
-                    NavigationView {
-                        DependencyInjection.shared.container.resolve(SettingsView.self)!
+                        }
+                        NavigationView {
+                            DependencyInjection.shared.container.resolve(SettingsView.self)!
                                 .navigationTitle(Text(LocalizedStringKey("SettingsView_Title")))
                                 .navigationBarTitleDisplayMode(.inline)
+                        }
                     }
                 }
             }
@@ -50,6 +57,7 @@ struct ConnectView: View {
         }
         .task {
             self.requiresUpdate = await self.connectViewModel.requiresUpdate()
+            self.whatsNewViewModel.showWhatsNew()
         }
     }
 }

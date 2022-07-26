@@ -6,7 +6,7 @@ class RollbarAPMService {
 
     init(logManager: LogManager) {
         self.logManager = logManager
-        
+
         let environment = Bundle.main.infoDictionary?["ENVIRONMENT"] as? String ?? "development"
         let isDevelopment = environment == "development"
         let config = RollbarConfig()

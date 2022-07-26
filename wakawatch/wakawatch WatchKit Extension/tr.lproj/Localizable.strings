@@ -63,3 +63,4 @@
 "ErrorView_DescriptionExceededRetryCount_Label" = "Yeniden deneme sayısı aşıldı. Geliştiriciye bildirim yapıldı.";
 "LicenseView_Error_Description" = "Açık kaynak lisans ilişkilendirme görünümü yüklenirken bir hata oluştu.";
 "AppName" = "Waka Watch";
+"WhatsNewView_OKButton_Text" = "TAMAM";

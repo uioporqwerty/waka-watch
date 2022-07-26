@@ -87,6 +87,14 @@ final class DependencyInjection {
                               notificationService: resolver.resolve(NotificationService.self)!
                              )
         }.inObjectScope(.container)
+
+        self.container.register(InternationalizationService.self) { _ in
+            InternationalizationService()
+        }
+
+        self.container.register(AppInformationService.self) { _ in
+            AppInformationService()
+        }
     }
 
     private func registerViewModels() {
@@ -132,6 +140,12 @@ final class DependencyInjection {
             LicensesViewModel(logManager: resolver.resolve(LogManager.self)!,
                               telemetryService: resolver.resolve(TelemetryService.self)!)
         }
+        self.container.register(WhatsNewViewModel.self) { resolver in
+            WhatsNewViewModel(telemetryService: resolver.resolve(TelemetryService.self)!,
+                              networkService: resolver.resolve(NetworkService.self)!,
+                              i18nService: resolver.resolve(InternationalizationService.self)!,
+                              appInformationService: resolver.resolve(AppInformationService.self)!)
+        }
     }
 
     private func registerViews() {
@@ -148,8 +162,12 @@ final class DependencyInjection {
         self.container.register(SettingsView.self) { resolver in
             SettingsView(viewModel: resolver.resolve(SettingsViewModel.self)!)
         }
+        self.container.register(WhatsNewView.self) { resolver in
+            WhatsNewView(viewModel: resolver.resolve(WhatsNewViewModel.self)!)
+        }
         self.container.register(ConnectView.self) { resolver in
-            ConnectView(viewModel: resolver.resolve(ConnectViewModel.self)!)
+            ConnectView(viewModel: resolver.resolve(ConnectViewModel.self)!,
+                        whatsNewViewModel: resolver.resolve(WhatsNewViewModel.self)!)
         }
         self.container.register(ComplicationSettingsView.self) { resolver in
             ComplicationSettingsView(complicationSettingsViewModel:
