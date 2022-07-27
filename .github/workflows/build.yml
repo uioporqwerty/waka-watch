@@ -38,6 +38,20 @@ jobs:
           gpg -d --passphrase "${{ secrets.GPG_PASSPHRASE }}" --batch Config.xcconfig.asc > ./wakawatch\ WatchKit\ Extension/Config.xcconfig
           gpg -d --passphrase "${{ secrets.GPG_PASSPHRASE }}" --batch AuthKey_AQ5VCA4237.p8.asc > ./AuthKey_AQ5VCA4237.p8
 
+      - name: Setup Python 3.x
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
+
+      - name: Translate Release Notes
+        if: startsWith(github.ref, 'refs/tags/')
+        run: |
+          pip install requests uuid
+          python $GITHUB_WORKSPACE/scripts/translate-release-notes.py
+        env:
+          TRANSLATOR_API_KEY: ${{ secrets.TRANSLATOR_API_KEY }}
+
       - name: Build
         run: |
           cd wakawatch
