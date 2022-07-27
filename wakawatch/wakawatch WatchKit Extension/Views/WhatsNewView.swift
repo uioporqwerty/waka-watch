@@ -23,11 +23,12 @@ struct WhatsNewView: View {
                 ScrollView(.vertical, showsIndicators: false) {
                     if self.viewModel.text != nil {
                         Text(self.viewModel.text!)
+                            .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
                         Button {
                             self.viewModel.dismiss()
                         } label: {
                             Text("WhatsNewView_OKButton_Text")
-                        }
+                        }.padding(EdgeInsets(top: 8, leading: 8, bottom: 0, trailing: 8))
                     } else {
                         ProgressView()
                     }
