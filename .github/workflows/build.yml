@@ -65,7 +65,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: Waka-Watch-Changelog
-          path: ${{ GITHUB_WORKSPACE }}/wakawatch/wakawatch WatchKit Extension/Content/
+          path: $GITHUB_WORKSPACE/wakawatch/wakawatch WatchKit Extension/Content/
 
       - name: Upload artifact
         uses: actions/upload-artifact@v3
