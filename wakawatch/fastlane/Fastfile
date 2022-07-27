@@ -64,7 +64,7 @@ platform :ios do
       app_version: app_version,
       skip_screenshots: true,
       automatic_release: true,
-      submit_for_review: false,
+      submit_for_review: true,
       submission_information: {
         add_id_info_limits_tracking: true,
         add_id_info_serves_ads: false,
