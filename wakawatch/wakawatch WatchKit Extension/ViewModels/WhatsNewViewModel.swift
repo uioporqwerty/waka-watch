@@ -35,7 +35,7 @@ final class WhatsNewViewModel: ObservableObject {
     }
 
     func loadWhatsNew() throws {
-        let url = Bundle.main.url(forResource: "WhatsNew", withExtension: "rtf")!
+        let url = Bundle.main.url(forResource: "WhatsNew", withExtension: "txt")!
         let options = [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.rtf]
         let whatsNewText = try NSAttributedString(url: url, options: options, documentAttributes: nil).string
 
