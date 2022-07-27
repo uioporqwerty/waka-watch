@@ -64,6 +64,3 @@ with open(f"{working_directory}/wakawatch/fastlane/metadata/en-US/release_notes.
         
         with open(f"{working_directory}/wakawatch/wakawatch WatchKit Extension/Content/{to_language}.lproj/WhatsNew.rtf", "r+") as whats_new:
             whats_new.write(translated_text)
-            whats_new.seek(0)
-            print(f"reading {to_language}")
-            print(whats_new.read())
