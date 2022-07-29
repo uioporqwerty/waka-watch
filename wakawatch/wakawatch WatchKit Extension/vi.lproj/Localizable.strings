@@ -64,3 +64,4 @@
 "LicenseView_Error_Description" = "Đã xảy ra lỗi khi tải chế độ xem phân bổ giấy phép nguồn mở.";
 "AppName" = "Waka Watch";
 "WhatsNewView_OKButton_Text" = "OK";
+"ProfileView_ProfileImage_A11Y" = "Hồ sơ {0}";

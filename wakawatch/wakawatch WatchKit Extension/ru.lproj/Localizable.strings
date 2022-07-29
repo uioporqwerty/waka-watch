@@ -64,3 +64,4 @@
 "LicenseView_Error_Description" = "Произошла ошибка при загрузке представления атрибуции лицензии с открытым исходным кодом.";
 "AppName" = "Waka Watch";
 "WhatsNewView_OKButton_Text" = "ХОРОШО";
+"ProfileView_ProfileImage_A11Y" = "профиль {0}";

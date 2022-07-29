@@ -64,3 +64,4 @@
 "LicenseView_Error_Description" = "Wystąpił błąd podczas ładowania widoku atrybucji licencji open source.";
 "AppName" = "Waka Watch";
 "WhatsNewView_OKButton_Text" = "OK";
+"ProfileView_ProfileImage_A11Y" = "Profil {0}";

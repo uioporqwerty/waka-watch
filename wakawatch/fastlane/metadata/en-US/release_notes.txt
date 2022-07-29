@@ -1,4 +1,4 @@
 What's New 
 
-Features:
-- Add view to show release notes view on the watch app so you can know what has changed.
+Fixes:
+- Accessibility fixes for Profile View. More A11Y fixes coming for other areas.

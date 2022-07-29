@@ -64,3 +64,4 @@
 "LicenseView_Error_Description" = "Hiba történt a nyílt forráskódú licenc-hozzárendelési nézet betöltésekor.";
 "AppName" = "Waka Watch";
 "WhatsNewView_OKButton_Text" = "OKÉ";
+"ProfileView_ProfileImage_A11Y" = "{0} profil";

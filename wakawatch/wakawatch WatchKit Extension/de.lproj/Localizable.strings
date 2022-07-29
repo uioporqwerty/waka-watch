@@ -64,3 +64,4 @@
 "LicenseView_Error_Description" = "Beim Laden der Open-Source-Lizenzattributionsansicht ist ein Fehler aufgetreten.";
 "AppName" = "Waka Watch";
 "WhatsNewView_OKButton_Text" = "OKAY";
+"ProfileView_ProfileImage_A11Y" = "{0} Profil";

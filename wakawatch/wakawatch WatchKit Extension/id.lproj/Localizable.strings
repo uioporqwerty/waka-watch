@@ -64,3 +64,4 @@
 "LicenseView_Error_Description" = "Terjadi kesalahan saat memuat tampilan atribusi lisensi sumber terbuka.";
 "AppName" = "Waka Watch";
 "WhatsNewView_OKButton_Text" = "OKE";
+"ProfileView_ProfileImage_A11Y" = "Profil {0}";

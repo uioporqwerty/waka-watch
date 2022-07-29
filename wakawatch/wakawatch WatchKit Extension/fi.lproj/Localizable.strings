@@ -64,3 +64,4 @@
 "LicenseView_Error_Description" = "Tapahtui virhe ladatessaan avoimen lähdekoodin käyttöoikeuden attribuutionäkymää.";
 "AppName" = "Waka Watch";
 "WhatsNewView_OKButton_Text" = "OKEI";
+"ProfileView_ProfileImage_A11Y" = "{0} profiili";

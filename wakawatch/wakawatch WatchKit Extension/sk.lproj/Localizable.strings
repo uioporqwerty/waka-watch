@@ -64,3 +64,4 @@
 "LicenseView_Error_Description" = "Vyskytla sa chyba načítania zobrazenia atribučnej licencie s otvoreným zdrojovým kódom.";
 "AppName" = "Waka Watch";
 "WhatsNewView_OKButton_Text" = "OK";
+"ProfileView_ProfileImage_A11Y" = "{0} profil";

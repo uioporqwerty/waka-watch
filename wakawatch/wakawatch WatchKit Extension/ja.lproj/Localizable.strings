@@ -64,3 +64,4 @@
 "LicenseView_Error_Description" = "オープンソースライセンスの帰属表示ビューの読み込み中にエラーが発生しました。";
 "AppName" = "Waka Watch";
 "WhatsNewView_OKButton_Text" = "わかりました";
+"ProfileView_ProfileImage_A11Y" = "{0}プロフィール";

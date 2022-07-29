@@ -64,3 +64,4 @@
 "LicenseView_Error_Description" = "오픈 소스 라이선스 어트리뷰션 뷰를 로드하는 중에 오류가 발생했습니다.";
 "AppName" = "Waka Watch";
 "WhatsNewView_OKButton_Text" = "그래";
+"ProfileView_ProfileImage_A11Y" = "{0} 프로필";

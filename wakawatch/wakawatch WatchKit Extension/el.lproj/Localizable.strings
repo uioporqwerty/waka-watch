@@ -64,3 +64,4 @@
 "LicenseView_Error_Description" = "Παρουσιάστηκε σφάλμα κατά τη φόρτωση προβολής απόδοσης άδειας χρήσης ανοιχτού κώδικα.";
 "AppName" = "Waka Watch";
 "WhatsNewView_OKButton_Text" = "OK";
+"ProfileView_ProfileImage_A11Y" = "{0} προφίλ";

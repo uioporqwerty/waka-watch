@@ -47,6 +47,9 @@ struct ProfileView: View {
                                 .clipShape(Circle())
                                 .frame(width: 100, height: 100)
                                 .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
+                                .accessibilityLabel(Text(LocalizedStringKey("ProfileView_ProfileImage_A11Y")
+                                    .toString()
+                                    .replaceArgs(self.profileViewModel.displayName)))
                         }
 
                         Text(profileViewModel.displayName)

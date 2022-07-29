@@ -64,3 +64,4 @@
 "LicenseView_Error_Description" = "Сталася помилка завантаження перегляду атрибуції ліцензії з відкритим вихідним кодом.";
 "AppName" = "Waka Watch";
 "WhatsNewView_OKButton_Text" = "ГАРАЗД";
+"ProfileView_ProfileImage_A11Y" = "профіль {0}";

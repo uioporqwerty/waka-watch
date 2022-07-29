@@ -64,3 +64,4 @@
 "LicenseView_Error_Description" = "加载开源许可证归属视图时出错。";
 "AppName" = "Waka Watch";
 "WhatsNewView_OKButton_Text" = "还行";
+"ProfileView_ProfileImage_A11Y" = "{0}简介";

@@ -64,3 +64,4 @@
 "LicenseView_Error_Description" = "Se ha producido un error al cargar la vista de atribución de licencias de código abierto.";
 "AppName" = "Waka Watch";
 "WhatsNewView_OKButton_Text" = "DE ACUERDO";
+"ProfileView_ProfileImage_A11Y" = "{0} perfil";
