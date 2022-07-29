@@ -65,3 +65,4 @@
 "AppName" = "Waka Watch";
 "WhatsNewView_OKButton_Text" = "ХОРОШО";
 "ProfileView_ProfileImage_A11Y" = "профиль {0}";
+"SettingsView_AppVersion_A11Y" = "версия приложения {0}";

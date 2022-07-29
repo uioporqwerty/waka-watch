@@ -65,3 +65,4 @@
 "AppName" = "Waka Watch";
 "WhatsNewView_OKButton_Text" = "ตกลง, ได้";
 "ProfileView_ProfileImage_A11Y" = "โปรไฟล์{0}";
+"SettingsView_AppVersion_A11Y" = "{0}เวอร์ชันของแอป";

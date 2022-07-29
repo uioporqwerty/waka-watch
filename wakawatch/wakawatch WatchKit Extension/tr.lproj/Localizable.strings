@@ -65,3 +65,4 @@
 "AppName" = "Waka Watch";
 "WhatsNewView_OKButton_Text" = "TAMAM";
 "ProfileView_ProfileImage_A11Y" = "{0} profili";
+"SettingsView_AppVersion_A11Y" = "Uygulama sürümü {0}";

@@ -49,7 +49,6 @@
 "FeedbackView_NoneCategory_Text" = "选择类别";
 "FeedbackView_ViewIssueAlert_Button" = "查看问题";
 "SplashView_Center_Text" = "Waka Watch";
-"WatchInstallationCheckView_Instructions_Text"="Waka Watch 要求安装 Apple Watch 对应应用程序。如果您配置了\"自动应用程序安装\"，则在 Apple Watch 上安装 Waka Watch 应用程序后，此屏幕将自动继续。如果您没有配置自动应用安装，请单击下面以从可用应用部分手动安装。";
 "WatchInstallationView_AlreadyInstalled_ButtonLabel" = "已安装>";
 "WatchInstallationView_OpenAppleWatch_ButtonLabel" = "安装Waka手表应用程序";
 "ComplicationSettingsView_Instructions_Text" = "Select up to 3 goals.";
@@ -65,3 +64,5 @@
 "AppName" = "Waka Watch";
 "WhatsNewView_OKButton_Text" = "还行";
 "ProfileView_ProfileImage_A11Y" = "{0}简介";
+"WatchInstallationCheckView_Instructions_Text" = "Waka Watch 要求安装 Apple Watch 对应应用程序。如果您配置了“自动应用程序安装”，则在 Apple Watch 上安装 Waka Watch 应用程序后，此屏幕将自动继续。如果您没有配置自动应用安装，请单击下面以从可用应用部分手动安装。";
+"SettingsView_AppVersion_A11Y" = "应用版本{0}";

@@ -49,7 +49,6 @@
 "FeedbackView_NoneCategory_Text" = "カテゴリの選択";
 "FeedbackView_ViewIssueAlert_Button" = "問題の表示";
 "SplashView_Center_Text" = "Waka Watch";
-"WatchInstallationCheckView_Instructions_Text"="Waka Watch では、Apple Watch の対応するアプリをインストールする必要があります。アプリの自動インストールを設定している場合、Apple Watch に Waka Watch アプリがインストールされると、この画面は自動的に続行されます。アプリの自動インストールが構成されていない場合は、以下をクリックして [利用可能なアプリ] セクションから手動でインストールします。";
 "WatchInstallationView_AlreadyInstalled_ButtonLabel" = "すでにインストールされている>";
 "WatchInstallationView_OpenAppleWatch_ButtonLabel" = "ワカウォッチアプリをインストールする";
 "ComplicationSettingsView_Instructions_Text" = "Select up to 3 goals.";
@@ -65,3 +64,5 @@
 "AppName" = "Waka Watch";
 "WhatsNewView_OKButton_Text" = "わかりました";
 "ProfileView_ProfileImage_A11Y" = "{0}プロフィール";
+"WatchInstallationCheckView_Instructions_Text" = "Waka Watch では、Apple Watch の対応するアプリをインストールする必要があります。アプリの自動インストールを設定している場合、Apple Watch に Waka Watch アプリがインストールされると、この画面は自動的に続行されます。アプリの自動インストールが構成されていない場合は、以下をクリックして [利用可能なアプリ] セクションから手動でインストールします。";
+"SettingsView_AppVersion_A11Y" = "アプリのバージョン {0}";

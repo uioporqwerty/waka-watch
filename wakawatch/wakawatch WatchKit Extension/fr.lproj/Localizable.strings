@@ -49,7 +49,6 @@
 "FeedbackView_NoneCategory_Text" = "Sélectionnez une catégorie";
 "FeedbackView_ViewIssueAlert_Button" = "Afficher le problème";
 "SplashView_Center_Text" = "Waka Watch";
-"WatchInstallationCheckView_Instructions_Text"="Waka Watch nécessite l'installation de l'application homologue Apple Watch. Si vous avez configuré l'installation automatique de l'application, cet écran se poursuivra automatiquement une fois l'application Waka Watch installée sur votre Apple Watch. Si l'installation automatique des applications n'est pas configurée, cliquez ci-dessous pour effectuer l'installation manuellement dans la section Applications disponibles.";
 "WatchInstallationView_AlreadyInstalled_ButtonLabel" = "> déjà installé";
 "WatchInstallationView_OpenAppleWatch_ButtonLabel" = "Installez l'application Waka Watch";
 "ComplicationSettingsView_Instructions_Text" = "Select up to 3 goals.";
@@ -65,3 +64,5 @@
 "AppName" = "Waka Watch";
 "WhatsNewView_OKButton_Text" = "D'ACCORD";
 "ProfileView_ProfileImage_A11Y" = "profil {0}";
+"WatchInstallationCheckView_Instructions_Text" = "Waka Watch nécessite l’installation de l’application homologue Apple Watch. Si vous avez configuré l’installation automatique de l’application, cet écran se poursuivra automatiquement une fois l’application Waka Watch installée sur votre Apple Watch. Si l’installation automatique des applications n’est pas configurée, cliquez ci-dessous pour effectuer l’installation manuellement dans la section Applications disponibles.";
+"SettingsView_AppVersion_A11Y" = "Version de l’application {0}";

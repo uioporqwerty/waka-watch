@@ -38,6 +38,9 @@ struct SettingsView: View {
                     .font(Font.footnote)
                     .foregroundColor(.gray)
                     .padding()
+                    .accessibilityLabel(Text(LocalizedStringKey("SettingsView_AppVersion_A11Y")
+                                             .toString()
+                                             .replaceArgs(self.settingsViewModel.appVersion)))
             }
         }
         .onAppear {
