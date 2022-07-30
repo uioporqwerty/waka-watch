@@ -53,11 +53,16 @@ final class DependencyInjection {
                                  )
         }
 
+        self.container.register(ErrorService.self) { resolver in
+            ErrorService(authenticationService: resolver.resolve(AuthenticationService.self)!)
+        }
+
         #if DEBUG
         self.container.register(NetworkService.self) { resolver in
             WakaTimeNetworkService(logManager: resolver.resolve(LogManager.self)!,
                            telemetry: resolver.resolve(TelemetryService.self)!,
                            authenticationService: resolver.resolve(AuthenticationService.self)!,
+                           errorService: resolver.resolve(ErrorService.self)!,
                            requestFactory: resolver.resolve(RequestFactory.self)!)
         }
         // TODO: Switch from local network service to wakatime network service on actual device run.
@@ -72,6 +77,7 @@ final class DependencyInjection {
                 WakaTimeNetworkService(logManager: resolver.resolve(LogManager.self)!,
                                telemetry: resolver.resolve(TelemetryService.self)!,
                                authenticationService: resolver.resolve(AuthenticationService.self)!,
+                               errorService: resolver.resolve(ErrorService.self)!,
                                requestFactory: resolver.resolve(RequestFactory.self)!)
             }
         #endif

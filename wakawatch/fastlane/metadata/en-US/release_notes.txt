@@ -2,3 +2,4 @@ What's New
 
 Fixes:
 - Accessibility fixes for Settings view.
+- Handle WakaTime unauthorized erorrs. You will now be prompted to connect to WakaTime again whenever that happens.

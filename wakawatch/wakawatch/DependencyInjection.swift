@@ -49,10 +49,16 @@ final class DependencyInjection {
                                   tokenManager: resolver.resolve(TokenManager.self)!
                                  )
         }
+
+        self.container.register(ErrorService.self) { resolver in
+            ErrorService(authenticationService: resolver.resolve(AuthenticationService.self)!)
+        }
+
         self.container.register(NetworkService.self) { resolver in
             WakaTimeNetworkService(logManager: resolver.resolve(LogManager.self)!,
                            telemetry: resolver.resolve(TelemetryService.self)!,
                            authenticationService: resolver.resolve(AuthenticationService.self)!,
+                           errorService: resolver.resolve(ErrorService.self)!,
                            requestFactory: resolver.resolve(RequestFactory.self)!)
         }
         self.container.register(GithubAPIService.self) { resolver in

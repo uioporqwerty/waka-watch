@@ -1,18 +1,21 @@
 import Foundation
 
 final class WakaTimeNetworkService: NetworkService {
-    var logManager: LogManager
-    var telemetry: TelemetryService
-    var authenticationService: AuthenticationService
+    let logManager: LogManager
+    let telemetry: TelemetryService
+    let authenticationService: AuthenticationService
+    let errorService: ErrorService
     var requestFactory: RequestFactory
 
     init(logManager: LogManager,
          telemetry: TelemetryService,
          authenticationService: AuthenticationService,
+         errorService: ErrorService,
          requestFactory: RequestFactory) {
         self.logManager = logManager
         self.telemetry = telemetry
         self.authenticationService = authenticationService
+        self.errorService = errorService
         self.requestFactory = requestFactory
     }
 
@@ -29,6 +32,11 @@ final class WakaTimeNetworkService: NetworkService {
 
         if !(urlResponse?.statusCode.isSuccessfulHttpResponseCode() ?? false) {
             self.logManager.errorMessage(data)
+            return nil
+        }
+
+        if let errorResponse = try? JSONDecoder().decode(ErrorResponse.self, from: data) {
+            await self.errorService.handleWakaTimeError(error: errorResponse.error.toWakaTimeError())
             return nil
         }
 
@@ -57,7 +65,12 @@ final class WakaTimeNetworkService: NetworkService {
             self.logManager.errorMessage(data)
             return nil
         }
-
+        
+        if let errorResponse = try? JSONDecoder().decode(ErrorResponse.self, from: data) {
+            await self.errorService.handleWakaTimeError(error: errorResponse.error.toWakaTimeError())
+            return nil
+        }
+        
         do {
             return try JSONDecoder().decode(ProfileResponse.self, from: data)
         } catch {
@@ -83,6 +96,11 @@ final class WakaTimeNetworkService: NetworkService {
             return nil
         }
 
+        if let errorResponse = try? JSONDecoder().decode(ErrorResponse.self, from: data) {
+            await self.errorService.handleWakaTimeError(error: errorResponse.error.toWakaTimeError())
+            return nil
+        }
+        
         do {
             return try JSONDecoder().decode(GoalsResponse.self, from: data)
         } catch {
@@ -106,6 +124,11 @@ final class WakaTimeNetworkService: NetworkService {
 
         if !(urlResponse?.statusCode.isSuccessfulHttpResponseCode() ?? false) {
             self.logManager.errorMessage(data)
+            return nil
+        }
+        
+        if let errorResponse = try? JSONDecoder().decode(ErrorResponse.self, from: data) {
+            await self.errorService.handleWakaTimeError(error: errorResponse.error.toWakaTimeError())
             return nil
         }
 

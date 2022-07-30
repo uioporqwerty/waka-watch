@@ -131,6 +131,10 @@
 		6BE5DE7B27A974690072FF0E /* SummaryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9E1114279CA29100F4DC93 /* SummaryResponse.swift */; };
 		6BE5DE7C27A9746C0072FF0E /* ProfileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8A4856279D03780071566F /* ProfileResponse.swift */; };
 		6BE5DE7D27A9746F0072FF0E /* LeaderboardResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8A485D279D1A2C0071566F /* LeaderboardResponse.swift */; };
+		6BE93AAE289570F200D5072E /* WakaTimeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE93AAD289570F200D5072E /* WakaTimeError.swift */; };
+		6BE93AAF289570F200D5072E /* WakaTimeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE93AAD289570F200D5072E /* WakaTimeError.swift */; };
+		6BE93AB12895724000D5072E /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE93AB02895724000D5072E /* ErrorResponse.swift */; };
+		6BE93AB22895724000D5072E /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE93AB02895724000D5072E /* ErrorResponse.swift */; };
 		6BED9A6E2795154A005646C3 /* WakaWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BED9A6D2795154A005646C3 /* WakaWatchApp.swift */; };
 		6BED9A722795154C005646C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BED9A712795154C005646C3 /* Assets.xcassets */; };
 		6BED9A752795154C005646C3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BED9A742795154C005646C3 /* Preview Assets.xcassets */; };
@@ -151,6 +155,8 @@
 		6BED9AFD2795BBB5005646C3 /* AccessTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BED9AFB2795BBB5005646C3 /* AccessTokenResponse.swift */; };
 		6BED9B002795D1C0005646C3 /* ConnectivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BED9AFF2795D1C0005646C3 /* ConnectivityService.swift */; };
 		6BED9B012795D1C0005646C3 /* ConnectivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BED9AFF2795D1C0005646C3 /* ConnectivityService.swift */; };
+		6BEF8B862895A62E00DC097B /* ErrorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEF8B852895A62E00DC097B /* ErrorService.swift */; };
+		6BEF8B872895A62E00DC097B /* ErrorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEF8B852895A62E00DC097B /* ErrorService.swift */; };
 		6BF5870427C2B35900865D95 /* FloatingMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF5870327C2B35900865D95 /* FloatingMenu.swift */; };
 		6BF5870527C2B35900865D95 /* FloatingMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF5870327C2B35900865D95 /* FloatingMenu.swift */; };
 		6BF5870727C2B3E500865D95 /* FloatingMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF5870627C2B3E500865D95 /* FloatingMenuItem.swift */; };
@@ -356,6 +362,8 @@
 		6BE5DE6A27A8CB380072FF0E /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 		6BE5DE7427A90A8F0072FF0E /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		6BE5DE7727A90CB00072FF0E /* ConnectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectViewModel.swift; sourceTree = "<group>"; };
+		6BE93AAD289570F200D5072E /* WakaTimeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WakaTimeError.swift; sourceTree = "<group>"; };
+		6BE93AB02895724000D5072E /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 		6BED9A6A2795154A005646C3 /* Waka Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Waka Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BED9A6D2795154A005646C3 /* WakaWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WakaWatchApp.swift; sourceTree = "<group>"; };
 		6BED9A712795154C005646C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -379,6 +387,7 @@
 		6BED9AED2795450F005646C3 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
 		6BED9AFB2795BBB5005646C3 /* AccessTokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenResponse.swift; sourceTree = "<group>"; };
 		6BED9AFF2795D1C0005646C3 /* ConnectivityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivityService.swift; sourceTree = "<group>"; };
+		6BEF8B852895A62E00DC097B /* ErrorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorService.swift; sourceTree = "<group>"; };
 		6BF3284D27EC3AE40038B49D /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6BF5870327C2B35900865D95 /* FloatingMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingMenu.swift; sourceTree = "<group>"; };
 		6BF5870627C2B3E500865D95 /* FloatingMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingMenuItem.swift; sourceTree = "<group>"; };
@@ -489,6 +498,7 @@
 			children = (
 				6B30B95627E1711D003BEED0 /* RuntimeError.swift */,
 				6BBF65812845CAD3004C3081 /* KeychainError.swift */,
+				6BE93AAD289570F200D5072E /* WakaTimeError.swift */,
 			);
 			path = Errors;
 			sourceTree = "<group>";
@@ -560,6 +570,7 @@
 				6B8A4856279D03780071566F /* ProfileResponse.swift */,
 				6B8A485D279D1A2C0071566F /* LeaderboardResponse.swift */,
 				6B5CFC2F27CB08C00014271D /* GoalsResponse.swift */,
+				6BE93AB02895724000D5072E /* ErrorResponse.swift */,
 			);
 			path = "WakaTime API Responses";
 			sourceTree = "<group>";
@@ -816,6 +827,7 @@
 				6B1D9B2727C1366200322DBA /* ComplicationService.swift */,
 				6BAF14BC27CF12D400370EED /* BackgroundService.swift */,
 				6B191E7227DC352200940FB5 /* NotificationService.swift */,
+				6BEF8B852895A62E00DC097B /* ErrorService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1255,11 +1267,13 @@
 				6BE5DE7527A90A8F0072FF0E /* SplashViewModel.swift in Sources */,
 				6BF5870727C2B3E500865D95 /* FloatingMenuItem.swift in Sources */,
 				6BE5DE3D27A6403D0072FF0E /* StringExtensions.swift in Sources */,
+				6BE93AAE289570F200D5072E /* WakaTimeError.swift in Sources */,
 				6BE5DE5B27A8BBB60072FF0E /* DependencyInjection.swift in Sources */,
 				6BE5DE7D27A9746F0072FF0E /* LeaderboardResponse.swift in Sources */,
 				6BE5DE7C27A9746C0072FF0E /* ProfileResponse.swift in Sources */,
 				6B4A4CF3287B38500058D9BC /* UIFontExtensions.swift in Sources */,
 				6B0C0DC1288F670B00B9BE13 /* AppInformationService.swift in Sources */,
+				6BEF8B862895A62E00DC097B /* ErrorService.swift in Sources */,
 				6BE5DE3F27A64E630072FF0E /* SeverityLevel.swift in Sources */,
 				6B890F0527BC554000CCC13A /* DateUtility.swift in Sources */,
 				6BD52F18279FD03900247BFB /* LoggingService.swift in Sources */,
@@ -1275,6 +1289,7 @@
 				6B410A4227C2E6860044BB08 /* VersionCheckerUtility.swift in Sources */,
 				6BAF14BB27CEFF2100370EED /* WatchInstallationCheckViewModel.swift in Sources */,
 				6BD52EF9279FCB3400247BFB /* RollbarAPMService.swift in Sources */,
+				6BE93AB12895724000D5072E /* ErrorResponse.swift in Sources */,
 				6BE5DE6B27A8CB380072FF0E /* AuthenticationService.swift in Sources */,
 				6B44338A287880C4002294F7 /* FeedbackView.swift in Sources */,
 			);
@@ -1298,6 +1313,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BE93AAF289570F200D5072E /* WakaTimeError.swift in Sources */,
 				6B8A4857279D03780071566F /* ProfileResponse.swift in Sources */,
 				6BA78C8527A4826C005149BC /* SettingsView.swift in Sources */,
 				6B0C0DB1288F5FBD00B9BE13 /* WhatsNewView.swift in Sources */,
@@ -1332,6 +1348,7 @@
 				6B3440DD279C5E1C006A5C27 /* Delivery.swift in Sources */,
 				6BE5DE6227A8BDBB0072FF0E /* RollbarTelemetryService.swift in Sources */,
 				6B191E7327DC352200940FB5 /* NotificationService.swift in Sources */,
+				6BE93AB22895724000D5072E /* ErrorResponse.swift in Sources */,
 				6BED9AA12795154E005646C3 /* WakaWatchApp.swift in Sources */,
 				6BA78C9027A492FB005149BC /* AsyncButton.swift in Sources */,
 				6B410A4F27C331B80044BB08 /* ExtensionDelegate.swift in Sources */,
@@ -1365,6 +1382,7 @@
 				6B9E1112279C945800F4DC93 /* SummaryViewModel.swift in Sources */,
 				6BE5DE4027A64E630072FF0E /* SeverityLevel.swift in Sources */,
 				6BE5DE7827A90CB00072FF0E /* ConnectViewModel.swift in Sources */,
+				6BEF8B872895A62E00DC097B /* ErrorService.swift in Sources */,
 				6BBF658A2845CBA6004C3081 /* KeychainServicesService.swift in Sources */,
 				6BE5DE5F27A8BDAC0072FF0E /* TelemetryService.swift in Sources */,
 				6B16F97727C97ED5009E98E3 /* ChartFactory.swift in Sources */,

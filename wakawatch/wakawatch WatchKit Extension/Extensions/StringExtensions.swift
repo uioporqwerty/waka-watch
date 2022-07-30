@@ -20,4 +20,13 @@ extension String {
     func trim() -> String {
         return self.trimmingCharacters(in: .whitespacesAndNewlines)
     }
+
+    func toWakaTimeError() -> WakaTimeError {
+        switch self {
+        case "Unauthorized":
+            return .unauthorized
+        default:
+            return .unknown
+        }
+    }
 }
