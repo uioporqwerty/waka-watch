@@ -66,3 +66,4 @@
 "WhatsNewView_OKButton_Text" = "OKEJ";
 "ProfileView_ProfileImage_A11Y" = "{0} profil";
 "SettingsView_AppVersion_A11Y" = "Appversion {0}";
+"GlobalError_MissingTimezone" = "Din tidszon är inte inställd i WakaTime. För att fortsätta, gå till WakaTime och ställ in din tidszon i kontoinställningarna och försök sedan igen.";

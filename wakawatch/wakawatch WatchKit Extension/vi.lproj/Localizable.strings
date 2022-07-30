@@ -66,3 +66,4 @@
 "WhatsNewView_OKButton_Text" = "OK";
 "ProfileView_ProfileImage_A11Y" = "Hồ sơ {0}";
 "SettingsView_AppVersion_A11Y" = "{0} phiên bản ứng dụng";
+"GlobalError_MissingTimezone" = "Múi giờ của bạn không được đặt trong WakaTime. Để tiếp tục, hãy truy cập WakaTime và đặt múi giờ của bạn trong cài đặt tài khoản, sau đó thử lại.";

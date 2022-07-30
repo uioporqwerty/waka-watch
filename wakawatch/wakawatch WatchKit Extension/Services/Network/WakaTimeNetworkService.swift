@@ -65,12 +65,12 @@ final class WakaTimeNetworkService: NetworkService {
             self.logManager.errorMessage(data)
             return nil
         }
-        
+
         if let errorResponse = try? JSONDecoder().decode(ErrorResponse.self, from: data) {
             await self.errorService.handleWakaTimeError(error: errorResponse.error.toWakaTimeError())
             return nil
         }
-        
+
         do {
             return try JSONDecoder().decode(ProfileResponse.self, from: data)
         } catch {

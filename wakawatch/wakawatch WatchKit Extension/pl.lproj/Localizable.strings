@@ -66,3 +66,4 @@
 "WhatsNewView_OKButton_Text" = "OK";
 "ProfileView_ProfileImage_A11Y" = "Profil {0}";
 "SettingsView_AppVersion_A11Y" = "{0} wersji aplikacji";
+"GlobalError_MissingTimezone" = "Twoja strefa czasowa nie jest ustawiona w WakaTime. Aby kontynuować, przejdź do WakaTime i ustaw strefę czasową w ustawieniach konta, a następnie spróbuj ponownie.";

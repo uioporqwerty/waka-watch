@@ -4,6 +4,7 @@ struct ConnectView: View {
     private var connectViewModel: ConnectViewModel
     @ObservedObject private var whatsNewViewModel: WhatsNewViewModel
     @AppStorage(DefaultsKeys.authorized) var authorized = false
+    @AppStorage(DefaultsKeys.globalErrorMessage) var globalErrorMessage = ""
     @State var requiresUpdate = false
 
     init(viewModel: ConnectViewModel,
@@ -21,6 +22,11 @@ struct ConnectView: View {
                     Text(LocalizedStringKey("ConnectView_Message"))
                         .navigationTitle(Text(LocalizedStringKey("ConnectView_Title")))
                         .navigationBarTitleDisplayMode(.inline)
+                }
+            } else if !self.globalErrorMessage.trim().isEmpty {
+                ErrorView(logManager: self.connectViewModel.logManager,
+                          description: self.globalErrorMessage.trim()) {
+                    UserDefaults.standard.set("", forKey: DefaultsKeys.globalErrorMessage)
                 }
             } else {
                 if self.whatsNewViewModel.show {

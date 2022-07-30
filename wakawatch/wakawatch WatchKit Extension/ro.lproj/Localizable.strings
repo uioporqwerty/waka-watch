@@ -66,3 +66,4 @@
 "WhatsNewView_OKButton_Text" = "OK";
 "ProfileView_ProfileImage_A11Y" = "{0} profil";
 "SettingsView_AppVersion_A11Y" = "{0} versiunii aplicației";
+"GlobalError_MissingTimezone" = "Fusul orar nu este setat în WakaTime. Pentru a continua, accesați WakaTime și setați fusul orar în setările contului, apoi încercați din nou.";

@@ -6,6 +6,6 @@ struct DefaultsKeys {
     static let complicationCurrentTimeCoded = "complicationCurrentTimeCoded"
     static let complicationGoals = "complicationGoals"
     static let previousAppVersion = "previousAppVersion"
-
+    static let globalErrorMessage = "globalErrorMessage"
     static let userGoals = "userGoals"
 }

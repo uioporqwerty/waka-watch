@@ -66,3 +66,4 @@
 "WhatsNewView_OKButton_Text" = "ХОРОШО";
 "ProfileView_ProfileImage_A11Y" = "профиль {0}";
 "SettingsView_AppVersion_A11Y" = "версия приложения {0}";
+"GlobalError_MissingTimezone" = "Ваш часовой пояс не установлен в WakaTime. Чтобы продолжить, перейдите в WakaTime и установите часовой пояс в настройках учетной записи, а затем повторите попытку.";

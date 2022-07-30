@@ -134,6 +134,7 @@ final class DependencyInjection {
         }
         self.container.register(ConnectViewModel.self) { resolver in
             ConnectViewModel(telemetryService: resolver.resolve(TelemetryService.self)!,
+                             logManager: resolver.resolve(LogManager.self)!,
                              networkService: resolver.resolve(NetworkService.self)!)
         }
         self.container.register(ComplicationViewModel.self) { _ in ComplicationViewModel() }

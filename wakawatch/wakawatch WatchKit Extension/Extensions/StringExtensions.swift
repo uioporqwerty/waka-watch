@@ -25,6 +25,8 @@ extension String {
         switch self {
         case "Unauthorized":
             return .unauthorized
+        case "User is missing a timezone.", "Set a timezone in your account settings.":
+            return .unsetTimezone
         default:
             return .unknown
         }

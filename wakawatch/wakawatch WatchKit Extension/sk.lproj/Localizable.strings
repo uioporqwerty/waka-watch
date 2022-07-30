@@ -66,3 +66,4 @@
 "WhatsNewView_OKButton_Text" = "OK";
 "ProfileView_ProfileImage_A11Y" = "{0} profil";
 "SettingsView_AppVersion_A11Y" = "{0} verzie aplikácie";
+"GlobalError_MissingTimezone" = "Vaše časové pásmo nie je nastavené vo WakaTime. Ak chcete pokračovať, prejdite na wakatime, nastavte svoje časové pásmo v nastaveniach účtu a potom to skúste znova.";

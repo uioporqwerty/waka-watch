@@ -1,3 +1,5 @@
+import Foundation
+
 final class ErrorService {
     private let authenticationService: AuthenticationService
     
@@ -8,6 +10,9 @@ final class ErrorService {
     func handleWakaTimeError(error: WakaTimeError) async {
         if error == .unauthorized {
             try? await self.authenticationService.disconnect()
+        } else if error == .unsetTimezone {
+            UserDefaults.standard.set(String(localized: "GlobalError_MissingTimezone"),
+                                      forKey: DefaultsKeys.globalErrorMessage)
         }
     }
 }

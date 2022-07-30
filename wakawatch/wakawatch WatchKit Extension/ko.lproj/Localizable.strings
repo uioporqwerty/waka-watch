@@ -66,3 +66,4 @@
 "WhatsNewView_OKButton_Text" = "그래";
 "ProfileView_ProfileImage_A11Y" = "{0} 프로필";
 "SettingsView_AppVersion_A11Y" = "앱 버전 {0}";
+"GlobalError_MissingTimezone" = "시간대가 WakaTime으로 설정되어 있지 않습니다. 계속하려면 WakaTime으로 이동하여 계정 설정에서 시간대를 설정한 후 다시 시도하십시오.";

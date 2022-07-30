@@ -66,3 +66,4 @@
 "WhatsNewView_OKButton_Text" = "ตกลง, ได้";
 "ProfileView_ProfileImage_A11Y" = "โปรไฟล์{0}";
 "SettingsView_AppVersion_A11Y" = "{0}เวอร์ชันของแอป";
+"GlobalError_MissingTimezone" = "เขตเวลาของคุณไม่ได้ตั้งค่าไว้ใน WakaTime หากต้องการดําเนินการต่อ ให้ไปที่ WakaTime และตั้งค่าเขตเวลาของคุณในการตั้งค่าบัญชี แล้วลองอีกครั้ง";

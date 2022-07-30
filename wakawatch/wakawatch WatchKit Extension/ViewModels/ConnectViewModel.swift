@@ -2,11 +2,14 @@ import Foundation
 
 final class ConnectViewModel {
     public let telemetry: TelemetryService
+    public let logManager: LogManager
     private let networkService: NetworkService
 
     init(telemetryService: TelemetryService,
+         logManager: LogManager,
          networkService: NetworkService) {
         self.telemetry = telemetryService
+        self.logManager = logManager
         self.networkService = networkService
     }
 

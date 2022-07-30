@@ -66,3 +66,4 @@
 "ProfileView_ProfileImage_A11Y" = "{0}简介";
 "WatchInstallationCheckView_Instructions_Text" = "Waka Watch 要求安装 Apple Watch 对应应用程序。如果您配置了“自动应用程序安装”，则在 Apple Watch 上安装 Waka Watch 应用程序后，此屏幕将自动继续。如果您没有配置自动应用安装，请单击下面以从可用应用部分手动安装。";
 "SettingsView_AppVersion_A11Y" = "应用版本{0}";
+"GlobalError_MissingTimezone" = "您的时区未在 WakaTime 中设置。要继续，请转到WakaTime并在帐户设置中设置您的时区，然后重试。";

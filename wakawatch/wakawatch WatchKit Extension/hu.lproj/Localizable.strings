@@ -66,3 +66,4 @@
 "WhatsNewView_OKButton_Text" = "OKÉ";
 "ProfileView_ProfileImage_A11Y" = "{0} profil";
 "SettingsView_AppVersion_A11Y" = "Alkalmazásverzió {0}";
+"GlobalError_MissingTimezone" = "Az időzóna nincs beállítva a WakaTime-ban. A folytatáshoz lépjen a WakaTime oldalra, és állítsa be az időzónát a fiókbeállításokban, majd próbálkozzon újra.";

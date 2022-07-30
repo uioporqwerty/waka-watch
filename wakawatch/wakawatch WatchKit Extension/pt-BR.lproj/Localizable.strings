@@ -66,3 +66,4 @@
 "WhatsNewView_OKButton_Text" = "OKEY";
 "ProfileView_ProfileImage_A11Y" = "{0} perfil";
 "SettingsView_AppVersion_A11Y" = "{0} da versão do aplicativo";
+"GlobalError_MissingTimezone" = "Seu fuso horário não está definido no WakaTime. Para prosseguir, vá para o WakaTime e defina seu fuso horário nas configurações da conta e tente novamente.";

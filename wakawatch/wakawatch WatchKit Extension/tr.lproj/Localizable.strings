@@ -66,3 +66,4 @@
 "WhatsNewView_OKButton_Text" = "TAMAM";
 "ProfileView_ProfileImage_A11Y" = "{0} profili";
 "SettingsView_AppVersion_A11Y" = "Uygulama sürümü {0}";
+"GlobalError_MissingTimezone" = "Saat diliminiz WakaTime'da ayarlanmamış. Devam etmek için WakaTime'a gidin ve hesap ayarlarında saat diliminizi ayarlayın ve ardından yeniden deneyin.";
