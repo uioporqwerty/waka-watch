@@ -16,7 +16,6 @@
 "SettingsView_Title" = "Setări";
 "SettingsView_Disconnect_Button" = "Deconectați-vă de la WakaTime";
 "SettingsView_ComplicationsSettings_Text" = "Setările complicațiilor obiectivului";
-"SettingsView_Licenses_Link" = "Deschideți licențele Souce";
 "ConnectView_Title" = "Waka Watch";
 "ConnectView_Message" = "Deschide aplicația Waka Watch pe dispozitivul principal pentru a te conecta la WakaTime.";
 "ConnectView_UpdateRequired_Message" = "Această versiune a Waka Watch este depășită. Actualizați Waka Watch prin App Store.";
@@ -67,3 +66,4 @@
 "ProfileView_ProfileImage_A11Y" = "{0} profil";
 "SettingsView_AppVersion_A11Y" = "{0} versiunii aplicației";
 "GlobalError_MissingTimezone" = "Fusul orar nu este setat în WakaTime. Pentru a continua, accesați WakaTime și setați fusul orar în setările contului, apoi încercați din nou.";
+"SettingsView_Licenses_Link" = "Licențe open source";

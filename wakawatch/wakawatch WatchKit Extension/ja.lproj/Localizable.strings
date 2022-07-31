@@ -16,7 +16,6 @@
 "SettingsView_Title" = "コンテンツ";
 "SettingsView_Disconnect_Button" = "WakaTimeから接続解除";
 "SettingsView_ComplicationsSettings_Text" = "Goal Complication Settings";
-"SettingsView_Licenses_Link" = "オープンソースライセンス";
 "ConnectView_Title" = "Waka Watch";
 "ConnectView_Message" = "WakaTimeに接続するには、プライマリデバイスでWaka Watchアプリを開きます。";
 "ConnectView_UpdateRequired_Message" = "Waka Watchの最新バージョンは日付外です。 「Waka Watch」をApp Storeで更新。";
@@ -67,3 +66,4 @@
 "WatchInstallationCheckView_Instructions_Text" = "Waka Watch では、Apple Watch の対応するアプリをインストールする必要があります。アプリの自動インストールを設定している場合、Apple Watch に Waka Watch アプリがインストールされると、この画面は自動的に続行されます。アプリの自動インストールが構成されていない場合は、以下をクリックして [利用可能なアプリ] セクションから手動でインストールします。";
 "SettingsView_AppVersion_A11Y" = "アプリのバージョン {0}";
 "GlobalError_MissingTimezone" = "タイムゾーンが WakaTime に設定されていません。続行するには、WakaTimeに移動し、アカウント設定でタイムゾーンを設定してから、もう一度やり直してください。";
+"SettingsView_Licenses_Link" = "オープンソースライセンス";

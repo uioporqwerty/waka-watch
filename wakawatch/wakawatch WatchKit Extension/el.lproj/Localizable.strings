@@ -16,7 +16,6 @@
 "SettingsView_Title" = "Ρυθμίσεις";
 "SettingsView_Disconnect_Button" = "Αποσυνδεθείτε από το WakaTime";
 "SettingsView_ComplicationsSettings_Text" = "Ρυθμίσεις επιπλοκών στόχου";
-"SettingsView_Licenses_Link" = "Ανοίξτε τις άδειες Souce";
 "ConnectView_Title" = "Waka Watch";
 "ConnectView_Message" = "Ανοίξτε την εφαρμογή Waka Watch στην κύρια συσκευή σας για να συνδεθείτε στο WakaTime.";
 "ConnectView_UpdateRequired_Message" = "Αυτή η έκδοση του Waka Watch δεν είναι ενημερωμένη. Ενημερώστε το Waka Watch μέσω του App Store.";
@@ -67,3 +66,4 @@
 "ProfileView_ProfileImage_A11Y" = "{0} προφίλ";
 "SettingsView_AppVersion_A11Y" = "Έκδοση εφαρμογής {0}";
 "GlobalError_MissingTimezone" = "Η ζώνη ώρας σας δεν έχει οριστεί στο WakaTime. Για να συνεχίσετε, μεταβείτε στο WakaTime και ορίστε τη ζώνη ώρας σας στις ρυθμίσεις λογαριασμού και, στη συνέχεια, προσπαθήστε ξανά.";
+"SettingsView_Licenses_Link" = "Άδειες χρήσης ανοιχτού κώδικα";

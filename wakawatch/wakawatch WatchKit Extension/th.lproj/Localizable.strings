@@ -16,7 +16,6 @@
 "SettingsView_Title" = "การตั้งค่า";
 "SettingsView_Disconnect_Button" = "ยกเลิกการเชื่อมต่อจากเวลาของวากะ";
 "SettingsView_ComplicationsSettings_Text" = "การตั้งค่ากลไกแทรกซ้อนของเป้าหมาย";
-"SettingsView_Licenses_Link" = "เปิดใบอนุญาต Souce";
 "ConnectView_Title" = "Waka Watch";
 "ConnectView_Message" = "เปิดแอป Waka Watch บนอุปกรณ์หลักของคุณเพื่อเชื่อมต่อกับ WakaTime";
 "ConnectView_UpdateRequired_Message" = "Waka Watch เวอร์ชันนี้ล้าสมัยแล้ว อัปเดต Waka Watch ผ่าน App Store";
@@ -67,3 +66,4 @@
 "ProfileView_ProfileImage_A11Y" = "โปรไฟล์{0}";
 "SettingsView_AppVersion_A11Y" = "{0}เวอร์ชันของแอป";
 "GlobalError_MissingTimezone" = "เขตเวลาของคุณไม่ได้ตั้งค่าไว้ใน WakaTime หากต้องการดําเนินการต่อ ให้ไปที่ WakaTime และตั้งค่าเขตเวลาของคุณในการตั้งค่าบัญชี แล้วลองอีกครั้ง";
+"SettingsView_Licenses_Link" = "สิทธิ์การใช้งานโอเพนซอร์ส";

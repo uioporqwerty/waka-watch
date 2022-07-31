@@ -16,7 +16,6 @@
 "SettingsView_Title" = "सेटिंग्स";
 "SettingsView_Disconnect_Button" = "WakaTime से डिस्कनेक्ट";
 "SettingsView_ComplicationsSettings_Text" = "Goal Complication Settings";
-"SettingsView_Licenses_Link" = "ओपन सोर्स लाइसेंस";
 "ConnectView_Title" = "Waka Watch";
 "ConnectView_Message" = "WakaTime से कनेक्ट करने के लिए अपने प्राथमिक उपकरण पर Waka वॉच ऐप खोलें।";
 "ConnectView_UpdateRequired_Message" = "वाका वॉच का यह संस्करण तारीख से बाहर है। ऐप स्टोर के माध्यम से वाका वॉच अपडेट करें।";
@@ -67,3 +66,4 @@
 "ProfileView_ProfileImage_A11Y" = "{0} प्रोफ़ाइल";
 "SettingsView_AppVersion_A11Y" = "ऐप्लिकेशन संस्करण {0}";
 "GlobalError_MissingTimezone" = "आपका टाइमज़ोन WakaTime में सेट नहीं है. आगे बढ़ने के लिए, WakaTime पर जाएँ और खाता सेटिंग में अपना टाइमज़ोन सेट करें और तब पुन: प्रयास करें.";
+"SettingsView_Licenses_Link" = "ओपन सोर्स लाइसेंस";

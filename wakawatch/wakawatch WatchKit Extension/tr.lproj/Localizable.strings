@@ -16,7 +16,6 @@
 "SettingsView_Title" = "Ayarlar";
 "SettingsView_Disconnect_Button" = "WakaTime ile bağlantıyı kesme";
 "SettingsView_ComplicationsSettings_Text" = "Hedef Komplikasyon Ayarları";
-"SettingsView_Licenses_Link" = "Souce Lisanslarını Aç";
 "ConnectView_Title" = "Waka Watch";
 "ConnectView_Message" = "WakaTime'a bağlanmak için birincil cihazınızda Waka Watch uygulamasını açın.";
 "ConnectView_UpdateRequired_Message" = "Waka Watch'un bu sürümü güncel değil. Waka Watch'u App Store üzerinden güncelleyin.";
@@ -67,3 +66,4 @@
 "ProfileView_ProfileImage_A11Y" = "{0} profili";
 "SettingsView_AppVersion_A11Y" = "Uygulama sürümü {0}";
 "GlobalError_MissingTimezone" = "Saat diliminiz WakaTime'da ayarlanmamış. Devam etmek için WakaTime'a gidin ve hesap ayarlarında saat diliminizi ayarlayın ve ardından yeniden deneyin.";
+"SettingsView_Licenses_Link" = "Açık Kaynak Lisansları";

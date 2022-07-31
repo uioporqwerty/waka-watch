@@ -16,7 +16,6 @@
 "SettingsView_Title" = "Cài đặt";
 "SettingsView_Disconnect_Button" = "Ngắt kết nối khỏi WakaTime";
 "SettingsView_ComplicationsSettings_Text" = "Thiết đặt biến chứng mục tiêu";
-"SettingsView_Licenses_Link" = "Mở giấy phép Souce";
 "ConnectView_Title" = "Waka Watch";
 "ConnectView_Message" = "Mở ứng dụng Waka Watch trên thiết bị chính của bạn để kết nối với WakaTime.";
 "ConnectView_UpdateRequired_Message" = "Phiên bản Waka Watch này đã lỗi thời. Cập nhật Waka Watch thông qua App Store.";
@@ -67,3 +66,4 @@
 "ProfileView_ProfileImage_A11Y" = "Hồ sơ {0}";
 "SettingsView_AppVersion_A11Y" = "{0} phiên bản ứng dụng";
 "GlobalError_MissingTimezone" = "Múi giờ của bạn không được đặt trong WakaTime. Để tiếp tục, hãy truy cập WakaTime và đặt múi giờ của bạn trong cài đặt tài khoản, sau đó thử lại.";
+"SettingsView_Licenses_Link" = "Giấy phép nguồn mở";

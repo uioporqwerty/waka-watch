@@ -16,7 +16,6 @@
 "SettingsView_Title" = "Параметры";
 "SettingsView_Disconnect_Button" = "Отключение от WakaTime";
 "SettingsView_ComplicationsSettings_Text" = "Настройки усложнения цели";
-"SettingsView_Licenses_Link" = "Лицензии с открытым исходным кодом";
 "ConnectView_Title" = "Вака Часы";
 "ConnectView_Message" = "Откройте приложение Waka Watch на основном устройстве, чтобы подключиться к WakaTime.";
 "ConnectView_UpdateRequired_Message" = "Эта версия Waka Watch устарела. Обновите Waka Watch через App Store.";
@@ -67,3 +66,4 @@
 "ProfileView_ProfileImage_A11Y" = "профиль {0}";
 "SettingsView_AppVersion_A11Y" = "версия приложения {0}";
 "GlobalError_MissingTimezone" = "Ваш часовой пояс не установлен в WakaTime. Чтобы продолжить, перейдите в WakaTime и установите часовой пояс в настройках учетной записи, а затем повторите попытку.";
+"SettingsView_Licenses_Link" = "Лицензии с открытым исходным кодом";

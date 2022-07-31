@@ -16,7 +16,6 @@
 "SettingsView_Title" = "Beállítások";
 "SettingsView_Disconnect_Button" = "Kapcsolat bontása a WakaTime-ról";
 "SettingsView_ComplicationsSettings_Text" = "Cél komplikációs beállítások";
-"SettingsView_Licenses_Link" = "Souce licencek megnyitása";
 "ConnectView_Title" = "Waka Watch";
 "ConnectView_Message" = "Nyisd meg a Waka Watch alkalmazást az elsődleges eszközödön, hogy csatlakozz a WakaTime-hoz.";
 "ConnectView_UpdateRequired_Message" = "A Waka Watch ezen verziója elavult. Frissítse a Waka Watch-ot az App Store-on keresztül.";
@@ -67,3 +66,4 @@
 "ProfileView_ProfileImage_A11Y" = "{0} profil";
 "SettingsView_AppVersion_A11Y" = "Alkalmazásverzió {0}";
 "GlobalError_MissingTimezone" = "Az időzóna nincs beállítva a WakaTime-ban. A folytatáshoz lépjen a WakaTime oldalra, és állítsa be az időzónát a fiókbeállításokban, majd próbálkozzon újra.";
+"SettingsView_Licenses_Link" = "Nyílt forráskódú licencek";

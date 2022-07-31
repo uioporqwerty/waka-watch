@@ -16,7 +16,6 @@
 "SettingsView_Title" = "Inställningar";
 "SettingsView_Disconnect_Button" = "Koppla från WakaTime";
 "SettingsView_ComplicationsSettings_Text" = "Inställningar för målkomplikation";
-"SettingsView_Licenses_Link" = "Öppna Souce-licenser";
 "ConnectView_Title" = "Waka Watch";
 "ConnectView_Message" = "Öppna Waka Watch-appen på din primära enhet för att ansluta till WakaTime.";
 "ConnectView_UpdateRequired_Message" = "Den här versionen av Waka Watch är inaktuell. Uppdatera Waka Watch via App Store.";
@@ -67,3 +66,4 @@
 "ProfileView_ProfileImage_A11Y" = "{0} profil";
 "SettingsView_AppVersion_A11Y" = "Appversion {0}";
 "GlobalError_MissingTimezone" = "Din tidszon är inte inställd i WakaTime. För att fortsätta, gå till WakaTime och ställ in din tidszon i kontoinställningarna och försök sedan igen.";
+"SettingsView_Licenses_Link" = "Licenser för öppen källkod";

@@ -16,7 +16,6 @@
 "SettingsView_Title" = "Nastavenia";
 "SettingsView_Disconnect_Button" = "Odpojiť sa od WakaTime";
 "SettingsView_ComplicationsSettings_Text" = "Nastavenie komplikácií cieľa";
-"SettingsView_Licenses_Link" = "Otvorenie licencií Souce";
 "ConnectView_Title" = "Waka Watch";
 "ConnectView_Message" = "Ak sa chcete pripojiť k WakaTime, otvorte aplikáciu Waka Watch v primárnom zariadení.";
 "ConnectView_UpdateRequired_Message" = "Táto verzia Waka Watch je neaktuálna. Aktualizujte hodinky Waka Watch prostredníctvom App Store.";
@@ -67,3 +66,4 @@
 "ProfileView_ProfileImage_A11Y" = "{0} profil";
 "SettingsView_AppVersion_A11Y" = "{0} verzie aplikácie";
 "GlobalError_MissingTimezone" = "Vaše časové pásmo nie je nastavené vo WakaTime. Ak chcete pokračovať, prejdite na wakatime, nastavte svoje časové pásmo v nastaveniach účtu a potom to skúste znova.";
+"SettingsView_Licenses_Link" = "Licencie s otvoreným zdrojovým kódom";

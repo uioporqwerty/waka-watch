@@ -8,7 +8,6 @@
 "SummaryView_GoalsChart_Actual_Text" = "Actual";
 "SummaryView_GoalsChart_Goal_Text" = "Gol";
 "SummaryView_Error_Description" = "Resumen de carga de errores.";
-"SettingsView_Licenses_Link" = "Licencias de código abierto";
 "LeaderboardView_Title" = "Tabla de clasificación";
 "ProfileView_Title" = "Perfil";
 "ProfileView_Rank_Text" = "Rango:";
@@ -67,3 +66,4 @@
 "WatchInstallationCheckView_Instructions_Text" = "Waka Watch requiere que se instale la aplicación homóloga del Apple Watch. Si tienes configurada la instalación automática de aplicaciones, esta pantalla continuará automáticamente una vez que la aplicación Waka Watch esté instalada en tu Apple Watch. Si no tiene configurada la instalación automática de aplicaciones, haga clic a continuación para instalar manualmente desde la sección Aplicaciones disponibles.";
 "SettingsView_AppVersion_A11Y" = "Versión de la aplicación {0}";
 "GlobalError_MissingTimezone" = "Su zona horaria no está establecida en WakaTime. Para continuar, vaya a WakaTime y establezca su zona horaria en la configuración de la cuenta y luego inténtelo de nuevo.";
+"SettingsView_Licenses_Link" = "Licencias de código abierto";

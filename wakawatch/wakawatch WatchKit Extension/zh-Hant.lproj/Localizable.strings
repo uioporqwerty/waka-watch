@@ -16,7 +16,6 @@
 "SettingsView_Title" = "設置";
 "SettingsView_Disconnect_Button" = "斷開與WakaTime的連接";
 "SettingsView_ComplicationsSettings_Text" = "Goal Complication Settings";
-"SettingsView_Licenses_Link" = "開源許可證";
 "ConnectView_Title" = "Waka Watch";
 "ConnectView_Message" = "在主設備上打開 Waka Watch 應用以連接到 WakaTime。";
 "ConnectView_UpdateRequired_Message" = "這個版本的Waka Watch已經過時了。通過App Store更新Waka Watch。";
@@ -67,3 +66,4 @@
 "WatchInstallationCheckView_Instructions_Text" = "Waka Watch 要求安裝 Apple Watch 對應應用程式。如果您配置了「自動應用程式安裝」 則在 Apple Watch 上安裝 Waka Watch 應用程式後，此螢幕將自動繼續。如果您沒有設定自動應用安裝，請按下下面以從可用應用部分手動安裝。";
 "SettingsView_AppVersion_A11Y" = "應用程式版本{0}";
 "GlobalError_MissingTimezone" = "您的時區未在 WakaTime 中設置。要繼續，請轉到WakaTime並在帳戶設置中設置您的時區，然後重試。";
+"SettingsView_Licenses_Link" = "開源許可證";

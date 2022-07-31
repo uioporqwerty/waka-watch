@@ -16,7 +16,6 @@
 "SettingsView_Title" = "Asetukset";
 "SettingsView_Disconnect_Button" = "Katkaise yhteys WakaTimeen";
 "SettingsView_ComplicationsSettings_Text" = "Tavoitteen komplikaation asetukset";
-"SettingsView_Licenses_Link" = "Avaa Souce-lisenssit";
 "ConnectView_Title" = "Waka Watch";
 "ConnectView_Message" = "Avaa Waka Watch -appi ensisijaisella laitteellasi muodostaaksesi yhteyden WakaTimeen.";
 "ConnectView_UpdateRequired_Message" = "Tämä Waka Watchin versio on vanhentunut. Päivitä Waka Watch App Storen kautta.";
@@ -67,3 +66,4 @@
 "ProfileView_ProfileImage_A11Y" = "{0} profiili";
 "SettingsView_AppVersion_A11Y" = "Sovellusversio {0}";
 "GlobalError_MissingTimezone" = "Aikavyöhykettäsi ei ole asetettu WakaTimeen. Jatka siirtymällä WakaTimeen, asettamalla aikavyöhyke tilin asetuksissa ja yrittämällä sitten uudelleen.";
+"SettingsView_Licenses_Link" = "Avoimen lähdekoodin lisenssit";

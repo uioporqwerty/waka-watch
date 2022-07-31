@@ -16,7 +16,6 @@
 "SettingsView_Title" = "Réglages";
 "SettingsView_Disconnect_Button" = "Déconnecter de WakaTime";
 "SettingsView_ComplicationsSettings_Text" = "Goal Complication Settings";
-"SettingsView_Licenses_Link" = "Licences Open Source";
 "ConnectView_Title" = "Waka Watch";
 "ConnectView_Message" = "Ouvrez l'application Waka Watch sur votre appareil primaire pour vous connecter à WakaTime.";
 "ConnectView_UpdateRequired_Message" = "Cette version de Waka Watch est obsolète. Mettre à jour Waka Regarder dans l'App Store.";
@@ -67,3 +66,4 @@
 "WatchInstallationCheckView_Instructions_Text" = "Waka Watch nécessite l’installation de l’application homologue Apple Watch. Si vous avez configuré l’installation automatique de l’application, cet écran se poursuivra automatiquement une fois l’application Waka Watch installée sur votre Apple Watch. Si l’installation automatique des applications n’est pas configurée, cliquez ci-dessous pour effectuer l’installation manuellement dans la section Applications disponibles.";
 "SettingsView_AppVersion_A11Y" = "Version de l’application {0}";
 "GlobalError_MissingTimezone" = "Votre fuseau horaire n’est pas défini dans WakaTime. Pour continuer, accédez à WakaTime et définissez votre fuseau horaire dans les paramètres du compte, puis réessayez.";
+"SettingsView_Licenses_Link" = "Licences Open Source";

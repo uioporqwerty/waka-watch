@@ -16,7 +16,7 @@
 "SettingsView_Title" = "Settings";
 "SettingsView_Disconnect_Button" = "Disconnect from WakaTime";
 "SettingsView_ComplicationsSettings_Text" = "Goal Complication Settings";
-"SettingsView_Licenses_Link" = "Open Souce Licenses";
+"SettingsView_Licenses_Link" = "Open Source Licenses";
 "ConnectView_Title" = "Waka Watch";
 "ConnectView_Message" = "Open the Waka Watch app on your primary device to connect to WakaTime.";
 "ConnectView_UpdateRequired_Message" = "This version of Waka Watch is out of date. Update Waka Watch through the App Store.";

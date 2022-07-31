@@ -16,7 +16,6 @@
 "SettingsView_Title" = "Ustawienia";
 "SettingsView_Disconnect_Button" = "Rozłącz się z WakaTime";
 "SettingsView_ComplicationsSettings_Text" = "Ustawienia komplikacji celu";
-"SettingsView_Licenses_Link" = "Otwórz licencje Souce";
 "ConnectView_Title" = "Waka Watch";
 "ConnectView_Message" = "Otwórz aplikację Waka Watch na urządzeniu podstawowym, aby połączyć się z WakaTime.";
 "ConnectView_UpdateRequired_Message" = "Ta wersja Waka Watch jest nieaktualna. Zaktualizuj Waka Watch za pośrednictwem App Store.";
@@ -67,3 +66,4 @@
 "ProfileView_ProfileImage_A11Y" = "Profil {0}";
 "SettingsView_AppVersion_A11Y" = "{0} wersji aplikacji";
 "GlobalError_MissingTimezone" = "Twoja strefa czasowa nie jest ustawiona w WakaTime. Aby kontynuować, przejdź do WakaTime i ustaw strefę czasową w ustawieniach konta, a następnie spróbuj ponownie.";
+"SettingsView_Licenses_Link" = "Licencje Open Source";

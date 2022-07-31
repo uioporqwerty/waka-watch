@@ -16,7 +16,6 @@
 "SettingsView_Title" = "Impostazioni";
 "SettingsView_Disconnect_Button" = "Disconnettiti da WakaTime";
 "SettingsView_ComplicationsSettings_Text" = "Impostazioni di complicazione dell'obiettivo";
-"SettingsView_Licenses_Link" = "Licenze Open Souce";
 "ConnectView_Title" = "Waka Watch";
 "ConnectView_Message" = "Apri l'app Waka Watch sul tuo dispositivo principale per connetterti a WakaTime.";
 "ConnectView_UpdateRequired_Message" = "Questa versione di Waka Watch non è aggiornata. Aggiorna Waka Watch tramite l'App Store.";
@@ -67,3 +66,4 @@
 "ProfileView_ProfileImage_A11Y" = "{0} profilo";
 "SettingsView_AppVersion_A11Y" = "versione dell'app {0}";
 "GlobalError_MissingTimezone" = "Il tuo fuso orario non è impostato in WakaTime. Per procedere, vai su WakaTime e imposta il fuso orario nelle impostazioni dell'account, quindi riprova.";
+"SettingsView_Licenses_Link" = "Licenze Open Source";

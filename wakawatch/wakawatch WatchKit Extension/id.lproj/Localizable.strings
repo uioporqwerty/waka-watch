@@ -16,7 +16,6 @@
 "SettingsView_Title" = "Pengaturan";
 "SettingsView_Disconnect_Button" = "Putuskan sambungan dari WakaTime";
 "SettingsView_ComplicationsSettings_Text" = "Pengaturan Komplikasi Tujuan";
-"SettingsView_Licenses_Link" = "Buka Lisensi Souce";
 "ConnectView_Title" = "Waka Watch";
 "ConnectView_Message" = "Buka app Waka Watch di perangkat utama Anda untuk terhubung ke WakaTime.";
 "ConnectView_UpdateRequired_Message" = "Versi Waka Watch ini sudah ketinggalan zaman. Perbarui Waka Watch melalui App Store.";
@@ -67,3 +66,4 @@
 "ProfileView_ProfileImage_A11Y" = "Profil {0}";
 "SettingsView_AppVersion_A11Y" = "Versi aplikasi {0}";
 "GlobalError_MissingTimezone" = "Zona waktu Anda tidak diatur di WakaTime. Untuk melanjutkan, buka WakaTime dan atur zona waktu Anda di pengaturan akun lalu coba lagi.";
+"SettingsView_Licenses_Link" = "Lisensi Open Source";
