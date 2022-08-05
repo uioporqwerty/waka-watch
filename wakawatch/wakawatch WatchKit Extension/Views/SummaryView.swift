@@ -1,5 +1,4 @@
 import SwiftUI
-import SwiftUICharts
 
 struct SummaryView: View {
     @ObservedObject var summaryViewModel: SummaryViewModel
@@ -40,55 +39,16 @@ struct SummaryView: View {
                             Divider()
                                 .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
 
-                            if self.summaryViewModel.groupedBarChartData == nil {
-                              ProgressView()
-                            } else {
-                                GroupedBarChart(chartData: self.summaryViewModel.groupedBarChartData!,
-                                                groupSpacing: 0)
-                                    .touchOverlay(chartData: self.summaryViewModel.groupedBarChartData!)
-                                    .xAxisLabels(chartData: self.summaryViewModel.groupedBarChartData!)
-                                    .headerBox(chartData: self.summaryViewModel.groupedBarChartData!)
-                                    .frame(height: proxy.size.height)
-                            }
-
-                            Divider()
-                                .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
-
-                            if self.summaryViewModel.editorsPieChartData == nil {
-                              ProgressView()
-                            } else {
-                                PieChart(chartData: self.summaryViewModel.editorsPieChartData!)
-                                        .touchOverlay(chartData: self.summaryViewModel.editorsPieChartData!)
-                                        .headerBox(chartData: self.summaryViewModel.editorsPieChartData!)
-                                        .frame(height: proxy.size.height)
-                            }
-
-                            Divider()
-                                .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
-
-                            if self.summaryViewModel.languagesPieChartData == nil {
-                              ProgressView()
-                            } else {
-                                PieChart(chartData: self.summaryViewModel.languagesPieChartData!)
-                                        .touchOverlay(chartData: self.summaryViewModel.languagesPieChartData!)
-                                        .headerBox(chartData: self.summaryViewModel.languagesPieChartData!)
-                                        .frame(height: proxy.size.height)
-                            }
-
-                            ForEach(self.summaryViewModel.goalsChartData) { chartData in
-                                Divider()
-                                    .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
-
-                                BarChart(chartData: chartData)
-                                    .touchOverlay(chartData: chartData)
-                                    .xAxisLabels(chartData: chartData)
-                                    .extraLine(chartData: chartData,
-                                               legendTitle: chartData.extraLineData.legendTitle,
-                                               datapoints: chartData.extraLineData.dataPoints,
-                                               style: chartData.extraLineData.style)
-                                    .headerBox(chartData: chartData)
-                                        .frame(height: proxy.size.height)
-                            }
+//                            if #available(watchOS 9, *) {
+//
+//                            } else {
+                                SwiftUICharts(codingActivityData: self.summaryViewModel.groupedBarChartData,
+                                              editorData: self.summaryViewModel.editorsPieChartData,
+                                              languagesData: self.summaryViewModel.languagesPieChartData,
+                                              goalsData: self.summaryViewModel.goalsChartData,
+                                              size: proxy.size
+                                             )
+//                            }
                         }
                     }
                 }
