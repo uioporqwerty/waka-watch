@@ -67,3 +67,8 @@
 "SettingsView_AppVersion_A11Y" = "{0} phiên bản ứng dụng";
 "GlobalError_MissingTimezone" = "Múi giờ của bạn không được đặt trong WakaTime. Để tiếp tục, hãy truy cập WakaTime và đặt múi giờ của bạn trong cài đặt tài khoản, sau đó thử lại.";
 "SettingsView_Licenses_Link" = "Giấy phép nguồn mở";
+"SwiftCharts_Languages_Value_A11Y" = "được mã hóa cho {0}";
+"SwiftCharts_Editors_Value_A11Y" = "được mã hóa cho {0}";
+"SwiftCharts_LanguagesChart_Title" = "Sử dụng ngôn ngữ trong vài phút";
+"SwiftCharts_EditorsChart_Title" = "Sử dụng trình chỉnh sửa trong vài phút";
+"Global_CodingTime_Format" = "{0} giờ và {1} phút";

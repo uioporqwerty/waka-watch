@@ -67,3 +67,8 @@
 "SettingsView_AppVersion_A11Y" = "Appversion {0}";
 "GlobalError_MissingTimezone" = "Din tidszon är inte inställd i WakaTime. För att fortsätta, gå till WakaTime och ställ in din tidszon i kontoinställningarna och försök sedan igen.";
 "SettingsView_Licenses_Link" = "Licenser för öppen källkod";
+"SwiftCharts_Languages_Value_A11Y" = "kodad för {0}";
+"SwiftCharts_Editors_Value_A11Y" = "kodad för {0}";
+"SwiftCharts_LanguagesChart_Title" = "Språkanvändning på några minuter";
+"SwiftCharts_EditorsChart_Title" = "Redigeringsanvändning på några minuter";
+"Global_CodingTime_Format" = "{0} timmar och {1} minuter";

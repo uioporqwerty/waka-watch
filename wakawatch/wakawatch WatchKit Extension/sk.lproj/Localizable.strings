@@ -67,3 +67,8 @@
 "SettingsView_AppVersion_A11Y" = "{0} verzie aplikácie";
 "GlobalError_MissingTimezone" = "Vaše časové pásmo nie je nastavené vo WakaTime. Ak chcete pokračovať, prejdite na wakatime, nastavte svoje časové pásmo v nastaveniach účtu a potom to skúste znova.";
 "SettingsView_Licenses_Link" = "Licencie s otvoreným zdrojovým kódom";
+"SwiftCharts_Languages_Value_A11Y" = "kódované pre {0}";
+"SwiftCharts_Editors_Value_A11Y" = "kódované pre {0}";
+"SwiftCharts_LanguagesChart_Title" = "Používanie jazyka v zápisnici";
+"SwiftCharts_EditorsChart_Title" = "Použitie editora v minútach";
+"Global_CodingTime_Format" = "{0} hodiny a {1} minúty";

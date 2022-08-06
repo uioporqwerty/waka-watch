@@ -6,18 +6,24 @@ struct SwiftChartsView: View {
     private var summaryData: [SummaryData]?
     private var size: CGSize?
     private var languages: [SummaryLanguageData] = []
-
+    private var editors: [SummaryEditorData] = []
+    
     init(summaryData: [SummaryData]?,
          size: CGSize?
         ) {
         self.summaryData = summaryData
         self.size = size
-        
+
         for data in summaryData ?? [] {
             guard let dayLanguages = data.languages else {
                 continue
             }
-            languages.append(contentsOf: dayLanguages)
+            self.languages.append(contentsOf: dayLanguages)
+            
+            guard let dayEditors = data.editors else {
+                continue
+            }
+            self.editors.append(contentsOf: dayEditors)
         }
     }
 
@@ -36,6 +42,30 @@ struct SwiftChartsView: View {
                 .accessibilityLabel($0.name ?? "")
                 .accessibilityValue(Text(
                     LocalizedStringKey("SwiftCharts_Languages_Value_A11Y")
+                        .toString()
+                        .replaceArgs(String($0.total_seconds?.toFullFormat ?? ""))))
+            }
+            .chartXAxis(.hidden)
+            .chartLegend(position: .bottom,
+                         alignment: .bottom,
+                         spacing: 15)
+            .frame(height: self.size?.height)
+            .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
+            
+            Divider()
+                .padding(EdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8))
+            
+            Text(LocalizedStringKey("SwiftCharts_EditorsChart_Title"))
+                .font(.system(size: 12))
+                .padding(EdgeInsets(top: 0, leading: 0, bottom: 8, trailing: 0))
+
+            Chart(self.editors, id: \.name!) {
+                BarMark(x: .value("Editor", $0.name!),
+                        y: .value("Total Minutes Used", $0.total_seconds?.minute ?? 0))
+                .foregroundStyle(by: .value("Editor", $0.name ?? ""))
+                .accessibilityLabel($0.name ?? "")
+                .accessibilityValue(Text(
+                    LocalizedStringKey("SwiftCharts_Editors_Value_A11Y")
                         .toString()
                         .replaceArgs(String($0.total_seconds?.toFullFormat ?? ""))))
             }

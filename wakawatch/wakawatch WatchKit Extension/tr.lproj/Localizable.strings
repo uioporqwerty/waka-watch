@@ -67,3 +67,8 @@
 "SettingsView_AppVersion_A11Y" = "Uygulama sürümü {0}";
 "GlobalError_MissingTimezone" = "Saat diliminiz WakaTime'da ayarlanmamış. Devam etmek için WakaTime'a gidin ve hesap ayarlarında saat diliminizi ayarlayın ve ardından yeniden deneyin.";
 "SettingsView_Licenses_Link" = "Açık Kaynak Lisansları";
+"SwiftCharts_Languages_Value_A11Y" = "{0} için kodlanmış";
+"SwiftCharts_Editors_Value_A11Y" = "{0} için kodlanmış";
+"SwiftCharts_LanguagesChart_Title" = "Dakikalar İçinde Dil Kullanımı";
+"SwiftCharts_EditorsChart_Title" = "Dakikalar İçinde Editör Kullanımı";
+"Global_CodingTime_Format" = "{0} saat {1} dakika";

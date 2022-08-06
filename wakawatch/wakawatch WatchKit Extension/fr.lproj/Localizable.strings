@@ -67,3 +67,8 @@
 "SettingsView_AppVersion_A11Y" = "Version de l’application {0}";
 "GlobalError_MissingTimezone" = "Votre fuseau horaire n’est pas défini dans WakaTime. Pour continuer, accédez à WakaTime et définissez votre fuseau horaire dans les paramètres du compte, puis réessayez.";
 "SettingsView_Licenses_Link" = "Licences Open Source";
+"SwiftCharts_Languages_Value_A11Y" = "codé pour {0}";
+"SwiftCharts_Editors_Value_A11Y" = "codé pour {0}";
+"SwiftCharts_LanguagesChart_Title" = "Utilisation de la langue en quelques minutes";
+"SwiftCharts_EditorsChart_Title" = "Utilisation de l’éditeur en quelques minutes";
+"Global_CodingTime_Format" = "{0} heures et {1} minutes";

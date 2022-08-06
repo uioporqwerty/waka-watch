@@ -67,3 +67,8 @@
 "SettingsView_AppVersion_A11Y" = "앱 버전 {0}";
 "GlobalError_MissingTimezone" = "시간대가 WakaTime으로 설정되어 있지 않습니다. 계속하려면 WakaTime으로 이동하여 계정 설정에서 시간대를 설정한 후 다시 시도하십시오.";
 "SettingsView_Licenses_Link" = "오픈 소스 라이센스";
+"SwiftCharts_Languages_Value_A11Y" = "{0}에 대해 코딩됨";
+"SwiftCharts_Editors_Value_A11Y" = "{0}에 대해 코딩됨";
+"SwiftCharts_LanguagesChart_Title" = "언어 사용 시간(분)";
+"SwiftCharts_EditorsChart_Title" = "편집기 사용 시간(분)";
+"Global_CodingTime_Format" = "{0}시간 {1}분";

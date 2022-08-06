@@ -67,3 +67,8 @@
 "SettingsView_AppVersion_A11Y" = "Alkalmazásverzió {0}";
 "GlobalError_MissingTimezone" = "Az időzóna nincs beállítva a WakaTime-ban. A folytatáshoz lépjen a WakaTime oldalra, és állítsa be az időzónát a fiókbeállításokban, majd próbálkozzon újra.";
 "SettingsView_Licenses_Link" = "Nyílt forráskódú licencek";
+"SwiftCharts_Languages_Value_A11Y" = "{0} kódolva";
+"SwiftCharts_Editors_Value_A11Y" = "{0} kódolva";
+"SwiftCharts_LanguagesChart_Title" = "Nyelvhasználat percek alatt";
+"SwiftCharts_EditorsChart_Title" = "Szerkesztő használata percek alatt";
+"Global_CodingTime_Format" = "{0} óra és {1} perc";

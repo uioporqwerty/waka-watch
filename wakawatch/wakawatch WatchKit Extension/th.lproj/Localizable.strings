@@ -67,3 +67,8 @@
 "SettingsView_AppVersion_A11Y" = "{0}เวอร์ชันของแอป";
 "GlobalError_MissingTimezone" = "เขตเวลาของคุณไม่ได้ตั้งค่าไว้ใน WakaTime หากต้องการดําเนินการต่อ ให้ไปที่ WakaTime และตั้งค่าเขตเวลาของคุณในการตั้งค่าบัญชี แล้วลองอีกครั้ง";
 "SettingsView_Licenses_Link" = "สิทธิ์การใช้งานโอเพนซอร์ส";
+"SwiftCharts_Languages_Value_A11Y" = "รหัสสําหรับ{0}";
+"SwiftCharts_Editors_Value_A11Y" = "รหัสสําหรับ{0}";
+"SwiftCharts_LanguagesChart_Title" = "การใช้ภาษาในไม่กี่นาที";
+"SwiftCharts_EditorsChart_Title" = "การใช้งานบรรณาธิการในไม่กี่นาที";
+"Global_CodingTime_Format" = "{0} ชั่วโมงและ{1} นาที";

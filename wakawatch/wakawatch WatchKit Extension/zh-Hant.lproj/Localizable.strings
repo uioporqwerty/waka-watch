@@ -67,3 +67,8 @@
 "SettingsView_AppVersion_A11Y" = "應用程式版本{0}";
 "GlobalError_MissingTimezone" = "您的時區未在 WakaTime 中設置。要繼續，請轉到WakaTime並在帳戶設置中設置您的時區，然後重試。";
 "SettingsView_Licenses_Link" = "開源許可證";
+"SwiftCharts_Languages_Value_A11Y" = "編碼為{0}";
+"SwiftCharts_Editors_Value_A11Y" = "編碼為{0}";
+"SwiftCharts_LanguagesChart_Title" = "語言用法（分鐘）";
+"SwiftCharts_EditorsChart_Title" = "編輯器使用率（分鐘）";
+"Global_CodingTime_Format" = "{0}小時和{1}分鐘";

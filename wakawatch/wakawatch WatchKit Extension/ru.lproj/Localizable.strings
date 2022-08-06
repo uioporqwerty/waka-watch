@@ -67,3 +67,8 @@
 "SettingsView_AppVersion_A11Y" = "версия приложения {0}";
 "GlobalError_MissingTimezone" = "Ваш часовой пояс не установлен в WakaTime. Чтобы продолжить, перейдите в WakaTime и установите часовой пояс в настройках учетной записи, а затем повторите попытку.";
 "SettingsView_Licenses_Link" = "Лицензии с открытым исходным кодом";
+"SwiftCharts_Languages_Value_A11Y" = "закодировано для {0}";
+"SwiftCharts_Editors_Value_A11Y" = "закодировано для {0}";
+"SwiftCharts_LanguagesChart_Title" = "Использование языка за считанные минуты";
+"SwiftCharts_EditorsChart_Title" = "Использование редактора за считанные минуты";
+"Global_CodingTime_Format" = "{0} часы и {1} минуты";

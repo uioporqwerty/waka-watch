@@ -67,3 +67,8 @@
 "SettingsView_AppVersion_A11Y" = "{0} versiunii aplicației";
 "GlobalError_MissingTimezone" = "Fusul orar nu este setat în WakaTime. Pentru a continua, accesați WakaTime și setați fusul orar în setările contului, apoi încercați din nou.";
 "SettingsView_Licenses_Link" = "Licențe open source";
+"SwiftCharts_Languages_Value_A11Y" = "codificate pentru {0}";
+"SwiftCharts_Editors_Value_A11Y" = "codificate pentru {0}";
+"SwiftCharts_LanguagesChart_Title" = "Utilizarea limbii în câteva minute";
+"SwiftCharts_EditorsChart_Title" = "Utilizarea editorului în câteva minute";
+"Global_CodingTime_Format" = "{0} ore și {1} minute";

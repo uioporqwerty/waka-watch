@@ -67,3 +67,8 @@
 "SettingsView_AppVersion_A11Y" = "{0} wersji aplikacji";
 "GlobalError_MissingTimezone" = "Twoja strefa czasowa nie jest ustawiona w WakaTime. Aby kontynuować, przejdź do WakaTime i ustaw strefę czasową w ustawieniach konta, a następnie spróbuj ponownie.";
 "SettingsView_Licenses_Link" = "Licencje Open Source";
+"SwiftCharts_Languages_Value_A11Y" = "zakodowane dla {0}";
+"SwiftCharts_Editors_Value_A11Y" = "zakodowane dla {0}";
+"SwiftCharts_LanguagesChart_Title" = "Użycie języka w ciągu kilku minut";
+"SwiftCharts_EditorsChart_Title" = "Użycie edytora w ciągu kilku minut";
+"Global_CodingTime_Format" = "{0} godziny i {1} minuty";

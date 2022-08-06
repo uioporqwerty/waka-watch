@@ -67,3 +67,8 @@
 "SettingsView_AppVersion_A11Y" = "versione dell'app {0}";
 "GlobalError_MissingTimezone" = "Il tuo fuso orario non è impostato in WakaTime. Per procedere, vai su WakaTime e imposta il fuso orario nelle impostazioni dell'account, quindi riprova.";
 "SettingsView_Licenses_Link" = "Licenze Open Source";
+"SwiftCharts_Languages_Value_A11Y" = "codificato per {0}";
+"SwiftCharts_Editors_Value_A11Y" = "codificato per {0}";
+"SwiftCharts_LanguagesChart_Title" = "Utilizzo della lingua in pochi minuti";
+"SwiftCharts_EditorsChart_Title" = "Utilizzo dell'editor in pochi minuti";
+"Global_CodingTime_Format" = "{0} ore e {1} minuti";
