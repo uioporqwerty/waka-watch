@@ -39,16 +39,18 @@ struct SummaryView: View {
                             Divider()
                                 .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
 
-//                            if #available(watchOS 9, *) {
-//
-//                            } else {
-                                SwiftUICharts(codingActivityData: self.summaryViewModel.groupedBarChartData,
+                            if #available(watchOS 9, *) {
+                                SwiftChartsView(summaryData: self.summaryViewModel.summaryData,
+                                                size: proxy.size
+                                               )
+                            } else {
+                                SwiftUIChartsView(codingActivityData: self.summaryViewModel.groupedBarChartData,
                                               editorData: self.summaryViewModel.editorsPieChartData,
                                               languagesData: self.summaryViewModel.languagesPieChartData,
                                               goalsData: self.summaryViewModel.goalsChartData,
                                               size: proxy.size
                                              )
-//                            }
+                            }
                         }
                     }
                 }

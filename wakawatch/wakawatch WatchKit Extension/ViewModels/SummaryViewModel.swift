@@ -10,8 +10,8 @@ final class SummaryViewModel: ObservableObject {
     @Published var editorsPieChartData: PieChartData?
     @Published var languagesPieChartData: PieChartData?
     @Published var goalsChartData: [BarChartData] = []
-    @Published var summaryData: Array<SummaryData>.SubSequence?
-    
+    @Published var summaryData: [SummaryData]?
+
     public var logManager: LogManager
     private var networkService: NetworkService
     private var complicationService: ComplicationService
@@ -68,7 +68,7 @@ final class SummaryViewModel: ObservableObject {
         self.languagesPieChartData = nil
 
         DispatchQueue.main.async {
-            self.summaryData = summaryData
+            self.summaryData = Array(summaryData)
             self.groupedBarChartData = self.chartFactory.makeCodingTimeChart(summaryData: summaryData)
             self.editorsPieChartData = self.chartFactory.makeEditorsChart(summaryData: summaryData)
             self.languagesPieChartData = self.chartFactory.makeLanguagesChart(summaryData: summaryData)

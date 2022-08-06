@@ -67,3 +67,6 @@
 "ProfileView_ProfileImage_A11Y" = "{0} profile";
 "SettingsView_AppVersion_A11Y" = "App version {0}";
 "GlobalError_MissingTimezone" = "Your timezone is not set in WakaTime. To proceed, go to WakaTime and set your timezone in account settings and then try again.";
+"SwiftCharts_Languages_Value_A11Y" = "coded for {0}";
+"SwiftCharts_LanguagesChart_Title" = "Language Usage in Minutes";
+"Global_CodingTime_Format" = "{0} hours and {1} minutes";

@@ -1,4 +1,5 @@
 import Foundation
+import SwiftUI
 
 extension TimeInterval {
     var toHourMinuteFormat: String {
@@ -7,6 +8,12 @@ extension TimeInterval {
 
     var toSpelledOutHourMinuteFormat: String {
         String(format: "%2d hrs %02d mins", hour, minute)
+    }
+
+    var toFullFormat: String {
+        LocalizedStringKey("Global_CodingTime_Format")
+            .toString()
+            .replaceArgs(String(hour), String(minute))
     }
 
     var hour: Int {

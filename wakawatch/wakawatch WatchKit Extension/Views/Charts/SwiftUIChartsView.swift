@@ -1,7 +1,7 @@
 import SwiftUI
 import SwiftUICharts
 
-struct SwiftUICharts: View {
+struct SwiftUIChartsView: View {
     private var codingActivityData: GroupedBarChartData?
     private var editorData: PieChartData?
     private var languagesData: PieChartData?
