@@ -72,3 +72,4 @@
 "SwiftCharts_LanguagesChart_Title" = "语言用法（分钟）";
 "SwiftCharts_EditorsChart_Title" = "编辑器使用率（分钟）";
 "Global_CodingTime_Format" = "{0}小时和{1}分钟";
+"SwiftCharts_CodingTimeChart_Title" = "编码时间（分钟）";

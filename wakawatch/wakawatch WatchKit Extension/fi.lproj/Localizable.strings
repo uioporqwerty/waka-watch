@@ -72,3 +72,4 @@
 "SwiftCharts_LanguagesChart_Title" = "Kielenkäyttö muutamassa minuutissa";
 "SwiftCharts_EditorsChart_Title" = "Editorin käyttö muutamassa minuutissa";
 "Global_CodingTime_Format" = "{0} tuntia ja {1} minuuttia";
+"SwiftCharts_CodingTimeChart_Title" = "Koodausaika minuutteina";

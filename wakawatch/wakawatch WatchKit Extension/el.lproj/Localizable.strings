@@ -72,3 +72,4 @@
 "SwiftCharts_LanguagesChart_Title" = "Χρήση της γλώσσας σε λεπτά";
 "SwiftCharts_EditorsChart_Title" = "Χρήση επεξεργαστή σε λεπτά";
 "Global_CodingTime_Format" = "{0} ώρες και {1} λεπτά";
+"SwiftCharts_CodingTimeChart_Title" = "Χρόνος κωδικοποίησης σε λεπτά";

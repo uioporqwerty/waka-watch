@@ -72,3 +72,4 @@
 "SwiftCharts_LanguagesChart_Title" = "Taalgebruik in enkele minuten";
 "SwiftCharts_EditorsChart_Title" = "Gebruik van editors in enkele minuten";
 "Global_CodingTime_Format" = "{0} uur en {1} minuten";
+"SwiftCharts_CodingTimeChart_Title" = "Codeertijd in enkele minuten";

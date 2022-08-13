@@ -72,3 +72,4 @@
 "SwiftCharts_LanguagesChart_Title" = "Dakikalar İçinde Dil Kullanımı";
 "SwiftCharts_EditorsChart_Title" = "Dakikalar İçinde Editör Kullanımı";
 "Global_CodingTime_Format" = "{0} saat {1} dakika";
+"SwiftCharts_CodingTimeChart_Title" = "Dakika Cinsinden Kodlama Süresi";

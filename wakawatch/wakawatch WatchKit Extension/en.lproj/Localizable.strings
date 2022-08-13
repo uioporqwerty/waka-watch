@@ -72,3 +72,4 @@
 "SwiftCharts_LanguagesChart_Title" = "Language Usage in Minutes";
 "SwiftCharts_EditorsChart_Title" = "Editor Usage in Minutes";
 "Global_CodingTime_Format" = "{0} hours and {1} minutes";
+"SwiftCharts_CodingTimeChart_Title" = "Coding Time in Minutes";

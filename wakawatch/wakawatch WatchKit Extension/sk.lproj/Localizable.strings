@@ -72,3 +72,4 @@
 "SwiftCharts_LanguagesChart_Title" = "Používanie jazyka v zápisnici";
 "SwiftCharts_EditorsChart_Title" = "Použitie editora v minútach";
 "Global_CodingTime_Format" = "{0} hodiny a {1} minúty";
+"SwiftCharts_CodingTimeChart_Title" = "Čas kódovania v minútach";

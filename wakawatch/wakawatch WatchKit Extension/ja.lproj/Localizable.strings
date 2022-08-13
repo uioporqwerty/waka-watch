@@ -72,3 +72,4 @@
 "SwiftCharts_LanguagesChart_Title" = "数分での言語使用";
 "SwiftCharts_EditorsChart_Title" = "エディタの使用状況(分単位)";
 "Global_CodingTime_Format" = "{0}時間{1}分";
+"SwiftCharts_CodingTimeChart_Title" = "コーディング時間(分単位)";

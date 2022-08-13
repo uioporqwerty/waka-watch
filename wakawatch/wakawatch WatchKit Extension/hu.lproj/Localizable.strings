@@ -72,3 +72,4 @@
 "SwiftCharts_LanguagesChart_Title" = "Nyelvhasználat percek alatt";
 "SwiftCharts_EditorsChart_Title" = "Szerkesztő használata percek alatt";
 "Global_CodingTime_Format" = "{0} óra és {1} perc";
+"SwiftCharts_CodingTimeChart_Title" = "Kódolási idő percben";
