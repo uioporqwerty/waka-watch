@@ -7,7 +7,7 @@ struct SwiftUIChartsView: View {
     private var languagesData: PieChartData?
     private var goalsData: [BarChartData]
     private var size: CGSize
-    
+
     init(codingActivityData: GroupedBarChartData?,
          editorData: PieChartData?,
          languagesData: PieChartData?,
@@ -20,7 +20,7 @@ struct SwiftUIChartsView: View {
         self.goalsData = goalsData
         self.size = size
     }
-    
+
     var body: some View {
         VStack {
             if self.codingActivityData == nil {
@@ -33,10 +33,10 @@ struct SwiftUIChartsView: View {
                 .headerBox(chartData: self.codingActivityData!)
                 .frame(height: self.size.height)
             }
-            
+
             Divider()
                 .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
-            
+
             if self.editorData == nil {
                 ProgressView()
             } else {
@@ -45,10 +45,10 @@ struct SwiftUIChartsView: View {
                     .headerBox(chartData: self.editorData!)
                     .frame(height: self.size.height)
             }
-            
+
             Divider()
                 .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
-            
+
             if self.languagesData == nil {
                 ProgressView()
             } else {
@@ -57,11 +57,11 @@ struct SwiftUIChartsView: View {
                     .headerBox(chartData: self.languagesData!)
                     .frame(height: self.size.height)
             }
-            
+
             ForEach(self.goalsData) { chartData in
                 Divider()
                     .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
-                
+
                 BarChart(chartData: chartData)
                     .touchOverlay(chartData: chartData)
                     .xAxisLabels(chartData: chartData)
@@ -75,9 +75,3 @@ struct SwiftUIChartsView: View {
         }
     }
 }
-
-//struct SwiftUICharts_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SwiftUICharts()
-//    }
-//}
