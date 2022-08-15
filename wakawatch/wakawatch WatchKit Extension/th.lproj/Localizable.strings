@@ -73,3 +73,7 @@
 "SwiftCharts_EditorsChart_Title" = "การใช้งานบรรณาธิการในไม่กี่นาที";
 "Global_CodingTime_Format" = "{0} ชั่วโมงและ{1} นาที";
 "SwiftCharts_CodingTimeChart_Title" = "เวลาในการเขียนโค้ดในไม่กี่นาที";
+"SwiftCharts_TodayChart_Title" = "กิจกรรมของวันนี้ในไม่กี่นาที";
+"SwiftCharts_TodayActivity_Value_A11Y" = "สําหรับ{0}";
+"Coding" = "เขียน โค้ด";
+"Meetings" = "ประชุม";

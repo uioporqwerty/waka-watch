@@ -73,3 +73,7 @@
 "SwiftCharts_EditorsChart_Title" = "Editorin käyttö muutamassa minuutissa";
 "Global_CodingTime_Format" = "{0} tuntia ja {1} minuuttia";
 "SwiftCharts_CodingTimeChart_Title" = "Koodausaika minuutteina";
+"SwiftCharts_TodayChart_Title" = "Tämän päivän aktiviteetit pöytäkirjoina";
+"SwiftCharts_TodayActivity_Value_A11Y" = "{0}";
+"Coding" = "Koodaus";
+"Meetings" = "Kokoukset";

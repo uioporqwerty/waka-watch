@@ -73,3 +73,7 @@
 "SwiftCharts_EditorsChart_Title" = "Použitie editora v minútach";
 "Global_CodingTime_Format" = "{0} hodiny a {1} minúty";
 "SwiftCharts_CodingTimeChart_Title" = "Čas kódovania v minútach";
+"SwiftCharts_TodayChart_Title" = "Dnešné aktivity v minútach";
+"SwiftCharts_TodayActivity_Value_A11Y" = "pre {0}";
+"Coding" = "Kódovanie";
+"Meetings" = "Stretnutia";

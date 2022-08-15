@@ -73,3 +73,7 @@
 "SwiftCharts_EditorsChart_Title" = "Penggunaan Editor dalam Hitungan Menit";
 "Global_CodingTime_Format" = "{0} jam dan {1} menit";
 "SwiftCharts_CodingTimeChart_Title" = "Waktu Pengkodean dalam Hitungan Menit";
+"SwiftCharts_TodayChart_Title" = "Aktivitas Hari Ini dalam Hitungan Menit";
+"SwiftCharts_TodayActivity_Value_A11Y" = "untuk {0}";
+"Coding" = "Coding";
+"Meetings" = "Pertemuan";

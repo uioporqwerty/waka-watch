@@ -51,6 +51,10 @@ final class LocalNetworkService: NetworkService {
         return AppInformation(minimum_version: "1.3.0")
     }
 
+    func getExternalDurations() async throws -> ExternalDurationResponse? {
+        return nil
+    }
+
     private func makeUser() -> UserData {
         return UserData(id: UUID().uuidString,
                         display_name: "Nitish Sachar",

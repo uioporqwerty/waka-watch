@@ -73,3 +73,7 @@
 "SwiftCharts_EditorsChart_Title" = "Gebruik van editors in enkele minuten";
 "Global_CodingTime_Format" = "{0} uur en {1} minuten";
 "SwiftCharts_CodingTimeChart_Title" = "Codeertijd in enkele minuten";
+"SwiftCharts_TodayChart_Title" = "De activiteiten van vandaag in enkele minuten";
+"SwiftCharts_TodayActivity_Value_A11Y" = "voor {0}";
+"Coding" = "Codering";
+"Meetings" = "Vergaderingen";

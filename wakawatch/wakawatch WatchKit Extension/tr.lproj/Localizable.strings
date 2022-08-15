@@ -73,3 +73,7 @@
 "SwiftCharts_EditorsChart_Title" = "Dakikalar İçinde Editör Kullanımı";
 "Global_CodingTime_Format" = "{0} saat {1} dakika";
 "SwiftCharts_CodingTimeChart_Title" = "Dakika Cinsinden Kodlama Süresi";
+"SwiftCharts_TodayChart_Title" = "Dakikalar İçinde Bugünkü Aktiviteler";
+"SwiftCharts_TodayActivity_Value_A11Y" = "{0} için";
+"Coding" = "Kodlama";
+"Meetings" = "Toplantı";

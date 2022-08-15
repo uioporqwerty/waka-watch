@@ -141,6 +141,37 @@ final class WakaTimeNetworkService: NetworkService {
 
         return nil
     }
+    
+    func getExternalDurations() async throws -> ExternalDurationResponse? {
+        await self.authenticationService.refreshAccessToken()
+        let request = self.requestFactory.makeExternalDurationsRequest()
+
+        let (data, response) = try await URLSession.shared.data(for: request)
+        let urlResponse = response as? HTTPURLResponse
+
+        self.telemetry.recordNetworkEvent(method: request.httpMethod,
+                                          url: request.url?.absoluteString,
+                                          statusCode: urlResponse?.statusCode.description)
+
+        if !(urlResponse?.statusCode.isSuccessfulHttpResponseCode() ?? false) {
+            self.logManager.errorMessage(data)
+            return nil
+        }
+
+        if let errorResponse = try? JSONDecoder().decode(ErrorResponse.self, from: data) {
+            await self.errorService.handleWakaTimeError(error: errorResponse.error.toWakaTimeError())
+            return nil
+        }
+
+        do {
+            return try JSONDecoder().decode(ExternalDurationResponse.self, from: data)
+        } catch {
+            self.logManager.errorMessage(String(data: data, encoding: .utf8) ??
+                                         "Failed to decode external duration response and generate raw json response.")
+        }
+
+        return nil
+    }
 
     func getAppInformation() async throws -> AppInformation? {
         let request = URLRequest(url: URL(string: Bundle

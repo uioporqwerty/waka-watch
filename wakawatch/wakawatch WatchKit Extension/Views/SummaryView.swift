@@ -30,17 +30,26 @@ struct SummaryView: View {
                         }
                     }) {
                         VStack {
-                            Text(LocalizedStringKey("SummaryView_Today"))
-
-                            Text(summaryViewModel.totalDisplayTime)
-                                .multilineTextAlignment(.center)
-                                .padding(EdgeInsets(top: 8, leading: 10, bottom: 0, trailing: 10))
-
-                            Divider()
-                                .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
-
+                            if #unavailable(watchOS 9) {
+                                if summaryViewModel.totalMeetingTime == nil {
+                                    Text("Coding")
+                                        .multilineTextAlignment(.center)
+                                        .frame(height: 10)
+                                        .padding(EdgeInsets(top: 8, leading: 0, bottom: 0, trailing: 8))
+                                    
+                                    Text(summaryViewModel.totalDisplayTime)
+                                        .multilineTextAlignment(.center)
+                                        .padding(EdgeInsets(top: 8, leading: 0, bottom: 0, trailing: 8))
+                                    
+                                    Divider()
+                                        .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
+                                }
+                            }
+                            
                             if #available(watchOS 9, *) {
                                 SwiftChartsView(summaryData: self.summaryViewModel.summaryData,
+                                                todayCodingTime: self.summaryViewModel.totalCodingTime,
+                                                todayMeetingTime: self.summaryViewModel.totalMeetingTime,
                                                 size: proxy.size
                                                )
                             } else {

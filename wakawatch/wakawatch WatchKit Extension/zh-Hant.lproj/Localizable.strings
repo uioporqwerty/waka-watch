@@ -73,3 +73,7 @@
 "SwiftCharts_EditorsChart_Title" = "編輯器使用率（分鐘）";
 "Global_CodingTime_Format" = "{0}小時和{1}分鐘";
 "SwiftCharts_CodingTimeChart_Title" = "編碼時間（分鐘）";
+"SwiftCharts_TodayChart_Title" = "今天的活動（幾分鐘內）";
+"SwiftCharts_TodayActivity_Value_A11Y" = "{0}";
+"Coding" = "編碼";
+"Meetings" = "會議";

@@ -5,6 +5,8 @@ import SwiftUI
 
 final class SummaryViewModel: ObservableObject {
     @Published var totalDisplayTime = ""
+    @Published var totalMeetingTime: Double?
+    @Published var totalCodingTime: Double = 0.0
     @Published var loaded = false
     @Published var groupedBarChartData: GroupedBarChartData?
     @Published var editorsPieChartData: PieChartData?
@@ -37,15 +39,25 @@ final class SummaryViewModel: ObservableObject {
 
     func getSummary() async throws {
         let summaryData = try await networkService.getSummaryData(.Today)
-
+        let externalDurationData = try await networkService.getExternalDurations()
+        var totalMeetings = 0.0
+        
+        for durations in externalDurationData?.data.filter({ $0.category == "meeting" }) ?? [] {
+            totalMeetings += durations.end_time - durations.start_time
+        }
+        let finalMeetingTime = totalMeetings
+        
         let defaults = UserDefaults.standard
         defaults.set(summaryData?.cummulative_total?.seconds,
                      forKey: DefaultsKeys.complicationCurrentTimeCoded)
 
         self.complicationService.updateTimelines()
-
+        
         DispatchQueue.main.async {
             self.totalDisplayTime = summaryData?.cummulative_total?.text ?? ""
+            self.totalCodingTime = summaryData?.cummulative_total?.seconds ?? 0
+            self.totalMeetingTime = externalDurationData != nil &&
+                                    !externalDurationData!.data.isEmpty ? finalMeetingTime : nil
             self.loaded = true
         }
     }

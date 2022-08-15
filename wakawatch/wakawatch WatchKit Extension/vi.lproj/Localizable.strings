@@ -73,3 +73,7 @@
 "SwiftCharts_EditorsChart_Title" = "Sử dụng trình chỉnh sửa trong vài phút";
 "Global_CodingTime_Format" = "{0} giờ và {1} phút";
 "SwiftCharts_CodingTimeChart_Title" = "Thời gian mã hóa tính bằng phút";
+"SwiftCharts_TodayChart_Title" = "Các hoạt động hôm nay trong vài phút";
+"SwiftCharts_TodayActivity_Value_A11Y" = "dành cho {0}";
+"Coding" = "Mã hóa";
+"Meetings" = "Cuộc họp";

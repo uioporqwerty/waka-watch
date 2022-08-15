@@ -73,3 +73,7 @@
 "SwiftCharts_EditorsChart_Title" = "Redigeringsanvändning på några minuter";
 "Global_CodingTime_Format" = "{0} timmar och {1} minuter";
 "SwiftCharts_CodingTimeChart_Title" = "Kodningstid i minuter";
+"SwiftCharts_TodayChart_Title" = "Dagens aktiviteter på några minuter";
+"SwiftCharts_TodayActivity_Value_A11Y" = "för {0}";
+"Coding" = "Kodning";
+"Meetings" = "Möten";

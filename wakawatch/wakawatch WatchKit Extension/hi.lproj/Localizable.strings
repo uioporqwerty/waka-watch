@@ -73,3 +73,7 @@
 "SwiftCharts_EditorsChart_Title" = "मिनटों में संपादक का उपयोग";
 "Global_CodingTime_Format" = "{0} घंटे और {1} मिनट";
 "SwiftCharts_CodingTimeChart_Title" = "मिनटों में कोडिंग समय";
+"SwiftCharts_TodayChart_Title" = "मिनटों में आज की गतिविधियाँ";
+"SwiftCharts_TodayActivity_Value_A11Y" = "{0} के लिए";
+"Coding" = "कोडिंग";
+"Meetings" = "बैठकों";

@@ -73,3 +73,7 @@
 "SwiftCharts_EditorsChart_Title" = "Использование редактора за считанные минуты";
 "Global_CodingTime_Format" = "{0} часы и {1} минуты";
 "SwiftCharts_CodingTimeChart_Title" = "Время кодирования в минутах";
+"SwiftCharts_TodayChart_Title" = "Сегодняшние мероприятия за считанные минуты";
+"SwiftCharts_TodayActivity_Value_A11Y" = "для {0}";
+"Coding" = "Кодирование";
+"Meetings" = "Встречи";

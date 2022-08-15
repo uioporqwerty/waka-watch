@@ -19,4 +19,10 @@ final class DateUtility {
         dateFormatter.dateFormat = outputFormat
         return dateFormatter.string(from: inputDate!)
     }
+
+    static func getFormattedCurrentDate() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        return dateFormatter.string(from: Date())
+    }
 }

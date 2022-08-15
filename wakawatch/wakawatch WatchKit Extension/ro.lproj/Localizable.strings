@@ -73,3 +73,7 @@
 "SwiftCharts_EditorsChart_Title" = "Utilizarea editorului în câteva minute";
 "Global_CodingTime_Format" = "{0} ore și {1} minute";
 "SwiftCharts_CodingTimeChart_Title" = "Timp de codificare în câteva minute";
+"SwiftCharts_TodayChart_Title" = "Activitățile de astăzi în câteva minute";
+"SwiftCharts_TodayActivity_Value_A11Y" = "pentru {0}";
+"Coding" = "Codificare";
+"Meetings" = "Întâlniri";

@@ -73,3 +73,7 @@
 "SwiftCharts_EditorsChart_Title" = "편집기 사용 시간(분)";
 "Global_CodingTime_Format" = "{0}시간 {1}분";
 "SwiftCharts_CodingTimeChart_Title" = "코딩 시간(분)";
+"SwiftCharts_TodayChart_Title" = "몇 분 안에 오늘의 활동";
+"SwiftCharts_TodayActivity_Value_A11Y" = "{0}를 위해";
+"Coding" = "코딩";
+"Meetings" = "회의";

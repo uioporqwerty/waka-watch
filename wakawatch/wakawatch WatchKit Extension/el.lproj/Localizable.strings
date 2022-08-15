@@ -73,3 +73,7 @@
 "SwiftCharts_EditorsChart_Title" = "Χρήση επεξεργαστή σε λεπτά";
 "Global_CodingTime_Format" = "{0} ώρες και {1} λεπτά";
 "SwiftCharts_CodingTimeChart_Title" = "Χρόνος κωδικοποίησης σε λεπτά";
+"SwiftCharts_TodayChart_Title" = "Οι σημερινές δραστηριότητες σε λίγα λεπτά";
+"SwiftCharts_TodayActivity_Value_A11Y" = "για {0}";
+"Coding" = "Κωδικοποίηση";
+"Meetings" = "Συνεδριάσεις";

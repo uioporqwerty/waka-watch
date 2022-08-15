@@ -7,7 +7,11 @@ extension TimeInterval {
     }
 
     var toSpelledOutHourMinuteFormat: String {
-        String(format: "%2d hrs %02d mins", hour, minute)
+        if self == 0 {
+           return "0 secs"
+        } else {
+           return String(format: "%2d hrs %02d mins", hour, minute)
+        }
     }
 
     var toFullFormat: String {

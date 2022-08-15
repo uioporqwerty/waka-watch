@@ -73,3 +73,7 @@
 "SwiftCharts_EditorsChart_Title" = "Szerkesztő használata percek alatt";
 "Global_CodingTime_Format" = "{0} óra és {1} perc";
 "SwiftCharts_CodingTimeChart_Title" = "Kódolási idő percben";
+"SwiftCharts_TodayChart_Title" = "A mai tevékenységek percekben";
+"SwiftCharts_TodayActivity_Value_A11Y" = "{0}";
+"Coding" = "Kódolás";
+"Meetings" = "Találkozók";

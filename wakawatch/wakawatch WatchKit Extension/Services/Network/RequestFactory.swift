@@ -63,6 +63,18 @@ final class RequestFactory {
         return request
     }
 
+    func makeExternalDurationsRequest() -> URLRequest {
+        var urlComponents = URLComponents(string: "\(baseUrl)/users/current/external_durations")!
+        urlComponents.queryItems = [
+            URLQueryItem(name: "date", value: DateUtility.getFormattedCurrentDate())
+        ]
+
+        var request = URLRequest(url: urlComponents.url!)
+        request.addValue("Bearer \(self.tokenManager.getAccessToken())", forHTTPHeaderField: "Authorization")
+
+        return request
+    }
+
     func makeComplicationsUpdateRequest() -> URLRequest? {
         let accessToken = self.tokenManager.getAccessToken()
         if accessToken.trim().isEmpty { // TODO: Determine why access token is sometimes empty.

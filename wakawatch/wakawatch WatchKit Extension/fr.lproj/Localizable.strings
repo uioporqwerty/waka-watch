@@ -73,3 +73,7 @@
 "SwiftCharts_EditorsChart_Title" = "Utilisation de l’éditeur en quelques minutes";
 "Global_CodingTime_Format" = "{0} heures et {1} minutes";
 "SwiftCharts_CodingTimeChart_Title" = "Temps de codage en minutes";
+"SwiftCharts_TodayChart_Title" = "Les activités du jour en minutes";
+"SwiftCharts_TodayActivity_Value_A11Y" = "pour {0}";
+"Coding" = "Codage";
+"Meetings" = "Réunions";

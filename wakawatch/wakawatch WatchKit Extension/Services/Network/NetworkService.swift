@@ -8,5 +8,6 @@ protocol NetworkService {
     func getProfileData(userId: String?) async throws -> ProfileResponse?
     func getGoalsData() async throws -> GoalsResponse?
     func getPublicLeaderboard(page: Int?) async throws -> LeaderboardResponse?
+    func getExternalDurations() async throws -> ExternalDurationResponse?
     func getAppInformation() async throws -> AppInformation?
 }
