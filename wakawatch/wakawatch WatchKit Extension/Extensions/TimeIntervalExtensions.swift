@@ -21,10 +21,10 @@ extension TimeInterval {
     }
 
     var hour: Int {
-        Int((self/3600).truncatingRemainder(dividingBy: 3600))
+        Int(self / 3600)
     }
 
     var minute: Int {
-        Int((self/60).truncatingRemainder(dividingBy: 60))
+        Int(self / 60)
     }
 }
