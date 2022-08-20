@@ -77,3 +77,4 @@
 "SwiftCharts_TodayActivity_Value_A11Y" = "για {0}";
 "Coding" = "Κωδικοποίηση";
 "Meetings" = "Συνεδριάσεις";
+"LeaderboardView_NoRecords_Text" = "Δεν βρέθηκαν αρχεία βαθμολογικού πίνακα.";

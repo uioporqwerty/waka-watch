@@ -77,3 +77,4 @@
 "SwiftCharts_TodayActivity_Value_A11Y" = "pentru {0}";
 "Coding" = "Codificare";
 "Meetings" = "Întâlniri";
+"LeaderboardView_NoRecords_Text" = "Nu s-au găsit înregistrări în clasament.";

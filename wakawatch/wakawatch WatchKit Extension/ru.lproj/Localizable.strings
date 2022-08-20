@@ -77,3 +77,4 @@
 "SwiftCharts_TodayActivity_Value_A11Y" = "для {0}";
 "Coding" = "Кодирование";
 "Meetings" = "Встречи";
+"LeaderboardView_NoRecords_Text" = "Записи в таблице лидеров не найдены.";

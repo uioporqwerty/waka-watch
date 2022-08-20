@@ -77,3 +77,4 @@
 "SwiftCharts_TodayActivity_Value_A11Y" = "för {0}";
 "Coding" = "Kodning";
 "Meetings" = "Möten";
+"LeaderboardView_NoRecords_Text" = "Inga topplisteposter hittades.";

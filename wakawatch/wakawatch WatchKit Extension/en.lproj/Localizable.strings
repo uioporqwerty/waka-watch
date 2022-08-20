@@ -77,3 +77,4 @@
 "SwiftCharts_TodayActivity_Value_A11Y" = "for {0}";
 "Coding" = "Coding";
 "Meetings" = "Meetings";
+"LeaderboardView_NoRecords_Text" = "No leaderboard records found.";

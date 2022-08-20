@@ -60,6 +60,8 @@ struct LeaderboardView: View {
                     self.hasError = true
                 }
             }
+        } else if self.leaderboardViewModel.records.isEmpty {
+            Text(LocalizedStringKey("LeaderboardView_NoRecords_Text"))
         } else {
             ScrollViewReader { proxy in
                 ZStack {

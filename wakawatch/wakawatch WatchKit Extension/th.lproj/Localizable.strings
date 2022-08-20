@@ -77,3 +77,4 @@
 "SwiftCharts_TodayActivity_Value_A11Y" = "สําหรับ{0}";
 "Coding" = "เขียน โค้ด";
 "Meetings" = "ประชุม";
+"LeaderboardView_NoRecords_Text" = "ไม่พบบันทึกลีดเดอร์บอร์ด";

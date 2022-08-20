@@ -77,3 +77,4 @@
 "SwiftCharts_TodayActivity_Value_A11Y" = "für {0}";
 "Coding" = "Codierung";
 "Meetings" = "Versammlungen";
+"LeaderboardView_NoRecords_Text" = "Keine Bestenlistendatensätze gefunden.";

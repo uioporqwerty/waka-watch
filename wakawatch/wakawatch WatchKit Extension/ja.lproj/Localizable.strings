@@ -77,3 +77,4 @@
 "SwiftCharts_TodayActivity_Value_A11Y" = "{0}用";
 "Coding" = "コーディング";
 "Meetings" = "会議";
+"LeaderboardView_NoRecords_Text" = "ランキング レコードが見つかりません。";

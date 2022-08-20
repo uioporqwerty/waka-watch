@@ -77,3 +77,4 @@
 "SwiftCharts_TodayActivity_Value_A11Y" = "para {0}";
 "Coding" = "Codificación";
 "Meetings" = "Reuniones";
+"LeaderboardView_NoRecords_Text" = "No se han encontrado registros de tabla de clasificación.";

@@ -77,3 +77,4 @@
 "SwiftCharts_TodayActivity_Value_A11Y" = "dla {0}";
 "Coding" = "Kodowanie";
 "Meetings" = "Spotkania";
+"LeaderboardView_NoRecords_Text" = "Nie znaleziono rekordów rankingu.";

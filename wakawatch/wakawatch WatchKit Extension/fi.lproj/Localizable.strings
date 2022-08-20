@@ -77,3 +77,4 @@
 "SwiftCharts_TodayActivity_Value_A11Y" = "{0}";
 "Coding" = "Koodaus";
 "Meetings" = "Kokoukset";
+"LeaderboardView_NoRecords_Text" = "Tulostaulukkotietueita ei löytynyt.";
