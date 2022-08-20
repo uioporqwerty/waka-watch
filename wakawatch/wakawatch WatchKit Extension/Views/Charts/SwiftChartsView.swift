@@ -33,7 +33,7 @@ struct SwiftChartsView: View {
     ) {
         self.summaryData = summaryData
         var todayData = [TodayData(name: LocalizedStringKey("Coding").toString(),
-                                    total_seconds: todayCodingTime)
+                                   total_seconds: todayCodingTime)
         ]
         if todayMeetingTime != nil {
             todayData.append(TodayData(name: LocalizedStringKey("Meetings").toString(),
@@ -78,104 +78,100 @@ struct SwiftChartsView: View {
     }
     
     var body: some View {
-        if self.summaryData == nil {
-            ProgressView()
-        } else {
-            Group {
-                Text(LocalizedStringKey("SwiftCharts_TodayChart_Title"))
-                    .font(.system(size: 12))
-                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 8, trailing: 0))
-                
-                Chart(self.todayData, id: \.name) {
-                    BarMark(x: .value("Total", $0.total_seconds.minute),
-                            y: .value("Activity", $0.name)
-                    )
-                    .foregroundStyle(by: .value("Activity", $0.name))
-                    .accessibilityLabel($0.name)
-                    .accessibilityValue(Text(
-                        LocalizedStringKey("SwiftCharts_TodayActivity_Value_A11Y")
-                            .toString()
-                            .replaceArgs(String($0.total_seconds.toFullFormat))))
-                }
-                .chartLegend(.hidden)
-                .frame(height: self.size?.height)
-                .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
+        Group {
+            Text(LocalizedStringKey("SwiftCharts_TodayChart_Title"))
+                .font(.system(size: 12))
+                .padding(EdgeInsets(top: 0, leading: 0, bottom: 8, trailing: 0))
+            
+            Chart(self.todayData, id: \.name) {
+                BarMark(x: .value("Total", $0.total_seconds.minute),
+                        y: .value("Activity", $0.name)
+                )
+                .foregroundStyle(by: .value("Activity", $0.name))
+                .accessibilityLabel($0.name)
+                .accessibilityValue(Text(
+                    LocalizedStringKey("SwiftCharts_TodayActivity_Value_A11Y")
+                        .toString()
+                        .replaceArgs(String($0.total_seconds.toFullFormat))))
             }
+            .chartLegend(.hidden)
+            .frame(height: self.size?.height)
+            .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
+        }
+        
+        Divider()
+            .padding(EdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8))
+        
+        Group {
+            Text(LocalizedStringKey("SwiftCharts_CodingTimeChart_Title"))
+                .font(.system(size: 12))
+                .padding(EdgeInsets(top: 0, leading: 0, bottom: 8, trailing: 0))
             
-            Divider()
-                            .padding(EdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8))
-            
-            Group {
-                Text(LocalizedStringKey("SwiftCharts_CodingTimeChart_Title"))
-                    .font(.system(size: 12))
-                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 8, trailing: 0))
-                
-                Chart {
-                    ForEach(self.projects, id: \.projectName) { projectData in
-                        ForEach(projectData.data) {
-                            BarMark(x: .value("Date", $0.date, unit: .day),
-                                    y: .value("Minutes Coded", $0.total_seconds.minute))
-                        }.foregroundStyle(by: .value("Project", projectData.projectName))
-                    }
+            Chart {
+                ForEach(self.projects, id: \.projectName) { projectData in
+                    ForEach(projectData.data) {
+                        BarMark(x: .value("Date", $0.date, unit: .day),
+                                y: .value("Minutes Coded", $0.total_seconds.minute))
+                    }.foregroundStyle(by: .value("Project", projectData.projectName))
                 }
-                .chartLegend(position: .bottom,
-                             alignment: .bottom,
-                             spacing: 15)
-                .frame(height: self.size?.height)
-                .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
             }
+            .chartLegend(position: .bottom,
+                         alignment: .bottom,
+                         spacing: 15)
+            .frame(height: self.size?.height)
+            .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
+        }
+        
+        Divider()
+            .padding(EdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8))
+        
+        Group {
+            Text(LocalizedStringKey("SwiftCharts_LanguagesChart_Title"))
+                .font(.system(size: 12))
+                .padding(EdgeInsets(top: 0, leading: 0, bottom: 8, trailing: 0))
             
-            Divider()
-                            .padding(EdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8))
-            
-            Group {
-                Text(LocalizedStringKey("SwiftCharts_LanguagesChart_Title"))
-                    .font(.system(size: 12))
-                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 8, trailing: 0))
-                
-                Chart(self.languages, id: \.name!) {
-                    BarMark(x: .value("Language", $0.name!),
-                            y: .value("Total Minutes Used", $0.total_seconds?.minute ?? 0))
-                    .foregroundStyle(by: .value("Language", $0.name ?? ""))
-                    .accessibilityLabel($0.name ?? "")
-                    .accessibilityValue(Text(
-                        LocalizedStringKey("SwiftCharts_Languages_Value_A11Y")
-                            .toString()
-                            .replaceArgs(String($0.total_seconds?.toFullFormat ?? ""))))
-                }
-                .chartXAxis(.hidden)
-                .chartLegend(position: .bottom,
-                             alignment: .bottom,
-                             spacing: 15)
-                .frame(height: self.size?.height)
-                .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
+            Chart(self.languages, id: \.name!) {
+                BarMark(x: .value("Language", $0.name!),
+                        y: .value("Total Minutes Used", $0.total_seconds?.minute ?? 0))
+                .foregroundStyle(by: .value("Language", $0.name ?? ""))
+                .accessibilityLabel($0.name ?? "")
+                .accessibilityValue(Text(
+                    LocalizedStringKey("SwiftCharts_Languages_Value_A11Y")
+                        .toString()
+                        .replaceArgs(String($0.total_seconds?.toFullFormat ?? ""))))
             }
+            .chartXAxis(.hidden)
+            .chartLegend(position: .bottom,
+                         alignment: .bottom,
+                         spacing: 15)
+            .frame(height: self.size?.height)
+            .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
+        }
+        
+        Divider()
+            .padding(EdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8))
+        
+        Group {
+            Text(LocalizedStringKey("SwiftCharts_EditorsChart_Title"))
+                .font(.system(size: 12))
+                .padding(EdgeInsets(top: 0, leading: 0, bottom: 8, trailing: 0))
             
-            Divider()
-                            .padding(EdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8))
-            
-            Group {
-                Text(LocalizedStringKey("SwiftCharts_EditorsChart_Title"))
-                    .font(.system(size: 12))
-                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 8, trailing: 0))
-                
-                Chart(self.editors, id: \.name!) {
-                    BarMark(x: .value("Editor", $0.name!),
-                            y: .value("Total Minutes Used", $0.total_seconds?.minute ?? 0))
-                    .foregroundStyle(by: .value("Editor", $0.name ?? ""))
-                    .accessibilityLabel($0.name ?? "")
-                    .accessibilityValue(Text(
-                        LocalizedStringKey("SwiftCharts_Editors_Value_A11Y")
-                            .toString()
-                            .replaceArgs(String($0.total_seconds?.toFullFormat ?? ""))))
-                }
-                .chartXAxis(.hidden)
-                .chartLegend(position: .bottom,
-                             alignment: .bottom,
-                             spacing: 15)
-                .frame(height: self.size?.height)
-                .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
+            Chart(self.editors, id: \.name!) {
+                BarMark(x: .value("Editor", $0.name!),
+                        y: .value("Total Minutes Used", $0.total_seconds?.minute ?? 0))
+                .foregroundStyle(by: .value("Editor", $0.name ?? ""))
+                .accessibilityLabel($0.name ?? "")
+                .accessibilityValue(Text(
+                    LocalizedStringKey("SwiftCharts_Editors_Value_A11Y")
+                        .toString()
+                        .replaceArgs(String($0.total_seconds?.toFullFormat ?? ""))))
             }
+            .chartXAxis(.hidden)
+            .chartLegend(position: .bottom,
+                         alignment: .bottom,
+                         spacing: 15)
+            .frame(height: self.size?.height)
+            .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
         }
     }
 }
