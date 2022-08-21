@@ -52,7 +52,7 @@
 "WatchInstallationView_AlreadyInstalled_ButtonLabel" = "Jo asennettu >";
 "WatchInstallationView_OpenAppleWatch_ButtonLabel" = "Waka Watch -sovelluksen asentaminen";
 "ComplicationSettingsView_Instructions_Text" = "Valitse enintään 3 tavoitetta.";
-"Complication_CurrentCodingTimeDescriptor_Text" = "Tämän päivän koodausaika";
+"Complication_CurrentCodingTimeDescriptor_Text" = "Tämän päivän koodausaika {0}";
 "Notifications_GoalAchieved_Title" = "Tavoite saavutettu!";
 "Notifications_GoalAchieved_Message" = "Onnittelen! Olet koodannut {0} tuntia ja {1} minuuttia. Tämä on {2} tuntia ja {3} minuuttia enemmän kuin tavoitteesi.";
 "Notifications_InverseGoalFailed_Title" = "Pidä tauko!";
@@ -79,3 +79,5 @@
 "Meetings" = "Kokoukset";
 "LeaderboardView_NoRecords_Text" = "Tulostaulukkotietueita ei löytynyt.";
 "LeaderboardyView_Cell_Value_A11Y" = "{0} on luokiteltu {1}";
+"Global_CodingTimeFull_A11Y" = "{0} tuntia ja {1} minuuttia";
+"Global_CodingTimeNone_A11Y" = "{0} sekuntia";

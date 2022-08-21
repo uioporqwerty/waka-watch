@@ -52,7 +52,7 @@
 "WatchInstallationView_AlreadyInstalled_ButtonLabel" = "Už nainštalované >";
 "WatchInstallationView_OpenAppleWatch_ButtonLabel" = "Inštalácia aplikácie Waka Watch";
 "ComplicationSettingsView_Instructions_Text" = "Vyberte až 3 ciele.";
-"Complication_CurrentCodingTimeDescriptor_Text" = "Dnešný čas kódovania";
+"Complication_CurrentCodingTimeDescriptor_Text" = "Dnešný čas kódovania {0}";
 "Notifications_GoalAchieved_Title" = "Cieľ splnený!";
 "Notifications_GoalAchieved_Message" = "Gratulujem! Kódovali ste {0} hodín a {1} minút. Je to {2} hodín a {3} minút viac, ako je váš cieľ.";
 "Notifications_InverseGoalFailed_Title" = "Daj si pauzu!";
@@ -79,3 +79,5 @@
 "Meetings" = "Stretnutia";
 "LeaderboardView_NoRecords_Text" = "Nenašli sa žiadne záznamy z rebríčka.";
 "LeaderboardyView_Cell_Value_A11Y" = "{0} sa radí {1}";
+"Global_CodingTimeFull_A11Y" = "{0} hodiny a {1} minúty";
+"Global_CodingTimeNone_A11Y" = "{0} sekúnd";

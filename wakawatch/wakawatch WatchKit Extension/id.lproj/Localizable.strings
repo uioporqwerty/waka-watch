@@ -52,7 +52,7 @@
 "WatchInstallationView_AlreadyInstalled_ButtonLabel" = "Sudah Terinstal >";
 "WatchInstallationView_OpenAppleWatch_ButtonLabel" = "Instal Aplikasi Waka Watch";
 "ComplicationSettingsView_Instructions_Text" = "Pilih hingga 3 gol.";
-"Complication_CurrentCodingTimeDescriptor_Text" = "Waktu Pengkodean Hari Ini";
+"Complication_CurrentCodingTimeDescriptor_Text" = "Waktu Pengkodean Hari Ini {0}";
 "Notifications_GoalAchieved_Title" = "Tujuan Tercapai!";
 "Notifications_GoalAchieved_Message" = "Selamat! Anda telah membuat kode selama {0} jam dan {1} menit. Ini {2} jam dan {3} menit lebih banyak dari tujuan Anda.";
 "Notifications_InverseGoalFailed_Title" = "Istirahatlah!";
@@ -79,3 +79,5 @@
 "Meetings" = "Pertemuan";
 "LeaderboardView_NoRecords_Text" = "Tidak ada catatan papan peringkat yang ditemukan.";
 "LeaderboardyView_Cell_Value_A11Y" = "{0} berada di peringkat {1}";
+"Global_CodingTimeFull_A11Y" = "{0} jam dan {1} menit";
+"Global_CodingTimeNone_A11Y" = "{0} detik";

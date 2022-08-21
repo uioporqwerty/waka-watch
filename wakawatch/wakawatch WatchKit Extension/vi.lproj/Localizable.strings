@@ -52,7 +52,7 @@
 "WatchInstallationView_AlreadyInstalled_ButtonLabel" = "> đã được cài đặt";
 "WatchInstallationView_OpenAppleWatch_ButtonLabel" = "Cài đặt ứng dụng Waka Watch";
 "ComplicationSettingsView_Instructions_Text" = "Chọn tối đa 3 mục tiêu.";
-"Complication_CurrentCodingTimeDescriptor_Text" = "Thời gian mã hóa hôm nay";
+"Complication_CurrentCodingTimeDescriptor_Text" = "Thời gian mã hóa hôm nay {0}";
 "Notifications_GoalAchieved_Title" = "Mục tiêu đã đạt được!";
 "Notifications_GoalAchieved_Message" = "Chúc mừng! Bạn đã mã hóa trong {0} giờ {1} phút. Điều này nhiều hơn {2} giờ {3} phút so với mục tiêu của bạn.";
 "Notifications_InverseGoalFailed_Title" = "Hãy nghỉ ngơi!";
@@ -79,3 +79,5 @@
 "Meetings" = "Cuộc họp";
 "LeaderboardView_NoRecords_Text" = "Không tìm thấy hồ sơ bảng xếp hạng.";
 "LeaderboardyView_Cell_Value_A11Y" = "{0} được xếp hạng {1}";
+"Global_CodingTimeFull_A11Y" = "{0} giờ và {1} phút";
+"Global_CodingTimeNone_A11Y" = "{0} giây";

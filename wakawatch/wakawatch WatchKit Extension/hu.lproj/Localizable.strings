@@ -52,7 +52,7 @@
 "WatchInstallationView_AlreadyInstalled_ButtonLabel" = "Már telepített >";
 "WatchInstallationView_OpenAppleWatch_ButtonLabel" = "Telepítse a Waka Watch alkalmazást";
 "ComplicationSettingsView_Instructions_Text" = "Válasszon ki legfeljebb 3 célt.";
-"Complication_CurrentCodingTimeDescriptor_Text" = "A mai kódolási idő";
+"Complication_CurrentCodingTimeDescriptor_Text" = "A mai kódolási idő {0}";
 "Notifications_GoalAchieved_Title" = "Cél elért!";
 "Notifications_GoalAchieved_Message" = "Gratulálok! {0} óra és {1} percig kódoltál. Ez {2} óra és {3} perccel több, mint a célod.";
 "Notifications_InverseGoalFailed_Title" = "Tarts egy kis szünetet!";
@@ -79,3 +79,5 @@
 "Meetings" = "Találkozók";
 "LeaderboardView_NoRecords_Text" = "Nincsenek ranglistarekordok.";
 "LeaderboardyView_Cell_Value_A11Y" = "{0} {1}";
+"Global_CodingTimeFull_A11Y" = "{0} óra és {1} perc";
+"Global_CodingTimeNone_A11Y" = "{0} másodperc";

@@ -52,7 +52,7 @@
 "WatchInstallationView_AlreadyInstalled_ButtonLabel" = "> deja instalate";
 "WatchInstallationView_OpenAppleWatch_ButtonLabel" = "Instalați aplicația Waka Watch";
 "ComplicationSettingsView_Instructions_Text" = "Selectează până la 3 obiective.";
-"Complication_CurrentCodingTimeDescriptor_Text" = "Ora de codificare de astăzi";
+"Complication_CurrentCodingTimeDescriptor_Text" = "Ora de codificare de astăzi {0}";
 "Notifications_GoalAchieved_Title" = "Obiectiv atins!";
 "Notifications_GoalAchieved_Message" = "Felicitări! Ați codat timp de {0} ore și {1} minute. Acest lucru este de {2} de ore și {3} minute mai mult decât obiectivul dumneavoastră.";
 "Notifications_InverseGoalFailed_Title" = "Ia o pauză!";
@@ -79,3 +79,5 @@
 "Meetings" = "Întâlniri";
 "LeaderboardView_NoRecords_Text" = "Nu s-au găsit înregistrări în clasament.";
 "LeaderboardyView_Cell_Value_A11Y" = "{0} este clasat pe locul {1}";
+"Global_CodingTimeFull_A11Y" = "{0} ore și {1} minute";
+"Global_CodingTimeNone_A11Y" = "{0} secunde";

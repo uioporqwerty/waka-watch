@@ -51,7 +51,7 @@
 "WatchInstallationView_AlreadyInstalled_ButtonLabel" = "すでにインストールされている>";
 "WatchInstallationView_OpenAppleWatch_ButtonLabel" = "ワカウォッチアプリをインストールする";
 "ComplicationSettingsView_Instructions_Text" = "Select up to 3 goals.";
-"Complication_CurrentCodingTimeDescriptor_Text" = "今日のコーディング時間";
+"Complication_CurrentCodingTimeDescriptor_Text" = "今日のコーディング時間 {0}";
 "Notifications_GoalAchieved_Title" = "目標を達成しました！";
 "Notifications_GoalAchieved_Message" = "万丈！{0} 時間 {1} 分間コーディングしました。これはあなたの目標よりも{2}時間{3}分多くなります。";
 "Notifications_InverseGoalFailed_Title" = "コーディング警告!";
@@ -79,3 +79,5 @@
 "Meetings" = "会議";
 "LeaderboardView_NoRecords_Text" = "ランキング レコードが見つかりません。";
 "LeaderboardyView_Cell_Value_A11Y" = "{0}は{1}にランク付けされています";
+"Global_CodingTimeFull_A11Y" = "{0}時間{1}分";
+"Global_CodingTimeNone_A11Y" = "{0}秒";

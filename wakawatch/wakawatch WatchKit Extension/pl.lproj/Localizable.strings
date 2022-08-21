@@ -52,7 +52,7 @@
 "WatchInstallationView_AlreadyInstalled_ButtonLabel" = "Już zainstalowany >";
 "WatchInstallationView_OpenAppleWatch_ButtonLabel" = "Zainstaluj aplikację Waka Watch";
 "ComplicationSettingsView_Instructions_Text" = "Wybierz maksymalnie 3 bramki.";
-"Complication_CurrentCodingTimeDescriptor_Text" = "Dzisiejszy czas kodowania";
+"Complication_CurrentCodingTimeDescriptor_Text" = "Dzisiejszy czas kodowania {0}";
 "Notifications_GoalAchieved_Title" = "Cel osiągnięty!";
 "Notifications_GoalAchieved_Message" = "Gratulacje! Kodowałeś przez {0} godzin i {1} minut. To {2} godzin i {3} minut więcej niż Twój cel.";
 "Notifications_InverseGoalFailed_Title" = "Zrób sobie przerwę!";
@@ -79,3 +79,5 @@
 "Meetings" = "Spotkania";
 "LeaderboardView_NoRecords_Text" = "Nie znaleziono rekordów rankingu.";
 "LeaderboardyView_Cell_Value_A11Y" = "{0} zajmuje {1} miejsce";
+"Global_CodingTimeFull_A11Y" = "{0} godziny i {1} minuty";
+"Global_CodingTimeNone_A11Y" = "{0} sekund";

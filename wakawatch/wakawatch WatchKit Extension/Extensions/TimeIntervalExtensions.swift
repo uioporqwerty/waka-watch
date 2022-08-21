@@ -8,9 +8,9 @@ extension TimeInterval {
 
     var toSpelledOutHourMinuteFormat: String {
         if self == 0 {
-           return "0 secs"
+            return LocalizedStringKey("Global_CodingTimeNone_A11Y").toString().replaceArgs(String(0))
         } else {
-           return String(format: "%2d hrs %02d mins", hour, minute)
+            return LocalizedStringKey("Global_CodingTimeFull_A11Y").toString().replaceArgs(String(hour), String(minute))
         }
     }
 

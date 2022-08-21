@@ -51,7 +51,7 @@
 "WatchInstallationView_AlreadyInstalled_ButtonLabel" = "已安裝>";
 "WatchInstallationView_OpenAppleWatch_ButtonLabel" = "安裝Waka手錶應用程式";
 "ComplicationSettingsView_Instructions_Text" = "Select up to 3 goals.";
-"Complication_CurrentCodingTimeDescriptor_Text" = "今天的編碼時間";
+"Complication_CurrentCodingTimeDescriptor_Text" = "今天的編碼時間 {0}";
 "Notifications_GoalAchieved_Title" = "目標達成！";
 "Notifications_GoalAchieved_Message" = "祝賀！您已經編碼了{0}小時{1}分鐘。這比您的目標多{2}小時{3}分鐘。";
 "Notifications_InverseGoalFailed_Title" = "編碼警告！";
@@ -79,3 +79,5 @@
 "Meetings" = "會議";
 "LeaderboardView_NoRecords_Text" = "未找到排行榜記錄。";
 "LeaderboardyView_Cell_Value_A11Y" = "{0}排名{1}";
+"Global_CodingTimeFull_A11Y" = "{0}小時和{1}分鐘";
+"Global_CodingTimeNone_A11Y" = "{0} 秒";

@@ -52,7 +52,7 @@
 "WatchInstallationView_AlreadyInstalled_ButtonLabel" = ">ที่ติดตั้งไว้แล้ว";
 "WatchInstallationView_OpenAppleWatch_ButtonLabel" = "ติดตั้งแอพ Waka Watch";
 "ComplicationSettingsView_Instructions_Text" = "เลือกได้สูงสุด 3 ประตู";
-"Complication_CurrentCodingTimeDescriptor_Text" = "เวลาเขียนโค้ดของวันนี้";
+"Complication_CurrentCodingTimeDescriptor_Text" = "เวลาเขียนโค้ดของวันนี้ {0}";
 "Notifications_GoalAchieved_Title" = "บรรลุเป้าหมาย!";
 "Notifications_GoalAchieved_Message" = "ขอแสดงความยินดี! คุณได้เขียนโค้ดเป็นเวลา {0}โมงและ{1} นาทีแล้ว นี่คือ{2}โมงและ{3}นาทีมากกว่าเป้าหมายของคุณ";
 "Notifications_InverseGoalFailed_Title" = "หยุดพัก!";
@@ -79,3 +79,5 @@
 "Meetings" = "ประชุม";
 "LeaderboardView_NoRecords_Text" = "ไม่พบบันทึกลีดเดอร์บอร์ด";
 "LeaderboardyView_Cell_Value_A11Y" = "{0}อยู่ในอันดับที่ {1}";
+"Global_CodingTimeFull_A11Y" = "{0} ชั่วโมงและ{1} นาที";
+"Global_CodingTimeNone_A11Y" = "{0} วินาที";

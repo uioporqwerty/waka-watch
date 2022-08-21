@@ -52,7 +52,7 @@
 "WatchInstallationView_AlreadyInstalled_ButtonLabel" = "Zaten Yüklü >";
 "WatchInstallationView_OpenAppleWatch_ButtonLabel" = "Waka Watch Uygulamasını Yükleme";
 "ComplicationSettingsView_Instructions_Text" = "En fazla 3 hedef seçin.";
-"Complication_CurrentCodingTimeDescriptor_Text" = "Bugünün Kodlama Zamanı";
+"Complication_CurrentCodingTimeDescriptor_Text" = "Bugünün Kodlama Zamanı {0}";
 "Notifications_GoalAchieved_Title" = "Hedefe Ulaşıldı!";
 "Notifications_GoalAchieved_Message" = "Tebrikler! {0} saat {1} dakika boyunca kodladınız. Bu, hedefinizden {2} saat {3} dakika daha fazladır.";
 "Notifications_InverseGoalFailed_Title" = "Ara Verin!";
@@ -79,3 +79,5 @@
 "Meetings" = "Toplantı";
 "LeaderboardView_NoRecords_Text" = "Skor tablosu kaydı bulunamadı.";
 "LeaderboardyView_Cell_Value_A11Y" = "{0} {1} sıralanır";
+"Global_CodingTimeFull_A11Y" = "{0} saat {1} dakika";
+"Global_CodingTimeNone_A11Y" = "{0} saniye";

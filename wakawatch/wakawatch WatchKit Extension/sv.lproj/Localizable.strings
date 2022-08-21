@@ -52,7 +52,7 @@
 "WatchInstallationView_AlreadyInstalled_ButtonLabel" = "Redan installerad >";
 "WatchInstallationView_OpenAppleWatch_ButtonLabel" = "Installera Waka Watch-appen";
 "ComplicationSettingsView_Instructions_Text" = "Välj upp till 3 mål.";
-"Complication_CurrentCodingTimeDescriptor_Text" = "Dagens kodningstid";
+"Complication_CurrentCodingTimeDescriptor_Text" = "Dagens kodningstid {0}";
 "Notifications_GoalAchieved_Title" = "Målet uppnått!";
 "Notifications_GoalAchieved_Message" = "Grattis! Du har kodat i {0} timmar och {1} minuter. Detta är {2} timmar och {3} minuter mer än ditt mål.";
 "Notifications_InverseGoalFailed_Title" = "Ta en paus!";
@@ -79,3 +79,5 @@
 "Meetings" = "Möten";
 "LeaderboardView_NoRecords_Text" = "Inga topplisteposter hittades.";
 "LeaderboardyView_Cell_Value_A11Y" = "{0} rankas {1}";
+"Global_CodingTimeFull_A11Y" = "{0} timmar och {1} minuter";
+"Global_CodingTimeNone_A11Y" = "{0} sekunder";

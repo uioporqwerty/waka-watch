@@ -17,11 +17,15 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     func getComplicationDescriptors(handler: @escaping ([CLKComplicationDescriptor]) -> Void) {
         // swiftlint:disable line_length
         let currentCodingTimeDescriptor = CLKComplicationDescriptor(identifier: self.currentCodingTimeIdentifier,
-                                                                    displayName: "\(LocalizedStringKey("Complication_CurrentCodingTimeDescriptor_Text").toString()) (hh:mm)",
+                                                                    displayName: LocalizedStringKey("Complication_CurrentCodingTimeDescriptor_Text")
+                                                                                    .toString()
+                                                                                    .replaceArgs(String(self.complicationsViewModel?
+                                                                                                            .getLocalCurrentTime()
+                                                                                                            .toSpelledOutHourMinuteFormat ?? "00:00")),
                                                                     supportedFamilies: [.graphicCircular,
                                                                                         .utilitarianSmallFlat,
                                                                                         .utilitarianLarge
-                                                                                       ])
+                                                                    ])
         handler([currentCodingTimeDescriptor])
     }
 

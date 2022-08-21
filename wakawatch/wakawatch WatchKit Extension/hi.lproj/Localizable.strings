@@ -52,7 +52,7 @@
 "WatchInstallationView_AlreadyInstalled_ButtonLabel" = "पहले से ही स्थापित >";
 "WatchInstallationView_OpenAppleWatch_ButtonLabel" = "वाका घड़ी अनुप्रयोग स्थापित करें";
 "ComplicationSettingsView_Instructions_Text" = "Select up to 3 goals.";
-"Complication_CurrentCodingTimeDescriptor_Text" = "आज का कोडिंग समय";
+"Complication_CurrentCodingTimeDescriptor_Text" = "आज का कोडिंग समय {0}";
 "Notifications_GoalAchieved_Title" = "लक्ष्य प्राप्ति!";
 "Notifications_GoalAchieved_Message" = "बधाइयाँ! आपने {0} घंटे और {1} मिनट के लिए कोड किया है। यह आपके लक्ष्य से {2} घंटे और {3} मिनट अधिक है।";
 "Notifications_InverseGoalFailed_Title" = "कोडिंग चेतावनी!";
@@ -79,3 +79,5 @@
 "Meetings" = "बैठकों";
 "LeaderboardView_NoRecords_Text" = "कोई लीडरबोर्ड रिकॉर्ड नहीं मिला.";
 "LeaderboardyView_Cell_Value_A11Y" = "{0} {1} स्थान पर है";
+"Global_CodingTimeFull_A11Y" = "{0} घंटे और {1} मिनट";
+"Global_CodingTimeNone_A11Y" = "{0} सेकंड";

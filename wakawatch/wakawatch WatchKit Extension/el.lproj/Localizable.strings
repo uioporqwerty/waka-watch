@@ -52,7 +52,7 @@
 "WatchInstallationView_AlreadyInstalled_ButtonLabel" = "Ήδη εγκατεστημένο >";
 "WatchInstallationView_OpenAppleWatch_ButtonLabel" = "Εγκαταστήστε την εφαρμογή Waka Watch";
 "ComplicationSettingsView_Instructions_Text" = "Επιλέξτε έως και 3 γκολ.";
-"Complication_CurrentCodingTimeDescriptor_Text" = "Ο σημερινός χρόνος κωδικοποίησης";
+"Complication_CurrentCodingTimeDescriptor_Text" = "Ο σημερινός χρόνος κωδικοποίησης {0}";
 "Notifications_GoalAchieved_Title" = "Ο στόχος επιτεύχθηκε!";
 "Notifications_GoalAchieved_Message" = "Συγχαρητήρια! Έχετε κωδικοποιήσει για {0} ώρες και {1} λεπτά. Αυτό είναι {2} ώρες και {3} λεπτά περισσότερο από το στόχο σας.";
 "Notifications_InverseGoalFailed_Title" = "Κάντε ένα διάλειμμα!";
@@ -79,3 +79,5 @@
 "Meetings" = "Συνεδριάσεις";
 "LeaderboardView_NoRecords_Text" = "Δεν βρέθηκαν αρχεία βαθμολογικού πίνακα.";
 "LeaderboardyView_Cell_Value_A11Y" = "{0} κατατάσσεται {1}";
+"Global_CodingTimeFull_A11Y" = "{0} ώρες και {1} λεπτά";
+"Global_CodingTimeNone_A11Y" = "{0} δευτερόλεπτα";

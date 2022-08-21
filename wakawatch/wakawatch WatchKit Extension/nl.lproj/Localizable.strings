@@ -52,7 +52,7 @@
 "WatchInstallationView_AlreadyInstalled_ButtonLabel" = "Reeds geïnstalleerde >";
 "WatchInstallationView_OpenAppleWatch_ButtonLabel" = "Installeer de Waka Watch App";
 "ComplicationSettingsView_Instructions_Text" = "Selecteer maximaal 3 doelen.";
-"Complication_CurrentCodingTimeDescriptor_Text" = "De codeertijd van vandaag";
+"Complication_CurrentCodingTimeDescriptor_Text" = "De codeertijd van vandaag {0}";
 "Notifications_GoalAchieved_Title" = "Doel bereikt!";
 "Notifications_GoalAchieved_Message" = "Gefeliciteerd! Je hebt {0} uur en {1} minuten gecodeerd. Dit is {2} uur en {3} minuten meer dan je doel.";
 "Notifications_InverseGoalFailed_Title" = "Neem een pauze!";
@@ -79,3 +79,5 @@
 "Meetings" = "Vergaderingen";
 "LeaderboardView_NoRecords_Text" = "Geen leaderboard records gevonden.";
 "LeaderboardyView_Cell_Value_A11Y" = "{0} staat op de ranglijst {1}";
+"Global_CodingTimeFull_A11Y" = "{0} uren en {1} minuten";
+"Global_CodingTimeNone_A11Y" = "{0} seconden";

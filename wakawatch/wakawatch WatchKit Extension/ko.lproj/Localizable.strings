@@ -52,7 +52,7 @@
 "WatchInstallationView_AlreadyInstalled_ButtonLabel" = "이미 설치된 >";
 "WatchInstallationView_OpenAppleWatch_ButtonLabel" = "와카 워치 앱 설치";
 "ComplicationSettingsView_Instructions_Text" = "최대 3개의 목표를 선택합니다.";
-"Complication_CurrentCodingTimeDescriptor_Text" = "오늘의 코딩 시간";
+"Complication_CurrentCodingTimeDescriptor_Text" = "오늘의 코딩 시간 {0}";
 "Notifications_GoalAchieved_Title" = "목표 달성!";
 "Notifications_GoalAchieved_Message" = "축하합니다! {0} 시간 {1} 분 동안 코딩했습니다. 이것은 목표보다 {2} 시간 {3} 분 더 많습니다.";
 "Notifications_InverseGoalFailed_Title" = "휴식을 취하십시오!";
@@ -79,3 +79,5 @@
 "Meetings" = "회의";
 "LeaderboardView_NoRecords_Text" = "순위표 레코드를 찾을 수 없습니다.";
 "LeaderboardyView_Cell_Value_A11Y" = "{0}는 {1} 순위가 매겨졌습니다.";
+"Global_CodingTimeFull_A11Y" = "{0}시간 {1}분";
+"Global_CodingTimeNone_A11Y" = "{0}초";
