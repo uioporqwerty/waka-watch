@@ -78,3 +78,4 @@
 "Coding" = "Kodlama";
 "Meetings" = "Toplantı";
 "LeaderboardView_NoRecords_Text" = "Skor tablosu kaydı bulunamadı.";
+"LeaderboardyView_Cell_Value_A11Y" = "{0} {1} sıralanır";

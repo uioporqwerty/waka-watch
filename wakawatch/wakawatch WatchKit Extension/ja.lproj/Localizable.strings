@@ -78,3 +78,4 @@
 "Coding" = "コーディング";
 "Meetings" = "会議";
 "LeaderboardView_NoRecords_Text" = "ランキング レコードが見つかりません。";
+"LeaderboardyView_Cell_Value_A11Y" = "{0}は{1}にランク付けされています";

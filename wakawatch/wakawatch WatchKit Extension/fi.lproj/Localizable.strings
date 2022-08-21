@@ -78,3 +78,4 @@
 "Coding" = "Koodaus";
 "Meetings" = "Kokoukset";
 "LeaderboardView_NoRecords_Text" = "Tulostaulukkotietueita ei löytynyt.";
+"LeaderboardyView_Cell_Value_A11Y" = "{0} on luokiteltu {1}";

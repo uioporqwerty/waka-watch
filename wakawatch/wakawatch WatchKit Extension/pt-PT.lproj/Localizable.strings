@@ -78,3 +78,4 @@
 "Coding" = "Codificação";
 "Meetings" = "Reuniões";
 "LeaderboardView_NoRecords_Text" = "Não foram encontrados registos de quadros de líderes.";
+"LeaderboardyView_Cell_Value_A11Y" = "{0} está classificado {1}";

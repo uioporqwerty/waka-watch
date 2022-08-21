@@ -78,3 +78,4 @@
 "Coding" = "Codierung";
 "Meetings" = "Versammlungen";
 "LeaderboardView_NoRecords_Text" = "Keine Bestenlistendatensätze gefunden.";
+"LeaderboardyView_Cell_Value_A11Y" = "{0} wird {1} eingestuft";

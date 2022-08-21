@@ -78,3 +78,4 @@
 "Coding" = "Kodning";
 "Meetings" = "Möten";
 "LeaderboardView_NoRecords_Text" = "Inga topplisteposter hittades.";
+"LeaderboardyView_Cell_Value_A11Y" = "{0} rankas {1}";

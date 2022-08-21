@@ -78,3 +78,4 @@
 "Coding" = "编码";
 "Meetings" = "会议";
 "LeaderboardView_NoRecords_Text" = "未找到排行榜记录。";
+"LeaderboardyView_Cell_Value_A11Y" = "{0}排名{1}";

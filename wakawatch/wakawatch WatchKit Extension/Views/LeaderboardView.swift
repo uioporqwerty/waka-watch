@@ -102,7 +102,12 @@ struct LeaderboardView: View {
                                                                         forceLoad: true)) {
                                         LeaderboardRecordView(record)
                                         .id(record.id)
-                                }.if(record.id == self.leaderboardViewModel.currentUserRecord?.id) {
+                                }
+                                .accessibilityLabel(Text(LocalizedStringKey("LeaderboardyView_Cell_Value_A11Y")
+                                                         .toString()
+                                                         .replaceArgs(record.user?.display_name ?? "",
+                                                                      String(record.rank ?? 0))))
+                                .if(record.id == self.leaderboardViewModel.currentUserRecord?.id) {
                                     $0.background(Color.accentColor)
                                 }
                             }

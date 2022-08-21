@@ -78,3 +78,4 @@
 "Coding" = "Кодування";
 "Meetings" = "Зустрічі";
 "LeaderboardView_NoRecords_Text" = "Записів у таблиці лідерів не знайдено.";
+"LeaderboardyView_Cell_Value_A11Y" = "{0} займає {1} місце";

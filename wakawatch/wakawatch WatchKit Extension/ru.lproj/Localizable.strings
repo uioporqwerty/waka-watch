@@ -78,3 +78,4 @@
 "Coding" = "Кодирование";
 "Meetings" = "Встречи";
 "LeaderboardView_NoRecords_Text" = "Записи в таблице лидеров не найдены.";
+"LeaderboardyView_Cell_Value_A11Y" = "{0} имеет рейтинг {1}";

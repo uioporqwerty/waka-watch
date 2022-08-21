@@ -78,3 +78,4 @@
 "Coding" = "Coding";
 "Meetings" = "Meetings";
 "LeaderboardView_NoRecords_Text" = "No leaderboard records found.";
+"LeaderboardyView_Cell_Value_A11Y" = "{0} is ranked {1}";

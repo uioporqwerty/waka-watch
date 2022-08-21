@@ -78,3 +78,4 @@
 "Coding" = "Codering";
 "Meetings" = "Vergaderingen";
 "LeaderboardView_NoRecords_Text" = "Geen leaderboard records gevonden.";
+"LeaderboardyView_Cell_Value_A11Y" = "{0} staat op de ranglijst {1}";

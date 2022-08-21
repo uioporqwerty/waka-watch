@@ -78,3 +78,4 @@
 "Coding" = "코딩";
 "Meetings" = "회의";
 "LeaderboardView_NoRecords_Text" = "순위표 레코드를 찾을 수 없습니다.";
+"LeaderboardyView_Cell_Value_A11Y" = "{0}는 {1} 순위가 매겨졌습니다.";

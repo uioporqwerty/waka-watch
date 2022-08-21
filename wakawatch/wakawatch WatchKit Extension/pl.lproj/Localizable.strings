@@ -78,3 +78,4 @@
 "Coding" = "Kodowanie";
 "Meetings" = "Spotkania";
 "LeaderboardView_NoRecords_Text" = "Nie znaleziono rekordów rankingu.";
+"LeaderboardyView_Cell_Value_A11Y" = "{0} zajmuje {1} miejsce";

@@ -78,3 +78,4 @@
 "Coding" = "Κωδικοποίηση";
 "Meetings" = "Συνεδριάσεις";
 "LeaderboardView_NoRecords_Text" = "Δεν βρέθηκαν αρχεία βαθμολογικού πίνακα.";
+"LeaderboardyView_Cell_Value_A11Y" = "{0} κατατάσσεται {1}";

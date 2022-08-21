@@ -78,3 +78,4 @@
 "Coding" = "Codificare";
 "Meetings" = "Întâlniri";
 "LeaderboardView_NoRecords_Text" = "Nu s-au găsit înregistrări în clasament.";
+"LeaderboardyView_Cell_Value_A11Y" = "{0} este clasat pe locul {1}";

@@ -78,3 +78,4 @@
 "Coding" = "Mã hóa";
 "Meetings" = "Cuộc họp";
 "LeaderboardView_NoRecords_Text" = "Không tìm thấy hồ sơ bảng xếp hạng.";
+"LeaderboardyView_Cell_Value_A11Y" = "{0} được xếp hạng {1}";

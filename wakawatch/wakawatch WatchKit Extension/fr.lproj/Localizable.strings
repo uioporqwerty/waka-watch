@@ -78,3 +78,4 @@
 "Coding" = "Codage";
 "Meetings" = "Réunions";
 "LeaderboardView_NoRecords_Text" = "Aucun enregistrement de classement trouvé.";
+"LeaderboardyView_Cell_Value_A11Y" = "{0} est classé {1}";

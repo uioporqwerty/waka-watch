@@ -78,3 +78,4 @@
 "Coding" = "कोडिंग";
 "Meetings" = "बैठकों";
 "LeaderboardView_NoRecords_Text" = "कोई लीडरबोर्ड रिकॉर्ड नहीं मिला.";
+"LeaderboardyView_Cell_Value_A11Y" = "{0} {1} स्थान पर है";

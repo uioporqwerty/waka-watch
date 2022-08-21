@@ -78,3 +78,4 @@
 "Coding" = "Kódolás";
 "Meetings" = "Találkozók";
 "LeaderboardView_NoRecords_Text" = "Nincsenek ranglistarekordok.";
+"LeaderboardyView_Cell_Value_A11Y" = "{0} {1}";

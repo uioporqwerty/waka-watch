@@ -78,3 +78,4 @@
 "Coding" = "Codificación";
 "Meetings" = "Reuniones";
 "LeaderboardView_NoRecords_Text" = "No se han encontrado registros de tabla de clasificación.";
+"LeaderboardyView_Cell_Value_A11Y" = "{0} ocupa el puesto {1}";

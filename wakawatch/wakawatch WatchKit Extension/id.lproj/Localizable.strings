@@ -78,3 +78,4 @@
 "Coding" = "Coding";
 "Meetings" = "Pertemuan";
 "LeaderboardView_NoRecords_Text" = "Tidak ada catatan papan peringkat yang ditemukan.";
+"LeaderboardyView_Cell_Value_A11Y" = "{0} berada di peringkat {1}";

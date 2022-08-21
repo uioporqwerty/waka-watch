@@ -78,3 +78,4 @@
 "Coding" = "Kódovanie";
 "Meetings" = "Stretnutia";
 "LeaderboardView_NoRecords_Text" = "Nenašli sa žiadne záznamy z rebríčka.";
+"LeaderboardyView_Cell_Value_A11Y" = "{0} sa radí {1}";
