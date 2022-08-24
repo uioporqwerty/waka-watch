@@ -25,6 +25,6 @@ extension TimeInterval {
     }
 
     var minute: Int {
-        Int(self / 60)
+        Int(self.truncatingRemainder(dividingBy: 3600) / 60)
     }
 }
