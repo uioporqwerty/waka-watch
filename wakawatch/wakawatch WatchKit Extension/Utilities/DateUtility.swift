@@ -15,9 +15,13 @@ final class DateUtility {
         dateFormatter.dateFormat = inputFormat
         let inputDate = dateFormatter.date(from: date)
 
+        guard let inputDate = inputDate else {
+            return ""
+        }
+        
         let outputFormat = "MMM. d"
         dateFormatter.dateFormat = outputFormat
-        return dateFormatter.string(from: inputDate!)
+        return dateFormatter.string(from: inputDate)
     }
 
     static func getFormattedCurrentDate() -> String {
