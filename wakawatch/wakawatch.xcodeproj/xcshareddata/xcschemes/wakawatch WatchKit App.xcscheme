@@ -40,25 +40,16 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      codeCoverageEnabled = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6BED9AAD2795154F005646C3"
-               BuildableName = "wakawatch WatchKit AppTests.xctest"
-               BlueprintName = "wakawatch WatchKit AppTests"
-               ReferencedContainer = "container:wakawatch.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6BED9AB72795154F005646C3"
-               BuildableName = "wakawatch WatchKit AppUITests.xctest"
-               BlueprintName = "wakawatch WatchKit AppUITests"
+               BlueprintIdentifier = "6BCCE0FE28B6F8A4004B229F"
+               BuildableName = "wakawatch WatchKit Extension Unit Tests.xctest"
+               BlueprintName = "wakawatch WatchKit Extension Unit Tests"
                ReferencedContainer = "container:wakawatch.xcodeproj">
             </BuildableReference>
          </TestableReference>
