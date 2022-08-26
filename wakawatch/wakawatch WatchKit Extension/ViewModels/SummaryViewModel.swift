@@ -39,25 +39,31 @@ final class SummaryViewModel: ObservableObject {
 
     func getSummary() async throws {
         let summaryData = try await networkService.getSummaryData(.Today)
-        let externalDurationData = try await networkService.getExternalDurations()
-        var totalMeetings = 0.0
+        var totalMeetingTime = 0.0
+        var totalCodingTime = 0.0
+        let categories = summaryData?.data?.first?.categories ?? []
         
-        for durations in externalDurationData?.data.filter({ $0.category == "meeting" }) ?? [] {
-            totalMeetings += durations.end_time - durations.start_time
+        for category in categories {
+            if category.name == "Coding" {
+                totalCodingTime += category.total_seconds
+            } else if category.name == "Meeting" {
+                totalMeetingTime += category.total_seconds
+            }
         }
-        let finalMeetingTime = totalMeetings
+        
+        let finalMeetingTime = totalMeetingTime
+        let finalCodingTime = totalCodingTime
         
         let defaults = UserDefaults.standard
-        defaults.set(summaryData?.cummulative_total?.seconds,
+        defaults.set(finalCodingTime,
                      forKey: DefaultsKeys.complicationCurrentTimeCoded)
 
         self.complicationService.updateTimelines()
         
         DispatchQueue.main.async {
-            self.totalDisplayTime = summaryData?.cummulative_total?.text ?? ""
-            self.totalCodingTime = summaryData?.cummulative_total?.seconds ?? 0
-            self.totalMeetingTime = externalDurationData != nil &&
-                                    !externalDurationData!.data.isEmpty ? finalMeetingTime : nil
+            self.totalDisplayTime = finalCodingTime.toSpelledOutHourMinuteFormat
+            self.totalCodingTime = finalCodingTime
+            self.totalMeetingTime = finalMeetingTime
             self.loaded = true
         }
     }

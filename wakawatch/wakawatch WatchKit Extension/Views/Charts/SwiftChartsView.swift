@@ -179,7 +179,8 @@ struct SwiftChartsView: View {
 @available(watchOSApplicationExtension 9.0, *)
 struct SwiftChartsView_Previews: PreviewProvider {
     static var previews: some View {
-        let summaryData = SummaryData(projects: nil,
+        let summaryData = SummaryData(categories: nil,
+                                      projects: nil,
                                       editors: nil,
                                       languages: [SummaryLanguageData(name: "Python",
                                                                       total_seconds: 12344,
