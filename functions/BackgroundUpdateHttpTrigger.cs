@@ -10,6 +10,7 @@ using System.Text.Json;
 using System.Collections.Generic;
 using WakaWatch.Models;
 using WakaWatch.Models.WakaTime;
+using System.Linq;
 
 namespace WakaWatch.Function
 {
@@ -42,6 +43,12 @@ namespace WakaWatch.Function
             }
 
             var summaryData = await GetSummaryData(accessToken);
+            var totalCodingTime = summaryData.Data
+                                             .FirstOrDefault()
+                                             ?.Categories
+                                             .Where(x => x.Name == "Coding")
+                                             .Sum(x => x.TotalSeconds) ?? 0.0;
+
             var goalsData = await GetGoalsData(accessToken);
             var goals = new List<BackgroundUpdateGoalResponse>();
 
@@ -69,7 +76,7 @@ namespace WakaWatch.Function
 
             var response = new BackgroundUpdateResponse
             {
-                TotalTimeCodedInSeconds = summaryData.CummulativeTotal?.Seconds ?? 0,
+                TotalTimeCodedInSeconds = totalCodingTime,
                 Goals = goals
             };
 
