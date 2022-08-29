@@ -108,7 +108,6 @@ final class DependencyInjection {
             SummaryViewModel(networkService: resolver.resolve(NetworkService.self)!,
                              complicationService: resolver.resolve(ComplicationService.self)!,
                              telemetryService: resolver.resolve(TelemetryService.self)!,
-                             notificationService: resolver.resolve(NotificationService.self)!,
                              chartFactory: resolver.resolve(ChartFactory.self)!,
                              logManager: resolver.resolve(LogManager.self)!
                             )
@@ -126,6 +125,7 @@ final class DependencyInjection {
         }
         self.container.register(SettingsViewModel.self) { resolver in
             SettingsViewModel(networkService: resolver.resolve(NetworkService.self)!,
+                              notificationService: resolver.resolve(NotificationService.self)!,
                               authenticationService: resolver.resolve(AuthenticationService.self)!,
                               logManager: resolver.resolve(LogManager.self)!,
                               telemetryService: resolver.resolve(TelemetryService.self)!,

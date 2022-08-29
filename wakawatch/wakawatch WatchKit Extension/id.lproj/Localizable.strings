@@ -81,3 +81,4 @@
 "LeaderboardyView_Cell_Value_A11Y" = "{0} berada di peringkat {1}";
 "Global_CodingTimeFull_A11Y" = "{0} jam dan {1} menit";
 "Global_CodingTimeNone_A11Y" = "{0} detik";
+"SettingsView_EnableNotifications_Button" = "Aktifkan Notifikasi";

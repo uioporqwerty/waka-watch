@@ -81,3 +81,4 @@
 "LeaderboardyView_Cell_Value_A11Y" = "{0} имеет рейтинг {1}";
 "Global_CodingTimeFull_A11Y" = "{0} часы и {1} минуты";
 "Global_CodingTimeNone_A11Y" = "{0} секунд";
+"SettingsView_EnableNotifications_Button" = "Включение уведомлений";

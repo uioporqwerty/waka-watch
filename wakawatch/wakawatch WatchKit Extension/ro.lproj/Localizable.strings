@@ -81,3 +81,4 @@
 "LeaderboardyView_Cell_Value_A11Y" = "{0} este clasat pe locul {1}";
 "Global_CodingTimeFull_A11Y" = "{0} ore și {1} minute";
 "Global_CodingTimeNone_A11Y" = "{0} secunde";
+"SettingsView_EnableNotifications_Button" = "Activați notificările";

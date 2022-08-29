@@ -81,3 +81,4 @@
 "LeaderboardyView_Cell_Value_A11Y" = "{0} on luokiteltu {1}";
 "Global_CodingTimeFull_A11Y" = "{0} tuntia ja {1} minuuttia";
 "Global_CodingTimeNone_A11Y" = "{0} sekuntia";
+"SettingsView_EnableNotifications_Button" = "Ota ilmoitukset käyttöön";

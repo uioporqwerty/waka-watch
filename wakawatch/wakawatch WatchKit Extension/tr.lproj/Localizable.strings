@@ -81,3 +81,4 @@
 "LeaderboardyView_Cell_Value_A11Y" = "{0} {1} sıralanır";
 "Global_CodingTimeFull_A11Y" = "{0} saat {1} dakika";
 "Global_CodingTimeNone_A11Y" = "{0} saniye";
+"SettingsView_EnableNotifications_Button" = "Bildirimleri Etkinleştir";

@@ -81,3 +81,4 @@
 "LeaderboardyView_Cell_Value_A11Y" = "{0} é classificada {1}";
 "Global_CodingTimeFull_A11Y" = "{0} horas e {1} minutos";
 "Global_CodingTimeNone_A11Y" = "{0} segundos";
+"SettingsView_EnableNotifications_Button" = "Ativar notificações";

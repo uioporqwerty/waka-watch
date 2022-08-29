@@ -81,3 +81,4 @@
 "LeaderboardyView_Cell_Value_A11Y" = "{0} staat op de ranglijst {1}";
 "Global_CodingTimeFull_A11Y" = "{0} uren en {1} minuten";
 "Global_CodingTimeNone_A11Y" = "{0} seconden";
+"SettingsView_EnableNotifications_Button" = "Meldingen inschakelen";

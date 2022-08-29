@@ -81,3 +81,4 @@
 "LeaderboardyView_Cell_Value_A11Y" = "{0} sa radí {1}";
 "Global_CodingTimeFull_A11Y" = "{0} hodiny a {1} minúty";
 "Global_CodingTimeNone_A11Y" = "{0} sekúnd";
+"SettingsView_EnableNotifications_Button" = "Povoliť oznámenia";

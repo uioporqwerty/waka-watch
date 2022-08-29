@@ -81,3 +81,4 @@
 "LeaderboardyView_Cell_Value_A11Y" = "{0}は{1}にランク付けされています";
 "Global_CodingTimeFull_A11Y" = "{0}時間{1}分";
 "Global_CodingTimeNone_A11Y" = "{0}秒";
+"SettingsView_EnableNotifications_Button" = "通知を有効にする";

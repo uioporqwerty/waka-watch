@@ -81,3 +81,4 @@
 "LeaderboardyView_Cell_Value_A11Y" = "{0} {1} स्थान पर है";
 "Global_CodingTimeFull_A11Y" = "{0} घंटे और {1} मिनट";
 "Global_CodingTimeNone_A11Y" = "{0} सेकंड";
+"SettingsView_EnableNotifications_Button" = "सूचनाएँ सक्षम करें";

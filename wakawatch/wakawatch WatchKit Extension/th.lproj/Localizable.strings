@@ -81,3 +81,4 @@
 "LeaderboardyView_Cell_Value_A11Y" = "{0}อยู่ในอันดับที่ {1}";
 "Global_CodingTimeFull_A11Y" = "{0} ชั่วโมงและ{1} นาที";
 "Global_CodingTimeNone_A11Y" = "{0} วินาที";
+"SettingsView_EnableNotifications_Button" = "เปิดใช้งานการแจ้งเตือน";

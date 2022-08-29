@@ -81,3 +81,4 @@
 "LeaderboardyView_Cell_Value_A11Y" = "{0}는 {1} 순위가 매겨졌습니다.";
 "Global_CodingTimeFull_A11Y" = "{0}시간 {1}분";
 "Global_CodingTimeNone_A11Y" = "{0}초";
+"SettingsView_EnableNotifications_Button" = "알림 사용";

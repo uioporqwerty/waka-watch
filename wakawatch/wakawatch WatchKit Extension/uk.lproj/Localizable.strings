@@ -81,3 +81,4 @@
 "LeaderboardyView_Cell_Value_A11Y" = "{0} займає {1} місце";
 "Global_CodingTimeFull_A11Y" = "{0} годин і {1} хвилин";
 "Global_CodingTimeNone_A11Y" = "{0} секунд";
+"SettingsView_EnableNotifications_Button" = "Включити повідомлення";
