@@ -42,8 +42,10 @@ namespace WakaWatch.Function
             }
             
             var requestBody = await new StreamReader(req.Body).ReadToEndAsync();
-            var pullRequestEvent = JsonConvert.DeserializeObject<PullRequestEvent>(requestBody);
+            _log.LogInformation($"requestBody = {requestBody}");
 
+            var pullRequestEvent = JsonConvert.DeserializeObject<PullRequestEvent>(requestBody);
+            
             if (pullRequestEvent.Action != "closed" && !pullRequestEvent.PullRequest.Merged) {
                 _log.LogInformation($"Invalid github event with action {pullRequestEvent.Action}");
                 return new OkObjectResult(null);
