@@ -134,6 +134,10 @@
 		6BD8628927E7D45100004BB6 /* GoalUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD8628827E7D45100004BB6 /* GoalUtility.swift */; };
 		6BDD8B4227C467EB00BB1493 /* SummaryRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDD8B4127C467EB00BB1493 /* SummaryRange.swift */; };
 		6BDD8B4327C467EB00BB1493 /* SummaryRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDD8B4127C467EB00BB1493 /* SummaryRange.swift */; };
+		6BE3005B28D65F1200A8AF2B /* GithubAuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE3005A28D65F1200A8AF2B /* GithubAuthenticationService.swift */; };
+		6BE3005C28D65F1200A8AF2B /* GithubAuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE3005A28D65F1200A8AF2B /* GithubAuthenticationService.swift */; };
+		6BE3005E28D664D600A8AF2B /* SecurityUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE3005D28D664D600A8AF2B /* SecurityUtility.swift */; };
+		6BE3005F28D664D600A8AF2B /* SecurityUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE3005D28D664D600A8AF2B /* SecurityUtility.swift */; };
 		6BE4A98127DCFB130048463B /* UserDefaultsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE4A98027DCFB130048463B /* UserDefaultsExtensions.swift */; };
 		6BE5DE3C27A6402D0072FF0E /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE5DE3B27A6402D0072FF0E /* StringExtensions.swift */; };
 		6BE5DE3D27A6403D0072FF0E /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE5DE3B27A6402D0072FF0E /* StringExtensions.swift */; };
@@ -374,6 +378,8 @@
 		6BD52F1A279FD07300247BFB /* RollbarLoggingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollbarLoggingService.swift; sourceTree = "<group>"; };
 		6BD8628827E7D45100004BB6 /* GoalUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalUtility.swift; sourceTree = "<group>"; };
 		6BDD8B4127C467EB00BB1493 /* SummaryRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryRange.swift; sourceTree = "<group>"; };
+		6BE3005A28D65F1200A8AF2B /* GithubAuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubAuthenticationService.swift; sourceTree = "<group>"; };
+		6BE3005D28D664D600A8AF2B /* SecurityUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityUtility.swift; sourceTree = "<group>"; };
 		6BE4A98027DCFB130048463B /* UserDefaultsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtensions.swift; sourceTree = "<group>"; };
 		6BE5DE3B27A6402D0072FF0E /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		6BE5DE3E27A64E630072FF0E /* SeverityLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeverityLevel.swift; sourceTree = "<group>"; };
@@ -569,6 +575,7 @@
 				6B8A485B279D081B0071566F /* DateUtility.swift */,
 				6B410A4127C2E6860044BB08 /* VersionCheckerUtility.swift */,
 				6BD8628827E7D45100004BB6 /* GoalUtility.swift */,
+				6BE3005D28D664D600A8AF2B /* SecurityUtility.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -706,6 +713,7 @@
 			isa = PBXGroup;
 			children = (
 				6BE5DE6A27A8CB380072FF0E /* AuthenticationService.swift */,
+				6BE3005A28D65F1200A8AF2B /* GithubAuthenticationService.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -1325,9 +1333,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BE3005B28D65F1200A8AF2B /* GithubAuthenticationService.swift in Sources */,
 				6BDD8B4227C467EB00BB1493 /* SummaryRange.swift in Sources */,
 				6B30B95727E1711D003BEED0 /* RuntimeError.swift in Sources */,
 				6BD52F1B279FD07300247BFB /* RollbarLoggingService.swift in Sources */,
+				6BE3005E28D664D600A8AF2B /* SecurityUtility.swift in Sources */,
 				6BBF65822845CAD3004C3081 /* KeychainError.swift in Sources */,
 				6BA78C8027A46CF0005149BC /* SplashView.swift in Sources */,
 				6BAF14B927CEF9A900370EED /* WatchInstallationCheckView.swift in Sources */,
@@ -1441,10 +1451,12 @@
 				6BE93AB22895724000D5072E /* ErrorResponse.swift in Sources */,
 				6BED9AA12795154E005646C3 /* WakaWatchApp.swift in Sources */,
 				6BA78C9027A492FB005149BC /* AsyncButton.swift in Sources */,
+				6BE3005C28D65F1200A8AF2B /* GithubAuthenticationService.swift in Sources */,
 				6B410A4F27C331B80044BB08 /* ExtensionDelegate.swift in Sources */,
 				6B9E1115279CA29100F4DC93 /* SummaryResponse.swift in Sources */,
 				6B9EE41C27DAF1770086B465 /* BackgroundUpdateResponse.swift in Sources */,
 				6BED9AEB27952197005646C3 /* DefaultKeys.swift in Sources */,
+				6BE3005F28D664D600A8AF2B /* SecurityUtility.swift in Sources */,
 				6B0C0DB3288F601400B9BE13 /* WhatsNewViewModel.swift in Sources */,
 				6B4304072854D43E00B8A2BB /* LicensesViewModel.swift in Sources */,
 				6BD52F1C279FD07300247BFB /* RollbarLoggingService.swift in Sources */,

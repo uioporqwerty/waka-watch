@@ -7,10 +7,11 @@ struct AuthenticationView: View {
     @Environment(\.openURL) var openURL
 
     @State private var startingWebAuthenticationSession = false
+    @State private var startingGithubIntegration = false
     @State private var requiresUpdate = false
     @State private var showFeatureRequestModal = false
     @State private var showAuthenticationErrorAlert = false
-
+    
     init(viewModel: AuthenticationViewModel) {
         self.authenticationViewModel = viewModel
 
@@ -36,6 +37,7 @@ struct AuthenticationView: View {
                     callbackURLScheme: self.authenticationViewModel.callbackURLScheme
                 ) { callbackURL, error in
                     guard error == nil, let successURL = callbackURL else {
+                       self.startingWebAuthenticationSession = false
                        return
                     }
                     // swiftlint:disable line_length
@@ -70,10 +72,46 @@ struct AuthenticationView: View {
                                 }
                                 .padding(EdgeInsets(top: 8, leading: 8, bottom: 0, trailing: 8))
                                 .buttonStyle(.borderedProminent)
+                                
+                                Group {
+                                    Divider()
+                                        .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
+                                    
+                                    Text("Integrations")
+                                        
+                                    Button(action: { self.startingGithubIntegration = true }) {
+                                        Text("Connect with Github")
+                                            .frame(maxWidth: .infinity, minHeight: 34)
+                                    }
+                                    .padding(EdgeInsets(top: 8, leading: 8, bottom: 0, trailing: 8))
+                                    .buttonStyle(.borderedProminent)
+                                    .webAuthenticationSession(isPresented: $startingGithubIntegration) {
+                                    WebAuthenticationSession(
+                                        url: self.authenticationViewModel.githubAuthorizationUrl,
+                                        callbackURLScheme: self.authenticationViewModel.callbackURLScheme
+                                    ) { callbackURL, error in
+                                        guard error == nil, let successURL = callbackURL else {
+                                            self.startingGithubIntegration = false
+                                           return
+                                        }
+                                        
+                                        let stateCode = NSURLComponents(string: (successURL.absoluteString))?.queryItems?.filter({$0.name == "state"}).first
+                                        
+                                        if stateCode?.value == nil || !self.authenticationViewModel.isValidGithubState(stateCode: (stateCode?.value)!) {
+                                            self.startingGithubIntegration = false
+                                            return
+                                        }
+                                        
+                                        //TODO: Perform storing the oauth code. Right now, access is enough.
 
+                                    }
+                                    .prefersEphemeralWebBrowserSession(true)
+                                    }
+                                }
+                                
                                 Divider()
                                 .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
-
+                                
                                 Text(LocalizedStringKey("AuthenticationView_RequestFeature_Text"))
                                     .frame(maxWidth: .infinity)
                                     .multilineTextAlignment(.center)

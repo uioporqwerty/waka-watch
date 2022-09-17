@@ -65,11 +65,17 @@ final class DependencyInjection {
             // swiftlint:disable force_try
             try! GithubAPIService(logManager: resolver.resolve(LogManager.self)!)
         }
+        self.container.register(GithubAuthenticationService.self) { resolver in
+            GithubAuthenticationService(logManager: resolver.resolve(LogManager.self)!,
+                                        telemetryService: resolver.resolve(TelemetryService.self)!,
+                                        tokenManager: resolver.resolve(TokenManager.self)!)
+        }
     }
 
     private func registerViewModels() {
         self.container.register(AuthenticationViewModel.self) { resolver in
             AuthenticationViewModel(authenticationService: resolver.resolve(AuthenticationService.self)!,
+                                    githubAuthenticationService: resolver.resolve(GithubAuthenticationService.self)!,
                                     networkService: resolver.resolve(NetworkService.self)!,
                                     apmService: resolver.resolve(RollbarAPMService.self)!,
                                     telemetryService: resolver.resolve(TelemetryService.self)!,
