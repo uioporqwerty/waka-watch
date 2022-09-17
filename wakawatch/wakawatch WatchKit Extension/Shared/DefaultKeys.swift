@@ -8,4 +8,6 @@ struct DefaultsKeys {
     static let previousAppVersion = "previousAppVersion"
     static let globalErrorMessage = "globalErrorMessage"
     static let userGoals = "userGoals"
+    
+    static let githubStateCode = "githubStateCode"
 }
