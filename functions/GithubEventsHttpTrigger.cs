@@ -6,10 +6,10 @@ using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
 using System.Security.Cryptography;
 using System.Text;
 using WakaWatch.Models.Github;
+using System.Text.Json;
 
 namespace WakaWatch.Function
 {
@@ -42,11 +42,11 @@ namespace WakaWatch.Function
             }
             
             req.Body.Position = 0;
-            
+
             var requestBody = await new StreamReader(req.Body).ReadToEndAsync();
             _log.LogInformation($"requestBody = {requestBody}");
 
-            var pullRequestEvent = JsonConvert.DeserializeObject<PullRequestEvent>(requestBody);
+            var pullRequestEvent = JsonSerializer.Deserialize<PullRequestEvent>(requestBody);
             
             if (pullRequestEvent.Action != "closed" && !pullRequestEvent.PullRequest.Merged) {
                 _log.LogInformation($"Invalid github event with action {pullRequestEvent.Action}");
