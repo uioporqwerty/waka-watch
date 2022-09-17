@@ -41,6 +41,8 @@ namespace WakaWatch.Function
                 return new UnauthorizedResult();
             }
             
+            req.Body.Position = 0;
+            
             var requestBody = await new StreamReader(req.Body).ReadToEndAsync();
             _log.LogInformation($"requestBody = {requestBody}");
 
