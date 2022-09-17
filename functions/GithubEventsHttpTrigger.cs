@@ -9,6 +9,7 @@ using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using System.Security.Cryptography;
 using System.Text;
+using WakaWatch.Models.Github;
 
 namespace WakaWatch.Function
 {
@@ -40,8 +41,16 @@ namespace WakaWatch.Function
                 return new UnauthorizedResult();
             }
             
-            _log.LogInformation("Starting githubEvents");
+            var requestBody = await new StreamReader(req.Body).ReadToEndAsync();
+            var pullRequestEvent = JsonConvert.DeserializeObject<PullRequestEvent>(requestBody);
+
+            if (pullRequestEvent.Action != "closed" && !pullRequestEvent.PullRequest.Merged) {
+                _log.LogInformation($"Invalid github event with action {pullRequestEvent.Action}");
+                return new OkObjectResult(null);
+            }
             
+            _log.LogInformation($"Merged PR with ref {pullRequestEvent.PullRequest.Head.Ref}");
+
             return new OkObjectResult(null);
         }
 
