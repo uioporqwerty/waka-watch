@@ -48,12 +48,10 @@ namespace WakaWatch.Function
 
             var pullRequestEvent = JsonSerializer.Deserialize<PullRequestEvent>(requestBody);
             
-            // if (pullRequestEvent.Action != "closed" && !pullRequestEvent.PullRequest.Merged) {
-            //     _log.LogInformation($"Invalid github event with action {pullRequestEvent.Action}");
-            //     return new OkObjectResult(null);
-            // }
-            
-            _log.LogInformation($"Merged PR with ref {pullRequestEvent}");
+            if (pullRequestEvent.Action != "closed" && !pullRequestEvent.PullRequest.Merged) {
+                _log.LogInformation($"Invalid github event with action {pullRequestEvent.Action}");
+                return new OkObjectResult(null);
+            }
 
             return new OkObjectResult(null);
         }
