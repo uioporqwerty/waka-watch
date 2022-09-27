@@ -1,5 +1,4 @@
 What's New 
 
 Enhancements:
-- Move to Swift UI Charts for iOS 9+
-- Remove prompt for notification permission to Settings view. You can now opt in if you'd like.
+- Support for Mixpanel for analytics.
