@@ -82,3 +82,5 @@
 "Global_CodingTimeFull_A11Y" = "{0} часы и {1} минуты";
 "Global_CodingTimeNone_A11Y" = "{0} секунд";
 "SettingsView_EnableNotifications_Button" = "Включение уведомлений";
+"SettingsView_ToggleMixpanel_OptInButtonLabel" = "Подписка на аналитику";
+"SettingsView_ToggleMixpanel_OptOutButtonLabel" = "Отказ от аналитики";

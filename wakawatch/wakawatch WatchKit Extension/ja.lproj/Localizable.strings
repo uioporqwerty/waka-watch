@@ -82,3 +82,5 @@
 "Global_CodingTimeFull_A11Y" = "{0}時間{1}分";
 "Global_CodingTimeNone_A11Y" = "{0}秒";
 "SettingsView_EnableNotifications_Button" = "通知を有効にする";
+"SettingsView_ToggleMixpanel_OptInButtonLabel" = "アナリティクスへのオプトイン";
+"SettingsView_ToggleMixpanel_OptOutButtonLabel" = "アナリティクスのオプトアウト";

@@ -82,3 +82,5 @@
 "Global_CodingTimeFull_A11Y" = "{0}시간 {1}분";
 "Global_CodingTimeNone_A11Y" = "{0}초";
 "SettingsView_EnableNotifications_Button" = "알림 사용";
+"SettingsView_ToggleMixpanel_OptInButtonLabel" = "분석 옵트인";
+"SettingsView_ToggleMixpanel_OptOutButtonLabel" = "분석 옵트아웃";

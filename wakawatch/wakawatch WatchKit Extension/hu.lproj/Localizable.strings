@@ -82,3 +82,5 @@
 "Global_CodingTimeFull_A11Y" = "{0} óra és {1} perc";
 "Global_CodingTimeNone_A11Y" = "{0} másodperc";
 "SettingsView_EnableNotifications_Button" = "Értesítések engedélyezése";
+"SettingsView_ToggleMixpanel_OptInButtonLabel" = "Feliratkozás az Analytics szolgáltatásra";
+"SettingsView_ToggleMixpanel_OptOutButtonLabel" = "Az Analytics letiltása";

@@ -1,35 +1,49 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @ObservedObject var settingsViewModel: SettingsViewModel
+    @ObservedObject var viewModel: SettingsViewModel
     @State var isActive = false
 
     init(viewModel: SettingsViewModel) {
-        self.settingsViewModel = viewModel
+        self.viewModel = viewModel
     }
 
     var body: some View {
         VStack {
             ScrollView(.vertical, showsIndicators: false) {
-                if self.settingsViewModel.showEnableNotificationsButton {
+                if self.viewModel.showEnableNotificationsButton {
                     Button {
-                        self.settingsViewModel
+                        self.viewModel
                             .telemetry
                             .recordViewEvent(elementName: "TAPPED: Enable Notifications button")
-                        self.settingsViewModel
-                            .analyticsService
+                        self.viewModel
+                            .analytics
                             .track(event: "Enable Notifications")
-                        self.settingsViewModel.promptPermissions()
+                        self.viewModel.promptPermissions()
                     } label: {
                         Text(LocalizedStringKey("SettingsView_EnableNotifications_Button"))
                     }.padding(EdgeInsets(top: 0, leading: 0, bottom: 8, trailing: 0))
                 }
                 
+                Button {
+                    self.viewModel
+                        .telemetry
+                        .recordViewEvent(elementName: "TAPPED: Toggle Mixpanel button")
+                    self.viewModel
+                        .analytics
+                        .track(event: "Toggled Mixpanel")
+                    
+                    self.viewModel
+                        .analyticsOptInOptOut()
+                } label: {
+                    Text(self.viewModel.analyticsOptInOptOutButtonLabel)
+                }.padding(EdgeInsets(top: 0, leading: 0, bottom: 8, trailing: 0))
+                
                 AsyncButton(action: {
-                    self.settingsViewModel
+                    self.viewModel
                         .telemetry
                         .recordViewEvent(elementName: "TAPPED: Disconnect from WakaTime button")
-                    try? await self.settingsViewModel.disconnect()
+                    try? await self.viewModel.disconnect()
                 }) {
                     Text(LocalizedStringKey("SettingsView_Disconnect_Button"))
                 }.padding(EdgeInsets(top: 0, leading: 0, bottom: 8, trailing: 0))
@@ -41,25 +55,25 @@ struct SettingsView: View {
                                                                             .resolve(LicensesViewModel.self)!))
                 .padding(EdgeInsets(top: 0, leading: 0, bottom: 8, trailing: 0))
 
-                Text(self.settingsViewModel.appVersion)
+                Text(self.viewModel.appVersion)
                     .font(Font.footnote)
                     .foregroundColor(.gray)
                     .padding()
                     .accessibilityLabel(Text(LocalizedStringKey("SettingsView_AppVersion_A11Y")
                                              .toString()
-                                             .replaceArgs(self.settingsViewModel.appVersion)))
+                                             .replaceArgs(self.viewModel.appVersion)))
             }
         }
         .onAppear {
-            self.settingsViewModel
+            self.viewModel
                 .telemetry
                 .recordViewEvent(elementName: "\(String(describing: SettingsView.self))")
-            self.settingsViewModel
-                .analyticsService
+            self.viewModel
+                .analytics
                 .track(event: "Settings View")
         }
         .task {
-            self.settingsViewModel.load()
+            self.viewModel.load()
         }
         .padding(EdgeInsets(top: 8, leading: 8, bottom: 0, trailing: 8))
     }

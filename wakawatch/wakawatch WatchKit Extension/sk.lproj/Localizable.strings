@@ -82,3 +82,5 @@
 "Global_CodingTimeFull_A11Y" = "{0} hodiny a {1} minúty";
 "Global_CodingTimeNone_A11Y" = "{0} sekúnd";
 "SettingsView_EnableNotifications_Button" = "Povoliť oznámenia";
+"SettingsView_ToggleMixpanel_OptInButtonLabel" = "Prihlásenie do služby Analytics";
+"SettingsView_ToggleMixpanel_OptOutButtonLabel" = "Odhlásenie zo služby Analytics";

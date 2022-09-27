@@ -1,4 +1,8 @@
 What's New 
 
 Enhancements:
-- Support for Mixpanel for analytics.
+- Improved support for Mixpanel analytics.
+- You can opt-out/opt-in to analytics on the settings view. By default, you are opted-in.
+
+Fixes:
+- Enable notifications button does not disappear after granting permissions.

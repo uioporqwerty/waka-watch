@@ -82,3 +82,5 @@
 "Global_CodingTimeFull_A11Y" = "{0} ore și {1} minute";
 "Global_CodingTimeNone_A11Y" = "{0} secunde";
 "SettingsView_EnableNotifications_Button" = "Activați notificările";
+"SettingsView_ToggleMixpanel_OptInButtonLabel" = "Înscrieți-vă la Analytics";
+"SettingsView_ToggleMixpanel_OptOutButtonLabel" = "Renunțați la Analytics";

@@ -1,7 +1,11 @@
 import Foundation
+import SwiftUI
+
 final class SettingsViewModel: ObservableObject {
     @Published var appVersion: String = ""
+    @Published var analyticsOptInOptOutButtonLabel: String = ""
     @Published var showEnableNotificationsButton = false
+    private var optedOut: Bool
     
     private let networkService: NetworkService
     private let notificationService: NotificationService
@@ -10,7 +14,7 @@ final class SettingsViewModel: ObservableObject {
     
     public let logManager: LogManager
     public let telemetry: TelemetryService
-    public let analyticsService: AnalyticsService
+    public let analytics: AnalyticsService
     
     init(networkService: NetworkService,
          notificationService: NotificationService,
@@ -25,25 +29,29 @@ final class SettingsViewModel: ObservableObject {
         self.authenticationService = authenticationService
         self.logManager = logManager
         self.telemetry = telemetryService
-        self.analyticsService = analyticsService
+        self.analytics = analyticsService
         self.tokenManager = tokenManager
+        self.optedOut = self.analytics.hasOptedOut()
     }
 
     func load() {
         self.shouldShowEnableNotificationsButton()
-        
         DispatchQueue.main.async {
             guard let version =  Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String,
                   let buildNumber =  Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String else {
                       return
                   }
             self.appVersion = "v\(version) (\(buildNumber))"
+            
+            self.analyticsOptInOptOutButtonLabel = self.optedOut ?
+                LocalizedStringKey("SettingsView_ToggleMixpanel_OptInButtonLabel").toString() :
+                LocalizedStringKey("SettingsView_ToggleMixpanel_OptOutButtonLabel").toString()
         }
     }
 
     func disconnect() async throws {
         self.telemetry.recordViewEvent(elementName: "TAPPED: Disconnect button")
-        self.analyticsService.track(event: "Disconnect")
+        self.analytics.track(event: "Disconnect")
         
         do {
             try await self.authenticationService.disconnect()
@@ -67,8 +75,21 @@ final class SettingsViewModel: ObservableObject {
     }
     
     func promptPermissions() {
-        self.analyticsService.track(event: "Prompted for Permissions")
-        self.notificationService.requestAuthorization()
+        self.analytics.track(event: "Prompted for Permissions")
+        self.notificationService.requestAuthorization {
+            self.shouldShowEnableNotificationsButton()
+        }
+    }
+    
+    func analyticsOptInOptOut() {
+        self.analytics.toggleOptInOptOut()
+        self.optedOut = !self.optedOut
+        
+        DispatchQueue.main.async {
+            self.analyticsOptInOptOutButtonLabel = self.optedOut ?
+                LocalizedStringKey("SettingsView_ToggleMixpanel_OptInButtonLabel").toString() :
+                LocalizedStringKey("SettingsView_ToggleMixpanel_OptOutButtonLabel").toString()
+        }
     }
     
     private func shouldShowEnableNotificationsButton() {

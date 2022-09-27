@@ -18,6 +18,9 @@ final class DependencyInjection {
         self.container.register(ChartFactory.self) { _ in ChartFactory() }
         self.container.register(ConsoleLoggingService.self) { _ in ConsoleLoggingService() }
         self.container.register(RollbarLoggingService.self) { _ in RollbarLoggingService() }
+        self.container.register(AnalyticsService.self) { _ in
+            MixpanelService()
+        }.inObjectScope(.container)
 
         #if DEBUG
             self.container.register(TelemetryService.self) { _ in ConsoleTelemetryService() }
@@ -83,7 +86,9 @@ final class DependencyInjection {
         #endif
 
         self.container.register(NotificationService.self) { resolver in
-            NotificationService(logManager: resolver.resolve(LogManager.self)!)
+            NotificationService(logManager: resolver.resolve(LogManager.self)!,
+                                analyticsService: resolver.resolve(AnalyticsService.self)!
+                                )
         }
 
         self.container.register(BackgroundService.self) { resolver in
@@ -101,10 +106,6 @@ final class DependencyInjection {
         self.container.register(AppInformationService.self) { _ in
             AppInformationService()
         }
-        
-        self.container.register(AnalyticsService.self) { _ in
-            MixpanelService()
-        }.inObjectScope(.container)
     }
 
     private func registerViewModels() {
@@ -112,6 +113,7 @@ final class DependencyInjection {
             SummaryViewModel(networkService: resolver.resolve(NetworkService.self)!,
                              complicationService: resolver.resolve(ComplicationService.self)!,
                              telemetryService: resolver.resolve(TelemetryService.self)!,
+                             analyticsService: resolver.resolve(AnalyticsService.self)!,
                              chartFactory: resolver.resolve(ChartFactory.self)!,
                              logManager: resolver.resolve(LogManager.self)!
                             )

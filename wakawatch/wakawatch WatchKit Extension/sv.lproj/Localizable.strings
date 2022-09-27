@@ -82,3 +82,5 @@
 "Global_CodingTimeFull_A11Y" = "{0} timmar och {1} minuter";
 "Global_CodingTimeNone_A11Y" = "{0} sekunder";
 "SettingsView_EnableNotifications_Button" = "Aktivera aviseringar";
+"SettingsView_ToggleMixpanel_OptInButtonLabel" = "Anmäl dig till Analytics";
+"SettingsView_ToggleMixpanel_OptOutButtonLabel" = "Välja bort Analytics";

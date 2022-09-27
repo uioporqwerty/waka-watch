@@ -82,3 +82,5 @@
 "Global_CodingTimeFull_A11Y" = "{0} jam dan {1} menit";
 "Global_CodingTimeNone_A11Y" = "{0} detik";
 "SettingsView_EnableNotifications_Button" = "Aktifkan Notifikasi";
+"SettingsView_ToggleMixpanel_OptInButtonLabel" = "Ikut serta dalam Analytics";
+"SettingsView_ToggleMixpanel_OptOutButtonLabel" = "Menyisih dari Analytics";

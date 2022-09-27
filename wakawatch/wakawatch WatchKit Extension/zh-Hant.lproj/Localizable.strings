@@ -82,3 +82,5 @@
 "Global_CodingTimeFull_A11Y" = "{0}小時和{1}分鐘";
 "Global_CodingTimeNone_A11Y" = "{0} 秒";
 "SettingsView_EnableNotifications_Button" = "啟用通知";
+"SettingsView_ToggleMixpanel_OptInButtonLabel" = "選擇加入分析";
+"SettingsView_ToggleMixpanel_OptOutButtonLabel" = "退出宣告分析";

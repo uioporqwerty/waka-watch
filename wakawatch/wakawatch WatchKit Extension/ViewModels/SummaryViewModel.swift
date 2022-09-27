@@ -20,15 +20,18 @@ final class SummaryViewModel: ObservableObject {
     private var chartFactory: ChartFactory
 
     public let telemetry: TelemetryService
-
+    public let analytics: AnalyticsService
+    
     init(networkService: NetworkService,
          complicationService: ComplicationService,
          telemetryService: TelemetryService,
+         analyticsService: AnalyticsService,
          chartFactory: ChartFactory,
          logManager: LogManager
         ) {
         self.networkService = networkService
         self.telemetry = telemetryService
+        self.analytics = analyticsService
         self.complicationService = complicationService
         self.chartFactory = chartFactory
         self.logManager = logManager

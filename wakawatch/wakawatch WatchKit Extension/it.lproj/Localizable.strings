@@ -82,3 +82,5 @@
 "Global_CodingTimeFull_A11Y" = "{0} ore e {1} minuti";
 "Global_CodingTimeNone_A11Y" = "{0} secondi";
 "SettingsView_EnableNotifications_Button" = "Abilita notifiche";
+"SettingsView_ToggleMixpanel_OptInButtonLabel" = "Attivazione di Analytics";
+"SettingsView_ToggleMixpanel_OptOutButtonLabel" = "Rifiuto esplicito di Analytics";

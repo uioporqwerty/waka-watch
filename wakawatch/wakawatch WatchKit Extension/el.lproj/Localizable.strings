@@ -82,3 +82,5 @@
 "Global_CodingTimeFull_A11Y" = "{0} ώρες και {1} λεπτά";
 "Global_CodingTimeNone_A11Y" = "{0} δευτερόλεπτα";
 "SettingsView_EnableNotifications_Button" = "Ενεργοποίηση ειδοποιήσεων";
+"SettingsView_ToggleMixpanel_OptInButtonLabel" = "Συμμετοχή στο Analytics";
+"SettingsView_ToggleMixpanel_OptOutButtonLabel" = "Εξαίρεση από το Analytics";

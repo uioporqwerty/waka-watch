@@ -2,7 +2,6 @@ import Mixpanel
 import Foundation
 
 class MixpanelService: AnalyticsService {
-    
     init() {
         // swiftlint:disable force_cast
         let mixpanelToken = Bundle.main.infoDictionary?["MIXPANEL_TOKEN"] as! String
@@ -31,4 +30,17 @@ class MixpanelService: AnalyticsService {
         
         Mixpanel.mainInstance().people.set(properties: mixpanelProperties)
     }
+    
+    func hasOptedOut() -> Bool {
+        return Mixpanel.mainInstance().hasOptedOutTracking()
+    }
+    
+    func toggleOptInOptOut() {
+        if self.hasOptedOut() {
+            Mixpanel.mainInstance().optInTracking()
+        } else {
+            Mixpanel.mainInstance().optOutTracking()
+        }
+    }
+    
 }

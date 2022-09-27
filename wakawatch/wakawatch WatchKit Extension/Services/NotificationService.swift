@@ -4,10 +4,14 @@ import SwiftUI
 final class NotificationService {
     private let center: UNUserNotificationCenter
     private let logManager: LogManager
+    private let analytics: AnalyticsService
 
-    init(logManager: LogManager) {
+    init(logManager: LogManager,
+         analyticsService: AnalyticsService
+        ) {
         self.center = UNUserNotificationCenter.current()
         self.logManager = logManager
+        self.analytics = analyticsService
     }
 
     func requestAuthorization(authorizedHandler: (() -> Void)? = nil) {
@@ -106,6 +110,7 @@ final class NotificationService {
                             return
                         }
                         self.logManager.debugMessage("Notification triggered successfully.")
+                        self.analytics.track(event: "Notification Sent for Goal")
                         completionHandler?()
                     }
                 }
