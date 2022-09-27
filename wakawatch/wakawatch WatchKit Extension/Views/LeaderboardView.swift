@@ -40,7 +40,12 @@ struct LeaderboardView: View {
     init(viewModel: LeaderboardViewModel, profileViewModel: ProfileViewModel) {
         self.leaderboardViewModel = viewModel
         self.profileViewModel = profileViewModel
-        self.leaderboardViewModel.telemetry.recordViewEvent(elementName: "\(String(describing: LeaderboardView.self))")
+        self.leaderboardViewModel
+            .telemetry
+            .recordViewEvent(elementName: "\(String(describing: LeaderboardView.self))")
+        self.leaderboardViewModel
+            .analyticsService
+            .track(event: "Leaderboard View Shown")
     }
 
     var body: some View {

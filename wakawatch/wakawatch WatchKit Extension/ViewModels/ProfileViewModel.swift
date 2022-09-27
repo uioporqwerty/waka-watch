@@ -15,13 +15,16 @@ final class ProfileViewModel: ObservableObject {
     private var networkService: NetworkService
     public let telemetry: TelemetryService
     public let logManager: LogManager
-
+    public let analytics: AnalyticsService
+    
     init(networkService: NetworkService,
          telemetryService: TelemetryService,
+         analyticsService: AnalyticsService,
          logManager: LogManager
         ) {
         self.networkService = networkService
         self.telemetry = telemetryService
+        self.analytics = analyticsService
         self.logManager = logManager
     }
 

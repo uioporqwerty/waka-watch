@@ -84,6 +84,11 @@ struct AuthenticationView: View {
                                     self.authenticationViewModel
                                         .telemetry
                                         .recordViewEvent(elementName: "\(String(describing: AuthenticationView.self))_RequestFeature_Button")
+                                    
+                                    self.authenticationViewModel
+                                        .analyticsService
+                                        .track(event: "Submit Feedback")
+                                    
                                     self.showFeatureRequestModal = true
                                 }
                                 label: {
@@ -112,6 +117,11 @@ struct AuthenticationView: View {
                                     self.authenticationViewModel
                                         .telemetry
                                         .recordViewEvent(elementName: "\(String(describing: AuthenticationView.self))_Donation_Button")
+                                    
+                                    self.authenticationViewModel
+                                        .analyticsService
+                                        .track(event: "Donate")
+                                    
                                     openURL(URL(string: "https://funds.effectivealtruism.org/donate/organizations")!)
                                 }
                                 label: {

@@ -13,18 +13,22 @@ final class LeaderboardViewModel: ObservableObject {
 
     private var networkService: NetworkService
     public let telemetry: TelemetryService
+    public let analyticsService: AnalyticsService
     public let logManager: LogManager
 
     init(networkService: NetworkService,
          telemetryService: TelemetryService,
+         analyticsService: AnalyticsService,
          logManager: LogManager
         ) {
         self.networkService = networkService
         self.telemetry = telemetryService
+        self.analyticsService = analyticsService
         self.logManager = logManager
     }
 
     func loadPreviousPage() async throws {
+        self.analyticsService.track(event: "Load Previous Leadboard Page")
         if self.previousPage! <= 0 {
             return
         }
@@ -40,6 +44,7 @@ final class LeaderboardViewModel: ObservableObject {
     }
 
     func loadNextPage() async throws {
+        self.analyticsService.track(event: "Load Next Leaderboard Page")
         if self.nextPage! >= self.totalPages {
             return
         }

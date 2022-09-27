@@ -8,12 +8,14 @@ final class AuthenticationViewModel {
     private let apmService: RollbarAPMService
     private let logManager: LogManager
     private let tokenManager: TokenManager
-
+    
     public let telemetry: TelemetryService
+    public let analyticsService: AnalyticsService
     public let authorizationUrl: URL
     public let callbackURLScheme: String
 
     init(authenticationService: AuthenticationService,
+         analyticsService: AnalyticsService,
          networkService: NetworkService,
          apmService: RollbarAPMService,
          telemetryService: TelemetryService,
@@ -21,6 +23,7 @@ final class AuthenticationViewModel {
          tokenManager: TokenManager
         ) {
         self.authenticationService = authenticationService
+        self.analyticsService = analyticsService
         self.networkService = networkService
         self.telemetry = telemetryService
         self.logManager = logManager
@@ -32,6 +35,8 @@ final class AuthenticationViewModel {
     }
 
     func requestReview() {
+        self.analyticsService.track(event: "Request Review")
+        
         guard let writeReviewURL = URL(string: "https://apps.apple.com/app/id1607453366?action=write-review") else {
             self.logManager.errorMessage("Could not construct write review URL.")
             return
@@ -41,6 +46,8 @@ final class AuthenticationViewModel {
     }
 
     func authenticate(authorizationCode: String) async {
+        self.analyticsService.track(event: "Authenticate")
+        
         Task {
             do {
                 self.telemetry.recordViewEvent(elementName: "TAPPED: Connect with WakaTime button on companion app")
@@ -74,6 +81,13 @@ final class AuthenticationViewModel {
                 }
                 defaults.set(profile.id, forKey: DefaultsKeys.userId)
                 self.apmService.setPersonTracking(id: profile.id)
+                self.analyticsService.identifyUser(id: profile.id)
+                self.analyticsService.setProfile(properties: [
+                    "$email": profile.email,
+                    "$avatar": profile.photo != nil ? "\(profile.photo!)?s=420" : "",
+                    "$distinct_id": profile.id,
+                    "$name": profile.full_name
+                ])
             } catch {
                 self.logManager.reportError(error)
             }
@@ -81,6 +95,8 @@ final class AuthenticationViewModel {
     }
 
     func disconnect() async {
+        self.analyticsService.track(event: "Disconnect")
+        
         do {
             self.telemetry.recordViewEvent(elementName: "TAPPED: Disconnect button on companion app")
             try await self.authenticationService.disconnect()

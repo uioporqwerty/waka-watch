@@ -13,6 +13,7 @@ struct UserData: Decodable {
     let email: String?
     let bio: String?
     let city: LocationData?
+    let full_name: String?
 }
 
 struct LocationData: Decodable {

@@ -82,7 +82,12 @@ struct ProfileView: View {
             }
         }
         .onAppear {
-            self.profileViewModel.telemetry.recordViewEvent(elementName: "\(String(describing: ProfileView.self))")
+            self.profileViewModel
+                .telemetry
+                .recordViewEvent(elementName: "\(String(describing: ProfileView.self))")
+            self.profileViewModel
+                .analytics
+                .track(event: "Profile View Shown")
         }
     }
 }

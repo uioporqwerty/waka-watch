@@ -6,6 +6,7 @@ struct WakaWatchApp: App {
         DependencyInjection.shared.register()
         _ = ConnectivityService.shared
         _ = DependencyInjection.shared.container.resolve(RollbarAPMService.self)
+        _ = DependencyInjection.shared.container.resolve(MixpanelService.self)
     }
 
     var body: some Scene {

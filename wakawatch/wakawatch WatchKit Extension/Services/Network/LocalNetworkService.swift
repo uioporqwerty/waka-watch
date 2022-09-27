@@ -62,6 +62,8 @@ final class LocalNetworkService: NetworkService {
                         website: "https://nybble.app",
                         email: "nitish.sachar@protonmail.com",
                         bio: "Test bio for local network",
-                        city: nil)
+                        city: nil,
+                        full_name: "Nitish Sachar"
+                        )
     }
 }

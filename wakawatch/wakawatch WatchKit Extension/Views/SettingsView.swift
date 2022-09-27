@@ -16,6 +16,9 @@ struct SettingsView: View {
                         self.settingsViewModel
                             .telemetry
                             .recordViewEvent(elementName: "TAPPED: Enable Notifications button")
+                        self.settingsViewModel
+                            .analyticsService
+                            .track(event: "Enable Notifications")
                         self.settingsViewModel.promptPermissions()
                     } label: {
                         Text(LocalizedStringKey("SettingsView_EnableNotifications_Button"))
@@ -48,7 +51,12 @@ struct SettingsView: View {
             }
         }
         .onAppear {
-            self.settingsViewModel.telemetry.recordViewEvent(elementName: "\(String(describing: SettingsView.self))")
+            self.settingsViewModel
+                .telemetry
+                .recordViewEvent(elementName: "\(String(describing: SettingsView.self))")
+            self.settingsViewModel
+                .analyticsService
+                .track(event: "Settings View")
         }
         .task {
             self.settingsViewModel.load()

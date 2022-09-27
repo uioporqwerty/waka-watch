@@ -23,6 +23,8 @@
 		6B1D9B2A27C13B7A00322DBA /* TimeIntervalExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1D9B2927C13B7A00322DBA /* TimeIntervalExtensions.swift */; };
 		6B23142A27A59B8700477259 /* ConnectivityMessageKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B23142927A59B8700477259 /* ConnectivityMessageKeys.swift */; };
 		6B23142B27A59B8700477259 /* ConnectivityMessageKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B23142927A59B8700477259 /* ConnectivityMessageKeys.swift */; };
+		6B2796CA28E12AB90082F10C /* Mixpanel in Frameworks */ = {isa = PBXBuildFile; productRef = 6B2796C928E12AB90082F10C /* Mixpanel */; };
+		6B2796CE28E12CC00082F10C /* MixpanelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2796CD28E12CC00082F10C /* MixpanelService.swift */; };
 		6B29476B279642EF00311E1E /* WakaTimeNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B29476A279642EF00311E1E /* WakaTimeNetworkService.swift */; };
 		6B30B95727E1711D003BEED0 /* RuntimeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B30B95627E1711D003BEED0 /* RuntimeError.swift */; };
 		6B30B95827E1711D003BEED0 /* RuntimeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B30B95627E1711D003BEED0 /* RuntimeError.swift */; };
@@ -80,6 +82,10 @@
 		6B9E1115279CA29100F4DC93 /* SummaryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9E1114279CA29100F4DC93 /* SummaryResponse.swift */; };
 		6B9EE41C27DAF1770086B465 /* BackgroundUpdateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9EE41B27DAF1770086B465 /* BackgroundUpdateResponse.swift */; };
 		6BA3DFAE289DAFD3006BC5F5 /* SwiftChartsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA3DFAD289DAFD3006BC5F5 /* SwiftChartsView.swift */; };
+		6BA5267C28E15E8D004EC818 /* Mixpanel in Frameworks */ = {isa = PBXBuildFile; productRef = 6BA5267B28E15E8D004EC818 /* Mixpanel */; };
+		6BA5267E28E16112004EC818 /* MixpanelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2796CD28E12CC00082F10C /* MixpanelService.swift */; };
+		6BA5268128E16B1E004EC818 /* AnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA5268028E16B1E004EC818 /* AnalyticsService.swift */; };
+		6BA5268228E16B1E004EC818 /* AnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA5268028E16B1E004EC818 /* AnalyticsService.swift */; };
 		6BA78C8027A46CF0005149BC /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA78C7F27A46CF0005149BC /* SplashView.swift */; };
 		6BA78C8527A4826C005149BC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA78C8427A4826C005149BC /* SettingsView.swift */; };
 		6BA78C8B27A487DC005149BC /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA78C8A27A487DC005149BC /* SettingsViewModel.swift */; };
@@ -305,6 +311,7 @@
 		6B1D9B2727C1366200322DBA /* ComplicationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationService.swift; sourceTree = "<group>"; };
 		6B1D9B2927C13B7A00322DBA /* TimeIntervalExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeIntervalExtensions.swift; sourceTree = "<group>"; };
 		6B23142927A59B8700477259 /* ConnectivityMessageKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivityMessageKeys.swift; sourceTree = "<group>"; };
+		6B2796CD28E12CC00082F10C /* MixpanelService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixpanelService.swift; sourceTree = "<group>"; };
 		6B29476A279642EF00311E1E /* WakaTimeNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WakaTimeNetworkService.swift; sourceTree = "<group>"; };
 		6B30B95627E1711D003BEED0 /* RuntimeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuntimeError.swift; sourceTree = "<group>"; };
 		6B30B95927E17432003BEED0 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
@@ -349,6 +356,7 @@
 		6B9E1114279CA29100F4DC93 /* SummaryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryResponse.swift; sourceTree = "<group>"; };
 		6B9EE41B27DAF1770086B465 /* BackgroundUpdateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundUpdateResponse.swift; sourceTree = "<group>"; };
 		6BA3DFAD289DAFD3006BC5F5 /* SwiftChartsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftChartsView.swift; sourceTree = "<group>"; };
+		6BA5268028E16B1E004EC818 /* AnalyticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsService.swift; sourceTree = "<group>"; };
 		6BA78C7F27A46CF0005149BC /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		6BA78C8127A46F36005149BC /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		6BA78C8427A4826C005149BC /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -438,6 +446,7 @@
 			files = (
 				6BD52F20279FD1AA00247BFB /* RollbarNotifier in Frameworks */,
 				6B6F51382854114A00B16889 /* Swinject in Frameworks */,
+				6B2796CA28E12AB90082F10C /* Mixpanel in Frameworks */,
 				6B4A4CEF287A06960058D9BC /* GithubAPI in Frameworks */,
 				6B6F512928540EC900B16889 /* SwiftVersionCompare in Frameworks */,
 				26FB2F00E2A438DF45D6D79F /* libPods-wakawatch.a in Frameworks */,
@@ -477,6 +486,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BA5267C28E15E8D004EC818 /* Mixpanel in Frameworks */,
 				6B6F512C28540FB500B16889 /* SwiftUICharts in Frameworks */,
 				6B6F512F2854107000B16889 /* Kingfisher in Frameworks */,
 				6BD52F1E279FD1A300247BFB /* RollbarNotifier in Frameworks */,
@@ -609,6 +619,15 @@
 				6B9EE41B27DAF1770086B465 /* BackgroundUpdateResponse.swift */,
 			);
 			path = "Functions API Responses";
+			sourceTree = "<group>";
+		};
+		6BA5267F28E16B11004EC818 /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				6BA5268028E16B1E004EC818 /* AnalyticsService.swift */,
+				6B2796CD28E12CC00082F10C /* MixpanelService.swift */,
+			);
+			path = Analytics;
 			sourceTree = "<group>";
 		};
 		6BA78C8627A4856F005149BC /* Logging */ = {
@@ -863,6 +882,7 @@
 		6BED9AFE2795D1B3005646C3 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				6BA5267F28E16B11004EC818 /* Analytics */,
 				6B0C0DBF288F66FC00B9BE13 /* AppInformation */,
 				6B0C0DBA288F63AD00B9BE13 /* i18n */,
 				6BBF65842845CB12004C3081 /* Storage */,
@@ -956,6 +976,7 @@
 				6B6F512828540EC900B16889 /* SwiftVersionCompare */,
 				6B6F51372854114A00B16889 /* Swinject */,
 				6B4A4CEE287A06960058D9BC /* GithubAPI */,
+				6B2796C928E12AB90082F10C /* Mixpanel */,
 			);
 			productName = wakawatch;
 			productReference = 6BED9A6A2795154A005646C3 /* Waka Watch.app */;
@@ -1011,6 +1032,9 @@
 			dependencies = (
 			);
 			name = "wakawatch WatchKit App";
+			packageProductDependencies = (
+				6BA5267B28E15E8D004EC818 /* Mixpanel */,
+			);
 			productName = "wakawatch WatchKit App";
 			productReference = 6BED9A8E2795154C005646C3 /* Waka Watch.app */;
 			productType = "com.apple.product-type.application";
@@ -1132,6 +1156,7 @@
 				6B6F512D2854107000B16889 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				6B6F5130285410D700B16889 /* XCRemoteSwiftPackageReference "Swinject" */,
 				6B4A4CED287A06960058D9BC /* XCRemoteSwiftPackageReference "GithubAPI" */,
+				6B2796C828E12AB90082F10C /* XCRemoteSwiftPackageReference "mixpanel-swift" */,
 			);
 			productRefGroup = 6BED9A6B2795154A005646C3 /* Products */;
 			projectDirPath = "";
@@ -1349,6 +1374,7 @@
 				6BE5DE6427A8C0EA0072FF0E /* ConsoleTelemetryService.swift in Sources */,
 				6BF5870427C2B35900865D95 /* FloatingMenu.swift in Sources */,
 				6BED9AF827954728005646C3 /* DefaultKeys.swift in Sources */,
+				6BA5268128E16B1E004EC818 /* AnalyticsService.swift in Sources */,
 				6BE5DE5E27A8BDAC0072FF0E /* TelemetryService.swift in Sources */,
 				6BE5DE4227A6531A0072FF0E /* LogManager.swift in Sources */,
 				6BED9AEE2795450F005646C3 /* AuthenticationView.swift in Sources */,
@@ -1372,6 +1398,7 @@
 				6BD4C17527BD3BCB00A72DBD /* ViewExtensions.swift in Sources */,
 				6BE5DE7B27A974690072FF0E /* SummaryResponse.swift in Sources */,
 				6B410A3A27C2D77C0044BB08 /* AppInformation.swift in Sources */,
+				6B2796CE28E12CC00082F10C /* MixpanelService.swift in Sources */,
 				6B4433912878F402002294F7 /* GithubAPIService.swift in Sources */,
 				6B7E479D27AA04A7000D5DE7 /* AsyncButton.swift in Sources */,
 				6B7E479B27AA0485000D5DE7 /* ActivityIndicator.swift in Sources */,
@@ -1418,6 +1445,7 @@
 				6B44338828724E30002294F7 /* IntExtensions.swift in Sources */,
 				6BEF8B8E289C8F7400DC097B /* SwiftUIChartsView.swift in Sources */,
 				6BED9AFD2795BBB5005646C3 /* AccessTokenResponse.swift in Sources */,
+				6BA5268228E16B1E004EC818 /* AnalyticsService.swift in Sources */,
 				6B1D9B2A27C13B7A00322DBA /* TimeIntervalExtensions.swift in Sources */,
 				6B410A3B27C2D77C0044BB08 /* AppInformation.swift in Sources */,
 				6BAF14BD27CF12D400370EED /* BackgroundService.swift in Sources */,
@@ -1431,6 +1459,7 @@
 				6BE5DE5427A78BBF0072FF0E /* DependencyInjection.swift in Sources */,
 				6B38A90527C053770020B7DE /* ComplicationViewModel.swift in Sources */,
 				6B5CFC3027CB08C00014271D /* GoalsResponse.swift in Sources */,
+				6BA5267E28E16112004EC818 /* MixpanelService.swift in Sources */,
 				6BED9AE027951F6D005646C3 /* ProfileView.swift in Sources */,
 				6B5CFC3327CB0E2E0014271D /* ComplicationSettingsView.swift in Sources */,
 				6B30B95A27E17432003BEED0 /* ErrorView.swift in Sources */,
@@ -2171,6 +2200,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		6B2796C828E12AB90082F10C /* XCRemoteSwiftPackageReference "mixpanel-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mixpanel/mixpanel-swift";
+			requirement = {
+				kind = exactVersion;
+				version = 4.0.3;
+			};
+		};
 		6B4A4CED287A06960058D9BC /* XCRemoteSwiftPackageReference "GithubAPI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/uioporqwerty/GithubAPI";
@@ -2230,6 +2267,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		6B2796C928E12AB90082F10C /* Mixpanel */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6B2796C828E12AB90082F10C /* XCRemoteSwiftPackageReference "mixpanel-swift" */;
+			productName = Mixpanel;
+		};
 		6B4A4CEE287A06960058D9BC /* GithubAPI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 6B4A4CED287A06960058D9BC /* XCRemoteSwiftPackageReference "GithubAPI" */;
@@ -2269,6 +2311,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 6B6F5130285410D700B16889 /* XCRemoteSwiftPackageReference "Swinject" */;
 			productName = Swinject;
+		};
+		6BA5267B28E15E8D004EC818 /* Mixpanel */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6B2796C828E12AB90082F10C /* XCRemoteSwiftPackageReference "mixpanel-swift" */;
+			productName = Mixpanel;
 		};
 		6BCCE10A28B6F9DC004B229F /* RollbarNotifier */ = {
 			isa = XCSwiftPackageProductDependency;

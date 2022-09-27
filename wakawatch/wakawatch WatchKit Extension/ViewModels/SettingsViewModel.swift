@@ -10,12 +10,14 @@ final class SettingsViewModel: ObservableObject {
     
     public let logManager: LogManager
     public let telemetry: TelemetryService
-
+    public let analyticsService: AnalyticsService
+    
     init(networkService: NetworkService,
          notificationService: NotificationService,
          authenticationService: AuthenticationService,
          logManager: LogManager,
          telemetryService: TelemetryService,
+         analyticsService: AnalyticsService,
          tokenManager: TokenManager
         ) {
         self.networkService = networkService
@@ -23,6 +25,7 @@ final class SettingsViewModel: ObservableObject {
         self.authenticationService = authenticationService
         self.logManager = logManager
         self.telemetry = telemetryService
+        self.analyticsService = analyticsService
         self.tokenManager = tokenManager
     }
 
@@ -40,7 +43,8 @@ final class SettingsViewModel: ObservableObject {
 
     func disconnect() async throws {
         self.telemetry.recordViewEvent(elementName: "TAPPED: Disconnect button")
-
+        self.analyticsService.track(event: "Disconnect")
+        
         do {
             try await self.authenticationService.disconnect()
 
@@ -63,6 +67,7 @@ final class SettingsViewModel: ObservableObject {
     }
     
     func promptPermissions() {
+        self.analyticsService.track(event: "Prompted for Permissions")
         self.notificationService.requestAuthorization()
     }
     

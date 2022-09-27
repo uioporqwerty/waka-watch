@@ -101,6 +101,10 @@ final class DependencyInjection {
         self.container.register(AppInformationService.self) { _ in
             AppInformationService()
         }
+        
+        self.container.register(AnalyticsService.self) { _ in
+            MixpanelService()
+        }.inObjectScope(.container)
     }
 
     private func registerViewModels() {
@@ -115,12 +119,14 @@ final class DependencyInjection {
         self.container.register(ProfileViewModel.self) { resolver in
             ProfileViewModel(networkService: resolver.resolve(NetworkService.self)!,
                              telemetryService: resolver.resolve(TelemetryService.self)!,
+                             analyticsService: resolver.resolve(AnalyticsService.self)!,
                              logManager: resolver.resolve(LogManager.self)!
                             )
         }.inObjectScope(ObjectScope.transient)
         self.container.register(LeaderboardViewModel.self) { resolver in
             LeaderboardViewModel(networkService: resolver.resolve(NetworkService.self)!,
                                  telemetryService: resolver.resolve(TelemetryService.self)!,
+                                 analyticsService: resolver.resolve(AnalyticsService.self)!,
                                  logManager: resolver.resolve(LogManager.self)!)
         }
         self.container.register(SettingsViewModel.self) { resolver in
@@ -129,6 +135,7 @@ final class DependencyInjection {
                               authenticationService: resolver.resolve(AuthenticationService.self)!,
                               logManager: resolver.resolve(LogManager.self)!,
                               telemetryService: resolver.resolve(TelemetryService.self)!,
+                              analyticsService: resolver.resolve(AnalyticsService.self)!,
                               tokenManager: resolver.resolve(TokenManager.self)!
                              )
         }

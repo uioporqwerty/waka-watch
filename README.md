@@ -12,4 +12,4 @@ Waka Watch is an iOS and Apple Watch® application for [Wakatime](https://wakati
 
 Changes to the xcconfig require that the development version is symmetrically encrypted using the following command and the encrypted file committed to source control:
 
-`gpg --symmetric --batch --yes --passphrase "$passphrase" --output ../Config.xcconfig.asc Config.xcconfig `
+`gpg --symmetric --batch --yes --passphrase "$passphrase" --output ../Config.xcconfig.asc Config.xcconfig`
