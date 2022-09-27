@@ -13,20 +13,24 @@ final class FeedbackViewModel: ObservableObject {
     private let githubAPIService: GithubAPIService
 
     public let telemetry: TelemetryService
+    public let analytics: AnalyticsService
     public let categories = ["None", "Feature", "Bug"]
 
     init(networkService: NetworkService,
          telemetryService: TelemetryService,
+         analyticsService: AnalyticsService,
          logManager: LogManager,
          githubAPIService: GithubAPIService
         ) {
         self.networkService = networkService
         self.telemetry = telemetryService
+        self.analytics = analyticsService
         self.logManager = logManager
         self.githubAPIService = githubAPIService
     }
 
     func submit(completionHandler: (() -> Void)? = nil) {
+        self.analytics.track(event: "Feedback Submission")
         DispatchQueue.main.async {
             self.isSubmitting = true
         }

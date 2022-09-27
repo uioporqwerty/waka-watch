@@ -21,6 +21,9 @@ struct SplashView: View {
                 ActivityIndicator(shouldAnimate: self.$showActivityIndicator)
             }
         }.onAppear {
+            self.splashViewModel
+                .analytics
+                .track(event: "Splash View Shown")
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 withAnimation {
                     self.isActive = true

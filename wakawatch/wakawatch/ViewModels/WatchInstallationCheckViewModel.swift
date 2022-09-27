@@ -6,12 +6,15 @@ final class WatchInstallationCheckViewModel: ObservableObject {
     @Published var isWatchAppInstalled = WCSession.default.isWatchAppInstalled
 
     public let telemetry: TelemetryService
+    public let analytics: AnalyticsService
     private let logManager: LogManager
 
     init(telemetryService: TelemetryService,
+         analyticsService: AnalyticsService,
          logManager: LogManager
         ) {
         self.telemetry = telemetryService
+        self.analytics = analyticsService
         self.logManager = logManager
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(handleWatchAppInstallationStatus(_:)),
@@ -21,6 +24,7 @@ final class WatchInstallationCheckViewModel: ObservableObject {
     }
 
     func openAppleWatchApp() {
+        self.analytics.track(event: "Apple Watch App Opened")
         guard let appleWatchScheme = URL(string: "itms-watchs://bridge:root=GENERAL_LINK") else {
             self.logManager.errorMessage("Could not open Apple Watch app. Failed to construct URL.")
             return

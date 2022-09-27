@@ -40,7 +40,12 @@ struct WatchInstallationCheckView: View {
                 DependencyInjection.shared.container.resolve(AuthenticationView.self)!
             }
         }.onAppear {
-            self.viewModel.telemetry.recordViewEvent(elementName: String(describing: WatchInstallationCheckView.self))
+            self.viewModel
+                .telemetry
+                .recordViewEvent(elementName: String(describing: WatchInstallationCheckView.self))
+            self.viewModel
+                .analytics
+                .track(event: "Watch Installation View Shown")
         }
     }
 }

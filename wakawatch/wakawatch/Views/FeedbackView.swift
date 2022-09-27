@@ -108,7 +108,12 @@ struct FeedbackView: View {
                                  secondaryButton: button)
              }
             .onAppear {
-                self.viewModel.telemetry.recordViewEvent(elementName: String(describing: FeedbackView.self))
+                self.viewModel
+                    .telemetry
+                    .recordViewEvent(elementName: String(describing: FeedbackView.self))
+                self.viewModel
+                    .analytics
+                    .track(event: "Feedback View Shown")
                 self.focusedField = .field
             }
         }

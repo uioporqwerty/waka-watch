@@ -10,7 +10,7 @@ final class AuthenticationViewModel {
     private let tokenManager: TokenManager
     
     public let telemetry: TelemetryService
-    public let analyticsService: AnalyticsService
+    public let analytics: AnalyticsService
     public let authorizationUrl: URL
     public let callbackURLScheme: String
 
@@ -23,7 +23,7 @@ final class AuthenticationViewModel {
          tokenManager: TokenManager
         ) {
         self.authenticationService = authenticationService
-        self.analyticsService = analyticsService
+        self.analytics = analyticsService
         self.networkService = networkService
         self.telemetry = telemetryService
         self.logManager = logManager
@@ -35,7 +35,7 @@ final class AuthenticationViewModel {
     }
 
     func requestReview() {
-        self.analyticsService.track(event: "Request Review")
+        self.analytics.track(event: "Request Review")
         
         guard let writeReviewURL = URL(string: "https://apps.apple.com/app/id1607453366?action=write-review") else {
             self.logManager.errorMessage("Could not construct write review URL.")
@@ -46,7 +46,7 @@ final class AuthenticationViewModel {
     }
 
     func authenticate(authorizationCode: String) async {
-        self.analyticsService.track(event: "Authenticate")
+        self.analytics.track(event: "Authenticate")
         
         Task {
             do {
@@ -81,8 +81,8 @@ final class AuthenticationViewModel {
                 }
                 defaults.set(profile.id, forKey: DefaultsKeys.userId)
                 self.apmService.setPersonTracking(id: profile.id)
-                self.analyticsService.identifyUser(id: profile.id)
-                self.analyticsService.setProfile(properties: [
+                self.analytics.identifyUser(id: profile.id)
+                self.analytics.setProfile(properties: [
                     "$email": profile.email,
                     "$avatar": profile.photo != nil ? "\(profile.photo!)?s=420" : "",
                     "$distinct_id": profile.id,
@@ -95,7 +95,7 @@ final class AuthenticationViewModel {
     }
 
     func disconnect() async {
-        self.analyticsService.track(event: "Disconnect")
+        self.analytics.track(event: "Disconnect")
         
         do {
             self.telemetry.recordViewEvent(elementName: "TAPPED: Disconnect button on companion app")

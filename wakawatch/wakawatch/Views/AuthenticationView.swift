@@ -23,6 +23,11 @@ struct AuthenticationView: View {
             if self.requiresUpdate {
                 Text(LocalizedStringKey("ConnectView_UpdateRequired_Message"))
                     .multilineTextAlignment(.center)
+                    .onAppear {
+                        self.authenticationViewModel
+                            .analytics
+                            .track(event: "Update Required View Shown")
+                    }
             } else if !self.authorized {
                 Button(action: { self.startingWebAuthenticationSession = true }) {
                     Text(LocalizedStringKey("AuthenticationView_Connect_Text"))
@@ -86,7 +91,7 @@ struct AuthenticationView: View {
                                         .recordViewEvent(elementName: "\(String(describing: AuthenticationView.self))_RequestFeature_Button")
                                     
                                     self.authenticationViewModel
-                                        .analyticsService
+                                        .analytics
                                         .track(event: "Submit Feedback")
                                     
                                     self.showFeatureRequestModal = true
@@ -119,7 +124,7 @@ struct AuthenticationView: View {
                                         .recordViewEvent(elementName: "\(String(describing: AuthenticationView.self))_Donation_Button")
                                     
                                     self.authenticationViewModel
-                                        .analyticsService
+                                        .analytics
                                         .track(event: "Donate")
                                     
                                     openURL(URL(string: "https://funds.effectivealtruism.org/donate/organizations")!)
