@@ -84,16 +84,20 @@ final class DependencyInjection {
                                    )
         }
         self.container.register(SplashViewModel.self) { resolver in
-            SplashViewModel(telemetryService: resolver.resolve(TelemetryService.self)!)
+            SplashViewModel(telemetryService: resolver.resolve(TelemetryService.self)!,
+                            analyticsService: resolver.resolve(AnalyticsService.self)!
+                           )
         }
         self.container.register(WatchInstallationCheckViewModel.self) { resolver in
             WatchInstallationCheckViewModel(telemetryService: resolver.resolve(TelemetryService.self)!,
+                                            analyticsService: resolver.resolve(AnalyticsService.self)!,
                                             logManager: resolver.resolve(LogManager.self)!
                                            )
         }
         self.container.register(FeedbackViewModel.self) { resolver in
             FeedbackViewModel(networkService: resolver.resolve(NetworkService.self)!,
                                     telemetryService: resolver.resolve(TelemetryService.self)!,
+                                    analyticsService: resolver.resolve(AnalyticsService.self)!,
                                     logManager: resolver.resolve(LogManager.self)!,
                                     githubAPIService: resolver.resolve(GithubAPIService.self)!
                                    )
