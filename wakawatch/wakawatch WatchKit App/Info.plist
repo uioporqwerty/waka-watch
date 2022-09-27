@@ -30,6 +30,8 @@
 	<string>$(PRODUCT_MODULE_NAME).ComplicationController</string>
 	<key>ENVIRONMENT</key>
 	<string>$(ENVIRONMENT)</string>
+	<key>MIXPANEL_TOKEN</key>
+	<string>$(MIXPANEL_TOKEN)</string>
 	<key>ROLLBAR_ACCESS_TOKEN</key>
 	<string>$(ROLLBAR_ACCESS_TOKEN)</string>
 	<key>UISupportedInterfaceOrientations</key>
