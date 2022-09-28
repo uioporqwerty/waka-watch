@@ -32,16 +32,27 @@ final class ProfileViewModel: ObservableObject {
         if user == nil {
             let userProfileData = try await networkService.getProfileData(userId: nil)
             let leaderboardData = try await networkService.getPublicLeaderboard(page: nil)
-
+            
+            guard let profile = userProfileData else {
+                return
+            }
+            
+            self.analytics.setProfile(properties: [
+                "$email": profile.data.email,
+                "$avatar": profile.data.photo != nil ? "\(profile.data.photo!)?s=420" : "",
+                "$distinct_id": profile.data.id,
+                "$name": profile.data.full_name
+            ])
+            
             DispatchQueue.main.async {
-                self.id = UUID(uuidString: userProfileData?.data.id ?? "")
-                self.displayName = userProfileData?.data.display_name ?? ""
-                self.photoUrl = URL(string: userProfileData?.data.photo ?? "")
-                self.website = URL(string: userProfileData?.data.website ?? "")
-                self.createdDate = DateUtility.getDate(date: userProfileData?.created_at ?? "")
-                self.location = userProfileData?.data.city?.title
+                self.id = UUID(uuidString: profile.data.id)
+                self.displayName = profile.data.display_name ?? ""
+                self.photoUrl = URL(string: profile.data.photo ?? "")
+                self.website = URL(string: profile.data.website ?? "")
+                self.createdDate = DateUtility.getDate(date: profile.created_at ?? "")
+                self.location = profile.data.city?.title
                 self.rank = leaderboardData?.current_user?.rank
-                self.bio = userProfileData?.data.bio
+                self.bio = profile.data.bio
                 self.loaded = true
             }
         } else {
