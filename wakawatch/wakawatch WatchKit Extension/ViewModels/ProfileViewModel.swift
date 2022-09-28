@@ -37,6 +37,7 @@ final class ProfileViewModel: ObservableObject {
                 return
             }
             
+            self.analytics.identifyUser(id: profile.data.id)
             self.analytics.setProfile(properties: [
                 "$email": profile.data.email,
                 "$avatar": profile.data.photo != nil ? "\(profile.data.photo!)?s=420" : "",
