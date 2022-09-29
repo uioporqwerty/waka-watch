@@ -127,7 +127,7 @@ struct AuthenticationView: View {
                                         .analytics
                                         .track(event: "Donate")
                                     
-                                    openURL(URL(string: "https://funds.effectivealtruism.org/donate/organizations")!)
+                                    openURL(URL(string: "https://www.givingwhatwecan.org/donate/organizations")!)
                                 }
                                 label: {
                                     Label(LocalizedStringKey("AuthenticationView_Donation_Button_Label"), systemImage: "heart.fill")
