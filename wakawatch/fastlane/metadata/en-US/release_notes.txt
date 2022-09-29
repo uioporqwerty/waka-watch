@@ -1,8 +1,5 @@
 What's New 
 
-Enhancements:
-- Improved support for Mixpanel analytics.
-- You can opt-out/opt-in to analytics on the settings view. By default, you are opted-in.
-
 Fixes:
-- Enable notifications button does not disappear after granting permissions.
+- Fix link for EA funds.
+- Fix mixpanel profile not set correctly.
