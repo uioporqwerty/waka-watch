@@ -84,3 +84,5 @@
 "SettingsView_EnableNotifications_Button" = "เปิดใช้งานการแจ้งเตือน";
 "SettingsView_ToggleMixpanel_OptInButtonLabel" = "การเลือกใช้การวิเคราะห์";
 "SettingsView_ToggleMixpanel_OptOutButtonLabel" = "การเลือกไม่ใช้การวิเคราะห์";
+"LeaderboardSelectionView_Title" = "ลีดเดอร์บอร์ด";
+"LeaderboardSelectionView_PublicLeaderBoard_Label" = "ลีดเดอร์บอร์ดสาธารณะ";

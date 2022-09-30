@@ -1,5 +1,4 @@
 What's New 
 
-Fixes:
-- Fix link for EA funds.
-- Fix mixpanel profile not set correctly.
+Enhancements:
+- Leaderboard has been split off into a leaderboard selection view to support private leaderboards in the future. Floating menu on the leaderboard has been removed for improved A11Y.

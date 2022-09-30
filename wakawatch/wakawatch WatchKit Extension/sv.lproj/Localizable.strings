@@ -84,3 +84,5 @@
 "SettingsView_EnableNotifications_Button" = "Aktivera aviseringar";
 "SettingsView_ToggleMixpanel_OptInButtonLabel" = "Anmäl dig till Analytics";
 "SettingsView_ToggleMixpanel_OptOutButtonLabel" = "Välja bort Analytics";
+"LeaderboardSelectionView_Title" = "Topplistor";
+"LeaderboardSelectionView_PublicLeaderBoard_Label" = "Offentlig topplista";

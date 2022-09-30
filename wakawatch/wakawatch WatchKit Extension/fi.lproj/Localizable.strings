@@ -84,3 +84,5 @@
 "SettingsView_EnableNotifications_Button" = "Ota ilmoitukset käyttöön";
 "SettingsView_ToggleMixpanel_OptInButtonLabel" = "Analyticsin käyttöönotto";
 "SettingsView_ToggleMixpanel_OptOutButtonLabel" = "Analyticsin käytöstä poistaminen";
+"LeaderboardSelectionView_Title" = "Tulostaulukot";
+"LeaderboardSelectionView_PublicLeaderBoard_Label" = "Julkinen tulostaulukko";

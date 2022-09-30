@@ -84,3 +84,5 @@
 "SettingsView_EnableNotifications_Button" = "Activer les notifications";
 "SettingsView_ToggleMixpanel_OptInButtonLabel" = "Opt-in pour Analytics";
 "SettingsView_ToggleMixpanel_OptOutButtonLabel" = "Désactiver Analytics";
+"LeaderboardSelectionView_Title" = "Classements";
+"LeaderboardSelectionView_PublicLeaderBoard_Label" = "Classement public";

@@ -84,3 +84,5 @@
 "SettingsView_EnableNotifications_Button" = "Értesítések engedélyezése";
 "SettingsView_ToggleMixpanel_OptInButtonLabel" = "Feliratkozás az Analytics szolgáltatásra";
 "SettingsView_ToggleMixpanel_OptOutButtonLabel" = "Az Analytics letiltása";
+"LeaderboardSelectionView_Title" = "Ranglisták";
+"LeaderboardSelectionView_PublicLeaderBoard_Label" = "Nyilvános ranglista";

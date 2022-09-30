@@ -84,3 +84,5 @@
 "SettingsView_EnableNotifications_Button" = "Bật thông báo";
 "SettingsView_ToggleMixpanel_OptInButtonLabel" = "Chọn tham gia Analytics";
 "SettingsView_ToggleMixpanel_OptOutButtonLabel" = "Chọn không tham gia Analytics";
+"LeaderboardSelectionView_Title" = "Bảng xếp hạng";
+"LeaderboardSelectionView_PublicLeaderBoard_Label" = "Bảng xếp hạng công khai";

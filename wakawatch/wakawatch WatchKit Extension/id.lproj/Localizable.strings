@@ -84,3 +84,5 @@
 "SettingsView_EnableNotifications_Button" = "Aktifkan Notifikasi";
 "SettingsView_ToggleMixpanel_OptInButtonLabel" = "Ikut serta dalam Analytics";
 "SettingsView_ToggleMixpanel_OptOutButtonLabel" = "Menyisih dari Analytics";
+"LeaderboardSelectionView_Title" = "Papan peringkat";
+"LeaderboardSelectionView_PublicLeaderBoard_Label" = "Papan Peringkat Publik";

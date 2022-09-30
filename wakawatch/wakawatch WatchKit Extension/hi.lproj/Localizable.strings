@@ -84,3 +84,5 @@
 "SettingsView_EnableNotifications_Button" = "सूचनाएँ सक्षम करें";
 "SettingsView_ToggleMixpanel_OptInButtonLabel" = "विश्लेषिकी के लिए ऑप्ट-इन करें";
 "SettingsView_ToggleMixpanel_OptOutButtonLabel" = "एनालिटिक्स से ऑप्ट-आउट करें";
+"LeaderboardSelectionView_Title" = "लीडरबोर्ड";
+"LeaderboardSelectionView_PublicLeaderBoard_Label" = "सार्वजनिक लीडरबोर्ड";

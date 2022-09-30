@@ -84,3 +84,5 @@
 "SettingsView_EnableNotifications_Button" = "Bildirimleri Etkinleştir";
 "SettingsView_ToggleMixpanel_OptInButtonLabel" = "Analytics'e katılma";
 "SettingsView_ToggleMixpanel_OptOutButtonLabel" = "Analytics'i devre dışı bırakma";
+"LeaderboardSelectionView_Title" = "Liderlik Tabloları";
+"LeaderboardSelectionView_PublicLeaderBoard_Label" = "Genel Liderlik Tablosu";

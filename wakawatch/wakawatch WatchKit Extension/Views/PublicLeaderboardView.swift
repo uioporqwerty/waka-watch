@@ -28,7 +28,7 @@ struct LeaderboardRecordView: View {
     }
 }
 
-struct LeaderboardView: View {
+struct PublicLeaderboardView: View {
     @ObservedObject var leaderboardViewModel: LeaderboardViewModel
     @State var loadingData = false
     @State var hasError = false
@@ -42,7 +42,7 @@ struct LeaderboardView: View {
         self.profileViewModel = profileViewModel
         self.leaderboardViewModel
             .telemetry
-            .recordViewEvent(elementName: "\(String(describing: LeaderboardView.self))")
+            .recordViewEvent(elementName: "\(String(describing: PublicLeaderboardView.self))")
         self.leaderboardViewModel
             .analyticsService
             .track(event: "Leaderboard View Shown")
@@ -149,17 +149,6 @@ struct LeaderboardView: View {
                             proxy.scrollTo(self.leaderboardViewModel.currentUserRecord!.id, anchor: .center)
                         }
                     }
-
-                    VStack {
-                        FloatingMenu(menuItem1Action: {
-                            self.leaderboardViewModel
-                                .telemetry
-                                .recordViewEvent(elementName: "TAPPED: Go to profile button")
-                            proxy.scrollTo(self.leaderboardViewModel.currentUserRecord!.id, anchor: .center)
-                        })
-                    }
-                    .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
-                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
                 }
             }
         }
@@ -168,6 +157,6 @@ struct LeaderboardView: View {
 
 struct LeaderboardView_Previews: PreviewProvider {
     static var previews: some View {
-        DependencyInjection.shared.container.resolve(LeaderboardView.self)!
+        DependencyInjection.shared.container.resolve(PublicLeaderboardView.self)!
     }
 }

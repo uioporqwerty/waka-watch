@@ -84,3 +84,5 @@
 "SettingsView_EnableNotifications_Button" = "Povoliť oznámenia";
 "SettingsView_ToggleMixpanel_OptInButtonLabel" = "Prihlásenie do služby Analytics";
 "SettingsView_ToggleMixpanel_OptOutButtonLabel" = "Odhlásenie zo služby Analytics";
+"LeaderboardSelectionView_Title" = "Rebríčky";
+"LeaderboardSelectionView_PublicLeaderBoard_Label" = "Verejný rebríček";

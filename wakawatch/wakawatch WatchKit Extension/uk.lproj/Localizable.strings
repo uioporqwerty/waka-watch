@@ -84,3 +84,5 @@
 "SettingsView_EnableNotifications_Button" = "Включити повідомлення";
 "SettingsView_ToggleMixpanel_OptInButtonLabel" = "Увімкнення аналітики";
 "SettingsView_ToggleMixpanel_OptOutButtonLabel" = "Відмова від аналітики";
+"LeaderboardSelectionView_Title" = "Таблиці лідерів";
+"LeaderboardSelectionView_PublicLeaderBoard_Label" = "Громадська таблиця лідерів";

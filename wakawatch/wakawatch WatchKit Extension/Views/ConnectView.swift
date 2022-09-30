@@ -40,8 +40,8 @@ struct ConnectView: View {
                                 .navigationBarTitleDisplayMode(.inline)
                         }
                         NavigationView {
-                            DependencyInjection.shared.container.resolve(LeaderboardView.self)!
-                                .navigationTitle(Text(LocalizedStringKey("LeaderboardView_Title")))
+                            DependencyInjection.shared.container.resolve(LeaderboardSelectionView.self)!
+                                .navigationTitle(Text(LocalizedStringKey("LeaderboardSelectionView_Title")))
                                 .navigationBarTitleDisplayMode(.inline)
                         }
                         NavigationView {

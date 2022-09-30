@@ -84,3 +84,5 @@
 "SettingsView_EnableNotifications_Button" = "Activați notificările";
 "SettingsView_ToggleMixpanel_OptInButtonLabel" = "Înscrieți-vă la Analytics";
 "SettingsView_ToggleMixpanel_OptOutButtonLabel" = "Renunțați la Analytics";
+"LeaderboardSelectionView_Title" = "Clasamente";
+"LeaderboardSelectionView_PublicLeaderBoard_Label" = "Clasament public";

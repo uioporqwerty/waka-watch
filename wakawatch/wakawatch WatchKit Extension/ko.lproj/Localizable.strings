@@ -84,3 +84,5 @@
 "SettingsView_EnableNotifications_Button" = "알림 사용";
 "SettingsView_ToggleMixpanel_OptInButtonLabel" = "분석 옵트인";
 "SettingsView_ToggleMixpanel_OptOutButtonLabel" = "분석 옵트아웃";
+"LeaderboardSelectionView_Title" = "순위표";
+"LeaderboardSelectionView_PublicLeaderBoard_Label" = "공개 순위표";

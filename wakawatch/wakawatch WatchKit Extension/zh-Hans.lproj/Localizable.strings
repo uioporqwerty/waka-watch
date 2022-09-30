@@ -84,3 +84,5 @@
 "SettingsView_EnableNotifications_Button" = "启用通知";
 "SettingsView_ToggleMixpanel_OptInButtonLabel" = "选择加入分析";
 "SettingsView_ToggleMixpanel_OptOutButtonLabel" = "选择退出分析";
+"LeaderboardSelectionView_Title" = "排行榜";
+"LeaderboardSelectionView_PublicLeaderBoard_Label" = "公共排行榜";

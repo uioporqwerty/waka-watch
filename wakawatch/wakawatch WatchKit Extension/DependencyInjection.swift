@@ -171,9 +171,12 @@ final class DependencyInjection {
         self.container.register(ProfileView.self) { resolver in
             ProfileView(viewModel: resolver.resolve(ProfileViewModel.self)!, user: nil)
         }
-        self.container.register(LeaderboardView.self) { resolver in
-            LeaderboardView(viewModel: resolver.resolve(LeaderboardViewModel.self)!,
+        self.container.register(PublicLeaderboardView.self) { resolver in
+            PublicLeaderboardView(viewModel: resolver.resolve(LeaderboardViewModel.self)!,
                             profileViewModel: resolver.resolve(ProfileViewModel.self)!)
+        }
+        self.container.register(LeaderboardSelectionView.self) { _ in
+            LeaderboardSelectionView()
         }
         self.container.register(SettingsView.self) { resolver in
             SettingsView(viewModel: resolver.resolve(SettingsViewModel.self)!)

@@ -84,3 +84,5 @@
 "SettingsView_EnableNotifications_Button" = "Ενεργοποίηση ειδοποιήσεων";
 "SettingsView_ToggleMixpanel_OptInButtonLabel" = "Συμμετοχή στο Analytics";
 "SettingsView_ToggleMixpanel_OptOutButtonLabel" = "Εξαίρεση από το Analytics";
+"LeaderboardSelectionView_Title" = "Βαθμολογικοί πίνακες";
+"LeaderboardSelectionView_PublicLeaderBoard_Label" = "Δημόσιος πίνακας κορυφαίων";

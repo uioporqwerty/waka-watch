@@ -84,3 +84,5 @@
 "SettingsView_EnableNotifications_Button" = "通知を有効にする";
 "SettingsView_ToggleMixpanel_OptInButtonLabel" = "アナリティクスへのオプトイン";
 "SettingsView_ToggleMixpanel_OptOutButtonLabel" = "アナリティクスのオプトアウト";
+"LeaderboardSelectionView_Title" = "リーダーボード";
+"LeaderboardSelectionView_PublicLeaderBoard_Label" = "パブリックリーダーボード";
