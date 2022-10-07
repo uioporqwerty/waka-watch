@@ -23,7 +23,7 @@ final class AuthenticationService {
         self.clientSecret = Bundle.main.infoDictionary?["CLIENT_SECRET"] as? String
 
         // swiftlint:disable:next line_length
-        self.authorizationUrl = URL(string: "\(self.baseUrl)/authorize?scope=email%2Cread_stats%2Cread_logged_time&response_type=code&redirect_uri=wakawatch%3A%2F%2Foauth-callback&client_id=\(self.clientId!)")!
+        self.authorizationUrl = URL(string: "\(self.baseUrl)/authorize?scope=email%2Cread_stats%2Cread_logged_time%2Cread_private_leaderboards&response_type=code&redirect_uri=wakawatch%3A%2F%2Foauth-callback&client_id=\(self.clientId!)")!
     }
 
     func getAccessToken(authorizationCode: String) async throws -> AccessTokenResponse? {
@@ -84,6 +84,15 @@ final class AuthenticationService {
 
             UserDefaults.standard.set(false, forKey: DefaultsKeys.authorized)
             self.tokenManager.removeAll()
+            let message: [String: Any] = [
+                ConnectivityMessageKeys.authorized: false,
+                ConnectivityMessageKeys.accessToken: "",
+                ConnectivityMessageKeys.refreshToken: "",
+                ConnectivityMessageKeys.tokenExpiration: ""
+            ]
+            ConnectivityService.shared.sendMessage(message, delivery: .highPriority)
+            ConnectivityService.shared.sendMessage(message, delivery: .guaranteed)
+            ConnectivityService.shared.sendMessage(message, delivery: .failable)
         } catch {
             self.logManager.reportError(error)
         }

@@ -28,7 +28,7 @@ struct LeaderboardRecordView: View {
     }
 }
 
-struct PublicLeaderboardView: View {
+struct LeaderboardView: View {
     @ObservedObject var leaderboardViewModel: LeaderboardViewModel
     @State var loadingData = false
     @State var hasError = false
@@ -36,13 +36,18 @@ struct PublicLeaderboardView: View {
     @State var nextLoadHasError = false
 
     private let profileViewModel: ProfileViewModel
-
-    init(viewModel: LeaderboardViewModel, profileViewModel: ProfileViewModel) {
+    private let boardId: String?
+    
+    init(viewModel: LeaderboardViewModel,
+         profileViewModel: ProfileViewModel,
+         boardId: String?) {
         self.leaderboardViewModel = viewModel
         self.profileViewModel = profileViewModel
+        self.boardId = boardId
+        self.leaderboardViewModel.boardId = boardId
         self.leaderboardViewModel
             .telemetry
-            .recordViewEvent(elementName: "\(String(describing: PublicLeaderboardView.self))")
+            .recordViewEvent(elementName: "\(String(describing: LeaderboardView.self))")
         self.leaderboardViewModel
             .analyticsService
             .track(event: "Leaderboard View Shown")
@@ -53,13 +58,13 @@ struct PublicLeaderboardView: View {
             ErrorView(logManager: self.leaderboardViewModel.logManager,
                       description: LocalizedStringKey("LeaderboardView_Error_Description").toString(),
                       retryButtonAction: {
-                        try await self.leaderboardViewModel.getPublicLeaderboard(page: nil)
+                try await self.leaderboardViewModel.getLeaderboard(boardId: self.boardId, page: nil)
                         self.hasError = false
                       })
         } else if !self.leaderboardViewModel.loaded {
             ProgressView().task {
                 do {
-                    try await self.leaderboardViewModel.getPublicLeaderboard(page: nil)
+                    try await self.leaderboardViewModel.getLeaderboard(boardId: self.boardId, page: nil)
                 } catch {
                     self.leaderboardViewModel.logManager.reportError(error)
                     self.hasError = true
@@ -157,6 +162,6 @@ struct PublicLeaderboardView: View {
 
 struct LeaderboardView_Previews: PreviewProvider {
     static var previews: some View {
-        DependencyInjection.shared.container.resolve(PublicLeaderboardView.self)!
+        DependencyInjection.shared.container.resolve(LeaderboardView.self)!
     }
 }

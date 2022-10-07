@@ -49,7 +49,6 @@
 "FeedbackView_ViewIssueAlert_Button" = "Переглянути проблему";
 "SplashView_Center_Text" = "Waka Watch";
 "WatchInstallationCheckView_Instructions_Text" = "Waka Watch вимагає встановити додаток-аналог Apple Watch. Якщо у вас налаштовано автоматичне встановлення програми, цей екран автоматично продовжиться після встановлення програми Waka Watch на вашому Apple Watch. Якщо автоматичну інсталяцію програми не настроєно, натисніть нижче, щоб інсталювати вручну з розділу Доступні програми.";
-"WatchInstallationView_AlreadyInstalled_ButtonLabel" = "Вже встановлені >";
 "WatchInstallationView_OpenAppleWatch_ButtonLabel" = "Встановіть додаток Waka Watch";
 "ComplicationSettingsView_Instructions_Text" = "Виберіть до 3 голів.";
 "Complication_CurrentCodingTimeDescriptor_Text" = "Сьогоднішній час кодування {0}";
@@ -86,3 +85,4 @@
 "SettingsView_ToggleMixpanel_OptOutButtonLabel" = "Відмова від аналітики";
 "LeaderboardSelectionView_Title" = "Таблиці лідерів";
 "LeaderboardSelectionView_PublicLeaderBoard_Label" = "Громадська таблиця лідерів";
+"LeaderboardSelectionView_PrivateLeaderboardScopes_Text" = "Щоб показати приватні таблиці лідерів, нам потрібно знову зв'язатися з WakaTime. Натисніть кнопку відключення нижче та знову підключіться до пристрою iOS.";

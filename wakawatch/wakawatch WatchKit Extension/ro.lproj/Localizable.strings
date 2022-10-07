@@ -49,7 +49,6 @@
 "FeedbackView_ViewIssueAlert_Button" = "Vizualizare problemă";
 "SplashView_Center_Text" = "Waka Watch";
 "WatchInstallationCheckView_Instructions_Text" = "Waka Watch necesită instalarea aplicației omoloage Apple Watch. Dacă ați configurat Instalarea automată a aplicației, acest ecran va continua automat odată ce aplicația Waka Watch este instalată pe Apple Watch. Dacă nu aveți configurată instalarea automată a aplicației, faceți clic mai jos pentru a instala manual din secțiunea Aplicații disponibile.";
-"WatchInstallationView_AlreadyInstalled_ButtonLabel" = "> deja instalate";
 "WatchInstallationView_OpenAppleWatch_ButtonLabel" = "Instalați aplicația Waka Watch";
 "ComplicationSettingsView_Instructions_Text" = "Selectează până la 3 obiective.";
 "Complication_CurrentCodingTimeDescriptor_Text" = "Ora de codificare de astăzi {0}";
@@ -86,3 +85,4 @@
 "SettingsView_ToggleMixpanel_OptOutButtonLabel" = "Renunțați la Analytics";
 "LeaderboardSelectionView_Title" = "Clasamente";
 "LeaderboardSelectionView_PublicLeaderBoard_Label" = "Clasament public";
+"LeaderboardSelectionView_PrivateLeaderboardScopes_Text" = "Pentru a afișa clasamente private, trebuie să ne conectăm din nou cu WakaTime. Atinge butonul de deconectare de mai jos și conectează-te din nou de pe dispozitivul iOS.";

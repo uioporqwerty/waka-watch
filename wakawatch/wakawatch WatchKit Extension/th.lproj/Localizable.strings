@@ -49,7 +49,6 @@
 "FeedbackView_ViewIssueAlert_Button" = "ดูปัญหา";
 "SplashView_Center_Text" = "Waka Watch";
 "WatchInstallationCheckView_Instructions_Text" = "Waka Watch กําหนดให้ต้องติดตั้งแอป Apple Watch คู่กัน หากคุณกําหนดค่าการติดตั้งแอพอัตโนมัติไว้ หน้าจอนี้จะดําเนินต่อไปโดยอัตโนมัติเมื่อติดตั้งแอพ Waka Watch บน Apple Watch ของคุณแล้ว หากคุณไม่ได้กําหนดค่าการติดตั้งแอพอัตโนมัติไว้ ให้คลิกด้านล่างเพื่อติดตั้งด้วยตนเองจากส่วนแอปที่พร้อมใช้งาน";
-"WatchInstallationView_AlreadyInstalled_ButtonLabel" = ">ที่ติดตั้งไว้แล้ว";
 "WatchInstallationView_OpenAppleWatch_ButtonLabel" = "ติดตั้งแอพ Waka Watch";
 "ComplicationSettingsView_Instructions_Text" = "เลือกได้สูงสุด 3 ประตู";
 "Complication_CurrentCodingTimeDescriptor_Text" = "เวลาเขียนโค้ดของวันนี้ {0}";
@@ -86,3 +85,4 @@
 "SettingsView_ToggleMixpanel_OptOutButtonLabel" = "การเลือกไม่ใช้การวิเคราะห์";
 "LeaderboardSelectionView_Title" = "ลีดเดอร์บอร์ด";
 "LeaderboardSelectionView_PublicLeaderBoard_Label" = "ลีดเดอร์บอร์ดสาธารณะ";
+"LeaderboardSelectionView_PrivateLeaderboardScopes_Text" = "ในการแสดงลีดเดอร์บอร์ดส่วนตัวเราจําเป็นต้องเชื่อมต่อกับ WakaTime อีกครั้ง แตะปุ่มยกเลิกการเชื่อมต่อด้านล่างและเชื่อมต่ออีกครั้งจากอุปกรณ์ iOS ของคุณ";

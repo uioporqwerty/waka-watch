@@ -39,7 +39,7 @@ final class LocalNetworkService: NetworkService {
                                             )])
     }
 
-    func getPublicLeaderboard(page: Int?) async -> LeaderboardResponse? {
+    func getLeaderboard(boardId: String?, page: Int?) async throws -> LeaderboardResponse? {
         return LeaderboardResponse(current_user: nil,
                                    data: [LeaderboardData(rank: 1,
                                                           user: self.makeUser())],
@@ -52,6 +52,10 @@ final class LocalNetworkService: NetworkService {
     }
 
     func getExternalDurations() async throws -> ExternalDurationResponse? {
+        return nil
+    }
+
+    func getPrivateLeaderboards() async throws -> PrivateLeaderboardsResponse? {
         return nil
     }
 

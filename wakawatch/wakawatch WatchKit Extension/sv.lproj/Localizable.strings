@@ -49,7 +49,6 @@
 "FeedbackView_ViewIssueAlert_Button" = "Visa problem";
 "SplashView_Center_Text" = "Waka Watch";
 "WatchInstallationCheckView_Instructions_Text" = "Waka Watch kräver att Apple Watch-motsvarighetsappen är installerad. Om du har konfigurerat Automatisk appinstallation fortsätter den här skärmen automatiskt när Waka Watch-appen har installerats på din Apple Watch. Om du inte har konfigurerat Automatisk appinstallation klickar du nedan för att installera manuellt i avsnittet Tillgängliga appar.";
-"WatchInstallationView_AlreadyInstalled_ButtonLabel" = "Redan installerad >";
 "WatchInstallationView_OpenAppleWatch_ButtonLabel" = "Installera Waka Watch-appen";
 "ComplicationSettingsView_Instructions_Text" = "Välj upp till 3 mål.";
 "Complication_CurrentCodingTimeDescriptor_Text" = "Dagens kodningstid {0}";
@@ -86,3 +85,4 @@
 "SettingsView_ToggleMixpanel_OptOutButtonLabel" = "Välja bort Analytics";
 "LeaderboardSelectionView_Title" = "Topplistor";
 "LeaderboardSelectionView_PublicLeaderBoard_Label" = "Offentlig topplista";
+"LeaderboardSelectionView_PrivateLeaderboardScopes_Text" = "För att visa privata topplistor måste vi ansluta till WakaTime igen. Tryck på frånkopplingsknappen nedan och anslut igen från din iOS-enhet.";

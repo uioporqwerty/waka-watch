@@ -125,6 +125,13 @@ final class DependencyInjection {
                              logManager: resolver.resolve(LogManager.self)!
                             )
         }.inObjectScope(ObjectScope.transient)
+        self.container.register(LeaderboardSelectionViewModel.self) { resolver in
+                    LeaderboardSelectionViewModel(networkService: resolver.resolve(NetworkService.self)!,
+                                                  authenticationService: resolver.resolve(AuthenticationService.self)!,
+                                                  logManager: resolver.resolve(LogManager.self)!,
+                                                  telemetryService: resolver.resolve(TelemetryService.self)!,
+                                                  analyticsService: resolver.resolve(AnalyticsService.self)!
+                    )}
         self.container.register(LeaderboardViewModel.self) { resolver in
             LeaderboardViewModel(networkService: resolver.resolve(NetworkService.self)!,
                                  telemetryService: resolver.resolve(TelemetryService.self)!,
@@ -171,12 +178,13 @@ final class DependencyInjection {
         self.container.register(ProfileView.self) { resolver in
             ProfileView(viewModel: resolver.resolve(ProfileViewModel.self)!, user: nil)
         }
-        self.container.register(PublicLeaderboardView.self) { resolver in
-            PublicLeaderboardView(viewModel: resolver.resolve(LeaderboardViewModel.self)!,
-                            profileViewModel: resolver.resolve(ProfileViewModel.self)!)
+        self.container.register(LeaderboardView.self) { resolver in
+            LeaderboardView(viewModel: resolver.resolve(LeaderboardViewModel.self)!,
+                            profileViewModel: resolver.resolve(ProfileViewModel.self)!,
+                            boardId: nil)
         }
-        self.container.register(LeaderboardSelectionView.self) { _ in
-            LeaderboardSelectionView()
+        self.container.register(LeaderboardSelectionView.self) { resolver in
+            LeaderboardSelectionView(viewModel: resolver.resolve(LeaderboardSelectionViewModel.self)!)
         }
         self.container.register(SettingsView.self) { resolver in
             SettingsView(viewModel: resolver.resolve(SettingsViewModel.self)!)

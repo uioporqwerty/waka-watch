@@ -7,7 +7,8 @@ protocol NetworkService {
     func getSummaryData(_ range: SummaryRange) async throws -> SummaryResponse?
     func getProfileData(userId: String?) async throws -> ProfileResponse?
     func getGoalsData() async throws -> GoalsResponse?
-    func getPublicLeaderboard(page: Int?) async throws -> LeaderboardResponse?
+    func getLeaderboard(boardId: String?, page: Int?) async throws -> LeaderboardResponse?
+    func getPrivateLeaderboards() async throws -> PrivateLeaderboardsResponse?
     func getExternalDurations() async throws -> ExternalDurationResponse?
     func getAppInformation() async throws -> AppInformation?
 }

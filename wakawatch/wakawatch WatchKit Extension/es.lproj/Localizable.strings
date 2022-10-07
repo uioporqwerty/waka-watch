@@ -48,7 +48,6 @@
 "FeedbackView_NoneCategory_Text" = "Seleccione una categoría";
 "FeedbackView_ViewIssueAlert_Button" = "Ver problema";
 "SplashView_Center_Text" = "Waka Watch";
-"WatchInstallationView_AlreadyInstalled_ButtonLabel" = "ya está instalado >";
 "WatchInstallationView_OpenAppleWatch_ButtonLabel" = "Instalar la aplicación Waka Watch";
 "ComplicationSettingsView_Instructions_Text" = "Select up to 3 goals.";
 "Complication_CurrentCodingTimeDescriptor_Text" = "El tiempo de codificación de hoy {0}";
@@ -86,3 +85,4 @@
 "SettingsView_ToggleMixpanel_OptOutButtonLabel" = "Exclusión voluntaria de Analytics";
 "LeaderboardSelectionView_Title" = "Tablas de clasificación";
 "LeaderboardSelectionView_PublicLeaderBoard_Label" = "Tabla de clasificación pública";
+"LeaderboardSelectionView_PrivateLeaderboardScopes_Text" = "Para mostrar tablas de clasificación privadas, necesitamos conectarnos con WakaTime nuevamente. Toque el botón de desconexión a continuación y conéctese nuevamente desde su dispositivo iOS.";
