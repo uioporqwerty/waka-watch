@@ -47,26 +47,16 @@ final class RequestFactory {
         return request
     }
 
-    func makeLeaderboardRequest(_ boardId: String?, _ page: Int?) -> URLRequest {
-        let baseLeaderboardUrl = boardId == nil ? "\(baseUrl)/leaders" : "\(baseUrl)/users/current/leaderboards/\(boardId!)"
-        
-        var urlComponents = URLComponents(string: baseLeaderboardUrl)!
+    func makePublicLeaderboardRequest(_ page: Int?) -> URLRequest {
+        var urlComponents = URLComponents(string: "\(baseUrl)/leaders")!
         var urlQueryItems: [URLQueryItem] = []
 
         if page != nil {
             urlQueryItems.append(URLQueryItem(name: "page", value: String(page!)))
-            urlComponents.queryItems = urlQueryItems
         }
 
-        var request = URLRequest(url: urlComponents.url!)
-        request.addValue("Bearer \(self.tokenManager.getAccessToken())", forHTTPHeaderField: "Authorization")
+        urlComponents.queryItems = urlQueryItems
 
-        return request
-    }
-    
-    func makePrivateLeaderboardsRequest() -> URLRequest {
-        var urlComponents = URLComponents(string: "\(baseUrl)/users/current/leaderboards")!
-        
         var request = URLRequest(url: urlComponents.url!)
         request.addValue("Bearer \(self.tokenManager.getAccessToken())", forHTTPHeaderField: "Authorization")
 

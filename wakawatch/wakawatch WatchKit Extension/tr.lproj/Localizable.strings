@@ -49,6 +49,7 @@
 "FeedbackView_ViewIssueAlert_Button" = "Sorunu Görüntüle";
 "SplashView_Center_Text" = "Waka Watch";
 "WatchInstallationCheckView_Instructions_Text" = "Waka Watch, Apple Watch muadili uygulamasının yüklü olmasını gerektirir. Otomatik Uygulama Yükleme özelliğini yapılandırdıysanız Waka Watch uygulaması Apple Watch'unuza yüklendikten sonra bu ekran otomatik olarak devam eder. Otomatik Uygulama Yükleme yapılandırmanız yoksa, Kullanılabilir Uygulamalar bölümünden manuel olarak yüklemek için aşağıya tıklayın.";
+"WatchInstallationView_AlreadyInstalled_ButtonLabel" = "Zaten Yüklü >";
 "WatchInstallationView_OpenAppleWatch_ButtonLabel" = "Waka Watch Uygulamasını Yükleme";
 "ComplicationSettingsView_Instructions_Text" = "En fazla 3 hedef seçin.";
 "Complication_CurrentCodingTimeDescriptor_Text" = "Bugünün Kodlama Zamanı {0}";

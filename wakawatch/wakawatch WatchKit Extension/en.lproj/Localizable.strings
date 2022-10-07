@@ -50,6 +50,7 @@
 "FeedbackView_ViewIssueAlert_Button" = "View Issue";
 "SplashView_Center_Text" = "Waka Watch";
 "WatchInstallationCheckView_Instructions_Text" = "Waka Watch requires that the Apple Watch counterpart app be installed. If you have Automatic App Install configured, this screen will automatically continue once the Waka Watch app is installed on your Apple Watch. If you don't have Automatic App Install configured, click below to install manually from the Available Apps section.";
+"WatchInstallationView_AlreadyInstalled_ButtonLabel" = "Already Installed >";
 "WatchInstallationView_OpenAppleWatch_ButtonLabel" = "Install Waka Watch App";
 "ComplicationSettingsView_Instructions_Text" = "Select up to 3 goals.";
 "Complication_CurrentCodingTimeDescriptor_Text" = "Today's Coding Time {0}";
@@ -85,4 +86,3 @@
 "SettingsView_ToggleMixpanel_OptOutButtonLabel" = "Opt-out of Analytics";
 "LeaderboardSelectionView_Title" = "Leaderboards";
 "LeaderboardSelectionView_PublicLeaderBoard_Label" = "Public Leaderboard";
-"LeaderboardSelectionView_PrivateLeaderboardScopes_Text" = "To show private leaderboards, we need to connect with WakaTime again. Tap the disconnect button below and connect again from your iOS device.";

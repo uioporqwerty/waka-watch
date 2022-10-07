@@ -22,10 +22,6 @@ extension String {
     }
 
     func toWakaTimeError() -> WakaTimeError {
-        if self.starts(with: "This resource requires scopes") {
-            return .missingScopes
-        }
-        
         switch self {
         case "Unauthorized":
             return .unauthorized

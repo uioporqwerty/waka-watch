@@ -28,7 +28,7 @@ struct LeaderboardRecordView: View {
     }
 }
 
-struct LeaderboardView: View {
+struct PublicLeaderboardView: View {
     @ObservedObject var leaderboardViewModel: LeaderboardViewModel
     @State var loadingData = false
     @State var hasError = false
@@ -42,7 +42,7 @@ struct LeaderboardView: View {
         self.profileViewModel = profileViewModel
         self.leaderboardViewModel
             .telemetry
-            .recordViewEvent(elementName: "\(String(describing: LeaderboardView.self))")
+            .recordViewEvent(elementName: "\(String(describing: PublicLeaderboardView.self))")
         self.leaderboardViewModel
             .analyticsService
             .track(event: "Leaderboard View Shown")
@@ -53,15 +53,13 @@ struct LeaderboardView: View {
             ErrorView(logManager: self.leaderboardViewModel.logManager,
                       description: LocalizedStringKey("LeaderboardView_Error_Description").toString(),
                       retryButtonAction: {
-                try await self.leaderboardViewModel.getLeaderboard(boardId: self.leaderboardViewModel.boardId,
-                                                                   page: nil)
+                        try await self.leaderboardViewModel.getPublicLeaderboard(page: nil)
                         self.hasError = false
                       })
         } else if !self.leaderboardViewModel.loaded {
             ProgressView().task {
                 do {
-                    try await self.leaderboardViewModel.getLeaderboard(boardId: self.leaderboardViewModel.boardId,
-                                                                       page: nil)
+                    try await self.leaderboardViewModel.getPublicLeaderboard(page: nil)
                 } catch {
                     self.leaderboardViewModel.logManager.reportError(error)
                     self.hasError = true
@@ -100,7 +98,11 @@ struct LeaderboardView: View {
                                 }
                             }
                             ForEach(self.leaderboardViewModel.records) { record in
-                                NavigationLink(destination: ProfileView(viewModel: self.profileViewModel,
+                                NavigationLink(destination: ProfileView(viewModel:
+                                                                        DependencyInjection
+                                                                            .shared
+                                                                            .container
+                                                                            .resolve(ProfileViewModel.self)!,
                                                                         user: record.user,
                                                                         forceLoad: true)) {
                                         LeaderboardRecordView(record)
@@ -155,6 +157,6 @@ struct LeaderboardView: View {
 
 struct LeaderboardView_Previews: PreviewProvider {
     static var previews: some View {
-        DependencyInjection.shared.container.resolve(LeaderboardView.self)!
+        DependencyInjection.shared.container.resolve(PublicLeaderboardView.self)!
     }
 }

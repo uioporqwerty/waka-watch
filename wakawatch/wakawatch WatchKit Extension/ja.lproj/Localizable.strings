@@ -48,6 +48,7 @@
 "FeedbackView_NoneCategory_Text" = "カテゴリの選択";
 "FeedbackView_ViewIssueAlert_Button" = "問題の表示";
 "SplashView_Center_Text" = "Waka Watch";
+"WatchInstallationView_AlreadyInstalled_ButtonLabel" = "すでにインストールされている>";
 "WatchInstallationView_OpenAppleWatch_ButtonLabel" = "ワカウォッチアプリをインストールする";
 "ComplicationSettingsView_Instructions_Text" = "Select up to 3 goals.";
 "Complication_CurrentCodingTimeDescriptor_Text" = "今日のコーディング時間 {0}";

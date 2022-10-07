@@ -10,8 +10,7 @@ final class LeaderboardViewModel: ObservableObject {
     public var previousPage: Int?
     public var nextPage: Int?
     public var totalPages: Int = 0
-    public var boardId: String?
-    
+
     private var networkService: NetworkService
     public let telemetry: TelemetryService
     public let analyticsService: AnalyticsService
@@ -34,7 +33,7 @@ final class LeaderboardViewModel: ObservableObject {
             return
         }
 
-        let leaderboardData = try await networkService.getLeaderboard(boardId: self.boardId, page: self.previousPage)
+        let leaderboardData = try await networkService.getPublicLeaderboard(page: self.previousPage)
         let leaderboardRecords = self.mapLeaderboardDataToRecord(leaderboardData?.data ?? [])
 
         DispatchQueue.main.async {
@@ -50,7 +49,7 @@ final class LeaderboardViewModel: ObservableObject {
             return
         }
 
-        let leaderboardData = try await networkService.getLeaderboard(boardId: self.boardId, page: self.nextPage)
+        let leaderboardData = try await networkService.getPublicLeaderboard(page: self.nextPage)
         let leaderboardRecords = self.mapLeaderboardDataToRecord(leaderboardData?.data ?? [])
 
         DispatchQueue.main.async {
@@ -75,8 +74,8 @@ final class LeaderboardViewModel: ObservableObject {
         return leaderboardRecords
     }
 
-    func getLeaderboard(boardId: String?, page: Int?) async throws {
-        let leaderboardData = try await networkService.getLeaderboard(boardId: boardId, page: page)
+    func getPublicLeaderboard(page: Int?) async throws {
+        let leaderboardData = try await networkService.getPublicLeaderboard(page: page)
 
         DispatchQueue.main.async {
             var leaderboardRecords: [LeaderboardRecord] = []

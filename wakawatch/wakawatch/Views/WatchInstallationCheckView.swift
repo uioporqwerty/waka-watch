@@ -20,14 +20,17 @@ struct WatchInstallationCheckView: View {
 
                             ProgressView()
 
-                            Button(action: {
-                                self.viewModel.analytics.track(event: "Open Apple Watch")
-                                self.viewModel.openAppleWatchApp()
-                            }) {
+                            Button(action: self.viewModel.openAppleWatchApp) {
                                 Text(LocalizedStringKey("WatchInstallationView_OpenAppleWatch_ButtonLabel"))
                                     .frame(maxWidth: .infinity, minHeight: 34)
                             }
                             .buttonStyle(.borderedProminent)
+                            .padding(EdgeInsets(top: 24, leading: 8, bottom: 0, trailing: 8))
+
+                            Button(action: { self.viewModel.isWatchAppInstalled = true }) {
+                                   Text(LocalizedStringKey("WatchInstallationView_AlreadyInstalled_ButtonLabel"))
+                            }
+                            .buttonStyle(.plain)
                             .padding(EdgeInsets(top: 24, leading: 8, bottom: 0, trailing: 8))
                         }
                         .frame(minHeight: geometry.size.height)

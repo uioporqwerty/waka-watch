@@ -49,6 +49,7 @@
 "FeedbackView_ViewIssueAlert_Button" = "Xem vấn đề";
 "SplashView_Center_Text" = "Waka Watch";
 "WatchInstallationCheckView_Instructions_Text" = "Waka Watch yêu cầu phải cài đặt ứng dụng đối tác Apple Watch. Nếu bạn đã định cấu hình Cài đặt ứng dụng tự động, màn hình này sẽ tự động tiếp tục sau khi ứng dụng Waka Watch được cài đặt trên Apple Watch của bạn. Nếu bạn chưa định cấu hình Cài đặt ứng dụng tự động, hãy nhấp vào bên dưới để cài đặt thủ công từ phần Ứng dụng có sẵn.";
+"WatchInstallationView_AlreadyInstalled_ButtonLabel" = "> đã được cài đặt";
 "WatchInstallationView_OpenAppleWatch_ButtonLabel" = "Cài đặt ứng dụng Waka Watch";
 "ComplicationSettingsView_Instructions_Text" = "Chọn tối đa 3 mục tiêu.";
 "Complication_CurrentCodingTimeDescriptor_Text" = "Thời gian mã hóa hôm nay {0}";

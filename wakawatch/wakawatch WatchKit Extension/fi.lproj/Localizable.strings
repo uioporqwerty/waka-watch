@@ -49,6 +49,7 @@
 "FeedbackView_ViewIssueAlert_Button" = "Näytä ongelma";
 "SplashView_Center_Text" = "Waka Watch";
 "WatchInstallationCheckView_Instructions_Text" = "Waka Watch edellyttää Apple Watchin vastinsovelluksen asentamista. Jos olet määrittänyt automaattisen apinasennuksen, tämä näyttö jatkuu automaattisesti, kun Waka Watch -appi on asennettu Apple Watchiin. Jos automaattista sovellusasennusta ei ole määritetty, napsauta alla olevaa asennusta asentaaksesi manuaalisesti Käytettävissä olevat sovellukset -osiosta.";
+"WatchInstallationView_AlreadyInstalled_ButtonLabel" = "Jo asennettu >";
 "WatchInstallationView_OpenAppleWatch_ButtonLabel" = "Waka Watch -sovelluksen asentaminen";
 "ComplicationSettingsView_Instructions_Text" = "Valitse enintään 3 tavoitetta.";
 "Complication_CurrentCodingTimeDescriptor_Text" = "Tämän päivän koodausaika {0}";
