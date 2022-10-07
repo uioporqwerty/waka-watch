@@ -49,7 +49,6 @@
 "FeedbackView_ViewIssueAlert_Button" = "Zobraziť problém";
 "SplashView_Center_Text" = "Waka Watch";
 "WatchInstallationCheckView_Instructions_Text" = "Hodinky Waka Watch vyžadujú inštaláciu aplikácie náprotivku Apple Watch. Ak máte nakonfigurovanú automatickú inštaláciu aplikácií, táto obrazovka bude automaticky pokračovať po nainštalovaní aplikácie Waka Watch na hodinkách Apple Watch. Ak nemáte nakonfigurovanú automatickú inštaláciu aplikácií, kliknutím nižšie nainštalujte manuálne v časti Dostupné aplikácie.";
-"WatchInstallationView_AlreadyInstalled_ButtonLabel" = "Už nainštalované >";
 "WatchInstallationView_OpenAppleWatch_ButtonLabel" = "Inštalácia aplikácie Waka Watch";
 "ComplicationSettingsView_Instructions_Text" = "Vyberte až 3 ciele.";
 "Complication_CurrentCodingTimeDescriptor_Text" = "Dnešný čas kódovania {0}";

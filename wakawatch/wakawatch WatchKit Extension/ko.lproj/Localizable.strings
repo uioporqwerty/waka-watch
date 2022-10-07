@@ -49,7 +49,6 @@
 "FeedbackView_ViewIssueAlert_Button" = "문제 보기";
 "SplashView_Center_Text" = "Waka Watch";
 "WatchInstallationCheckView_Instructions_Text" = "Waka Watch는 Apple Watch 대응 앱을 설치해야 합니다. 자동 앱 설치를 구성한 경우 Waka Watch 앱이 Apple Watch에 설치되면 이 화면이 자동으로 계속됩니다. 자동 앱 설치가 구성되지 않은 경우 아래를 클릭하여 사용 가능한 앱 섹션에서 수동으로 설치합니다.";
-"WatchInstallationView_AlreadyInstalled_ButtonLabel" = "이미 설치된 >";
 "WatchInstallationView_OpenAppleWatch_ButtonLabel" = "와카 워치 앱 설치";
 "ComplicationSettingsView_Instructions_Text" = "최대 3개의 목표를 선택합니다.";
 "Complication_CurrentCodingTimeDescriptor_Text" = "오늘의 코딩 시간 {0}";

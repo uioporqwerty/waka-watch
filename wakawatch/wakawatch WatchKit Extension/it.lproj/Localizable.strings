@@ -49,7 +49,6 @@
 "FeedbackView_ViewIssueAlert_Button" = "Visualizza problema";
 "SplashView_Center_Text" = "Waka Watch";
 "WatchInstallationCheckView_Instructions_Text" = "Waka Watch richiede l'installazione dell'app della controparte di Apple Watch. Se hai configurato l'installazione automatica dell'app, questa schermata continuerà automaticamente una volta installata l'app Waka Watch su Apple Watch. Se non hai configurato l'Installazione automatica dell'app, fai clic di seguito per installarla manualmente nella sezione App disponibili.";
-"WatchInstallationView_AlreadyInstalled_ButtonLabel" = "> già installato";
 "WatchInstallationView_OpenAppleWatch_ButtonLabel" = "Installa l'app Waka Watch";
 "ComplicationSettingsView_Instructions_Text" = "Seleziona fino a 3 obiettivi.";
 "Complication_CurrentCodingTimeDescriptor_Text" = "Il tempo di codifica di oggi {0}";

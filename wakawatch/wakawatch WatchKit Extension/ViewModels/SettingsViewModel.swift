@@ -56,16 +56,6 @@ final class SettingsViewModel: ObservableObject {
         do {
             try await self.authenticationService.disconnect()
 
-            let message: [String: Any] = [
-                ConnectivityMessageKeys.authorized: false,
-                ConnectivityMessageKeys.accessToken: "",
-                ConnectivityMessageKeys.refreshToken: "",
-                ConnectivityMessageKeys.tokenExpiration: ""
-            ]
-            ConnectivityService.shared.sendMessage(message, delivery: .highPriority)
-            ConnectivityService.shared.sendMessage(message, delivery: .guaranteed)
-            ConnectivityService.shared.sendMessage(message, delivery: .failable)
-
             self.telemetry
                 .recordNavigationEvent(from: String(describing: SettingsView.self),
                                        to: String(describing: ConnectView.self))
@@ -93,7 +83,10 @@ final class SettingsViewModel: ObservableObject {
     }
     
     private func shouldShowEnableNotificationsButton() {
-        self.notificationService.isPermissionGranted(onNotDeterminedHandler: {
+        self.notificationService.isPermissionGranted(onGrantedHandler: {
+            self.showEnableNotificationsButton = false
+        },
+        onNotDeterminedHandler: {
             DispatchQueue.main.async {
                 self.showEnableNotificationsButton = true
             }

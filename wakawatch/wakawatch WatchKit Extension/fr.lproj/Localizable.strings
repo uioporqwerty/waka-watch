@@ -48,7 +48,6 @@
 "FeedbackView_NoneCategory_Text" = "Sélectionnez une catégorie";
 "FeedbackView_ViewIssueAlert_Button" = "Afficher le problème";
 "SplashView_Center_Text" = "Waka Watch";
-"WatchInstallationView_AlreadyInstalled_ButtonLabel" = "> déjà installé";
 "WatchInstallationView_OpenAppleWatch_ButtonLabel" = "Installez l'application Waka Watch";
 "ComplicationSettingsView_Instructions_Text" = "Select up to 3 goals.";
 "Complication_CurrentCodingTimeDescriptor_Text" = "L'heure du codage d'aujourd'hui {0}";

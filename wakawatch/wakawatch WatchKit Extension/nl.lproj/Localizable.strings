@@ -49,7 +49,6 @@
 "FeedbackView_ViewIssueAlert_Button" = "Probleem bekijken";
 "SplashView_Center_Text" = "Waka Watch";
 "WatchInstallationCheckView_Instructions_Text" = "Waka Watch vereist dat de Apple Watch-tegenhanger-app is geïnstalleerd. Als u Automatische app-installatie hebt geconfigureerd, wordt dit scherm automatisch voortgezet zodra de Waka Watch-app op uw Apple Watch is geïnstalleerd. Als u Automatische app-installatie niet hebt geconfigureerd, klikt u hieronder om handmatig te installeren in het gedeelte Beschikbare apps.";
-"WatchInstallationView_AlreadyInstalled_ButtonLabel" = "Reeds geïnstalleerde >";
 "WatchInstallationView_OpenAppleWatch_ButtonLabel" = "Installeer de Waka Watch App";
 "ComplicationSettingsView_Instructions_Text" = "Selecteer maximaal 3 doelen.";
 "Complication_CurrentCodingTimeDescriptor_Text" = "De codeertijd van vandaag {0}";

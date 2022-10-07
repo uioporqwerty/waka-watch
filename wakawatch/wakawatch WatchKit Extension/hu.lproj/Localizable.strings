@@ -49,7 +49,6 @@
 "FeedbackView_ViewIssueAlert_Button" = "Probléma megtekintése";
 "SplashView_Center_Text" = "Waka Watch";
 "WatchInstallationCheckView_Instructions_Text" = "A Waka Watch használatához telepíteni kell az Apple Watch megfelelő alkalmazást. Ha be van állítva az Automatikus alkalmazástelepítés, ez a képernyő automatikusan folytatódik, amint a Waka Watch alkalmazás telepítve van az Apple Watchon. Ha nincs konfigurálva az Automatikus alkalmazástelepítés, kattintson az alábbi gombra a manuális telepítéshez az Elérhető alkalmazások szakaszban.";
-"WatchInstallationView_AlreadyInstalled_ButtonLabel" = "Már telepített >";
 "WatchInstallationView_OpenAppleWatch_ButtonLabel" = "Telepítse a Waka Watch alkalmazást";
 "ComplicationSettingsView_Instructions_Text" = "Válasszon ki legfeljebb 3 célt.";
 "Complication_CurrentCodingTimeDescriptor_Text" = "A mai kódolási idő {0}";

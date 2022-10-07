@@ -49,7 +49,6 @@
 "FeedbackView_ViewIssueAlert_Button" = "समस्या देखें";
 "SplashView_Center_Text" = "Waka Watch";
 "WatchInstallationCheckView_Instructions_Text" = "वाका वॉच के लिए ऐप्पल वॉच समकक्ष ऐप इंस्टॉल करने की आवश्यकता है। यदि आपके पास स्वचालित ऐप इंस्टॉल कॉन्फ़िगर किया गया है, तो वाका वॉच ऐप को आपके ऐप्पल वॉच पर इंस्टॉल करने के बाद यह स्क्रीन स्वचालित रूप से जारी रहेगी। यदि आपके पास स्वचालित ऐप्लिकेशन इंस्टॉल कॉन्फ़िगर नहीं किया गया है, तो उपलब्ध ऐप्लिकेशन अनुभाग से मैन्युअल रूप से स्थापित करने के लिए नीचे क्लिक करें.";
-"WatchInstallationView_AlreadyInstalled_ButtonLabel" = "पहले से ही स्थापित >";
 "WatchInstallationView_OpenAppleWatch_ButtonLabel" = "वाका घड़ी अनुप्रयोग स्थापित करें";
 "ComplicationSettingsView_Instructions_Text" = "Select up to 3 goals.";
 "Complication_CurrentCodingTimeDescriptor_Text" = "आज का कोडिंग समय {0}";

@@ -79,6 +79,9 @@
 		6B8A4860279D1F8F0071566F /* LeaderboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8A485F279D1F8F0071566F /* LeaderboardViewModel.swift */; };
 		6B9521B527CAE4E9000FEF14 /* RefreshableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9521B427CAE4E9000FEF14 /* RefreshableScrollView.swift */; };
 		6B9B135E28E6BC27004935B3 /* LeaderboardSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9B135D28E6BC27004935B3 /* LeaderboardSelectionView.swift */; };
+		6B9B136028E79534004935B3 /* LeaderboardSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9B135F28E79534004935B3 /* LeaderboardSelectionViewModel.swift */; };
+		6B9B136228E796B0004935B3 /* PrivateLeaderboardsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9B136128E796B0004935B3 /* PrivateLeaderboardsResponse.swift */; };
+		6B9B136328E7978E004935B3 /* PrivateLeaderboardsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9B136128E796B0004935B3 /* PrivateLeaderboardsResponse.swift */; };
 		6B9E1112279C945800F4DC93 /* SummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9E1111279C945800F4DC93 /* SummaryViewModel.swift */; };
 		6B9E1115279CA29100F4DC93 /* SummaryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9E1114279CA29100F4DC93 /* SummaryResponse.swift */; };
 		6B9EE41C27DAF1770086B465 /* BackgroundUpdateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9EE41B27DAF1770086B465 /* BackgroundUpdateResponse.swift */; };
@@ -180,7 +183,7 @@
 		6BED9AA12795154E005646C3 /* WakaWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BED9AA02795154E005646C3 /* WakaWatchApp.swift */; };
 		6BED9AA52795154F005646C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BED9AA42795154F005646C3 /* Assets.xcassets */; };
 		6BED9AA82795154F005646C3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BED9AA72795154F005646C3 /* Preview Assets.xcassets */; };
-		6BED9ADE27951F21005646C3 /* PublicLeaderboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BED9ADD27951F21005646C3 /* PublicLeaderboardView.swift */; };
+		6BED9ADE27951F21005646C3 /* LeaderboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BED9ADD27951F21005646C3 /* LeaderboardView.swift */; };
 		6BED9AE027951F6D005646C3 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BED9ADF27951F6D005646C3 /* ProfileView.swift */; };
 		6BED9AE227951F80005646C3 /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BED9AE127951F80005646C3 /* SummaryView.swift */; };
 		6BED9AE927952041005646C3 /* ConnectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BED9AE827952041005646C3 /* ConnectView.swift */; };
@@ -354,6 +357,8 @@
 		6B8A485F279D1F8F0071566F /* LeaderboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardViewModel.swift; sourceTree = "<group>"; };
 		6B9521B427CAE4E9000FEF14 /* RefreshableScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshableScrollView.swift; sourceTree = "<group>"; };
 		6B9B135D28E6BC27004935B3 /* LeaderboardSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardSelectionView.swift; sourceTree = "<group>"; };
+		6B9B135F28E79534004935B3 /* LeaderboardSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardSelectionViewModel.swift; sourceTree = "<group>"; };
+		6B9B136128E796B0004935B3 /* PrivateLeaderboardsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateLeaderboardsResponse.swift; sourceTree = "<group>"; };
 		6B9E1111279C945800F4DC93 /* SummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewModel.swift; sourceTree = "<group>"; };
 		6B9E1114279CA29100F4DC93 /* SummaryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryResponse.swift; sourceTree = "<group>"; };
 		6B9EE41B27DAF1770086B465 /* BackgroundUpdateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundUpdateResponse.swift; sourceTree = "<group>"; };
@@ -414,7 +419,7 @@
 		6BED9AA92795154F005646C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6BED9AAE2795154F005646C3 /* wakawatch WatchKit AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "wakawatch WatchKit AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BED9AB82795154F005646C3 /* wakawatch WatchKit AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "wakawatch WatchKit AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6BED9ADD27951F21005646C3 /* PublicLeaderboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicLeaderboardView.swift; sourceTree = "<group>"; };
+		6BED9ADD27951F21005646C3 /* LeaderboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardView.swift; sourceTree = "<group>"; };
 		6BED9ADF27951F6D005646C3 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		6BED9AE127951F80005646C3 /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
 		6BED9AE827952041005646C3 /* ConnectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectView.swift; sourceTree = "<group>"; };
@@ -592,6 +597,7 @@
 				6B9E1111279C945800F4DC93 /* SummaryViewModel.swift */,
 				6B8A4858279D05060071566F /* ProfileViewModel.swift */,
 				6B8A485F279D1F8F0071566F /* LeaderboardViewModel.swift */,
+				6B9B135F28E79534004935B3 /* LeaderboardSelectionViewModel.swift */,
 				6BA78C8A27A487DC005149BC /* SettingsViewModel.swift */,
 				6BE5DE7727A90CB00072FF0E /* ConnectViewModel.swift */,
 				6B5CFC3427CB0E450014271D /* ComplicationSettingsViewModel.swift */,
@@ -611,6 +617,7 @@
 				6B5CFC2F27CB08C00014271D /* GoalsResponse.swift */,
 				6BE93AB02895724000D5072E /* ErrorResponse.swift */,
 				6B038E6928A95BAA00025092 /* ExternalDurationResponse.swift */,
+				6B9B136128E796B0004935B3 /* PrivateLeaderboardsResponse.swift */,
 			);
 			path = "WakaTime API Responses";
 			sourceTree = "<group>";
@@ -839,7 +846,7 @@
 				6BEF8B8C289C8F4D00DC097B /* Charts */,
 				6BED9AE127951F80005646C3 /* SummaryView.swift */,
 				6BED9ADF27951F6D005646C3 /* ProfileView.swift */,
-				6BED9ADD27951F21005646C3 /* PublicLeaderboardView.swift */,
+				6BED9ADD27951F21005646C3 /* LeaderboardView.swift */,
 				6B9B135D28E6BC27004935B3 /* LeaderboardSelectionView.swift */,
 				6BA78C8427A4826C005149BC /* SettingsView.swift */,
 				6BED9AE827952041005646C3 /* ConnectView.swift */,
@@ -1377,6 +1384,7 @@
 				6BE5DE6427A8C0EA0072FF0E /* ConsoleTelemetryService.swift in Sources */,
 				6BF5870427C2B35900865D95 /* FloatingMenu.swift in Sources */,
 				6BED9AF827954728005646C3 /* DefaultKeys.swift in Sources */,
+				6B9B136328E7978E004935B3 /* PrivateLeaderboardsResponse.swift in Sources */,
 				6BA5268128E16B1E004EC818 /* AnalyticsService.swift in Sources */,
 				6BE5DE5E27A8BDAC0072FF0E /* TelemetryService.swift in Sources */,
 				6BE5DE4227A6531A0072FF0E /* LogManager.swift in Sources */,
@@ -1441,7 +1449,7 @@
 				6B38A90227C04B130020B7DE /* ComplicationController.swift in Sources */,
 				6BD8628927E7D45100004BB6 /* GoalUtility.swift in Sources */,
 				6B23142B27A59B8700477259 /* ConnectivityMessageKeys.swift in Sources */,
-				6BED9ADE27951F21005646C3 /* PublicLeaderboardView.swift in Sources */,
+				6BED9ADE27951F21005646C3 /* LeaderboardView.swift in Sources */,
 				6BED9AE927952041005646C3 /* ConnectView.swift in Sources */,
 				6B5CFC3927CBBAFD0014271D /* LocalNetworkService.swift in Sources */,
 				6B410A4327C2E6860044BB08 /* VersionCheckerUtility.swift in Sources */,
@@ -1465,6 +1473,7 @@
 				6B5CFC3027CB08C00014271D /* GoalsResponse.swift in Sources */,
 				6BA5267E28E16112004EC818 /* MixpanelService.swift in Sources */,
 				6BED9AE027951F6D005646C3 /* ProfileView.swift in Sources */,
+				6B9B136228E796B0004935B3 /* PrivateLeaderboardsResponse.swift in Sources */,
 				6B5CFC3327CB0E2E0014271D /* ComplicationSettingsView.swift in Sources */,
 				6B30B95A27E17432003BEED0 /* ErrorView.swift in Sources */,
 				6B410A4D27C32E760044BB08 /* RequestFactory.swift in Sources */,
@@ -1475,6 +1484,7 @@
 				6BED9AA12795154E005646C3 /* WakaWatchApp.swift in Sources */,
 				6BA78C9027A492FB005149BC /* AsyncButton.swift in Sources */,
 				6B410A4F27C331B80044BB08 /* ExtensionDelegate.swift in Sources */,
+				6B9B136028E79534004935B3 /* LeaderboardSelectionViewModel.swift in Sources */,
 				6B9E1115279CA29100F4DC93 /* SummaryResponse.swift in Sources */,
 				6B9EE41C27DAF1770086B465 /* BackgroundUpdateResponse.swift in Sources */,
 				6BED9AEB27952197005646C3 /* DefaultKeys.swift in Sources */,

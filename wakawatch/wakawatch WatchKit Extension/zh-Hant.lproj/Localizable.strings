@@ -48,7 +48,6 @@
 "FeedbackView_NoneCategory_Text" = "選擇類別";
 "FeedbackView_ViewIssueAlert_Button" = "查看問題";
 "SplashView_Center_Text" = "Waka Watch";
-"WatchInstallationView_AlreadyInstalled_ButtonLabel" = "已安裝>";
 "WatchInstallationView_OpenAppleWatch_ButtonLabel" = "安裝Waka手錶應用程式";
 "ComplicationSettingsView_Instructions_Text" = "Select up to 3 goals.";
 "Complication_CurrentCodingTimeDescriptor_Text" = "今天的編碼時間 {0}";

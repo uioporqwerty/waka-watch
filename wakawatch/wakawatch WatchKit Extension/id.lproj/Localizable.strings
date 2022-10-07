@@ -49,7 +49,6 @@
 "FeedbackView_ViewIssueAlert_Button" = "Lihat Masalah";
 "SplashView_Center_Text" = "Waka Watch";
 "WatchInstallationCheckView_Instructions_Text" = "Waka Watch mengharuskan app mitra Apple Watch diinstal. Jika Anda telah mengonfigurasi Penginstalan App Otomatis, layar ini akan secara otomatis berlanjut setelah app Waka Watch diinstal di Apple Watch. Jika Anda tidak mengonfigurasi Penginstalan Aplikasi Otomatis, klik di bawah ini untuk menginstal secara manual dari bagian Aplikasi yang Tersedia.";
-"WatchInstallationView_AlreadyInstalled_ButtonLabel" = "Sudah Terinstal >";
 "WatchInstallationView_OpenAppleWatch_ButtonLabel" = "Instal Aplikasi Waka Watch";
 "ComplicationSettingsView_Instructions_Text" = "Pilih hingga 3 gol.";
 "Complication_CurrentCodingTimeDescriptor_Text" = "Waktu Pengkodean Hari Ini {0}";
