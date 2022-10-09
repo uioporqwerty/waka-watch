@@ -134,11 +134,6 @@
 		6BCFC0A128F0DCAE004C6354 /* PrivateLeaderboardsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCFC09E28F0DCAE004C6354 /* PrivateLeaderboardsResponse.swift */; };
 		6BCFC0A428F0E315004C6354 /* LeaderboardSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCFC0A228F0E315004C6354 /* LeaderboardSelectionViewModel.swift */; };
 		6BCFC0A628F0E346004C6354 /* LeaderboardSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCFC0A228F0E315004C6354 /* LeaderboardSelectionViewModel.swift */; };
-		6BCFC0A928F1C6D9004C6354 /* FLAnimatedImage in Frameworks */ = {isa = PBXBuildFile; productRef = 6BCFC0A828F1C6D9004C6354 /* FLAnimatedImage */; };
-		6BCFC0B228F1CAD8004C6354 /* URLType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCFC0B128F1CAD8004C6354 /* URLType.swift */; };
-		6BCFC0B328F1CAD8004C6354 /* URLType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCFC0B128F1CAD8004C6354 /* URLType.swift */; };
-		6BCFC0B528F1CB2F004C6354 /* GifView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCFC0B428F1CB2F004C6354 /* GifView.swift */; };
-		6BCFC0B628F1CB2F004C6354 /* GifView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCFC0B428F1CB2F004C6354 /* GifView.swift */; };
 		6BCFC0BC28F1CD3A004C6354 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BCFC0BB28F1CD3A004C6354 /* Assets.xcassets */; };
 		6BCFC0C728F247BB004C6354 /* LoopingPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCFC0C628F247BB004C6354 /* LoopingPlayerView.swift */; };
 		6BCFC0C928F247E1004C6354 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCFC0C828F247E1004C6354 /* PlayerView.swift */; };
@@ -392,8 +387,6 @@
 		6BCCE12728B7B086004B229F /* DateUtilityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtilityTests.swift; sourceTree = "<group>"; };
 		6BCFC09E28F0DCAE004C6354 /* PrivateLeaderboardsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateLeaderboardsResponse.swift; sourceTree = "<group>"; };
 		6BCFC0A228F0E315004C6354 /* LeaderboardSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardSelectionViewModel.swift; sourceTree = "<group>"; };
-		6BCFC0B128F1CAD8004C6354 /* URLType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLType.swift; sourceTree = "<group>"; };
-		6BCFC0B428F1CB2F004C6354 /* GifView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifView.swift; sourceTree = "<group>"; };
 		6BCFC0BB28F1CD3A004C6354 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6BCFC0C628F247BB004C6354 /* LoopingPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoopingPlayerView.swift; sourceTree = "<group>"; };
 		6BCFC0C828F247E1004C6354 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
@@ -471,7 +464,6 @@
 				6B6F512928540EC900B16889 /* SwiftVersionCompare in Frameworks */,
 				26FB2F00E2A438DF45D6D79F /* libPods-wakawatch.a in Frameworks */,
 				6B6F512628540DF900B16889 /* BetterSafariView in Frameworks */,
-				6BCFC0A928F1C6D9004C6354 /* FLAnimatedImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -570,7 +562,6 @@
 				6B23142927A59B8700477259 /* ConnectivityMessageKeys.swift */,
 				6BDD8B4127C467EB00BB1493 /* SummaryRange.swift */,
 				6BBF658E2845D47D004C3081 /* KeychainKeys.swift */,
-				6BCFC0B128F1CAD8004C6354 /* URLType.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -591,7 +582,6 @@
 			isa = PBXGroup;
 			children = (
 				6BA78C8127A46F36005149BC /* ActivityIndicator.swift */,
-				6BCFC0B428F1CB2F004C6354 /* GifView.swift */,
 				6BCFC0C628F247BB004C6354 /* LoopingPlayerView.swift */,
 				6BCFC0C828F247E1004C6354 /* PlayerView.swift */,
 			);
@@ -1005,7 +995,6 @@
 				6B6F51372854114A00B16889 /* Swinject */,
 				6B4A4CEE287A06960058D9BC /* GithubAPI */,
 				6B2796C928E12AB90082F10C /* Mixpanel */,
-				6BCFC0A828F1C6D9004C6354 /* FLAnimatedImage */,
 			);
 			productName = wakawatch;
 			productReference = 6BED9A6A2795154A005646C3 /* Waka Watch.app */;
@@ -1186,7 +1175,6 @@
 				6B6F5130285410D700B16889 /* XCRemoteSwiftPackageReference "Swinject" */,
 				6B4A4CED287A06960058D9BC /* XCRemoteSwiftPackageReference "GithubAPI" */,
 				6B2796C828E12AB90082F10C /* XCRemoteSwiftPackageReference "mixpanel-swift" */,
-				6BCFC0A728F1C6D9004C6354 /* XCRemoteSwiftPackageReference "FLAnimatedImage" */,
 			);
 			productRefGroup = 6BED9A6B2795154A005646C3 /* Products */;
 			projectDirPath = "";
@@ -1365,13 +1353,11 @@
 				6BCCE10D28B6FF7F004B229F /* ViewExtensions.swift in Sources */,
 				6BCFC0A128F0DCAE004C6354 /* PrivateLeaderboardsResponse.swift in Sources */,
 				6BCCE11028B6FF89004B229F /* SummaryRange.swift in Sources */,
-				6BCFC0B328F1CAD8004C6354 /* URLType.swift in Sources */,
 				6BCCE11228B6FF89004B229F /* DefaultKeys.swift in Sources */,
 				6BCCE10F28B6FF89004B229F /* KeychainKeys.swift in Sources */,
 				6BCCE12228B70A98004B229F /* TimeIntervalExtensionsTests.swift in Sources */,
 				6BCCE11828B6FF97004B229F /* ExternalDurationResponse.swift in Sources */,
 				6BCCE11328B6FF89004B229F /* SeverityLevel.swift in Sources */,
-				6BCFC0B628F1CB2F004C6354 /* GifView.swift in Sources */,
 				6BCCE10928B6F8E5004B229F /* TimeIntervalExtensions.swift in Sources */,
 				6BCCE11D28B6FF9F004B229F /* KeychainError.swift in Sources */,
 				6BCCE11B28B6FF97004B229F /* SummaryResponse.swift in Sources */,
@@ -1411,7 +1397,6 @@
 				6BF5870427C2B35900865D95 /* FloatingMenu.swift in Sources */,
 				6BED9AF827954728005646C3 /* DefaultKeys.swift in Sources */,
 				6BCFC09F28F0DCAE004C6354 /* PrivateLeaderboardsResponse.swift in Sources */,
-				6BCFC0B228F1CAD8004C6354 /* URLType.swift in Sources */,
 				6BA5268128E16B1E004EC818 /* AnalyticsService.swift in Sources */,
 				6BE5DE5E27A8BDAC0072FF0E /* TelemetryService.swift in Sources */,
 				6BE5DE4227A6531A0072FF0E /* LogManager.swift in Sources */,
@@ -1437,7 +1422,6 @@
 				6BE5DE7B27A974690072FF0E /* SummaryResponse.swift in Sources */,
 				6B410A3A27C2D77C0044BB08 /* AppInformation.swift in Sources */,
 				6B2796CE28E12CC00082F10C /* MixpanelService.swift in Sources */,
-				6BCFC0B528F1CB2F004C6354 /* GifView.swift in Sources */,
 				6B4433912878F402002294F7 /* GithubAPIService.swift in Sources */,
 				6B7E479D27AA04A7000D5DE7 /* AsyncButton.swift in Sources */,
 				6B7E479B27AA0485000D5DE7 /* ActivityIndicator.swift in Sources */,
@@ -2298,14 +2282,6 @@
 				version = 2.8.1;
 			};
 		};
-		6BCFC0A728F1C6D9004C6354 /* XCRemoteSwiftPackageReference "FLAnimatedImage" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Flipboard/FLAnimatedImage.git";
-			requirement = {
-				kind = exactVersion;
-				version = 1.0.17;
-			};
-		};
 		6BD52EF4279FC9C900247BFB /* XCRemoteSwiftPackageReference "rollbar-apple" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/rollbar/rollbar-apple.git";
@@ -2371,11 +2347,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 6BD52EF4279FC9C900247BFB /* XCRemoteSwiftPackageReference "rollbar-apple" */;
 			productName = RollbarNotifier;
-		};
-		6BCFC0A828F1C6D9004C6354 /* FLAnimatedImage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6BCFC0A728F1C6D9004C6354 /* XCRemoteSwiftPackageReference "FLAnimatedImage" */;
-			productName = FLAnimatedImage;
 		};
 		6BD52F1D279FD1A300247BFB /* RollbarNotifier */ = {
 			isa = XCSwiftPackageProductDependency;
