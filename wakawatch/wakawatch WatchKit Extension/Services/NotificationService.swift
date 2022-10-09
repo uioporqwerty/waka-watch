@@ -92,6 +92,7 @@ final class NotificationService {
 
                 if (!goal.isInverse && goal.rangeStatus != "success" && newGoal.rangeStatus == "success") ||
                    (goal.isInverse && goal.rangeStatus != "success" && newGoal.rangeStatus == "fail") {
+                    self.analytics.track(event: "Triggering Notification")
                     let content = UNMutableNotificationContent()
 
                     content.title = GoalUtility.getNotificationContentTitle(goal: newGoal)
