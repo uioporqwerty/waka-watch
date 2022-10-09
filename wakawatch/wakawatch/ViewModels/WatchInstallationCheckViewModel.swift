@@ -24,7 +24,7 @@ final class WatchInstallationCheckViewModel: ObservableObject {
     }
 
     func openAppleWatchApp() {
-        self.analytics.track(event: "Apple Watch App Opened")
+        self.analytics.track(event: "iOS Apple Watch App Opened")
         guard let appleWatchScheme = URL(string: "itms-watchs://bridge:root=GENERAL_LINK") else {
             self.logManager.errorMessage("Could not open Apple Watch app. Failed to construct URL.")
             return

@@ -1,13 +1,15 @@
 import SwiftUI
 import WatchConnectivity
+import AVKit
 
 struct WatchInstallationCheckView: View {
     @ObservedObject var viewModel: WatchInstallationCheckViewModel
-
+    @State private var player = AVQueuePlayer()
+    
     init(viewModel: WatchInstallationCheckViewModel) {
         self.viewModel = viewModel
     }
-
+    
     var body: some View {
         VStack {
             if !self.viewModel.isWatchAppInstalled {
@@ -16,12 +18,9 @@ struct WatchInstallationCheckView: View {
                         VStack {
                             Text(LocalizedStringKey("WatchInstallationCheckView_Instructions_Text"))
                                 .lineSpacing(4)
-                                .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
-
-                            ProgressView()
+                                .padding(EdgeInsets(top: 24, leading: 8, bottom: 0, trailing: 8))
 
                             Button(action: {
-                                self.viewModel.analytics.track(event: "Open Apple Watch")
                                 self.viewModel.openAppleWatchApp()
                             }) {
                                 Text(LocalizedStringKey("WatchInstallationView_OpenAppleWatch_ButtonLabel"))
@@ -29,14 +28,35 @@ struct WatchInstallationCheckView: View {
                             }
                             .buttonStyle(.borderedProminent)
                             .padding(EdgeInsets(top: 24, leading: 8, bottom: 0, trailing: 8))
+                            
+                            PlayerView(videoName: "Waka-Watch-Installation",
+                                       player: player)
+                            .aspectRatio(contentMode: .fill)
+                            .frame(maxWidth: geometry.size.width,
+                                   maxHeight: geometry.size.height)
+                            .onAppear {
+                                player.play()
+                            }
+                            .onDisappear {
+                                player.pause()
+                            }
+                            .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
+                                player.pause()
+                            }
+                            .onReceive(NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)) { _ in
+                                player.play()
+                            }
+                            .padding(EdgeInsets(top: 24, leading: 8, bottom: 0, trailing: 8))
                         }
                         .frame(minHeight: geometry.size.height)
                     }
                 }
-            } else {
+            }
+            else {
                 DependencyInjection.shared.container.resolve(AuthenticationView.self)!
             }
-        }.onAppear {
+        }
+        .onAppear {
             self.viewModel
                 .telemetry
                 .recordViewEvent(elementName: String(describing: WatchInstallationCheckView.self))
