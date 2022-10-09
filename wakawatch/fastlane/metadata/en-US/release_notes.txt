@@ -1,8 +1,4 @@
 What's New 
 
 Enhancements:
-- Support for private leaderboards. Note, you will need to reauthorize with WakaTime for this to take effect.
-
-Fixes:
-- Remove "Already Installed" from onboarding flow since it was confusing users. Now you must either have auto-install enabled or go to the Apple Watch app on iOS to install Waka Watch on the Apple Watch.
-- Fix Enable Notifications button logic.
+- Improve the installation view to show what needs to be done in the Watch app.
