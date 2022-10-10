@@ -108,6 +108,7 @@ final class DependencyInjection {
         }
     }
 
+    // swiftlint:disable function_body_length
     private func registerViewModels() {
         self.container.register(SummaryViewModel.self) { resolver in
             SummaryViewModel(networkService: resolver.resolve(NetworkService.self)!,

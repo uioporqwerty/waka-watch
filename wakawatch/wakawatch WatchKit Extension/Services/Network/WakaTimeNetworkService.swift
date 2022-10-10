@@ -169,6 +169,7 @@ final class WakaTimeNetworkService: NetworkService {
             return try JSONDecoder().decode(PrivateLeaderboardsResponse.self, from: data)
         } catch {
             self.logManager.errorMessage(String(data: data, encoding: .utf8) ??
+                                         // swiftlint:disable:next line_length
                                          "Failed to decode private leaderboards response and generate raw json response.")
         }
 

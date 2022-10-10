@@ -45,7 +45,6 @@ class LoopingPlayerView: UIView {
         return url
     }
     
-    
     override func layoutSubviews() {
         super.layoutSubviews()
         playerLayer.frame = bounds

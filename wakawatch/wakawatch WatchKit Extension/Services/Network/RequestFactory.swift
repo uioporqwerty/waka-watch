@@ -48,7 +48,9 @@ final class RequestFactory {
     }
 
     func makeLeaderboardRequest(_ boardId: String?, _ page: Int?) -> URLRequest {
-        let baseLeaderboardUrl = boardId == nil ? "\(baseUrl)/leaders" : "\(baseUrl)/users/current/leaderboards/\(boardId!)"
+        let baseLeaderboardUrl = boardId == nil ?
+                                "\(baseUrl)/leaders" :
+                                "\(baseUrl)/users/current/leaderboards/\(boardId!)"
 
         var urlComponents = URLComponents(string: baseLeaderboardUrl)!
         var urlQueryItems: [URLQueryItem] = []

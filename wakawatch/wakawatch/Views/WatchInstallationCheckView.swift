@@ -40,10 +40,14 @@ struct WatchInstallationCheckView: View {
                             .onDisappear {
                                 player.pause()
                             }
-                            .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
+                            .onReceive(NotificationCenter
+                                       .default
+                                       .publisher(for: UIApplication.willResignActiveNotification)) { _ in
                                 player.pause()
                             }
-                            .onReceive(NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)) { _ in
+                            .onReceive(NotificationCenter
+                                       .default
+                                       .publisher(for: UIApplication.didBecomeActiveNotification)) { _ in
                                 player.play()
                             }
                             .padding(EdgeInsets(top: 24, leading: 8, bottom: 0, trailing: 8))
@@ -51,8 +55,7 @@ struct WatchInstallationCheckView: View {
                         .frame(minHeight: geometry.size.height)
                     }
                 }
-            }
-            else {
+            } else {
                 DependencyInjection.shared.container.resolve(AuthenticationView.self)!
             }
         }
