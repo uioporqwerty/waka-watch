@@ -84,7 +84,7 @@ struct SwiftChartsView: View {
                 .padding(EdgeInsets(top: 0, leading: 0, bottom: 8, trailing: 0))
             
             Chart(self.todayData, id: \.name) {
-                BarMark(x: .value("Total", $0.total_seconds.minute),
+                BarMark(x: .value("Total", $0.total_seconds.toMinutes),
                         y: .value("Activity", $0.name)
                 )
                 .foregroundStyle(by: .value("Activity", $0.name))
@@ -111,7 +111,7 @@ struct SwiftChartsView: View {
                 ForEach(self.projects, id: \.projectName) { projectData in
                     ForEach(projectData.data) {
                         BarMark(x: .value("Date", $0.date, unit: .day),
-                                y: .value("Minutes Coded", $0.total_seconds.minute))
+                                y: .value("Minutes Coded", $0.total_seconds.toMinutes))
                     }.foregroundStyle(by: .value("Project", projectData.projectName))
                 }
             }
@@ -132,7 +132,7 @@ struct SwiftChartsView: View {
             
             Chart(self.languages, id: \.name!) {
                 BarMark(x: .value("Language", $0.name!),
-                        y: .value("Total Minutes Used", $0.total_seconds?.minute ?? 0))
+                        y: .value("Total Minutes Used", $0.total_seconds?.toMinutes ?? 0))
                 .foregroundStyle(by: .value("Language", $0.name ?? ""))
                 .accessibilityLabel($0.name ?? "")
                 .accessibilityValue(Text(
@@ -158,7 +158,7 @@ struct SwiftChartsView: View {
             
             Chart(self.editors, id: \.name!) {
                 BarMark(x: .value("Editor", $0.name!),
-                        y: .value("Total Minutes Used", $0.total_seconds?.minute ?? 0))
+                        y: .value("Total Minutes Used", $0.total_seconds?.toMinutes ?? 0))
                 .foregroundStyle(by: .value("Editor", $0.name ?? ""))
                 .accessibilityLabel($0.name ?? "")
                 .accessibilityValue(Text(
