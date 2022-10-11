@@ -42,7 +42,8 @@ final class ProfileViewModel: ObservableObject {
                 "$email": profile.data.email,
                 "$avatar": profile.data.photo != nil ? "\(profile.data.photo!)?s=420" : "",
                 "$distinct_id": profile.data.id,
-                "$name": !(profile.data.full_name?.isEmpty ?? true) ? profile.data.full_name : profile.data.display_name
+                "$name": !(profile.data.full_name?.isEmpty ?? true) ? profile.data.full_name : profile.data.display_name,
+                "website": profile.data.website
             ])
             
             DispatchQueue.main.async {
