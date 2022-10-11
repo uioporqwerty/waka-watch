@@ -87,7 +87,8 @@ final class AuthenticationViewModel {
                     "$avatar": profile.photo != nil ? "\(profile.photo!)?s=420" : "",
                     "$distinct_id": profile.id,
                     "$name": !(profile.full_name?.isEmpty ?? true) ? profile.full_name : profile.display_name,
-                    "website": profile.website
+                    "Website": profile.website,
+                    "App Language Code": Bundle.main.currentLocalizedUILanguageCode
                 ])
             } catch {
                 self.logManager.reportError(error)
