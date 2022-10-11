@@ -1,4 +1,4 @@
 What's New 
 
-Enhancements:
-- Improve the installation view to show what needs to be done in the Watch app.
+Fixes:
+- Incorrect summary chart data.
