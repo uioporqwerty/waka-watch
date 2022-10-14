@@ -2,3 +2,4 @@ What's New
 
 Enhancements:
 - Onboarding installation view was very confusing. It has been improved.
+- Connect view has been improved as well.
