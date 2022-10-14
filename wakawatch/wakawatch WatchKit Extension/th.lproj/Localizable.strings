@@ -22,7 +22,6 @@
 "LeaderboardView_Load_Previous_Button" = "โหลดก่อนหน้า";
 "LeaderboardView_Load_Next_Button" = "โหลดถัดไป";
 "LeaderboardView_Error_Description" = "เกิดข้อผิดพลาดในการโหลดลีดเดอร์บอร์ด";
-"AuthenticationView_Connect_Text" = "เชื่อมต่อกับวากะไทม์";
 "AuthenticationView_Connected_Text" = "เชื่อมต่อกับ WakaTime เปิด Waka Watch บน Apple Watch ของคุณ";
 "AuthenticationView_Disconnect_Button_Text" = "ยกเลิกการเชื่อมต่อจากเวลาของวากะ";
 "AuthenticationView_Donation_Text" = "ผู้สร้าง Waka Watch สนับสนุนความบริสุทธิ์ใจที่มีประสิทธิภาพ หากคุณชอบ Waka Watch โปรดพิจารณาการบริจาคเงินของพวกเขา";
@@ -87,3 +86,5 @@
 "WatchInstallationCheckView_Instructions_Heading" = "ต้องใช้แอพ Apple Watch";
 "WatchInstallationCheckView_Instructions_Text" = "แตะด้านล่างเพื่อเพิ่ม Waka Watch บน Apple Watch ของคุณ";
 "WatchInstallationView_OpenAppleWatch_ButtonLabel" = "เพิ่มนาฬิกาวากะลงในแอปเปิ้ลวอทช์";
+"AuthenticationView_Connect_Text" = "เชื่อมต่อกับ WakaTime";
+"AuthenticationView_Connect_InstructionsText" = "วากะวอทช์ต้องเชื่อมต่อกับวากะไทม์ แตะด้านล่างเพื่อเริ่มต้น";

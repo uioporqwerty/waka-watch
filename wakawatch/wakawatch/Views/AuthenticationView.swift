@@ -5,21 +5,26 @@ struct AuthenticationView: View {
     private var authenticationViewModel: AuthenticationViewModel
     @AppStorage(DefaultsKeys.authorized) private var authorized = false
     @Environment(\.openURL) var openURL
-
+    @Environment(\.colorScheme) var colorScheme
+    
     @State private var startingWebAuthenticationSession = false
     @State private var requiresUpdate = false
     @State private var showFeatureRequestModal = false
     @State private var showAuthenticationErrorAlert = false
-
+    
+    private var logo = "WakaTimeLogoWhite"
+    
     init(viewModel: AuthenticationViewModel) {
         self.authenticationViewModel = viewModel
-
-        UINavigationBar.appearance().titleTextAttributes = [.font: UIFont.preferredFont(from: .largeTitle)]
     }
 
     var body: some View {
         NavigationView {
         VStack {
+            Text(LocalizedStringKey("AppName"))
+                .font(.title)
+                .fontWeight(.bold)
+                .padding(EdgeInsets(top: 24, leading: 8, bottom: 0, trailing: 8))
             if self.requiresUpdate {
                 Text(LocalizedStringKey("ConnectView_UpdateRequired_Message"))
                     .multilineTextAlignment(.center)
@@ -29,35 +34,46 @@ struct AuthenticationView: View {
                             .track(event: "Update Required View Shown")
                     }
             } else if !self.authorized {
-                Button(action: { self.startingWebAuthenticationSession = true }) {
-                    Text(LocalizedStringKey("AuthenticationView_Connect_Text"))
-                        .frame(maxWidth: .infinity, minHeight: 34)
-                }
-                .padding(EdgeInsets(top: 8, leading: 8, bottom: 0, trailing: 8))
-                .buttonStyle(.borderedProminent)
-                .webAuthenticationSession(isPresented: $startingWebAuthenticationSession) {
-                WebAuthenticationSession(
-                    url: self.authenticationViewModel.authorizationUrl,
-                    callbackURLScheme: self.authenticationViewModel.callbackURLScheme
-                ) { callbackURL, error in
-                    guard error == nil, let successURL = callbackURL else {
-                       return
+                ScrollView(.vertical, showsIndicators: false) {
+                    Image(self.colorScheme == .light ? "WakaTimeLogoBlack" : "WakaTimeLogoWhite")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 100, height: 100)
+                    
+                    Text(LocalizedStringKey("AuthenticationView_Connect_InstructionsText"))
+                        .lineSpacing(4)
+                        .padding(EdgeInsets(top: 24, leading: 8, bottom: 0, trailing: 8))
+                    
+                    Button(action: { self.startingWebAuthenticationSession = true }) {
+                        Text(LocalizedStringKey("AuthenticationView_Connect_Text"))
+                            .frame(maxWidth: .infinity, minHeight: 34)
                     }
-                    // swiftlint:disable line_length
-                    let oAuthCode = NSURLComponents(string: (successURL.absoluteString))?.queryItems?.filter({$0.name == "code"}).first
-
-                    guard let authorizationCode = oAuthCode?.value else {
-                        self.showAuthenticationErrorAlert = true
-                        self.startingWebAuthenticationSession = false
-                        return
+                    .padding(EdgeInsets(top: 8, leading: 8, bottom: 0, trailing: 8))
+                    .buttonStyle(.borderedProminent)
+                    .webAuthenticationSession(isPresented: $startingWebAuthenticationSession) {
+                        WebAuthenticationSession(
+                            url: self.authenticationViewModel.authorizationUrl,
+                            callbackURLScheme: self.authenticationViewModel.callbackURLScheme
+                        ) { callbackURL, error in
+                            guard error == nil, let successURL = callbackURL else {
+                                return
+                            }
+                            // swiftlint:disable line_length
+                            let oAuthCode = NSURLComponents(string: (successURL.absoluteString))?.queryItems?.filter({$0.name == "code"}).first
+                            
+                            guard let authorizationCode = oAuthCode?.value else {
+                                self.showAuthenticationErrorAlert = true
+                                self.startingWebAuthenticationSession = false
+                                return
+                            }
+                            
+                            Task {
+                                await self.authenticationViewModel.authenticate(authorizationCode: authorizationCode)
+                                self.startingWebAuthenticationSession = false
+                            }
+                        }
+                        .prefersEphemeralWebBrowserSession(true)
                     }
-
-                    Task {
-                        await self.authenticationViewModel.authenticate(authorizationCode: authorizationCode)
-                        self.startingWebAuthenticationSession = false
-                    }
-                }
-                .prefersEphemeralWebBrowserSession(true)
                 }
         } else {
             GeometryReader { geometry in
@@ -189,8 +205,6 @@ struct AuthenticationView: View {
             .task {
                 self.requiresUpdate = await self.authenticationViewModel.requiresUpdate()
             }
-            .navigationTitle(LocalizedStringKey("AppName"))
-            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }

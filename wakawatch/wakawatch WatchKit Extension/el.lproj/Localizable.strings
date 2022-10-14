@@ -22,7 +22,6 @@
 "LeaderboardView_Load_Previous_Button" = "Φόρτωση προηγούμενου";
 "LeaderboardView_Load_Next_Button" = "Φόρτωση επόμενος";
 "LeaderboardView_Error_Description" = "Σφάλμα κατά τη φόρτωση του βαθμολογικού πίνακα.";
-"AuthenticationView_Connect_Text" = "Συνδεθείτε στο WakaTime";
 "AuthenticationView_Connected_Text" = "Συνδέθηκε με το WakaTime. Ανοίξτε το Waka Watch στο Apple Watch.";
 "AuthenticationView_Disconnect_Button_Text" = "Αποσυνδεθείτε από το WakaTime";
 "AuthenticationView_Donation_Text" = "Ο δημιουργός του Waka Watch υποστηρίζει τον αποτελεσματικό αλτρουισμό. Αν σας άρεσε το Waka Watch, σκεφτείτε μια δωρεά στα χρήματά τους.";
@@ -87,3 +86,5 @@
 "WatchInstallationCheckView_Instructions_Heading" = "Απαιτείται εφαρμογή Apple Watch";
 "WatchInstallationCheckView_Instructions_Text" = "Πατήστε παρακάτω για να προσθέσετε το Waka Watch στο Apple Watch.";
 "WatchInstallationView_OpenAppleWatch_ButtonLabel" = "Προσθήκη ρολογιού Waka Watch στο Apple Watch";
+"AuthenticationView_Connect_Text" = "Συνδεθείτε με το WakaTime";
+"AuthenticationView_Connect_InstructionsText" = "Το ρολόι Waka πρέπει να συνδεθεί με το WakaTime. Πατήστε παρακάτω για να ξεκινήσετε.";

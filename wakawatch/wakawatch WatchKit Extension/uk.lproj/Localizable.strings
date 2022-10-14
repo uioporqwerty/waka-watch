@@ -22,7 +22,6 @@
 "LeaderboardView_Load_Previous_Button" = "Завантажити попереднє";
 "LeaderboardView_Load_Next_Button" = "Завантажити Далі";
 "LeaderboardView_Error_Description" = "Помилка завантаження таблиці лідерів.";
-"AuthenticationView_Connect_Text" = "Підключіться до WakaTime";
 "AuthenticationView_Connected_Text" = "Пов'язаний з WakaTime. Відкрийте годинник Waka на своєму Apple Watch.";
 "AuthenticationView_Disconnect_Button_Text" = "Відключення від WakaTime";
 "AuthenticationView_Donation_Text" = "Творець Waka Watch підтримує ефективний альтруїзм. Якщо вам сподобався Waka Watch, будь ласка, подумайте про пожертвування на їхні кошти.";
@@ -87,3 +86,5 @@
 "WatchInstallationCheckView_Instructions_Heading" = "Потрібна програма Apple Watch";
 "WatchInstallationCheckView_Instructions_Text" = "Натисніть нижче, щоб додати Годинник Waka на свій Apple Watch.";
 "WatchInstallationView_OpenAppleWatch_ButtonLabel" = "Додайте годинник Waka до Apple Watch";
+"AuthenticationView_Connect_Text" = "Зв'яжіться з WakaTime";
+"AuthenticationView_Connect_InstructionsText" = "Waka Watch потрібно зв'язатися з WakaTime. Торкніться нижче, щоб почати.";

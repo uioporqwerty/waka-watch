@@ -22,7 +22,6 @@
 "LeaderboardView_Load_Previous_Button" = "이전로드";
 "LeaderboardView_Load_Next_Button" = "다음로드";
 "LeaderboardView_Error_Description" = "순위표를 로드하는 중 오류가 발생했습니다.";
-"AuthenticationView_Connect_Text" = "와카타임에 연결";
 "AuthenticationView_Connected_Text" = "와카타임과 연결되었습니다. Apple Watch에서 Waka Watch를 엽니다.";
 "AuthenticationView_Disconnect_Button_Text" = "와카타임에서 연결 끊기";
 "AuthenticationView_Donation_Text" = "Waka Watch의 제작자는 효과적인 이타주의를 지원합니다. 와카 워치를 즐겼다면 기금에 기부하는 것을 고려하십시오.";
@@ -87,3 +86,5 @@
 "WatchInstallationCheckView_Instructions_Heading" = "애플 워치 앱 필요";
 "WatchInstallationCheckView_Instructions_Text" = "아래를 탭하여 Apple Watch에 Waka Watch를 추가하십시오.";
 "WatchInstallationView_OpenAppleWatch_ButtonLabel" = "와카 워치를 애플 워치에 추가";
+"AuthenticationView_Connect_Text" = "와카타임과 연결";
+"AuthenticationView_Connect_InstructionsText" = "와카 워치는 와카타임과 연결해야 합니다. 시작하려면 아래를 누릅니다.";

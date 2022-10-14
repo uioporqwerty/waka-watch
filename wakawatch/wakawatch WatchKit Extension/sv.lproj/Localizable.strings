@@ -22,7 +22,6 @@
 "LeaderboardView_Load_Previous_Button" = "Ladda föregående";
 "LeaderboardView_Load_Next_Button" = "Ladda nästa";
 "LeaderboardView_Error_Description" = "Fel vid inläsning av topplista.";
-"AuthenticationView_Connect_Text" = "Anslut till WakaTime";
 "AuthenticationView_Connected_Text" = "Ansluten till WakaTime. Öppna Waka Watch på din Apple Watch.";
 "AuthenticationView_Disconnect_Button_Text" = "Koppla från WakaTime";
 "AuthenticationView_Donation_Text" = "Skaparen av Waka Watch stöder effektiv altruism. Om du har haft Waka Watch, överväg en donation till deras medel.";
@@ -87,3 +86,5 @@
 "WatchInstallationCheckView_Instructions_Heading" = "Apple Watch-app krävs";
 "WatchInstallationCheckView_Instructions_Text" = "Tryck nedan för att lägga till Waka Watch på din Apple Watch.";
 "WatchInstallationView_OpenAppleWatch_ButtonLabel" = "Lägg till Waka Watch till Apple Watch";
+"AuthenticationView_Connect_Text" = "Anslut med WakaTime";
+"AuthenticationView_Connect_InstructionsText" = "Waka Watch måste ansluta till WakaTime. Tryck nedan för att komma igång.";

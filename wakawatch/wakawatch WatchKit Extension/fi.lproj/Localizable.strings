@@ -22,7 +22,6 @@
 "LeaderboardView_Load_Previous_Button" = "Lataa edellinen";
 "LeaderboardView_Load_Next_Button" = "Lataa seuraava";
 "LeaderboardView_Error_Description" = "Virhe tulostaulukon lataamisessa.";
-"AuthenticationView_Connect_Text" = "Yhdistä WakaTimeen";
 "AuthenticationView_Connected_Text" = "Yhdistetty WakaTimeen. Avaa Waka Watch Apple Watchilla.";
 "AuthenticationView_Disconnect_Button_Text" = "Katkaise yhteys WakaTimeen";
 "AuthenticationView_Donation_Text" = "Waka Watchin luoja tukee tehokasta altruismia. Jos olet nauttinut Waka Watchista, harkitse lahjoitusta heidän varoihinsa.";
@@ -87,3 +86,5 @@
 "WatchInstallationCheckView_Instructions_Heading" = "Apple Watch -appi vaaditaan";
 "WatchInstallationCheckView_Instructions_Text" = "Napauta alla lisätäksesi Waka Watchin Apple Watchiin.";
 "WatchInstallationView_OpenAppleWatch_ButtonLabel" = "Waka Watchin lisääminen Apple Watchiin";
+"AuthenticationView_Connect_Text" = "Ota yhteyttä WakaTimeen";
+"AuthenticationView_Connect_InstructionsText" = "Waka Watchin on oltava yhteydessä WakaTimeen. Aloita napauttamalla alla olevaa alla olevaa painiketta.";

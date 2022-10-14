@@ -22,7 +22,6 @@
 "LeaderboardView_Load_Previous_Button" = "Charge précédente";
 "LeaderboardView_Load_Next_Button" = "Charge suivante";
 "LeaderboardView_Error_Description" = "Erreur lors du chargement du classement.";
-"AuthenticationView_Connect_Text" = "Connectez-vous à WakaTime";
 "AuthenticationView_Connected_Text" = "Connecté avec WakaTime. Ouvrez Waka Watch sur votre Apple Watch.";
 "AuthenticationView_Disconnect_Button_Text" = "Déconnecter de WakaTime";
 "AuthenticationView_Donation_Text" = "Le créateur de Waka Watch soutient l'altruisme efficace. Si vous avez apprécié Waka Watch, veuillez envisager de faire un don à leurs fonds.";
@@ -87,3 +86,5 @@
 "WatchInstallationCheckView_Instructions_Heading" = "Application Apple Watch requise";
 "WatchInstallationCheckView_Instructions_Text" = "Appuyez ci-dessous pour ajouter Waka Watch sur votre Apple Watch.";
 "WatchInstallationView_OpenAppleWatch_ButtonLabel" = "Ajouter Waka Watch à l’Apple Watch";
+"AuthenticationView_Connect_Text" = "Connectez-vous avec WakaTime";
+"AuthenticationView_Connect_InstructionsText" = "Waka Watch doit se connecter à WakaTime. Appuyez ci-dessous pour commencer.";

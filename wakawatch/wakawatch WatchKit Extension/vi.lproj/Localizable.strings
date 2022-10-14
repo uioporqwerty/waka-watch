@@ -22,7 +22,6 @@
 "LeaderboardView_Load_Previous_Button" = "Tải trước";
 "LeaderboardView_Load_Next_Button" = "Tải tiếp theo";
 "LeaderboardView_Error_Description" = "Lỗi tải bảng xếp hạng.";
-"AuthenticationView_Connect_Text" = "Kết nối với WakaTime";
 "AuthenticationView_Connected_Text" = "Đã kết nối với WakaTime. Mở Đồng hồ Waka trên Apple Watch của bạn.";
 "AuthenticationView_Disconnect_Button_Text" = "Ngắt kết nối khỏi WakaTime";
 "AuthenticationView_Donation_Text" = "Người tạo ra Waka Watch ủng hộ lòng vị tha hiệu quả. Nếu bạn thích Waka Watch, vui lòng xem xét quyên góp cho quỹ của họ.";
@@ -87,3 +86,5 @@
 "WatchInstallationCheckView_Instructions_Heading" = "Cần có ứng dụng Apple Watch";
 "WatchInstallationCheckView_Instructions_Text" = "Chạm vào bên dưới để thêm Đồng hồ Waka trên Apple Watch của bạn.";
 "WatchInstallationView_OpenAppleWatch_ButtonLabel" = "Thêm Đồng hồ Waka vào Apple Watch";
+"AuthenticationView_Connect_Text" = "Kết nối với WakaTime";
+"AuthenticationView_Connect_InstructionsText" = "Waka Watch cần kết nối với WakaTime. Nhấn vào bên dưới để bắt đầu.";

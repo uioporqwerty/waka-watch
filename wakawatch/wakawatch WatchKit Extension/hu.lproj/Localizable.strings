@@ -22,7 +22,6 @@
 "LeaderboardView_Load_Previous_Button" = "Előző betöltés";
 "LeaderboardView_Load_Next_Button" = "Következő betöltése";
 "LeaderboardView_Error_Description" = "Hiba történt a ranglista betöltésekor.";
-"AuthenticationView_Connect_Text" = "Csatlakozás a WakaTime-hoz";
 "AuthenticationView_Connected_Text" = "Csatlakozik a WakaTime-hoz. Nyisd meg a Waka Watchot az Apple Watchon.";
 "AuthenticationView_Disconnect_Button_Text" = "Kapcsolat bontása a WakaTime-ról";
 "AuthenticationView_Donation_Text" = "A Waka Watch alkotója támogatja a hatékony altruizmust. Ha élvezted a Waka Watch-ot, kérlek, fontold meg, hogy adományt adsz az alapjuknak.";
@@ -87,3 +86,5 @@
 "WatchInstallationCheckView_Instructions_Heading" = "Apple Watch alkalmazás szükséges";
 "WatchInstallationCheckView_Instructions_Text" = "Koppints az alábbi koppintásra a Waka Watch apple watchhoz való hozzáadásához.";
 "WatchInstallationView_OpenAppleWatch_ButtonLabel" = "Waka Watch hozzáadása az Apple Watchhoz";
+"AuthenticationView_Connect_Text" = "Csatlakozzon a WakaTime-hoz";
+"AuthenticationView_Connect_InstructionsText" = "A Waka Watchnak csatlakoznia kell a WakaTime-hoz. Koppintson az alábbi elemre a kezdéshez.";

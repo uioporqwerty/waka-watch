@@ -22,7 +22,6 @@
 "LeaderboardView_Load_Previous_Button" = "पिछला लोड";
 "LeaderboardView_Load_Next_Button" = "अगला";
 "LeaderboardView_Error_Description" = "लीडरबोर्ड लोड करने में त्रुटि.";
-"AuthenticationView_Connect_Text" = "WakaTime कनेक्ट";
 "AuthenticationView_Connected_Text" = "WakaTime के साथ जुड़ा हुआ है। अपने एप्पल वॉच पर वाका वॉच खोलें।";
 "AuthenticationView_Disconnect_Button_Text" = "WakaTime से डिस्कनेक्ट";
 "AuthenticationView_Donation_Text" = "वाका वॉच के निर्माता प्रभावी परोपकारिता का समर्थन करते हैं। यदि आपने वाका वॉच का आनंद लिया है, तो कृपया उनके फंड को दान करने पर विचार करें ।";
@@ -87,3 +86,5 @@
 "WatchInstallationCheckView_Instructions_Heading" = "एप्पल वॉच ऐप की आवश्यकता";
 "WatchInstallationCheckView_Instructions_Text" = "अपनी ऐप्पल वॉच पर वाका वॉच जोड़ने के लिए नीचे टैप करें।";
 "WatchInstallationView_OpenAppleWatch_ButtonLabel" = "एप्पल वॉच में वाका वॉच जोड़ें";
+"AuthenticationView_Connect_Text" = "वाकाटाइम से कनेक्ट करें";
+"AuthenticationView_Connect_InstructionsText" = "वाका वॉच को वाकाटाइम से जुड़ने की जरूरत है। आरंभ करने के लिए नीचे टैप करें।";

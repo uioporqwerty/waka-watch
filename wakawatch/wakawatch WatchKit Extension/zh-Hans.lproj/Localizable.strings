@@ -22,7 +22,6 @@
 "LeaderboardView_Load_Previous_Button" = "加载上一个";
 "LeaderboardView_Load_Next_Button" = "下次加载";
 "LeaderboardView_Error_Description" = "加载排行榜时出错。";
-"AuthenticationView_Connect_Text" = "连接到和歌时光";
 "AuthenticationView_Connected_Text" = "与WakaTime连接。在 Apple Watch 上打开 Waka Watch。";
 "AuthenticationView_Disconnect_Button_Text" = "断开与WakaTime的连接";
 "AuthenticationView_Donation_Text" = "Waka Watch 的创建者支持有效的利他主义。如果您喜欢 Waka Watch，请考虑向他们的资金捐款。";
@@ -87,3 +86,5 @@
 "WatchInstallationCheckView_Instructions_Heading" = "需要苹果手表应用程序";
 "WatchInstallationCheckView_Instructions_Text" = "轻点下方以在苹果手表上添加 Waka 手表。";
 "WatchInstallationView_OpenAppleWatch_ButtonLabel" = "将瓦卡手表添加到苹果手表";
+"AuthenticationView_Connect_Text" = "与若泰联系";
+"AuthenticationView_Connect_InstructionsText" = "和歌手表需要与瓦卡时间连接。点击下方以开始使用。";

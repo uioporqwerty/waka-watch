@@ -22,7 +22,6 @@
 "LeaderboardView_Load_Previous_Button" = "過去の投稿";
 "LeaderboardView_Load_Next_Button" = "次へ進む";
 "LeaderboardView_Error_Description" = "スコア ボードの読み込み中にエラーが発生しました。";
-"AuthenticationView_Connect_Text" = "WakaTimeに接続する";
 "AuthenticationView_Connected_Text" = "Connected with WakaTime. Open Waka Watch on your Apple Watch.";
 "AuthenticationView_Disconnect_Button_Text" = "WakaTimeとつながる お使いのApple WatchでWaka Watchを開きます。";
 "AuthenticationView_Donation_Text" = "Waka Watchの作成者は、効果的利他主義をサポートしています。 Waka Watchを楽しんだことがあるなら、彼らの資金への寄付を検討してください。";
@@ -87,3 +86,5 @@
 "WatchInstallationCheckView_Instructions_Heading" = "アップルウォッチアプリが必要";
 "WatchInstallationCheckView_Instructions_Text" = "以下をタップして、Apple Watch に Waka Watch を追加します。";
 "WatchInstallationView_OpenAppleWatch_ButtonLabel" = "ワカウォッチをアップルウォッチに追加する";
+"AuthenticationView_Connect_Text" = "ワカタイムとつながる";
+"AuthenticationView_Connect_InstructionsText" = "ワカウォッチはワカタイムと接続する必要があります。開始するには、以下をタップします。";

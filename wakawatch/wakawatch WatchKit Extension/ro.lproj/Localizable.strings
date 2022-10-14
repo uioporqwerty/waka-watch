@@ -22,7 +22,6 @@
 "LeaderboardView_Load_Previous_Button" = "Încărcare anterioară";
 "LeaderboardView_Load_Next_Button" = "Încărcați următorul";
 "LeaderboardView_Error_Description" = "Clasament de încărcare a erorilor.";
-"AuthenticationView_Connect_Text" = "Conectați-vă la WakaTime";
 "AuthenticationView_Connected_Text" = "În legătură cu WakaTime. Deschide Waka Watch pe Apple Watch.";
 "AuthenticationView_Disconnect_Button_Text" = "Deconectați-vă de la WakaTime";
 "AuthenticationView_Donation_Text" = "Creatorul Waka Watch susține altruismul eficient. Dacă v-ați bucurat de Waka Watch, vă rugăm să luați în considerare o donație pentru fondurile lor.";
@@ -87,3 +86,5 @@
 "WatchInstallationCheckView_Instructions_Heading" = "Este necesară aplicația Apple Watch";
 "WatchInstallationCheckView_Instructions_Text" = "Atinge mai jos pentru a adăuga Waka Watch pe Apple Watch.";
 "WatchInstallationView_OpenAppleWatch_ButtonLabel" = "Adăugarea Waka Watch la Apple Watch";
+"AuthenticationView_Connect_Text" = "Conectați-vă cu WakaTime";
+"AuthenticationView_Connect_InstructionsText" = "Waka Watch trebuie să se conecteze cu WakaTime. Atingeți mai jos pentru a începe.";

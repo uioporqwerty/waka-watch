@@ -22,7 +22,6 @@
 "LeaderboardView_Load_Previous_Button" = "Načítanie predchádzajúceho";
 "LeaderboardView_Load_Next_Button" = "Načítanie ďalej";
 "LeaderboardView_Error_Description" = "Hodnotiaca tabuľka chybového načítania.";
-"AuthenticationView_Connect_Text" = "Pripojenie k WakaTime";
 "AuthenticationView_Connected_Text" = "Spojené s WakaTime. Otvorte hodinky Waka Watch na hodinkách Apple Watch.";
 "AuthenticationView_Disconnect_Button_Text" = "Odpojiť sa od WakaTime";
 "AuthenticationView_Donation_Text" = "Tvorca Waka Watch podporuje efektívny altruizmus. Ak sa vám waka watch páčili, zvážte dar do ich fondov.";
@@ -87,3 +86,5 @@
 "WatchInstallationCheckView_Instructions_Heading" = "Vyžaduje sa aplikácia Apple Watch";
 "WatchInstallationCheckView_Instructions_Text" = "Klepnutím nižšie pridáte hodinky Waka Watch na hodinkách Apple Watch.";
 "WatchInstallationView_OpenAppleWatch_ButtonLabel" = "Pridanie hodiniek Waka Watch do hodiniek Apple Watch";
+"AuthenticationView_Connect_Text" = "Spojte sa s WakaTime";
+"AuthenticationView_Connect_InstructionsText" = "Waka Watch sa musia spojiť s WakaTime. Začnite klepnutím nižšie.";

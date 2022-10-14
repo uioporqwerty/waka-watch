@@ -23,7 +23,7 @@
 "LeaderboardView_Load_Previous_Button" = "Load Previous";
 "LeaderboardView_Load_Next_Button" = "Load Next";
 "LeaderboardView_Error_Description" = "Error loading leaderboard.";
-"AuthenticationView_Connect_Text" = "Connect to WakaTime";
+"AuthenticationView_Connect_Text" = "Connect with WakaTime";
 "AuthenticationView_Connected_Text" = "Connected with WakaTime. Open Waka Watch on your Apple Watch.";
 "AuthenticationView_Disconnect_Button_Text" = "Disconnect from WakaTime";
 "AuthenticationView_Donation_Text" = "The creator of Waka Watch supports effective altruism. If you've enjoyed Waka Watch, please consider a donation to their funds.";
@@ -87,3 +87,4 @@
 "LeaderboardSelectionView_Title" = "Leaderboards";
 "LeaderboardSelectionView_PublicLeaderBoard_Label" = "Public Leaderboard";
 "LeaderboardSelectionView_PrivateLeaderboardScopes_Text" = "To show private leaderboards, we need to connect with WakaTime again. Tap the disconnect button below and connect again from your iOS device.";
+"AuthenticationView_Connect_InstructionsText" = "Waka Watch needs to connect with WakaTime. Tap below to get started.";
