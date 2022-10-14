@@ -1,4 +1,4 @@
 What's New 
 
-Fixes:
-- Incorrect summary chart data.
+Enhancements:
+- Onboarding installation view was very confusing. It has been improved.
