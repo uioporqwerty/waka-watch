@@ -48,7 +48,6 @@
 "FeedbackView_NoneCategory_Text" = "Sélectionnez une catégorie";
 "FeedbackView_ViewIssueAlert_Button" = "Afficher le problème";
 "SplashView_Center_Text" = "Waka Watch";
-"WatchInstallationView_OpenAppleWatch_ButtonLabel" = "Installez l'application Waka Watch";
 "ComplicationSettingsView_Instructions_Text" = "Select up to 3 goals.";
 "Complication_CurrentCodingTimeDescriptor_Text" = "L'heure du codage d'aujourd'hui {0}";
 "Notifications_GoalAchieved_Title" = "Objectif atteint!";
@@ -62,7 +61,6 @@
 "AppName" = "Waka Watch";
 "WhatsNewView_OKButton_Text" = "D'ACCORD";
 "ProfileView_ProfileImage_A11Y" = "profil {0}";
-"WatchInstallationCheckView_Instructions_Text" = "Waka Watch nécessite l’installation de l’application homologue Apple Watch. Si vous avez configuré l’installation automatique de l’application, cet écran se poursuivra automatiquement une fois l’application Waka Watch installée sur votre Apple Watch. Si l’installation automatique des applications n’est pas configurée, cliquez ci-dessous pour effectuer l’installation manuellement dans la section Applications disponibles.";
 "SettingsView_AppVersion_A11Y" = "Version de l’application {0}";
 "GlobalError_MissingTimezone" = "Votre fuseau horaire n’est pas défini dans WakaTime. Pour continuer, accédez à WakaTime et définissez votre fuseau horaire dans les paramètres du compte, puis réessayez.";
 "SettingsView_Licenses_Link" = "Licences Open Source";
@@ -86,3 +84,6 @@
 "LeaderboardSelectionView_Title" = "Classements";
 "LeaderboardSelectionView_PublicLeaderBoard_Label" = "Classement public";
 "LeaderboardSelectionView_PrivateLeaderboardScopes_Text" = "Pour afficher les classements privés, nous devons nous connecter à nouveau avec WakaTime. Appuyez sur le bouton de déconnexion ci-dessous et connectez-vous à nouveau à partir de votre appareil iOS.";
+"WatchInstallationCheckView_Instructions_Heading" = "Application Apple Watch requise";
+"WatchInstallationCheckView_Instructions_Text" = "Appuyez ci-dessous pour ajouter Waka Watch sur votre Apple Watch.";
+"WatchInstallationView_OpenAppleWatch_ButtonLabel" = "Ajouter Waka Watch à l’Apple Watch";

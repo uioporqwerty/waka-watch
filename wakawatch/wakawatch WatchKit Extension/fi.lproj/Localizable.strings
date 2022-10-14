@@ -48,8 +48,6 @@
 "FeedbackView_NoneCategory_Text" = "Valitse luokka";
 "FeedbackView_ViewIssueAlert_Button" = "Näytä ongelma";
 "SplashView_Center_Text" = "Waka Watch";
-"WatchInstallationCheckView_Instructions_Text" = "Waka Watch edellyttää Apple Watchin vastinsovelluksen asentamista. Jos olet määrittänyt automaattisen apinasennuksen, tämä näyttö jatkuu automaattisesti, kun Waka Watch -appi on asennettu Apple Watchiin. Jos automaattista sovellusasennusta ei ole määritetty, napsauta alla olevaa asennusta asentaaksesi manuaalisesti Käytettävissä olevat sovellukset -osiosta.";
-"WatchInstallationView_OpenAppleWatch_ButtonLabel" = "Waka Watch -sovelluksen asentaminen";
 "ComplicationSettingsView_Instructions_Text" = "Valitse enintään 3 tavoitetta.";
 "Complication_CurrentCodingTimeDescriptor_Text" = "Tämän päivän koodausaika {0}";
 "Notifications_GoalAchieved_Title" = "Tavoite saavutettu!";
@@ -86,3 +84,6 @@
 "LeaderboardSelectionView_Title" = "Tulostaulukot";
 "LeaderboardSelectionView_PublicLeaderBoard_Label" = "Julkinen tulostaulukko";
 "LeaderboardSelectionView_PrivateLeaderboardScopes_Text" = "Jotta voimme näyttää yksityisiä tulostaulukoita, meidän on oltava jälleen yhteydessä WakaTimeen. Napauta alla olevaa katkaisupainiketta ja muodosta yhteys uudelleen iOS-laitteestasi.";
+"WatchInstallationCheckView_Instructions_Heading" = "Apple Watch -appi vaaditaan";
+"WatchInstallationCheckView_Instructions_Text" = "Napauta alla lisätäksesi Waka Watchin Apple Watchiin.";
+"WatchInstallationView_OpenAppleWatch_ButtonLabel" = "Waka Watchin lisääminen Apple Watchiin";

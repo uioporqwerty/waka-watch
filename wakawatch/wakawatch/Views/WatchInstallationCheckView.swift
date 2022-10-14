@@ -16,18 +16,15 @@ struct WatchInstallationCheckView: View {
                 GeometryReader { geometry in
                     ScrollView(.vertical, showsIndicators: false) {
                         VStack {
+                            Text(LocalizedStringKey("WatchInstallationCheckView_Instructions_Heading"))
+                                .font(.title)
+                                .fontWeight(.bold)
+                                .lineSpacing(4)
+                                .padding(EdgeInsets(top: 24, leading: 8, bottom: 8, trailing: 8))
+                            
                             Text(LocalizedStringKey("WatchInstallationCheckView_Instructions_Text"))
                                 .lineSpacing(4)
                                 .padding(EdgeInsets(top: 24, leading: 8, bottom: 0, trailing: 8))
-
-                            Button(action: {
-                                self.viewModel.openAppleWatchApp()
-                            }) {
-                                Text(LocalizedStringKey("WatchInstallationView_OpenAppleWatch_ButtonLabel"))
-                                    .frame(maxWidth: .infinity, minHeight: 34)
-                            }
-                            .buttonStyle(.borderedProminent)
-                            .padding(EdgeInsets(top: 24, leading: 8, bottom: 0, trailing: 8))
                             
                             PlayerView(videoName: "Waka-Watch-Installation",
                                        player: player)
@@ -50,6 +47,15 @@ struct WatchInstallationCheckView: View {
                                        .publisher(for: UIApplication.didBecomeActiveNotification)) { _ in
                                 player.play()
                             }
+                            .padding(EdgeInsets(top: 24, leading: 8, bottom: 0, trailing: 8))
+                            
+                            Button(action: {
+                                self.viewModel.openAppleWatchApp()
+                            }) {
+                                Text(LocalizedStringKey("WatchInstallationView_OpenAppleWatch_ButtonLabel"))
+                                    .frame(maxWidth: .infinity, minHeight: 34)
+                            }
+                            .buttonStyle(.borderedProminent)
                             .padding(EdgeInsets(top: 24, leading: 8, bottom: 0, trailing: 8))
                         }
                         .frame(minHeight: geometry.size.height)

@@ -48,7 +48,6 @@
 "FeedbackView_NoneCategory_Text" = "カテゴリの選択";
 "FeedbackView_ViewIssueAlert_Button" = "問題の表示";
 "SplashView_Center_Text" = "Waka Watch";
-"WatchInstallationView_OpenAppleWatch_ButtonLabel" = "ワカウォッチアプリをインストールする";
 "ComplicationSettingsView_Instructions_Text" = "Select up to 3 goals.";
 "Complication_CurrentCodingTimeDescriptor_Text" = "今日のコーディング時間 {0}";
 "Notifications_GoalAchieved_Title" = "目標を達成しました！";
@@ -62,7 +61,6 @@
 "AppName" = "Waka Watch";
 "WhatsNewView_OKButton_Text" = "わかりました";
 "ProfileView_ProfileImage_A11Y" = "{0}プロフィール";
-"WatchInstallationCheckView_Instructions_Text" = "Waka Watch では、Apple Watch の対応するアプリをインストールする必要があります。アプリの自動インストールを設定している場合、Apple Watch に Waka Watch アプリがインストールされると、この画面は自動的に続行されます。アプリの自動インストールが構成されていない場合は、以下をクリックして [利用可能なアプリ] セクションから手動でインストールします。";
 "SettingsView_AppVersion_A11Y" = "アプリのバージョン {0}";
 "GlobalError_MissingTimezone" = "タイムゾーンが WakaTime に設定されていません。続行するには、WakaTimeに移動し、アカウント設定でタイムゾーンを設定してから、もう一度やり直してください。";
 "SettingsView_Licenses_Link" = "オープンソースライセンス";
@@ -86,3 +84,6 @@
 "LeaderboardSelectionView_Title" = "リーダーボード";
 "LeaderboardSelectionView_PublicLeaderBoard_Label" = "パブリックリーダーボード";
 "LeaderboardSelectionView_PrivateLeaderboardScopes_Text" = "プライベートリーダーボードを表示するには、WakaTimeと再びつながる必要があります。下の切断ボタンをタップして、iOSデバイスからもう一度接続します。";
+"WatchInstallationCheckView_Instructions_Heading" = "アップルウォッチアプリが必要";
+"WatchInstallationCheckView_Instructions_Text" = "以下をタップして、Apple Watch に Waka Watch を追加します。";
+"WatchInstallationView_OpenAppleWatch_ButtonLabel" = "ワカウォッチをアップルウォッチに追加する";

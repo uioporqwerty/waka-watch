@@ -48,8 +48,6 @@
 "FeedbackView_NoneCategory_Text" = "Seleziona una categoria";
 "FeedbackView_ViewIssueAlert_Button" = "Visualizza problema";
 "SplashView_Center_Text" = "Waka Watch";
-"WatchInstallationCheckView_Instructions_Text" = "Waka Watch richiede l'installazione dell'app della controparte di Apple Watch. Se hai configurato l'installazione automatica dell'app, questa schermata continuerà automaticamente una volta installata l'app Waka Watch su Apple Watch. Se non hai configurato l'Installazione automatica dell'app, fai clic di seguito per installarla manualmente nella sezione App disponibili.";
-"WatchInstallationView_OpenAppleWatch_ButtonLabel" = "Installa l'app Waka Watch";
 "ComplicationSettingsView_Instructions_Text" = "Seleziona fino a 3 obiettivi.";
 "Complication_CurrentCodingTimeDescriptor_Text" = "Il tempo di codifica di oggi {0}";
 "Notifications_GoalAchieved_Title" = "Obiettivo raggiunto!";
@@ -86,3 +84,6 @@
 "LeaderboardSelectionView_Title" = "Classifiche";
 "LeaderboardSelectionView_PublicLeaderBoard_Label" = "Classifica pubblica";
 "LeaderboardSelectionView_PrivateLeaderboardScopes_Text" = "Per mostrare le classifiche private, dobbiamo connetterci di nuovo con WakaTime. Tocca il pulsante di disconnessione qui sotto e connettiti di nuovo dal tuo dispositivo iOS.";
+"WatchInstallationCheckView_Instructions_Heading" = "App Apple Watch richiesta";
+"WatchInstallationCheckView_Instructions_Text" = "Tocca qui sotto per aggiungere Waka Watch sul tuo Apple Watch.";
+"WatchInstallationView_OpenAppleWatch_ButtonLabel" = "Aggiungi Waka Watch ad Apple Watch";

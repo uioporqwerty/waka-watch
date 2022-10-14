@@ -48,8 +48,6 @@
 "FeedbackView_NoneCategory_Text" = "Επιλέξτε Κατηγορία";
 "FeedbackView_ViewIssueAlert_Button" = "Προβολή ζητήματος";
 "SplashView_Center_Text" = "Waka Watch";
-"WatchInstallationCheckView_Instructions_Text" = "Το Waka Watch απαιτεί την εγκατάσταση της αντίστοιχης εφαρμογής Apple Watch. Αν έχετε διαμορφώσει την Αυτόματη εγκατάσταση εφαρμογής, αυτή η οθόνη θα συνεχιστεί αυτόματα μόλις εγκατασταθεί η εφαρμογή Waka Watch στο Apple Watch. Εάν δεν έχετε ρυθμίσει την Αυτόματη εγκατάσταση εφαρμογής, κάντε κλικ παρακάτω για να την εγκαταστήσετε με μη αυτόματο τρόπο από την ενότητα Διαθέσιμες εφαρμογές.";
-"WatchInstallationView_OpenAppleWatch_ButtonLabel" = "Εγκαταστήστε την εφαρμογή Waka Watch";
 "ComplicationSettingsView_Instructions_Text" = "Επιλέξτε έως και 3 γκολ.";
 "Complication_CurrentCodingTimeDescriptor_Text" = "Ο σημερινός χρόνος κωδικοποίησης {0}";
 "Notifications_GoalAchieved_Title" = "Ο στόχος επιτεύχθηκε!";
@@ -86,3 +84,6 @@
 "LeaderboardSelectionView_Title" = "Βαθμολογικοί πίνακες";
 "LeaderboardSelectionView_PublicLeaderBoard_Label" = "Δημόσιος πίνακας κορυφαίων";
 "LeaderboardSelectionView_PrivateLeaderboardScopes_Text" = "Για να εμφανιστούν ιδιωτικοί πίνακες κορυφαίων παικτών, πρέπει να συνδεθούμε ξανά με το WakaTime. Πατήστε το κουμπί αποσύνδεσης παρακάτω και συνδεθείτε ξανά από τη συσκευή iOS.";
+"WatchInstallationCheckView_Instructions_Heading" = "Απαιτείται εφαρμογή Apple Watch";
+"WatchInstallationCheckView_Instructions_Text" = "Πατήστε παρακάτω για να προσθέσετε το Waka Watch στο Apple Watch.";
+"WatchInstallationView_OpenAppleWatch_ButtonLabel" = "Προσθήκη ρολογιού Waka Watch στο Apple Watch";

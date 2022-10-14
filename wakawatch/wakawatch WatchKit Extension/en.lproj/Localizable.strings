@@ -49,8 +49,9 @@
 "FeedbackView_NoneCategory_Text" = "Select a Category";
 "FeedbackView_ViewIssueAlert_Button" = "View Issue";
 "SplashView_Center_Text" = "Waka Watch";
-"WatchInstallationCheckView_Instructions_Text" = "Waka Watch requires that the Apple Watch counterpart app be installed. If you have Automatic App Install configured, this screen will automatically continue once the Waka Watch app is installed on your Apple Watch. If you don't have Automatic App Install configured, click below to install manually from the Available Apps section.";
-"WatchInstallationView_OpenAppleWatch_ButtonLabel" = "Install Waka Watch App";
+"WatchInstallationCheckView_Instructions_Heading" = "Apple Watch App Required";
+"WatchInstallationCheckView_Instructions_Text" = "Tap below to add Waka Watch on your Apple Watch.";
+"WatchInstallationView_OpenAppleWatch_ButtonLabel" = "Add Waka Watch to Apple Watch";
 "ComplicationSettingsView_Instructions_Text" = "Select up to 3 goals.";
 "Complication_CurrentCodingTimeDescriptor_Text" = "Today's Coding Time {0}";
 "Notifications_GoalAchieved_Title" = "Goal Achieved!";
