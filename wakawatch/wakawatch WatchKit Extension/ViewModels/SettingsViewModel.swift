@@ -66,7 +66,9 @@ final class SettingsViewModel: ObservableObject {
     
     func promptPermissions() {
         self.analytics.track(event: "Prompted for Permissions")
-        self.notificationService.requestAuthorization {
+        self.notificationService.requestAuthorization(authorizedHandler: {
+            self.shouldShowEnableNotificationsButton()
+        }) {
             self.shouldShowEnableNotificationsButton()
         }
     }

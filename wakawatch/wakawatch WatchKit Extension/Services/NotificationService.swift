@@ -14,7 +14,8 @@ final class NotificationService {
         self.analytics = analyticsService
     }
 
-    func requestAuthorization(authorizedHandler: (() -> Void)? = nil) {
+    func requestAuthorization(authorizedHandler: (() -> Void)? = nil,
+                              rejectedHandler: (() -> Void)? = nil) {
         self.center.requestAuthorization(options: [.alert, .sound, .provisional]) { granted, error in
             if let error = error {
                 self.logManager.reportError(error)
@@ -22,6 +23,7 @@ final class NotificationService {
             }
 
             if !granted {
+                rejectedHandler?()
                 return
             }
 
