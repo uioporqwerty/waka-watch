@@ -1,5 +1,4 @@
 What's New 
 
-Enhancements:
-- Onboarding installation view was very confusing. It has been improved.
-- Connect view has been improved as well.
+Fixes:
+- Disconnect from Wakatime button has been moved to the bottom on iOS to avoid confusing users.
