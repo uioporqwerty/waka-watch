@@ -90,15 +90,6 @@ struct AuthenticationView: View {
                                 .lineSpacing(4)
                                 .padding(EdgeInsets(top: 24, leading: 8, bottom: 0, trailing: 8))
                             
-                            AsyncButton(action: {
-                                await self.authenticationViewModel.disconnect()
-                            }) {
-                                Text(LocalizedStringKey("AuthenticationView_Disconnect_Button_Text"))
-                                    .frame(maxWidth: .infinity, minHeight: 34)
-                            }
-                            .padding(EdgeInsets(top: 8, leading: 8, bottom: 0, trailing: 8))
-                            .buttonStyle(.borderedProminent)
-                            
                             Divider()
                                 .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
                             
@@ -184,6 +175,23 @@ struct AuthenticationView: View {
                                         .background(Color.accentColor)
                                         .foregroundColor(Color.white)
                                         .cornerRadius(10)
+                                }.padding(EdgeInsets(top: 8, leading: 8, bottom: 0, trailing: 8))
+                            }
+                    
+                            Group {
+                                Divider()
+                                    .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
+                                
+                                AsyncButton {
+                                    await self.authenticationViewModel.disconnect()
+                                } label: {
+                                    Label(LocalizedStringKey("AuthenticationView_Disconnect_Button_Text"), systemImage: "arrow.left.to.line")
+                                        .frame(maxWidth: .infinity)
+                                        .padding()
+                                        .background(Color(.displayP3, red: 171/255, green: 43/255, blue: 36/255, opacity: 1))
+                                        .foregroundColor(Color.white)
+                                        .cornerRadius(10)
+                                    
                                 }.padding(EdgeInsets(top: 8, leading: 8, bottom: 0, trailing: 8))
                             }
                         }.frame(minHeight: geometry.size.height)
