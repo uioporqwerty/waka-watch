@@ -95,7 +95,7 @@ struct SwiftChartsView: View {
                         .replaceArgs(String($0.total_seconds.toFullFormat))))
             }
             .chartLegend(.hidden)
-            .frame(height: self.size?.height)
+            .frame(minHeight: self.size?.height)
             .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
         }
         
@@ -118,7 +118,7 @@ struct SwiftChartsView: View {
             .chartLegend(position: .bottom,
                          alignment: .bottom,
                          spacing: 15)
-            .frame(height: self.size?.height)
+            .frame(minHeight: self.size?.height)
             .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
         }
         
@@ -144,7 +144,7 @@ struct SwiftChartsView: View {
             .chartLegend(position: .bottom,
                          alignment: .bottom,
                          spacing: 15)
-            .frame(height: self.size?.height)
+            .frame(minHeight: self.size?.height)
             .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
         }
         
@@ -170,7 +170,7 @@ struct SwiftChartsView: View {
             .chartLegend(position: .bottom,
                          alignment: .bottom,
                          spacing: 15)
-            .frame(height: self.size?.height)
+            .frame(minHeight: self.size?.height)
             .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
         }
     }
