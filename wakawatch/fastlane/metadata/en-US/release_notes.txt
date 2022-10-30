@@ -1,4 +1,4 @@
 What's New 
 
 Fixes:
-- Disconnect from Wakatime button has been moved to the bottom on iOS to avoid confusing users.
+- Height for charts on summary view.
