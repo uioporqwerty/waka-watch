@@ -1,4 +1,4 @@
 What's New 
 
 Fixes:
-- Height for charts on summary view.
+- Disconnect from WakaTime button is now a more prominent color on the watch app and placed at the bottom of the settings view to avoid accidental clicks.

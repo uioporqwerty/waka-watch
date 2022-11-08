@@ -39,20 +39,27 @@ struct SettingsView: View {
                     Text(self.viewModel.analyticsOptInOptOutButtonLabel)
                 }.padding(EdgeInsets(top: 0, leading: 0, bottom: 8, trailing: 0))
                 
-                AsyncButton(action: {
-                    self.viewModel
-                        .telemetry
-                        .recordViewEvent(elementName: "TAPPED: Disconnect from WakaTime button")
-                    try? await self.viewModel.disconnect()
-                }) {
-                    Text(LocalizedStringKey("SettingsView_Disconnect_Button"))
-                }.padding(EdgeInsets(top: 0, leading: 0, bottom: 8, trailing: 0))
-
                 NavigationLink(LocalizedStringKey("SettingsView_Licenses_Link"),
                                destination: LicensesView(viewModel:
                                                          DependencyInjection.shared
                                                                             .container
                                                                             .resolve(LicensesViewModel.self)!))
+                .padding(EdgeInsets(top: 0, leading: 0, bottom: 8, trailing: 0))
+                
+                AsyncButton {
+                    self.viewModel
+                        .telemetry
+                        .recordViewEvent(elementName: "TAPPED: Disconnect from WakaTime button")
+                    try? await self.viewModel.disconnect()
+                } label: {
+                    Text(LocalizedStringKey("SettingsView_Disconnect_Button"))
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(Color(.displayP3, red: 171/255, green: 43/255, blue: 36/255, opacity: 1))
+                        .foregroundColor(Color.white)
+                        .cornerRadius(10)
+                }
+                .buttonStyle(.borderless)
                 .padding(EdgeInsets(top: 0, leading: 0, bottom: 8, trailing: 0))
 
                 Text(self.viewModel.appVersion)
