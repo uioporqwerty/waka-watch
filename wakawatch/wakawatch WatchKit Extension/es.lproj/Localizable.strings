@@ -88,3 +88,4 @@
 "WatchInstallationView_OpenAppleWatch_ButtonLabel" = "Añadir Waka Watch al Apple Watch";
 "AuthenticationView_Connect_Text" = "Conéctese con WakaTime";
 "AuthenticationView_Connect_InstructionsText" = "Waka Watch necesita conectarse con WakaTime. Toque a continuación para comenzar.";
+"SettingsView_AddWatchFace_Link" = "Agregar esfera de reloj";

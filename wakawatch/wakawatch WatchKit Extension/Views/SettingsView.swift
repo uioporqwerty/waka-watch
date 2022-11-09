@@ -25,6 +25,10 @@ struct SettingsView: View {
                     }.padding(EdgeInsets(top: 0, leading: 0, bottom: 8, trailing: 0))
                 }
                 
+                NavigationLink(LocalizedStringKey("SettingsView_AddWatchFace_Link"),
+                               destination: DependencyInjection.shared.container.resolve(AddWatchFaceView.self)!)
+                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 8, trailing: 0))
+                
                 Button {
                     self.viewModel
                         .telemetry

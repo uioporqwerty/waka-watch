@@ -88,3 +88,4 @@
 "WatchInstallationView_OpenAppleWatch_ButtonLabel" = "将瓦卡手表添加到苹果手表";
 "AuthenticationView_Connect_Text" = "与若泰联系";
 "AuthenticationView_Connect_InstructionsText" = "和歌手表需要与瓦卡时间连接。点击下方以开始使用。";
+"SettingsView_AddWatchFace_Link" = "添加表盘";

@@ -88,3 +88,4 @@
 "WatchInstallationView_OpenAppleWatch_ButtonLabel" = "ワカウォッチをアップルウォッチに追加する";
 "AuthenticationView_Connect_Text" = "ワカタイムとつながる";
 "AuthenticationView_Connect_InstructionsText" = "ワカウォッチはワカタイムと接続する必要があります。開始するには、以下をタップします。";
+"SettingsView_AddWatchFace_Link" = "ウォッチフェイスを追加";

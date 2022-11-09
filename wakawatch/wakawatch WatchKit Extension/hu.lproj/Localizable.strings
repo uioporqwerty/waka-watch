@@ -88,3 +88,4 @@
 "WatchInstallationView_OpenAppleWatch_ButtonLabel" = "Waka Watch hozzáadása az Apple Watchhoz";
 "AuthenticationView_Connect_Text" = "Csatlakozzon a WakaTime-hoz";
 "AuthenticationView_Connect_InstructionsText" = "A Waka Watchnak csatlakoznia kell a WakaTime-hoz. Koppintson az alábbi elemre a kezdéshez.";
+"SettingsView_AddWatchFace_Link" = "Óraszámlap hozzáadása";

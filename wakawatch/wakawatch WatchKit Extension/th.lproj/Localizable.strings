@@ -88,3 +88,4 @@
 "WatchInstallationView_OpenAppleWatch_ButtonLabel" = "เพิ่มนาฬิกาวากะลงในแอปเปิ้ลวอทช์";
 "AuthenticationView_Connect_Text" = "เชื่อมต่อกับ WakaTime";
 "AuthenticationView_Connect_InstructionsText" = "วากะวอทช์ต้องเชื่อมต่อกับวากะไทม์ แตะด้านล่างเพื่อเริ่มต้น";
+"SettingsView_AddWatchFace_Link" = "เพิ่มหน้าปัดนาฬิกา";

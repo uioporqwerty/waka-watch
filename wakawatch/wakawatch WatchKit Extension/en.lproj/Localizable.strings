@@ -88,3 +88,4 @@
 "LeaderboardSelectionView_PublicLeaderBoard_Label" = "Public Leaderboard";
 "LeaderboardSelectionView_PrivateLeaderboardScopes_Text" = "To show private leaderboards, we need to connect with WakaTime again. Tap the disconnect button below and connect again from your iOS device.";
 "AuthenticationView_Connect_InstructionsText" = "Waka Watch needs to connect with WakaTime. Tap below to get started.";
+"SettingsView_AddWatchFace_Link" = "Add Watch Face";

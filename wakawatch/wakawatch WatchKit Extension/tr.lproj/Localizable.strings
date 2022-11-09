@@ -88,3 +88,4 @@
 "WatchInstallationView_OpenAppleWatch_ButtonLabel" = "Waka Watch'u Apple Watch'a ekleme";
 "AuthenticationView_Connect_Text" = "WakaTime ile bağlantı kurun";
 "AuthenticationView_Connect_InstructionsText" = "Waka Watch'un WakaTime ile bağlantı kurması gerekir. Başlamak için aşağıya dokunun.";
+"SettingsView_AddWatchFace_Link" = "Saat Kadranı Ekle";

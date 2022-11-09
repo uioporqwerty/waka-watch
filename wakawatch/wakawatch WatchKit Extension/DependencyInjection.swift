@@ -170,6 +170,11 @@ final class DependencyInjection {
                               i18nService: resolver.resolve(InternationalizationService.self)!,
                               appInformationService: resolver.resolve(AppInformationService.self)!)
         }
+        self.container.register(AddWatchFaceViewModel.self) { resolver in
+            AddWatchFaceViewModel(telemetryService: resolver.resolve(TelemetryService.self)!,
+                                  logManager: resolver.resolve(LogManager.self)!,
+                                  analytics: resolver.resolve(AnalyticsService.self)!)
+        }
     }
 
     private func registerViews() {
@@ -203,6 +208,9 @@ final class DependencyInjection {
         }
         self.container.register(LicensesView.self) { resolver in
             LicensesView(viewModel: resolver.resolve(LicensesViewModel.self)!)
+        }
+        self.container.register(AddWatchFaceView.self) { resolver in
+            AddWatchFaceView(viewModel: resolver.resolve(AddWatchFaceViewModel.self)!)
         }
     }
 }

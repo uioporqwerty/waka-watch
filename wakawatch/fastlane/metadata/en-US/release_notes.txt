@@ -1,4 +1,4 @@
 What's New 
 
-Fixes:
-- Disconnect from WakaTime button is now a more prominent color on the watch app and placed at the bottom of the settings view to avoid accidental clicks.
+Enhancements:
+- On the settings view, you can now add a bundled watch face that has the Waka Watch complication. This is provided as a convenience for discovery. You can always add the complications to your own watch faces.

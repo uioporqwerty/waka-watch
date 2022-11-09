@@ -31,6 +31,14 @@
 		6B30B95A27E17432003BEED0 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B30B95927E17432003BEED0 /* ErrorView.swift */; };
 		6B3440DC279C5E1C006A5C27 /* Delivery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3440DB279C5E1C006A5C27 /* Delivery.swift */; };
 		6B3440DD279C5E1C006A5C27 /* Delivery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3440DB279C5E1C006A5C27 /* Delivery.swift */; };
+		6B36D250291B08BB002B2C3C /* Modular.watchface in Resources */ = {isa = PBXBuildFile; fileRef = 6B36D24D291B08BB002B2C3C /* Modular.watchface */; };
+		6B36D251291B08BB002B2C3C /* Modular.watchface in Resources */ = {isa = PBXBuildFile; fileRef = 6B36D24D291B08BB002B2C3C /* Modular.watchface */; };
+		6B36D253291B0AD8002B2C3C /* AddWatchFaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B36D252291B0AD8002B2C3C /* AddWatchFaceView.swift */; };
+		6B36D254291B0AD8002B2C3C /* AddWatchFaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B36D252291B0AD8002B2C3C /* AddWatchFaceView.swift */; };
+		6B36D256291B2FE0002B2C3C /* ImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B36D255291B2FE0002B2C3C /* ImageExtensions.swift */; };
+		6B36D257291B2FE0002B2C3C /* ImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B36D255291B2FE0002B2C3C /* ImageExtensions.swift */; };
+		6B36D259291B402C002B2C3C /* AddWatchFaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B36D258291B402C002B2C3C /* AddWatchFaceViewModel.swift */; };
+		6B36D25A291B402C002B2C3C /* AddWatchFaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B36D258291B402C002B2C3C /* AddWatchFaceViewModel.swift */; };
 		6B38A90227C04B130020B7DE /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B38A90127C04B130020B7DE /* ComplicationController.swift */; };
 		6B38A90527C053770020B7DE /* ComplicationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B38A90427C053770020B7DE /* ComplicationViewModel.swift */; };
 		6B410A3A27C2D77C0044BB08 /* AppInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B410A3927C2D77C0044BB08 /* AppInformation.swift */; };
@@ -326,6 +334,10 @@
 		6B30B95627E1711D003BEED0 /* RuntimeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuntimeError.swift; sourceTree = "<group>"; };
 		6B30B95927E17432003BEED0 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		6B3440DB279C5E1C006A5C27 /* Delivery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delivery.swift; sourceTree = "<group>"; };
+		6B36D24D291B08BB002B2C3C /* Modular.watchface */ = {isa = PBXFileReference; lastKnownFileType = file; path = Modular.watchface; sourceTree = "<group>"; };
+		6B36D252291B0AD8002B2C3C /* AddWatchFaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWatchFaceView.swift; sourceTree = "<group>"; };
+		6B36D255291B2FE0002B2C3C /* ImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtensions.swift; sourceTree = "<group>"; };
+		6B36D258291B402C002B2C3C /* AddWatchFaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWatchFaceViewModel.swift; sourceTree = "<group>"; };
 		6B38A90127C04B130020B7DE /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		6B38A90427C053770020B7DE /* ComplicationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationViewModel.swift; sourceTree = "<group>"; };
 		6B410A3927C2D77C0044BB08 /* AppInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInformation.swift; sourceTree = "<group>"; };
@@ -517,6 +529,7 @@
 		6B0C0DB6288F635500B9BE13 /* Content */ = {
 			isa = PBXGroup;
 			children = (
+				6B36D24B291B0898002B2C3C /* Watch Faces */,
 				6B1D705D2890CCD5001B3E93 /* WhatsNew.txt */,
 			);
 			path = Content;
@@ -569,6 +582,14 @@
 			path = Shared;
 			sourceTree = "<group>";
 		};
+		6B36D24B291B0898002B2C3C /* Watch Faces */ = {
+			isa = PBXGroup;
+			children = (
+				6B36D24D291B08BB002B2C3C /* Modular.watchface */,
+			);
+			path = "Watch Faces";
+			sourceTree = "<group>";
+		};
 		6B410A4A27C32E640044BB08 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -614,6 +635,7 @@
 				6B5CFC3427CB0E450014271D /* ComplicationSettingsViewModel.swift */,
 				6B4304062854D43E00B8A2BB /* LicensesViewModel.swift */,
 				6B0C0DB2288F601400B9BE13 /* WhatsNewViewModel.swift */,
+				6B36D258291B402C002B2C3C /* AddWatchFaceViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -717,6 +739,7 @@
 				6B44338628724E30002294F7 /* IntExtensions.swift */,
 				6B4A4CF2287B38500058D9BC /* UIFontExtensions.swift */,
 				6B86E8A328F633FA0068BE7E /* BundleExtensions.swift */,
+				6B36D255291B2FE0002B2C3C /* ImageExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -868,6 +891,7 @@
 				6B30B95927E17432003BEED0 /* ErrorView.swift */,
 				6B4304042854D3E400B8A2BB /* LicensesView.swift */,
 				6B0C0DB0288F5FBD00B9BE13 /* WhatsNewView.swift */,
+				6B36D252291B0AD8002B2C3C /* AddWatchFaceView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1209,6 +1233,7 @@
 			files = (
 				6BED9A752795154C005646C3 /* Preview Assets.xcassets in Resources */,
 				6BCFC0BC28F1CD3A004C6354 /* Assets.xcassets in Resources */,
+				6B36D250291B08BB002B2C3C /* Modular.watchface in Resources */,
 				6B4F6D9427D3B6D900F1E2C4 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1232,6 +1257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B4F6D9527D3B6D900F1E2C4 /* Localizable.strings in Resources */,
+				6B36D251291B08BB002B2C3C /* Modular.watchface in Resources */,
 				6BED9AA82795154F005646C3 /* Preview Assets.xcassets in Resources */,
 				6B4304092854D49C00B8A2BB /* Licenses.rtf in Resources */,
 				6B1D705B2890CCD5001B3E93 /* WhatsNew.txt in Resources */,
@@ -1377,6 +1403,7 @@
 				6BDD8B4227C467EB00BB1493 /* SummaryRange.swift in Sources */,
 				6B30B95727E1711D003BEED0 /* RuntimeError.swift in Sources */,
 				6BD52F1B279FD07300247BFB /* RollbarLoggingService.swift in Sources */,
+				6B36D256291B2FE0002B2C3C /* ImageExtensions.swift in Sources */,
 				6BBF65822845CAD3004C3081 /* KeychainError.swift in Sources */,
 				6BA78C8027A46CF0005149BC /* SplashView.swift in Sources */,
 				6BAF14B927CEF9A900370EED /* WatchInstallationCheckView.swift in Sources */,
@@ -1407,6 +1434,7 @@
 				6BE5DE4227A6531A0072FF0E /* LogManager.swift in Sources */,
 				6BED9AEE2795450F005646C3 /* AuthenticationView.swift in Sources */,
 				6B3440DC279C5E1C006A5C27 /* Delivery.swift in Sources */,
+				6B36D253291B0AD8002B2C3C /* AddWatchFaceView.swift in Sources */,
 				6BE5DE7527A90A8F0072FF0E /* SplashViewModel.swift in Sources */,
 				6BF5870727C2B3E500865D95 /* FloatingMenuItem.swift in Sources */,
 				6BE5DE3D27A6403D0072FF0E /* StringExtensions.swift in Sources */,
@@ -1435,6 +1463,7 @@
 				6BD52EF9279FCB3400247BFB /* RollbarAPMService.swift in Sources */,
 				6BE93AB12895724000D5072E /* ErrorResponse.swift in Sources */,
 				6BE5DE6B27A8CB380072FF0E /* AuthenticationService.swift in Sources */,
+				6B36D259291B402C002B2C3C /* AddWatchFaceViewModel.swift in Sources */,
 				6B44338A287880C4002294F7 /* FeedbackView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1492,6 +1521,7 @@
 				6BA5267E28E16112004EC818 /* MixpanelService.swift in Sources */,
 				6BED9AE027951F6D005646C3 /* ProfileView.swift in Sources */,
 				6B5CFC3327CB0E2E0014271D /* ComplicationSettingsView.swift in Sources */,
+				6B36D257291B2FE0002B2C3C /* ImageExtensions.swift in Sources */,
 				6B30B95A27E17432003BEED0 /* ErrorView.swift in Sources */,
 				6B410A4D27C32E760044BB08 /* RequestFactory.swift in Sources */,
 				6B3440DD279C5E1C006A5C27 /* Delivery.swift in Sources */,
@@ -1517,6 +1547,7 @@
 				6BED9B012795D1C0005646C3 /* ConnectivityService.swift in Sources */,
 				6BD52F19279FD03900247BFB /* LoggingService.swift in Sources */,
 				6BBF65832845CAD3004C3081 /* KeychainError.swift in Sources */,
+				6B36D254291B0AD8002B2C3C /* AddWatchFaceView.swift in Sources */,
 				6BCFC0A028F0DCAE004C6354 /* PrivateLeaderboardsResponse.swift in Sources */,
 				6BE5DE3C27A6402D0072FF0E /* StringExtensions.swift in Sources */,
 				6B4304052854D3E400B8A2BB /* LicensesView.swift in Sources */,
@@ -1533,6 +1564,7 @@
 				6BDD8B4327C467EB00BB1493 /* SummaryRange.swift in Sources */,
 				6B9E1112279C945800F4DC93 /* SummaryViewModel.swift in Sources */,
 				6BE5DE4027A64E630072FF0E /* SeverityLevel.swift in Sources */,
+				6B36D25A291B402C002B2C3C /* AddWatchFaceViewModel.swift in Sources */,
 				6BE5DE7827A90CB00072FF0E /* ConnectViewModel.swift in Sources */,
 				6BA3DFAE289DAFD3006BC5F5 /* SwiftChartsView.swift in Sources */,
 				6BEF8B872895A62E00DC097B /* ErrorService.swift in Sources */,

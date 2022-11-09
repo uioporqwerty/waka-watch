@@ -88,3 +88,4 @@
 "WatchInstallationView_OpenAppleWatch_ButtonLabel" = "Добавление Waka Watch в Apple Watch";
 "AuthenticationView_Connect_Text" = "Подключение к WakaTime";
 "AuthenticationView_Connect_InstructionsText" = "Waka Watch должны подключаться к WakaTime. Нажмите ниже, чтобы начать.";
+"SettingsView_AddWatchFace_Link" = "Добавить циферблат";

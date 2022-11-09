@@ -88,3 +88,4 @@
 "WatchInstallationView_OpenAppleWatch_ButtonLabel" = "Προσθήκη ρολογιού Waka Watch στο Apple Watch";
 "AuthenticationView_Connect_Text" = "Συνδεθείτε με το WakaTime";
 "AuthenticationView_Connect_InstructionsText" = "Το ρολόι Waka πρέπει να συνδεθεί με το WakaTime. Πατήστε παρακάτω για να ξεκινήσετε.";
+"SettingsView_AddWatchFace_Link" = "Προσθήκη πρόσοψης ρολογιού";

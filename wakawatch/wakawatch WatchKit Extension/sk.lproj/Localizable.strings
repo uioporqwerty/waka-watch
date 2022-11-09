@@ -88,3 +88,4 @@
 "WatchInstallationView_OpenAppleWatch_ButtonLabel" = "Pridanie hodiniek Waka Watch do hodiniek Apple Watch";
 "AuthenticationView_Connect_Text" = "Spojte sa s WakaTime";
 "AuthenticationView_Connect_InstructionsText" = "Waka Watch sa musia spojiť s WakaTime. Začnite klepnutím nižšie.";
+"SettingsView_AddWatchFace_Link" = "Pridanie ciferníka";
