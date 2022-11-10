@@ -39,6 +39,7 @@ struct LicensesView: View {
             }
             .onAppear {
                 self.viewModel.telemetry.recordViewEvent(elementName: "\(String(describing: LicensesView.self))")
+                self.viewModel.analytics.track(event: "Licenses View Shown")
             }
         }
     }

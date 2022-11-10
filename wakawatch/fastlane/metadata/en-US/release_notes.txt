@@ -1,4 +1,5 @@
 What's New 
 
-Enhancements:
-- On the settings view, you can now add a bundled watch face that has the Waka Watch complication. This is provided as a convenience for discovery. You can always add the complications to your own watch faces.
+Fixes:
+- Error view randomly showed when cycling between views on the watch.
+- Landscape orientation as been removed for iPhone and iPad as it is not necessary and causes issues. Portrait and upside down are still valid orientations.

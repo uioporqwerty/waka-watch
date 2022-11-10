@@ -5,12 +5,15 @@ final class LicensesViewModel: ObservableObject {
 
     public let logManager: LogManager
     public let telemetry: TelemetryService
-
+    public let analytics: AnalyticsService
+    
     init(logManager: LogManager,
-         telemetryService: TelemetryService
+         telemetryService: TelemetryService,
+         analytics: AnalyticsService
         ) {
         self.logManager = logManager
         self.telemetry = telemetryService
+        self.analytics = analytics
     }
 
     func loadLicensesFile() throws {

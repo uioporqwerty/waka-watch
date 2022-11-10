@@ -30,8 +30,10 @@ struct ProfileView: View {
                             try await self.profileViewModel.getProfile(user: self.user)
                             self.hasError = false
                         } catch {
-                            self.profileViewModel.logManager.reportError(error)
-                            self.hasError = true
+                            if error._code != NSURLErrorCancelled {
+                                self.profileViewModel.logManager.reportError(error)
+                                self.hasError = true
+                            }
                         }
                     }
             } else {

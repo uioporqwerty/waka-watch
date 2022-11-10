@@ -17,7 +17,6 @@ struct AddWatchFaceView: View {
                         .frame(width: 140, height: 140)
                         .scaledToFit()
                         
-                    
                     Image("Modular")
                         .resizable()
                         .frame(width: 260, height: 260)

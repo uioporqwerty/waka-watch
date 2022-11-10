@@ -162,7 +162,9 @@ final class DependencyInjection {
         }
         self.container.register(LicensesViewModel.self) { resolver in
             LicensesViewModel(logManager: resolver.resolve(LogManager.self)!,
-                              telemetryService: resolver.resolve(TelemetryService.self)!)
+                              telemetryService: resolver.resolve(TelemetryService.self)!,
+                              analytics: resolver.resolve(AnalyticsService.self)!
+                             )
         }
         self.container.register(WhatsNewViewModel.self) { resolver in
             WhatsNewViewModel(telemetryService: resolver.resolve(TelemetryService.self)!,

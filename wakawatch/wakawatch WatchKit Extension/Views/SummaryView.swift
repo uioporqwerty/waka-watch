@@ -80,8 +80,10 @@ struct SummaryView: View {
             do {
                 try await self.load()
             } catch {
-                self.viewModel.logManager.reportError(error)
-                self.hasError = true
+                if error._code != NSURLErrorCancelled {
+                    self.viewModel.logManager.reportError(error)
+                    self.hasError = true
+                }
             }
         }
     }

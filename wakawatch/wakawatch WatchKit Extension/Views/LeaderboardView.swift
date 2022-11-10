@@ -66,8 +66,10 @@ struct LeaderboardView: View {
                 do {
                     try await self.leaderboardViewModel.getLeaderboard(boardId: self.boardId, page: nil)
                 } catch {
-                    self.leaderboardViewModel.logManager.reportError(error)
-                    self.hasError = true
+                    if error._code != NSURLErrorCancelled {
+                        self.leaderboardViewModel.logManager.reportError(error)
+                        self.hasError = true
+                    }
                 }
             }
         } else if self.leaderboardViewModel.records.isEmpty {
