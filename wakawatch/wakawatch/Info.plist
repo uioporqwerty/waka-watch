@@ -28,6 +28,8 @@
 	<string>$(ENVIRONMENT)</string>
 	<key>GITHUB_ACCESS_TOKEN</key>
 	<string>$(GITHUB_ACCESS_TOKEN)</string>
+	<key>GROWTHBOOK_SDK_ENDPOINT</key>
+	<string>$(GROWTHBOOK_SDK_ENDPOINT)</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>MIXPANEL_TOKEN</key>

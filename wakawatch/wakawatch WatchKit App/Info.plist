@@ -30,6 +30,10 @@
 	<string>$(PRODUCT_MODULE_NAME).ComplicationController</string>
 	<key>ENVIRONMENT</key>
 	<string>$(ENVIRONMENT)</string>
+	<key>GROWTHBOOK_SDK_ENDPOINT</key>
+	<string>$(GROWTHBOOK_SDK_ENDPOINT)</string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 	<key>MIXPANEL_TOKEN</key>
 	<string>$(MIXPANEL_TOKEN)</string>
 	<key>ROLLBAR_ACCESS_TOKEN</key>

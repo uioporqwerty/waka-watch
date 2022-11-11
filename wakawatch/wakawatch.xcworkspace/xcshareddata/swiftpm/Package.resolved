@@ -27,6 +27,15 @@
       }
     },
     {
+      "identity" : "growthbook-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/growthbook/growthbook-swift.git",
+      "state" : {
+        "revision" : "12273eb093da976455155011abd887cc95a03d79",
+        "version" : "1.0.32"
+      }
+    },
+    {
       "identity" : "kingfisher",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/onevcat/Kingfisher.git",

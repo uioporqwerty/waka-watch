@@ -106,6 +106,11 @@ final class DependencyInjection {
         self.container.register(AppInformationService.self) { _ in
             AppInformationService()
         }
+        
+        self.container.register(FeaturesService.self) { resolver in
+            // swiftlint:disable force_try
+            try! GrowthBookFeaturesService(analytics: resolver.resolve(AnalyticsService.self)!)
+        }
     }
 
     // swiftlint:disable function_body_length
