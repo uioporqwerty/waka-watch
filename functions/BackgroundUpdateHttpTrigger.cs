@@ -32,57 +32,62 @@ namespace WakaWatch.Function
             [HttpTrigger(AuthorizationLevel.Function, "get", Route = null)] HttpRequest req,
             ILogger log)
         {
-            _log = log;
+            try {
+                _log = log;
 
-            var accessToken = req.Query["access_token"];
+                var accessToken = req.Query["access_token"];
 
-            if (string.IsNullOrEmpty(accessToken))
-            {
-                _log.LogError("access_token is missing.");
-                return new BadRequestResult();
-            }
-
-            var summaryData = await GetSummaryData(accessToken);
-            var totalCodingTime = summaryData.Data
-                                             .FirstOrDefault()
-                                             ?.Categories
-                                             .Where(x => x.Name == "Coding")
-                                             .Sum(x => x.TotalSeconds) ?? 0.0;
-
-            var goalsData = await GetGoalsData(accessToken);
-            var goals = new List<BackgroundUpdateGoalResponse>();
-
-            foreach (var goal in goalsData.Goals)
-            {
-                if (goal.IsEnabled && !goal.IsSnoozed)
+                if (string.IsNullOrEmpty(accessToken))
                 {
-                    var lastDay = goal.ChartData[^1];
-
-                    goals.Add(new BackgroundUpdateGoalResponse
-                    {
-                        Id = goal.Id,
-                        Title = goal.Title,
-                        PercentCompleted = goal.PercentCompleted,
-                        RangeStatusReason = lastDay.RangeStatusReason,
-                        ShortRangeStatusReason = lastDay.ShortRangeStatusReason,
-                        RangeStatus = lastDay.RangeStatus,
-                        ModifiedAt = goal.ModifiedAt,
-                        IsInverse = goal.IsInverse,
-                        GoalSeconds = lastDay.GoalSeconds,
-                        ActualSeconds = lastDay.ActualSeconds
-                    });
+                    _log.LogError("access_token is missing.");
+                    return new BadRequestResult();
                 }
+
+                var summaryData = await GetSummaryData(accessToken);
+                var totalCodingTime = summaryData.Data
+                                                .FirstOrDefault()
+                                                ?.Categories
+                                                .Where(x => x.Name == "Coding")
+                                                .Sum(x => x.TotalSeconds) ?? 0.0;
+
+                var goalsData = await GetGoalsData(accessToken);
+                var goals = new List<BackgroundUpdateGoalResponse>();
+
+                foreach (var goal in goalsData.Goals)
+                {
+                    if (goal.IsEnabled && !goal.IsSnoozed)
+                    {
+                        var lastDay = goal.ChartData[^1];
+
+                        goals.Add(new BackgroundUpdateGoalResponse
+                        {
+                            Id = goal.Id,
+                            Title = goal.Title,
+                            PercentCompleted = goal.PercentCompleted,
+                            RangeStatusReason = lastDay.RangeStatusReason,
+                            ShortRangeStatusReason = lastDay.ShortRangeStatusReason,
+                            RangeStatus = lastDay.RangeStatus,
+                            ModifiedAt = goal.ModifiedAt,
+                            IsInverse = goal.IsInverse,
+                            GoalSeconds = lastDay.GoalSeconds,
+                            ActualSeconds = lastDay.ActualSeconds
+                        });
+                    }
+                }
+
+                var response = new BackgroundUpdateResponse
+                {
+                    TotalTimeCodedInSeconds = totalCodingTime,
+                    Goals = goals
+                };
+
+                _log.LogInformation(JsonSerializer.Serialize(response));
+
+                return new OkObjectResult(response);
+            } catch(Exception ex) {
+                _log.LogError(ex, "Error in backgroundUpdate");
+                return new StatusCodeResult(StatusCodes.Status500InternalServerError);
             }
-
-            var response = new BackgroundUpdateResponse
-            {
-                TotalTimeCodedInSeconds = totalCodingTime,
-                Goals = goals
-            };
-
-            _log.LogInformation(JsonSerializer.Serialize(response));
-
-            return new OkObjectResult(response);
         }
 
         private async Task<SummaryResponse> GetSummaryData(string accessToken)
