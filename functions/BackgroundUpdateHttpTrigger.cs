@@ -44,13 +44,16 @@ namespace WakaWatch.Function
                 }
 
                 var summaryData = await GetSummaryData(accessToken);
+                _log.LogInformation("Summary data: " + JsonSerializer.Serialize(summaryData));
+
                 var totalCodingTime = summaryData.Data
-                                                .FirstOrDefault()
+                                                ?.FirstOrDefault()
                                                 ?.Categories
                                                 .Where(x => x.Name == "Coding")
                                                 .Sum(x => x.TotalSeconds) ?? 0.0;
 
                 var goalsData = await GetGoalsData(accessToken);
+                _log.LogInformation("Goals data: " + JsonSerializer.Serialize(goalsData));
                 var goals = new List<BackgroundUpdateGoalResponse>();
 
                 foreach (var goal in goalsData.Goals)
@@ -85,8 +88,8 @@ namespace WakaWatch.Function
 
                 return new OkObjectResult(response);
             } catch(Exception ex) {
-                _log.LogError(ex, "Error in backgroundUpdate");
-                return new StatusCodeResult(StatusCodes.Status500InternalServerError);
+                _log.LogError(ex, ex.Message);
+                return new BadRequestResult();
             }
         }
 
