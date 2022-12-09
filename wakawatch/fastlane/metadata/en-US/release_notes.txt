@@ -1,5 +1,4 @@
 What's New 
 
 Fixes:
-- Error view randomly showed when cycling between views on the watch.
-- Landscape orientation as been removed for iPhone and iPad as it is not necessary and causes issues. Portrait and upside down are still valid orientations.
+- Connect with WakaTime no longer working.
