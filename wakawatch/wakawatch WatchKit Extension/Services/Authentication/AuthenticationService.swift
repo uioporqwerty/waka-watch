@@ -49,8 +49,21 @@ final class AuthenticationService {
                 self.logManager.errorMessage(data)
                 return nil
             }
-
-            return try JSONDecoder().decode(AccessTokenResponse.self, from: data)
+            
+            let accessTokenResponse = String(data: data, encoding: .utf8)?.split(separator: "&")
+            
+            guard let accessTokenResponse = accessTokenResponse else {
+                self.logManager.errorMessage("Cannot parse access token response.")
+                return nil
+            }
+            
+            let accessToken = String(accessTokenResponse[0])
+            let expiresAt = String(accessTokenResponse[4]).replacingOccurrences(of: "%3A", with: ":")
+            let refreshToken = String(accessTokenResponse[1])
+            
+            return AccessTokenResponse(access_token: accessToken.substring(from: accessToken.indexOf("=") + 1),
+                                       expires_at: expiresAt.substring(from: expiresAt.indexOf("=") + 1),
+                                       refresh_token: refreshToken.substring(from: refreshToken.indexOf("=") + 1))
         } catch {
             self.logManager.reportError(error)
         }
